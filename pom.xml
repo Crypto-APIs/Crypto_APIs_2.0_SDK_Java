@@ -4,14 +4,14 @@
     <artifactId>sdk</artifactId>
     <packaging>jar</packaging>
     <name>sdk</name>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
     <description>Crypto APIs 2.0 Java Client</description>
     <scm>
         <connection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</connection>
         <developerConnection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
         <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
-      <tag>sdk-1.0.0</tag>
+      <tag>HEAD</tag>
   </scm>
 
     <licenses>
