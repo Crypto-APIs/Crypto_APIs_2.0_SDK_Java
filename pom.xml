@@ -16,9 +16,7 @@
 
     <licenses>
         <license>
-            <name>Unlicense</name>
-            <url>https://cryptoapis.io</url>
-            <distribution>repo</distribution>
+            <name>MIT</name>
         </license>
     </licenses>
 
