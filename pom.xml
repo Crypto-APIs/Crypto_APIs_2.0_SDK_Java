@@ -1,18 +1,18 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>io.cryptoapis</groupId>
     <artifactId>sdk</artifactId>
     <packaging>jar</packaging>
     <name>sdk</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
     <description>Crypto APIs 2.0 Java Client</description>
     <scm>
         <connection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</connection>
         <developerConnection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
         <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
-    </scm>
+      <tag>sdk-1.0.0</tag>
+  </scm>
 
     <licenses>
         <license>
