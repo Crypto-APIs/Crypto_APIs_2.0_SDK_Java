@@ -1,17 +1,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>org.openapitools</groupId>
-    <artifactId>openapi-java-client</artifactId>
+    <groupId>io.cryptoapis</groupId>
+    <artifactId>sdk</artifactId>
     <packaging>jar</packaging>
-    <name>openapi-java-client</name>
-    <version>2.0.0-SNAPSHOT</version>
-    <url>https://github.com/openapitools/openapi-generator</url>
-    <description>OpenAPI Java</description>
+    <name>sdk</name>
+    <version>1.0.0-SNAPSHOT</version>
+    <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
+    <description>Crypto APIs 2.0 Java Client</description>
     <scm>
-        <connection>scm:git:git@github.com:openapitools/openapi-generator.git</connection>
-        <developerConnection>scm:git:git@github.com:openapitools/openapi-generator.git</developerConnection>
-        <url>https://github.com/openapitools/openapi-generator</url>
+        <connection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</connection>
+        <developerConnection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
+        <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
     </scm>
 
     <licenses>
@@ -22,10 +22,10 @@
 
     <developers>
         <developer>
-            <name>OpenAPI-Generator Contributors</name>
-            <email>team@openapitools.org</email>
-            <organization>OpenAPITools.org</organization>
-            <organizationUrl>http://openapitools.org</organizationUrl>
+            <name>Crypto APIs Team</name>
+            <email>developers@cryptoapis.io</email>
+            <organization>Crypto APIs</organization>
+            <organizationUrl>https://cryptoapis.io</organizationUrl>
         </developer>
     </developers>
 
