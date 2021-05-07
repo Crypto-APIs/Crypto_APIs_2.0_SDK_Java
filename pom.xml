@@ -14,7 +14,7 @@
         <developerConnection>scm:git:ssh://github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
         <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
         <tag>1.0.0</tag>
-  </scm>
+    </scm>
 
     <licenses>
         <license>
