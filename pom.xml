@@ -5,7 +5,7 @@
     <artifactId>sdk</artifactId>
     <packaging>jar</packaging>
     <name>Crypto_APIs_2.0_SDK_Java</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <version>1.0.0</version>
     <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
     <description>Crypto APIs 2.0 Java Client</description>
 
