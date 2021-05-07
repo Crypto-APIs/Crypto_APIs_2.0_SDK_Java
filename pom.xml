@@ -4,15 +4,16 @@
     <groupId>io.cryptoapis</groupId>
     <artifactId>sdk</artifactId>
     <packaging>jar</packaging>
-    <name>sdk</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <name>Crypto_APIs_2.0_SDK_Java</name>
+    <version>1.0.0</version>
     <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
     <description>Crypto APIs 2.0 Java Client</description>
+
     <scm>
+        <connection>scm:git:git://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</connection>
+        <developerConnection>scm:git:ssh://github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
         <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
-        <connection>scm:git:git@github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</connection>
-        <developerConnection>scm:git:git@github.com:github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
-        <tag>HEAD</tag>
+      <tag>1.0.0</tag>
   </scm>
 
     <licenses>
@@ -27,10 +28,21 @@
         <developer>
             <name>Crypto APIs Team</name>
             <email>developers@cryptoapis.io</email>
-            <organization>Crypto APIs</organization>
+            <organization>io.cryptoapis</organization>
             <organizationUrl>https://cryptoapis.io</organizationUrl>
         </developer>
     </developers>
+
+    <distributionManagement>
+        <snapshotRepository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+        </snapshotRepository>
+        <repository>
+            <id>ossrh</id>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
 
     <build>
         <plugins>
@@ -92,19 +104,35 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-javadocs</id>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-gpg-plugin</artifactId>
+                <version>1.5</version>
+                <executions>
+                    <execution>
+                        <id>sign-artifacts</id>
+                        <phase>verify</phase>
+                        <goals>
+                            <goal>sign</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
-
-    <distributionManagement>
-        <snapshotRepository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </snapshotRepository>
-        <repository>
-            <id>ossrh</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-        </repository>
-    </distributionManagement>
 
     <profiles>
         <!-- GPG Signature on release -->
