@@ -22,3 +22,7 @@ build
 
 # IDE files
 .idea
+
+# release configs
+pom.xml.releaseBackup
+release.properties
