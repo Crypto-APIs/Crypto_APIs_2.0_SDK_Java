@@ -15,7 +15,7 @@ Method | HTTP request | Description
 
 <a name="getLatestMinedXRPRippleBlock"></a>
 # **getLatestMinedXRPRippleBlock**
-> GetLatestMinedXRPRippleBlockResponse getLatestMinedXRPRippleBlock(network, context)
+> GetLatestMinedXRPRippleBlockR getLatestMinedXRPRippleBlock(network, context)
 
 Get Latest Mined XRP (Ripple) Block
 
@@ -24,11 +24,11 @@ Through this endpoint customers can fetch the last mined XRP block in the blockc
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -46,7 +46,7 @@ public class Example {
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetLatestMinedXRPRippleBlockResponse result = apiInstance.getLatestMinedXRPRippleBlock(network, context);
+      GetLatestMinedXRPRippleBlockR result = apiInstance.getLatestMinedXRPRippleBlock(network, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#getLatestMinedXRPRippleBlock");
@@ -68,7 +68,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetLatestMinedXRPRippleBlockResponse**](GetLatestMinedXRPRippleBlockResponse.md)
+[**GetLatestMinedXRPRippleBlockR**](GetLatestMinedXRPRippleBlockR.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 <a name="getXRPRippleAddressDetails"></a>
 # **getXRPRippleAddressDetails**
-> GetXRPRippleAddressDetailsResponse getXRPRippleAddressDetails(network, address, context)
+> GetXRPRippleAddressDetailsR getXRPRippleAddressDetails(network, address, context)
 
 Get XRP (Ripple) Address Details
 
@@ -105,11 +105,11 @@ Through this endpoint the customer can receive basic information about a given X
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -128,7 +128,7 @@ public class Example {
     String address = "rA9bXGJcXvZKaWofrRphdJsBWzhyCfH3z"; // String | Represents the public address, which is a compressed and shortened form of a public key.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetXRPRippleAddressDetailsResponse result = apiInstance.getXRPRippleAddressDetails(network, address, context);
+      GetXRPRippleAddressDetailsR result = apiInstance.getXRPRippleAddressDetails(network, address, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#getXRPRippleAddressDetails");
@@ -151,7 +151,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetXRPRippleAddressDetailsResponse**](GetXRPRippleAddressDetailsResponse.md)
+[**GetXRPRippleAddressDetailsR**](GetXRPRippleAddressDetailsR.md)
 
 ### Authorization
 
@@ -178,7 +178,7 @@ Name | Type | Description  | Notes
 
 <a name="getXRPRippleBlockDetailsByBlockHash"></a>
 # **getXRPRippleBlockDetailsByBlockHash**
-> GetXRPRippleBlockDetailsByBlockHashResponse getXRPRippleBlockDetailsByBlockHash(network, blockHash, context)
+> GetXRPRippleBlockDetailsByBlockHashR getXRPRippleBlockDetailsByBlockHash(network, blockHash, context)
 
 Get XRP (Ripple) Block Details By Block Hash
 
@@ -187,11 +187,11 @@ Through this endpoint customers can obtain basic information about a given XRP b
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -210,7 +210,7 @@ public class Example {
     String blockHash = "1ab0614d2a438da8b23086cbceef7d443edbd295d9c7619fc8a19c7618bc22c9"; // String | Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetXRPRippleBlockDetailsByBlockHashResponse result = apiInstance.getXRPRippleBlockDetailsByBlockHash(network, blockHash, context);
+      GetXRPRippleBlockDetailsByBlockHashR result = apiInstance.getXRPRippleBlockDetailsByBlockHash(network, blockHash, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#getXRPRippleBlockDetailsByBlockHash");
@@ -233,7 +233,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetXRPRippleBlockDetailsByBlockHashResponse**](GetXRPRippleBlockDetailsByBlockHashResponse.md)
+[**GetXRPRippleBlockDetailsByBlockHashR**](GetXRPRippleBlockDetailsByBlockHashR.md)
 
 ### Authorization
 
@@ -261,7 +261,7 @@ Name | Type | Description  | Notes
 
 <a name="getXRPRippleBlockDetailsByBlockHeight"></a>
 # **getXRPRippleBlockDetailsByBlockHeight**
-> GetXRPRippleBlockDetailsByBlockHeightResponse getXRPRippleBlockDetailsByBlockHeight(network, height, context)
+> GetXRPRippleBlockDetailsByBlockHeightR getXRPRippleBlockDetailsByBlockHeight(network, height, context)
 
 Get XRP (Ripple) Block Details By Block Height
 
@@ -270,11 +270,11 @@ Through this endpoint customers can obtain basic information about a given XRP b
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -293,7 +293,7 @@ public class Example {
     String height = "15886156"; // String | Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetXRPRippleBlockDetailsByBlockHeightResponse result = apiInstance.getXRPRippleBlockDetailsByBlockHeight(network, height, context);
+      GetXRPRippleBlockDetailsByBlockHeightR result = apiInstance.getXRPRippleBlockDetailsByBlockHeight(network, height, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#getXRPRippleBlockDetailsByBlockHeight");
@@ -316,7 +316,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetXRPRippleBlockDetailsByBlockHeightResponse**](GetXRPRippleBlockDetailsByBlockHeightResponse.md)
+[**GetXRPRippleBlockDetailsByBlockHeightR**](GetXRPRippleBlockDetailsByBlockHeightR.md)
 
 ### Authorization
 
@@ -344,7 +344,7 @@ Name | Type | Description  | Notes
 
 <a name="getXRPRippleTransactionDetailsByTransactionID"></a>
 # **getXRPRippleTransactionDetailsByTransactionID**
-> GetXRPRippleTransactionDetailsByTransactionIDResponse getXRPRippleTransactionDetailsByTransactionID(network, transactionHash, context)
+> GetXRPRippleTransactionDetailsByTransactionIDR getXRPRippleTransactionDetailsByTransactionID(network, transactionHash, context)
 
 Get XRP (Ripple) Transaction Details By Transaction ID
 
@@ -353,11 +353,11 @@ Through this endpoint customers can obtain details about a XRP transaction by th
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -376,7 +376,7 @@ public class Example {
     String transactionHash = "36a1737481edec87bacc3101dfb752ae2c76f9171e7edebe587e330c1ea77c8d"; // String | Represents the same as `transactionId` for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols `hash` is different from `transactionId` for SegWit transactions.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetXRPRippleTransactionDetailsByTransactionIDResponse result = apiInstance.getXRPRippleTransactionDetailsByTransactionID(network, transactionHash, context);
+      GetXRPRippleTransactionDetailsByTransactionIDR result = apiInstance.getXRPRippleTransactionDetailsByTransactionID(network, transactionHash, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#getXRPRippleTransactionDetailsByTransactionID");
@@ -399,7 +399,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetXRPRippleTransactionDetailsByTransactionIDResponse**](GetXRPRippleTransactionDetailsByTransactionIDResponse.md)
+[**GetXRPRippleTransactionDetailsByTransactionIDR**](GetXRPRippleTransactionDetailsByTransactionIDR.md)
 
 ### Authorization
 
@@ -427,7 +427,7 @@ Name | Type | Description  | Notes
 
 <a name="listXRPRippleTransactionsByAddress"></a>
 # **listXRPRippleTransactionsByAddress**
-> ListXRPRippleTransactionsByAddressResponse listXRPRippleTransactionsByAddress(network, address, context, limit, offset)
+> ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(network, address, context, limit, offset)
 
 List XRP (Ripple) Transactions by Address
 
@@ -436,11 +436,11 @@ This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -461,7 +461,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListXRPRippleTransactionsByAddressResponse result = apiInstance.listXRPRippleTransactionsByAddress(network, address, context, limit, offset);
+      ListXRPRippleTransactionsByAddressR result = apiInstance.listXRPRippleTransactionsByAddress(network, address, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#listXRPRippleTransactionsByAddress");
@@ -486,7 +486,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListXRPRippleTransactionsByAddressResponse**](ListXRPRippleTransactionsByAddressResponse.md)
+[**ListXRPRippleTransactionsByAddressR**](ListXRPRippleTransactionsByAddressR.md)
 
 ### Authorization
 
@@ -513,7 +513,7 @@ Name | Type | Description  | Notes
 
 <a name="listXRPRippleTransactionsByBlockHash"></a>
 # **listXRPRippleTransactionsByBlockHash**
-> ListXRPRippleTransactionsByBlockHashResponse listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset)
+> ListXRPRippleTransactionsByBlockHashR listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset)
 
 List XRP (Ripple) Transactions By Block Hash
 
@@ -522,11 +522,11 @@ This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.XrpRippleApi;
 
 public class Example {
@@ -547,7 +547,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListXRPRippleTransactionsByBlockHashResponse result = apiInstance.listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset);
+      ListXRPRippleTransactionsByBlockHashR result = apiInstance.listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#listXRPRippleTransactionsByBlockHash");
@@ -572,7 +572,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListXRPRippleTransactionsByBlockHashResponse**](ListXRPRippleTransactionsByBlockHashResponse.md)
+[**ListXRPRippleTransactionsByBlockHashR**](ListXRPRippleTransactionsByBlockHashR.md)
 
 ### Authorization
 

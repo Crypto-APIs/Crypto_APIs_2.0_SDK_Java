@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="getHDWalletXPubYPubZPubDetails"></a>
 # **getHDWalletXPubYPubZPubDetails**
-> GetHDWalletxPubYPubZPubDetailsResponse getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation)
+> GetHDWalletXPubYPubZPubDetailsR getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation)
 
 Get HD Wallet (xPub, yPub, zPub) Details
 
@@ -20,11 +20,11 @@ HD wallet details is useful endpoint to get the most important data about HD wal
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UtxoBasedApi;
 
 public class Example {
@@ -45,7 +45,7 @@ public class Example {
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     String derivation = "derivation_example"; // String | The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly.
     try {
-      GetHDWalletxPubYPubZPubDetailsResponse result = apiInstance.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
+      GetHDWalletXPubYPubZPubDetailsR result = apiInstance.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UtxoBasedApi#getHDWalletXPubYPubZPubDetails");
@@ -70,7 +70,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetHDWalletxPubYPubZPubDetailsResponse**](GetHDWalletxPubYPubZPubDetailsResponse.md)
+[**GetHDWalletXPubYPubZPubDetailsR**](GetHDWalletXPubYPubZPubDetailsR.md)
 
 ### Authorization
 
@@ -97,7 +97,7 @@ Name | Type | Description  | Notes
 
 <a name="listHDWalletXPubYPubZPubTransactions"></a>
 # **listHDWalletXPubYPubZPubTransactions**
-> ListHDWalletxPubYPubZPubTransactionsResponse listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset)
+> ListHDWalletXPubYPubZPubTransactionsR listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset)
 
 List HD Wallet (xPub, yPub, zPub) Transactions
 
@@ -106,11 +106,11 @@ This endpoint will list HD Wallet transactions.
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UtxoBasedApi;
 
 public class Example {
@@ -133,7 +133,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListHDWalletxPubYPubZPubTransactionsResponse result = apiInstance.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
+      ListHDWalletXPubYPubZPubTransactionsR result = apiInstance.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UtxoBasedApi#listHDWalletXPubYPubZPubTransactions");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListHDWalletxPubYPubZPubTransactionsResponse**](ListHDWalletxPubYPubZPubTransactionsResponse.md)
+[**ListHDWalletXPubYPubZPubTransactionsR**](ListHDWalletXPubYPubZPubTransactionsR.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 <a name="syncHDWalletXPubYPubZPub"></a>
 # **syncHDWalletXPubYPubZPub**
-> SyncHDWalletxPubYPubZPubResponse syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletxPubYPubZPubRequestBody)
+> SyncHDWalletXPubYPubZPubR syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB)
 
 Sync HD Wallet (xPub, yPub, zPub)
 
@@ -196,11 +196,11 @@ HD wallets usually have a lot of addresses and transactions, getting the data on
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UtxoBasedApi;
 
 public class Example {
@@ -218,9 +218,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    SyncHDWalletxPubYPubZPubRequestBody syncHDWalletxPubYPubZPubRequestBody = new SyncHDWalletxPubYPubZPubRequestBody(); // SyncHDWalletxPubYPubZPubRequestBody | 
+    SyncHDWalletXPubYPubZPubRB syncHDWalletXPubYPubZPubRB = new SyncHDWalletXPubYPubZPubRB(); // SyncHDWalletXPubYPubZPubRB | 
     try {
-      SyncHDWalletxPubYPubZPubResponse result = apiInstance.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletxPubYPubZPubRequestBody);
+      SyncHDWalletXPubYPubZPubR result = apiInstance.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UtxoBasedApi#syncHDWalletXPubYPubZPub");
@@ -240,11 +240,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **syncHDWalletxPubYPubZPubRequestBody** | [**SyncHDWalletxPubYPubZPubRequestBody**](SyncHDWalletxPubYPubZPubRequestBody.md)|  | [optional]
+ **syncHDWalletXPubYPubZPubRB** | [**SyncHDWalletXPubYPubZPubRB**](SyncHDWalletXPubYPubZPubRB.md)|  | [optional]
 
 ### Return type
 
-[**SyncHDWalletxPubYPubZPubResponse**](SyncHDWalletxPubYPubZPubResponse.md)
+[**SyncHDWalletXPubYPubZPubR**](SyncHDWalletXPubYPubZPubR.md)
 
 ### Authorization
 

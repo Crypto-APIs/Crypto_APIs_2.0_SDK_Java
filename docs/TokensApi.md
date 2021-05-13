@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="listTokensByAddress"></a>
 # **listTokensByAddress**
-> ListTokensByAddressResponse listTokensByAddress(blockchain, network, address, context, limit, offset)
+> ListTokensByAddressR listTokensByAddress(blockchain, network, address, context, limit, offset)
 
 List Tokens By Address
 
@@ -20,11 +20,11 @@ Through this endpoint customers can obtain token data by providing an attribute 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.TokensApi;
 
 public class Example {
@@ -46,7 +46,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTokensByAddressResponse result = apiInstance.listTokensByAddress(blockchain, network, address, context, limit, offset);
+      ListTokensByAddressR result = apiInstance.listTokensByAddress(blockchain, network, address, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TokensApi#listTokensByAddress");
@@ -72,7 +72,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTokensByAddressResponse**](ListTokensByAddressResponse.md)
+[**ListTokensByAddressR**](ListTokensByAddressR.md)
 
 ### Authorization
 
@@ -99,7 +99,7 @@ Name | Type | Description  | Notes
 
 <a name="listTokensTransfersByAddress"></a>
 # **listTokensTransfersByAddress**
-> ListTokensTransfersByAddressResponse listTokensTransfersByAddress(blockchain, network, address, context, limit, offset)
+> ListTokensTransfersByAddressR listTokensTransfersByAddress(blockchain, network, address, context, limit, offset)
 
 List Tokens Transfers By Address
 
@@ -108,11 +108,11 @@ Through this endpoint customers can obtain a list with token transfers by the &#
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.TokensApi;
 
 public class Example {
@@ -134,7 +134,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTokensTransfersByAddressResponse result = apiInstance.listTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
+      ListTokensTransfersByAddressR result = apiInstance.listTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TokensApi#listTokensTransfersByAddress");
@@ -160,7 +160,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTokensTransfersByAddressResponse**](ListTokensTransfersByAddressResponse.md)
+[**ListTokensTransfersByAddressR**](ListTokensTransfersByAddressR.md)
 
 ### Authorization
 
@@ -187,7 +187,7 @@ Name | Type | Description  | Notes
 
 <a name="listTokensTransfersByTransactionHash"></a>
 # **listTokensTransfersByTransactionHash**
-> ListTokensTransfersByTransactionHashResponse listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset)
+> ListTokensTransfersByTransactionHashR listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset)
 
 List Tokens Transfers By Transaction Hash
 
@@ -196,11 +196,11 @@ Through this endpoint customers can obtain a list with token transfers by the &#
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.TokensApi;
 
 public class Example {
@@ -222,7 +222,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTokensTransfersByTransactionHashResponse result = apiInstance.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
+      ListTokensTransfersByTransactionHashR result = apiInstance.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TokensApi#listTokensTransfersByTransactionHash");
@@ -248,7 +248,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTokensTransfersByTransactionHashResponse**](ListTokensTransfersByTransactionHashResponse.md)
+[**ListTokensTransfersByTransactionHashR**](ListTokensTransfersByTransactionHashR.md)
 
 ### Authorization
 

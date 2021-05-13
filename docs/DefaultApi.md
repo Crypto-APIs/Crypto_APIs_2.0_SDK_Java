@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="getContractDetailsByAddress"></a>
 # **getContractDetailsByAddress**
-> GetContractDetailsByAddressResponse getContractDetailsByAddress(blockchain, network, contractAddress, context)
+> GetContractDetailsByAddressR getContractDetailsByAddress(blockchain, network, contractAddress, context)
 
 Get Contract Details by Address
 
@@ -18,11 +18,11 @@ This endpoint will return a smart contract details by address, this address is t
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.DefaultApi;
 
 public class Example {
@@ -42,7 +42,7 @@ public class Example {
     String contractAddress = "contractAddress_example"; // String | String identifier of the token
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetContractDetailsByAddressResponse result = apiInstance.getContractDetailsByAddress(blockchain, network, contractAddress, context);
+      GetContractDetailsByAddressR result = apiInstance.getContractDetailsByAddress(blockchain, network, contractAddress, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling DefaultApi#getContractDetailsByAddress");
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetContractDetailsByAddressResponse**](GetContractDetailsByAddressResponse.md)
+[**GetContractDetailsByAddressR**](GetContractDetailsByAddressR.md)
 
 ### Authorization
 

@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 <a name="addTokensToExistingFromAddress"></a>
 # **addTokensToExistingFromAddress**
-> AddTokensToExistingFromAddressResponse addTokensToExistingFromAddress(blockchain, network, context, addTokensToExistingFromAddressRequestBody)
+> AddTokensToExistingFromAddressR addTokensToExistingFromAddress(blockchain, network, context, addTokensToExistingFromAddressRB)
 
 Add Tokens To Existing fromAddress
 
@@ -22,11 +22,11 @@ Through this endpoint customers can add **Automatic Tokens forwardings** to an a
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticTokensForwardingApi;
 
 public class Example {
@@ -44,9 +44,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Network
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    AddTokensToExistingFromAddressRequestBody addTokensToExistingFromAddressRequestBody = new AddTokensToExistingFromAddressRequestBody(); // AddTokensToExistingFromAddressRequestBody | 
+    AddTokensToExistingFromAddressRB addTokensToExistingFromAddressRB = new AddTokensToExistingFromAddressRB(); // AddTokensToExistingFromAddressRB | 
     try {
-      AddTokensToExistingFromAddressResponse result = apiInstance.addTokensToExistingFromAddress(blockchain, network, context, addTokensToExistingFromAddressRequestBody);
+      AddTokensToExistingFromAddressR result = apiInstance.addTokensToExistingFromAddress(blockchain, network, context, addTokensToExistingFromAddressRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticTokensForwardingApi#addTokensToExistingFromAddress");
@@ -66,11 +66,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, ethereum]
  **network** | **String**| Network | [enum: mainnet, testnet, ropsten, rinkeby]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **addTokensToExistingFromAddressRequestBody** | [**AddTokensToExistingFromAddressRequestBody**](AddTokensToExistingFromAddressRequestBody.md)|  | [optional]
+ **addTokensToExistingFromAddressRB** | [**AddTokensToExistingFromAddressRB**](AddTokensToExistingFromAddressRB.md)|  | [optional]
 
 ### Return type
 
-[**AddTokensToExistingFromAddressResponse**](AddTokensToExistingFromAddressResponse.md)
+[**AddTokensToExistingFromAddressR**](AddTokensToExistingFromAddressR.md)
 
 ### Authorization
 
@@ -98,7 +98,7 @@ Name | Type | Description  | Notes
 
 <a name="createAutomaticTokensForwarding"></a>
 # **createAutomaticTokensForwarding**
-> CreateAutomaticTokensForwardingResponse createAutomaticTokensForwarding(blockchain, network, context, createAutomaticTokensForwardingRequestBody)
+> CreateAutomaticTokensForwardingR createAutomaticTokensForwarding(blockchain, network, context, createAutomaticTokensForwardingRB)
 
 Create Automatic Tokens Forwarding
 
@@ -107,11 +107,11 @@ Through this endpoint customers can set up an automatic forwarding function spec
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticTokensForwardingApi;
 
 public class Example {
@@ -129,9 +129,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    CreateAutomaticTokensForwardingRequestBody createAutomaticTokensForwardingRequestBody = new CreateAutomaticTokensForwardingRequestBody(); // CreateAutomaticTokensForwardingRequestBody | 
+    CreateAutomaticTokensForwardingRB createAutomaticTokensForwardingRB = new CreateAutomaticTokensForwardingRB(); // CreateAutomaticTokensForwardingRB | 
     try {
-      CreateAutomaticTokensForwardingResponse result = apiInstance.createAutomaticTokensForwarding(blockchain, network, context, createAutomaticTokensForwardingRequestBody);
+      CreateAutomaticTokensForwardingR result = apiInstance.createAutomaticTokensForwarding(blockchain, network, context, createAutomaticTokensForwardingRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticTokensForwardingApi#createAutomaticTokensForwarding");
@@ -151,11 +151,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, ethereum]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **createAutomaticTokensForwardingRequestBody** | [**CreateAutomaticTokensForwardingRequestBody**](CreateAutomaticTokensForwardingRequestBody.md)|  | [optional]
+ **createAutomaticTokensForwardingRB** | [**CreateAutomaticTokensForwardingRB**](CreateAutomaticTokensForwardingRB.md)|  | [optional]
 
 ### Return type
 
-[**CreateAutomaticTokensForwardingResponse**](CreateAutomaticTokensForwardingResponse.md)
+[**CreateAutomaticTokensForwardingR**](CreateAutomaticTokensForwardingR.md)
 
 ### Authorization
 
@@ -183,7 +183,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteAutomaticTokensForwarding"></a>
 # **deleteAutomaticTokensForwarding**
-> DeleteAutomaticTokensForwardingResponse deleteAutomaticTokensForwarding(blockchain, network, referenceId, context)
+> DeleteAutomaticTokensForwardingR deleteAutomaticTokensForwarding(blockchain, network, referenceId, context)
 
 Delete Automatic Tokens Forwarding
 
@@ -192,11 +192,11 @@ Through this endpoint customers can delete a forwarding function they have set f
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticTokensForwardingApi;
 
 public class Example {
@@ -216,7 +216,7 @@ public class Example {
     String referenceId = "6017dd02a309213863be9e55"; // String | Represents a unique ID used to reference the specific callback subscription.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      DeleteAutomaticTokensForwardingResponse result = apiInstance.deleteAutomaticTokensForwarding(blockchain, network, referenceId, context);
+      DeleteAutomaticTokensForwardingR result = apiInstance.deleteAutomaticTokensForwarding(blockchain, network, referenceId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticTokensForwardingApi#deleteAutomaticTokensForwarding");
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteAutomaticTokensForwardingResponse**](DeleteAutomaticTokensForwardingResponse.md)
+[**DeleteAutomaticTokensForwardingR**](DeleteAutomaticTokensForwardingR.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeeAddressDetails"></a>
 # **getFeeAddressDetails**
-> GetFeeAddressDetailsResponse getFeeAddressDetails(blockchain, network, context)
+> GetFeeAddressDetailsR getFeeAddressDetails(blockchain, network, context)
 
 Get Fee Address Details
 
@@ -277,11 +277,11 @@ Through this endpoint customers can obtain details about a fee address. Only one
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticTokensForwardingApi;
 
 public class Example {
@@ -300,7 +300,7 @@ public class Example {
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetFeeAddressDetailsResponse result = apiInstance.getFeeAddressDetails(blockchain, network, context);
+      GetFeeAddressDetailsR result = apiInstance.getFeeAddressDetails(blockchain, network, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticTokensForwardingApi#getFeeAddressDetails");
@@ -323,7 +323,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFeeAddressDetailsResponse**](GetFeeAddressDetailsResponse.md)
+[**GetFeeAddressDetailsR**](GetFeeAddressDetailsR.md)
 
 ### Authorization
 
@@ -351,7 +351,7 @@ Name | Type | Description  | Notes
 
 <a name="listTokensForwardingAutomations"></a>
 # **listTokensForwardingAutomations**
-> ListTokensForwardingAutomationsResponse listTokensForwardingAutomations(blockchain, network, context, limit, offset)
+> ListTokensForwardingAutomationsR listTokensForwardingAutomations(blockchain, network, context, limit, offset)
 
 List Tokens Forwarding Automations
 
@@ -360,11 +360,11 @@ Through this endpoint customers can list all of their **tokens** forwarding auto
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticTokensForwardingApi;
 
 public class Example {
@@ -385,7 +385,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTokensForwardingAutomationsResponse result = apiInstance.listTokensForwardingAutomations(blockchain, network, context, limit, offset);
+      ListTokensForwardingAutomationsR result = apiInstance.listTokensForwardingAutomations(blockchain, network, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticTokensForwardingApi#listTokensForwardingAutomations");
@@ -410,7 +410,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTokensForwardingAutomationsResponse**](ListTokensForwardingAutomationsResponse.md)
+[**ListTokensForwardingAutomationsR**](ListTokensForwardingAutomationsR.md)
 
 ### Authorization
 

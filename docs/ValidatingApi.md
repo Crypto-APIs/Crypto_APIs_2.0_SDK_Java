@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="validateAddress"></a>
 # **validateAddress**
-> ValidateAddressResponse validateAddress(blockchain, network, context, validateAddressRequestBody)
+> ValidateAddressR validateAddress(blockchain, network, context, validateAddressRB)
 
 Validate Address
 
@@ -18,11 +18,11 @@ This endpoint checks user public addresses whether they are valid or not.
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.ValidatingApi;
 
 public class Example {
@@ -40,9 +40,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    ValidateAddressRequestBody validateAddressRequestBody = new ValidateAddressRequestBody(); // ValidateAddressRequestBody | 
+    ValidateAddressRB validateAddressRB = new ValidateAddressRB(); // ValidateAddressRB | 
     try {
-      ValidateAddressResponse result = apiInstance.validateAddress(blockchain, network, context, validateAddressRequestBody);
+      ValidateAddressR result = apiInstance.validateAddress(blockchain, network, context, validateAddressRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ValidatingApi#validateAddress");
@@ -62,11 +62,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **validateAddressRequestBody** | [**ValidateAddressRequestBody**](ValidateAddressRequestBody.md)|  | [optional]
+ **validateAddressRB** | [**ValidateAddressRB**](ValidateAddressRB.md)|  | [optional]
 
 ### Return type
 
-[**ValidateAddressResponse**](ValidateAddressResponse.md)
+[**ValidateAddressR**](ValidateAddressR.md)
 
 ### Authorization
 

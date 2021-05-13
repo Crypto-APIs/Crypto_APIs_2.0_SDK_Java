@@ -9,7 +9,7 @@ Method | HTTP request | Description
 
 <a name="listAssetsDetails"></a>
 # **listAssetsDetails**
-> ListAssetsDetailsResponse listAssetsDetails(context, assetType, limit, offset)
+> ListAssetsDetailsR listAssetsDetails(context, assetType, limit, offset)
 
 List Assets Details
 
@@ -18,11 +18,11 @@ This endpoint will return details on a requested asset. The asset could be a cry
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AssetsApi;
 
 public class Example {
@@ -42,7 +42,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListAssetsDetailsResponse result = apiInstance.listAssetsDetails(context, assetType, limit, offset);
+      ListAssetsDetailsR result = apiInstance.listAssetsDetails(context, assetType, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AssetsApi#listAssetsDetails");
@@ -66,7 +66,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListAssetsDetailsResponse**](ListAssetsDetailsResponse.md)
+[**ListAssetsDetailsR**](ListAssetsDetailsR.md)
 
 ### Authorization
 

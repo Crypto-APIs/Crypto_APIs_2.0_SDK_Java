@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="getOmniTransactionDetailsByTransactionIDTxid"></a>
 # **getOmniTransactionDetailsByTransactionIDTxid**
-> GetOmniTransactionDetailsByTransactionIDTxidResponse getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context)
+> GetOmniTransactionDetailsByTransactionIDTxidR getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context)
 
 Get Omni Transaction Details By Transaction ID (Txid)
 
@@ -25,11 +25,11 @@ Through this endpoint customers can obtain details about an Omni transaction by 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -49,7 +49,7 @@ public class Example {
     String transactionId = "d237ff4a681617b767bf22c4e1e8f5115b95c8c168d6cf53bbdec68529f91ecb"; // String | Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetOmniTransactionDetailsByTransactionIDTxidResponse result = apiInstance.getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context);
+      GetOmniTransactionDetailsByTransactionIDTxidR result = apiInstance.getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#getOmniTransactionDetailsByTransactionIDTxid");
@@ -73,7 +73,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetOmniTransactionDetailsByTransactionIDTxidResponse**](GetOmniTransactionDetailsByTransactionIDTxidResponse.md)
+[**GetOmniTransactionDetailsByTransactionIDTxidR**](GetOmniTransactionDetailsByTransactionIDTxidR.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 <a name="getUnconfirmedOmniTransactionByTransactionIDTxid"></a>
 # **getUnconfirmedOmniTransactionByTransactionIDTxid**
-> GetUnconfirmedOmniTransactionByTransactionIDTxidResponse getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context)
+> GetUnconfirmedOmniTransactionByTransactionIDTxidR getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context)
 
 Get Unconfirmed Omni Transaction By Transaction ID (Txid)
 
@@ -110,11 +110,11 @@ Through this endpoint customers can obtain information on unconfirmed Omni trans
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -134,7 +134,7 @@ public class Example {
     String transactionId = "92f17d3d16a1baf7de570a86179cc263cb9866c66778feec2dce111430f41c08"; // String | Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetUnconfirmedOmniTransactionByTransactionIDTxidResponse result = apiInstance.getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context);
+      GetUnconfirmedOmniTransactionByTransactionIDTxidR result = apiInstance.getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#getUnconfirmedOmniTransactionByTransactionIDTxid");
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetUnconfirmedOmniTransactionByTransactionIDTxidResponse**](GetUnconfirmedOmniTransactionByTransactionIDTxidResponse.md)
+[**GetUnconfirmedOmniTransactionByTransactionIDTxidR**](GetUnconfirmedOmniTransactionByTransactionIDTxidR.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 <a name="listOmniTokensByAddress"></a>
 # **listOmniTokensByAddress**
-> ListOmniTokensByAddressResponse listOmniTokensByAddress(network, blockchain, address, context)
+> ListOmniTokensByAddressR listOmniTokensByAddress(network, blockchain, address, context)
 
 List Omni Tokens By Address
 
@@ -195,11 +195,11 @@ Through this endpoint the customer can receive basic information about a given O
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -219,7 +219,7 @@ public class Example {
     String address = "mi7iSsKcvyFYNsiYdDZqJmH75RmoHomwmo"; // String | Represents the public address, which is a compressed and shortened form of a public key.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      ListOmniTokensByAddressResponse result = apiInstance.listOmniTokensByAddress(network, blockchain, address, context);
+      ListOmniTokensByAddressR result = apiInstance.listOmniTokensByAddress(network, blockchain, address, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#listOmniTokensByAddress");
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOmniTokensByAddressResponse**](ListOmniTokensByAddressResponse.md)
+[**ListOmniTokensByAddressR**](ListOmniTokensByAddressR.md)
 
 ### Authorization
 
@@ -270,7 +270,7 @@ Name | Type | Description  | Notes
 
 <a name="listOmniTransactionsByAddress"></a>
 # **listOmniTransactionsByAddress**
-> ListOmniTransactionsByAddressResponse listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset)
+> ListOmniTransactionsByAddressR listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset)
 
 List Omni Transactions By Address
 
@@ -279,11 +279,11 @@ This endpoint will list Omni transactions by an attribute &#x60;address&#x60;. T
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -305,7 +305,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListOmniTransactionsByAddressResponse result = apiInstance.listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
+      ListOmniTransactionsByAddressR result = apiInstance.listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#listOmniTransactionsByAddress");
@@ -331,7 +331,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOmniTransactionsByAddressResponse**](ListOmniTransactionsByAddressResponse.md)
+[**ListOmniTransactionsByAddressR**](ListOmniTransactionsByAddressR.md)
 
 ### Authorization
 
@@ -358,7 +358,7 @@ Name | Type | Description  | Notes
 
 <a name="listOmniTransactionsByBlockHash"></a>
 # **listOmniTransactionsByBlockHash**
-> ListOmniTransactionsByBlockHashResponse listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset)
+> ListOmniTransactionsByBlockHashR listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset)
 
 List Omni Transactions By Block Hash
 
@@ -367,11 +367,11 @@ This endpoint will list Omni transactions by an attribute &#x60;transactionHash&
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -393,7 +393,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListOmniTransactionsByBlockHashResponse result = apiInstance.listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset);
+      ListOmniTransactionsByBlockHashR result = apiInstance.listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#listOmniTransactionsByBlockHash");
@@ -419,7 +419,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOmniTransactionsByBlockHashResponse**](ListOmniTransactionsByBlockHashResponse.md)
+[**ListOmniTransactionsByBlockHashR**](ListOmniTransactionsByBlockHashR.md)
 
 ### Authorization
 
@@ -446,7 +446,7 @@ Name | Type | Description  | Notes
 
 <a name="listOmniTransactionsByBlockHeight"></a>
 # **listOmniTransactionsByBlockHeight**
-> ListOmniTransactionsByBlockHeightResponse listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset)
+> ListOmniTransactionsByBlockHeightR listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset)
 
 List Omni Transactions By Block Height
 
@@ -455,11 +455,11 @@ This endpoint will list Omni transactions by an attribute &#x60;blockHeight&#x60
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -481,7 +481,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListOmniTransactionsByBlockHeightResponse result = apiInstance.listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset);
+      ListOmniTransactionsByBlockHeightR result = apiInstance.listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#listOmniTransactionsByBlockHeight");
@@ -507,7 +507,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListOmniTransactionsByBlockHeightResponse**](ListOmniTransactionsByBlockHeightResponse.md)
+[**ListOmniTransactionsByBlockHeightR**](ListOmniTransactionsByBlockHeightR.md)
 
 ### Authorization
 
@@ -534,7 +534,7 @@ Name | Type | Description  | Notes
 
 <a name="listUnconfirmedOmniTransactionsByAddress"></a>
 # **listUnconfirmedOmniTransactionsByAddress**
-> ListUnconfirmedOmniTransactionsByAddressResponse listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset)
+> ListUnconfirmedOmniTransactionsByAddressR listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset)
 
 List Unconfirmed Omni Transactions By Address
 
@@ -543,11 +543,11 @@ This endpoint will list unconfirmed Omni transactions by an attribute &#x60;addr
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -569,7 +569,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListUnconfirmedOmniTransactionsByAddressResponse result = apiInstance.listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
+      ListUnconfirmedOmniTransactionsByAddressR result = apiInstance.listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#listUnconfirmedOmniTransactionsByAddress");
@@ -595,7 +595,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListUnconfirmedOmniTransactionsByAddressResponse**](ListUnconfirmedOmniTransactionsByAddressResponse.md)
+[**ListUnconfirmedOmniTransactionsByAddressR**](ListUnconfirmedOmniTransactionsByAddressR.md)
 
 ### Authorization
 
@@ -622,7 +622,7 @@ Name | Type | Description  | Notes
 
 <a name="listUnconfirmedOmniTransactionsByPropertyID"></a>
 # **listUnconfirmedOmniTransactionsByPropertyID**
-> ListUnconfirmedOmniTransactionsByPropertyIDResponse listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset)
+> ListUnconfirmedOmniTransactionsByPropertyIDR listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset)
 
 List Unconfirmed Omni Transactions By Property ID
 
@@ -631,11 +631,11 @@ This endpoint will list unconfirmed Omni transactions by an attribute &#x60;prop
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.OmniLayerApi;
 
 public class Example {
@@ -657,7 +657,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListUnconfirmedOmniTransactionsByPropertyIDResponse result = apiInstance.listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset);
+      ListUnconfirmedOmniTransactionsByPropertyIDR result = apiInstance.listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling OmniLayerApi#listUnconfirmedOmniTransactionsByPropertyID");
@@ -683,7 +683,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListUnconfirmedOmniTransactionsByPropertyIDResponse**](ListUnconfirmedOmniTransactionsByPropertyIDResponse.md)
+[**ListUnconfirmedOmniTransactionsByPropertyIDR**](ListUnconfirmedOmniTransactionsByPropertyIDR.md)
 
 ### Authorization
 

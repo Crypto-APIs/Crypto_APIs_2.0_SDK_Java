@@ -17,7 +17,7 @@ Method | HTTP request | Description
 
 <a name="getAddressDetails"></a>
 # **getAddressDetails**
-> GetAddressDetailsResponse getAddressDetails(blockchain, network, address, context)
+> GetAddressDetailsR getAddressDetails(blockchain, network, address, context)
 
 Get Address Details
 
@@ -26,11 +26,11 @@ Through this endpoint the customer can receive basic information about a given a
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -50,7 +50,7 @@ public class Example {
     String address = "mzYijhgmzZrmuB7wBDazRKirnChKyow4M3"; // String | Represents the public address, which is a compressed and shortened form of a public key.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetAddressDetailsResponse result = apiInstance.getAddressDetails(blockchain, network, address, context);
+      GetAddressDetailsR result = apiInstance.getAddressDetails(blockchain, network, address, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#getAddressDetails");
@@ -74,7 +74,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetAddressDetailsResponse**](GetAddressDetailsResponse.md)
+[**GetAddressDetailsR**](GetAddressDetailsR.md)
 
 ### Authorization
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 <a name="getBlockDetailsByBlockHash"></a>
 # **getBlockDetailsByBlockHash**
-> GetBlockDetailsByBlockHashResponse getBlockDetailsByBlockHash(blockchain, network, blockHash, context)
+> GetBlockDetailsByBlockHashR getBlockDetailsByBlockHash(blockchain, network, blockHash, context)
 
 Get Block Details By Block Hash
 
@@ -110,11 +110,11 @@ Through this endpoint customers can obtain basic information about a given mined
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -134,7 +134,7 @@ public class Example {
     String blockHash = "0000000006b3f483bec16b8a85c632bdd30a14a202c83a9148002c9ee441dd0c"; // String | Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetBlockDetailsByBlockHashResponse result = apiInstance.getBlockDetailsByBlockHash(blockchain, network, blockHash, context);
+      GetBlockDetailsByBlockHashR result = apiInstance.getBlockDetailsByBlockHash(blockchain, network, blockHash, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#getBlockDetailsByBlockHash");
@@ -158,7 +158,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetBlockDetailsByBlockHashResponse**](GetBlockDetailsByBlockHashResponse.md)
+[**GetBlockDetailsByBlockHashR**](GetBlockDetailsByBlockHashR.md)
 
 ### Authorization
 
@@ -186,7 +186,7 @@ Name | Type | Description  | Notes
 
 <a name="getBlockDetailsByBlockHeight"></a>
 # **getBlockDetailsByBlockHeight**
-> GetBlockDetailsByBlockHeightResponse getBlockDetailsByBlockHeight(blockchain, network, height, context)
+> GetBlockDetailsByBlockHeightR getBlockDetailsByBlockHeight(blockchain, network, height, context)
 
 Get Block Details By Block Height
 
@@ -195,11 +195,11 @@ Through this endpoint customers can obtain basic information about a given mined
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -219,7 +219,7 @@ public class Example {
     Integer height = 673852; // Integer | Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetBlockDetailsByBlockHeightResponse result = apiInstance.getBlockDetailsByBlockHeight(blockchain, network, height, context);
+      GetBlockDetailsByBlockHeightR result = apiInstance.getBlockDetailsByBlockHeight(blockchain, network, height, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#getBlockDetailsByBlockHeight");
@@ -243,7 +243,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetBlockDetailsByBlockHeightResponse**](GetBlockDetailsByBlockHeightResponse.md)
+[**GetBlockDetailsByBlockHeightR**](GetBlockDetailsByBlockHeightR.md)
 
 ### Authorization
 
@@ -271,7 +271,7 @@ Name | Type | Description  | Notes
 
 <a name="getFeeRecommendations"></a>
 # **getFeeRecommendations**
-> GetFeeRecommendationsResponse getFeeRecommendations(blockchain, network, context)
+> GetFeeRecommendationsR getFeeRecommendations(blockchain, network, context)
 
 Get Fee Recommendations
 
@@ -280,11 +280,11 @@ Through this endpoint customers can obtain fee recommendations. Our fees recomme
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -303,7 +303,7 @@ public class Example {
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetFeeRecommendationsResponse result = apiInstance.getFeeRecommendations(blockchain, network, context);
+      GetFeeRecommendationsR result = apiInstance.getFeeRecommendations(blockchain, network, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#getFeeRecommendations");
@@ -326,7 +326,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetFeeRecommendationsResponse**](GetFeeRecommendationsResponse.md)
+[**GetFeeRecommendationsR**](GetFeeRecommendationsR.md)
 
 ### Authorization
 
@@ -354,7 +354,7 @@ Name | Type | Description  | Notes
 
 <a name="getLatestMinedBlock"></a>
 # **getLatestMinedBlock**
-> GetLatestMinedBlockResponse getLatestMinedBlock(blockchain, network, context)
+> GetLatestMinedBlockR getLatestMinedBlock(blockchain, network, context)
 
 Get Latest Mined Block
 
@@ -363,11 +363,11 @@ Through this endpoint customers can fetch the last mined block in a specific blo
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -386,7 +386,7 @@ public class Example {
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetLatestMinedBlockResponse result = apiInstance.getLatestMinedBlock(blockchain, network, context);
+      GetLatestMinedBlockR result = apiInstance.getLatestMinedBlock(blockchain, network, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#getLatestMinedBlock");
@@ -409,7 +409,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetLatestMinedBlockResponse**](GetLatestMinedBlockResponse.md)
+[**GetLatestMinedBlockR**](GetLatestMinedBlockR.md)
 
 ### Authorization
 
@@ -437,7 +437,7 @@ Name | Type | Description  | Notes
 
 <a name="getTransactionDetailsByTransactionID"></a>
 # **getTransactionDetailsByTransactionID**
-> GetTransactionDetailsByTransactionIDResponse getTransactionDetailsByTransactionID(blockchain, network, transactionId, context)
+> GetTransactionDetailsByTransactionIDR getTransactionDetailsByTransactionID(blockchain, network, transactionId, context)
 
 Get Transaction Details By Transaction ID
 
@@ -446,11 +446,11 @@ Through this endpoint customers can obtain details about a transaction by the tr
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -470,7 +470,7 @@ public class Example {
     String transactionId = "4b66461bf88b61e1e4326356534c135129defb504c7acb2fd6c92697d79eb250"; // String | Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetTransactionDetailsByTransactionIDResponse result = apiInstance.getTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
+      GetTransactionDetailsByTransactionIDR result = apiInstance.getTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#getTransactionDetailsByTransactionID");
@@ -494,7 +494,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetTransactionDetailsByTransactionIDResponse**](GetTransactionDetailsByTransactionIDResponse.md)
+[**GetTransactionDetailsByTransactionIDR**](GetTransactionDetailsByTransactionIDR.md)
 
 ### Authorization
 
@@ -522,7 +522,7 @@ Name | Type | Description  | Notes
 
 <a name="listTransactionsByAddress"></a>
 # **listTransactionsByAddress**
-> ListTransactionsByAddressResponse listTransactionsByAddress(blockchain, network, address, context, limit, offset)
+> ListTransactionsByAddressR listTransactionsByAddress(blockchain, network, address, context, limit, offset)
 
 List Transactions By Address
 
@@ -531,11 +531,11 @@ This endpoint will list transactions by an attribute &#x60;address&#x60;. The tr
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -557,7 +557,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTransactionsByAddressResponse result = apiInstance.listTransactionsByAddress(blockchain, network, address, context, limit, offset);
+      ListTransactionsByAddressR result = apiInstance.listTransactionsByAddress(blockchain, network, address, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#listTransactionsByAddress");
@@ -583,7 +583,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTransactionsByAddressResponse**](ListTransactionsByAddressResponse.md)
+[**ListTransactionsByAddressR**](ListTransactionsByAddressR.md)
 
 ### Authorization
 
@@ -610,7 +610,7 @@ Name | Type | Description  | Notes
 
 <a name="listTransactionsByBlockHash"></a>
 # **listTransactionsByBlockHash**
-> ListTransactionsByBlockHashResponse listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset)
+> ListTransactionsByBlockHashR listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset)
 
 List Transactions by Block Hash
 
@@ -619,11 +619,11 @@ This endpoint will list transactions by an attribute &#x60;transactionHash&#x60;
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -645,7 +645,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTransactionsByBlockHashResponse result = apiInstance.listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset);
+      ListTransactionsByBlockHashR result = apiInstance.listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#listTransactionsByBlockHash");
@@ -671,7 +671,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTransactionsByBlockHashResponse**](ListTransactionsByBlockHashResponse.md)
+[**ListTransactionsByBlockHashR**](ListTransactionsByBlockHashR.md)
 
 ### Authorization
 
@@ -698,7 +698,7 @@ Name | Type | Description  | Notes
 
 <a name="listTransactionsByBlockHeight"></a>
 # **listTransactionsByBlockHeight**
-> ListTransactionsByBlockHeightResponse listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset)
+> ListTransactionsByBlockHeightR listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset)
 
 List Transactions by Block Height
 
@@ -707,11 +707,11 @@ This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. Th
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.UnifiedEndpointsApi;
 
 public class Example {
@@ -733,7 +733,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListTransactionsByBlockHeightResponse result = apiInstance.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
+      ListTransactionsByBlockHeightR result = apiInstance.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling UnifiedEndpointsApi#listTransactionsByBlockHeight");
@@ -759,7 +759,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListTransactionsByBlockHeightResponse**](ListTransactionsByBlockHeightResponse.md)
+[**ListTransactionsByBlockHeightR**](ListTransactionsByBlockHeightR.md)
 
 ### Authorization
 

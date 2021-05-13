@@ -2,8 +2,8 @@ apply plugin: 'idea'
 apply plugin: 'eclipse'
 apply plugin: 'java'
 
-group = 'org.openapitools'
-version = '2.0.0'
+group = 'io.cryptoapis'
+version = '1.0.1'
 
 buildscript {
     repositories {
@@ -87,7 +87,7 @@ if(hasProperty('target') && target == 'android') {
 
     install {
         repositories.mavenInstaller {
-            pom.artifactId = 'openapi-java-client'
+            pom.artifactId = 'cryptoapis-sdk'
         }
     }
 

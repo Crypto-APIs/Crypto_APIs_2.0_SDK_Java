@@ -16,7 +16,7 @@ Method | HTTP request | Description
 
 <a name="minedTransaction"></a>
 # **minedTransaction**
-> MinedTransactionResponse minedTransaction(blockchain, network, context, minedTransactionRequestBody)
+> MinedTransactionR minedTransaction(blockchain, network, context, minedTransactionRB)
 
 Mined transaction
 
@@ -25,11 +25,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -47,9 +47,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    MinedTransactionRequestBody minedTransactionRequestBody = new MinedTransactionRequestBody(); // MinedTransactionRequestBody | 
+    MinedTransactionRB minedTransactionRB = new MinedTransactionRB(); // MinedTransactionRB | 
     try {
-      MinedTransactionResponse result = apiInstance.minedTransaction(blockchain, network, context, minedTransactionRequestBody);
+      MinedTransactionR result = apiInstance.minedTransaction(blockchain, network, context, minedTransactionRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#minedTransaction");
@@ -69,11 +69,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **minedTransactionRequestBody** | [**MinedTransactionRequestBody**](MinedTransactionRequestBody.md)|  | [optional]
+ **minedTransactionRB** | [**MinedTransactionRB**](MinedTransactionRB.md)|  | [optional]
 
 ### Return type
 
-[**MinedTransactionResponse**](MinedTransactionResponse.md)
+[**MinedTransactionR**](MinedTransactionR.md)
 
 ### Authorization
 
@@ -100,7 +100,7 @@ Name | Type | Description  | Notes
 
 <a name="newBlock"></a>
 # **newBlock**
-> NewBlockResponse newBlock(blockchain, network, context, newBlockRequestBody)
+> NewBlockR newBlock(blockchain, network, context, newBlockRB)
 
 New Block
 
@@ -109,11 +109,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -131,9 +131,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewBlockRequestBody newBlockRequestBody = new NewBlockRequestBody(); // NewBlockRequestBody | 
+    NewBlockRB newBlockRB = new NewBlockRB(); // NewBlockRB | 
     try {
-      NewBlockResponse result = apiInstance.newBlock(blockchain, network, context, newBlockRequestBody);
+      NewBlockR result = apiInstance.newBlock(blockchain, network, context, newBlockRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newBlock");
@@ -153,11 +153,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newBlockRequestBody** | [**NewBlockRequestBody**](NewBlockRequestBody.md)|  | [optional]
+ **newBlockRB** | [**NewBlockRB**](NewBlockRB.md)|  | [optional]
 
 ### Return type
 
-[**NewBlockResponse**](NewBlockResponse.md)
+[**NewBlockR**](NewBlockR.md)
 
 ### Authorization
 
@@ -184,7 +184,7 @@ Name | Type | Description  | Notes
 
 <a name="newConfirmedCoinsTransactions"></a>
 # **newConfirmedCoinsTransactions**
-> NewConfirmedCoinsTransactionsResponse newConfirmedCoinsTransactions(blockchain, network, context, newConfirmedCoinsTransactionsRequestBody)
+> NewConfirmedCoinsTransactionsR newConfirmedCoinsTransactions(blockchain, network, context, newConfirmedCoinsTransactionsRB)
 
 New confirmed coins transactions
 
@@ -193,11 +193,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -215,9 +215,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewConfirmedCoinsTransactionsRequestBody newConfirmedCoinsTransactionsRequestBody = new NewConfirmedCoinsTransactionsRequestBody(); // NewConfirmedCoinsTransactionsRequestBody | 
+    NewConfirmedCoinsTransactionsRB newConfirmedCoinsTransactionsRB = new NewConfirmedCoinsTransactionsRB(); // NewConfirmedCoinsTransactionsRB | 
     try {
-      NewConfirmedCoinsTransactionsResponse result = apiInstance.newConfirmedCoinsTransactions(blockchain, network, context, newConfirmedCoinsTransactionsRequestBody);
+      NewConfirmedCoinsTransactionsR result = apiInstance.newConfirmedCoinsTransactions(blockchain, network, context, newConfirmedCoinsTransactionsRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newConfirmedCoinsTransactions");
@@ -237,11 +237,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newConfirmedCoinsTransactionsRequestBody** | [**NewConfirmedCoinsTransactionsRequestBody**](NewConfirmedCoinsTransactionsRequestBody.md)|  | [optional]
+ **newConfirmedCoinsTransactionsRB** | [**NewConfirmedCoinsTransactionsRB**](NewConfirmedCoinsTransactionsRB.md)|  | [optional]
 
 ### Return type
 
-[**NewConfirmedCoinsTransactionsResponse**](NewConfirmedCoinsTransactionsResponse.md)
+[**NewConfirmedCoinsTransactionsR**](NewConfirmedCoinsTransactionsR.md)
 
 ### Authorization
 
@@ -268,7 +268,7 @@ Name | Type | Description  | Notes
 
 <a name="newConfirmedCoinsTransactionsAndEachConfirmation"></a>
 # **newConfirmedCoinsTransactionsAndEachConfirmation**
-> NewConfirmedCoinsTransactionsAndEachConfirmationResponse newConfirmedCoinsTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedCoinsTransactionsAndEachConfirmationRequestBody)
+> NewConfirmedCoinsTransactionsAndEachConfirmationR newConfirmedCoinsTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedCoinsTransactionsAndEachConfirmationRB)
 
 New confirmed coins transactions and each confirmation
 
@@ -277,11 +277,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -299,9 +299,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewConfirmedCoinsTransactionsAndEachConfirmationRequestBody newConfirmedCoinsTransactionsAndEachConfirmationRequestBody = new NewConfirmedCoinsTransactionsAndEachConfirmationRequestBody(); // NewConfirmedCoinsTransactionsAndEachConfirmationRequestBody | 
+    NewConfirmedCoinsTransactionsAndEachConfirmationRB newConfirmedCoinsTransactionsAndEachConfirmationRB = new NewConfirmedCoinsTransactionsAndEachConfirmationRB(); // NewConfirmedCoinsTransactionsAndEachConfirmationRB | 
     try {
-      NewConfirmedCoinsTransactionsAndEachConfirmationResponse result = apiInstance.newConfirmedCoinsTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedCoinsTransactionsAndEachConfirmationRequestBody);
+      NewConfirmedCoinsTransactionsAndEachConfirmationR result = apiInstance.newConfirmedCoinsTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedCoinsTransactionsAndEachConfirmationRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newConfirmedCoinsTransactionsAndEachConfirmation");
@@ -321,11 +321,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newConfirmedCoinsTransactionsAndEachConfirmationRequestBody** | [**NewConfirmedCoinsTransactionsAndEachConfirmationRequestBody**](NewConfirmedCoinsTransactionsAndEachConfirmationRequestBody.md)|  | [optional]
+ **newConfirmedCoinsTransactionsAndEachConfirmationRB** | [**NewConfirmedCoinsTransactionsAndEachConfirmationRB**](NewConfirmedCoinsTransactionsAndEachConfirmationRB.md)|  | [optional]
 
 ### Return type
 
-[**NewConfirmedCoinsTransactionsAndEachConfirmationResponse**](NewConfirmedCoinsTransactionsAndEachConfirmationResponse.md)
+[**NewConfirmedCoinsTransactionsAndEachConfirmationR**](NewConfirmedCoinsTransactionsAndEachConfirmationR.md)
 
 ### Authorization
 
@@ -352,7 +352,7 @@ Name | Type | Description  | Notes
 
 <a name="newConfirmedTokensTransactions"></a>
 # **newConfirmedTokensTransactions**
-> NewConfirmedTokensTransactionsResponse newConfirmedTokensTransactions(blockchain, network, context, newConfirmedTokensTransactionsRequestBody)
+> NewConfirmedTokensTransactionsR newConfirmedTokensTransactions(blockchain, network, context, newConfirmedTokensTransactionsRB)
 
 New confirmed tokens transactions
 
@@ -361,11 +361,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -383,9 +383,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewConfirmedTokensTransactionsRequestBody newConfirmedTokensTransactionsRequestBody = new NewConfirmedTokensTransactionsRequestBody(); // NewConfirmedTokensTransactionsRequestBody | 
+    NewConfirmedTokensTransactionsRB newConfirmedTokensTransactionsRB = new NewConfirmedTokensTransactionsRB(); // NewConfirmedTokensTransactionsRB | 
     try {
-      NewConfirmedTokensTransactionsResponse result = apiInstance.newConfirmedTokensTransactions(blockchain, network, context, newConfirmedTokensTransactionsRequestBody);
+      NewConfirmedTokensTransactionsR result = apiInstance.newConfirmedTokensTransactions(blockchain, network, context, newConfirmedTokensTransactionsRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newConfirmedTokensTransactions");
@@ -405,11 +405,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newConfirmedTokensTransactionsRequestBody** | [**NewConfirmedTokensTransactionsRequestBody**](NewConfirmedTokensTransactionsRequestBody.md)|  | [optional]
+ **newConfirmedTokensTransactionsRB** | [**NewConfirmedTokensTransactionsRB**](NewConfirmedTokensTransactionsRB.md)|  | [optional]
 
 ### Return type
 
-[**NewConfirmedTokensTransactionsResponse**](NewConfirmedTokensTransactionsResponse.md)
+[**NewConfirmedTokensTransactionsR**](NewConfirmedTokensTransactionsR.md)
 
 ### Authorization
 
@@ -436,7 +436,7 @@ Name | Type | Description  | Notes
 
 <a name="newConfirmedTokensTransactionsAndEachConfirmation"></a>
 # **newConfirmedTokensTransactionsAndEachConfirmation**
-> NewConfirmedTokensTransactionsAndEachConfirmationResponse newConfirmedTokensTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedTokensTransactionsAndEachConfirmationRequestBody)
+> NewConfirmedTokensTransactionsAndEachConfirmationR newConfirmedTokensTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedTokensTransactionsAndEachConfirmationRB)
 
 New confirmed tokens transactions and each confirmation
 
@@ -445,11 +445,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -467,9 +467,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewConfirmedTokensTransactionsAndEachConfirmationRequestBody newConfirmedTokensTransactionsAndEachConfirmationRequestBody = new NewConfirmedTokensTransactionsAndEachConfirmationRequestBody(); // NewConfirmedTokensTransactionsAndEachConfirmationRequestBody | 
+    NewConfirmedTokensTransactionsAndEachConfirmationRB newConfirmedTokensTransactionsAndEachConfirmationRB = new NewConfirmedTokensTransactionsAndEachConfirmationRB(); // NewConfirmedTokensTransactionsAndEachConfirmationRB | 
     try {
-      NewConfirmedTokensTransactionsAndEachConfirmationResponse result = apiInstance.newConfirmedTokensTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedTokensTransactionsAndEachConfirmationRequestBody);
+      NewConfirmedTokensTransactionsAndEachConfirmationR result = apiInstance.newConfirmedTokensTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedTokensTransactionsAndEachConfirmationRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newConfirmedTokensTransactionsAndEachConfirmation");
@@ -489,11 +489,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newConfirmedTokensTransactionsAndEachConfirmationRequestBody** | [**NewConfirmedTokensTransactionsAndEachConfirmationRequestBody**](NewConfirmedTokensTransactionsAndEachConfirmationRequestBody.md)|  | [optional]
+ **newConfirmedTokensTransactionsAndEachConfirmationRB** | [**NewConfirmedTokensTransactionsAndEachConfirmationRB**](NewConfirmedTokensTransactionsAndEachConfirmationRB.md)|  | [optional]
 
 ### Return type
 
-[**NewConfirmedTokensTransactionsAndEachConfirmationResponse**](NewConfirmedTokensTransactionsAndEachConfirmationResponse.md)
+[**NewConfirmedTokensTransactionsAndEachConfirmationR**](NewConfirmedTokensTransactionsAndEachConfirmationR.md)
 
 ### Authorization
 
@@ -520,7 +520,7 @@ Name | Type | Description  | Notes
 
 <a name="newUnconfirmedCoinsTransactions"></a>
 # **newUnconfirmedCoinsTransactions**
-> NewUnconfirmedCoinsTransactionsResponse newUnconfirmedCoinsTransactions(blockchain, network, context, newUnconfirmedCoinsTransactionsRequestBody)
+> NewUnconfirmedCoinsTransactionsR newUnconfirmedCoinsTransactions(blockchain, network, context, newUnconfirmedCoinsTransactionsRB)
 
 New unconfirmed coins transactions
 
@@ -529,11 +529,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -551,9 +551,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewUnconfirmedCoinsTransactionsRequestBody newUnconfirmedCoinsTransactionsRequestBody = new NewUnconfirmedCoinsTransactionsRequestBody(); // NewUnconfirmedCoinsTransactionsRequestBody | 
+    NewUnconfirmedCoinsTransactionsRB newUnconfirmedCoinsTransactionsRB = new NewUnconfirmedCoinsTransactionsRB(); // NewUnconfirmedCoinsTransactionsRB | 
     try {
-      NewUnconfirmedCoinsTransactionsResponse result = apiInstance.newUnconfirmedCoinsTransactions(blockchain, network, context, newUnconfirmedCoinsTransactionsRequestBody);
+      NewUnconfirmedCoinsTransactionsR result = apiInstance.newUnconfirmedCoinsTransactions(blockchain, network, context, newUnconfirmedCoinsTransactionsRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newUnconfirmedCoinsTransactions");
@@ -573,11 +573,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newUnconfirmedCoinsTransactionsRequestBody** | [**NewUnconfirmedCoinsTransactionsRequestBody**](NewUnconfirmedCoinsTransactionsRequestBody.md)|  | [optional]
+ **newUnconfirmedCoinsTransactionsRB** | [**NewUnconfirmedCoinsTransactionsRB**](NewUnconfirmedCoinsTransactionsRB.md)|  | [optional]
 
 ### Return type
 
-[**NewUnconfirmedCoinsTransactionsResponse**](NewUnconfirmedCoinsTransactionsResponse.md)
+[**NewUnconfirmedCoinsTransactionsR**](NewUnconfirmedCoinsTransactionsR.md)
 
 ### Authorization
 
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 <a name="newUnconfirmedTokensTransactions"></a>
 # **newUnconfirmedTokensTransactions**
-> NewUnconfirmedTokensTransactionsResponse newUnconfirmedTokensTransactions(blockchain, network, context, newUnconfirmedTokensTransactionsRequestBody)
+> NewUnconfirmedTokensTransactionsR newUnconfirmedTokensTransactions(blockchain, network, context, newUnconfirmedTokensTransactionsRB)
 
 New unconfirmed tokens transactions
 
@@ -613,11 +613,11 @@ Through this endpoint customers can create callback subscriptions for a specific
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.CreateSubscriptionsForApi;
 
 public class Example {
@@ -635,9 +635,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    NewUnconfirmedTokensTransactionsRequestBody newUnconfirmedTokensTransactionsRequestBody = new NewUnconfirmedTokensTransactionsRequestBody(); // NewUnconfirmedTokensTransactionsRequestBody | 
+    NewUnconfirmedTokensTransactionsRB newUnconfirmedTokensTransactionsRB = new NewUnconfirmedTokensTransactionsRB(); // NewUnconfirmedTokensTransactionsRB | 
     try {
-      NewUnconfirmedTokensTransactionsResponse result = apiInstance.newUnconfirmedTokensTransactions(blockchain, network, context, newUnconfirmedTokensTransactionsRequestBody);
+      NewUnconfirmedTokensTransactionsR result = apiInstance.newUnconfirmedTokensTransactions(blockchain, network, context, newUnconfirmedTokensTransactionsRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling CreateSubscriptionsForApi#newUnconfirmedTokensTransactions");
@@ -657,11 +657,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, xrp]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor, kotti]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **newUnconfirmedTokensTransactionsRequestBody** | [**NewUnconfirmedTokensTransactionsRequestBody**](NewUnconfirmedTokensTransactionsRequestBody.md)|  | [optional]
+ **newUnconfirmedTokensTransactionsRB** | [**NewUnconfirmedTokensTransactionsRB**](NewUnconfirmedTokensTransactionsRB.md)|  | [optional]
 
 ### Return type
 
-[**NewUnconfirmedTokensTransactionsResponse**](NewUnconfirmedTokensTransactionsResponse.md)
+[**NewUnconfirmedTokensTransactionsR**](NewUnconfirmedTokensTransactionsR.md)
 
 ### Authorization
 

@@ -11,7 +11,7 @@ Method | HTTP request | Description
 
 <a name="createAutomaticCoinsForwarding"></a>
 # **createAutomaticCoinsForwarding**
-> CreateAutomaticCoinsForwardingResponse createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRequestBody)
+> CreateAutomaticCoinsForwardingR createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRB)
 
 Create Automatic Coins Forwarding
 
@@ -20,11 +20,11 @@ Through this endpoint customers can set up an automatic forwarding function spec
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticCoinsForwardingApi;
 
 public class Example {
@@ -42,9 +42,9 @@ public class Example {
     String blockchain = "bitcoin"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    CreateAutomaticCoinsForwardingRequestBody createAutomaticCoinsForwardingRequestBody = new CreateAutomaticCoinsForwardingRequestBody(); // CreateAutomaticCoinsForwardingRequestBody | 
+    CreateAutomaticCoinsForwardingRB createAutomaticCoinsForwardingRB = new CreateAutomaticCoinsForwardingRB(); // CreateAutomaticCoinsForwardingRB | 
     try {
-      CreateAutomaticCoinsForwardingResponse result = apiInstance.createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRequestBody);
+      CreateAutomaticCoinsForwardingR result = apiInstance.createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticCoinsForwardingApi#createAutomaticCoinsForwarding");
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic]
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby, mordor]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **createAutomaticCoinsForwardingRequestBody** | [**CreateAutomaticCoinsForwardingRequestBody**](CreateAutomaticCoinsForwardingRequestBody.md)|  | [optional]
+ **createAutomaticCoinsForwardingRB** | [**CreateAutomaticCoinsForwardingRB**](CreateAutomaticCoinsForwardingRB.md)|  | [optional]
 
 ### Return type
 
-[**CreateAutomaticCoinsForwardingResponse**](CreateAutomaticCoinsForwardingResponse.md)
+[**CreateAutomaticCoinsForwardingR**](CreateAutomaticCoinsForwardingR.md)
 
 ### Authorization
 
@@ -96,7 +96,7 @@ Name | Type | Description  | Notes
 
 <a name="deleteAutomaticCoinsForwarding"></a>
 # **deleteAutomaticCoinsForwarding**
-> DeleteAutomaticCoinsForwardingResponse deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context)
+> DeleteAutomaticCoinsForwardingR deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context)
 
 Delete Automatic Coins Forwarding
 
@@ -105,11 +105,11 @@ Through this endpoint customers can delete a forwarding function they have set f
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticCoinsForwardingApi;
 
 public class Example {
@@ -129,7 +129,7 @@ public class Example {
     String referenceId = "600955ea5e75d660e71d3c7d"; // String | Represents a unique ID used to reference the specific callback subscription.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      DeleteAutomaticCoinsForwardingResponse result = apiInstance.deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context);
+      DeleteAutomaticCoinsForwardingR result = apiInstance.deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticCoinsForwardingApi#deleteAutomaticCoinsForwarding");
@@ -153,7 +153,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteAutomaticCoinsForwardingResponse**](DeleteAutomaticCoinsForwardingResponse.md)
+[**DeleteAutomaticCoinsForwardingR**](DeleteAutomaticCoinsForwardingR.md)
 
 ### Authorization
 
@@ -181,7 +181,7 @@ Name | Type | Description  | Notes
 
 <a name="listCoinsForwardingAutomations"></a>
 # **listCoinsForwardingAutomations**
-> ListCoinsForwardingAutomationsResponse listCoinsForwardingAutomations(blockchain, network, context, limit, offset)
+> ListCoinsForwardingAutomationsR listCoinsForwardingAutomations(blockchain, network, context, limit, offset)
 
 List Coins Forwarding Automations
 
@@ -190,11 +190,11 @@ Through this endpoint customers can list all of their **coins** forwarding autom
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.AutomaticCoinsForwardingApi;
 
 public class Example {
@@ -215,7 +215,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListCoinsForwardingAutomationsResponse result = apiInstance.listCoinsForwardingAutomations(blockchain, network, context, limit, offset);
+      ListCoinsForwardingAutomationsR result = apiInstance.listCoinsForwardingAutomations(blockchain, network, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AutomaticCoinsForwardingApi#listCoinsForwardingAutomations");
@@ -240,7 +240,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListCoinsForwardingAutomationsResponse**](ListCoinsForwardingAutomationsResponse.md)
+[**ListCoinsForwardingAutomationsR**](ListCoinsForwardingAutomationsR.md)
 
 ### Authorization
 

@@ -4,8 +4,8 @@
     <groupId>io.cryptoapis</groupId>
     <artifactId>cryptoapis-sdk</artifactId>
     <packaging>jar</packaging>
-    <name>Crypto_APIs_2.0_SDK_Java</name>
-    <version>1.0.0-SNAPSHOT</version>
+    <name>cryptoapis-sdk</name>
+    <version>1.0.1</version>
     <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
     <description>Crypto APIs 2.0 Java Client</description>
 
@@ -13,7 +13,7 @@
         <connection>scm:git:git://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</connection>
         <developerConnection>scm:git:ssh://github.com:Crypto-APIs/Crypto_APIs_2.0_SDK_Java.git</developerConnection>
         <url>https://github.com/Crypto-APIs/Crypto_APIs_2.0_SDK_Java</url>
-        <tag>1.0.0</tag>
+        <tag>1.0.1</tag>
     </scm>
 
     <licenses>
@@ -97,17 +97,50 @@
                 <version>3.0.1</version>
                 <executions>
                     <execution>
-                        <id>attach-sources</id>
                         <goals>
                             <goal>jar</goal>
                         </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>build-helper-maven-plugin</artifactId>
+                <version>1.10</version>
+                <executions>
+                    <execution>
+                        <id>add_sources</id>
+                        <phase>generate-sources</phase>
+                        <goals>
+                            <goal>add-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/main/java</source>
+                            </sources>
+                        </configuration>
+                    </execution>
+                    <execution>
+                        <id>add_test_sources</id>
+                        <phase>generate-test-sources</phase>
+                        <goals>
+                            <goal>add-test-source</goal>
+                        </goals>
+                        <configuration>
+                            <sources>
+                                <source>src/test/java</source>
+                            </sources>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-javadoc-plugin</artifactId>
-                <version>3.0.0</version>
+                <version>3.1.1</version>
                 <executions>
                     <execution>
                         <id>attach-javadocs</id>
@@ -116,6 +149,16 @@
                         </goals>
                     </execution>
                 </executions>
+                <configuration>
+                    <doclint>none</doclint>
+                    <tags>
+                        <tag>
+                            <name>http.response.details</name>
+                            <placement>a</placement>
+                            <head>Http Response Details:</head>
+                        </tag>
+                    </tags>
+                </configuration>
             </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -225,8 +268,8 @@
         <java.version>1.7</java.version>
         <project.name>cryptoapis-sdk</project.name>
         <project.version>1.0.0</project.version>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <gson-fire-version>1.8.5</gson-fire-version>
         <swagger-core-version>1.6.2</swagger-core-version>
         <okhttp-version>4.9.1</okhttp-version>

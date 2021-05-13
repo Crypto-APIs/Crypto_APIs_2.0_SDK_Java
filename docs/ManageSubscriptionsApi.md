@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="deleteBlockchainEventSubscription"></a>
 # **deleteBlockchainEventSubscription**
-> DeleteBlockchainEventSubscriptionResponse deleteBlockchainEventSubscription(blockchain, network, referenceId, context)
+> DeleteBlockchainEventSubscriptionR deleteBlockchainEventSubscription(blockchain, network, referenceId, context)
 
 Delete Blockchain Event Subscription
 
@@ -19,11 +19,11 @@ Through this endpoint the customer can delete blockchain event subscriptions the
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.ManageSubscriptionsApi;
 
 public class Example {
@@ -43,7 +43,7 @@ public class Example {
     String referenceId = "d3fd6a0e-f2b6-4bb5-9fd3-7944bcec9e9f"; // String | Represents a unique ID used to reference the specific callback subscription.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      DeleteBlockchainEventSubscriptionResponse result = apiInstance.deleteBlockchainEventSubscription(blockchain, network, referenceId, context);
+      DeleteBlockchainEventSubscriptionR result = apiInstance.deleteBlockchainEventSubscription(blockchain, network, referenceId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ManageSubscriptionsApi#deleteBlockchainEventSubscription");
@@ -67,7 +67,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**DeleteBlockchainEventSubscriptionResponse**](DeleteBlockchainEventSubscriptionResponse.md)
+[**DeleteBlockchainEventSubscriptionR**](DeleteBlockchainEventSubscriptionR.md)
 
 ### Authorization
 
@@ -95,7 +95,7 @@ Name | Type | Description  | Notes
 
 <a name="listBlockchainEventsSubscriptions"></a>
 # **listBlockchainEventsSubscriptions**
-> ListBlockchainEventsSubscriptionsResponse listBlockchainEventsSubscriptions(blockchain, network, context, limit, offset)
+> ListBlockchainEventsSubscriptionsR listBlockchainEventsSubscriptions(blockchain, network, context, limit, offset)
 
 List Blockchain Events Subscriptions
 
@@ -104,11 +104,11 @@ Through this endpoint the customer can obtain a list of their callback subscript
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.ManageSubscriptionsApi;
 
 public class Example {
@@ -129,7 +129,7 @@ public class Example {
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
-      ListBlockchainEventsSubscriptionsResponse result = apiInstance.listBlockchainEventsSubscriptions(blockchain, network, context, limit, offset);
+      ListBlockchainEventsSubscriptionsR result = apiInstance.listBlockchainEventsSubscriptions(blockchain, network, context, limit, offset);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ManageSubscriptionsApi#listBlockchainEventsSubscriptions");
@@ -154,7 +154,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**ListBlockchainEventsSubscriptionsResponse**](ListBlockchainEventsSubscriptionsResponse.md)
+[**ListBlockchainEventsSubscriptionsR**](ListBlockchainEventsSubscriptionsR.md)
 
 ### Authorization
 

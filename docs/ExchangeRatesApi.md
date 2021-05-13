@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getExchangeRateByAssetSymbols"></a>
 # **getExchangeRateByAssetSymbols**
-> GetExchangeRateByAssetSymbolsResponse getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context)
+> GetExchangeRateByAssetSymbolsR getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context)
 
 Get Exchange Rate By Asset Symbols
 
@@ -19,11 +19,11 @@ Through this endpoint customers can obtain exchange rates by asset symbols. The 
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.ExchangeRatesApi;
 
 public class Example {
@@ -42,7 +42,7 @@ public class Example {
     String toAssetSymbol = "usd"; // String | Defines the relation asset symbol in which the base asset rate will be displayed.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetExchangeRateByAssetSymbolsResponse result = apiInstance.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context);
+      GetExchangeRateByAssetSymbolsR result = apiInstance.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExchangeRatesApi#getExchangeRateByAssetSymbols");
@@ -65,7 +65,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetExchangeRateByAssetSymbolsResponse**](GetExchangeRateByAssetSymbolsResponse.md)
+[**GetExchangeRateByAssetSymbolsR**](GetExchangeRateByAssetSymbolsR.md)
 
 ### Authorization
 
@@ -92,7 +92,7 @@ Name | Type | Description  | Notes
 
 <a name="getExchangeRateByAssetsIDs"></a>
 # **getExchangeRateByAssetsIDs**
-> GetExchangeRateByAssetsIDsResponse getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context)
+> GetExchangeRateByAssetsIDsR getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context)
 
 Get Exchange Rate By Assets IDs
 
@@ -101,11 +101,11 @@ Through this endpoint customers can obtain exchange rates by asset IDs. The proc
 ### Example
 ```java
 // Import classes:
-import org.openapitools.client.ApiClient;
-import org.openapitools.client.ApiException;
-import org.openapitools.client.Configuration;
-import org.openapitools.client.auth.*;
-import org.openapitools.client.models.*;
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
 import org.openapitools.client.api.ExchangeRatesApi;
 
 public class Example {
@@ -124,7 +124,7 @@ public class Example {
     String toAssetId = "5b1ea92e584bf50020130615"; // String | Defines the relation asset Reference ID in which the base asset rate will be displayed.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetExchangeRateByAssetsIDsResponse result = apiInstance.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context);
+      GetExchangeRateByAssetsIDsR result = apiInstance.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExchangeRatesApi#getExchangeRateByAssetsIDs");
@@ -147,7 +147,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**GetExchangeRateByAssetsIDsResponse**](GetExchangeRateByAssetsIDsResponse.md)
+[**GetExchangeRateByAssetsIDsR**](GetExchangeRateByAssetsIDsR.md)
 
 ### Authorization
 
