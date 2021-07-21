@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListAssetsDetailsRISpecificData;
 /**
  * ListAssetsDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class ListAssetsDetailsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -106,6 +106,10 @@ public class ListAssetsDetailsRI {
   public static final String SERIALIZED_NAME_LATEST_RATE = "latestRate";
   @SerializedName(SERIALIZED_NAME_LATEST_RATE)
   private ListAssetsDetailsRILatestRate latestRate;
+
+  public static final String SERIALIZED_NAME_SLUG = "slug";
+  @SerializedName(SERIALIZED_NAME_SLUG)
+  private String slug;
 
   public static final String SERIALIZED_NAME_SPECIFIC_DATA = "specificData";
   @SerializedName(SERIALIZED_NAME_SPECIFIC_DATA)
@@ -266,6 +270,29 @@ public class ListAssetsDetailsRI {
   }
 
 
+  public ListAssetsDetailsRI slug(String slug) {
+    
+    this.slug = slug;
+    return this;
+  }
+
+   /**
+   * Asset&#x60;s unique slug string in Crypto APIs listings
+   * @return slug
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "tether", value = "Asset`s unique slug string in Crypto APIs listings")
+
+  public String getSlug() {
+    return slug;
+  }
+
+
+  public void setSlug(String slug) {
+    this.slug = slug;
+  }
+
+
   public ListAssetsDetailsRI specificData(ListAssetsDetailsRISpecificData specificData) {
     
     this.specificData = specificData;
@@ -304,12 +331,13 @@ public class ListAssetsDetailsRI {
         Objects.equals(this.assetSymbol, listAssetsDetailsRI.assetSymbol) &&
         Objects.equals(this.assetType, listAssetsDetailsRI.assetType) &&
         Objects.equals(this.latestRate, listAssetsDetailsRI.latestRate) &&
+        Objects.equals(this.slug, listAssetsDetailsRI.slug) &&
         Objects.equals(this.specificData, listAssetsDetailsRI.specificData);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(assetId, assetLogo, assetName, assetOriginalSymbol, assetSymbol, assetType, latestRate, specificData);
+    return Objects.hash(assetId, assetLogo, assetName, assetOriginalSymbol, assetSymbol, assetType, latestRate, slug, specificData);
   }
 
   @Override
@@ -323,6 +351,7 @@ public class ListAssetsDetailsRI {
     sb.append("    assetSymbol: ").append(toIndentedString(assetSymbol)).append("\n");
     sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
     sb.append("    latestRate: ").append(toIndentedString(latestRate)).append("\n");
+    sb.append("    slug: ").append(toIndentedString(slug)).append("\n");
     sb.append("    specificData: ").append(toIndentedString(specificData)).append("\n");
     sb.append("}");
     return sb.toString();

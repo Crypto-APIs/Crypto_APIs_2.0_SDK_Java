@@ -40,6 +40,7 @@ import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashR;
+import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.ResourceNotFound;
 import org.openapitools.client.model.UnexpectedServerError;
@@ -97,7 +98,7 @@ public class XrpRippleApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/blocks/last"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/blocks/last"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -257,7 +258,7 @@ public class XrpRippleApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/addresses/{address}"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/addresses/{address}"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
 
@@ -424,7 +425,7 @@ public class XrpRippleApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/blocks/hash/{blockHash}"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/blocks/hash/{blockHash}"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "blockHash" + "\\}", localVarApiClient.escapeString(blockHash.toString()));
 
@@ -569,7 +570,7 @@ public class XrpRippleApi {
     /**
      * Build call for getXRPRippleBlockDetailsByBlockHeight
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
-     * @param height Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
+     * @param blockHeight Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
@@ -590,13 +591,13 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getXRPRippleBlockDetailsByBlockHeightCall(String network, String height, String context, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getXRPRippleBlockDetailsByBlockHeightCall(String network, String blockHeight, String context, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/blocks/height/{height}"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/blocks/height/{blockHeight}"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
-            .replaceAll("\\{" + "height" + "\\}", localVarApiClient.escapeString(height.toString()));
+            .replaceAll("\\{" + "blockHeight" + "\\}", localVarApiClient.escapeString(blockHeight.toString()));
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
@@ -627,20 +628,20 @@ public class XrpRippleApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getXRPRippleBlockDetailsByBlockHeightValidateBeforeCall(String network, String height, String context, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getXRPRippleBlockDetailsByBlockHeightValidateBeforeCall(String network, String blockHeight, String context, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'network' is set
         if (network == null) {
             throw new ApiException("Missing the required parameter 'network' when calling getXRPRippleBlockDetailsByBlockHeight(Async)");
         }
         
-        // verify the required parameter 'height' is set
-        if (height == null) {
-            throw new ApiException("Missing the required parameter 'height' when calling getXRPRippleBlockDetailsByBlockHeight(Async)");
+        // verify the required parameter 'blockHeight' is set
+        if (blockHeight == null) {
+            throw new ApiException("Missing the required parameter 'blockHeight' when calling getXRPRippleBlockDetailsByBlockHeight(Async)");
         }
         
 
-        okhttp3.Call localVarCall = getXRPRippleBlockDetailsByBlockHeightCall(network, height, context, _callback);
+        okhttp3.Call localVarCall = getXRPRippleBlockDetailsByBlockHeightCall(network, blockHeight, context, _callback);
         return localVarCall;
 
     }
@@ -649,7 +650,7 @@ public class XrpRippleApi {
      * Get XRP (Ripple) Block Details By Block Height
      * Through this endpoint customers can obtain basic information about a given XRP block (a block on the XRP blockchain), specifically by using the &#x60;height&#x60; parameter. These block details could include the hash of the specific, the previous and the next block, its transactions count, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
-     * @param height Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
+     * @param blockHeight Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @return GetXRPRippleBlockDetailsByBlockHeightR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -669,8 +670,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public GetXRPRippleBlockDetailsByBlockHeightR getXRPRippleBlockDetailsByBlockHeight(String network, String height, String context) throws ApiException {
-        ApiResponse<GetXRPRippleBlockDetailsByBlockHeightR> localVarResp = getXRPRippleBlockDetailsByBlockHeightWithHttpInfo(network, height, context);
+    public GetXRPRippleBlockDetailsByBlockHeightR getXRPRippleBlockDetailsByBlockHeight(String network, String blockHeight, String context) throws ApiException {
+        ApiResponse<GetXRPRippleBlockDetailsByBlockHeightR> localVarResp = getXRPRippleBlockDetailsByBlockHeightWithHttpInfo(network, blockHeight, context);
         return localVarResp.getData();
     }
 
@@ -678,7 +679,7 @@ public class XrpRippleApi {
      * Get XRP (Ripple) Block Details By Block Height
      * Through this endpoint customers can obtain basic information about a given XRP block (a block on the XRP blockchain), specifically by using the &#x60;height&#x60; parameter. These block details could include the hash of the specific, the previous and the next block, its transactions count, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
-     * @param height Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
+     * @param blockHeight Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @return ApiResponse&lt;GetXRPRippleBlockDetailsByBlockHeightR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
@@ -698,8 +699,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetXRPRippleBlockDetailsByBlockHeightR> getXRPRippleBlockDetailsByBlockHeightWithHttpInfo(String network, String height, String context) throws ApiException {
-        okhttp3.Call localVarCall = getXRPRippleBlockDetailsByBlockHeightValidateBeforeCall(network, height, context, null);
+    public ApiResponse<GetXRPRippleBlockDetailsByBlockHeightR> getXRPRippleBlockDetailsByBlockHeightWithHttpInfo(String network, String blockHeight, String context) throws ApiException {
+        okhttp3.Call localVarCall = getXRPRippleBlockDetailsByBlockHeightValidateBeforeCall(network, blockHeight, context, null);
         Type localVarReturnType = new TypeToken<GetXRPRippleBlockDetailsByBlockHeightR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -708,7 +709,7 @@ public class XrpRippleApi {
      * Get XRP (Ripple) Block Details By Block Height (asynchronously)
      * Through this endpoint customers can obtain basic information about a given XRP block (a block on the XRP blockchain), specifically by using the &#x60;height&#x60; parameter. These block details could include the hash of the specific, the previous and the next block, its transactions count, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
-     * @param height Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
+     * @param blockHeight Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
@@ -729,9 +730,9 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getXRPRippleBlockDetailsByBlockHeightAsync(String network, String height, String context, final ApiCallback<GetXRPRippleBlockDetailsByBlockHeightR> _callback) throws ApiException {
+    public okhttp3.Call getXRPRippleBlockDetailsByBlockHeightAsync(String network, String blockHeight, String context, final ApiCallback<GetXRPRippleBlockDetailsByBlockHeightR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getXRPRippleBlockDetailsByBlockHeightValidateBeforeCall(network, height, context, _callback);
+        okhttp3.Call localVarCall = getXRPRippleBlockDetailsByBlockHeightValidateBeforeCall(network, blockHeight, context, _callback);
         Type localVarReturnType = new TypeToken<GetXRPRippleBlockDetailsByBlockHeightR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -764,7 +765,7 @@ public class XrpRippleApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/transactions/{transactionHash}"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/transactions/{transactionHash}"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "transactionHash" + "\\}", localVarApiClient.escapeString(transactionHash.toString()));
 
@@ -935,7 +936,7 @@ public class XrpRippleApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/addresses/{address}/transactions"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/addresses/{address}/transactions"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
 
@@ -996,7 +997,7 @@ public class XrpRippleApi {
 
     /**
      * List XRP (Ripple) Transactions by Address
-     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
      * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -1026,7 +1027,7 @@ public class XrpRippleApi {
 
     /**
      * List XRP (Ripple) Transactions by Address
-     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
      * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -1057,7 +1058,7 @@ public class XrpRippleApi {
 
     /**
      * List XRP (Ripple) Transactions by Address (asynchronously)
-     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. (required)
      * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -1117,7 +1118,7 @@ public class XrpRippleApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockchain-data/xrp/{network}/blocks/hash/{blockHash}/transactions"
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/blocks/hash/{blockHash}/transactions"
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "blockHash" + "\\}", localVarApiClient.escapeString(blockHash.toString()));
 
@@ -1178,7 +1179,7 @@ public class XrpRippleApi {
 
     /**
      * List XRP (Ripple) Transactions By Block Hash
-     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param blockHash Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -1208,7 +1209,7 @@ public class XrpRippleApi {
 
     /**
      * List XRP (Ripple) Transactions By Block Hash
-     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param blockHash Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -1239,7 +1240,7 @@ public class XrpRippleApi {
 
     /**
      * List XRP (Ripple) Transactions By Block Hash (asynchronously)
-     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param blockHash Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -1267,6 +1268,188 @@ public class XrpRippleApi {
 
         okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHashValidateBeforeCall(network, blockHash, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHashR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listXRPRippleTransactionsByBlockHeight
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
+     * @param blockHeight  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Invalid data </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listXRPRippleTransactionsByBlockHeightCall(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/blocks/height/{blockHeight}/transactions"
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "blockHeight" + "\\}", localVarApiClient.escapeString(blockHeight.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listXRPRippleTransactionsByBlockHeightValidateBeforeCall(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listXRPRippleTransactionsByBlockHeight(Async)");
+        }
+        
+        // verify the required parameter 'blockHeight' is set
+        if (blockHeight == null) {
+            throw new ApiException("Missing the required parameter 'blockHeight' when calling listXRPRippleTransactionsByBlockHeight(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHeightCall(network, blockHeight, context, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List XRP (Ripple) Transactions By Block Height
+     * This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
+     * @param blockHeight  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListXRPRippleTransactionsByBlockHeightR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Invalid data </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListXRPRippleTransactionsByBlockHeightR listXRPRippleTransactionsByBlockHeight(String network, Integer blockHeight, String context, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ListXRPRippleTransactionsByBlockHeightR> localVarResp = listXRPRippleTransactionsByBlockHeightWithHttpInfo(network, blockHeight, context, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List XRP (Ripple) Transactions By Block Height
+     * This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
+     * @param blockHeight  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListXRPRippleTransactionsByBlockHeightR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Invalid data </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListXRPRippleTransactionsByBlockHeightR> listXRPRippleTransactionsByBlockHeightWithHttpInfo(String network, Integer blockHeight, String context, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHeightValidateBeforeCall(network, blockHeight, context, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHeightR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List XRP (Ripple) Transactions By Block Height (asynchronously)
+     * This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
+     * @param blockHeight  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> Invalid data </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listXRPRippleTransactionsByBlockHeightAsync(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback<ListXRPRippleTransactionsByBlockHeightR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHeightValidateBeforeCall(network, blockHeight, context, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHeightR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

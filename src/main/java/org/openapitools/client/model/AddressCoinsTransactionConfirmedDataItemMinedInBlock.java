@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines the block height in which this transaction was mined and confirmed in.
  */
 @ApiModel(description = "Defines the block height in which this transaction was mined and confirmed in.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class AddressCoinsTransactionConfirmedDataItemMinedInBlock {
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)

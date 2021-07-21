@@ -55,7 +55,8 @@ public class ExchangeRatesApiTest {
         String fromAssetSymbol = null;
         String toAssetSymbol = null;
         String context = null;
-        GetExchangeRateByAssetSymbolsR response = api.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context);
+        Integer calculationTimestamp = null;
+        GetExchangeRateByAssetSymbolsR response = api.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
 
         // TODO: test validations
     }
@@ -73,7 +74,8 @@ public class ExchangeRatesApiTest {
         String fromAssetId = null;
         String toAssetId = null;
         String context = null;
-        GetExchangeRateByAssetsIDsR response = api.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context);
+        Integer calculationTimestamp = null;
+        GetExchangeRateByAssetsIDsR response = api.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
 
         // TODO: test validations
     }

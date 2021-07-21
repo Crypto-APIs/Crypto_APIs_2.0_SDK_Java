@@ -27,6 +27,7 @@ import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashR;
+import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.ResourceNotFound;
 import org.openapitools.client.model.UnexpectedServerError;
@@ -112,9 +113,9 @@ public class XrpRippleApiTest {
     @Test
     public void getXRPRippleBlockDetailsByBlockHeightTest() throws ApiException {
         String network = null;
-        String height = null;
+        String blockHeight = null;
         String context = null;
-        GetXRPRippleBlockDetailsByBlockHeightR response = api.getXRPRippleBlockDetailsByBlockHeight(network, height, context);
+        GetXRPRippleBlockDetailsByBlockHeightR response = api.getXRPRippleBlockDetailsByBlockHeight(network, blockHeight, context);
 
         // TODO: test validations
     }
@@ -140,7 +141,7 @@ public class XrpRippleApiTest {
     /**
      * List XRP (Ripple) Transactions by Address
      *
-     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      *
      * @throws ApiException
      *          if the Api call fails
@@ -160,7 +161,7 @@ public class XrpRippleApiTest {
     /**
      * List XRP (Ripple) Transactions By Block Hash
      *
-     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+     * This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      *
      * @throws ApiException
      *          if the Api call fails
@@ -173,6 +174,26 @@ public class XrpRippleApiTest {
         Integer limit = null;
         Integer offset = null;
         ListXRPRippleTransactionsByBlockHashR response = api.listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List XRP (Ripple) Transactions By Block Height
+     *
+     * This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listXRPRippleTransactionsByBlockHeightTest() throws ApiException {
+        String network = null;
+        Integer blockHeight = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListXRPRippleTransactionsByBlockHeightR response = api.listXRPRippleTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
 
         // TODO: test validations
     }

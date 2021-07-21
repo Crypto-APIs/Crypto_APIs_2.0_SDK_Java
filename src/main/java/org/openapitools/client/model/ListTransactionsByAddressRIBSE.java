@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListTransactionsByAddressRIBSEGasPrice;
  * Ethereum
  */
 @ApiModel(description = "Ethereum")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class ListTransactionsByAddressRIBSE {
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -54,6 +54,10 @@ public class ListTransactionsByAddressRIBSE {
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
   private Integer nonce;
+
+  public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
+  private String transactionStatus;
 
 
   public ListTransactionsByAddressRIBSE contract(String contract) {
@@ -188,6 +192,28 @@ public class ListTransactionsByAddressRIBSE {
   }
 
 
+  public ListTransactionsByAddressRIBSE transactionStatus(String transactionStatus) {
+    
+    this.transactionStatus = transactionStatus;
+    return this;
+  }
+
+   /**
+   * String representation of the transaction status
+   * @return transactionStatus
+  **/
+  @ApiModelProperty(example = "0x1", required = true, value = "String representation of the transaction status")
+
+  public String getTransactionStatus() {
+    return transactionStatus;
+  }
+
+
+  public void setTransactionStatus(String transactionStatus) {
+    this.transactionStatus = transactionStatus;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -202,12 +228,13 @@ public class ListTransactionsByAddressRIBSE {
         Objects.equals(this.gasPrice, listTransactionsByAddressRIBSE.gasPrice) &&
         Objects.equals(this.gasUsed, listTransactionsByAddressRIBSE.gasUsed) &&
         Objects.equals(this.inputData, listTransactionsByAddressRIBSE.inputData) &&
-        Objects.equals(this.nonce, listTransactionsByAddressRIBSE.nonce);
+        Objects.equals(this.nonce, listTransactionsByAddressRIBSE.nonce) &&
+        Objects.equals(this.transactionStatus, listTransactionsByAddressRIBSE.transactionStatus);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(contract, gasLimit, gasPrice, gasUsed, inputData, nonce);
+    return Objects.hash(contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus);
   }
 
   @Override
@@ -220,6 +247,7 @@ public class ListTransactionsByAddressRIBSE {
     sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
     sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
     sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
+    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
     sb.append("}");
     return sb.toString();
   }

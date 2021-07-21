@@ -67,8 +67,10 @@ public class AssetsApi {
      * Build call for listAssetsDetails
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param assetType Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. (optional)
+     * @param cryptoType Subtype of the crypto assets. Could be COIN or TOKEN (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param waasEnabled Show only if WaaS is/not enabled (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -87,7 +89,7 @@ public class AssetsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAssetsDetailsCall(String context, String assetType, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAssetsDetailsCall(String context, String assetType, String cryptoType, Integer limit, Integer offset, Boolean waasEnabled, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -107,12 +109,20 @@ public class AssetsApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("assetType", assetType));
         }
 
+        if (cryptoType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("cryptoType", cryptoType));
+        }
+
         if (limit != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
         }
 
         if (offset != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (waasEnabled != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("waasEnabled", waasEnabled));
         }
 
         final String[] localVarAccepts = {
@@ -134,21 +144,23 @@ public class AssetsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAssetsDetailsValidateBeforeCall(String context, String assetType, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAssetsDetailsValidateBeforeCall(String context, String assetType, String cryptoType, Integer limit, Integer offset, Boolean waasEnabled, final ApiCallback _callback) throws ApiException {
         
 
-        okhttp3.Call localVarCall = listAssetsDetailsCall(context, assetType, limit, offset, _callback);
+        okhttp3.Call localVarCall = listAssetsDetailsCall(context, assetType, cryptoType, limit, offset, waasEnabled, _callback);
         return localVarCall;
 
     }
 
     /**
      * List Assets Details
-     * This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
+     * This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param assetType Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. (optional)
+     * @param cryptoType Subtype of the crypto assets. Could be COIN or TOKEN (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param waasEnabled Show only if WaaS is/not enabled (optional)
      * @return ListAssetsDetailsR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -166,18 +178,20 @@ public class AssetsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListAssetsDetailsR listAssetsDetails(String context, String assetType, Integer limit, Integer offset) throws ApiException {
-        ApiResponse<ListAssetsDetailsR> localVarResp = listAssetsDetailsWithHttpInfo(context, assetType, limit, offset);
+    public ListAssetsDetailsR listAssetsDetails(String context, String assetType, String cryptoType, Integer limit, Integer offset, Boolean waasEnabled) throws ApiException {
+        ApiResponse<ListAssetsDetailsR> localVarResp = listAssetsDetailsWithHttpInfo(context, assetType, cryptoType, limit, offset, waasEnabled);
         return localVarResp.getData();
     }
 
     /**
      * List Assets Details
-     * This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
+     * This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param assetType Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. (optional)
+     * @param cryptoType Subtype of the crypto assets. Could be COIN or TOKEN (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param waasEnabled Show only if WaaS is/not enabled (optional)
      * @return ApiResponse&lt;ListAssetsDetailsR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -195,19 +209,21 @@ public class AssetsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListAssetsDetailsR> listAssetsDetailsWithHttpInfo(String context, String assetType, Integer limit, Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = listAssetsDetailsValidateBeforeCall(context, assetType, limit, offset, null);
+    public ApiResponse<ListAssetsDetailsR> listAssetsDetailsWithHttpInfo(String context, String assetType, String cryptoType, Integer limit, Integer offset, Boolean waasEnabled) throws ApiException {
+        okhttp3.Call localVarCall = listAssetsDetailsValidateBeforeCall(context, assetType, cryptoType, limit, offset, waasEnabled, null);
         Type localVarReturnType = new TypeToken<ListAssetsDetailsR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
      * List Assets Details (asynchronously)
-     * This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
+     * This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param assetType Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. (optional)
+     * @param cryptoType Subtype of the crypto assets. Could be COIN or TOKEN (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param waasEnabled Show only if WaaS is/not enabled (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -226,9 +242,9 @@ public class AssetsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAssetsDetailsAsync(String context, String assetType, Integer limit, Integer offset, final ApiCallback<ListAssetsDetailsR> _callback) throws ApiException {
+    public okhttp3.Call listAssetsDetailsAsync(String context, String assetType, String cryptoType, Integer limit, Integer offset, Boolean waasEnabled, final ApiCallback<ListAssetsDetailsR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listAssetsDetailsValidateBeforeCall(context, assetType, limit, offset, _callback);
+        okhttp3.Call localVarCall = listAssetsDetailsValidateBeforeCall(context, assetType, cryptoType, limit, offset, waasEnabled, _callback);
         Type localVarReturnType = new TypeToken<ListAssetsDetailsR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

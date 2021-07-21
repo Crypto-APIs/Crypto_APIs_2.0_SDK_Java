@@ -41,22 +41,6 @@ public class GetContractDetailsByAddressRITest {
     }
 
     /**
-     * Test the property 'confirmedBalance'
-     */
-    @Test
-    public void confirmedBalanceTest() {
-        // TODO: test confirmedBalance
-    }
-
-    /**
-     * Test the property 'creatorAddress'
-     */
-    @Test
-    public void creatorAddressTest() {
-        // TODO: test creatorAddress
-    }
-
-    /**
      * Test the property 'tokenDecimals'
      */
     @Test
@@ -86,14 +70,6 @@ public class GetContractDetailsByAddressRITest {
     @Test
     public void tokenTypeTest() {
         // TODO: test tokenType
-    }
-
-    /**
-     * Test the property 'tokensBalance'
-     */
-    @Test
-    public void tokensBalanceTest() {
-        // TODO: test tokensBalance
     }
 
     /**

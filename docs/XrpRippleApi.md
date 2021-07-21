@@ -4,13 +4,14 @@ All URIs are relative to *https://rest.cryptoapis.io/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**getLatestMinedXRPRippleBlock**](XrpRippleApi.md#getLatestMinedXRPRippleBlock) | **GET** /blockchain-data/xrp/{network}/blocks/last | Get Latest Mined XRP (Ripple) Block
-[**getXRPRippleAddressDetails**](XrpRippleApi.md#getXRPRippleAddressDetails) | **GET** /blockchain-data/xrp/{network}/addresses/{address} | Get XRP (Ripple) Address Details
-[**getXRPRippleBlockDetailsByBlockHash**](XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHash) | **GET** /blockchain-data/xrp/{network}/blocks/hash/{blockHash} | Get XRP (Ripple) Block Details By Block Hash
-[**getXRPRippleBlockDetailsByBlockHeight**](XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHeight) | **GET** /blockchain-data/xrp/{network}/blocks/height/{height} | Get XRP (Ripple) Block Details By Block Height
-[**getXRPRippleTransactionDetailsByTransactionID**](XrpRippleApi.md#getXRPRippleTransactionDetailsByTransactionID) | **GET** /blockchain-data/xrp/{network}/transactions/{transactionHash} | Get XRP (Ripple) Transaction Details By Transaction ID
-[**listXRPRippleTransactionsByAddress**](XrpRippleApi.md#listXRPRippleTransactionsByAddress) | **GET** /blockchain-data/xrp/{network}/addresses/{address}/transactions | List XRP (Ripple) Transactions by Address
-[**listXRPRippleTransactionsByBlockHash**](XrpRippleApi.md#listXRPRippleTransactionsByBlockHash) | **GET** /blockchain-data/xrp/{network}/blocks/hash/{blockHash}/transactions | List XRP (Ripple) Transactions By Block Hash
+[**getLatestMinedXRPRippleBlock**](XrpRippleApi.md#getLatestMinedXRPRippleBlock) | **GET** /blockchain-data/xrp-specific/{network}/blocks/last | Get Latest Mined XRP (Ripple) Block
+[**getXRPRippleAddressDetails**](XrpRippleApi.md#getXRPRippleAddressDetails) | **GET** /blockchain-data/xrp-specific/{network}/addresses/{address} | Get XRP (Ripple) Address Details
+[**getXRPRippleBlockDetailsByBlockHash**](XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHash) | **GET** /blockchain-data/xrp-specific/{network}/blocks/hash/{blockHash} | Get XRP (Ripple) Block Details By Block Hash
+[**getXRPRippleBlockDetailsByBlockHeight**](XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHeight) | **GET** /blockchain-data/xrp-specific/{network}/blocks/height/{blockHeight} | Get XRP (Ripple) Block Details By Block Height
+[**getXRPRippleTransactionDetailsByTransactionID**](XrpRippleApi.md#getXRPRippleTransactionDetailsByTransactionID) | **GET** /blockchain-data/xrp-specific/{network}/transactions/{transactionHash} | Get XRP (Ripple) Transaction Details By Transaction ID
+[**listXRPRippleTransactionsByAddress**](XrpRippleApi.md#listXRPRippleTransactionsByAddress) | **GET** /blockchain-data/xrp-specific/{network}/addresses/{address}/transactions | List XRP (Ripple) Transactions by Address
+[**listXRPRippleTransactionsByBlockHash**](XrpRippleApi.md#listXRPRippleTransactionsByBlockHash) | **GET** /blockchain-data/xrp-specific/{network}/blocks/hash/{blockHash}/transactions | List XRP (Ripple) Transactions By Block Hash
+[**listXRPRippleTransactionsByBlockHeight**](XrpRippleApi.md#listXRPRippleTransactionsByBlockHeight) | **GET** /blockchain-data/xrp-specific/{network}/blocks/height/{blockHeight}/transactions | List XRP (Ripple) Transactions By Block Height
 
 
 <a name="getLatestMinedXRPRippleBlock"></a>
@@ -261,7 +262,7 @@ Name | Type | Description  | Notes
 
 <a name="getXRPRippleBlockDetailsByBlockHeight"></a>
 # **getXRPRippleBlockDetailsByBlockHeight**
-> GetXRPRippleBlockDetailsByBlockHeightR getXRPRippleBlockDetailsByBlockHeight(network, height, context)
+> GetXRPRippleBlockDetailsByBlockHeightR getXRPRippleBlockDetailsByBlockHeight(network, blockHeight, context)
 
 Get XRP (Ripple) Block Details By Block Height
 
@@ -290,10 +291,10 @@ public class Example {
 
     XrpRippleApi apiInstance = new XrpRippleApi(defaultClient);
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\",  are test networks.
-    String height = "15886156"; // String | Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".
+    String blockHeight = "15886156"; // String | Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     try {
-      GetXRPRippleBlockDetailsByBlockHeightR result = apiInstance.getXRPRippleBlockDetailsByBlockHeight(network, height, context);
+      GetXRPRippleBlockDetailsByBlockHeightR result = apiInstance.getXRPRippleBlockDetailsByBlockHeight(network, blockHeight, context);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#getXRPRippleBlockDetailsByBlockHeight");
@@ -311,7 +312,7 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;,  are test networks. | [enum: mainnet, testnet]
- **height** | **String**| Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. |
+ **blockHeight** | **String**| Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
 
 ### Return type
@@ -431,7 +432,7 @@ Name | Type | Description  | Notes
 
 List XRP (Ripple) Transactions by Address
 
-This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+This endpoint will list XRP transactions by a attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
 
 ### Example
 ```java
@@ -517,7 +518,7 @@ Name | Type | Description  | Notes
 
 List XRP (Ripple) Transactions By Block Hash
 
-This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.
+This endpoint will list transactions by an attribute &#x60;blockHash&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
 
 ### Example
 ```java
@@ -573,6 +574,92 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**ListXRPRippleTransactionsByBlockHashR**](ListXRPRippleTransactionsByBlockHashR.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+**200** | The request has been successful. |  -  |
+**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
+**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
+**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
+**409** | Invalid data |  -  |
+**415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
+**422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
+**429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
+**500** | An unexpected server error was encountered, we are working on fixing this. |  -  |
+
+<a name="listXRPRippleTransactionsByBlockHeight"></a>
+# **listXRPRippleTransactionsByBlockHeight**
+> ListXRPRippleTransactionsByBlockHeightR listXRPRippleTransactionsByBlockHeight(network, blockHeight, context, limit, offset)
+
+List XRP (Ripple) Transactions By Block Height
+
+This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.    Since XRP is a different blockchain than Bitcoin and Ethereum, it isn&#39;t unified.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+
+### Example
+```java
+// Import classes:
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
+import org.openapitools.client.api.XrpRippleApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    XrpRippleApi apiInstance = new XrpRippleApi(defaultClient);
+    String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
+    Integer blockHeight = 15971358; // Integer | 
+    String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
+    Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
+    Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    try {
+      ListXRPRippleTransactionsByBlockHeightR result = apiInstance.listXRPRippleTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling XrpRippleApi#listXRPRippleTransactionsByBlockHeight");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet]
+ **blockHeight** | **Integer**|  |
+ **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
+ **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50]
+ **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0]
+
+### Return type
+
+[**ListXRPRippleTransactionsByBlockHeightR**](ListXRPRippleTransactionsByBlockHeightR.md)
 
 ### Authorization
 

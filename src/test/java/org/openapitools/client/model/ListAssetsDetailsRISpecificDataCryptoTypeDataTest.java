@@ -73,6 +73,14 @@ public class ListAssetsDetailsRISpecificDataCryptoTypeDataTest {
     }
 
     /**
+     * Test the property 'assetType'
+     */
+    @Test
+    public void assetTypeTest() {
+        // TODO: test assetType
+    }
+
+    /**
      * Test the property 'circulatingSupply'
      */
     @Test

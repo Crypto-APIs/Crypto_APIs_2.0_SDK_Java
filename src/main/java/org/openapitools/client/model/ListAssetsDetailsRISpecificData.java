@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListAssetsDetailsRISpecificDataCryptoTypeDa
  * Represents a specific asset&#39;s data depending on its type (whether it is \&quot;crypto\&quot; or \&quot;fiat\&quot;).
  */
 @ApiModel(description = "Represents a specific asset's data depending on its type (whether it is \"crypto\" or \"fiat\").")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class ListAssetsDetailsRISpecificData {
   public static final String SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE = "1HourPriceChangeInPercentage";
   @SerializedName(SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE)
@@ -46,6 +46,57 @@ public class ListAssetsDetailsRISpecificData {
   public static final String SERIALIZED_NAME_24HOURS_TRADING_VOLUME = "24HoursTradingVolume";
   @SerializedName(SERIALIZED_NAME_24HOURS_TRADING_VOLUME)
   private String _24hoursTradingVolume;
+
+  /**
+   * Subtype of the crypto assets. Could be COIN or TOKEN
+   */
+  @JsonAdapter(AssetTypeEnum.Adapter.class)
+  public enum AssetTypeEnum {
+    COIN("coin"),
+    
+    TOKEN("token");
+
+    private String value;
+
+    AssetTypeEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static AssetTypeEnum fromValue(String value) {
+      for (AssetTypeEnum b : AssetTypeEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<AssetTypeEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final AssetTypeEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public AssetTypeEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return AssetTypeEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_ASSET_TYPE = "assetType";
+  @SerializedName(SERIALIZED_NAME_ASSET_TYPE)
+  private AssetTypeEnum assetType;
 
   public static final String SERIALIZED_NAME_CIRCULATING_SUPPLY = "circulatingSupply";
   @SerializedName(SERIALIZED_NAME_CIRCULATING_SUPPLY)
@@ -148,6 +199,28 @@ public class ListAssetsDetailsRISpecificData {
   }
 
 
+  public ListAssetsDetailsRISpecificData assetType(AssetTypeEnum assetType) {
+    
+    this.assetType = assetType;
+    return this;
+  }
+
+   /**
+   * Subtype of the crypto assets. Could be COIN or TOKEN
+   * @return assetType
+  **/
+  @ApiModelProperty(example = "coin", required = true, value = "Subtype of the crypto assets. Could be COIN or TOKEN")
+
+  public AssetTypeEnum getAssetType() {
+    return assetType;
+  }
+
+
+  public void setAssetType(AssetTypeEnum assetType) {
+    this.assetType = assetType;
+  }
+
+
   public ListAssetsDetailsRISpecificData circulatingSupply(String circulatingSupply) {
     
     this.circulatingSupply = circulatingSupply;
@@ -227,6 +300,7 @@ public class ListAssetsDetailsRISpecificData {
         Objects.equals(this._1weekPriceChangeInPercentage, listAssetsDetailsRISpecificData._1weekPriceChangeInPercentage) &&
         Objects.equals(this._24hoursPriceChangeInPercentage, listAssetsDetailsRISpecificData._24hoursPriceChangeInPercentage) &&
         Objects.equals(this._24hoursTradingVolume, listAssetsDetailsRISpecificData._24hoursTradingVolume) &&
+        Objects.equals(this.assetType, listAssetsDetailsRISpecificData.assetType) &&
         Objects.equals(this.circulatingSupply, listAssetsDetailsRISpecificData.circulatingSupply) &&
         Objects.equals(this.marketCapInUSD, listAssetsDetailsRISpecificData.marketCapInUSD) &&
         Objects.equals(this.maxSupply, listAssetsDetailsRISpecificData.maxSupply);
@@ -234,7 +308,7 @@ public class ListAssetsDetailsRISpecificData {
 
   @Override
   public int hashCode() {
-    return Objects.hash(_1hourPriceChangeInPercentage, _1weekPriceChangeInPercentage, _24hoursPriceChangeInPercentage, _24hoursTradingVolume, circulatingSupply, marketCapInUSD, maxSupply);
+    return Objects.hash(_1hourPriceChangeInPercentage, _1weekPriceChangeInPercentage, _24hoursPriceChangeInPercentage, _24hoursTradingVolume, assetType, circulatingSupply, marketCapInUSD, maxSupply);
   }
 
   @Override
@@ -245,6 +319,7 @@ public class ListAssetsDetailsRISpecificData {
     sb.append("    _1weekPriceChangeInPercentage: ").append(toIndentedString(_1weekPriceChangeInPercentage)).append("\n");
     sb.append("    _24hoursPriceChangeInPercentage: ").append(toIndentedString(_24hoursPriceChangeInPercentage)).append("\n");
     sb.append("    _24hoursTradingVolume: ").append(toIndentedString(_24hoursTradingVolume)).append("\n");
+    sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
     sb.append("    circulatingSupply: ").append(toIndentedString(circulatingSupply)).append("\n");
     sb.append("    marketCapInUSD: ").append(toIndentedString(marketCapInUSD)).append("\n");
     sb.append("    maxSupply: ").append(toIndentedString(maxSupply)).append("\n");

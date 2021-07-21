@@ -30,7 +30,7 @@ import java.util.List;
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashRIBSEC {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -38,7 +38,7 @@ public class GetBlockDetailsByBlockHashRIBSEC {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
+  private Integer nonce;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -95,7 +95,7 @@ public class GetBlockDetailsByBlockHashRIBSEC {
   }
 
 
-  public GetBlockDetailsByBlockHashRIBSEC nonce(String nonce) {
+  public GetBlockDetailsByBlockHashRIBSEC nonce(Integer nonce) {
     
     this.nonce = nonce;
     return this;
@@ -107,12 +107,12 @@ public class GetBlockDetailsByBlockHashRIBSEC {
   **/
   @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work.")
 
-  public String getNonce() {
+  public Integer getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(String nonce) {
+  public void setNonce(Integer nonce) {
     this.nonce = nonce;
   }
 

@@ -89,4 +89,12 @@ public class ListTransactionsByAddressRIBSETest {
         // TODO: test nonce
     }
 
+    /**
+     * Test the property 'transactionStatus'
+     */
+    @Test
+    public void transactionStatusTest() {
+        // TODO: test transactionStatus
+    }
+
 }

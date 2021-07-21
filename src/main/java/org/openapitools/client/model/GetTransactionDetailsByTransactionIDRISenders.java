@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetTransactionDetailsByTransactionIDRISenders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -67,10 +67,10 @@ public class GetTransactionDetailsByTransactionIDRISenders {
   }
 
    /**
-   * Represents the amount sent by this address.
+   * Represents the total amount sent by this address including the fee.
    * @return amount
   **/
-  @ApiModelProperty(example = "0.00873472", required = true, value = "Represents the amount sent by this address.")
+  @ApiModelProperty(example = "0.00873472", required = true, value = "Represents the total amount sent by this address including the fee.")
 
   public String getAmount() {
     return amount;

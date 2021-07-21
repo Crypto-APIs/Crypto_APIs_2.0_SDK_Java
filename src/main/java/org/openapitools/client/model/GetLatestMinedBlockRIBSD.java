@@ -28,7 +28,7 @@ import java.io.IOException;
  * Dogecoin
  */
 @ApiModel(description = "Dogecoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetLatestMinedBlockRIBSD {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -36,7 +36,7 @@ public class GetLatestMinedBlockRIBSD {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
+  private Integer nonce;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -89,7 +89,7 @@ public class GetLatestMinedBlockRIBSD {
   }
 
 
-  public GetLatestMinedBlockRIBSD nonce(String nonce) {
+  public GetLatestMinedBlockRIBSD nonce(Integer nonce) {
     
     this.nonce = nonce;
     return this;
@@ -101,12 +101,12 @@ public class GetLatestMinedBlockRIBSD {
   **/
   @ApiModelProperty(example = "2113101077", required = true, value = "Represents a random value that can be adjusted to satisfy the proof of work")
 
-  public String getNonce() {
+  public Integer getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(String nonce) {
+  public void setNonce(Integer nonce) {
     this.nonce = nonce;
   }
 

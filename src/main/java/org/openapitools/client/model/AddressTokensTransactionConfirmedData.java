@@ -29,7 +29,7 @@ import org.openapitools.client.model.AddressTokensTransactionConfirmedDataItem;
  * Specifies all data, as attributes, included into the callback notification, which depends on the &#x60;event&#x60;.
  */
 @ApiModel(description = "Specifies all data, as attributes, included into the callback notification, which depends on the `event`.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class AddressTokensTransactionConfirmedData {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)

@@ -62,9 +62,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum]
  **extendedPublicKey** | **String**| Defines the account extended publicly known key which is used to derive all child public keys. |
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet, ropsten, rinkeby]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **derivation** | **String**| The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. | [optional] [enum: account, bip32]
 
@@ -101,7 +101,7 @@ Name | Type | Description  | Notes
 
 List HD Wallet (xPub, yPub, zPub) Transactions
 
-This endpoint will list HD Wallet transactions.
+This endpoint will list HD Wallet transactions.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
 
 ### Example
 ```java
@@ -150,9 +150,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blockchain** | **String**| Represents the specific blockchain. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash]
+ **blockchain** | **String**| Represents the specific blockchain. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum]
  **extendedPublicKey** | **String**| Defines the master public key (xPub) of the account. |
- **network** | **String**| Represents the specific network. | [enum: mainnet, testnet]
+ **network** | **String**| Represents the specific network. | [enum: mainnet, testnet, ropsten, rinkeby]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **derivation** | **String**| The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. | [optional] [enum: account, bip32]
  **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50]

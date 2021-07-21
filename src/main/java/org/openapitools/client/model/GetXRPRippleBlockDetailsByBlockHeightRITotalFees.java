@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines the total fees included in the specific block.
  */
 @ApiModel(description = "Defines the total fees included in the specific block.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetXRPRippleBlockDetailsByBlockHeightRITotalFees {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)

@@ -14,6 +14,7 @@ Name | Type | Description | Notes
 **assetSymbol** | **String** | Specifies the asset&#39;s unique symbol in the Crypto APIs listings. | 
 **assetType** | [**AssetTypeEnum**](#AssetTypeEnum) | Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. | 
 **latestRate** | [**ListAssetsDetailsRILatestRate**](ListAssetsDetailsRILatestRate.md) |  | 
+**slug** | **String** | Asset&#x60;s unique slug string in Crypto APIs listings |  [optional]
 **specificData** | [**ListAssetsDetailsRISpecificData**](ListAssetsDetailsRISpecificData.md) |  | 
 
 

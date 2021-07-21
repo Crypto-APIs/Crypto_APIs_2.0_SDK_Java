@@ -7,14 +7,11 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**confirmedBalance** | **String** | Token balance | 
-**creatorAddress** | **String** | Token creator | 
-**tokenDecimals** | **String** | Number of decimals |  [optional]
-**tokenName** | **String** | Token name |  [optional]
-**tokenSymbol** | **String** | Token symbol |  [optional]
-**tokenType** | **String** | Token type |  [optional]
-**tokensBalance** | **String** | Token balance | 
-**totalSupply** | **String** | Token total supply | 
+**tokenDecimals** | **String** | Defines the number of decimals that the token possesses. | 
+**tokenName** | **String** | Specifies the token&#39;s name. |  [optional]
+**tokenSymbol** | **String** | Defines the unique symbol of the token. |  [optional]
+**tokenType** | **String** | Defines the type of the token. | 
+**totalSupply** | **String** | Defines the total number of tokens created that exist on the market minus the ones that have been burned. | 
 
 
 

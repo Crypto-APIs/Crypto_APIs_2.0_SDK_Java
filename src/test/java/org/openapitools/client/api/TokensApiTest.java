@@ -15,6 +15,7 @@ package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
+import org.openapitools.client.model.GetContractDetailsByAddressR;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
@@ -44,9 +45,28 @@ public class TokensApiTest {
 
     
     /**
+     * Get Contract Details by Address
+     *
+     * Though this endpoint customers can obtain information about a smart contract and its details. This can be done by the &#x60;address&#x60; parameter, i.e. the address of the smart contract.    {note}This address is **not** the same as the smart contract creator address.{/note}
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getContractDetailsByAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String contractAddress = null;
+        String context = null;
+        GetContractDetailsByAddressR response = api.getContractDetailsByAddress(blockchain, network, contractAddress, context);
+
+        // TODO: test validations
+    }
+    
+    /**
      * List Tokens By Address
      *
-     * Through this endpoint customers can obtain token data by providing an attribute - &#x60;address&#x60;.  The information that can be returned can include the contract address, the token symbol, type and balance.
+     * Through this endpoint customers can obtain token data by providing an attribute - &#x60;address&#x60;.  The information that can be returned can include the contract address, the token symbol, type and balance.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      *
      * @throws ApiException
      *          if the Api call fails
@@ -67,7 +87,7 @@ public class TokensApiTest {
     /**
      * List Tokens Transfers By Address
      *
-     * Through this endpoint customers can obtain a list with token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **tokens** not coins.{/note}
+     * Through this endpoint customers can obtain a list with token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **tokens** not coins.{/note}    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      *
      * @throws ApiException
      *          if the Api call fails
@@ -88,7 +108,7 @@ public class TokensApiTest {
     /**
      * List Tokens Transfers By Transaction Hash
      *
-     * Through this endpoint customers can obtain a list with token transfers by the &#x60;transactionHash&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **tokens** not coins.{/note}
+     * Through this endpoint customers can obtain a list with token transfers by the &#x60;transactionHash&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **tokens** not coins.{/note}    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      *
      * @throws ApiException
      *          if the Api call fails

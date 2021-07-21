@@ -35,7 +35,7 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIValue
 /**
  * ListXRPRippleTransactionsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByBlockHashRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)
@@ -44,10 +44,6 @@ public class ListXRPRippleTransactionsByBlockHashRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   private Integer index;
-
-  public static final String SERIALIZED_NAME_MINED_IN_BLOCK_HASH = "minedInBlockHash";
-  @SerializedName(SERIALIZED_NAME_MINED_IN_BLOCK_HASH)
-  private String minedInBlockHash;
 
   public static final String SERIALIZED_NAME_MINED_IN_BLOCK_HEIGHT = "minedInBlockHeight";
   @SerializedName(SERIALIZED_NAME_MINED_IN_BLOCK_HEIGHT)
@@ -140,28 +136,6 @@ public class ListXRPRippleTransactionsByBlockHashRI {
 
   public void setIndex(Integer index) {
     this.index = index;
-  }
-
-
-  public ListXRPRippleTransactionsByBlockHashRI minedInBlockHash(String minedInBlockHash) {
-    
-    this.minedInBlockHash = minedInBlockHash;
-    return this;
-  }
-
-   /**
-   * Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
-   * @return minedInBlockHash
-  **/
-  @ApiModelProperty(example = "e8f6c4cfef0895ac6f8268cc6ecf0eb159eee4a249d78c344d1a832d4bdd645d", required = true, value = "Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
-
-  public String getMinedInBlockHash() {
-    return minedInBlockHash;
-  }
-
-
-  public void setMinedInBlockHash(String minedInBlockHash) {
-    this.minedInBlockHash = minedInBlockHash;
   }
 
 
@@ -273,7 +247,7 @@ public class ListXRPRippleTransactionsByBlockHashRI {
    * Defines the status of the transaction.
    * @return status
   **/
-  @ApiModelProperty(required = true, value = "Defines the status of the transaction.")
+  @ApiModelProperty(example = "tesSUCCESS", required = true, value = "Defines the status of the transaction.")
 
   public String getStatus() {
     return status;
@@ -450,7 +424,6 @@ public class ListXRPRippleTransactionsByBlockHashRI {
     ListXRPRippleTransactionsByBlockHashRI listXRPRippleTransactionsByBlockHashRI = (ListXRPRippleTransactionsByBlockHashRI) o;
     return Objects.equals(this.additionalData, listXRPRippleTransactionsByBlockHashRI.additionalData) &&
         Objects.equals(this.index, listXRPRippleTransactionsByBlockHashRI.index) &&
-        Objects.equals(this.minedInBlockHash, listXRPRippleTransactionsByBlockHashRI.minedInBlockHash) &&
         Objects.equals(this.minedInBlockHeight, listXRPRippleTransactionsByBlockHashRI.minedInBlockHeight) &&
         Objects.equals(this.recipients, listXRPRippleTransactionsByBlockHashRI.recipients) &&
         Objects.equals(this.senders, listXRPRippleTransactionsByBlockHashRI.senders) &&
@@ -467,7 +440,7 @@ public class ListXRPRippleTransactionsByBlockHashRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalData, index, minedInBlockHash, minedInBlockHeight, recipients, senders, sequence, status, timestamp, transactionHash, type, fee, offer, receive, value);
+    return Objects.hash(additionalData, index, minedInBlockHeight, recipients, senders, sequence, status, timestamp, transactionHash, type, fee, offer, receive, value);
   }
 
   @Override
@@ -476,7 +449,6 @@ public class ListXRPRippleTransactionsByBlockHashRI {
     sb.append("class ListXRPRippleTransactionsByBlockHashRI {\n");
     sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    minedInBlockHash: ").append(toIndentedString(minedInBlockHash)).append("\n");
     sb.append("    minedInBlockHeight: ").append(toIndentedString(minedInBlockHeight)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("    senders: ").append(toIndentedString(senders)).append("\n");

@@ -28,7 +28,7 @@ import java.io.IOException;
  * omniLayerToken
  */
 @ApiModel(description = "omniLayerToken")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class AddressTokensTransactionConfirmedEachConfirmationOmnilayertoken {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

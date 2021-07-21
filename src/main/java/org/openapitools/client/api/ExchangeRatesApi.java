@@ -69,6 +69,7 @@ public class ExchangeRatesApi {
      * @param fromAssetSymbol Defines the base asset symbol to get a rate for. (required)
      * @param toAssetSymbol Defines the relation asset symbol in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -87,7 +88,7 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExchangeRateByAssetSymbolsCall(String fromAssetSymbol, String toAssetSymbol, String context, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExchangeRateByAssetSymbolsCall(String fromAssetSymbol, String toAssetSymbol, String context, Integer calculationTimestamp, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -105,6 +106,10 @@ public class ExchangeRatesApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
         }
 
+        if (calculationTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("calculationTimestamp", calculationTimestamp));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -124,7 +129,7 @@ public class ExchangeRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExchangeRateByAssetSymbolsValidateBeforeCall(String fromAssetSymbol, String toAssetSymbol, String context, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExchangeRateByAssetSymbolsValidateBeforeCall(String fromAssetSymbol, String toAssetSymbol, String context, Integer calculationTimestamp, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'fromAssetSymbol' is set
         if (fromAssetSymbol == null) {
@@ -137,7 +142,7 @@ public class ExchangeRatesApi {
         }
         
 
-        okhttp3.Call localVarCall = getExchangeRateByAssetSymbolsCall(fromAssetSymbol, toAssetSymbol, context, _callback);
+        okhttp3.Call localVarCall = getExchangeRateByAssetSymbolsCall(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp, _callback);
         return localVarCall;
 
     }
@@ -148,6 +153,7 @@ public class ExchangeRatesApi {
      * @param fromAssetSymbol Defines the base asset symbol to get a rate for. (required)
      * @param toAssetSymbol Defines the relation asset symbol in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @return GetExchangeRateByAssetSymbolsR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -165,8 +171,8 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public GetExchangeRateByAssetSymbolsR getExchangeRateByAssetSymbols(String fromAssetSymbol, String toAssetSymbol, String context) throws ApiException {
-        ApiResponse<GetExchangeRateByAssetSymbolsR> localVarResp = getExchangeRateByAssetSymbolsWithHttpInfo(fromAssetSymbol, toAssetSymbol, context);
+    public GetExchangeRateByAssetSymbolsR getExchangeRateByAssetSymbols(String fromAssetSymbol, String toAssetSymbol, String context, Integer calculationTimestamp) throws ApiException {
+        ApiResponse<GetExchangeRateByAssetSymbolsR> localVarResp = getExchangeRateByAssetSymbolsWithHttpInfo(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
         return localVarResp.getData();
     }
 
@@ -176,6 +182,7 @@ public class ExchangeRatesApi {
      * @param fromAssetSymbol Defines the base asset symbol to get a rate for. (required)
      * @param toAssetSymbol Defines the relation asset symbol in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @return ApiResponse&lt;GetExchangeRateByAssetSymbolsR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -193,8 +200,8 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetExchangeRateByAssetSymbolsR> getExchangeRateByAssetSymbolsWithHttpInfo(String fromAssetSymbol, String toAssetSymbol, String context) throws ApiException {
-        okhttp3.Call localVarCall = getExchangeRateByAssetSymbolsValidateBeforeCall(fromAssetSymbol, toAssetSymbol, context, null);
+    public ApiResponse<GetExchangeRateByAssetSymbolsR> getExchangeRateByAssetSymbolsWithHttpInfo(String fromAssetSymbol, String toAssetSymbol, String context, Integer calculationTimestamp) throws ApiException {
+        okhttp3.Call localVarCall = getExchangeRateByAssetSymbolsValidateBeforeCall(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp, null);
         Type localVarReturnType = new TypeToken<GetExchangeRateByAssetSymbolsR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -205,6 +212,7 @@ public class ExchangeRatesApi {
      * @param fromAssetSymbol Defines the base asset symbol to get a rate for. (required)
      * @param toAssetSymbol Defines the relation asset symbol in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -223,9 +231,9 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExchangeRateByAssetSymbolsAsync(String fromAssetSymbol, String toAssetSymbol, String context, final ApiCallback<GetExchangeRateByAssetSymbolsR> _callback) throws ApiException {
+    public okhttp3.Call getExchangeRateByAssetSymbolsAsync(String fromAssetSymbol, String toAssetSymbol, String context, Integer calculationTimestamp, final ApiCallback<GetExchangeRateByAssetSymbolsR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getExchangeRateByAssetSymbolsValidateBeforeCall(fromAssetSymbol, toAssetSymbol, context, _callback);
+        okhttp3.Call localVarCall = getExchangeRateByAssetSymbolsValidateBeforeCall(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp, _callback);
         Type localVarReturnType = new TypeToken<GetExchangeRateByAssetSymbolsR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
@@ -235,6 +243,7 @@ public class ExchangeRatesApi {
      * @param fromAssetId Defines the base asset Reference ID to get a rate for. (required)
      * @param toAssetId Defines the relation asset Reference ID in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -253,7 +262,7 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExchangeRateByAssetsIDsCall(String fromAssetId, String toAssetId, String context, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call getExchangeRateByAssetsIDsCall(String fromAssetId, String toAssetId, String context, Integer calculationTimestamp, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -269,6 +278,10 @@ public class ExchangeRatesApi {
 
         if (context != null) {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (calculationTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("calculationTimestamp", calculationTimestamp));
         }
 
         final String[] localVarAccepts = {
@@ -290,7 +303,7 @@ public class ExchangeRatesApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call getExchangeRateByAssetsIDsValidateBeforeCall(String fromAssetId, String toAssetId, String context, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call getExchangeRateByAssetsIDsValidateBeforeCall(String fromAssetId, String toAssetId, String context, Integer calculationTimestamp, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'fromAssetId' is set
         if (fromAssetId == null) {
@@ -303,7 +316,7 @@ public class ExchangeRatesApi {
         }
         
 
-        okhttp3.Call localVarCall = getExchangeRateByAssetsIDsCall(fromAssetId, toAssetId, context, _callback);
+        okhttp3.Call localVarCall = getExchangeRateByAssetsIDsCall(fromAssetId, toAssetId, context, calculationTimestamp, _callback);
         return localVarCall;
 
     }
@@ -314,6 +327,7 @@ public class ExchangeRatesApi {
      * @param fromAssetId Defines the base asset Reference ID to get a rate for. (required)
      * @param toAssetId Defines the relation asset Reference ID in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @return GetExchangeRateByAssetsIDsR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -331,8 +345,8 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public GetExchangeRateByAssetsIDsR getExchangeRateByAssetsIDs(String fromAssetId, String toAssetId, String context) throws ApiException {
-        ApiResponse<GetExchangeRateByAssetsIDsR> localVarResp = getExchangeRateByAssetsIDsWithHttpInfo(fromAssetId, toAssetId, context);
+    public GetExchangeRateByAssetsIDsR getExchangeRateByAssetsIDs(String fromAssetId, String toAssetId, String context, Integer calculationTimestamp) throws ApiException {
+        ApiResponse<GetExchangeRateByAssetsIDsR> localVarResp = getExchangeRateByAssetsIDsWithHttpInfo(fromAssetId, toAssetId, context, calculationTimestamp);
         return localVarResp.getData();
     }
 
@@ -342,6 +356,7 @@ public class ExchangeRatesApi {
      * @param fromAssetId Defines the base asset Reference ID to get a rate for. (required)
      * @param toAssetId Defines the relation asset Reference ID in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @return ApiResponse&lt;GetExchangeRateByAssetsIDsR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -359,8 +374,8 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GetExchangeRateByAssetsIDsR> getExchangeRateByAssetsIDsWithHttpInfo(String fromAssetId, String toAssetId, String context) throws ApiException {
-        okhttp3.Call localVarCall = getExchangeRateByAssetsIDsValidateBeforeCall(fromAssetId, toAssetId, context, null);
+    public ApiResponse<GetExchangeRateByAssetsIDsR> getExchangeRateByAssetsIDsWithHttpInfo(String fromAssetId, String toAssetId, String context, Integer calculationTimestamp) throws ApiException {
+        okhttp3.Call localVarCall = getExchangeRateByAssetsIDsValidateBeforeCall(fromAssetId, toAssetId, context, calculationTimestamp, null);
         Type localVarReturnType = new TypeToken<GetExchangeRateByAssetsIDsR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -371,6 +386,7 @@ public class ExchangeRatesApi {
      * @param fromAssetId Defines the base asset Reference ID to get a rate for. (required)
      * @param toAssetId Defines the relation asset Reference ID in which the base asset rate will be displayed. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param calculationTimestamp Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -389,9 +405,9 @@ public class ExchangeRatesApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call getExchangeRateByAssetsIDsAsync(String fromAssetId, String toAssetId, String context, final ApiCallback<GetExchangeRateByAssetsIDsR> _callback) throws ApiException {
+    public okhttp3.Call getExchangeRateByAssetsIDsAsync(String fromAssetId, String toAssetId, String context, Integer calculationTimestamp, final ApiCallback<GetExchangeRateByAssetsIDsR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = getExchangeRateByAssetsIDsValidateBeforeCall(fromAssetId, toAssetId, context, _callback);
+        okhttp3.Call localVarCall = getExchangeRateByAssetsIDsValidateBeforeCall(fromAssetId, toAssetId, context, calculationTimestamp, _callback);
         Type localVarReturnType = new TypeToken<GetExchangeRateByAssetsIDsR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

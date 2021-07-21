@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetXRPRippleTransactionDetailsByTransactionIDRISenders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetXRPRippleTransactionDetailsByTransactionIDRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -67,10 +67,10 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRISenders {
   }
 
    /**
-   * Defines the amount of the sent funds as a string.
+   * Represents the total amount sent by this address including the fee.
    * @return amount
   **/
-  @ApiModelProperty(example = "0.00001", required = true, value = "Defines the amount of the sent funds as a string.")
+  @ApiModelProperty(example = "0.00001", required = true, value = "Represents the total amount sent by this address including the fee.")
 
   public String getAmount() {
     return amount;

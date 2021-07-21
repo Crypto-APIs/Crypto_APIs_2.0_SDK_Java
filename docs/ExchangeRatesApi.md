@@ -10,7 +10,7 @@ Method | HTTP request | Description
 
 <a name="getExchangeRateByAssetSymbols"></a>
 # **getExchangeRateByAssetSymbols**
-> GetExchangeRateByAssetSymbolsR getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context)
+> GetExchangeRateByAssetSymbolsR getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp)
 
 Get Exchange Rate By Asset Symbols
 
@@ -41,8 +41,9 @@ public class Example {
     String fromAssetSymbol = "btc"; // String | Defines the base asset symbol to get a rate for.
     String toAssetSymbol = "usd"; // String | Defines the relation asset symbol in which the base asset rate will be displayed.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
+    Integer calculationTimestamp = 1618577849; // Integer | Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp.
     try {
-      GetExchangeRateByAssetSymbolsR result = apiInstance.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context);
+      GetExchangeRateByAssetSymbolsR result = apiInstance.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExchangeRatesApi#getExchangeRateByAssetSymbols");
@@ -62,6 +63,7 @@ Name | Type | Description  | Notes
  **fromAssetSymbol** | **String**| Defines the base asset symbol to get a rate for. |
  **toAssetSymbol** | **String**| Defines the relation asset symbol in which the base asset rate will be displayed. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
+ **calculationTimestamp** | **Integer**| Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. | [optional]
 
 ### Return type
 
@@ -92,7 +94,7 @@ Name | Type | Description  | Notes
 
 <a name="getExchangeRateByAssetsIDs"></a>
 # **getExchangeRateByAssetsIDs**
-> GetExchangeRateByAssetsIDsR getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context)
+> GetExchangeRateByAssetsIDsR getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp)
 
 Get Exchange Rate By Assets IDs
 
@@ -123,8 +125,9 @@ public class Example {
     String fromAssetId = "5b1ea92e584bf50020130612"; // String | Defines the base asset Reference ID to get a rate for.
     String toAssetId = "5b1ea92e584bf50020130615"; // String | Defines the relation asset Reference ID in which the base asset rate will be displayed.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
+    Integer calculationTimestamp = 1618577849; // Integer | Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp.
     try {
-      GetExchangeRateByAssetsIDsR result = apiInstance.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context);
+      GetExchangeRateByAssetsIDsR result = apiInstance.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling ExchangeRatesApi#getExchangeRateByAssetsIDs");
@@ -144,6 +147,7 @@ Name | Type | Description  | Notes
  **fromAssetId** | **String**| Defines the base asset Reference ID to get a rate for. |
  **toAssetId** | **String**| Defines the relation asset Reference ID in which the base asset rate will be displayed. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
+ **calculationTimestamp** | **Integer**| Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. | [optional]
 
 ### Return type
 

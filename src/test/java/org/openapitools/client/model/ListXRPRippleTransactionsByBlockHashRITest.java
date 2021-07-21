@@ -65,14 +65,6 @@ public class ListXRPRippleTransactionsByBlockHashRITest {
     }
 
     /**
-     * Test the property 'minedInBlockHash'
-     */
-    @Test
-    public void minedInBlockHashTest() {
-        // TODO: test minedInBlockHash
-    }
-
-    /**
      * Test the property 'minedInBlockHeight'
      */
     @Test

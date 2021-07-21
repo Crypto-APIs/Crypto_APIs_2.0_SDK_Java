@@ -27,16 +27,8 @@ import java.io.IOException;
 /**
  * GetContractDetailsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetContractDetailsByAddressRI {
-  public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
-  @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
-  private String confirmedBalance;
-
-  public static final String SERIALIZED_NAME_CREATOR_ADDRESS = "creatorAddress";
-  @SerializedName(SERIALIZED_NAME_CREATOR_ADDRESS)
-  private String creatorAddress;
-
   public static final String SERIALIZED_NAME_TOKEN_DECIMALS = "tokenDecimals";
   @SerializedName(SERIALIZED_NAME_TOKEN_DECIMALS)
   private String tokenDecimals;
@@ -53,57 +45,9 @@ public class GetContractDetailsByAddressRI {
   @SerializedName(SERIALIZED_NAME_TOKEN_TYPE)
   private String tokenType;
 
-  public static final String SERIALIZED_NAME_TOKENS_BALANCE = "tokensBalance";
-  @SerializedName(SERIALIZED_NAME_TOKENS_BALANCE)
-  private String tokensBalance;
-
   public static final String SERIALIZED_NAME_TOTAL_SUPPLY = "totalSupply";
   @SerializedName(SERIALIZED_NAME_TOTAL_SUPPLY)
   private String totalSupply;
-
-
-  public GetContractDetailsByAddressRI confirmedBalance(String confirmedBalance) {
-    
-    this.confirmedBalance = confirmedBalance;
-    return this;
-  }
-
-   /**
-   * Token balance
-   * @return confirmedBalance
-  **/
-  @ApiModelProperty(required = true, value = "Token balance")
-
-  public String getConfirmedBalance() {
-    return confirmedBalance;
-  }
-
-
-  public void setConfirmedBalance(String confirmedBalance) {
-    this.confirmedBalance = confirmedBalance;
-  }
-
-
-  public GetContractDetailsByAddressRI creatorAddress(String creatorAddress) {
-    
-    this.creatorAddress = creatorAddress;
-    return this;
-  }
-
-   /**
-   * Token creator
-   * @return creatorAddress
-  **/
-  @ApiModelProperty(required = true, value = "Token creator")
-
-  public String getCreatorAddress() {
-    return creatorAddress;
-  }
-
-
-  public void setCreatorAddress(String creatorAddress) {
-    this.creatorAddress = creatorAddress;
-  }
 
 
   public GetContractDetailsByAddressRI tokenDecimals(String tokenDecimals) {
@@ -113,11 +57,10 @@ public class GetContractDetailsByAddressRI {
   }
 
    /**
-   * Number of decimals
+   * Defines the number of decimals that the token possesses.
    * @return tokenDecimals
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Number of decimals")
+  @ApiModelProperty(example = "18", required = true, value = "Defines the number of decimals that the token possesses.")
 
   public String getTokenDecimals() {
     return tokenDecimals;
@@ -136,11 +79,11 @@ public class GetContractDetailsByAddressRI {
   }
 
    /**
-   * Token name
+   * Specifies the token&#39;s name.
    * @return tokenName
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Token name")
+  @ApiModelProperty(example = "Band Protocol", value = "Specifies the token's name.")
 
   public String getTokenName() {
     return tokenName;
@@ -159,11 +102,11 @@ public class GetContractDetailsByAddressRI {
   }
 
    /**
-   * Token symbol
+   * Defines the unique symbol of the token.
    * @return tokenSymbol
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Token symbol")
+  @ApiModelProperty(example = "BAND", value = "Defines the unique symbol of the token.")
 
   public String getTokenSymbol() {
     return tokenSymbol;
@@ -182,11 +125,10 @@ public class GetContractDetailsByAddressRI {
   }
 
    /**
-   * Token type
+   * Defines the type of the token.
    * @return tokenType
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Token type")
+  @ApiModelProperty(example = "ERC-20", required = true, value = "Defines the type of the token.")
 
   public String getTokenType() {
     return tokenType;
@@ -198,28 +140,6 @@ public class GetContractDetailsByAddressRI {
   }
 
 
-  public GetContractDetailsByAddressRI tokensBalance(String tokensBalance) {
-    
-    this.tokensBalance = tokensBalance;
-    return this;
-  }
-
-   /**
-   * Token balance
-   * @return tokensBalance
-  **/
-  @ApiModelProperty(required = true, value = "Token balance")
-
-  public String getTokensBalance() {
-    return tokensBalance;
-  }
-
-
-  public void setTokensBalance(String tokensBalance) {
-    this.tokensBalance = tokensBalance;
-  }
-
-
   public GetContractDetailsByAddressRI totalSupply(String totalSupply) {
     
     this.totalSupply = totalSupply;
@@ -227,10 +147,10 @@ public class GetContractDetailsByAddressRI {
   }
 
    /**
-   * Token total supply
+   * Defines the total number of tokens created that exist on the market minus the ones that have been burned.
    * @return totalSupply
   **/
-  @ApiModelProperty(required = true, value = "Token total supply")
+  @ApiModelProperty(example = "1000000", required = true, value = "Defines the total number of tokens created that exist on the market minus the ones that have been burned.")
 
   public String getTotalSupply() {
     return totalSupply;
@@ -251,32 +171,26 @@ public class GetContractDetailsByAddressRI {
       return false;
     }
     GetContractDetailsByAddressRI getContractDetailsByAddressRI = (GetContractDetailsByAddressRI) o;
-    return Objects.equals(this.confirmedBalance, getContractDetailsByAddressRI.confirmedBalance) &&
-        Objects.equals(this.creatorAddress, getContractDetailsByAddressRI.creatorAddress) &&
-        Objects.equals(this.tokenDecimals, getContractDetailsByAddressRI.tokenDecimals) &&
+    return Objects.equals(this.tokenDecimals, getContractDetailsByAddressRI.tokenDecimals) &&
         Objects.equals(this.tokenName, getContractDetailsByAddressRI.tokenName) &&
         Objects.equals(this.tokenSymbol, getContractDetailsByAddressRI.tokenSymbol) &&
         Objects.equals(this.tokenType, getContractDetailsByAddressRI.tokenType) &&
-        Objects.equals(this.tokensBalance, getContractDetailsByAddressRI.tokensBalance) &&
         Objects.equals(this.totalSupply, getContractDetailsByAddressRI.totalSupply);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confirmedBalance, creatorAddress, tokenDecimals, tokenName, tokenSymbol, tokenType, tokensBalance, totalSupply);
+    return Objects.hash(tokenDecimals, tokenName, tokenSymbol, tokenType, totalSupply);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetContractDetailsByAddressRI {\n");
-    sb.append("    confirmedBalance: ").append(toIndentedString(confirmedBalance)).append("\n");
-    sb.append("    creatorAddress: ").append(toIndentedString(creatorAddress)).append("\n");
     sb.append("    tokenDecimals: ").append(toIndentedString(tokenDecimals)).append("\n");
     sb.append("    tokenName: ").append(toIndentedString(tokenName)).append("\n");
     sb.append("    tokenSymbol: ").append(toIndentedString(tokenSymbol)).append("\n");
     sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");
-    sb.append("    tokensBalance: ").append(toIndentedString(tokensBalance)).append("\n");
     sb.append("    totalSupply: ").append(toIndentedString(totalSupply)).append("\n");
     sb.append("}");
     return sb.toString();

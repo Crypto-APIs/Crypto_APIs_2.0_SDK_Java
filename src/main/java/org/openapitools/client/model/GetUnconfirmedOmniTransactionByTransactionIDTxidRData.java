@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionI
 /**
  * GetUnconfirmedOmniTransactionByTransactionIDTxidRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class GetUnconfirmedOmniTransactionByTransactionIDTxidRData {
   public static final String SERIALIZED_NAME_ITEM = "item";
   @SerializedName(SERIALIZED_NAME_ITEM)

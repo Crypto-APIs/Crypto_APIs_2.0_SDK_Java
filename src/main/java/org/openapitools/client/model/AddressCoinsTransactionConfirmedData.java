@@ -29,7 +29,7 @@ import org.openapitools.client.model.AddressCoinsTransactionConfirmedDataItem;
  * Specifies all data, as attributes, included into the callback notification, which depends on the &#x60;event&#x60;.
  */
 @ApiModel(description = "Specifies all data, as attributes, included into the callback notification, which depends on the `event`.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class AddressCoinsTransactionConfirmedData {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -54,7 +54,7 @@ public class AddressCoinsTransactionConfirmedData {
    * Represents the Crypto APIs 2.0 product which sends the callback.
    * @return product
   **/
-  @ApiModelProperty(example = "Blockchain Events", required = true, value = "Represents the Crypto APIs 2.0 product which sends the callback.")
+  @ApiModelProperty(example = "Blockchain Data", required = true, value = "Represents the Crypto APIs 2.0 product which sends the callback.")
 
   public String getProduct() {
     return product;

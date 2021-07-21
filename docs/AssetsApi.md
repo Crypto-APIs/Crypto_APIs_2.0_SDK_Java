@@ -9,11 +9,11 @@ Method | HTTP request | Description
 
 <a name="listAssetsDetails"></a>
 # **listAssetsDetails**
-> ListAssetsDetailsR listAssetsDetails(context, assetType, limit, offset)
+> ListAssetsDetailsR listAssetsDetails(context, assetType, cryptoType, limit, offset, waasEnabled)
 
 List Assets Details
 
-This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
+This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
 
 ### Example
 ```java
@@ -39,10 +39,12 @@ public class Example {
     AssetsApi apiInstance = new AssetsApi(defaultClient);
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     String assetType = "crypto"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
+    String cryptoType = "coin"; // String | Subtype of the crypto assets. Could be COIN or TOKEN
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    Boolean waasEnabled = true; // Boolean | Show only if WaaS is/not enabled
     try {
-      ListAssetsDetailsR result = apiInstance.listAssetsDetails(context, assetType, limit, offset);
+      ListAssetsDetailsR result = apiInstance.listAssetsDetails(context, assetType, cryptoType, limit, offset, waasEnabled);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AssetsApi#listAssetsDetails");
@@ -61,8 +63,10 @@ Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **assetType** | **String**| Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. | [optional] [enum: fiat, crypto]
+ **cryptoType** | **String**| Subtype of the crypto assets. Could be COIN or TOKEN | [optional] [enum: coin, token]
  **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50]
  **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0]
+ **waasEnabled** | **Boolean**| Show only if WaaS is/not enabled | [optional]
 
 ### Return type
 

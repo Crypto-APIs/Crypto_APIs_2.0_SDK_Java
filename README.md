@@ -2,7 +2,7 @@
 
 CryptoAPIs
 - API version: 2.0.0
-  - Build date: 2021-05-13T11:47:47.583665Z[Etc/UTC]
+  - Build date: 2021-07-20T13:36:32.071127Z[Etc/UTC]
 
 Crypto APIs 2.0 is a complex and innovative infrastructure layer that radically simplifies the development of any Blockchain and Crypto related applications. Organized around REST, Crypto APIs 2.0 can assist both novice Bitcoin/Ethereum enthusiasts and crypto experts with the development of their blockchain applications. Crypto APIs 2.0 provides unified endpoints and data, raw data, automatic tokens and coins forwardings, callback functionalities, and much more.
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.cryptoapis</groupId>
   <artifactId>cryptoapis-sdk</artifactId>
-  <version>1.0.1</version>
+  <version>1.1.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.cryptoapis:cryptoapis-sdk:1.0.1"
+compile "io.cryptoapis:cryptoapis-sdk:1.1.0"
 ```
 
 ### Others
@@ -64,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/cryptoapis-sdk-1.0.1.jar`
+* `target/cryptoapis-sdk-1.1.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -95,10 +95,12 @@ public class Example {
     AssetsApi apiInstance = new AssetsApi(defaultClient);
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     String assetType = "crypto"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
+    String cryptoType = "coin"; // String | Subtype of the crypto assets. Could be COIN or TOKEN
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    Boolean waasEnabled = true; // Boolean | Show only if WaaS is/not enabled
     try {
-      ListAssetsDetailsR result = apiInstance.listAssetsDetails(context, assetType, limit, offset);
+      ListAssetsDetailsR result = apiInstance.listAssetsDetails(context, assetType, cryptoType, limit, offset, waasEnabled);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling AssetsApi#listAssetsDetails");
@@ -131,13 +133,20 @@ Class | Method | HTTP request | Description
 *CreateSubscriptionsForApi* | [**newBlock**](docs/CreateSubscriptionsForApi.md#newBlock) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/block-mined | New Block
 *CreateSubscriptionsForApi* | [**newConfirmedCoinsTransactions**](docs/CreateSubscriptionsForApi.md#newConfirmedCoinsTransactions) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-coins-transactions-confirmed | New confirmed coins transactions
 *CreateSubscriptionsForApi* | [**newConfirmedCoinsTransactionsAndEachConfirmation**](docs/CreateSubscriptionsForApi.md#newConfirmedCoinsTransactionsAndEachConfirmation) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-coins-transactions-confirmed-each-confirmation | New confirmed coins transactions and each confirmation
+*CreateSubscriptionsForApi* | [**newConfirmedInternalTransactions**](docs/CreateSubscriptionsForApi.md#newConfirmedInternalTransactions) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-internal-transactions-confirmed | New confirmed internal transactions
+*CreateSubscriptionsForApi* | [**newConfirmedInternalTransactionsAndEachConfirmation**](docs/CreateSubscriptionsForApi.md#newConfirmedInternalTransactionsAndEachConfirmation) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-internal-transactions-confirmed-each-confirmation | New confirmed internal transactions and each confirmation
 *CreateSubscriptionsForApi* | [**newConfirmedTokensTransactions**](docs/CreateSubscriptionsForApi.md#newConfirmedTokensTransactions) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-tokens-transactions-confirmed | New confirmed tokens transactions
 *CreateSubscriptionsForApi* | [**newConfirmedTokensTransactionsAndEachConfirmation**](docs/CreateSubscriptionsForApi.md#newConfirmedTokensTransactionsAndEachConfirmation) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-tokens-transactions-confirmed-each-confirmation | New confirmed tokens transactions and each confirmation
 *CreateSubscriptionsForApi* | [**newUnconfirmedCoinsTransactions**](docs/CreateSubscriptionsForApi.md#newUnconfirmedCoinsTransactions) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-coins-transactions-unconfirmed | New unconfirmed coins transactions
 *CreateSubscriptionsForApi* | [**newUnconfirmedTokensTransactions**](docs/CreateSubscriptionsForApi.md#newUnconfirmedTokensTransactions) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-tokens-transactions-unconfirmed | New unconfirmed tokens transactions
-*DefaultApi* | [**getContractDetailsByAddress**](docs/DefaultApi.md#getContractDetailsByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{contractAddress}/contract | Get Contract Details by Address
 *ExchangeRatesApi* | [**getExchangeRateByAssetSymbols**](docs/ExchangeRatesApi.md#getExchangeRateByAssetSymbols) | **GET** /market-data/exchange-rates/by-symbols/{fromAssetSymbol}/{toAssetSymbol} | Get Exchange Rate By Asset Symbols
 *ExchangeRatesApi* | [**getExchangeRateByAssetsIDs**](docs/ExchangeRatesApi.md#getExchangeRateByAssetsIDs) | **GET** /market-data/exchange-rates/by-asset-ids/{fromAssetId}/{toAssetId} | Get Exchange Rate By Assets IDs
+*GeneratingApi* | [**generateReceivingAddress**](docs/GeneratingApi.md#generateReceivingAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses | Generate Receiving Address
+*InformativeApi* | [**getWalletAssetDetails**](docs/InformativeApi.md#getWalletAssetDetails) | **GET** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network} | Get Wallet Asset Details
+*InformativeApi* | [**listReceivingAddresses**](docs/InformativeApi.md#listReceivingAddresses) | **GET** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses | List Receiving Addresses
+*InformativeApi* | [**listSupportedTokens**](docs/InformativeApi.md#listSupportedTokens) | **GET** /wallet-as-a-service/info/{blockchain}/{network}/supported-tokens | List Supported Tokens
+*InternalApi* | [**getInternalTransactionByTransactionHashAndOperationId**](docs/InternalApi.md#getInternalTransactionByTransactionHashAndOperationId) | **GET** /blockchain-data/{blockchain}/{network}/transactions/{transactionHash}/internal/{operationId} | Get Internal Transaction by Transaction Hash and Operation Id
+*InternalApi* | [**listInternalTransactionDetailsByTransactionHash**](docs/InternalApi.md#listInternalTransactionDetailsByTransactionHash) | **GET** /blockchain-data/{blockchain}/{network}/transactions/{transactionHash}/internal | List Internal Transaction Details by Transaction Hash
 *ManageSubscriptionsApi* | [**deleteBlockchainEventSubscription**](docs/ManageSubscriptionsApi.md#deleteBlockchainEventSubscription) | **DELETE** /blockchain-events/{blockchain}/{network}/subscriptions/{referenceId} | Delete Blockchain Event Subscription
 *ManageSubscriptionsApi* | [**listBlockchainEventsSubscriptions**](docs/ManageSubscriptionsApi.md#listBlockchainEventsSubscriptions) | **GET** /blockchain-events/{blockchain}/{network}/subscriptions | List Blockchain Events Subscriptions
 *MetadataApi* | [**listSupportedAssets**](docs/MetadataApi.md#listSupportedAssets) | **GET** /market-data/assets/supported | List Supported Assets
@@ -149,9 +158,13 @@ Class | Method | HTTP request | Description
 *OmniLayerApi* | [**listOmniTransactionsByBlockHeight**](docs/OmniLayerApi.md#listOmniTransactionsByBlockHeight) | **GET** /blockchain-data/{blockchain}/{network}/omni/blocks/height/{blockHeight}/transactions | List Omni Transactions By Block Height
 *OmniLayerApi* | [**listUnconfirmedOmniTransactionsByAddress**](docs/OmniLayerApi.md#listUnconfirmedOmniTransactionsByAddress) | **GET** /blockchain-data/{blockchain}/{network}/omni/address-transactions-unconfirmed/{address} | List Unconfirmed Omni Transactions By Address
 *OmniLayerApi* | [**listUnconfirmedOmniTransactionsByPropertyID**](docs/OmniLayerApi.md#listUnconfirmedOmniTransactionsByPropertyID) | **GET** /blockchain-data/{blockchain}/{network}/omni/properties/{propertyId}/transactions | List Unconfirmed Omni Transactions By Property ID
+*TokensApi* | [**getContractDetailsByAddress**](docs/TokensApi.md#getContractDetailsByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{contractAddress}/contract | Get Contract Details by Address
 *TokensApi* | [**listTokensByAddress**](docs/TokensApi.md#listTokensByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/tokens | List Tokens By Address
 *TokensApi* | [**listTokensTransfersByAddress**](docs/TokensApi.md#listTokensTransfersByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/tokens-transfers | List Tokens Transfers By Address
 *TokensApi* | [**listTokensTransfersByTransactionHash**](docs/TokensApi.md#listTokensTransfersByTransactionHash) | **GET** /blockchain-data/{blockchain}/{network}/transactions/{transactionHash}/tokens-transfers | List Tokens Transfers By Transaction Hash
+*TransactionsApi* | [**createCoinsTransactionRequestFromAddress**](docs/TransactionsApi.md#createCoinsTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/transaction-requests | Create Coins Transaction Request from Address
+*TransactionsApi* | [**createCoinsTransactionRequestFromWallet**](docs/TransactionsApi.md#createCoinsTransactionRequestFromWallet) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/transaction-requests | Create Coins Transaction Request from Wallet
+*TransactionsApi* | [**createTokensTransactionRequestFromAddress**](docs/TransactionsApi.md#createTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/token-transaction-requests | Create Tokens Transaction Request from Address
 *UnifiedEndpointsApi* | [**getAddressDetails**](docs/UnifiedEndpointsApi.md#getAddressDetails) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address} | Get Address Details
 *UnifiedEndpointsApi* | [**getBlockDetailsByBlockHash**](docs/UnifiedEndpointsApi.md#getBlockDetailsByBlockHash) | **GET** /blockchain-data/{blockchain}/{network}/blocks/hash/{blockHash} | Get Block Details By Block Hash
 *UnifiedEndpointsApi* | [**getBlockDetailsByBlockHeight**](docs/UnifiedEndpointsApi.md#getBlockDetailsByBlockHeight) | **GET** /blockchain-data/{blockchain}/{network}/blocks/height/{height} | Get Block Details By Block Height
@@ -165,13 +178,22 @@ Class | Method | HTTP request | Description
 *UtxoBasedApi* | [**listHDWalletXPubYPubZPubTransactions**](docs/UtxoBasedApi.md#listHDWalletXPubYPubZPubTransactions) | **GET** /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/transactions | List HD Wallet (xPub, yPub, zPub) Transactions
 *UtxoBasedApi* | [**syncHDWalletXPubYPubZPub**](docs/UtxoBasedApi.md#syncHDWalletXPubYPubZPub) | **POST** /blockchain-data/{blockchain}/{network}/hd/sync | Sync HD Wallet (xPub, yPub, zPub)
 *ValidatingApi* | [**validateAddress**](docs/ValidatingApi.md#validateAddress) | **POST** /blockchain-tools/{blockchain}/{network}/addresses/validate | Validate Address
-*XrpRippleApi* | [**getLatestMinedXRPRippleBlock**](docs/XrpRippleApi.md#getLatestMinedXRPRippleBlock) | **GET** /blockchain-data/xrp/{network}/blocks/last | Get Latest Mined XRP (Ripple) Block
-*XrpRippleApi* | [**getXRPRippleAddressDetails**](docs/XrpRippleApi.md#getXRPRippleAddressDetails) | **GET** /blockchain-data/xrp/{network}/addresses/{address} | Get XRP (Ripple) Address Details
-*XrpRippleApi* | [**getXRPRippleBlockDetailsByBlockHash**](docs/XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHash) | **GET** /blockchain-data/xrp/{network}/blocks/hash/{blockHash} | Get XRP (Ripple) Block Details By Block Hash
-*XrpRippleApi* | [**getXRPRippleBlockDetailsByBlockHeight**](docs/XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHeight) | **GET** /blockchain-data/xrp/{network}/blocks/height/{height} | Get XRP (Ripple) Block Details By Block Height
-*XrpRippleApi* | [**getXRPRippleTransactionDetailsByTransactionID**](docs/XrpRippleApi.md#getXRPRippleTransactionDetailsByTransactionID) | **GET** /blockchain-data/xrp/{network}/transactions/{transactionHash} | Get XRP (Ripple) Transaction Details By Transaction ID
-*XrpRippleApi* | [**listXRPRippleTransactionsByAddress**](docs/XrpRippleApi.md#listXRPRippleTransactionsByAddress) | **GET** /blockchain-data/xrp/{network}/addresses/{address}/transactions | List XRP (Ripple) Transactions by Address
-*XrpRippleApi* | [**listXRPRippleTransactionsByBlockHash**](docs/XrpRippleApi.md#listXRPRippleTransactionsByBlockHash) | **GET** /blockchain-data/xrp/{network}/blocks/hash/{blockHash}/transactions | List XRP (Ripple) Transactions By Block Hash
+*XrpRippleApi* | [**getLatestMinedXRPRippleBlock**](docs/XrpRippleApi.md#getLatestMinedXRPRippleBlock) | **GET** /blockchain-data/xrp-specific/{network}/blocks/last | Get Latest Mined XRP (Ripple) Block
+*XrpRippleApi* | [**getXRPRippleAddressDetails**](docs/XrpRippleApi.md#getXRPRippleAddressDetails) | **GET** /blockchain-data/xrp-specific/{network}/addresses/{address} | Get XRP (Ripple) Address Details
+*XrpRippleApi* | [**getXRPRippleBlockDetailsByBlockHash**](docs/XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHash) | **GET** /blockchain-data/xrp-specific/{network}/blocks/hash/{blockHash} | Get XRP (Ripple) Block Details By Block Hash
+*XrpRippleApi* | [**getXRPRippleBlockDetailsByBlockHeight**](docs/XrpRippleApi.md#getXRPRippleBlockDetailsByBlockHeight) | **GET** /blockchain-data/xrp-specific/{network}/blocks/height/{blockHeight} | Get XRP (Ripple) Block Details By Block Height
+*XrpRippleApi* | [**getXRPRippleTransactionDetailsByTransactionID**](docs/XrpRippleApi.md#getXRPRippleTransactionDetailsByTransactionID) | **GET** /blockchain-data/xrp-specific/{network}/transactions/{transactionHash} | Get XRP (Ripple) Transaction Details By Transaction ID
+*XrpRippleApi* | [**listXRPRippleTransactionsByAddress**](docs/XrpRippleApi.md#listXRPRippleTransactionsByAddress) | **GET** /blockchain-data/xrp-specific/{network}/addresses/{address}/transactions | List XRP (Ripple) Transactions by Address
+*XrpRippleApi* | [**listXRPRippleTransactionsByBlockHash**](docs/XrpRippleApi.md#listXRPRippleTransactionsByBlockHash) | **GET** /blockchain-data/xrp-specific/{network}/blocks/hash/{blockHash}/transactions | List XRP (Ripple) Transactions By Block Hash
+*XrpRippleApi* | [**listXRPRippleTransactionsByBlockHeight**](docs/XrpRippleApi.md#listXRPRippleTransactionsByBlockHeight) | **GET** /blockchain-data/xrp-specific/{network}/blocks/height/{blockHeight}/transactions | List XRP (Ripple) Transactions By Block Height
+*ZilliqaApi* | [**getLatestMinedZilliqaBlock**](docs/ZilliqaApi.md#getLatestMinedZilliqaBlock) | **GET** /blockchain-data/zilliqa-specific/{network}/blocks/last | Get Latest Mined Zilliqa Block
+*ZilliqaApi* | [**getZilliqaAddressDetails**](docs/ZilliqaApi.md#getZilliqaAddressDetails) | **GET** /blockchain-data/zilliqa-specific/{network}/addresses/{address} | Get Zilliqa Address Details
+*ZilliqaApi* | [**getZilliqaBlockDetailsByBlockHash**](docs/ZilliqaApi.md#getZilliqaBlockDetailsByBlockHash) | **GET** /blockchain-data/zilliqa-specific/{network}/blocks/hash/{blockHash} | Get Zilliqa Block Details By Block Hash
+*ZilliqaApi* | [**getZilliqaBlockDetailsByBlockHeight**](docs/ZilliqaApi.md#getZilliqaBlockDetailsByBlockHeight) | **GET** /blockchain-data/zilliqa-specific/{network}/blocks/height/{blockHeight} | Get Zilliqa Block Details By Block Height
+*ZilliqaApi* | [**getZilliqaTransactionDetailsByTransactionID**](docs/ZilliqaApi.md#getZilliqaTransactionDetailsByTransactionID) | **GET** /blockchain-data/zilliqa-specific/{network}/transactions/{transactionHash} | Get Zilliqa Transaction Details by Transaction ID
+*ZilliqaApi* | [**listZilliqaTransactionsByAddress**](docs/ZilliqaApi.md#listZilliqaTransactionsByAddress) | **GET** /blockchain-data/zilliqa-specific/{network}/addresses/{address}/transactions | List Zilliqa Transactions by Address
+*ZilliqaApi* | [**listZilliqaTransactionsByBlockHash**](docs/ZilliqaApi.md#listZilliqaTransactionsByBlockHash) | **GET** /blockchain-data/zilliqa-specific/{network}/blocks/hash/{blockHash}/transactions | List Zilliqa Transactions By Block Hash
+*ZilliqaApi* | [**listZilliqaTransactionsByBlockHeight**](docs/ZilliqaApi.md#listZilliqaTransactionsByBlockHeight) | **GET** /blockchain-data/zilliqa-specific/{network}/blocks/height/{blockHeight}/transactions | List Zilliqa Transactions By Block Height
 
 
 ## Documentation for Models
@@ -232,6 +254,8 @@ Class | Method | HTTP request | Description
  - [BlockMinedDataItem](docs/BlockMinedDataItem.md)
  - [BlockchainDataBlockNotFound](docs/BlockchainDataBlockNotFound.md)
  - [BlockchainDataBlockNotFoundError](docs/BlockchainDataBlockNotFoundError.md)
+ - [BlockchainDataInternalTransactionNotFound](docs/BlockchainDataInternalTransactionNotFound.md)
+ - [BlockchainDataInternalTransactionNotFoundError](docs/BlockchainDataInternalTransactionNotFoundError.md)
  - [BlockchainDataTransactionNotFound](docs/BlockchainDataTransactionNotFound.md)
  - [BlockchainDataTransactionNotFoundError](docs/BlockchainDataTransactionNotFoundError.md)
  - [BlockchainEventsCallbacksLimitReached](docs/BlockchainEventsCallbacksLimitReached.md)
@@ -264,6 +288,33 @@ Class | Method | HTTP request | Description
  - [CreateAutomaticTokensForwardingRITS](docs/CreateAutomaticTokensForwardingRITS.md)
  - [CreateAutomaticTokensForwardingRITSBOT](docs/CreateAutomaticTokensForwardingRITSBOT.md)
  - [CreateAutomaticTokensForwardingRITSET](docs/CreateAutomaticTokensForwardingRITSET.md)
+ - [CreateCoinsTransactionRequestFromAddressR](docs/CreateCoinsTransactionRequestFromAddressR.md)
+ - [CreateCoinsTransactionRequestFromAddressRB](docs/CreateCoinsTransactionRequestFromAddressRB.md)
+ - [CreateCoinsTransactionRequestFromAddressRBData](docs/CreateCoinsTransactionRequestFromAddressRBData.md)
+ - [CreateCoinsTransactionRequestFromAddressRBDataItem](docs/CreateCoinsTransactionRequestFromAddressRBDataItem.md)
+ - [CreateCoinsTransactionRequestFromAddressRData](docs/CreateCoinsTransactionRequestFromAddressRData.md)
+ - [CreateCoinsTransactionRequestFromAddressRI](docs/CreateCoinsTransactionRequestFromAddressRI.md)
+ - [CreateCoinsTransactionRequestFromAddressRIRecipients](docs/CreateCoinsTransactionRequestFromAddressRIRecipients.md)
+ - [CreateCoinsTransactionRequestFromAddressRISenders](docs/CreateCoinsTransactionRequestFromAddressRISenders.md)
+ - [CreateCoinsTransactionRequestFromWalletR](docs/CreateCoinsTransactionRequestFromWalletR.md)
+ - [CreateCoinsTransactionRequestFromWalletRB](docs/CreateCoinsTransactionRequestFromWalletRB.md)
+ - [CreateCoinsTransactionRequestFromWalletRBData](docs/CreateCoinsTransactionRequestFromWalletRBData.md)
+ - [CreateCoinsTransactionRequestFromWalletRBDataItem](docs/CreateCoinsTransactionRequestFromWalletRBDataItem.md)
+ - [CreateCoinsTransactionRequestFromWalletRBDataItemDestinations](docs/CreateCoinsTransactionRequestFromWalletRBDataItemDestinations.md)
+ - [CreateCoinsTransactionRequestFromWalletRData](docs/CreateCoinsTransactionRequestFromWalletRData.md)
+ - [CreateCoinsTransactionRequestFromWalletRI](docs/CreateCoinsTransactionRequestFromWalletRI.md)
+ - [CreateCoinsTransactionRequestFromWalletRIRecipients](docs/CreateCoinsTransactionRequestFromWalletRIRecipients.md)
+ - [CreateTokensTransactionRequestFromAddressR](docs/CreateTokensTransactionRequestFromAddressR.md)
+ - [CreateTokensTransactionRequestFromAddressRB](docs/CreateTokensTransactionRequestFromAddressRB.md)
+ - [CreateTokensTransactionRequestFromAddressRBData](docs/CreateTokensTransactionRequestFromAddressRBData.md)
+ - [CreateTokensTransactionRequestFromAddressRBDataItem](docs/CreateTokensTransactionRequestFromAddressRBDataItem.md)
+ - [CreateTokensTransactionRequestFromAddressRData](docs/CreateTokensTransactionRequestFromAddressRData.md)
+ - [CreateTokensTransactionRequestFromAddressRI](docs/CreateTokensTransactionRequestFromAddressRI.md)
+ - [CreateTokensTransactionRequestFromAddressRIRecipients](docs/CreateTokensTransactionRequestFromAddressRIRecipients.md)
+ - [CreateTokensTransactionRequestFromAddressRISenders](docs/CreateTokensTransactionRequestFromAddressRISenders.md)
+ - [CreateTokensTransactionRequestFromAddressRITokenTypeSpecificData](docs/CreateTokensTransactionRequestFromAddressRITokenTypeSpecificData.md)
+ - [CreateTokensTransactionRequestFromAddressRITokenTypeSpecificDataBitcoinOmniToken](docs/CreateTokensTransactionRequestFromAddressRITokenTypeSpecificDataBitcoinOmniToken.md)
+ - [CreateTokensTransactionRequestFromAddressRITokenTypeSpecificDataEthereumErc20Token](docs/CreateTokensTransactionRequestFromAddressRITokenTypeSpecificDataEthereumErc20Token.md)
  - [DeleteAutomaticCoinsForwardingR](docs/DeleteAutomaticCoinsForwardingR.md)
  - [DeleteAutomaticCoinsForwardingRData](docs/DeleteAutomaticCoinsForwardingRData.md)
  - [DeleteAutomaticCoinsForwardingRI](docs/DeleteAutomaticCoinsForwardingRI.md)
@@ -282,6 +333,12 @@ Class | Method | HTTP request | Description
  - [EndpointNotAllowedForPlanError](docs/EndpointNotAllowedForPlanError.md)
  - [FeatureMainnetsNotAllowedForPlan](docs/FeatureMainnetsNotAllowedForPlan.md)
  - [FeatureMainnetsNotAllowedForPlanError](docs/FeatureMainnetsNotAllowedForPlanError.md)
+ - [GenerateReceivingAddressR](docs/GenerateReceivingAddressR.md)
+ - [GenerateReceivingAddressRB](docs/GenerateReceivingAddressRB.md)
+ - [GenerateReceivingAddressRBData](docs/GenerateReceivingAddressRBData.md)
+ - [GenerateReceivingAddressRBDataItem](docs/GenerateReceivingAddressRBDataItem.md)
+ - [GenerateReceivingAddressRData](docs/GenerateReceivingAddressRData.md)
+ - [GenerateReceivingAddressRI](docs/GenerateReceivingAddressRI.md)
  - [GetAddressDetailsR](docs/GetAddressDetailsR.md)
  - [GetAddressDetailsRData](docs/GetAddressDetailsRData.md)
  - [GetAddressDetailsRI](docs/GetAddressDetailsRI.md)
@@ -329,6 +386,9 @@ Class | Method | HTTP request | Description
  - [GetHDWalletXPubYPubZPubDetailsR](docs/GetHDWalletXPubYPubZPubDetailsR.md)
  - [GetHDWalletXPubYPubZPubDetailsRData](docs/GetHDWalletXPubYPubZPubDetailsRData.md)
  - [GetHDWalletXPubYPubZPubDetailsRI](docs/GetHDWalletXPubYPubZPubDetailsRI.md)
+ - [GetInternalTransactionByTransactionHashAndOperationIdR](docs/GetInternalTransactionByTransactionHashAndOperationIdR.md)
+ - [GetInternalTransactionByTransactionHashAndOperationIdRData](docs/GetInternalTransactionByTransactionHashAndOperationIdRData.md)
+ - [GetInternalTransactionByTransactionHashAndOperationIdRI](docs/GetInternalTransactionByTransactionHashAndOperationIdRI.md)
  - [GetLatestMinedBlockR](docs/GetLatestMinedBlockR.md)
  - [GetLatestMinedBlockRData](docs/GetLatestMinedBlockRData.md)
  - [GetLatestMinedBlockRI](docs/GetLatestMinedBlockRI.md)
@@ -345,6 +405,9 @@ Class | Method | HTTP request | Description
  - [GetLatestMinedXRPRippleBlockRI](docs/GetLatestMinedXRPRippleBlockRI.md)
  - [GetLatestMinedXRPRippleBlockRITotalCoins](docs/GetLatestMinedXRPRippleBlockRITotalCoins.md)
  - [GetLatestMinedXRPRippleBlockRITotalFees](docs/GetLatestMinedXRPRippleBlockRITotalFees.md)
+ - [GetLatestMinedZilliqaBlockR](docs/GetLatestMinedZilliqaBlockR.md)
+ - [GetLatestMinedZilliqaBlockRData](docs/GetLatestMinedZilliqaBlockRData.md)
+ - [GetLatestMinedZilliqaBlockRI](docs/GetLatestMinedZilliqaBlockRI.md)
  - [GetOmniTransactionDetailsByTransactionIDTxidR](docs/GetOmniTransactionDetailsByTransactionIDTxidR.md)
  - [GetOmniTransactionDetailsByTransactionIDTxidRData](docs/GetOmniTransactionDetailsByTransactionIDTxidRData.md)
  - [GetOmniTransactionDetailsByTransactionIDTxidRI](docs/GetOmniTransactionDetailsByTransactionIDTxidRI.md)
@@ -389,6 +452,12 @@ Class | Method | HTTP request | Description
  - [GetUnconfirmedOmniTransactionByTransactionIDTxidRI](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRI.md)
  - [GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients.md)
  - [GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders.md)
+ - [GetWalletAssetDetailsR](docs/GetWalletAssetDetailsR.md)
+ - [GetWalletAssetDetailsRData](docs/GetWalletAssetDetailsRData.md)
+ - [GetWalletAssetDetailsRI](docs/GetWalletAssetDetailsRI.md)
+ - [GetWalletAssetDetailsRIConfirmedBalance](docs/GetWalletAssetDetailsRIConfirmedBalance.md)
+ - [GetWalletAssetDetailsRIRecievedConfirmedAmount](docs/GetWalletAssetDetailsRIRecievedConfirmedAmount.md)
+ - [GetWalletAssetDetailsRISentConfirmedAmount](docs/GetWalletAssetDetailsRISentConfirmedAmount.md)
  - [GetXRPRippleAddressDetailsR](docs/GetXRPRippleAddressDetailsR.md)
  - [GetXRPRippleAddressDetailsRData](docs/GetXRPRippleAddressDetailsRData.md)
  - [GetXRPRippleAddressDetailsRI](docs/GetXRPRippleAddressDetailsRI.md)
@@ -411,6 +480,22 @@ Class | Method | HTTP request | Description
  - [GetXRPRippleTransactionDetailsByTransactionIDRIRecipients](docs/GetXRPRippleTransactionDetailsByTransactionIDRIRecipients.md)
  - [GetXRPRippleTransactionDetailsByTransactionIDRISenders](docs/GetXRPRippleTransactionDetailsByTransactionIDRISenders.md)
  - [GetXRPRippleTransactionDetailsByTransactionIDRIValue](docs/GetXRPRippleTransactionDetailsByTransactionIDRIValue.md)
+ - [GetZilliqaAddressDetailsR](docs/GetZilliqaAddressDetailsR.md)
+ - [GetZilliqaAddressDetailsRData](docs/GetZilliqaAddressDetailsRData.md)
+ - [GetZilliqaAddressDetailsRI](docs/GetZilliqaAddressDetailsRI.md)
+ - [GetZilliqaAddressDetailsRIBalance](docs/GetZilliqaAddressDetailsRIBalance.md)
+ - [GetZilliqaBlockDetailsByBlockHashR](docs/GetZilliqaBlockDetailsByBlockHashR.md)
+ - [GetZilliqaBlockDetailsByBlockHashRData](docs/GetZilliqaBlockDetailsByBlockHashRData.md)
+ - [GetZilliqaBlockDetailsByBlockHashRI](docs/GetZilliqaBlockDetailsByBlockHashRI.md)
+ - [GetZilliqaBlockDetailsByBlockHeightR](docs/GetZilliqaBlockDetailsByBlockHeightR.md)
+ - [GetZilliqaBlockDetailsByBlockHeightRData](docs/GetZilliqaBlockDetailsByBlockHeightRData.md)
+ - [GetZilliqaBlockDetailsByBlockHeightRI](docs/GetZilliqaBlockDetailsByBlockHeightRI.md)
+ - [GetZilliqaTransactionDetailsByTransactionIDR](docs/GetZilliqaTransactionDetailsByTransactionIDR.md)
+ - [GetZilliqaTransactionDetailsByTransactionIDRData](docs/GetZilliqaTransactionDetailsByTransactionIDRData.md)
+ - [GetZilliqaTransactionDetailsByTransactionIDRI](docs/GetZilliqaTransactionDetailsByTransactionIDRI.md)
+ - [GetZilliqaTransactionDetailsByTransactionIDRIFee](docs/GetZilliqaTransactionDetailsByTransactionIDRIFee.md)
+ - [GetZilliqaTransactionDetailsByTransactionIDRIRecipients](docs/GetZilliqaTransactionDetailsByTransactionIDRIRecipients.md)
+ - [GetZilliqaTransactionDetailsByTransactionIDRISenders](docs/GetZilliqaTransactionDetailsByTransactionIDRISenders.md)
  - [InsufficientCredits](docs/InsufficientCredits.md)
  - [InsufficientCreditsError](docs/InsufficientCreditsError.md)
  - [InvalidApiKey](docs/InvalidApiKey.md)
@@ -448,6 +533,9 @@ Class | Method | HTTP request | Description
  - [ListHDWalletXPubYPubZPubTransactionsRIFee](docs/ListHDWalletXPubYPubZPubTransactionsRIFee.md)
  - [ListHDWalletXPubYPubZPubTransactionsRIRecipients](docs/ListHDWalletXPubYPubZPubTransactionsRIRecipients.md)
  - [ListHDWalletXPubYPubZPubTransactionsRISenders](docs/ListHDWalletXPubYPubZPubTransactionsRISenders.md)
+ - [ListInternalTransactionDetailsByTransactionHashR](docs/ListInternalTransactionDetailsByTransactionHashR.md)
+ - [ListInternalTransactionDetailsByTransactionHashRData](docs/ListInternalTransactionDetailsByTransactionHashRData.md)
+ - [ListInternalTransactionDetailsByTransactionHashRI](docs/ListInternalTransactionDetailsByTransactionHashRI.md)
  - [ListOmniTokensByAddressR](docs/ListOmniTokensByAddressR.md)
  - [ListOmniTokensByAddressRData](docs/ListOmniTokensByAddressRData.md)
  - [ListOmniTokensByAddressRI](docs/ListOmniTokensByAddressRI.md)
@@ -467,9 +555,15 @@ Class | Method | HTTP request | Description
  - [ListOmniTransactionsByBlockHeightRIFee](docs/ListOmniTransactionsByBlockHeightRIFee.md)
  - [ListOmniTransactionsByBlockHeightRIRecipients](docs/ListOmniTransactionsByBlockHeightRIRecipients.md)
  - [ListOmniTransactionsByBlockHeightRISenders](docs/ListOmniTransactionsByBlockHeightRISenders.md)
+ - [ListReceivingAddressesR](docs/ListReceivingAddressesR.md)
+ - [ListReceivingAddressesRData](docs/ListReceivingAddressesRData.md)
+ - [ListReceivingAddressesRI](docs/ListReceivingAddressesRI.md)
  - [ListSupportedAssetsR](docs/ListSupportedAssetsR.md)
  - [ListSupportedAssetsRData](docs/ListSupportedAssetsRData.md)
  - [ListSupportedAssetsRI](docs/ListSupportedAssetsRI.md)
+ - [ListSupportedTokensR](docs/ListSupportedTokensR.md)
+ - [ListSupportedTokensRData](docs/ListSupportedTokensRData.md)
+ - [ListSupportedTokensRI](docs/ListSupportedTokensRI.md)
  - [ListTokensByAddressR](docs/ListTokensByAddressR.md)
  - [ListTokensByAddressRData](docs/ListTokensByAddressRData.md)
  - [ListTokensByAddressRI](docs/ListTokensByAddressRI.md)
@@ -587,6 +681,26 @@ Class | Method | HTTP request | Description
  - [ListXRPRippleTransactionsByBlockHashRIRecipients](docs/ListXRPRippleTransactionsByBlockHashRIRecipients.md)
  - [ListXRPRippleTransactionsByBlockHashRISenders](docs/ListXRPRippleTransactionsByBlockHashRISenders.md)
  - [ListXRPRippleTransactionsByBlockHashRIValue](docs/ListXRPRippleTransactionsByBlockHashRIValue.md)
+ - [ListXRPRippleTransactionsByBlockHeightR](docs/ListXRPRippleTransactionsByBlockHeightR.md)
+ - [ListXRPRippleTransactionsByBlockHeightRData](docs/ListXRPRippleTransactionsByBlockHeightRData.md)
+ - [ListXRPRippleTransactionsByBlockHeightRI](docs/ListXRPRippleTransactionsByBlockHeightRI.md)
+ - [ListXRPRippleTransactionsByBlockHeightRIFee](docs/ListXRPRippleTransactionsByBlockHeightRIFee.md)
+ - [ListXRPRippleTransactionsByBlockHeightRIOffer](docs/ListXRPRippleTransactionsByBlockHeightRIOffer.md)
+ - [ListXRPRippleTransactionsByBlockHeightRIReceive](docs/ListXRPRippleTransactionsByBlockHeightRIReceive.md)
+ - [ListXRPRippleTransactionsByBlockHeightRIRecipients](docs/ListXRPRippleTransactionsByBlockHeightRIRecipients.md)
+ - [ListXRPRippleTransactionsByBlockHeightRISenders](docs/ListXRPRippleTransactionsByBlockHeightRISenders.md)
+ - [ListXRPRippleTransactionsByBlockHeightRIValue](docs/ListXRPRippleTransactionsByBlockHeightRIValue.md)
+ - [ListZilliqaTransactionsByAddressR](docs/ListZilliqaTransactionsByAddressR.md)
+ - [ListZilliqaTransactionsByAddressRData](docs/ListZilliqaTransactionsByAddressRData.md)
+ - [ListZilliqaTransactionsByAddressRI](docs/ListZilliqaTransactionsByAddressRI.md)
+ - [ListZilliqaTransactionsByAddressRIRecipients](docs/ListZilliqaTransactionsByAddressRIRecipients.md)
+ - [ListZilliqaTransactionsByAddressRISenders](docs/ListZilliqaTransactionsByAddressRISenders.md)
+ - [ListZilliqaTransactionsByBlockHashR](docs/ListZilliqaTransactionsByBlockHashR.md)
+ - [ListZilliqaTransactionsByBlockHashRData](docs/ListZilliqaTransactionsByBlockHashRData.md)
+ - [ListZilliqaTransactionsByBlockHashRI](docs/ListZilliqaTransactionsByBlockHashRI.md)
+ - [ListZilliqaTransactionsByBlockHeightR](docs/ListZilliqaTransactionsByBlockHeightR.md)
+ - [ListZilliqaTransactionsByBlockHeightRData](docs/ListZilliqaTransactionsByBlockHeightRData.md)
+ - [ListZilliqaTransactionsByBlockHeightRI](docs/ListZilliqaTransactionsByBlockHeightRI.md)
  - [MinedTransactionR](docs/MinedTransactionR.md)
  - [MinedTransactionRB](docs/MinedTransactionRB.md)
  - [MinedTransactionRBData](docs/MinedTransactionRBData.md)
@@ -613,6 +727,18 @@ Class | Method | HTTP request | Description
  - [NewConfirmedCoinsTransactionsRBDataItem](docs/NewConfirmedCoinsTransactionsRBDataItem.md)
  - [NewConfirmedCoinsTransactionsRData](docs/NewConfirmedCoinsTransactionsRData.md)
  - [NewConfirmedCoinsTransactionsRI](docs/NewConfirmedCoinsTransactionsRI.md)
+ - [NewConfirmedInternalTransactionsAndEachConfirmationR](docs/NewConfirmedInternalTransactionsAndEachConfirmationR.md)
+ - [NewConfirmedInternalTransactionsAndEachConfirmationRB](docs/NewConfirmedInternalTransactionsAndEachConfirmationRB.md)
+ - [NewConfirmedInternalTransactionsAndEachConfirmationRBData](docs/NewConfirmedInternalTransactionsAndEachConfirmationRBData.md)
+ - [NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem](docs/NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem.md)
+ - [NewConfirmedInternalTransactionsAndEachConfirmationRData](docs/NewConfirmedInternalTransactionsAndEachConfirmationRData.md)
+ - [NewConfirmedInternalTransactionsAndEachConfirmationRI](docs/NewConfirmedInternalTransactionsAndEachConfirmationRI.md)
+ - [NewConfirmedInternalTransactionsR](docs/NewConfirmedInternalTransactionsR.md)
+ - [NewConfirmedInternalTransactionsRB](docs/NewConfirmedInternalTransactionsRB.md)
+ - [NewConfirmedInternalTransactionsRBData](docs/NewConfirmedInternalTransactionsRBData.md)
+ - [NewConfirmedInternalTransactionsRBDataItem](docs/NewConfirmedInternalTransactionsRBDataItem.md)
+ - [NewConfirmedInternalTransactionsRData](docs/NewConfirmedInternalTransactionsRData.md)
+ - [NewConfirmedInternalTransactionsRI](docs/NewConfirmedInternalTransactionsRI.md)
  - [NewConfirmedTokensTransactionsAndEachConfirmationR](docs/NewConfirmedTokensTransactionsAndEachConfirmationR.md)
  - [NewConfirmedTokensTransactionsAndEachConfirmationRB](docs/NewConfirmedTokensTransactionsAndEachConfirmationRB.md)
  - [NewConfirmedTokensTransactionsAndEachConfirmationRBData](docs/NewConfirmedTokensTransactionsAndEachConfirmationRBData.md)
@@ -661,6 +787,17 @@ Class | Method | HTTP request | Description
  - [TransactionMinedData](docs/TransactionMinedData.md)
  - [TransactionMinedDataItem](docs/TransactionMinedDataItem.md)
  - [TransactionMinedDataItemMinedInBlock](docs/TransactionMinedDataItemMinedInBlock.md)
+ - [TransactionRequestApprove](docs/TransactionRequestApprove.md)
+ - [TransactionRequestApproveData](docs/TransactionRequestApproveData.md)
+ - [TransactionRequestApproveDataItem](docs/TransactionRequestApproveDataItem.md)
+ - [TransactionRequestBroadcasted](docs/TransactionRequestBroadcasted.md)
+ - [TransactionRequestBroadcastedData](docs/TransactionRequestBroadcastedData.md)
+ - [TransactionRequestBroadcastedDataItem](docs/TransactionRequestBroadcastedDataItem.md)
+ - [TransactionRequestMined](docs/TransactionRequestMined.md)
+ - [TransactionRequestMinedData](docs/TransactionRequestMinedData.md)
+ - [TransactionRequestReject](docs/TransactionRequestReject.md)
+ - [TransactionRequestRejectData](docs/TransactionRequestRejectData.md)
+ - [TransactionRequestRejectDataItem](docs/TransactionRequestRejectDataItem.md)
  - [UnexpectedServerError](docs/UnexpectedServerError.md)
  - [UnexpectedServerErrorError](docs/UnexpectedServerErrorError.md)
  - [UnsupportedMediaType](docs/UnsupportedMediaType.md)
@@ -673,6 +810,14 @@ Class | Method | HTTP request | Description
  - [ValidateAddressRBDataItem](docs/ValidateAddressRBDataItem.md)
  - [ValidateAddressRData](docs/ValidateAddressRData.md)
  - [ValidateAddressRI](docs/ValidateAddressRI.md)
+ - [WalletAsAServiceDepositAddressesLimitReached](docs/WalletAsAServiceDepositAddressesLimitReached.md)
+ - [WalletAsAServiceDepositAddressesLimitReachedError](docs/WalletAsAServiceDepositAddressesLimitReachedError.md)
+ - [WalletAsAServiceNoDepositAddressesFound](docs/WalletAsAServiceNoDepositAddressesFound.md)
+ - [WalletAsAServiceNoDepositAddressesFoundError](docs/WalletAsAServiceNoDepositAddressesFoundError.md)
+ - [WalletAsAServiceTokenNotSupported](docs/WalletAsAServiceTokenNotSupported.md)
+ - [WalletAsAServiceTokenNotSupportedError](docs/WalletAsAServiceTokenNotSupportedError.md)
+ - [WalletAsAServiceWalletBalanceNotEnough](docs/WalletAsAServiceWalletBalanceNotEnough.md)
+ - [WalletAsAServiceWalletBalanceNotEnoughError](docs/WalletAsAServiceWalletBalanceNotEnoughError.md)
  - [XpubNotSynced](docs/XpubNotSynced.md)
  - [XpubNotSyncedError](docs/XpubNotSyncedError.md)
  - [XpubSyncInProgress](docs/XpubSyncInProgress.md)

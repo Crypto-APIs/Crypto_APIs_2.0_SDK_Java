@@ -39,7 +39,7 @@ import org.openapitools.client.model.ListTransactionsByAddressRIBSL;
 /**
  * ListTransactionsByAddressRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-05-13T11:47:47.583665Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
 public class ListTransactionsByAddressRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -378,7 +378,7 @@ public class ListTransactionsByAddressRIBS {
    * String representation of the transaction status
    * @return transactionStatus
   **/
-  @ApiModelProperty(required = true, value = "String representation of the transaction status")
+  @ApiModelProperty(example = "0x1", required = true, value = "String representation of the transaction status")
 
   public String getTransactionStatus() {
     return transactionStatus;
