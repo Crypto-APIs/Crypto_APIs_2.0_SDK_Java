@@ -6,7 +6,7 @@ Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**createCoinsTransactionRequestFromAddress**](TransactionsApi.md#createCoinsTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/transaction-requests | Create Coins Transaction Request from Address
 [**createCoinsTransactionRequestFromWallet**](TransactionsApi.md#createCoinsTransactionRequestFromWallet) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/transaction-requests | Create Coins Transaction Request from Wallet
-[**createTokensTransactionRequestFromAddress**](TransactionsApi.md#createTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/token-transaction-requests | Create Tokens Transaction Request from Address
+[**createTokensTransactionRequestFromAddress**](TransactionsApi.md#createTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/token-transaction-requests | Create Tokens Transaction Request from Address
 
 
 <a name="createCoinsTransactionRequestFromAddress"></a>
@@ -86,7 +86,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The request has been successful. |  -  |
+**201** | The resource has been successfully created. |  -  |
 **400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
 **401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
@@ -172,7 +172,7 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The request has been successful. |  -  |
+**201** | The resource has been successfully created. |  -  |
 **400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
 **401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
@@ -185,11 +185,11 @@ Name | Type | Description  | Notes
 
 <a name="createTokensTransactionRequestFromAddress"></a>
 # **createTokensTransactionRequestFromAddress**
-> CreateTokensTransactionRequestFromAddressR createTokensTransactionRequestFromAddress(address, blockchain, network, walletId, context, createTokensTransactionRequestFromAddressRB)
+> CreateTokensTransactionRequestFromAddressR createTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB)
 
 Create Tokens Transaction Request from Address
 
-Through this endpoint users can make a single token transaction.    {warning}This applies only to **fungible** tokens, **not** NFTs (non-fungible tokens).{/warning}
+Through this endpoint users can make a single token transaction.    {warning}This applies only to **fungible** tokens, **not** NFTs (non-fungible tokens).{/warning}    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
 
 ### Example
 ```java
@@ -213,14 +213,14 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     TransactionsApi apiInstance = new TransactionsApi(defaultClient);
-    String address = "0x6f61e3c2fbb8c8be698bd0907ba6c04b62800fe5"; // String | Defines the specific source address for the transaction.
     String blockchain = "ethereum"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
     String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
+    String senderAddress = "0x6f61e3c2fbb8c8be698bd0907ba6c04b62800fe5"; // String | Defines the specific source address for the transaction.
     String walletId = "609e221675d04500068718dc"; // String | Defines the unique ID of the Wallet.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB = new CreateTokensTransactionRequestFromAddressRB(); // CreateTokensTransactionRequestFromAddressRB | 
     try {
-      CreateTokensTransactionRequestFromAddressR result = apiInstance.createTokensTransactionRequestFromAddress(address, blockchain, network, walletId, context, createTokensTransactionRequestFromAddressRB);
+      CreateTokensTransactionRequestFromAddressR result = apiInstance.createTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling TransactionsApi#createTokensTransactionRequestFromAddress");
@@ -237,9 +237,9 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **address** | **String**| Defines the specific source address for the transaction. |
  **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [default to ethereum] [enum: ethereum]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [default to mainnet] [enum: mainnet, ropsten]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [default to mainnet] [enum: mainnet]
+ **senderAddress** | **String**| Defines the specific source address for the transaction. |
  **walletId** | **String**| Defines the unique ID of the Wallet. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **createTokensTransactionRequestFromAddressRB** | [**CreateTokensTransactionRequestFromAddressRB**](CreateTokensTransactionRequestFromAddressRB.md)|  | [optional]

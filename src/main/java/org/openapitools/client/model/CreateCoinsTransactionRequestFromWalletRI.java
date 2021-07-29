@@ -30,8 +30,16 @@ import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRIRe
 /**
  * CreateCoinsTransactionRequestFromWalletRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRI {
+  public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
+  @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
+  private String callbackSecretKey;
+
+  public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
+  @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
+  private String callbackUrl;
+
   /**
    * Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;.
    */
@@ -161,6 +169,52 @@ public class CreateCoinsTransactionRequestFromWalletRI {
   private TransactionRequestStatusEnum transactionRequestStatus;
 
 
+  public CreateCoinsTransactionRequestFromWalletRI callbackSecretKey(String callbackSecretKey) {
+    
+    this.callbackSecretKey = callbackSecretKey;
+    return this;
+  }
+
+   /**
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * @return callbackSecretKey
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "yourSecretKey", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+
+  public String getCallbackSecretKey() {
+    return callbackSecretKey;
+  }
+
+
+  public void setCallbackSecretKey(String callbackSecretKey) {
+    this.callbackSecretKey = callbackSecretKey;
+  }
+
+
+  public CreateCoinsTransactionRequestFromWalletRI callbackUrl(String callbackUrl) {
+    
+    this.callbackUrl = callbackUrl;
+    return this;
+  }
+
+   /**
+   * Verified URL for sending callbacks
+   * @return callbackUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "https://example.com", value = "Verified URL for sending callbacks")
+
+  public String getCallbackUrl() {
+    return callbackUrl;
+  }
+
+
+  public void setCallbackUrl(String callbackUrl) {
+    this.callbackUrl = callbackUrl;
+  }
+
+
   public CreateCoinsTransactionRequestFromWalletRI feePriority(FeePriorityEnum feePriority) {
     
     this.feePriority = feePriority;
@@ -263,7 +317,9 @@ public class CreateCoinsTransactionRequestFromWalletRI {
       return false;
     }
     CreateCoinsTransactionRequestFromWalletRI createCoinsTransactionRequestFromWalletRI = (CreateCoinsTransactionRequestFromWalletRI) o;
-    return Objects.equals(this.feePriority, createCoinsTransactionRequestFromWalletRI.feePriority) &&
+    return Objects.equals(this.callbackSecretKey, createCoinsTransactionRequestFromWalletRI.callbackSecretKey) &&
+        Objects.equals(this.callbackUrl, createCoinsTransactionRequestFromWalletRI.callbackUrl) &&
+        Objects.equals(this.feePriority, createCoinsTransactionRequestFromWalletRI.feePriority) &&
         Objects.equals(this.recipients, createCoinsTransactionRequestFromWalletRI.recipients) &&
         Objects.equals(this.totalTransactionAmount, createCoinsTransactionRequestFromWalletRI.totalTransactionAmount) &&
         Objects.equals(this.transactionRequestStatus, createCoinsTransactionRequestFromWalletRI.transactionRequestStatus);
@@ -271,13 +327,15 @@ public class CreateCoinsTransactionRequestFromWalletRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(feePriority, recipients, totalTransactionAmount, transactionRequestStatus);
+    return Objects.hash(callbackSecretKey, callbackUrl, feePriority, recipients, totalTransactionAmount, transactionRequestStatus);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateCoinsTransactionRequestFromWalletRI {\n");
+    sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
+    sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    feePriority: ").append(toIndentedString(feePriority)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("    totalTransactionAmount: ").append(toIndentedString(totalTransactionAmount)).append("\n");

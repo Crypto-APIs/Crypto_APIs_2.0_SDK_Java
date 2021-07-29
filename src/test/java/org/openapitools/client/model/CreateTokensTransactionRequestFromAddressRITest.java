@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRIRecipients;
+import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRIS;
 import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRISenders;
-import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRITokenTypeSpecificData;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -43,6 +43,22 @@ public class CreateTokensTransactionRequestFromAddressRITest {
     @Test
     public void testCreateTokensTransactionRequestFromAddressRI() {
         // TODO: test CreateTokensTransactionRequestFromAddressRI
+    }
+
+    /**
+     * Test the property 'callbackSecretKey'
+     */
+    @Test
+    public void callbackSecretKeyTest() {
+        // TODO: test callbackSecretKey
+    }
+
+    /**
+     * Test the property 'callbackUrl'
+     */
+    @Test
+    public void callbackUrlTest() {
+        // TODO: test callbackUrl
     }
 
     /**

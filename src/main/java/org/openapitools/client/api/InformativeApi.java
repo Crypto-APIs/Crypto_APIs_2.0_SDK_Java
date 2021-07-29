@@ -34,7 +34,7 @@ import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
-import org.openapitools.client.model.ListReceivingAddressesR;
+import org.openapitools.client.model.ListDepositAddressesR;
 import org.openapitools.client.model.ListSupportedTokensR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.ResourceNotFound;
@@ -247,7 +247,7 @@ public class InformativeApi {
         return localVarCall;
     }
     /**
-     * Build call for listReceivingAddresses
+     * Build call for listDepositAddresses
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
@@ -271,7 +271,7 @@ public class InformativeApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReceivingAddressesCall(String blockchain, String network, String walletId, String context, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listDepositAddressesCall(String blockchain, String network, String walletId, String context, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -309,37 +309,37 @@ public class InformativeApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listReceivingAddressesValidateBeforeCall(String blockchain, String network, String walletId, String context, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listDepositAddressesValidateBeforeCall(String blockchain, String network, String walletId, String context, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
-            throw new ApiException("Missing the required parameter 'blockchain' when calling listReceivingAddresses(Async)");
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listDepositAddresses(Async)");
         }
         
         // verify the required parameter 'network' is set
         if (network == null) {
-            throw new ApiException("Missing the required parameter 'network' when calling listReceivingAddresses(Async)");
+            throw new ApiException("Missing the required parameter 'network' when calling listDepositAddresses(Async)");
         }
         
         // verify the required parameter 'walletId' is set
         if (walletId == null) {
-            throw new ApiException("Missing the required parameter 'walletId' when calling listReceivingAddresses(Async)");
+            throw new ApiException("Missing the required parameter 'walletId' when calling listDepositAddresses(Async)");
         }
         
 
-        okhttp3.Call localVarCall = listReceivingAddressesCall(blockchain, network, walletId, context, _callback);
+        okhttp3.Call localVarCall = listDepositAddressesCall(blockchain, network, walletId, context, _callback);
         return localVarCall;
 
     }
 
     /**
-     * List Receiving Addresses
-     * Through this endpoint customers can pull a list of Deposit Addresses they have already generated. Deposit addresses are listed with their specific details such as unique ID.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * List Deposit Addresses
+     * Through this endpoint customers can pull a list of Deposit/Receiving Addresses they have already generated.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @return ListReceivingAddressesR
+     * @return ListDepositAddressesR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -357,19 +357,19 @@ public class InformativeApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListReceivingAddressesR listReceivingAddresses(String blockchain, String network, String walletId, String context) throws ApiException {
-        ApiResponse<ListReceivingAddressesR> localVarResp = listReceivingAddressesWithHttpInfo(blockchain, network, walletId, context);
+    public ListDepositAddressesR listDepositAddresses(String blockchain, String network, String walletId, String context) throws ApiException {
+        ApiResponse<ListDepositAddressesR> localVarResp = listDepositAddressesWithHttpInfo(blockchain, network, walletId, context);
         return localVarResp.getData();
     }
 
     /**
-     * List Receiving Addresses
-     * Through this endpoint customers can pull a list of Deposit Addresses they have already generated. Deposit addresses are listed with their specific details such as unique ID.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * List Deposit Addresses
+     * Through this endpoint customers can pull a list of Deposit/Receiving Addresses they have already generated.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @return ApiResponse&lt;ListReceivingAddressesR&gt;
+     * @return ApiResponse&lt;ListDepositAddressesR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -387,15 +387,15 @@ public class InformativeApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListReceivingAddressesR> listReceivingAddressesWithHttpInfo(String blockchain, String network, String walletId, String context) throws ApiException {
-        okhttp3.Call localVarCall = listReceivingAddressesValidateBeforeCall(blockchain, network, walletId, context, null);
-        Type localVarReturnType = new TypeToken<ListReceivingAddressesR>(){}.getType();
+    public ApiResponse<ListDepositAddressesR> listDepositAddressesWithHttpInfo(String blockchain, String network, String walletId, String context) throws ApiException {
+        okhttp3.Call localVarCall = listDepositAddressesValidateBeforeCall(blockchain, network, walletId, context, null);
+        Type localVarReturnType = new TypeToken<ListDepositAddressesR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * List Receiving Addresses (asynchronously)
-     * Through this endpoint customers can pull a list of Deposit Addresses they have already generated. Deposit addresses are listed with their specific details such as unique ID.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * List Deposit Addresses (asynchronously)
+     * Through this endpoint customers can pull a list of Deposit/Receiving Addresses they have already generated.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
@@ -419,10 +419,10 @@ public class InformativeApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listReceivingAddressesAsync(String blockchain, String network, String walletId, String context, final ApiCallback<ListReceivingAddressesR> _callback) throws ApiException {
+    public okhttp3.Call listDepositAddressesAsync(String blockchain, String network, String walletId, String context, final ApiCallback<ListDepositAddressesR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listReceivingAddressesValidateBeforeCall(blockchain, network, walletId, context, _callback);
-        Type localVarReturnType = new TypeToken<ListReceivingAddressesR>(){}.getType();
+        okhttp3.Call localVarCall = listDepositAddressesValidateBeforeCall(blockchain, network, walletId, context, _callback);
+        Type localVarReturnType = new TypeToken<ListDepositAddressesR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

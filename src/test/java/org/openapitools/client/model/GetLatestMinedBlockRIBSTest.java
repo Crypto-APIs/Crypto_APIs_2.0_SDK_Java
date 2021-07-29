@@ -23,6 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.GetLatestMinedBlockRIBSB;
 import org.openapitools.client.model.GetLatestMinedBlockRIBSBC;
+import org.openapitools.client.model.GetLatestMinedBlockRIBSBSC;
 import org.openapitools.client.model.GetLatestMinedBlockRIBSD;
 import org.openapitools.client.model.GetLatestMinedBlockRIBSD2;
 import org.openapitools.client.model.GetLatestMinedBlockRIBSE;

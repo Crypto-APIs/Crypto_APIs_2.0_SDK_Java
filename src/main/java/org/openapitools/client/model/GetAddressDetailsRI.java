@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetAddressDetailsRITotalSpent;
 /**
  * GetAddressDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class GetAddressDetailsRI {
   public static final String SERIALIZED_NAME_TRANSACTIONS_COUNT = "transactionsCount";
   @SerializedName(SERIALIZED_NAME_TRANSACTIONS_COUNT)
@@ -152,10 +152,10 @@ public class GetAddressDetailsRI {
   }
 
    /**
-   * Defines the count of all confirmed incoming transactions from the address for coins. This applies to **coins** only, **not** to tokens transfers e.g. for Ethereum.
+   * Numeric representation of the received transaction count of the address
    * @return incomingTransactionsCount
   **/
-  @ApiModelProperty(example = "2", required = true, value = "Defines the count of all confirmed incoming transactions from the address for coins. This applies to **coins** only, **not** to tokens transfers e.g. for Ethereum.")
+  @ApiModelProperty(example = "1", required = true, value = "Numeric representation of the received transaction count of the address")
 
   public Integer getIncomingTransactionsCount() {
     return incomingTransactionsCount;
@@ -174,10 +174,10 @@ public class GetAddressDetailsRI {
   }
 
    /**
-   * Defines the count of all confirmed outgoing transactions from the address for coins. This applies to **coins** only, **not** to tokens transfers e.g. for Ethereum.
+   * Numeric representation of the sent transaction count of the address
    * @return outgoingTransactionsCount
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Defines the count of all confirmed outgoing transactions from the address for coins. This applies to **coins** only, **not** to tokens transfers e.g. for Ethereum.")
+  @ApiModelProperty(example = "2", required = true, value = "Numeric representation of the sent transaction count of the address")
 
   public Integer getOutgoingTransactionsCount() {
     return outgoingTransactionsCount;

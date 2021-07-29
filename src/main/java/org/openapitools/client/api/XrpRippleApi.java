@@ -914,6 +914,7 @@ public class XrpRippleApi {
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -932,7 +933,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByAddressCall(String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByAddressCall(String network, String address, String context, Integer limit, Integer offset, String transactionType, final ApiCallback _callback) throws ApiException {
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -958,6 +959,10 @@ public class XrpRippleApi {
             localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
         }
 
+        if (transactionType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("transactionType", transactionType));
+        }
+
         final String[] localVarAccepts = {
             "application/json"
         };
@@ -977,7 +982,7 @@ public class XrpRippleApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listXRPRippleTransactionsByAddressValidateBeforeCall(String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listXRPRippleTransactionsByAddressValidateBeforeCall(String network, String address, String context, Integer limit, Integer offset, String transactionType, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'network' is set
         if (network == null) {
@@ -990,7 +995,7 @@ public class XrpRippleApi {
         }
         
 
-        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressCall(network, address, context, limit, offset, _callback);
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressCall(network, address, context, limit, offset, transactionType, _callback);
         return localVarCall;
 
     }
@@ -1003,6 +1008,7 @@ public class XrpRippleApi {
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType  (optional)
      * @return ListXRPRippleTransactionsByAddressR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1020,8 +1026,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(String network, String address, String context, Integer limit, Integer offset) throws ApiException {
-        ApiResponse<ListXRPRippleTransactionsByAddressR> localVarResp = listXRPRippleTransactionsByAddressWithHttpInfo(network, address, context, limit, offset);
+    public ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(String network, String address, String context, Integer limit, Integer offset, String transactionType) throws ApiException {
+        ApiResponse<ListXRPRippleTransactionsByAddressR> localVarResp = listXRPRippleTransactionsByAddressWithHttpInfo(network, address, context, limit, offset, transactionType);
         return localVarResp.getData();
     }
 
@@ -1033,6 +1039,7 @@ public class XrpRippleApi {
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType  (optional)
      * @return ApiResponse&lt;ListXRPRippleTransactionsByAddressR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
@@ -1050,8 +1057,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListXRPRippleTransactionsByAddressR> listXRPRippleTransactionsByAddressWithHttpInfo(String network, String address, String context, Integer limit, Integer offset) throws ApiException {
-        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressValidateBeforeCall(network, address, context, limit, offset, null);
+    public ApiResponse<ListXRPRippleTransactionsByAddressR> listXRPRippleTransactionsByAddressWithHttpInfo(String network, String address, String context, Integer limit, Integer offset, String transactionType) throws ApiException {
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressValidateBeforeCall(network, address, context, limit, offset, transactionType, null);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
@@ -1064,6 +1071,7 @@ public class XrpRippleApi {
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
      * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
      * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -1082,9 +1090,9 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error was encountered, we are working on fixing this. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByAddressAsync(String network, String address, String context, Integer limit, Integer offset, final ApiCallback<ListXRPRippleTransactionsByAddressR> _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByAddressAsync(String network, String address, String context, Integer limit, Integer offset, String transactionType, final ApiCallback<ListXRPRippleTransactionsByAddressR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressValidateBeforeCall(network, address, context, limit, offset, _callback);
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressValidateBeforeCall(network, address, context, limit, offset, transactionType, _callback);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByAddressR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;

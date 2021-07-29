@@ -153,7 +153,8 @@ public class XrpRippleApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListXRPRippleTransactionsByAddressR response = api.listXRPRippleTransactionsByAddress(network, address, context, limit, offset);
+        String transactionType = null;
+        ListXRPRippleTransactionsByAddressR response = api.listXRPRippleTransactionsByAddress(network, address, context, limit, offset, transactionType);
 
         // TODO: test validations
     }

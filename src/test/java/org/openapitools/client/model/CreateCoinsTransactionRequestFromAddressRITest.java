@@ -45,6 +45,22 @@ public class CreateCoinsTransactionRequestFromAddressRITest {
     }
 
     /**
+     * Test the property 'callbackSecretKey'
+     */
+    @Test
+    public void callbackSecretKeyTest() {
+        // TODO: test callbackSecretKey
+    }
+
+    /**
+     * Test the property 'callbackUrl'
+     */
+    @Test
+    public void callbackUrlTest() {
+        // TODO: test callbackUrl
+    }
+
+    /**
      * Test the property 'feePriority'
      */
     @Test

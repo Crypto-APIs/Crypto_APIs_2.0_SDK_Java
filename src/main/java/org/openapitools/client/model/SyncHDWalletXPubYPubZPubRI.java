@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SyncHDWalletXPubYPubZPubRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class SyncHDWalletXPubYPubZPubRI {
   public static final String SERIALIZED_NAME_EXTENDED_PUBLIC_KEY = "extendedPublicKey";
   @SerializedName(SERIALIZED_NAME_EXTENDED_PUBLIC_KEY)

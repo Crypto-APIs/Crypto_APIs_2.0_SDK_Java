@@ -49,6 +49,14 @@ public class CreateTokensTransactionRequestFromAddressRBDataItemTest {
     }
 
     /**
+     * Test the property 'callbackSecretKey'
+     */
+    @Test
+    public void callbackSecretKeyTest() {
+        // TODO: test callbackSecretKey
+    }
+
+    /**
      * Test the property 'callbackUrl'
      */
     @Test
@@ -65,11 +73,11 @@ public class CreateTokensTransactionRequestFromAddressRBDataItemTest {
     }
 
     /**
-     * Test the property 'toAddress'
+     * Test the property 'recipientAddress'
      */
     @Test
-    public void toAddressTest() {
-        // TODO: test toAddress
+    public void recipientAddressTest() {
+        // TODO: test recipientAddress
     }
 
     /**

@@ -14,8 +14,8 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.GenerateReceivingAddressR;
-import org.openapitools.client.model.GenerateReceivingAddressRB;
+import org.openapitools.client.model.GenerateDepositAddressR;
+import org.openapitools.client.model.GenerateDepositAddressRB;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
@@ -44,7 +44,7 @@ public class GeneratingApiTest {
 
     
     /**
-     * Generate Receiving Address
+     * Generate Deposit Address
      *
      * Through this endpoint customers can generate a new Receiving/Deposit Addresses into their Wallet.
      *
@@ -52,13 +52,13 @@ public class GeneratingApiTest {
      *          if the Api call fails
      */
     @Test
-    public void generateReceivingAddressTest() throws ApiException {
+    public void generateDepositAddressTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String walletId = null;
         String context = null;
-        GenerateReceivingAddressRB generateReceivingAddressRB = null;
-        GenerateReceivingAddressR response = api.generateReceivingAddress(blockchain, network, walletId, context, generateReceivingAddressRB);
+        GenerateDepositAddressRB generateDepositAddressRB = null;
+        GenerateDepositAddressR response = api.generateDepositAddress(blockchain, network, walletId, context, generateDepositAddressRB);
 
         // TODO: test validations
     }

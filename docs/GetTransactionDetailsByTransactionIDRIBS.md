@@ -14,12 +14,12 @@ Name | Type | Description | Notes
 **vin** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSD2Vin&gt;**](GetTransactionDetailsByTransactionIDRIBSD2Vin.md) | Represents the transaction inputs. | 
 **vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSD2Vout&gt;**](GetTransactionDetailsByTransactionIDRIBSD2Vout.md) | Represents the transaction outputs. | 
 **vsize** | **Integer** | Represents the virtual size of this transaction. | 
-**contract** | **String** | Represents the specific transaction contract. | 
-**gasLimit** | **String** | Represents the amount of gas used by this specific transaction alone. | 
-**gasPrice** | [**GetTransactionDetailsByTransactionIDRIBSECGasPrice**](GetTransactionDetailsByTransactionIDRIBSECGasPrice.md) |  | 
-**gasUsed** | **String** | Represents the exact unit of gas that was used for the transaction. | 
-**inputData** | **String** | Represents additional information that is required for the transaction. | 
-**nonce** | **String** | Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address. | 
+**contract** | **String** | Numeric representation of the transaction contract | 
+**gasLimit** | **String** | String representation of the transaction gas | 
+**gasPrice** | [**GetTransactionDetailsByTransactionIDRIBSBSCGasPrice**](GetTransactionDetailsByTransactionIDRIBSBSCGasPrice.md) |  | 
+**gasUsed** | **String** | Numeric representation of the transaction gas used | 
+**inputData** | **String** | Numeric representation of the transaction input | 
+**nonce** | **String** | Numeric representation of the transaction nonce | 
 **transactionStatus** | **String** | Represents the status of this transaction. | 
 
 

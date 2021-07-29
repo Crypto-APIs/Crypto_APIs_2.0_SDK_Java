@@ -27,8 +27,8 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.GenerateReceivingAddressR;
-import org.openapitools.client.model.GenerateReceivingAddressRB;
+import org.openapitools.client.model.GenerateDepositAddressR;
+import org.openapitools.client.model.GenerateDepositAddressRB;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
@@ -66,12 +66,12 @@ public class GeneratingApi {
     }
 
     /**
-     * Build call for generateReceivingAddress
+     * Build call for generateDepositAddress
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param generateReceivingAddressRB  (optional)
+     * @param generateDepositAddressRB  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -91,8 +91,8 @@ public class GeneratingApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateReceivingAddressCall(String blockchain, String network, String walletId, String context, GenerateReceivingAddressRB generateReceivingAddressRB, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = generateReceivingAddressRB;
+    public okhttp3.Call generateDepositAddressCall(String blockchain, String network, String walletId, String context, GenerateDepositAddressRB generateDepositAddressRB, final ApiCallback _callback) throws ApiException {
+        Object localVarPostBody = generateDepositAddressRB;
 
         // create path and map variables
         String localVarPath = "/wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses"
@@ -129,38 +129,38 @@ public class GeneratingApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call generateReceivingAddressValidateBeforeCall(String blockchain, String network, String walletId, String context, GenerateReceivingAddressRB generateReceivingAddressRB, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call generateDepositAddressValidateBeforeCall(String blockchain, String network, String walletId, String context, GenerateDepositAddressRB generateDepositAddressRB, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
-            throw new ApiException("Missing the required parameter 'blockchain' when calling generateReceivingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'blockchain' when calling generateDepositAddress(Async)");
         }
         
         // verify the required parameter 'network' is set
         if (network == null) {
-            throw new ApiException("Missing the required parameter 'network' when calling generateReceivingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'network' when calling generateDepositAddress(Async)");
         }
         
         // verify the required parameter 'walletId' is set
         if (walletId == null) {
-            throw new ApiException("Missing the required parameter 'walletId' when calling generateReceivingAddress(Async)");
+            throw new ApiException("Missing the required parameter 'walletId' when calling generateDepositAddress(Async)");
         }
         
 
-        okhttp3.Call localVarCall = generateReceivingAddressCall(blockchain, network, walletId, context, generateReceivingAddressRB, _callback);
+        okhttp3.Call localVarCall = generateDepositAddressCall(blockchain, network, walletId, context, generateDepositAddressRB, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Generate Receiving Address
+     * Generate Deposit Address
      * Through this endpoint customers can generate a new Receiving/Deposit Addresses into their Wallet.
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param generateReceivingAddressRB  (optional)
-     * @return GenerateReceivingAddressR
+     * @param generateDepositAddressRB  (optional)
+     * @return GenerateDepositAddressR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -178,20 +178,20 @@ public class GeneratingApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public GenerateReceivingAddressR generateReceivingAddress(String blockchain, String network, String walletId, String context, GenerateReceivingAddressRB generateReceivingAddressRB) throws ApiException {
-        ApiResponse<GenerateReceivingAddressR> localVarResp = generateReceivingAddressWithHttpInfo(blockchain, network, walletId, context, generateReceivingAddressRB);
+    public GenerateDepositAddressR generateDepositAddress(String blockchain, String network, String walletId, String context, GenerateDepositAddressRB generateDepositAddressRB) throws ApiException {
+        ApiResponse<GenerateDepositAddressR> localVarResp = generateDepositAddressWithHttpInfo(blockchain, network, walletId, context, generateDepositAddressRB);
         return localVarResp.getData();
     }
 
     /**
-     * Generate Receiving Address
+     * Generate Deposit Address
      * Through this endpoint customers can generate a new Receiving/Deposit Addresses into their Wallet.
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param generateReceivingAddressRB  (optional)
-     * @return ApiResponse&lt;GenerateReceivingAddressR&gt;
+     * @param generateDepositAddressRB  (optional)
+     * @return ApiResponse&lt;GenerateDepositAddressR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
@@ -209,20 +209,20 @@ public class GeneratingApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<GenerateReceivingAddressR> generateReceivingAddressWithHttpInfo(String blockchain, String network, String walletId, String context, GenerateReceivingAddressRB generateReceivingAddressRB) throws ApiException {
-        okhttp3.Call localVarCall = generateReceivingAddressValidateBeforeCall(blockchain, network, walletId, context, generateReceivingAddressRB, null);
-        Type localVarReturnType = new TypeToken<GenerateReceivingAddressR>(){}.getType();
+    public ApiResponse<GenerateDepositAddressR> generateDepositAddressWithHttpInfo(String blockchain, String network, String walletId, String context, GenerateDepositAddressRB generateDepositAddressRB) throws ApiException {
+        okhttp3.Call localVarCall = generateDepositAddressValidateBeforeCall(blockchain, network, walletId, context, generateDepositAddressRB, null);
+        Type localVarReturnType = new TypeToken<GenerateDepositAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Generate Receiving Address (asynchronously)
+     * Generate Deposit Address (asynchronously)
      * Through this endpoint customers can generate a new Receiving/Deposit Addresses into their Wallet.
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. (required)
      * @param walletId Represents the unique ID of the specific Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param generateReceivingAddressRB  (optional)
+     * @param generateDepositAddressRB  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -242,10 +242,10 @@ public class GeneratingApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call generateReceivingAddressAsync(String blockchain, String network, String walletId, String context, GenerateReceivingAddressRB generateReceivingAddressRB, final ApiCallback<GenerateReceivingAddressR> _callback) throws ApiException {
+    public okhttp3.Call generateDepositAddressAsync(String blockchain, String network, String walletId, String context, GenerateDepositAddressRB generateDepositAddressRB, final ApiCallback<GenerateDepositAddressR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = generateReceivingAddressValidateBeforeCall(blockchain, network, walletId, context, generateReceivingAddressRB, _callback);
-        Type localVarReturnType = new TypeToken<GenerateReceivingAddressR>(){}.getType();
+        okhttp3.Call localVarCall = generateDepositAddressValidateBeforeCall(blockchain, network, walletId, context, generateDepositAddressRB, _callback);
+        Type localVarReturnType = new TypeToken<GenerateDepositAddressR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

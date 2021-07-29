@@ -25,9 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * TransactionRequestBroadcastedDataItem
+ * Defines an &#x60;item&#x60; as one result.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@ApiModel(description = "Defines an `item` as one result.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class TransactionRequestBroadcastedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -37,21 +38,21 @@ public class TransactionRequestBroadcastedDataItem {
   @SerializedName(SERIALIZED_NAME_NETWORK)
   private String network;
 
-  public static final String SERIALIZED_NAME_REQUIRED_APPROVES = "requiredApproves";
-  @SerializedName(SERIALIZED_NAME_REQUIRED_APPROVES)
-  private Integer requiredApproves;
+  public static final String SERIALIZED_NAME_REQUIRED_APPROVALS = "requiredApprovals";
+  @SerializedName(SERIALIZED_NAME_REQUIRED_APPROVALS)
+  private Integer requiredApprovals;
 
-  public static final String SERIALIZED_NAME_REQUIRED_REJECTS = "requiredRejects";
-  @SerializedName(SERIALIZED_NAME_REQUIRED_REJECTS)
-  private Integer requiredRejects;
+  public static final String SERIALIZED_NAME_REQUIRED_REJECTIONS = "requiredRejections";
+  @SerializedName(SERIALIZED_NAME_REQUIRED_REJECTIONS)
+  private Integer requiredRejections;
 
-  public static final String SERIALIZED_NAME_CURRENT_APPROVES = "currentApproves";
-  @SerializedName(SERIALIZED_NAME_CURRENT_APPROVES)
-  private Integer currentApproves;
+  public static final String SERIALIZED_NAME_CURRENT_APPROVALS = "currentApprovals";
+  @SerializedName(SERIALIZED_NAME_CURRENT_APPROVALS)
+  private Integer currentApprovals;
 
-  public static final String SERIALIZED_NAME_CURRENT_REJECTS = "currentRejects";
-  @SerializedName(SERIALIZED_NAME_CURRENT_REJECTS)
-  private Integer currentRejects;
+  public static final String SERIALIZED_NAME_CURRENT_REJECTIONS = "currentRejections";
+  @SerializedName(SERIALIZED_NAME_CURRENT_REJECTIONS)
+  private Integer currentRejections;
 
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
@@ -65,10 +66,10 @@ public class TransactionRequestBroadcastedDataItem {
   }
 
    /**
-   * Get blockchain
+   * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
-  @ApiModelProperty(example = "bitcoin", required = true, value = "")
+  @ApiModelProperty(example = "Bitcoin/Ethereum (whichever applicable)", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
     return blockchain;
@@ -87,10 +88,10 @@ public class TransactionRequestBroadcastedDataItem {
   }
 
    /**
-   * Get network
+   * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
-  @ApiModelProperty(example = "testnet", required = true, value = "")
+  @ApiModelProperty(example = "Testnet/Mainnet (whichever applicable)", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
     return network;
@@ -102,91 +103,91 @@ public class TransactionRequestBroadcastedDataItem {
   }
 
 
-  public TransactionRequestBroadcastedDataItem requiredApproves(Integer requiredApproves) {
+  public TransactionRequestBroadcastedDataItem requiredApprovals(Integer requiredApprovals) {
     
-    this.requiredApproves = requiredApproves;
+    this.requiredApprovals = requiredApprovals;
     return this;
   }
 
    /**
-   * Get requiredApproves
-   * @return requiredApproves
+   * The required number of approvals needed to approve the transaction.
+   * @return requiredApprovals
   **/
-  @ApiModelProperty(example = "2", required = true, value = "")
+  @ApiModelProperty(example = "5", required = true, value = "The required number of approvals needed to approve the transaction.")
 
-  public Integer getRequiredApproves() {
-    return requiredApproves;
+  public Integer getRequiredApprovals() {
+    return requiredApprovals;
   }
 
 
-  public void setRequiredApproves(Integer requiredApproves) {
-    this.requiredApproves = requiredApproves;
+  public void setRequiredApprovals(Integer requiredApprovals) {
+    this.requiredApprovals = requiredApprovals;
   }
 
 
-  public TransactionRequestBroadcastedDataItem requiredRejects(Integer requiredRejects) {
+  public TransactionRequestBroadcastedDataItem requiredRejections(Integer requiredRejections) {
     
-    this.requiredRejects = requiredRejects;
+    this.requiredRejections = requiredRejections;
     return this;
   }
 
    /**
-   * Get requiredRejects
-   * @return requiredRejects
+   * The required number of rejections needed to reject the transaction.
+   * @return requiredRejections
   **/
-  @ApiModelProperty(example = "2", required = true, value = "")
+  @ApiModelProperty(example = "2", required = true, value = "The required number of rejections needed to reject the transaction.")
 
-  public Integer getRequiredRejects() {
-    return requiredRejects;
+  public Integer getRequiredRejections() {
+    return requiredRejections;
   }
 
 
-  public void setRequiredRejects(Integer requiredRejects) {
-    this.requiredRejects = requiredRejects;
+  public void setRequiredRejections(Integer requiredRejections) {
+    this.requiredRejections = requiredRejections;
   }
 
 
-  public TransactionRequestBroadcastedDataItem currentApproves(Integer currentApproves) {
+  public TransactionRequestBroadcastedDataItem currentApprovals(Integer currentApprovals) {
     
-    this.currentApproves = currentApproves;
+    this.currentApprovals = currentApprovals;
     return this;
   }
 
    /**
-   * Get currentApproves
-   * @return currentApproves
+   * The current number of approvals given for the transaction.
+   * @return currentApprovals
   **/
-  @ApiModelProperty(example = "0", required = true, value = "")
+  @ApiModelProperty(example = "2", required = true, value = "The current number of approvals given for the transaction.")
 
-  public Integer getCurrentApproves() {
-    return currentApproves;
+  public Integer getCurrentApprovals() {
+    return currentApprovals;
   }
 
 
-  public void setCurrentApproves(Integer currentApproves) {
-    this.currentApproves = currentApproves;
+  public void setCurrentApprovals(Integer currentApprovals) {
+    this.currentApprovals = currentApprovals;
   }
 
 
-  public TransactionRequestBroadcastedDataItem currentRejects(Integer currentRejects) {
+  public TransactionRequestBroadcastedDataItem currentRejections(Integer currentRejections) {
     
-    this.currentRejects = currentRejects;
+    this.currentRejections = currentRejections;
     return this;
   }
 
    /**
-   * Get currentRejects
-   * @return currentRejects
+   * The current number of rejections given for the transaction.
+   * @return currentRejections
   **/
-  @ApiModelProperty(example = "0", required = true, value = "")
+  @ApiModelProperty(example = "1", required = true, value = "The current number of rejections given for the transaction.")
 
-  public Integer getCurrentRejects() {
-    return currentRejects;
+  public Integer getCurrentRejections() {
+    return currentRejections;
   }
 
 
-  public void setCurrentRejects(Integer currentRejects) {
-    this.currentRejects = currentRejects;
+  public void setCurrentRejections(Integer currentRejections) {
+    this.currentRejections = currentRejections;
   }
 
 
@@ -197,10 +198,10 @@ public class TransactionRequestBroadcastedDataItem {
   }
 
    /**
-   * Get transactionId
+   * Defines the unique ID of the specific transaction, i.e. its identification number.
    * @return transactionId
   **/
-  @ApiModelProperty(example = "4e78f606bc42534744e223f54b85d5bbd54a3949f54eb8fac31d73028c286e31", required = true, value = "")
+  @ApiModelProperty(example = "4e78f606bc42534744e223f54b85d5bbd54a3949f54eb8fac31d73028c286e31", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
 
   public String getTransactionId() {
     return transactionId;
@@ -223,16 +224,16 @@ public class TransactionRequestBroadcastedDataItem {
     TransactionRequestBroadcastedDataItem transactionRequestBroadcastedDataItem = (TransactionRequestBroadcastedDataItem) o;
     return Objects.equals(this.blockchain, transactionRequestBroadcastedDataItem.blockchain) &&
         Objects.equals(this.network, transactionRequestBroadcastedDataItem.network) &&
-        Objects.equals(this.requiredApproves, transactionRequestBroadcastedDataItem.requiredApproves) &&
-        Objects.equals(this.requiredRejects, transactionRequestBroadcastedDataItem.requiredRejects) &&
-        Objects.equals(this.currentApproves, transactionRequestBroadcastedDataItem.currentApproves) &&
-        Objects.equals(this.currentRejects, transactionRequestBroadcastedDataItem.currentRejects) &&
+        Objects.equals(this.requiredApprovals, transactionRequestBroadcastedDataItem.requiredApprovals) &&
+        Objects.equals(this.requiredRejections, transactionRequestBroadcastedDataItem.requiredRejections) &&
+        Objects.equals(this.currentApprovals, transactionRequestBroadcastedDataItem.currentApprovals) &&
+        Objects.equals(this.currentRejections, transactionRequestBroadcastedDataItem.currentRejections) &&
         Objects.equals(this.transactionId, transactionRequestBroadcastedDataItem.transactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(blockchain, network, requiredApproves, requiredRejects, currentApproves, currentRejects, transactionId);
+    return Objects.hash(blockchain, network, requiredApprovals, requiredRejections, currentApprovals, currentRejections, transactionId);
   }
 
   @Override
@@ -241,10 +242,10 @@ public class TransactionRequestBroadcastedDataItem {
     sb.append("class TransactionRequestBroadcastedDataItem {\n");
     sb.append("    blockchain: ").append(toIndentedString(blockchain)).append("\n");
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
-    sb.append("    requiredApproves: ").append(toIndentedString(requiredApproves)).append("\n");
-    sb.append("    requiredRejects: ").append(toIndentedString(requiredRejects)).append("\n");
-    sb.append("    currentApproves: ").append(toIndentedString(currentApproves)).append("\n");
-    sb.append("    currentRejects: ").append(toIndentedString(currentRejects)).append("\n");
+    sb.append("    requiredApprovals: ").append(toIndentedString(requiredApprovals)).append("\n");
+    sb.append("    requiredRejections: ").append(toIndentedString(requiredRejections)).append("\n");
+    sb.append("    currentApprovals: ").append(toIndentedString(currentApprovals)).append("\n");
+    sb.append("    currentRejections: ").append(toIndentedString(currentRejections)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();

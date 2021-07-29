@@ -49,14 +49,6 @@ public class ListXRPRippleTransactionsByAddressRITest {
     }
 
     /**
-     * Test the property 'additionalData'
-     */
-    @Test
-    public void additionalDataTest() {
-        // TODO: test additionalData
-    }
-
-    /**
      * Test the property 'index'
      */
     @Test

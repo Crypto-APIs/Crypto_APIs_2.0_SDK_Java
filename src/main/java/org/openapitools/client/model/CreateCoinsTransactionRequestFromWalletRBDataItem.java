@@ -25,16 +25,20 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDataItemDestinations;
+import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDataItemRecipients;
 
 /**
  * CreateCoinsTransactionRequestFromWalletRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRBDataItem {
-  public static final String SERIALIZED_NAME_DESTINATIONS = "destinations";
-  @SerializedName(SERIALIZED_NAME_DESTINATIONS)
-  private List<CreateCoinsTransactionRequestFromWalletRBDataItemDestinations> destinations = new ArrayList<CreateCoinsTransactionRequestFromWalletRBDataItemDestinations>();
+  public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
+  @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
+  private String callbackSecretKey;
+
+  public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
+  @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
+  private String callbackUrl;
 
   /**
    * Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;.
@@ -89,31 +93,54 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   @SerializedName(SERIALIZED_NAME_FEE_PRIORITY)
   private FeePriorityEnum feePriority;
 
+  public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
+  @SerializedName(SERIALIZED_NAME_RECIPIENTS)
+  private List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients = new ArrayList<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients>();
 
-  public CreateCoinsTransactionRequestFromWalletRBDataItem destinations(List<CreateCoinsTransactionRequestFromWalletRBDataItemDestinations> destinations) {
+
+  public CreateCoinsTransactionRequestFromWalletRBDataItem callbackSecretKey(String callbackSecretKey) {
     
-    this.destinations = destinations;
-    return this;
-  }
-
-  public CreateCoinsTransactionRequestFromWalletRBDataItem addDestinationsItem(CreateCoinsTransactionRequestFromWalletRBDataItemDestinations destinationsItem) {
-    this.destinations.add(destinationsItem);
+    this.callbackSecretKey = callbackSecretKey;
     return this;
   }
 
    /**
-   * Defines the destination of the transaction, whether it is incoming or outgoing.
-   * @return destinations
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * @return callbackSecretKey
   **/
-  @ApiModelProperty(required = true, value = "Defines the destination of the transaction, whether it is incoming or outgoing.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "yourSecretKey", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
 
-  public List<CreateCoinsTransactionRequestFromWalletRBDataItemDestinations> getDestinations() {
-    return destinations;
+  public String getCallbackSecretKey() {
+    return callbackSecretKey;
   }
 
 
-  public void setDestinations(List<CreateCoinsTransactionRequestFromWalletRBDataItemDestinations> destinations) {
-    this.destinations = destinations;
+  public void setCallbackSecretKey(String callbackSecretKey) {
+    this.callbackSecretKey = callbackSecretKey;
+  }
+
+
+  public CreateCoinsTransactionRequestFromWalletRBDataItem callbackUrl(String callbackUrl) {
+    
+    this.callbackUrl = callbackUrl;
+    return this;
+  }
+
+   /**
+   * Verified URL for sending callbacks
+   * @return callbackUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "https://example.com", value = "Verified URL for sending callbacks")
+
+  public String getCallbackUrl() {
+    return callbackUrl;
+  }
+
+
+  public void setCallbackUrl(String callbackUrl) {
+    this.callbackUrl = callbackUrl;
   }
 
 
@@ -139,6 +166,33 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   }
 
 
+  public CreateCoinsTransactionRequestFromWalletRBDataItem recipients(List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients) {
+    
+    this.recipients = recipients;
+    return this;
+  }
+
+  public CreateCoinsTransactionRequestFromWalletRBDataItem addRecipientsItem(CreateCoinsTransactionRequestFromWalletRBDataItemRecipients recipientsItem) {
+    this.recipients.add(recipientsItem);
+    return this;
+  }
+
+   /**
+   * Defines the destination of the transaction, whether it is incoming or outgoing.
+   * @return recipients
+  **/
+  @ApiModelProperty(required = true, value = "Defines the destination of the transaction, whether it is incoming or outgoing.")
+
+  public List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> getRecipients() {
+    return recipients;
+  }
+
+
+  public void setRecipients(List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients) {
+    this.recipients = recipients;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -148,21 +202,25 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
       return false;
     }
     CreateCoinsTransactionRequestFromWalletRBDataItem createCoinsTransactionRequestFromWalletRBDataItem = (CreateCoinsTransactionRequestFromWalletRBDataItem) o;
-    return Objects.equals(this.destinations, createCoinsTransactionRequestFromWalletRBDataItem.destinations) &&
-        Objects.equals(this.feePriority, createCoinsTransactionRequestFromWalletRBDataItem.feePriority);
+    return Objects.equals(this.callbackSecretKey, createCoinsTransactionRequestFromWalletRBDataItem.callbackSecretKey) &&
+        Objects.equals(this.callbackUrl, createCoinsTransactionRequestFromWalletRBDataItem.callbackUrl) &&
+        Objects.equals(this.feePriority, createCoinsTransactionRequestFromWalletRBDataItem.feePriority) &&
+        Objects.equals(this.recipients, createCoinsTransactionRequestFromWalletRBDataItem.recipients);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(destinations, feePriority);
+    return Objects.hash(callbackSecretKey, callbackUrl, feePriority, recipients);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateCoinsTransactionRequestFromWalletRBDataItem {\n");
-    sb.append("    destinations: ").append(toIndentedString(destinations)).append("\n");
+    sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
+    sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    feePriority: ").append(toIndentedString(feePriority)).append("\n");
+    sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("}");
     return sb.toString();
   }

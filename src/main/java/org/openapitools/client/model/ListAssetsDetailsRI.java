@@ -25,12 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.ListAssetsDetailsRIAssetLogo;
 import org.openapitools.client.model.ListAssetsDetailsRILatestRate;
-import org.openapitools.client.model.ListAssetsDetailsRISpecificData;
+import org.openapitools.client.model.ListAssetsDetailsRIS;
 
 /**
  * ListAssetsDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class ListAssetsDetailsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -113,7 +113,7 @@ public class ListAssetsDetailsRI {
 
   public static final String SERIALIZED_NAME_SPECIFIC_DATA = "specificData";
   @SerializedName(SERIALIZED_NAME_SPECIFIC_DATA)
-  private ListAssetsDetailsRISpecificData specificData;
+  private ListAssetsDetailsRIS specificData;
 
 
   public ListAssetsDetailsRI assetId(String assetId) {
@@ -293,7 +293,7 @@ public class ListAssetsDetailsRI {
   }
 
 
-  public ListAssetsDetailsRI specificData(ListAssetsDetailsRISpecificData specificData) {
+  public ListAssetsDetailsRI specificData(ListAssetsDetailsRIS specificData) {
     
     this.specificData = specificData;
     return this;
@@ -305,12 +305,12 @@ public class ListAssetsDetailsRI {
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public ListAssetsDetailsRISpecificData getSpecificData() {
+  public ListAssetsDetailsRIS getSpecificData() {
     return specificData;
   }
 
 
-  public void setSpecificData(ListAssetsDetailsRISpecificData specificData) {
+  public void setSpecificData(ListAssetsDetailsRIS specificData) {
     this.specificData = specificData;
   }
 

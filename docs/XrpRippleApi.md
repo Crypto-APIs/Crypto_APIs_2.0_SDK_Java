@@ -428,7 +428,7 @@ Name | Type | Description  | Notes
 
 <a name="listXRPRippleTransactionsByAddress"></a>
 # **listXRPRippleTransactionsByAddress**
-> ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(network, address, context, limit, offset)
+> ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(network, address, context, limit, offset, transactionType)
 
 List XRP (Ripple) Transactions by Address
 
@@ -461,8 +461,9 @@ public class Example {
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    String transactionType = "payment"; // String | 
     try {
-      ListXRPRippleTransactionsByAddressR result = apiInstance.listXRPRippleTransactionsByAddress(network, address, context, limit, offset);
+      ListXRPRippleTransactionsByAddressR result = apiInstance.listXRPRippleTransactionsByAddress(network, address, context, limit, offset, transactionType);
       System.out.println(result);
     } catch (ApiException e) {
       System.err.println("Exception when calling XrpRippleApi#listXRPRippleTransactionsByAddress");
@@ -484,6 +485,7 @@ Name | Type | Description  | Notes
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50]
  **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0]
+ **transactionType** | **String**|  | [optional] [enum: account-set, account-delete, check-cancel, check-cash, check-create, deposit-preauth, escrow-cancel, escrow-create, escrow-finish, offer-cancel, offer-create, payment, payment-channel-claim, payment-channel-create, payment-channel-fund, set-regular-key, signer-list-set, ticket-create, trust-set]
 
 ### Return type
 

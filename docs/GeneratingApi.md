@@ -4,14 +4,14 @@ All URIs are relative to *https://rest.cryptoapis.io/v2*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**generateReceivingAddress**](GeneratingApi.md#generateReceivingAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses | Generate Receiving Address
+[**generateDepositAddress**](GeneratingApi.md#generateDepositAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses | Generate Deposit Address
 
 
-<a name="generateReceivingAddress"></a>
-# **generateReceivingAddress**
-> GenerateReceivingAddressR generateReceivingAddress(blockchain, network, walletId, context, generateReceivingAddressRB)
+<a name="generateDepositAddress"></a>
+# **generateDepositAddress**
+> GenerateDepositAddressR generateDepositAddress(blockchain, network, walletId, context, generateDepositAddressRB)
 
-Generate Receiving Address
+Generate Deposit Address
 
 Through this endpoint customers can generate a new Receiving/Deposit Addresses into their Wallet.
 
@@ -41,12 +41,12 @@ public class Example {
     String network = "testnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.
     String walletId = "60c9d9921c38030006675ff6"; // String | Represents the unique ID of the specific Wallet.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    GenerateReceivingAddressRB generateReceivingAddressRB = new GenerateReceivingAddressRB(); // GenerateReceivingAddressRB | 
+    GenerateDepositAddressRB generateDepositAddressRB = new GenerateDepositAddressRB(); // GenerateDepositAddressRB | 
     try {
-      GenerateReceivingAddressR result = apiInstance.generateReceivingAddress(blockchain, network, walletId, context, generateReceivingAddressRB);
+      GenerateDepositAddressR result = apiInstance.generateDepositAddress(blockchain, network, walletId, context, generateDepositAddressRB);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling GeneratingApi#generateReceivingAddress");
+      System.err.println("Exception when calling GeneratingApi#generateDepositAddress");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -64,11 +64,11 @@ Name | Type | Description  | Notes
  **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks. | [enum: mainnet, testnet]
  **walletId** | **String**| Represents the unique ID of the specific Wallet. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **generateReceivingAddressRB** | [**GenerateReceivingAddressRB**](GenerateReceivingAddressRB.md)|  | [optional]
+ **generateDepositAddressRB** | [**GenerateDepositAddressRB**](GenerateDepositAddressRB.md)|  | [optional]
 
 ### Return type
 
-[**GenerateReceivingAddressR**](GenerateReceivingAddressR.md)
+[**GenerateDepositAddressR**](GenerateDepositAddressR.md)
 
 ### Authorization
 

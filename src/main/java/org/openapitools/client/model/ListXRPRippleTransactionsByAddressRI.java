@@ -35,12 +35,8 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIValue;
 /**
  * ListXRPRippleTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByAddressRI {
-  public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
-  @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)
-  private String additionalData;
-
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   private Integer index;
@@ -96,28 +92,6 @@ public class ListXRPRippleTransactionsByAddressRI {
   public static final String SERIALIZED_NAME_VALUE = "value";
   @SerializedName(SERIALIZED_NAME_VALUE)
   private ListXRPRippleTransactionsByAddressRIValue value;
-
-
-  public ListXRPRippleTransactionsByAddressRI additionalData(String additionalData) {
-    
-    this.additionalData = additionalData;
-    return this;
-  }
-
-   /**
-   * Represents any additional data that may be needed.
-   * @return additionalData
-  **/
-  @ApiModelProperty(required = true, value = "Represents any additional data that may be needed.")
-
-  public String getAdditionalData() {
-    return additionalData;
-  }
-
-
-  public void setAdditionalData(String additionalData) {
-    this.additionalData = additionalData;
-  }
 
 
   public ListXRPRippleTransactionsByAddressRI index(Integer index) {
@@ -272,7 +246,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Defines the status of the transaction.
    * @return status
   **/
-  @ApiModelProperty(required = true, value = "Defines the status of the transaction.")
+  @ApiModelProperty(example = "tesSUCCESS", required = true, value = "Defines the status of the transaction.")
 
   public String getStatus() {
     return status;
@@ -338,7 +312,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Specifies the type of the transaction.
    * @return type
   **/
-  @ApiModelProperty(required = true, value = "Specifies the type of the transaction.")
+  @ApiModelProperty(example = "OfferCreate", required = true, value = "Specifies the type of the transaction.")
 
   public String getType() {
     return type;
@@ -447,8 +421,7 @@ public class ListXRPRippleTransactionsByAddressRI {
       return false;
     }
     ListXRPRippleTransactionsByAddressRI listXRPRippleTransactionsByAddressRI = (ListXRPRippleTransactionsByAddressRI) o;
-    return Objects.equals(this.additionalData, listXRPRippleTransactionsByAddressRI.additionalData) &&
-        Objects.equals(this.index, listXRPRippleTransactionsByAddressRI.index) &&
+    return Objects.equals(this.index, listXRPRippleTransactionsByAddressRI.index) &&
         Objects.equals(this.minedInBlockHash, listXRPRippleTransactionsByAddressRI.minedInBlockHash) &&
         Objects.equals(this.minedInBlockHeight, listXRPRippleTransactionsByAddressRI.minedInBlockHeight) &&
         Objects.equals(this.recipients, listXRPRippleTransactionsByAddressRI.recipients) &&
@@ -466,14 +439,13 @@ public class ListXRPRippleTransactionsByAddressRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalData, index, minedInBlockHash, minedInBlockHeight, recipients, senders, sequence, status, timestamp, transactionHash, type, fee, offer, receive, value);
+    return Objects.hash(index, minedInBlockHash, minedInBlockHeight, recipients, senders, sequence, status, timestamp, transactionHash, type, fee, offer, receive, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListXRPRippleTransactionsByAddressRI {\n");
-    sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    minedInBlockHash: ").append(toIndentedString(minedInBlockHash)).append("\n");
     sb.append("    minedInBlockHeight: ").append(toIndentedString(minedInBlockHeight)).append("\n");

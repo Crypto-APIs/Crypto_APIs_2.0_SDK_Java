@@ -21,7 +21,7 @@ import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
-import org.openapitools.client.model.ListReceivingAddressesR;
+import org.openapitools.client.model.ListDepositAddressesR;
 import org.openapitools.client.model.ListSupportedTokensR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.ResourceNotFound;
@@ -64,20 +64,20 @@ public class InformativeApiTest {
     }
     
     /**
-     * List Receiving Addresses
+     * List Deposit Addresses
      *
-     * Through this endpoint customers can pull a list of Deposit Addresses they have already generated. Deposit addresses are listed with their specific details such as unique ID.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * Through this endpoint customers can pull a list of Deposit/Receiving Addresses they have already generated.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void listReceivingAddressesTest() throws ApiException {
+    public void listDepositAddressesTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String walletId = null;
         String context = null;
-        ListReceivingAddressesR response = api.listReceivingAddresses(blockchain, network, walletId, context);
+        ListDepositAddressesR response = api.listDepositAddresses(blockchain, network, walletId, context);
 
         // TODO: test validations
     }

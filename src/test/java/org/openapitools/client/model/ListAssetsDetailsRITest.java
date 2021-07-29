@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.ListAssetsDetailsRIAssetLogo;
 import org.openapitools.client.model.ListAssetsDetailsRILatestRate;
-import org.openapitools.client.model.ListAssetsDetailsRISpecificData;
+import org.openapitools.client.model.ListAssetsDetailsRIS;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

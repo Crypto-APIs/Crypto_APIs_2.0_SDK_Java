@@ -27,11 +27,19 @@ import java.io.IOException;
 /**
  * CreateCoinsTransactionRequestFromAddressRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-20T13:36:32.071127Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
+
+  public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
+  @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
+  private String callbackSecretKey;
+
+  public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
+  @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
+  private String callbackUrl;
 
   /**
    * Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;.
@@ -86,9 +94,9 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   @SerializedName(SERIALIZED_NAME_FEE_PRIORITY)
   private FeePriorityEnum feePriority;
 
-  public static final String SERIALIZED_NAME_TO_ADDRESS = "toAddress";
-  @SerializedName(SERIALIZED_NAME_TO_ADDRESS)
-  private String toAddress;
+  public static final String SERIALIZED_NAME_RECIPIENT_ADDRESS = "recipientAddress";
+  @SerializedName(SERIALIZED_NAME_RECIPIENT_ADDRESS)
+  private String recipientAddress;
 
 
   public CreateCoinsTransactionRequestFromAddressRBDataItem amount(String amount) {
@@ -110,6 +118,52 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
 
   public void setAmount(String amount) {
     this.amount = amount;
+  }
+
+
+  public CreateCoinsTransactionRequestFromAddressRBDataItem callbackSecretKey(String callbackSecretKey) {
+    
+    this.callbackSecretKey = callbackSecretKey;
+    return this;
+  }
+
+   /**
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * @return callbackSecretKey
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "yourSecretString", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+
+  public String getCallbackSecretKey() {
+    return callbackSecretKey;
+  }
+
+
+  public void setCallbackSecretKey(String callbackSecretKey) {
+    this.callbackSecretKey = callbackSecretKey;
+  }
+
+
+  public CreateCoinsTransactionRequestFromAddressRBDataItem callbackUrl(String callbackUrl) {
+    
+    this.callbackUrl = callbackUrl;
+    return this;
+  }
+
+   /**
+   * Verified URL for sending callbacks
+   * @return callbackUrl
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "https://example.com", value = "Verified URL for sending callbacks")
+
+  public String getCallbackUrl() {
+    return callbackUrl;
+  }
+
+
+  public void setCallbackUrl(String callbackUrl) {
+    this.callbackUrl = callbackUrl;
   }
 
 
@@ -135,25 +189,25 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   }
 
 
-  public CreateCoinsTransactionRequestFromAddressRBDataItem toAddress(String toAddress) {
+  public CreateCoinsTransactionRequestFromAddressRBDataItem recipientAddress(String recipientAddress) {
     
-    this.toAddress = toAddress;
+    this.recipientAddress = recipientAddress;
     return this;
   }
 
    /**
    * Defines the specific recipient address for the transaction.
-   * @return toAddress
+   * @return recipientAddress
   **/
   @ApiModelProperty(example = "0xc065b539490f81b6c297c37b1925c3be2f190732", required = true, value = "Defines the specific recipient address for the transaction.")
 
-  public String getToAddress() {
-    return toAddress;
+  public String getRecipientAddress() {
+    return recipientAddress;
   }
 
 
-  public void setToAddress(String toAddress) {
-    this.toAddress = toAddress;
+  public void setRecipientAddress(String recipientAddress) {
+    this.recipientAddress = recipientAddress;
   }
 
 
@@ -167,13 +221,15 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
     }
     CreateCoinsTransactionRequestFromAddressRBDataItem createCoinsTransactionRequestFromAddressRBDataItem = (CreateCoinsTransactionRequestFromAddressRBDataItem) o;
     return Objects.equals(this.amount, createCoinsTransactionRequestFromAddressRBDataItem.amount) &&
+        Objects.equals(this.callbackSecretKey, createCoinsTransactionRequestFromAddressRBDataItem.callbackSecretKey) &&
+        Objects.equals(this.callbackUrl, createCoinsTransactionRequestFromAddressRBDataItem.callbackUrl) &&
         Objects.equals(this.feePriority, createCoinsTransactionRequestFromAddressRBDataItem.feePriority) &&
-        Objects.equals(this.toAddress, createCoinsTransactionRequestFromAddressRBDataItem.toAddress);
+        Objects.equals(this.recipientAddress, createCoinsTransactionRequestFromAddressRBDataItem.recipientAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, feePriority, toAddress);
+    return Objects.hash(amount, callbackSecretKey, callbackUrl, feePriority, recipientAddress);
   }
 
   @Override
@@ -181,8 +237,10 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateCoinsTransactionRequestFromAddressRBDataItem {\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
+    sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    feePriority: ").append(toIndentedString(feePriority)).append("\n");
-    sb.append("    toAddress: ").append(toIndentedString(toAddress)).append("\n");
+    sb.append("    recipientAddress: ").append(toIndentedString(recipientAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }

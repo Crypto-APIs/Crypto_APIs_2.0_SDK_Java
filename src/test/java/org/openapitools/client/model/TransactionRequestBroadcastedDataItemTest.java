@@ -57,35 +57,35 @@ public class TransactionRequestBroadcastedDataItemTest {
     }
 
     /**
-     * Test the property 'requiredApproves'
+     * Test the property 'requiredApprovals'
      */
     @Test
-    public void requiredApprovesTest() {
-        // TODO: test requiredApproves
+    public void requiredApprovalsTest() {
+        // TODO: test requiredApprovals
     }
 
     /**
-     * Test the property 'requiredRejects'
+     * Test the property 'requiredRejections'
      */
     @Test
-    public void requiredRejectsTest() {
-        // TODO: test requiredRejects
+    public void requiredRejectionsTest() {
+        // TODO: test requiredRejections
     }
 
     /**
-     * Test the property 'currentApproves'
+     * Test the property 'currentApprovals'
      */
     @Test
-    public void currentApprovesTest() {
-        // TODO: test currentApproves
+    public void currentApprovalsTest() {
+        // TODO: test currentApprovals
     }
 
     /**
-     * Test the property 'currentRejects'
+     * Test the property 'currentRejections'
      */
     @Test
-    public void currentRejectsTest() {
-        // TODO: test currentRejects
+    public void currentRejectionsTest() {
+        // TODO: test currentRejections
     }
 
     /**

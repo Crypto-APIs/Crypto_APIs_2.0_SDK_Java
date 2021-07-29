@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDataItemDestinations;
+import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDataItemRecipients;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -44,11 +44,19 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItemTest {
     }
 
     /**
-     * Test the property 'destinations'
+     * Test the property 'callbackSecretKey'
      */
     @Test
-    public void destinationsTest() {
-        // TODO: test destinations
+    public void callbackSecretKeyTest() {
+        // TODO: test callbackSecretKey
+    }
+
+    /**
+     * Test the property 'callbackUrl'
+     */
+    @Test
+    public void callbackUrlTest() {
+        // TODO: test callbackUrl
     }
 
     /**
@@ -57,6 +65,14 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItemTest {
     @Test
     public void feePriorityTest() {
         // TODO: test feePriority
+    }
+
+    /**
+     * Test the property 'recipients'
+     */
+    @Test
+    public void recipientsTest() {
+        // TODO: test recipients
     }
 
 }
