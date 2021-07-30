@@ -25,22 +25,21 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSB;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBC;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBSC;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2Vin;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2Vout;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSE;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSEC;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSEGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSL;
 
 /**
  * ListTransactionsByBlockHashRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -80,7 +79,7 @@ public class ListTransactionsByBlockHashRIBS {
 
   public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
   @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice;
+  private ListTransactionsByBlockHashRIBSEGasPrice gasPrice;
 
   public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
   @SerializedName(SERIALIZED_NAME_GAS_USED)
@@ -270,10 +269,10 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the transaction contract
+   * Represents the specific transaction contract.
    * @return contract
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction contract")
+  @ApiModelProperty(required = true, value = "Represents the specific transaction contract.")
 
   public String getContract() {
     return contract;
@@ -292,10 +291,10 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
    /**
-   * String representation of the transaction gas
+   * Represents the amount of gas used by this specific transaction alone.
    * @return gasLimit
   **/
-  @ApiModelProperty(required = true, value = "String representation of the transaction gas")
+  @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
 
   public String getGasLimit() {
     return gasLimit;
@@ -307,7 +306,7 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
 
-  public ListTransactionsByBlockHashRIBS gasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
+  public ListTransactionsByBlockHashRIBS gasPrice(ListTransactionsByBlockHashRIBSEGasPrice gasPrice) {
     
     this.gasPrice = gasPrice;
     return this;
@@ -319,12 +318,12 @@ public class ListTransactionsByBlockHashRIBS {
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public GetTransactionDetailsByTransactionIDRIBSBSCGasPrice getGasPrice() {
+  public ListTransactionsByBlockHashRIBSEGasPrice getGasPrice() {
     return gasPrice;
   }
 
 
-  public void setGasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
+  public void setGasPrice(ListTransactionsByBlockHashRIBSEGasPrice gasPrice) {
     this.gasPrice = gasPrice;
   }
 
@@ -336,10 +335,10 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the transaction gas used
+   * Represents the exact unit of gas that was used for the transaction.
    * @return gasUsed
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction gas used")
+  @ApiModelProperty(example = "21000", required = true, value = "Represents the exact unit of gas that was used for the transaction.")
 
   public String getGasUsed() {
     return gasUsed;
@@ -358,10 +357,10 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the transaction input
+   * Represents additional information that is required for the transaction.
    * @return inputData
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction input")
+  @ApiModelProperty(example = "0xa9059cbb000000000000000000000000acc59ec2f7119dc7a9e69dcd124cff75caae05bf0000000000000000000000000000000000000000000000000000000000989680", required = true, value = "Represents additional information that is required for the transaction.")
 
   public String getInputData() {
     return inputData;
@@ -380,10 +379,10 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the transaction nonce
+   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
    * @return nonce
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction nonce")
+  @ApiModelProperty(example = "16", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
   public String getNonce() {
     return nonce;

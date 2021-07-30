@@ -27,7 +27,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSB;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSBC;
-import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSBSC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSD;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSD2;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSE;
@@ -37,7 +36,7 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSL;
 /**
  * GetBlockDetailsByBlockHashRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashRIBS {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -339,10 +338,10 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the block extra data
+   * Represents any data that can be included by the miner in the block.
    * @return extraData
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block extra data")
+  @ApiModelProperty(required = true, value = "Represents any data that can be included by the miner in the block.")
 
   public String getExtraData() {
     return extraData;
@@ -361,10 +360,10 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the block gas limit
+   * Defines the total gas limit of all transactions in the block.
    * @return gasLimit
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block gas limit")
+  @ApiModelProperty(example = "7999992", required = true, value = "Defines the total gas limit of all transactions in the block.")
 
   public String getGasLimit() {
     return gasLimit;
@@ -383,10 +382,10 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the block gas used
+   * Represents the total amount of gas used by all transactions in this block.
    * @return gasUsed
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block gas used")
+  @ApiModelProperty(example = "21000", required = true, value = "Represents the total amount of gas used by all transactions in this block.")
 
   public String getGasUsed() {
     return gasUsed;
@@ -405,10 +404,10 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the block gas limit
+   * Specifies the amount of time required for the block to be mined in seconds.
    * @return minedInSeconds
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block gas limit")
+  @ApiModelProperty(example = "12", required = true, value = "Specifies the amount of time required for the block to be mined in seconds.")
 
   public Integer getMinedInSeconds() {
     return minedInSeconds;
@@ -427,10 +426,10 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the block sha3 uncles
+   * Defines the combined hash of all uncles for a given parent.
    * @return sha3Uncles
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block sha3 uncles")
+  @ApiModelProperty(example = "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347", required = true, value = "Defines the combined hash of all uncles for a given parent.")
 
   public String getSha3Uncles() {
     return sha3Uncles;
@@ -449,10 +448,10 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
    /**
-   * Numeric representation of the block total difficulty
+   * Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.
    * @return totalDifficulty
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block total difficulty")
+  @ApiModelProperty(example = "1088214928417257646845", required = true, value = "Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.")
 
   public String getTotalDifficulty() {
     return totalDifficulty;

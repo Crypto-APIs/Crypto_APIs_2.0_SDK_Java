@@ -17,12 +17,12 @@ Name | Type | Description | Notes
 **version** | **Integer** | Represents the version of the specific block on the blockchain. | 
 **versionHex** | **String** | Is the hexadecimal string representation of the block&#39;s version. | 
 **weight** | **Integer** | Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit. | 
-**extraData** | **String** | Numeric representation of the block extra data | 
-**gasLimit** | **String** | Numeric representation of the block gas limit | 
-**gasUsed** | **String** | Numeric representation of the block gas used | 
-**minedInSeconds** | **Integer** | Numeric representation of the block gas limit | 
-**sha3Uncles** | **String** | Numeric representation of the block sha3 uncles | 
-**totalDifficulty** | **String** | Numeric representation of the block total difficulty | 
+**extraData** | **String** | Represents any data that can be included by the miner in the block. | 
+**gasLimit** | **String** | Defines the total gas limit of all transactions in the block. | 
+**gasUsed** | **String** | Represents the total amount of gas used by all transactions in this block. | 
+**minedInSeconds** | **Integer** | Specifies the amount of time required for the block to be mined in seconds. | 
+**sha3Uncles** | **String** | Defines the combined hash of all uncles for a given parent. | 
+**totalDifficulty** | **String** | Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block. | 
 
 
 

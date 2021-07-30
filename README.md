@@ -2,7 +2,7 @@
 
 CryptoAPIs
 - API version: 2.0.0
-  - Build date: 2021-07-29T09:33:59.822482Z[Etc/UTC]
+  - Build date: 2021-07-30T08:15:40.964553Z[Etc/UTC]
 
 Crypto APIs 2.0 is a complex and innovative infrastructure layer that radically simplifies the development of any Blockchain and Crypto related applications. Organized around REST, Crypto APIs 2.0 can assist both novice Bitcoin/Ethereum enthusiasts and crypto experts with the development of their blockchain applications. Crypto APIs 2.0 provides unified endpoints and data, raw data, automatic tokens and coins forwardings, callback functionalities, and much more.
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.cryptoapis</groupId>
   <artifactId>cryptoapis-sdk</artifactId>
-  <version>1.2.0</version>
+  <version>1.2.1</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -51,7 +51,7 @@ Add this dependency to your project's POM:
 Add this dependency to your project's build file:
 
 ```groovy
-compile "io.cryptoapis:cryptoapis-sdk:1.2.0"
+compile "io.cryptoapis:cryptoapis-sdk:1.2.1"
 ```
 
 ### Others
@@ -64,7 +64,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/cryptoapis-sdk-1.2.0.jar`
+* `target/cryptoapis-sdk-1.2.1.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -364,7 +364,6 @@ Class | Method | HTTP request | Description
  - [GetBlockDetailsByBlockHashRIBS](docs/GetBlockDetailsByBlockHashRIBS.md)
  - [GetBlockDetailsByBlockHashRIBSB](docs/GetBlockDetailsByBlockHashRIBSB.md)
  - [GetBlockDetailsByBlockHashRIBSBC](docs/GetBlockDetailsByBlockHashRIBSBC.md)
- - [GetBlockDetailsByBlockHashRIBSBSC](docs/GetBlockDetailsByBlockHashRIBSBSC.md)
  - [GetBlockDetailsByBlockHashRIBSD](docs/GetBlockDetailsByBlockHashRIBSD.md)
  - [GetBlockDetailsByBlockHashRIBSD2](docs/GetBlockDetailsByBlockHashRIBSD2.md)
  - [GetBlockDetailsByBlockHashRIBSE](docs/GetBlockDetailsByBlockHashRIBSE.md)
@@ -376,7 +375,6 @@ Class | Method | HTTP request | Description
  - [GetBlockDetailsByBlockHeightRIBS](docs/GetBlockDetailsByBlockHeightRIBS.md)
  - [GetBlockDetailsByBlockHeightRIBSB](docs/GetBlockDetailsByBlockHeightRIBSB.md)
  - [GetBlockDetailsByBlockHeightRIBSBC](docs/GetBlockDetailsByBlockHeightRIBSBC.md)
- - [GetBlockDetailsByBlockHeightRIBSBSC](docs/GetBlockDetailsByBlockHeightRIBSBSC.md)
  - [GetBlockDetailsByBlockHeightRIBSD](docs/GetBlockDetailsByBlockHeightRIBSD.md)
  - [GetBlockDetailsByBlockHeightRIBSD2](docs/GetBlockDetailsByBlockHeightRIBSD2.md)
  - [GetBlockDetailsByBlockHeightRIBSE](docs/GetBlockDetailsByBlockHeightRIBSE.md)
@@ -410,7 +408,6 @@ Class | Method | HTTP request | Description
  - [GetLatestMinedBlockRIBS](docs/GetLatestMinedBlockRIBS.md)
  - [GetLatestMinedBlockRIBSB](docs/GetLatestMinedBlockRIBSB.md)
  - [GetLatestMinedBlockRIBSBC](docs/GetLatestMinedBlockRIBSBC.md)
- - [GetLatestMinedBlockRIBSBSC](docs/GetLatestMinedBlockRIBSBSC.md)
  - [GetLatestMinedBlockRIBSD](docs/GetLatestMinedBlockRIBSD.md)
  - [GetLatestMinedBlockRIBSD2](docs/GetLatestMinedBlockRIBSD2.md)
  - [GetLatestMinedBlockRIBSE](docs/GetLatestMinedBlockRIBSE.md)
@@ -437,8 +434,6 @@ Class | Method | HTTP request | Description
  - [GetTransactionDetailsByTransactionIDRIBSBCScriptPubKey](docs/GetTransactionDetailsByTransactionIDRIBSBCScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDRIBSBCVin](docs/GetTransactionDetailsByTransactionIDRIBSBCVin.md)
  - [GetTransactionDetailsByTransactionIDRIBSBCVout](docs/GetTransactionDetailsByTransactionIDRIBSBCVout.md)
- - [GetTransactionDetailsByTransactionIDRIBSBSC](docs/GetTransactionDetailsByTransactionIDRIBSBSC.md)
- - [GetTransactionDetailsByTransactionIDRIBSBSCGasPrice](docs/GetTransactionDetailsByTransactionIDRIBSBSCGasPrice.md)
  - [GetTransactionDetailsByTransactionIDRIBSBScriptPubKey](docs/GetTransactionDetailsByTransactionIDRIBSBScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDRIBSBScriptSig](docs/GetTransactionDetailsByTransactionIDRIBSBScriptSig.md)
  - [GetTransactionDetailsByTransactionIDRIBSBVin](docs/GetTransactionDetailsByTransactionIDRIBSBVin.md)
@@ -604,7 +599,6 @@ Class | Method | HTTP request | Description
  - [ListTransactionsByAddressRIBSB](docs/ListTransactionsByAddressRIBSB.md)
  - [ListTransactionsByAddressRIBSBC](docs/ListTransactionsByAddressRIBSBC.md)
  - [ListTransactionsByAddressRIBSBCVin](docs/ListTransactionsByAddressRIBSBCVin.md)
- - [ListTransactionsByAddressRIBSBSC](docs/ListTransactionsByAddressRIBSBSC.md)
  - [ListTransactionsByAddressRIBSBScriptPubKey](docs/ListTransactionsByAddressRIBSBScriptPubKey.md)
  - [ListTransactionsByAddressRIBSBVin](docs/ListTransactionsByAddressRIBSBVin.md)
  - [ListTransactionsByAddressRIBSBVout](docs/ListTransactionsByAddressRIBSBVout.md)
@@ -632,7 +626,6 @@ Class | Method | HTTP request | Description
  - [ListTransactionsByBlockHashRIBSBCScriptPubKey](docs/ListTransactionsByBlockHashRIBSBCScriptPubKey.md)
  - [ListTransactionsByBlockHashRIBSBCVin](docs/ListTransactionsByBlockHashRIBSBCVin.md)
  - [ListTransactionsByBlockHashRIBSBCVout](docs/ListTransactionsByBlockHashRIBSBCVout.md)
- - [ListTransactionsByBlockHashRIBSBSC](docs/ListTransactionsByBlockHashRIBSBSC.md)
  - [ListTransactionsByBlockHashRIBSBVin](docs/ListTransactionsByBlockHashRIBSBVin.md)
  - [ListTransactionsByBlockHashRIBSD](docs/ListTransactionsByBlockHashRIBSD.md)
  - [ListTransactionsByBlockHashRIBSD2](docs/ListTransactionsByBlockHashRIBSD2.md)
@@ -659,8 +652,6 @@ Class | Method | HTTP request | Description
  - [ListTransactionsByBlockHeightRIBS](docs/ListTransactionsByBlockHeightRIBS.md)
  - [ListTransactionsByBlockHeightRIBSB](docs/ListTransactionsByBlockHeightRIBSB.md)
  - [ListTransactionsByBlockHeightRIBSBC](docs/ListTransactionsByBlockHeightRIBSBC.md)
- - [ListTransactionsByBlockHeightRIBSBSC](docs/ListTransactionsByBlockHeightRIBSBSC.md)
- - [ListTransactionsByBlockHeightRIBSBSCGasPrice](docs/ListTransactionsByBlockHeightRIBSBSCGasPrice.md)
  - [ListTransactionsByBlockHeightRIBSBScriptPubKey](docs/ListTransactionsByBlockHeightRIBSBScriptPubKey.md)
  - [ListTransactionsByBlockHeightRIBSBVout](docs/ListTransactionsByBlockHeightRIBSBVout.md)
  - [ListTransactionsByBlockHeightRIBSD](docs/ListTransactionsByBlockHeightRIBSD.md)

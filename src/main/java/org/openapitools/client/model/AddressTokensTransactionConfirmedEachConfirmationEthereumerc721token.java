@@ -28,7 +28,7 @@ import java.io.IOException;
  * ethereumERC721Token
  */
 @ApiModel(description = "ethereumERC721Token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class AddressTokensTransactionConfirmedEachConfirmationEthereumerc721token {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)

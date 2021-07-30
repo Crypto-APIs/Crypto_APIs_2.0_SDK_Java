@@ -69,7 +69,7 @@ public class UtxoBasedApiTest {
     /**
      * List HD Wallet (xPub, yPub, zPub) Transactions
      *
-     * This endpoint will list HD Wallet transactions.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+     * This endpoint will list HD Wallet transactions.
      *
      * @throws ApiException
      *          if the Api call fails

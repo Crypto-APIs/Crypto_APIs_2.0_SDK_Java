@@ -25,7 +25,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSB;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBC;
-import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBSC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD2;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSE;
@@ -35,7 +34,7 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSL;
 /**
  * GetBlockDetailsByBlockHeightRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBS {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -91,7 +90,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
 
   public static final String SERIALIZED_NAME_MINED_IN_SECONDS = "minedInSeconds";
   @SerializedName(SERIALIZED_NAME_MINED_IN_SECONDS)
-  private String minedInSeconds;
+  private Integer minedInSeconds;
 
   public static final String SERIALIZED_NAME_SHA3_UNCLES = "sha3Uncles";
   @SerializedName(SERIALIZED_NAME_SHA3_UNCLES)
@@ -329,10 +328,10 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Numeric representation of the block extra data
+   * Represents any data that can be included by the miner in the block.
    * @return extraData
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block extra data")
+  @ApiModelProperty(example = "0x307834383639373636353666366532303530366636663663", required = true, value = "Represents any data that can be included by the miner in the block.")
 
   public String getExtraData() {
     return extraData;
@@ -351,10 +350,10 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Numeric representation of the block gas limit
+   * Defines the total gas limit of all transactions in the block.
    * @return gasLimit
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block gas limit")
+  @ApiModelProperty(example = "3141592", required = true, value = "Defines the total gas limit of all transactions in the block.")
 
   public String getGasLimit() {
     return gasLimit;
@@ -373,10 +372,10 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Numeric representation of the block gas used
+   * Represents the total amount of gas used by all transactions in this block.
    * @return gasUsed
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block gas used")
+  @ApiModelProperty(example = "21000", required = true, value = "Represents the total amount of gas used by all transactions in this block.")
 
   public String getGasUsed() {
     return gasUsed;
@@ -388,24 +387,24 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
 
-  public GetBlockDetailsByBlockHeightRIBS minedInSeconds(String minedInSeconds) {
+  public GetBlockDetailsByBlockHeightRIBS minedInSeconds(Integer minedInSeconds) {
     
     this.minedInSeconds = minedInSeconds;
     return this;
   }
 
    /**
-   * Numeric representation of the block gas limit
+   * Specifies the amount of time required for the block to be mined in seconds.
    * @return minedInSeconds
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block gas limit")
+  @ApiModelProperty(example = "8", required = true, value = "Specifies the amount of time required for the block to be mined in seconds.")
 
-  public String getMinedInSeconds() {
+  public Integer getMinedInSeconds() {
     return minedInSeconds;
   }
 
 
-  public void setMinedInSeconds(String minedInSeconds) {
+  public void setMinedInSeconds(Integer minedInSeconds) {
     this.minedInSeconds = minedInSeconds;
   }
 
@@ -417,10 +416,10 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Numeric representation of the block sha3 uncles
+   * Defines the combined hash of all uncles for a given parent.
    * @return sha3Uncles
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block sha3 uncles")
+  @ApiModelProperty(example = "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347", required = true, value = "Defines the combined hash of all uncles for a given parent.")
 
   public String getSha3Uncles() {
     return sha3Uncles;
@@ -439,10 +438,10 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Numeric representation of the block total difficulty
+   * Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.
    * @return totalDifficulty
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the block total difficulty")
+  @ApiModelProperty(example = "20104747399762079739558", required = true, value = "Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.")
 
   public String getTotalDifficulty() {
     return totalDifficulty;

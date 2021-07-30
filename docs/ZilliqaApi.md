@@ -432,7 +432,7 @@ Name | Type | Description  | Notes
 
 List Zilliqa Transactions by Address
 
-Through this endpoint customers can list transactions on the Zilliqa blockchain by the address parameter.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+Through this endpoint customers can list transactions on the Zilliqa blockchain by the address parameter.
 
 ### Example
 ```java
@@ -518,7 +518,7 @@ Name | Type | Description  | Notes
 
 List Zilliqa Transactions By Block Hash
 
-Through this endpoint customers can list transactions on the Zilliqa blockchain by the block hash parameter.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+Through this endpoint customers can list transactions on the Zilliqa blockchain by the block hash parameter.
 
 ### Example
 ```java
@@ -604,7 +604,7 @@ Name | Type | Description  | Notes
 
 List Zilliqa Transactions By Block Height
 
-Through this endpoint customers can list transactions on the Zilliqa blockchain by the block height parameter.    {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+Through this endpoint customers can list transactions on the Zilliqa blockchain by the block height parameter.
 
 ### Example
 ```java

@@ -30,7 +30,7 @@ import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRI
  * Represents the specific token data which depends on its type - if it is a Coin or Token.
  */
 @ApiModel(description = "Represents the specific token data which depends on its type - if it is a Coin or Token.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class CreateTokensTransactionRequestFromAddressRIS {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)

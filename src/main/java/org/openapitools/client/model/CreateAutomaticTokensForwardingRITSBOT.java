@@ -28,7 +28,7 @@ import java.io.IOException;
  * Bitcoin Omni Token
  */
 @ApiModel(description = "Bitcoin Omni Token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class CreateAutomaticTokensForwardingRITSBOT {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)

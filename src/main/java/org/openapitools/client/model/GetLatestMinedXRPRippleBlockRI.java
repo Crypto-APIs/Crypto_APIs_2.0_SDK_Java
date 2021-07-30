@@ -29,7 +29,7 @@ import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalFees;
 /**
  * GetLatestMinedXRPRippleBlockRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class GetLatestMinedXRPRippleBlockRI {
   public static final String SERIALIZED_NAME_BLOCK_HASH = "blockHash";
   @SerializedName(SERIALIZED_NAME_BLOCK_HASH)

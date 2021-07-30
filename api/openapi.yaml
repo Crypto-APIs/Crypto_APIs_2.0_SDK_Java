@@ -866,7 +866,6 @@ paths:
           - dash
           - ethereum
           - ethereum-classic
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -997,12 +996,10 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/omni/addresses/{address}:
     get:
-      description: "Through this endpoint the customer can receive basic information\
-        \ about a given Omni address based on confirmed/synced blocks only. In the\
-        \ case where there are any incoming or outgoing **unconfirmed** transactions\
-        \ for the specific address, they **will not** be counted or calculated here.\r\
-        \n\r\n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+      description: Through this endpoint the customer can receive basic information
+        about a given Omni address based on confirmed/synced blocks only. In the case
+        where there are any incoming or outgoing **unconfirmed** transactions for
+        the specific address, they **will not** be counted or calculated here.
       operationId: List Omni Tokens By Address
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -1425,7 +1422,6 @@ paths:
           - dash
           - ethereum
           - ethereum-classic
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -1565,10 +1561,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/omni/addresses/{address}/transactions:
     get:
-      description: "This endpoint will list Omni transactions by an attribute `address`.\
-        \ The transactions listed will detail additional information such as hash,\
-        \ height, time of creation in Unix timestamp, etc.\r\n\r\n{note}Please note\
-        \ that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list Omni transactions by an attribute `address`.
+        The transactions listed will detail additional information such as hash, height,
+        time of creation in Unix timestamp, etc.
       operationId: List Omni Transactions By Address
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -2319,10 +2314,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/addresses/{address}/transactions:
     get:
-      description: "This endpoint will list transactions by an attribute `address`.\
-        \ The transactions listed will detail additional information such as hash,\
-        \ height, time of creation in Unix timestamp, etc.\r\n\r\n{note}Please note\
-        \ that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list transactions by an attribute `address`.
+        The transactions listed will detail additional information such as hash, height,
+        time of creation in Unix timestamp, etc.
       operationId: List Transactions By Address
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -2343,7 +2337,6 @@ paths:
           - dash
           - ethereum-classic
           - ethereum
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -2505,8 +2498,7 @@ paths:
       description: "This endpoint will list XRP transactions by a attribute `address`.\
         \ The transactions listed will detail additional information such as hash,\
         \ height, time of creation in Unix timestamp, etc.\r\n\r\nSince XRP is a different\
-        \ blockchain than Bitcoin and Ethereum, it isn't unified.\r\n\r\n{note}Please\
-        \ note that listing data from the same type will apply pagination on the results.{/note}"
+        \ blockchain than Bitcoin and Ethereum, it isn't unified."
       operationId: List XRP (Ripple) Transactions by Address
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -2693,8 +2685,7 @@ paths:
         \ `address`. The transactions listed will detail additional information such\
         \ as hash, height, time of creation in Unix timestamp, etc.\r\n\r\nUnconfirmed\
         \ transactions are usually put in the Mempool and await verification so that\
-        \ they can be added to a block.\r\n\r\n{note}Please note that listing data\
-        \ from the same type will apply pagination on the results.{/note}"
+        \ they can be added to a block."
       operationId: List Unconfirmed Omni Transactions By Address
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -3098,9 +3089,8 @@ paths:
       x-accepts: application/json
   /blockchain-data/zilliqa-specific/{network}/addresses/{address}/transactions:
     get:
-      description: "Through this endpoint customers can list transactions on the Zilliqa\
-        \ blockchain by the address parameter.\r\n\r\n{note}Please note that listing\
-        \ data from the same type will apply pagination on the results.{/note}"
+      description: Through this endpoint customers can list transactions on the Zilliqa
+        blockchain by the address parameter.
       operationId: List Zilliqa Transactions by Address
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -3252,10 +3242,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/blocks/hash/{blockHash}/transactions:
     get:
-      description: "This endpoint will list transactions by an attribute `transactionHash`.\
-        \ The transactions listed will detail additional information such as addresses,\
-        \ height, time of creation in Unix timestamp, etc.\r\n\r\n{note}Please note\
-        \ that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list transactions by an attribute `transactionHash`.
+        The transactions listed will detail additional information such as addresses,
+        height, time of creation in Unix timestamp, etc.
       operationId: List Transactions by Block Hash
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -3276,7 +3265,6 @@ paths:
           - dash
           - ethereum
           - ethereum-classic
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -3440,9 +3428,7 @@ paths:
       description: "This endpoint will list transactions by an attribute `blockHash`.\
         \ The transactions listed will detail additional information such as hash,\
         \ addresses, time of creation in Unix timestamp, etc.\r\n\r\nSince XRP is\
-        \ a different blockchain than Bitcoin and Ethereum, it isn't unified.\r\n\r\
-        \n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+        \ a different blockchain than Bitcoin and Ethereum, it isn't unified."
       operationId: List XRP (Ripple) Transactions By Block Hash
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -3987,9 +3973,8 @@ paths:
       x-accepts: application/json
   /blockchain-data/zilliqa-specific/{network}/blocks/hash/{blockHash}/transactions:
     get:
-      description: "Through this endpoint customers can list transactions on the Zilliqa\
-        \ blockchain by the block hash parameter.\r\n\r\n{note}Please note that listing\
-        \ data from the same type will apply pagination on the results.{/note}"
+      description: Through this endpoint customers can list transactions on the Zilliqa
+        blockchain by the block hash parameter.
       operationId: List Zilliqa Transactions By Block Hash
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -4145,9 +4130,8 @@ paths:
       x-accepts: application/json
   /blockchain-data/zilliqa-specific/{network}/blocks/height/{blockHeight}/transactions:
     get:
-      description: "Through this endpoint customers can list transactions on the Zilliqa\
-        \ blockchain by the block height parameter.\r\n\r\n{note}Please note that\
-        \ listing data from the same type will apply pagination on the results.{/note}"
+      description: Through this endpoint customers can list transactions on the Zilliqa
+        blockchain by the block height parameter.
       operationId: List Zilliqa Transactions By Block Height
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -4306,9 +4290,7 @@ paths:
       description: "This endpoint will list transactions by an attribute `blockHeight`.\
         \ The transactions listed will detail additional information such as hash,\
         \ addresses, time of creation in Unix timestamp, etc.\r\n\r\nSince XRP is\
-        \ a different blockchain than Bitcoin and Ethereum, it isn't unified.\r\n\r\
-        \n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+        \ a different blockchain than Bitcoin and Ethereum, it isn't unified."
       operationId: List XRP (Ripple) Transactions By Block Height
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -4458,10 +4440,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/blocks/height/{height}/transactions:
     get:
-      description: "This endpoint will list transactions by an attribute `blockHeight`.\
-        \ The transactions listed will detail additional information such as hash,\
-        \ addresses, time of creation in Unix timestamp, etc.\r\n\r\n{note}Please\
-        \ note that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list transactions by an attribute `blockHeight`.
+        The transactions listed will detail additional information such as hash, addresses,
+        time of creation in Unix timestamp, etc.
       operationId: List Transactions by Block Height
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -4482,7 +4463,6 @@ paths:
           - litecoin
           - bitcoin-cash
           - ethereum-classic
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -4675,7 +4655,6 @@ paths:
           - litecoin
           - dogecoin
           - dash
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -4957,8 +4936,7 @@ paths:
         \ `propertyId`. The transactions listed will detail additional information\
         \ such as hash, height, time of creation in Unix timestamp, etc.\r\n\r\nUnconfirmed\
         \ transactions are usually put in the Mempool and await verification so that\
-        \ they can be added to a block.\r\n\r\n{note}Please note that listing data\
-        \ from the same type will apply pagination on the results.{/note}"
+        \ they can be added to a block."
       operationId: List Unconfirmed Omni Transactions By Property ID
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -5527,7 +5505,6 @@ paths:
           - litecoin
           - dogecoin
           - dash
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -6093,9 +6070,8 @@ paths:
       x-accepts: application/json
   /wallet-as-a-service/info/{blockchain}/{network}/supported-tokens:
     get:
-      description: "Through this endpoint customers can obtain information on multiple\
-        \ tokens at once. \r\n\r\n{note}Please note that listing data from the same\
-        \ type will apply pagination on the results.{/note}"
+      description: Through this endpoint customers can obtain information on multiple
+        tokens at once.
       operationId: List Supported Tokens
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -6430,7 +6406,6 @@ paths:
           - litecoin
           - dogecoin
           - dash
-          - binance-smart-chain
           example: bitcoin
           type: string
         style: simple
@@ -6554,10 +6529,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/omni/blocks/height/{blockHeight}/transactions:
     get:
-      description: "This endpoint will list Omni transactions by an attribute `blockHeight`.\
-        \ The transactions listed will detail additional information such as hash,\
-        \ addresses, time of creation in Unix timestamp, etc.\r\n\r\n{note}Please\
-        \ note that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list Omni transactions by an attribute `blockHeight`.
+        The transactions listed will detail additional information such as hash, addresses,
+        time of creation in Unix timestamp, etc.
       operationId: List Omni Transactions By Block Height
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -7115,10 +7089,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/omni/blocks/hash/{blockHash}/transactions:
     get:
-      description: "This endpoint will list Omni transactions by an attribute `transactionHash`.\
-        \ The transactions listed will detail additional information such as addresses,\
-        \ height, time of creation in Unix timestamp, etc.\r\n\r\n{note}Please note\
-        \ that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list Omni transactions by an attribute `transactionHash`.
+        The transactions listed will detail additional information such as addresses,
+        height, time of creation in Unix timestamp, etc.
       operationId: List Omni Transactions By Block Hash
       parameters:
       - description: Represents the name of the blockchain network used; blockchain
@@ -7462,8 +7435,7 @@ paths:
         \ along with their details by a specific attribute `transactionHash`, which\
         \ is the parent transaction's Hash.\r\n\r\nAn internal transaction is the\
         \ result of a smart contract being triggered by an EOA or a subsequent contract\
-        \ call.\r\n\r\n{note}Please note that listing data from the same type will\
-        \ apply pagination on the results.{/note}"
+        \ call."
       operationId: List Internal Transaction Details by Transaction Hash
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -7634,8 +7606,7 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/transactions:
     get:
-      description: "This endpoint will list HD Wallet transactions.\r\n\r\n{note}Please\
-        \ note that listing data from the same type will apply pagination on the results.{/note}"
+      description: This endpoint will list HD Wallet transactions.
       operationId: List HD Wallet (xPub, yPub, zPub) Transactions
       parameters:
       - description: Represents the specific blockchain.
@@ -8137,8 +8108,7 @@ paths:
         \ by the `transactionHash` attribute. Token transfers may include information\
         \ such as addresses of the sender and recipient, token name, token symbol,\
         \ etc.\r\n\r\n{note}This refers only to transfers done for **tokens** not\
-        \ coins.{/note}\r\n\r\n{note}Please note that listing data from the same type\
-        \ will apply pagination on the results.{/note}"
+        \ coins.{/note}"
       operationId: List Tokens Transfers By Transaction Hash
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -8314,9 +8284,7 @@ paths:
       description: "Through this endpoint customers can obtain a list with token transfers\
         \ by the `address` attribute. Token transfers may include information such\
         \ as addresses of the sender and recipient, token name, token symbol, etc.\r\
-        \n\r\n{note}This refers only to transfers done for **tokens** not coins.{/note}\r\
-        \n\r\n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+        \n\r\n{note}This refers only to transfers done for **tokens** not coins.{/note}"
       operationId: List Tokens Transfers By Address
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -8487,10 +8455,9 @@ paths:
       x-accepts: application/json
   /blockchain-data/{blockchain}/{network}/addresses/{address}/tokens:
     get:
-      description: "Through this endpoint customers can obtain token data by providing\
-        \ an attribute - `address`.  The information that can be returned can include\
-        \ the contract address, the token symbol, type and balance.\r\n\r\n{note}Please\
-        \ note that listing data from the same type will apply pagination on the results.{/note}"
+      description: Through this endpoint customers can obtain token data by providing
+        an attribute - `address`.  The information that can be returned can include
+        the contract address, the token symbol, type and balance.
       operationId: List Tokens By Address
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -8858,14 +8825,12 @@ paths:
             Bitcoin, etc.
           enum:
           - bitcoin
-          - bitcoin-cash
           - litecoin
+          - bitcoin-cash
           - dogecoin
           - dash
           - ethereum
           - ethereum-classic
-          - xrp
-          - zilliqa
           example: bitcoin
           type: string
         style: simple
@@ -8889,7 +8854,6 @@ paths:
           - ropsten
           - rinkeby
           - mordor
-          - kotti
           example: testnet
           type: string
         style: simple
@@ -9043,14 +9007,7 @@ paths:
             Bitcoin, etc.
           enum:
           - bitcoin
-          - bitcoin-cash
-          - litecoin
-          - dogecoin
-          - dash
           - ethereum
-          - ethereum-classic
-          - xrp
-          - zilliqa
           example: bitcoin
           type: string
         style: simple
@@ -9073,8 +9030,6 @@ paths:
           - testnet
           - ropsten
           - rinkeby
-          - mordor
-          - kotti
           example: testnet
           type: string
         style: simple
@@ -9396,14 +9351,7 @@ paths:
             Bitcoin, etc.
           enum:
           - bitcoin
-          - bitcoin-cash
-          - litecoin
-          - dogecoin
-          - dash
           - ethereum
-          - ethereum-classic
-          - xrp
-          - zilliqa
           example: bitcoin
           type: string
         style: simple
@@ -9426,8 +9374,6 @@ paths:
           - testnet
           - ropsten
           - rinkeby
-          - mordor
-          - kotti
           example: testnet
           type: string
         style: simple
@@ -9575,14 +9521,7 @@ paths:
             Bitcoin, etc.
           enum:
           - bitcoin
-          - bitcoin-cash
-          - litecoin
-          - dogecoin
-          - dash
           - ethereum
-          - ethereum-classic
-          - xrp
-          - zilliqa
           example: bitcoin
           type: string
         style: simple
@@ -9605,8 +9544,6 @@ paths:
           - testnet
           - ropsten
           - rinkeby
-          - mordor
-          - kotti
           example: testnet
           type: string
         style: simple
@@ -10245,13 +10182,7 @@ paths:
         \ user to subscribe for one/a few/all and receive callback notifications when\
         \ the specific event occurs.\r\n\r\n{note}To have an operational callback\
         \ subscription, you need to first verify a domain for the Callback URL. Please\
-        \ see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}\r\
-        \n\r\n{warning}Crypto APIs will notify the user **only when** the event occurs.\
-        \ There are cases when the specific event doesn't happen at all, or takes\
-        \ a long time to do so. A callback notification **will not** be sent if the\
-        \ event does not or cannot occur, or will take long time to occur.{/warning}\r\
-        \n\r\n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+        \ see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}"
       operationId: List Blockchain Events Subscriptions
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -10947,10 +10878,8 @@ paths:
         \ and specifying the amount that can be transferred between addresses. \r\n\
         \r\nA `feePriority` will be returned which represents the fee priority of\
         \ the automation whether it is \"SLOW\", \"STANDARD\" OR \"FAST\".\r\n\r\n\
-        {warning}The subscription will work for all incoming transactions until it\
-        \ is deleted. There is no need to do that for every transaction.{/warning}\r\
-        \n\r\n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+        {warning}The subscription will work for all transactions until it is deleted.\
+        \ There is no need to do that for every transaction.{/warning}"
       operationId: List Coins Forwarding Automations
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -11487,10 +11416,8 @@ paths:
         \ and specifying the amount that can be transferred between addresses. \r\n\
         \r\nA `feePriority` will be returned which represents the fee priority of\
         \ the automation whether it is \"SLOW\", \"STANDARD\" OR \"FAST\". \r\n\r\n\
-        {warning}The subscription will work for all incoming transactions until it\
-        \ is deleted. There is no need to do that for every transaction.{/warning}\r\
-        \n\r\n{note}Please note that listing data from the same type will apply pagination\
-        \ on the results.{/note}"
+        {warning}The subscription will work for all transactions until it is deleted.\
+        \ There is no need to do that for every transaction.{/warning}"
       operationId: List Tokens Forwarding Automations
       parameters:
       - description: Represents the specific blockchain protocol name, e.g. Ethereum,
@@ -12661,11 +12588,10 @@ paths:
       x-accepts: application/json
   /market-data/assets/supported:
     get:
-      description: "This endpoint will return a list of supported assets. The asset\
-        \ could be a cryptocurrency or FIAT assets that we support. Each asset has\
-        \ a unique identifier - `assetId` and a unique symbol in the form of a string,\
-        \ e.g. \"BTC\".\r\n\r\n{note}Please note that listing data from the same type\
-        \ will apply pagination on the results.{/note}"
+      description: This endpoint will return a list of supported assets. The asset
+        could be a cryptocurrency or FIAT assets that we support. Each asset has a
+        unique identifier - `assetId` and a unique symbol in the form of a string,
+        e.g. "BTC".
       operationId: List Supported Assets
       parameters:
       - description: In batch situations the user can use the context to correlate
@@ -13074,8 +13000,7 @@ paths:
         \ a unique identifier - `assetId` and a unique symbol in the form of a string,\
         \ e.g. \"BTC\".\r\n\r\nThe details returned could include information on the\
         \ latest rate and rate fluctuation of different periods of time - 24 hours,\
-        \ a week, one hour, the encoding of the logo, and more.\r\n\r\n{note}Please\
-        \ note that listing data from the same type will apply pagination on the results.{/note}"
+        \ a week, one hour, the encoding of the logo, and more."
       operationId: List Assets Details
       parameters:
       - description: In batch situations the user can use the context to correlate
@@ -14731,34 +14656,6 @@ components:
       - inputData
       - nonce
       type: object
-    GetTransactionDetailsByTransactionIDRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        contract:
-          description: Numeric representation of the transaction contract
-          type: string
-        gasLimit:
-          description: String representation of the transaction gas
-          type: string
-        gasPrice:
-          $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSBSC_gasPrice'
-        gasUsed:
-          description: Numeric representation of the transaction gas used
-          type: string
-        inputData:
-          description: Numeric representation of the transaction input
-          type: string
-        nonce:
-          description: Numeric representation of the transaction nonce
-          type: string
-      required:
-      - contract
-      - gasLimit
-      - gasPrice
-      - gasUsed
-      - inputData
-      - nonce
-      type: object
     GetTransactionDetailsByTransactionIDRI:
       example:
         recipients:
@@ -14863,7 +14760,6 @@ components:
       - $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSD2'
       - $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSE'
       - $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSEC'
-      - $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSBSC'
       type: object
     GetTransactionDetailsByTransactionIDR:
       example:
@@ -15750,38 +15646,6 @@ components:
       - nonce
       - transactionStatus
       type: object
-    ListTransactionsByAddressRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        contract:
-          description: Numeric representation of the transaction contract
-          type: string
-        gasLimit:
-          description: String representation of the transaction gas
-          type: string
-        gasPrice:
-          $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSBSC_gasPrice'
-        gasUsed:
-          description: Numeric representation of the transaction gas used
-          type: string
-        inputData:
-          description: Numeric representation of the transaction input
-          type: string
-        nonce:
-          description: Numeric representation of the transaction nonce
-          type: integer
-        transactionStatus:
-          description: String representation of the transaction status
-          type: string
-      required:
-      - contract
-      - gasLimit
-      - gasPrice
-      - gasUsed
-      - inputData
-      - nonce
-      - transactionStatus
-      type: object
     ListTransactionsByAddressRI:
       properties:
         index:
@@ -15856,7 +15720,6 @@ components:
       - $ref: '#/components/schemas/ListTransactionsByAddressRIBSD2'
       - $ref: '#/components/schemas/ListTransactionsByAddressRIBSEC'
       - $ref: '#/components/schemas/ListTransactionsByAddressRIBSE'
-      - $ref: '#/components/schemas/ListTransactionsByAddressRIBSBSC'
       type: object
     ListTransactionsByAddressR:
       example:
@@ -16607,38 +16470,6 @@ components:
       - nonce
       - transactionStatus
       type: object
-    ListTransactionsByBlockHashRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        contract:
-          description: Numeric representation of the transaction contract
-          type: string
-        gasLimit:
-          description: String representation of the transaction gas
-          type: string
-        gasPrice:
-          $ref: '#/components/schemas/GetTransactionDetailsByTransactionIDRIBSBSC_gasPrice'
-        gasUsed:
-          description: Numeric representation of the transaction gas used
-          type: string
-        inputData:
-          description: Numeric representation of the transaction input
-          type: string
-        nonce:
-          description: Numeric representation of the transaction nonce
-          type: string
-        transactionStatus:
-          description: String representation of the transaction status
-          type: string
-      required:
-      - contract
-      - gasLimit
-      - gasPrice
-      - gasUsed
-      - inputData
-      - nonce
-      - transactionStatus
-      type: object
     ListTransactionsByBlockHashRI:
       properties:
         index:
@@ -16716,7 +16547,6 @@ components:
       - $ref: '#/components/schemas/ListTransactionsByBlockHashRIBSD2'
       - $ref: '#/components/schemas/ListTransactionsByBlockHashRIBSE'
       - $ref: '#/components/schemas/ListTransactionsByBlockHashRIBSEC'
-      - $ref: '#/components/schemas/ListTransactionsByBlockHashRIBSBSC'
       type: object
     ListTransactionsByBlockHashR:
       example:
@@ -17699,37 +17529,6 @@ components:
       - inputData
       - nonce
       type: object
-    ListTransactionsByBlockHeightRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        contract:
-          description: Numeric representation of the transaction contract
-          type: string
-        gasLimit:
-          description: String representation of the transaction gas
-          example: "21000"
-          type: string
-        gasPrice:
-          $ref: '#/components/schemas/ListTransactionsByBlockHeightRIBSBSC_gasPrice'
-        gasUsed:
-          description: Numeric representation of the transaction gas used
-          example: "21000"
-          type: string
-        inputData:
-          description: Numeric representation of the transaction input
-          type: string
-        nonce:
-          description: Numeric representation of the transaction nonce
-          example: "15"
-          type: string
-      required:
-      - contract
-      - gasLimit
-      - gasPrice
-      - gasUsed
-      - inputData
-      - nonce
-      type: object
     ListTransactionsByBlockHeightRI:
       properties:
         index:
@@ -17807,7 +17606,6 @@ components:
       - $ref: '#/components/schemas/ListTransactionsByBlockHeightRIBSL'
       - $ref: '#/components/schemas/ListTransactionsByBlockHeightRIBSBC'
       - $ref: '#/components/schemas/ListTransactionsByBlockHeightRIBSEC'
-      - $ref: '#/components/schemas/ListTransactionsByBlockHeightRIBSBSC'
       type: object
     ListTransactionsByBlockHeightR:
       example:
@@ -18271,52 +18069,6 @@ components:
       - version
       - versionHex
       type: object
-    GetBlockDetailsByBlockHeightRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        difficulty:
-          description: Represents a mathematical value of how hard it is to find a
-            valid hash for this block.
-          example: "209515044.4071968"
-          type: string
-        nonce:
-          description: Represents a random value that can be adjusted to satisfy the
-            Proof of Work
-          example: 1535290446
-          type: integer
-        size:
-          description: Represents the total size of the block in Bytes.
-          example: 3892
-          type: integer
-        extraData:
-          description: Numeric representation of the block extra data
-          type: string
-        gasLimit:
-          description: Numeric representation of the block gas limit
-          type: string
-        gasUsed:
-          description: Numeric representation of the block gas used
-          type: string
-        minedInSeconds:
-          description: Numeric representation of the block gas limit
-          type: string
-        sha3Uncles:
-          description: Numeric representation of the block sha3 uncles
-          type: string
-        totalDifficulty:
-          description: Numeric representation of the block total difficulty
-          type: string
-      required:
-      - difficulty
-      - extraData
-      - gasLimit
-      - gasUsed
-      - minedInSeconds
-      - nonce
-      - sha3Uncles
-      - size
-      - totalDifficulty
-      type: object
     GetBlockDetailsByBlockHeightRI:
       example:
         previousBlockHash: 00000000b8c2337ed1221d1861105ad227dfff93b0a1798e78fb6edff58925f5
@@ -18378,7 +18130,6 @@ components:
       - $ref: '#/components/schemas/GetBlockDetailsByBlockHeightRIBSL'
       - $ref: '#/components/schemas/GetBlockDetailsByBlockHeightRIBSD'
       - $ref: '#/components/schemas/GetBlockDetailsByBlockHeightRIBSD2'
-      - $ref: '#/components/schemas/GetBlockDetailsByBlockHeightRIBSBSC'
       type: object
     GetBlockDetailsByBlockHeightR:
       example:
@@ -19366,58 +19117,6 @@ components:
       - version
       - versionHex
       type: object
-    GetBlockDetailsByBlockHashRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        difficulty:
-          description: Represents a mathematical value of how hard it is to find a
-            valid hash for this block.
-          example: "209515044.4071968"
-          type: string
-        nonce:
-          description: Represents a random value that can be adjusted to satisfy the
-            Proof of Work.
-          example: 1535290446
-          type: integer
-        size:
-          description: Represents the total size of the block in Bytes.
-          example: 53598
-          type: integer
-        extraData:
-          description: Numeric representation of the block extra data
-          type: string
-        gasLimit:
-          description: Numeric representation of the block gas limit
-          type: string
-        gasUsed:
-          description: Numeric representation of the block gas used
-          type: string
-        minedInSeconds:
-          description: Numeric representation of the block gas limit
-          type: integer
-        sha3Uncles:
-          description: Numeric representation of the block sha3 uncles
-          type: string
-        totalDifficulty:
-          description: Numeric representation of the block total difficulty
-          type: string
-        uncles:
-          items:
-            description: String array representation of the block uncles
-            type: string
-          type: array
-      required:
-      - difficulty
-      - extraData
-      - gasLimit
-      - gasUsed
-      - minedInSeconds
-      - nonce
-      - sha3Uncles
-      - size
-      - totalDifficulty
-      - uncles
-      type: object
     GetBlockDetailsByBlockHashRI:
       example:
         previousBlockHash: 00000000844434fd86a630ba8e29503d5396a2b6c4003d69bf0a08d96169d4cd
@@ -19479,7 +19178,6 @@ components:
       - $ref: '#/components/schemas/GetBlockDetailsByBlockHashRIBSL'
       - $ref: '#/components/schemas/GetBlockDetailsByBlockHashRIBSD'
       - $ref: '#/components/schemas/GetBlockDetailsByBlockHashRIBSD2'
-      - $ref: '#/components/schemas/GetBlockDetailsByBlockHashRIBSBSC'
       type: object
     GetBlockDetailsByBlockHashR:
       example:
@@ -20487,58 +20185,6 @@ components:
       - version
       - versionHex
       type: object
-    GetLatestMinedBlockRIBSBSC:
-      description: Binance Smart Chain
-      properties:
-        difficulty:
-          description: Represents a mathematical value of how hard it is to find a
-            valid hash for this block.
-          example: "21448277761059.71"
-          type: string
-        nonce:
-          description: Represents a random value that can be adjusted to satisfy the
-            proof of work
-          example: 2113101077
-          type: integer
-        size:
-          description: Represents the total size of the block in Bytes.
-          example: 1408113
-          type: integer
-        extraData:
-          description: Numeric representation of the block extra data
-          example: 0xd883010001846765746888676f312e31342e34856c696e757800000000000000eb8c4ee17a97af3c7d18e6cfb87d25bf9a483933d393b4fce778c9a7d64eab76471a8ab92c3a7d131c0f9cfbbd9a54b438c80b491c7a579da0e37db6ca823eda01
-          type: string
-        gasLimit:
-          description: Numeric representation of the block gas limit
-          example: "30000000"
-          type: string
-        gasUsed:
-          description: Numeric representation of the block gas used
-          example: "686304"
-          type: string
-        minedInSeconds:
-          description: Numeric representation of the block gas limit
-          example: 3
-          type: integer
-        sha3Uncles:
-          description: Numeric representation of the block sha3 uncles
-          example: 0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347
-          type: string
-        totalDifficulty:
-          description: Numeric representation of the block total difficulty
-          example: "2437536"
-          type: string
-      required:
-      - difficulty
-      - extraData
-      - gasLimit
-      - gasUsed
-      - minedInSeconds
-      - nonce
-      - sha3Uncles
-      - size
-      - totalDifficulty
-      type: object
     GetLatestMinedBlockRI:
       example:
         previousBlockHash: 00000000000000000008953625613e60b56194ea31f07aad43c7505fbddce77f
@@ -20593,7 +20239,6 @@ components:
       - $ref: '#/components/schemas/GetLatestMinedBlockRIBSL'
       - $ref: '#/components/schemas/GetLatestMinedBlockRIBSD'
       - $ref: '#/components/schemas/GetLatestMinedBlockRIBSD2'
-      - $ref: '#/components/schemas/GetLatestMinedBlockRIBSBSC'
       type: object
     GetLatestMinedBlockR:
       example:
@@ -27876,18 +27521,6 @@ components:
       - amount
       - unit
       type: object
-    GetTransactionDetailsByTransactionIDRIBSBSC_gasPrice:
-      properties:
-        amount:
-          description: Numeric representation of the transaction gas price
-          type: string
-        unit:
-          example: BNB
-          type: string
-      required:
-      - amount
-      - unit
-      type: object
     GetTransactionDetailsByTransactionIDRI_recipients:
       example:
         amount: "0.000144"
@@ -30370,19 +30003,6 @@ components:
         unit:
           description: Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.
           example: WEI
-          type: string
-      required:
-      - amount
-      - unit
-      type: object
-    ListTransactionsByBlockHeightRIBSBSC_gasPrice:
-      properties:
-        amount:
-          description: Numeric representation of the transaction gas price
-          example: "17000000000"
-          type: string
-        unit:
-          example: BNB
           type: string
       required:
       - amount

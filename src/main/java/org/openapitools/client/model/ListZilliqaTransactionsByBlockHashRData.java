@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListZilliqaTransactionsByBlockHashRI;
 /**
  * ListZilliqaTransactionsByBlockHashRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class ListZilliqaTransactionsByBlockHashRData {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)

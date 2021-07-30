@@ -25,7 +25,6 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSB;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSBC;
-import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSBSC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSD;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSD2;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSE;

@@ -25,22 +25,21 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSB;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSBC;
-import org.openapitools.client.model.ListTransactionsByAddressRIBSBSC;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSD;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSD2;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSD2Vin;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSD2Vout;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSE;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSEC;
+import org.openapitools.client.model.ListTransactionsByAddressRIBSEGasPrice;
 import org.openapitools.client.model.ListTransactionsByAddressRIBSL;
 
 /**
  * ListTransactionsByAddressRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-29T09:33:59.822482Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
 public class ListTransactionsByAddressRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -76,7 +75,7 @@ public class ListTransactionsByAddressRIBS {
 
   public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
   @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice;
+  private ListTransactionsByAddressRIBSEGasPrice gasPrice;
 
   public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
   @SerializedName(SERIALIZED_NAME_GAS_USED)
@@ -244,10 +243,10 @@ public class ListTransactionsByAddressRIBS {
   }
 
    /**
-   * Numeric representation of the transaction contract
+   * Represents the specific transaction contract.
    * @return contract
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction contract")
+  @ApiModelProperty(required = true, value = "Represents the specific transaction contract.")
 
   public String getContract() {
     return contract;
@@ -266,10 +265,10 @@ public class ListTransactionsByAddressRIBS {
   }
 
    /**
-   * String representation of the transaction gas
+   * Represents the amount of gas used by this specific transaction alone.
    * @return gasLimit
   **/
-  @ApiModelProperty(required = true, value = "String representation of the transaction gas")
+  @ApiModelProperty(example = "552020", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
 
   public String getGasLimit() {
     return gasLimit;
@@ -281,7 +280,7 @@ public class ListTransactionsByAddressRIBS {
   }
 
 
-  public ListTransactionsByAddressRIBS gasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
+  public ListTransactionsByAddressRIBS gasPrice(ListTransactionsByAddressRIBSEGasPrice gasPrice) {
     
     this.gasPrice = gasPrice;
     return this;
@@ -293,12 +292,12 @@ public class ListTransactionsByAddressRIBS {
   **/
   @ApiModelProperty(required = true, value = "")
 
-  public GetTransactionDetailsByTransactionIDRIBSBSCGasPrice getGasPrice() {
+  public ListTransactionsByAddressRIBSEGasPrice getGasPrice() {
     return gasPrice;
   }
 
 
-  public void setGasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
+  public void setGasPrice(ListTransactionsByAddressRIBSEGasPrice gasPrice) {
     this.gasPrice = gasPrice;
   }
 
@@ -310,10 +309,10 @@ public class ListTransactionsByAddressRIBS {
   }
 
    /**
-   * Numeric representation of the transaction gas used
+   * Represents the exact unit of gas that was used for the transaction.
    * @return gasUsed
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction gas used")
+  @ApiModelProperty(example = "24673", required = true, value = "Represents the exact unit of gas that was used for the transaction.")
 
   public String getGasUsed() {
     return gasUsed;
@@ -332,10 +331,10 @@ public class ListTransactionsByAddressRIBS {
   }
 
    /**
-   * Numeric representation of the transaction input
+   * Represents additional information that is required for the transaction.
    * @return inputData
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction input")
+  @ApiModelProperty(example = "0x67a5cd0600000000000000000000000031f42841c2db5173425b5223809cf3a38fede360", required = true, value = "Represents additional information that is required for the transaction.")
 
   public String getInputData() {
     return inputData;
@@ -354,10 +353,10 @@ public class ListTransactionsByAddressRIBS {
   }
 
    /**
-   * Numeric representation of the transaction nonce
+   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
    * @return nonce
   **/
-  @ApiModelProperty(required = true, value = "Numeric representation of the transaction nonce")
+  @ApiModelProperty(example = "13", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
   public Integer getNonce() {
     return nonce;
@@ -379,7 +378,7 @@ public class ListTransactionsByAddressRIBS {
    * String representation of the transaction status
    * @return transactionStatus
   **/
-  @ApiModelProperty(required = true, value = "String representation of the transaction status")
+  @ApiModelProperty(example = "0x1", required = true, value = "String representation of the transaction status")
 
   public String getTransactionStatus() {
     return transactionStatus;

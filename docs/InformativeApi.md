@@ -185,7 +185,7 @@ Name | Type | Description  | Notes
 
 List Supported Tokens
 
-Through this endpoint customers can obtain information on multiple tokens at once.     {note}Please note that listing data from the same type will apply pagination on the results.{/note}
+Through this endpoint customers can obtain information on multiple tokens at once.
 
 ### Example
 ```java

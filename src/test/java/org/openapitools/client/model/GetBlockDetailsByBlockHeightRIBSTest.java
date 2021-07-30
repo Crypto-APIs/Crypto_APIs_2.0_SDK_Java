@@ -23,7 +23,6 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSB;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBC;
-import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBSC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD2;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSE;
