@@ -30,7 +30,7 @@ import org.openapitools.client.model.AddressTokensTransactionConfirmedToken;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressTokensTransactionConfirmedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -57,11 +57,13 @@ public class AddressTokensTransactionConfirmedDataItem {
    */
   @JsonAdapter(TokenTypeEnum.Adapter.class)
   public enum TokenTypeEnum {
-    ETHEREUMERC20TOKEN("ethereumERC20Token"),
+    ERC_20("ERC-20"),
     
-    ETHEREUMERC721TOKEN("ethereumERC721Token"),
+    ERC_721("ERC-721"),
     
-    OMNILAYERTOKEN("omniLayerToken");
+    OMNI("OMNI"),
+    
+    BEP_20("BEP-20");
 
     private String value;
 
@@ -171,7 +173,8 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
-  @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ethereum", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
     return blockchain;
@@ -190,10 +193,11 @@ public class AddressTokensTransactionConfirmedDataItem {
   }
 
    /**
-   * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
+   * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;,  are test networks.
    * @return network
   **/
-  @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ropsten", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\",  are test networks.")
 
   public String getNetwork() {
     return network;
@@ -215,7 +219,8 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Defines the specific address to which the transaction has been sent.
    * @return address
   **/
-  @ApiModelProperty(example = "16sAXi1jxhxKCfY84hubDdnFNaAhqd5t49", required = true, value = "Defines the specific address to which the transaction has been sent.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x7495fede000c8a3b77eeae09cf70fa94cd2d53f5", required = true, value = "Defines the specific address to which the transaction has been sent.")
 
   public String getAddress() {
     return address;
@@ -237,6 +242,7 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Get minedInBlock
    * @return minedInBlock
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public AddressTokensTransactionConfirmedDataItemMinedInBlock getMinedInBlock() {
@@ -259,7 +265,8 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Defines the unique ID of the specific transaction, i.e. its identification number.
    * @return transactionId
   **/
-  @ApiModelProperty(example = "269b0de44db95beddb6aecc520b375ba8f91f3dc5558a24aa4c26979eb00c7e2", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0xbe38781783b1b9d480219255ff98e20335a39e13979a66112efa33f05fde0a33", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
 
   public String getTransactionId() {
     return transactionId;
@@ -281,7 +288,8 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Defines the type of token sent with the transaction, e.g. ERC 20.
    * @return tokenType
   **/
-  @ApiModelProperty(example = "ethereumERC20Token", required = true, value = "Defines the type of token sent with the transaction, e.g. ERC 20.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ERC-20", required = true, value = "Defines the type of token sent with the transaction, e.g. ERC 20.")
 
   public TokenTypeEnum getTokenType() {
     return tokenType;
@@ -303,6 +311,7 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Get token
    * @return token
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public AddressTokensTransactionConfirmedToken getToken() {
@@ -325,6 +334,7 @@ public class AddressTokensTransactionConfirmedDataItem {
    * Defines whether the transaction is \&quot;incoming\&quot; or \&quot;outgoing\&quot;.
    * @return direction
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "incoming", required = true, value = "Defines whether the transaction is \"incoming\" or \"outgoing\".")
 
   public DirectionEnum getDirection() {

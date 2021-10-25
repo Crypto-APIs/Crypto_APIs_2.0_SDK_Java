@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetAddressDetailsRIConfirmedBalance
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetAddressDetailsRIConfirmedBalance {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class GetAddressDetailsRIConfirmedBalance {
    * Defines the total balance of the address that is confirmed. It doesn&#39;t include unconfirmed transactions.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3.5", required = true, value = "Defines the total balance of the address that is confirmed. It doesn't include unconfirmed transactions.")
 
   public String getAmount() {
@@ -67,10 +68,11 @@ public class GetAddressDetailsRIConfirmedBalance {
   }
 
    /**
-   * Get unit
+   * Represents the unit of the confirmed balance.
    * @return unit
   **/
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BTC", required = true, value = "Represents the unit of the confirmed balance.")
 
   public String getUnit() {
     return unit;

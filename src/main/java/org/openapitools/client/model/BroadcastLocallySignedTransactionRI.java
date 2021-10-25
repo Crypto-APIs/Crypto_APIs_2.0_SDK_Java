@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * BroadcastLocallySignedTransactionRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class BroadcastLocallySignedTransactionRI {
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
@@ -44,6 +44,7 @@ public class BroadcastLocallySignedTransactionRI {
    * Represents the unique identifier of a transaction, i.e. it could be &#x60;transactionId&#x60; in UTXO-based protocols like Bitcoin, and transaction &#x60;hash&#x60; in Ethereum blockchain.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "347d96855d41b77f1e23048fff11c18e9fe699ee69b0b402338f34189734e0a2", required = true, value = "Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.")
 
   public String getTransactionId() {

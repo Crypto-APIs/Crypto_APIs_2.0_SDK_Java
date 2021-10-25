@@ -29,7 +29,7 @@ import org.openapitools.client.model.AddressCoinsTransactionConfirmedEachConfirm
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -129,6 +129,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -151,6 +152,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -173,6 +175,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines the specific address to which the transaction has been sent.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15282N4BYEwYh3j1dTgJu64Ey5qWn9Po9F", required = true, value = "Defines the specific address to which the transaction has been sent.")
 
   public String getAddress() {
@@ -195,6 +198,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Get minedInBlock
    * @return minedInBlock
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public AddressCoinsTransactionConfirmedEachConfirmationDataItemMinedInBlock getMinedInBlock() {
@@ -217,6 +221,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines the unique ID of the specific transaction, i.e. its identification number.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "cbd3dea703bd2bc78bca69ee61ca14e6ffcdd809d07ebbc3b8fea3c30ea38f33", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
 
   public String getTransactionId() {
@@ -239,6 +244,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines the number of currently received confirmations for the transaction.
    * @return currentConfirmations
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "8", required = true, value = "Defines the number of currently received confirmations for the transaction.")
 
   public Integer getCurrentConfirmations() {
@@ -261,6 +267,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines the number of confirmation transactions requested as callbacks, i.e. the system can notify till the n-th confirmation.
    * @return targetConfirmations
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "12", required = true, value = "Defines the number of confirmation transactions requested as callbacks, i.e. the system can notify till the n-th confirmation.")
 
   public Integer getTargetConfirmations() {
@@ -283,6 +290,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines the amount of coins sent with the confirmed transaction.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0611", required = true, value = "Defines the amount of coins sent with the confirmed transaction.")
 
   public String getAmount() {
@@ -305,6 +313,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines the unit of the transaction, e.g. BTC.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Defines the unit of the transaction, e.g. BTC.")
 
   public String getUnit() {
@@ -327,6 +336,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItem {
    * Defines whether the transaction is \&quot;incoming\&quot; or \&quot;outgoing\&quot;.
    * @return direction
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "incoming", required = true, value = "Defines whether the transaction is \"incoming\" or \"outgoing\".")
 
   public DirectionEnum getDirection() {

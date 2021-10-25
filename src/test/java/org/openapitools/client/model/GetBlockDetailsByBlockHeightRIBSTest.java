@@ -23,11 +23,13 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSB;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBC;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBSC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD2;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSE;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSEC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSL;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSZ;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -173,6 +175,14 @@ public class GetBlockDetailsByBlockHeightRIBSTest {
     @Test
     public void totalDifficultyTest() {
         // TODO: test totalDifficulty
+    }
+
+    /**
+     * Test the property 'merkleroot'
+     */
+    @Test
+    public void merklerootTest() {
+        // TODO: test merkleroot
     }
 
 }

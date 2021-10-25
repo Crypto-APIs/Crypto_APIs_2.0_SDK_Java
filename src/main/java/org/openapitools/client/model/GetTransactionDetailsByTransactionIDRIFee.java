@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetTransactionDetailsByTransactionIDRIFee
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIFee {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class GetTransactionDetailsByTransactionIDRIFee {
    * Defines the amount of the transaction fee.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00016932", required = true, value = "Defines the amount of the transaction fee.")
 
   public String getAmount() {
@@ -67,10 +68,11 @@ public class GetTransactionDetailsByTransactionIDRIFee {
   }
 
    /**
-   * Get unit
+   * Defines the unit of the fee amount, e.g. BTC, ETH, XRP.
    * @return unit
   **/
-  @ApiModelProperty(example = "BTC", required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BTC", required = true, value = "Defines the unit of the fee amount, e.g. BTC, ETH, XRP.")
 
   public String getUnit() {
     return unit;

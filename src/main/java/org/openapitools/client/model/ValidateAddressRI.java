@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ValidateAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ValidateAddressRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class ValidateAddressRI {
    * Represents the specific address that will be checked if it&#39;s valid or not.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15XyNC88pujwuuur8DCsXBCfEhJJMzHayU", required = true, value = "Represents the specific address that will be checked if it's valid or not.")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class ValidateAddressRI {
    * Defines whether the address is valid or not. Set as boolean.
    * @return isValid
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the address is valid or not. Set as boolean.")
 
   public Boolean getIsValid() {

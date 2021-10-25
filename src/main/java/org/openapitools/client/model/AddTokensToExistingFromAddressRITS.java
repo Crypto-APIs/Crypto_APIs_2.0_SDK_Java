@@ -24,12 +24,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRITSBOT;
-import org.openapitools.client.model.AddTokensToExistingFromAddressRITSEET;
+import org.openapitools.client.model.AddTokensToExistingFromAddressRITSET;
 
 /**
  * AddTokensToExistingFromAddressRITS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddTokensToExistingFromAddressRITS {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
@@ -50,6 +50,7 @@ public class AddTokensToExistingFromAddressRITS {
    * Defines the &#x60;propertyId&#x60; of the Omni Layer token.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Defines the `propertyId` of the Omni Layer token.")
 
   public Integer getPropertyId() {
@@ -72,6 +73,7 @@ public class AddTokensToExistingFromAddressRITS {
    * Token contract address to be transferred
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Token contract address to be transferred")
 
   public String getContractAddress() {

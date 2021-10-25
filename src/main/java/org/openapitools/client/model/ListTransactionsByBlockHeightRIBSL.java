@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSLVout;
  * Litecoin
  */
 @ApiModel(description = "Litecoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSL {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -41,6 +41,10 @@ public class ListTransactionsByBlockHeightRIBSL {
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
   private Integer size;
+
+  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
+  @SerializedName(SERIALIZED_NAME_V_SIZE)
+  private Integer vSize;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -54,10 +58,6 @@ public class ListTransactionsByBlockHeightRIBSL {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private List<ListTransactionsByBlockHeightRIBSLVout> vout = new ArrayList<ListTransactionsByBlockHeightRIBSLVout>();
 
-  public static final String SERIALIZED_NAME_VSIZE = "vsize";
-  @SerializedName(SERIALIZED_NAME_VSIZE)
-  private Integer vsize;
-
 
   public ListTransactionsByBlockHeightRIBSL locktime(Integer locktime) {
     
@@ -69,6 +69,7 @@ public class ListTransactionsByBlockHeightRIBSL {
    * Represents the time at which a particular transaction can be added to the blockchain.
    * @return locktime
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
 
   public Integer getLocktime() {
@@ -91,6 +92,7 @@ public class ListTransactionsByBlockHeightRIBSL {
    * Represents the total size of this transaction.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "223", required = true, value = "Represents the total size of this transaction.")
 
   public Integer getSize() {
@@ -100,6 +102,29 @@ public class ListTransactionsByBlockHeightRIBSL {
 
   public void setSize(Integer size) {
     this.size = size;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBSL vSize(Integer vSize) {
+    
+    this.vSize = vSize;
+    return this;
+  }
+
+   /**
+   * Represents the virtual size of this transaction.
+   * @return vSize
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
+
+  public Integer getvSize() {
+    return vSize;
+  }
+
+
+  public void setvSize(Integer vSize) {
+    this.vSize = vSize;
   }
 
 
@@ -113,6 +138,7 @@ public class ListTransactionsByBlockHeightRIBSL {
    * Represents transaction version number.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents transaction version number.")
 
   public Integer getVersion() {
@@ -140,6 +166,7 @@ public class ListTransactionsByBlockHeightRIBSL {
    * Represents the transaction inputs.
    * @return vin
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
   public List<ListTransactionsByBlockHeightRIBSLVin> getVin() {
@@ -167,6 +194,7 @@ public class ListTransactionsByBlockHeightRIBSL {
    * Represents the transaction outputs.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
   public List<ListTransactionsByBlockHeightRIBSLVout> getVout() {
@@ -176,28 +204,6 @@ public class ListTransactionsByBlockHeightRIBSL {
 
   public void setVout(List<ListTransactionsByBlockHeightRIBSLVout> vout) {
     this.vout = vout;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBSL vsize(Integer vsize) {
-    
-    this.vsize = vsize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vsize
-  **/
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getVsize() {
-    return vsize;
-  }
-
-
-  public void setVsize(Integer vsize) {
-    this.vsize = vsize;
   }
 
 
@@ -212,15 +218,15 @@ public class ListTransactionsByBlockHeightRIBSL {
     ListTransactionsByBlockHeightRIBSL listTransactionsByBlockHeightRIBSL = (ListTransactionsByBlockHeightRIBSL) o;
     return Objects.equals(this.locktime, listTransactionsByBlockHeightRIBSL.locktime) &&
         Objects.equals(this.size, listTransactionsByBlockHeightRIBSL.size) &&
+        Objects.equals(this.vSize, listTransactionsByBlockHeightRIBSL.vSize) &&
         Objects.equals(this.version, listTransactionsByBlockHeightRIBSL.version) &&
         Objects.equals(this.vin, listTransactionsByBlockHeightRIBSL.vin) &&
-        Objects.equals(this.vout, listTransactionsByBlockHeightRIBSL.vout) &&
-        Objects.equals(this.vsize, listTransactionsByBlockHeightRIBSL.vsize);
+        Objects.equals(this.vout, listTransactionsByBlockHeightRIBSL.vout);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locktime, size, version, vin, vout, vsize);
+    return Objects.hash(locktime, size, vSize, version, vin, vout);
   }
 
   @Override
@@ -229,10 +235,10 @@ public class ListTransactionsByBlockHeightRIBSL {
     sb.append("class ListTransactionsByBlockHeightRIBSL {\n");
     sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
     sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    vsize: ").append(toIndentedString(vsize)).append("\n");
     sb.append("}");
     return sb.toString();
   }

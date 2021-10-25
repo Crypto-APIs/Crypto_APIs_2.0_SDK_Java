@@ -25,9 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GetWalletAssetDetailsRIConfirmedBalance
+ * Specifies the confirmed balance.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@ApiModel(description = "Specifies the confirmed balance.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetWalletAssetDetailsRIConfirmedBalance {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -45,10 +46,11 @@ public class GetWalletAssetDetailsRIConfirmedBalance {
   }
 
    /**
-   * Get amount
+   * Specifies the amount of the confirmed balance.
    * @return amount
   **/
-  @ApiModelProperty(example = "0.0101", required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.0101", required = true, value = "Specifies the amount of the confirmed balance.")
 
   public String getAmount() {
     return amount;
@@ -67,10 +69,11 @@ public class GetWalletAssetDetailsRIConfirmedBalance {
   }
 
    /**
-   * Get unit
+   * Specifies the unit of the amount of the confirmed balance.
    * @return unit
   **/
-  @ApiModelProperty(example = "BTC", required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BTC", required = true, value = "Specifies the unit of the amount of the confirmed balance.")
 
   public String getUnit() {
     return unit;

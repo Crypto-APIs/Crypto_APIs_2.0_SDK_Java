@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListTransactionsByBlockHashRIFee
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIFee {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class ListTransactionsByBlockHashRIFee {
    * Represents the fee amount.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00016932", required = true, value = "Represents the fee amount.")
 
   public String getAmount() {
@@ -67,10 +68,11 @@ public class ListTransactionsByBlockHashRIFee {
   }
 
    /**
-   * Get unit
+   * Defines the specific unit of the fee.
    * @return unit
   **/
-  @ApiModelProperty(example = "BTC", required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BTC", required = true, value = "Defines the specific unit of the fee.")
 
   public String getUnit() {
     return unit;

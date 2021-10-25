@@ -61,6 +61,14 @@ public class ListTransactionsByBlockHashRIBSLTest {
     }
 
     /**
+     * Test the property 'vSize'
+     */
+    @Test
+    public void vSizeTest() {
+        // TODO: test vSize
+    }
+
+    /**
      * Test the property 'version'
      */
     @Test
@@ -82,14 +90,6 @@ public class ListTransactionsByBlockHashRIBSLTest {
     @Test
     public void voutTest() {
         // TODO: test vout
-    }
-
-    /**
-     * Test the property 'vsize'
-     */
-    @Test
-    public void vsizeTest() {
-        // TODO: test vsize
     }
 
 }

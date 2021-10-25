@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBS;
 /**
  * GetBlockDetailsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashRI {
   public static final String SERIALIZED_NAME_HASH = "hash";
   @SerializedName(SERIALIZED_NAME_HASH)
@@ -69,6 +69,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return hash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0000000006b3f483bec16b8a85c632bdd30a14a202c83a9148002c9ee441dd0c", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getHash() {
@@ -91,6 +92,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return height
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1941208", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getHeight() {
@@ -113,6 +115,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Represents the hash of the next block. When this is the last block of the blockchain this value will be an empty string.
    * @return nextBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0000000000000003b08ca90b701da447fb3e7c5c6b43acd33a5e4062fe98dea5", required = true, value = "Represents the hash of the next block. When this is the last block of the blockchain this value will be an empty string.")
 
   public String getNextBlockHash() {
@@ -135,6 +138,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Represents the hash of the previous block, also known as the parent block.
    * @return previousBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "00000000844434fd86a630ba8e29503d5396a2b6c4003d69bf0a08d96169d4cd", required = true, value = "Represents the hash of the previous block, also known as the parent block.")
 
   public String getPreviousBlockHash() {
@@ -157,6 +161,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Defines the exact date/time when this block was mined in Unix Timestamp.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1615378134", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
 
   public Integer getTimestamp() {
@@ -179,6 +184,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Represents the total number of all transactions as part of this block.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "145", required = true, value = "Represents the total number of all transactions as part of this block.")
 
   public Integer getTransactionsCount() {
@@ -201,6 +207,7 @@ public class GetBlockDetailsByBlockHashRI {
    * Get blockchainSpecific
    * @return blockchainSpecific
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetBlockDetailsByBlockHashRIBS getBlockchainSpecific() {

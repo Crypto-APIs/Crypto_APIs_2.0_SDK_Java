@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetAddressDetailsRITotalReceived
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetAddressDetailsRITotalReceived {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class GetAddressDetailsRITotalReceived {
    * Defines the total amount of all coins received to the address, based on confirmed transactions.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5.6", required = true, value = "Defines the total amount of all coins received to the address, based on confirmed transactions.")
 
   public String getAmount() {
@@ -67,10 +68,11 @@ public class GetAddressDetailsRITotalReceived {
   }
 
    /**
-   * Get unit
+   * Represents the unit of the total received amount.
    * @return unit
   **/
-  @ApiModelProperty(required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BTC", required = true, value = "Represents the unit of the total received amount.")
 
   public String getUnit() {
     return unit;

@@ -28,7 +28,7 @@ import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirm
 /**
  * NewConfirmedCoinsTransactionsAndEachConfirmationRBData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class NewConfirmedCoinsTransactionsAndEachConfirmationRBData {
   public static final String SERIALIZED_NAME_ITEM = "item";
   @SerializedName(SERIALIZED_NAME_ITEM)
@@ -45,6 +45,7 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRBData {
    * Get item
    * @return item
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem getItem() {

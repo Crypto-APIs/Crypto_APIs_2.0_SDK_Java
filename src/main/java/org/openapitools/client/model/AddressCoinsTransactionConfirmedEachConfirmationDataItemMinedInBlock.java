@@ -28,7 +28,7 @@ import java.io.IOException;
  * Refers to the specific block the transaction was mined in.
  */
 @ApiModel(description = "Refers to the specific block the transaction was mined in.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressCoinsTransactionConfirmedEachConfirmationDataItemMinedInBlock {
   public static final String SERIALIZED_NAME_HEIGHT = "height";
   @SerializedName(SERIALIZED_NAME_HEIGHT)
@@ -53,6 +53,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItemMinedInBloc
    * Defines the number of blocks in the blockchain preceding this specific block.
    * @return height
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "667754", required = true, value = "Defines the number of blocks in the blockchain preceding this specific block.")
 
   public Integer getHeight() {
@@ -75,6 +76,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItemMinedInBloc
    * Represents the hash of the block&#39;s header, i.e. an output that has a fixed length.
    * @return hash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "dfe45f6724b550c281107ffaa5880cb280878fb4dbaa742aa21449f3d2340c13", required = true, value = "Represents the hash of the block's header, i.e. an output that has a fixed length.")
 
   public String getHash() {
@@ -97,6 +99,7 @@ public class AddressCoinsTransactionConfirmedEachConfirmationDataItemMinedInBloc
    * Defines the exact date/time when this transaction was mined in seconds since Unix Epoch time.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1610365314", required = true, value = "Defines the exact date/time when this transaction was mined in seconds since Unix Epoch time.")
 
   public Integer getTimestamp() {

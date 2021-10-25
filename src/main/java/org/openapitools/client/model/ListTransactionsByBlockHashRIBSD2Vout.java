@@ -28,7 +28,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2ScriptPubK
 /**
  * ListTransactionsByBlockHashRIBSD2Vout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSD2Vout {
   public static final String SERIALIZED_NAME_IS_SPENT = "isSpent";
   @SerializedName(SERIALIZED_NAME_IS_SPENT)
@@ -53,6 +53,7 @@ public class ListTransactionsByBlockHashRIBSD2Vout {
    * Defines whether the output is spent or not.
    * @return isSpent
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "false", required = true, value = "Defines whether the output is spent or not.")
 
   public Boolean getIsSpent() {
@@ -75,6 +76,7 @@ public class ListTransactionsByBlockHashRIBSD2Vout {
    * Get scriptPubKey
    * @return scriptPubKey
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListTransactionsByBlockHashRIBSD2ScriptPubKey getScriptPubKey() {
@@ -97,6 +99,7 @@ public class ListTransactionsByBlockHashRIBSD2Vout {
    * Represents the sent/received amount.
    * @return value
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "10000", required = true, value = "Represents the sent/received amount.")
 
   public String getValue() {

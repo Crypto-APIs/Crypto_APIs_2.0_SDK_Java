@@ -29,7 +29,7 @@ import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalFees;
 /**
  * GetLatestMinedXRPRippleBlockRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetLatestMinedXRPRippleBlockRI {
   public static final String SERIALIZED_NAME_BLOCK_HASH = "blockHash";
   @SerializedName(SERIALIZED_NAME_BLOCK_HASH)
@@ -70,6 +70,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return blockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "f9b304b7933ef298142fdd58ad2dec414a5267dcbbd8a4fe9fc2c0a5f9dde050", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getBlockHash() {
@@ -92,6 +93,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return blockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15975748", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getBlockHeight() {
@@ -114,6 +116,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Represents the hash of the previous block, also known as the parent block.
    * @return previousBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "de9f9e5b68a1322a16f0d1217cf31765e9101764e6e2f3c7aa058b8c641da37a", required = true, value = "Represents the hash of the previous block, also known as the parent block.")
 
   public String getPreviousBlockHash() {
@@ -136,6 +139,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Defines the exact date/time when this block was mined in Unix Timestamp.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1616430182", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
 
   public Integer getTimestamp() {
@@ -158,6 +162,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Represents the total number of all transactions as part of this block.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the total number of all transactions as part of this block.")
 
   public Integer getTransactionsCount() {
@@ -180,6 +185,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Get totalCoins
    * @return totalCoins
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetLatestMinedXRPRippleBlockRITotalCoins getTotalCoins() {
@@ -202,6 +208,7 @@ public class GetLatestMinedXRPRippleBlockRI {
    * Get totalFees
    * @return totalFees
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetLatestMinedXRPRippleBlockRITotalFees getTotalFees() {

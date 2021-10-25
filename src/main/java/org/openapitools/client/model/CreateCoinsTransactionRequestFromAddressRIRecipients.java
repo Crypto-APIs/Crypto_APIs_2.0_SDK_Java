@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateCoinsTransactionRequestFromAddressRIRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRIRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
    * Defines the destination address.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x1316bea88fb7cd4ccc4a57e2f9f4f43d1a86ee59", required = true, value = "Defines the destination address.")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
    * Defines the amount sent to the destination address.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0023", required = true, value = "Defines the amount sent to the destination address.")
 
   public String getAmount() {

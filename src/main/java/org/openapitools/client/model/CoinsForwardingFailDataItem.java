@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CoinsForwardingFailDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -116,6 +116,7 @@ public class CoinsForwardingFailDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -138,6 +139,7 @@ public class CoinsForwardingFailDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -160,6 +162,7 @@ public class CoinsForwardingFailDataItem {
    * Represents the hash of the address that provides the coins.
    * @return fromAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "38RTQQ8915tEmKFMjpPJPfrh9yV5HbJCRb", required = true, value = "Represents the hash of the address that provides the coins.")
 
   public String getFromAddress() {
@@ -182,6 +185,7 @@ public class CoinsForwardingFailDataItem {
    * Represents the hash of the address to forward the coins to.
    * @return toAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1PkLrGoEGiGdmqNXX8daYNFvVVTjmWjc7m", required = true, value = "Represents the hash of the address to forward the coins to.")
 
   public String getToAddress() {
@@ -204,6 +208,7 @@ public class CoinsForwardingFailDataItem {
    * Defines the unique Transaction ID that triggered the coin forwarding.
    * @return triggerTransactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "7e56c9cfaec36c77049ce5298bc153bb03b0b6b5dae760a62915617015f8e2a6", required = true, value = "Defines the unique Transaction ID that triggered the coin forwarding.")
 
   public String getTriggerTransactionId() {
@@ -226,6 +231,7 @@ public class CoinsForwardingFailDataItem {
    * Represents the error code received for the failed coin forwarding.
    * @return errorCode
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "blockchain_data_address_not_found", required = true, value = "Represents the error code received for the failed coin forwarding.")
 
   public ErrorCodeEnum getErrorCode() {
@@ -248,6 +254,7 @@ public class CoinsForwardingFailDataItem {
    * Represents the error message received for the failed coin forwarding.
    * @return errorMessage
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Address not found", required = true, value = "Represents the error message received for the failed coin forwarding.")
 
   public String getErrorMessage() {

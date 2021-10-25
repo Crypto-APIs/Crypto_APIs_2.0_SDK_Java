@@ -55,6 +55,14 @@ public class GetTransactionDetailsByTransactionIDRITest {
     }
 
     /**
+     * Test the property 'isConfirmed'
+     */
+    @Test
+    public void isConfirmedTest() {
+        // TODO: test isConfirmed
+    }
+
+    /**
      * Test the property 'minedInBlockHash'
      */
     @Test
@@ -116,14 +124,6 @@ public class GetTransactionDetailsByTransactionIDRITest {
     @Test
     public void feeTest() {
         // TODO: test fee
-    }
-
-    /**
-     * Test the property 'isConfirmed'
-     */
-    @Test
-    public void isConfirmedTest() {
-        // TODO: test isConfirmed
     }
 
     /**

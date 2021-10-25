@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSc
 /**
  * ListTransactionsByBlockHashRIBSBCVin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSBCVin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -80,6 +80,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Get addresses
    * @return addresses
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getAddresses() {
@@ -102,6 +103,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Represents the coinbase hex.
    * @return coinbase
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0399991d20706f6f6c2e656e6a6f79626f646965732e636f6d20393963336532346234374747a53e994c4a000001", required = true, value = "Represents the coinbase hex.")
 
   public String getCoinbase() {
@@ -124,6 +126,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Get scriptSig
    * @return scriptSig
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetTransactionDetailsByTransactionIDRIBSBScriptSig getScriptSig() {
@@ -146,6 +149,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Represents the script sequence number.
    * @return sequence
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4294967295", required = true, value = "Represents the script sequence number.")
 
   public String getSequence() {
@@ -168,6 +172,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Represents the reference transaction identifier.
    * @return txid
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "caee978cae255bbe303ac86152679e46113a8b12925aa3afaa312d89d11ccbf8", required = true, value = "Represents the reference transaction identifier.")
 
   public String getTxid() {
@@ -195,6 +200,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Get txinwitness
    * @return txinwitness
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getTxinwitness() {
@@ -217,6 +223,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * Represents the sent/received amount.
    * @return value
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00873472", required = true, value = "Represents the sent/received amount.")
 
   public String getValue() {
@@ -239,6 +246,7 @@ public class ListTransactionsByBlockHashRIBSBCVin {
    * It refers to the index of the output address of this transaction. The index starts from 0.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "It refers to the index of the output address of this transaction. The index starts from 0.")
 
   public Integer getVout() {

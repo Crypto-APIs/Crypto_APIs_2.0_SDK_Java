@@ -38,7 +38,7 @@ public class Example {
 
     MetadataApi apiInstance = new MetadataApi(defaultClient);
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    String assetType = "crypto"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
+    String assetType = "fiat"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {

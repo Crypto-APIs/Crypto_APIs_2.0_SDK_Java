@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the total balance of the address as an object.
  */
 @ApiModel(description = "Represents the total balance of the address as an object.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetZilliqaAddressDetailsRIBalance {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -49,6 +49,7 @@ public class GetZilliqaAddressDetailsRIBalance {
    * Represents the amount of the address&#39;s balance.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "23.125", required = true, value = "Represents the amount of the address's balance.")
 
   public String getAmount() {
@@ -71,6 +72,7 @@ public class GetZilliqaAddressDetailsRIBalance {
    * Represents the unit of the address&#39;s balance.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ZIL", required = true, value = "Represents the unit of the address's balance.")
 
   public String getUnit() {

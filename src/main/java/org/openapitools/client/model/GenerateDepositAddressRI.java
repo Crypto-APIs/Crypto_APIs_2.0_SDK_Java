@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GenerateDepositAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GenerateDepositAddressRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -52,6 +52,7 @@ public class GenerateDepositAddressRI {
    * Specifies the specific address&#39;s unique string value.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xe2b5f5e885a268e4b6faae53f99a663f3bb3e036", required = true, value = "Specifies the specific address's unique string value.")
 
   public String getAddress() {
@@ -74,6 +75,7 @@ public class GenerateDepositAddressRI {
    * Defines the specific UNIX time when the deposit address was created.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1624028267", required = true, value = "Defines the specific UNIX time when the deposit address was created.")
 
   public Integer getCreatedTimestamp() {
@@ -96,6 +98,7 @@ public class GenerateDepositAddressRI {
    * Represents a custom tag that customers can set up for their Wallets and addresses. E.g. custom label named \&quot;Special addresses\&quot;.
    * @return label
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "yourLabelStringHere", required = true, value = "Represents a custom tag that customers can set up for their Wallets and addresses. E.g. custom label named \"Special addresses\".")
 
   public String getLabel() {

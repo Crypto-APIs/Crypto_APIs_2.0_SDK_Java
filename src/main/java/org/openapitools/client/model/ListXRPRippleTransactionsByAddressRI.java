@@ -35,8 +35,12 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIValue;
 /**
  * ListXRPRippleTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByAddressRI {
+  public static final String SERIALIZED_NAME_DESTINATION_TAG = "destinationTag";
+  @SerializedName(SERIALIZED_NAME_DESTINATION_TAG)
+  private Integer destinationTag;
+
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   private Integer index;
@@ -94,6 +98,29 @@ public class ListXRPRippleTransactionsByAddressRI {
   private ListXRPRippleTransactionsByAddressRIValue value;
 
 
+  public ListXRPRippleTransactionsByAddressRI destinationTag(Integer destinationTag) {
+    
+    this.destinationTag = destinationTag;
+    return this;
+  }
+
+   /**
+   * Get destinationTag
+   * @return destinationTag
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "3999472835", value = "")
+
+  public Integer getDestinationTag() {
+    return destinationTag;
+  }
+
+
+  public void setDestinationTag(Integer destinationTag) {
+    this.destinationTag = destinationTag;
+  }
+
+
   public ListXRPRippleTransactionsByAddressRI index(Integer index) {
     
     this.index = index;
@@ -104,6 +131,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Represents the index position of the transaction in the block.
    * @return index
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3", required = true, value = "Represents the index position of the transaction in the block.")
 
   public Integer getIndex() {
@@ -126,6 +154,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return minedInBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3dff3ab3697a0a3116062a92a499dc7b5c9c777b2035f79bb906894972d4573d", required = true, value = "Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getMinedInBlockHash() {
@@ -148,6 +177,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.
    * @return minedInBlockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15949067", required = true, value = "Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.")
 
   public Integer getMinedInBlockHeight() {
@@ -175,6 +205,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Represents an object of addresses that receive the transactions.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
   public List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
@@ -202,6 +233,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Represents an object of addresses that provide the funds.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
   public List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> getSenders() {
@@ -224,6 +256,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Defines the transaction input&#39;s sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.
    * @return sequence
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "39673", required = true, value = "Defines the transaction input's sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.")
 
   public Integer getSequence() {
@@ -246,6 +279,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Defines the status of the transaction.
    * @return status
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "tesSUCCESS", required = true, value = "Defines the status of the transaction.")
 
   public String getStatus() {
@@ -268,6 +302,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4256894", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {
@@ -290,6 +325,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Represents the hash of the XRP transaction.
    * @return transactionHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "33684d38ccf56f5b10a25e60b11b251abe6288f41aadd03c7596dced895b282a", required = true, value = "Represents the hash of the XRP transaction.")
 
   public String getTransactionHash() {
@@ -312,6 +348,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Specifies the type of the transaction.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "OfferCreate", required = true, value = "Specifies the type of the transaction.")
 
   public String getType() {
@@ -334,6 +371,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListXRPRippleTransactionsByAddressRIFee getFee() {
@@ -356,6 +394,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Get offer
    * @return offer
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListXRPRippleTransactionsByAddressRIOffer getOffer() {
@@ -378,6 +417,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Get receive
    * @return receive
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListXRPRippleTransactionsByAddressRIReceive getReceive() {
@@ -400,6 +440,7 @@ public class ListXRPRippleTransactionsByAddressRI {
    * Get value
    * @return value
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListXRPRippleTransactionsByAddressRIValue getValue() {
@@ -421,7 +462,8 @@ public class ListXRPRippleTransactionsByAddressRI {
       return false;
     }
     ListXRPRippleTransactionsByAddressRI listXRPRippleTransactionsByAddressRI = (ListXRPRippleTransactionsByAddressRI) o;
-    return Objects.equals(this.index, listXRPRippleTransactionsByAddressRI.index) &&
+    return Objects.equals(this.destinationTag, listXRPRippleTransactionsByAddressRI.destinationTag) &&
+        Objects.equals(this.index, listXRPRippleTransactionsByAddressRI.index) &&
         Objects.equals(this.minedInBlockHash, listXRPRippleTransactionsByAddressRI.minedInBlockHash) &&
         Objects.equals(this.minedInBlockHeight, listXRPRippleTransactionsByAddressRI.minedInBlockHeight) &&
         Objects.equals(this.recipients, listXRPRippleTransactionsByAddressRI.recipients) &&
@@ -439,13 +481,14 @@ public class ListXRPRippleTransactionsByAddressRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, minedInBlockHash, minedInBlockHeight, recipients, senders, sequence, status, timestamp, transactionHash, type, fee, offer, receive, value);
+    return Objects.hash(destinationTag, index, minedInBlockHash, minedInBlockHeight, recipients, senders, sequence, status, timestamp, transactionHash, type, fee, offer, receive, value);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListXRPRippleTransactionsByAddressRI {\n");
+    sb.append("    destinationTag: ").append(toIndentedString(destinationTag)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    minedInBlockHash: ").append(toIndentedString(minedInBlockHash)).append("\n");
     sb.append("    minedInBlockHeight: ").append(toIndentedString(minedInBlockHeight)).append("\n");

@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSDSc
 /**
  * ListTransactionsByBlockHeightRIBSD2Vin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSD2Vin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -80,6 +80,7 @@ public class ListTransactionsByBlockHeightRIBSD2Vin {
    * Get addresses
    * @return addresses
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getAddresses() {
@@ -125,6 +126,7 @@ public class ListTransactionsByBlockHeightRIBSD2Vin {
    * Get scriptSig
    * @return scriptSig
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetTransactionDetailsByTransactionIDRIBSDScriptSig getScriptSig() {
@@ -147,6 +149,7 @@ public class ListTransactionsByBlockHeightRIBSD2Vin {
    * Represents the script sequence number.
    * @return sequence
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4294967295", required = true, value = "Represents the script sequence number.")
 
   public String getSequence() {
@@ -197,6 +200,7 @@ public class ListTransactionsByBlockHeightRIBSD2Vin {
    * Get txinwitness
    * @return txinwitness
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getTxinwitness() {
@@ -219,6 +223,7 @@ public class ListTransactionsByBlockHeightRIBSD2Vin {
    * Represents the sent/received amount.
    * @return value
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0225", required = true, value = "Represents the sent/received amount.")
 
   public String getValue() {
@@ -241,6 +246,7 @@ public class ListTransactionsByBlockHeightRIBSD2Vin {
    * It refers to the index of the output address of this transaction. The index starts from 0.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "It refers to the index of the output address of this transaction. The index starts from 0.")
 
   public Integer getVout() {

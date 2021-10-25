@@ -69,6 +69,14 @@ public class CreateCoinsTransactionRequestFromAddressRITest {
     }
 
     /**
+     * Test the property 'note'
+     */
+    @Test
+    public void noteTest() {
+        // TODO: test note
+    }
+
+    /**
      * Test the property 'recipients'
      */
     @Test
@@ -82,6 +90,14 @@ public class CreateCoinsTransactionRequestFromAddressRITest {
     @Test
     public void sendersTest() {
         // TODO: test senders
+    }
+
+    /**
+     * Test the property 'transactionRequestId'
+     */
+    @Test
+    public void transactionRequestIdTest() {
+        // TODO: test transactionRequestId
     }
 
     /**

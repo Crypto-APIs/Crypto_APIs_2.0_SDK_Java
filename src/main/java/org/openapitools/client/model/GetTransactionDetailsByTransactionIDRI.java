@@ -33,11 +33,15 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRISende
 /**
  * GetTransactionDetailsByTransactionIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   private Integer index;
+
+  public static final String SERIALIZED_NAME_IS_CONFIRMED = "isConfirmed";
+  @SerializedName(SERIALIZED_NAME_IS_CONFIRMED)
+  private String isConfirmed;
 
   public static final String SERIALIZED_NAME_MINED_IN_BLOCK_HASH = "minedInBlockHash";
   @SerializedName(SERIALIZED_NAME_MINED_IN_BLOCK_HASH)
@@ -71,10 +75,6 @@ public class GetTransactionDetailsByTransactionIDRI {
   @SerializedName(SERIALIZED_NAME_FEE)
   private GetTransactionDetailsByTransactionIDRIFee fee;
 
-  public static final String SERIALIZED_NAME_IS_CONFIRMED = "isConfirmed";
-  @SerializedName(SERIALIZED_NAME_IS_CONFIRMED)
-  private Boolean isConfirmed;
-
   public static final String SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC = "blockchainSpecific";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC)
   private GetTransactionDetailsByTransactionIDRIBS blockchainSpecific;
@@ -90,6 +90,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Represents the index position of the transaction in the specific block.
    * @return index
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the index position of the transaction in the specific block.")
 
   public Integer getIndex() {
@@ -99,6 +100,29 @@ public class GetTransactionDetailsByTransactionIDRI {
 
   public void setIndex(Integer index) {
     this.index = index;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRI isConfirmed(String isConfirmed) {
+    
+    this.isConfirmed = isConfirmed;
+    return this;
+  }
+
+   /**
+   * Represents the state of the transaction whether it is confirmed or not confirmed.
+   * @return isConfirmed
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "true", required = true, value = "Represents the state of the transaction whether it is confirmed or not confirmed.")
+
+  public String getIsConfirmed() {
+    return isConfirmed;
+  }
+
+
+  public void setIsConfirmed(String isConfirmed) {
+    this.isConfirmed = isConfirmed;
   }
 
 
@@ -163,6 +187,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
   public List<GetTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
@@ -190,6 +215,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
   public List<GetTransactionDetailsByTransactionIDRISenders> getSenders() {
@@ -212,6 +238,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1582202940", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {
@@ -234,6 +261,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Represents the same as &#x60;transactionId&#x60; for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols &#x60;hash&#x60; is different from &#x60;transactionId&#x60; for SegWit transactions.
    * @return transactionHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1ec73b0f61359927d02376b35993b756b1097cb9a857bec23da4c98c4977d2b2", required = true, value = "Represents the same as `transactionId` for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols `hash` is different from `transactionId` for SegWit transactions.")
 
   public String getTransactionHash() {
@@ -256,6 +284,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Represents the unique identifier of a transaction, i.e. it could be &#x60;transactionId&#x60; in UTXO-based protocols like Bitcoin, and transaction &#x60;hash&#x60; in Ethereum blockchain.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4b66461bf88b61e1e4326356534c135129defb504c7acb2fd6c92697d79eb250", required = true, value = "Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.")
 
   public String getTransactionId() {
@@ -278,6 +307,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetTransactionDetailsByTransactionIDRIFee getFee() {
@@ -287,28 +317,6 @@ public class GetTransactionDetailsByTransactionIDRI {
 
   public void setFee(GetTransactionDetailsByTransactionIDRIFee fee) {
     this.fee = fee;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRI isConfirmed(Boolean isConfirmed) {
-    
-    this.isConfirmed = isConfirmed;
-    return this;
-  }
-
-   /**
-   * Defines whether the transaction is mined/confirmed or not. If it is \&quot;false\&quot;, it means the transaction is still in the Mempool waiting to be included in a block. Value \&quot;true\&quot; means that this transaction is already confirmed and included in a block.
-   * @return isConfirmed
-  **/
-  @ApiModelProperty(example = "false", required = true, value = "Defines whether the transaction is mined/confirmed or not. If it is \"false\", it means the transaction is still in the Mempool waiting to be included in a block. Value \"true\" means that this transaction is already confirmed and included in a block.")
-
-  public Boolean getIsConfirmed() {
-    return isConfirmed;
-  }
-
-
-  public void setIsConfirmed(Boolean isConfirmed) {
-    this.isConfirmed = isConfirmed;
   }
 
 
@@ -322,6 +330,7 @@ public class GetTransactionDetailsByTransactionIDRI {
    * Get blockchainSpecific
    * @return blockchainSpecific
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetTransactionDetailsByTransactionIDRIBS getBlockchainSpecific() {
@@ -344,6 +353,7 @@ public class GetTransactionDetailsByTransactionIDRI {
     }
     GetTransactionDetailsByTransactionIDRI getTransactionDetailsByTransactionIDRI = (GetTransactionDetailsByTransactionIDRI) o;
     return Objects.equals(this.index, getTransactionDetailsByTransactionIDRI.index) &&
+        Objects.equals(this.isConfirmed, getTransactionDetailsByTransactionIDRI.isConfirmed) &&
         Objects.equals(this.minedInBlockHash, getTransactionDetailsByTransactionIDRI.minedInBlockHash) &&
         Objects.equals(this.minedInBlockHeight, getTransactionDetailsByTransactionIDRI.minedInBlockHeight) &&
         Objects.equals(this.recipients, getTransactionDetailsByTransactionIDRI.recipients) &&
@@ -352,13 +362,12 @@ public class GetTransactionDetailsByTransactionIDRI {
         Objects.equals(this.transactionHash, getTransactionDetailsByTransactionIDRI.transactionHash) &&
         Objects.equals(this.transactionId, getTransactionDetailsByTransactionIDRI.transactionId) &&
         Objects.equals(this.fee, getTransactionDetailsByTransactionIDRI.fee) &&
-        Objects.equals(this.isConfirmed, getTransactionDetailsByTransactionIDRI.isConfirmed) &&
         Objects.equals(this.blockchainSpecific, getTransactionDetailsByTransactionIDRI.blockchainSpecific);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, minedInBlockHash, minedInBlockHeight, recipients, senders, timestamp, transactionHash, transactionId, fee, isConfirmed, blockchainSpecific);
+    return Objects.hash(index, isConfirmed, minedInBlockHash, minedInBlockHeight, recipients, senders, timestamp, transactionHash, transactionId, fee, blockchainSpecific);
   }
 
   @Override
@@ -366,6 +375,7 @@ public class GetTransactionDetailsByTransactionIDRI {
     StringBuilder sb = new StringBuilder();
     sb.append("class GetTransactionDetailsByTransactionIDRI {\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
+    sb.append("    isConfirmed: ").append(toIndentedString(isConfirmed)).append("\n");
     sb.append("    minedInBlockHash: ").append(toIndentedString(minedInBlockHash)).append("\n");
     sb.append("    minedInBlockHeight: ").append(toIndentedString(minedInBlockHeight)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
@@ -374,7 +384,6 @@ public class GetTransactionDetailsByTransactionIDRI {
     sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
-    sb.append("    isConfirmed: ").append(toIndentedString(isConfirmed)).append("\n");
     sb.append("    blockchainSpecific: ").append(toIndentedString(blockchainSpecific)).append("\n");
     sb.append("}");
     return sb.toString();

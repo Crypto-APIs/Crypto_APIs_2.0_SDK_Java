@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the latest price of the asset.
  */
 @ApiModel(description = "Specifies the latest price of the asset.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListAssetsDetailsRILatestRate {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -53,6 +53,7 @@ public class ListAssetsDetailsRILatestRate {
    * Specifies the amount of the latest price of the asset.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "55249.960371879235", required = true, value = "Specifies the amount of the latest price of the asset.")
 
   public String getAmount() {
@@ -98,6 +99,7 @@ public class ListAssetsDetailsRILatestRate {
    * Specifies the unit of the latest price of the asset.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "USD", required = true, value = "Specifies the unit of the latest price of the asset.")
 
   public String getUnit() {

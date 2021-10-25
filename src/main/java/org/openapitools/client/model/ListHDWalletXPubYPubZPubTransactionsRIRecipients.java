@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListHDWalletXPubYPubZPubTransactionsRIRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListHDWalletXPubYPubZPubTransactionsRIRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -52,6 +52,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRIRecipients {
    * The address which receives this transaction. In UTXO-based protocols like Bitcoin there could be several senders while in account-based protocols like Ethereum there is always only one recipient.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2MzakdGTEp8SMWEHKwKM4HYv6uNCBXtHpkV", required = true, value = "The address which receives this transaction. In UTXO-based protocols like Bitcoin there could be several senders while in account-based protocols like Ethereum there is always only one recipient.")
 
   public String getAddress() {
@@ -74,6 +75,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRIRecipients {
    * Represents the amount received to this address.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.000144", required = true, value = "Represents the amount received to this address.")
 
   public String getAmount() {
@@ -96,6 +98,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRIRecipients {
    * Defines whether an address is a child address derived from the HD wallet (xPub, yPub, zPub) as boolean.
    * @return isMember
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "false", required = true, value = "Defines whether an address is a child address derived from the HD wallet (xPub, yPub, zPub) as boolean.")
 
   public Boolean getIsMember() {

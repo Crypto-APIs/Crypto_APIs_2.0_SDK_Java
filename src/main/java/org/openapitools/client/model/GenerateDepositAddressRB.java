@@ -28,7 +28,7 @@ import org.openapitools.client.model.GenerateDepositAddressRBData;
 /**
  * GenerateDepositAddressRB
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GenerateDepositAddressRB {
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
@@ -72,6 +72,7 @@ public class GenerateDepositAddressRB {
    * Get data
    * @return data
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GenerateDepositAddressRBData getData() {

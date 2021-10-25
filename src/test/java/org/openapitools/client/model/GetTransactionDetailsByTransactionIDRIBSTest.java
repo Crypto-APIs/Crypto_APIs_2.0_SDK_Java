@@ -25,13 +25,14 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSB;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBC;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSC;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vin;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vout;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSE;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSEC;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSECGasPrice;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSL;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -98,14 +99,6 @@ public class GetTransactionDetailsByTransactionIDRIBSTest {
     @Test
     public void voutTest() {
         // TODO: test vout
-    }
-
-    /**
-     * Test the property 'vsize'
-     */
-    @Test
-    public void vsizeTest() {
-        // TODO: test vsize
     }
 
     /**

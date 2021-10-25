@@ -73,6 +73,14 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItemTest {
     }
 
     /**
+     * Test the property 'note'
+     */
+    @Test
+    public void noteTest() {
+        // TODO: test note
+    }
+
+    /**
      * Test the property 'recipientAddress'
      */
     @Test

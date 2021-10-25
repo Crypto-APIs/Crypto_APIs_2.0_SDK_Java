@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListOmniTransactionsByAddressRIRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListOmniTransactionsByAddressRIRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class ListOmniTransactionsByAddressRIRecipients {
    * Represents the hash of the address that receives the funds.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ms4KNsbNpoU8g424pzmEjbkFbfAHae1msB", required = true, value = "Represents the hash of the address that receives the funds.")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class ListOmniTransactionsByAddressRIRecipients {
    * Defines the amount of the received funds as a string.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.1", required = true, value = "Defines the amount of the received funds as a string.")
 
   public String getAmount() {

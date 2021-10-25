@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRIF
 /**
  * ListUnconfirmedOmniTransactionsByPropertyIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -97,6 +97,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines the amount of the sent tokens.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "9.146383", required = true, value = "Defines the amount of the sent tokens.")
 
   public String getAmount() {
@@ -119,6 +120,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines whether the attribute can be divisible or not, as boolean. E.g., if it is \&quot;true\&quot;, the attribute is divisible.
    * @return divisible
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the attribute can be divisible or not, as boolean. E.g., if it is \"true\", the attribute is divisible.")
 
   public Boolean getDivisible() {
@@ -141,6 +143,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines whether the transaction has been mined or not, as boolean. E.g. if set to \&quot;true\&quot;, it means the transaction is mined.
    * @return mined
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the transaction has been mined or not, as boolean. E.g. if set to \"true\", it means the transaction is mined.")
 
   public Boolean getMined() {
@@ -163,6 +166,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Represents the identifier of the tokens to send.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the identifier of the tokens to send.")
 
   public Integer getPropertyId() {
@@ -190,6 +194,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Represents an object of addresses that receive the transactions.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
   public List<ListOmniTransactionsByAddressRIRecipients> getRecipients() {
@@ -217,6 +222,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Represents an object of addresses that provide the funds.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
   public List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> getSenders() {
@@ -239,6 +245,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines whether the transaction has been sent or not, as boolean. E.g. if set to \&quot;true\&quot;, it means the transaction is sent.
    * @return sent
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "false", required = true, value = "Defines whether the transaction has been sent or not, as boolean. E.g. if set to \"true\", it means the transaction is sent.")
 
   public Boolean getSent() {
@@ -261,6 +268,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1616487033", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {
@@ -283,6 +291,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Represents the unique identifier of a transaction, i.e. it could be &#x60;transactionId&#x60; in UTXO-based protocols like Bitcoin, and transaction &#x60;hash&#x60; in Ethereum blockchain.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "37ed9145565ffc8c51df7370bd82d546d892973f15cb6c974e7b6b52f1bf5aa9", required = true, value = "Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.")
 
   public String getTransactionId() {
@@ -305,6 +314,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines the type of the transaction as a string.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Simple Send", required = true, value = "Defines the type of the transaction as a string.")
 
   public String getType() {
@@ -327,6 +337,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines the type of the transaction as a number.
    * @return typeIint
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the type of the transaction as a number.")
 
   public Integer getTypeIint() {
@@ -349,6 +360,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Defines the specific version.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the specific version.")
 
   public Integer getVersion() {
@@ -371,6 +383,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListUnconfirmedOmniTransactionsByAddressRIFee getFee() {

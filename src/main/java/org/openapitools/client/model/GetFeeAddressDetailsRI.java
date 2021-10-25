@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetFeeAddressDetailsRIBalance;
 /**
  * GetFeeAddressDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetFeeAddressDetailsRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -53,6 +53,7 @@ public class GetFeeAddressDetailsRI {
    * Represents the specific fee address, which is always automatically generated. Users must fund it.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xe2b5f5e885a268e4b6faae53f99a663f3bb3e036", required = true, value = "Represents the specific fee address, which is always automatically generated. Users must fund it.")
 
   public String getAddress() {
@@ -75,6 +76,7 @@ public class GetFeeAddressDetailsRI {
    * Get balance
    * @return balance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetFeeAddressDetailsRIBalance getBalance() {
@@ -97,6 +99,7 @@ public class GetFeeAddressDetailsRI {
    * Represents the minimum transfer amount of the currency in the &#x60;fromAddress&#x60; that can be allowed for an automatic forwarding.
    * @return minimumTransferAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0002", required = true, value = "Represents the minimum transfer amount of the currency in the `fromAddress` that can be allowed for an automatic forwarding.")
 
   public String getMinimumTransferAmount() {

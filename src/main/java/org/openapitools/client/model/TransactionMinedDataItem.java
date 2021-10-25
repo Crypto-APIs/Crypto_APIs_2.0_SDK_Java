@@ -29,7 +29,7 @@ import org.openapitools.client.model.TransactionMinedDataItemMinedInBlock;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class TransactionMinedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -58,6 +58,7 @@ public class TransactionMinedDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -80,6 +81,7 @@ public class TransactionMinedDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -102,6 +104,7 @@ public class TransactionMinedDataItem {
    * Defines the unique ID of the specific transaction, i.e. its identification number.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "e6439461e5bf8920e75740896d4b47730b844837295e8c3f2dbf441542aebcb6", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
 
   public String getTransactionId() {
@@ -124,6 +127,7 @@ public class TransactionMinedDataItem {
    * Get minedInBlock
    * @return minedInBlock
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public TransactionMinedDataItemMinedInBlock getMinedInBlock() {

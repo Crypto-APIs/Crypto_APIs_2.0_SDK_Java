@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListCoinsForwardingAutomationsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListCoinsForwardingAutomationsRI {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
@@ -121,6 +121,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -143,6 +144,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents the total count of the transaction confirmations before triggering the event.
    * @return confirmationsCountTrigger
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3", required = true, value = "Represents the total count of the transaction confirmations before triggering the event.")
 
   public Integer getConfirmationsCountTrigger() {
@@ -165,6 +167,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Defines the specific time/date when the automatic forwarding was created in Unix Timestamp.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1611238648", required = true, value = "Defines the specific time/date when the automatic forwarding was created in Unix Timestamp.")
 
   public Integer getCreatedTimestamp() {
@@ -187,7 +190,8 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents the fee priority of the automation, whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.
    * @return feePriority
   **/
-  @ApiModelProperty(required = true, value = "Represents the fee priority of the automation, whether it is \"SLOW\", \"STANDARD\" OR \"FAST\".")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "standard", required = true, value = "Represents the fee priority of the automation, whether it is \"SLOW\", \"STANDARD\" OR \"FAST\".")
 
   public FeePriorityEnum getFeePriority() {
     return feePriority;
@@ -209,6 +213,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents the hash of the address that forwards the currency.
    * @return fromAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mzAsK3csTnozLnYVdca4gaoH1btBZBC6QB", required = true, value = "Represents the hash of the address that forwards the currency.")
 
   public String getFromAddress() {
@@ -231,6 +236,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents the minimum transfer amount of the currency in the &#x60;fromAddress&#x60; that can be allowed for an automatic forwarding.
    * @return minimumTransferAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0002", required = true, value = "Represents the minimum transfer amount of the currency in the `fromAddress` that can be allowed for an automatic forwarding.")
 
   public String getMinimumTransferAmount() {
@@ -253,6 +259,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents a unique ID used to reference the specific forwarding automation.
    * @return referenceId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "6017dd02a309213863be9e55", required = true, value = "Represents a unique ID used to reference the specific forwarding automation.")
 
   public String getReferenceId() {
@@ -275,6 +282,7 @@ public class ListCoinsForwardingAutomationsRI {
    * Represents the hash of the address the currency is forwarded to.
    * @return toAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "tb1q54j7qcu7kgsrx87yn0r9zjdvsxrnvxg4qua2z6", required = true, value = "Represents the hash of the address the currency is forwarded to.")
 
   public String getToAddress() {

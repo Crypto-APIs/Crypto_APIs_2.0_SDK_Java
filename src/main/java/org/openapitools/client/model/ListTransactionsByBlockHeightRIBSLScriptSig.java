@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the required signatures.
  */
 @ApiModel(description = "Specifies the required signatures.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSLScriptSig {
   public static final String SERIALIZED_NAME_ASM = "asm";
   @SerializedName(SERIALIZED_NAME_ASM)
@@ -53,6 +53,7 @@ public class ListTransactionsByBlockHeightRIBSLScriptSig {
    * The asm strands for assembly, which is the symbolic representation of the Bitcoin&#39;s Script language op-codes.
    * @return asm
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "e052170e6a8ca2a891158c2f3a268521ae16bd1927d3cb941d54ff194986263dda8582fbc3d1a38155e366d7bea9e58501e84daf6d84f0ccb99380af36477c4f[ALL|FORKID] 027774729b977f98bb119fb1cf6fb17cc6b2d78af7acbeb6ad2b49187e8894efba", required = true, value = "The asm strands for assembly, which is the symbolic representation of the Bitcoin's Script language op-codes.")
 
   public String getAsm() {
@@ -75,6 +76,7 @@ public class ListTransactionsByBlockHeightRIBSLScriptSig {
    * Represents the hex of the public key of the address.
    * @return hex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "41e052170e6a8ca2a891158c2f3a268521ae16bd1927d3cb941d54ff194986263dda8582fbc3d1a38155e366d7bea9e58501e84daf6d84f0ccb99380af36477c4f4121027774729b977f98bb119fb1cf6fb17cc6b2d78af7acbeb6ad2b49187e8894efba", required = true, value = "Represents the hex of the public key of the address.")
 
   public String getHex() {
@@ -97,6 +99,7 @@ public class ListTransactionsByBlockHeightRIBSLScriptSig {
    * Represents the script type of the reference transaction identifier.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "scripthash", required = true, value = "Represents the script type of the reference transaction identifier.")
 
   public String getType() {

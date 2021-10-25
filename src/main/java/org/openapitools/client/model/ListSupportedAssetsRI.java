@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListSupportedAssetsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListSupportedAssetsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -107,6 +107,7 @@ public class ListSupportedAssetsRI {
    * Defines the unique ID of the specific asset.
    * @return assetId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5b1ea92e584bf50020130615", required = true, value = "Defines the unique ID of the specific asset.")
 
   public String getAssetId() {
@@ -129,6 +130,7 @@ public class ListSupportedAssetsRI {
    * Specifies the name of the asset in question.
    * @return assetName
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Bitcoin", required = true, value = "Specifies the name of the asset in question.")
 
   public String getAssetName() {
@@ -151,6 +153,7 @@ public class ListSupportedAssetsRI {
    * Specifies the asset&#39;s unique symbol in the Crypto APIs listings.
    * @return assetSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Specifies the asset's unique symbol in the Crypto APIs listings.")
 
   public String getAssetSymbol() {
@@ -173,6 +176,7 @@ public class ListSupportedAssetsRI {
    * Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;.
    * @return assetType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "crypto", required = true, value = "Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".")
 
   public AssetTypeEnum getAssetType() {
@@ -195,6 +199,7 @@ public class ListSupportedAssetsRI {
    * Specifies the asset&#39;s original symbol as introduced by its founders.
    * @return originalSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Specifies the asset's original symbol as introduced by its founders.")
 
   public String getOriginalSymbol() {

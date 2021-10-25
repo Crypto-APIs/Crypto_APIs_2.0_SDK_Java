@@ -21,7 +21,7 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfirmationDataItemMinedInBlock;
+import org.openapitools.client.model.AddressTokensTransactionConfirmedDataItemMinedInBlock;
 import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfirmationToken;
 import org.junit.Assert;
 import org.junit.Ignore;

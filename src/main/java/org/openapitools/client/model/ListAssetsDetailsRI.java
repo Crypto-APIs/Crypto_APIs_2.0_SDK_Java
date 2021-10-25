@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListAssetsDetailsRIS;
 /**
  * ListAssetsDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListAssetsDetailsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -126,6 +126,7 @@ public class ListAssetsDetailsRI {
    * Defines the unique ID of the specific asset.
    * @return assetId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5b1ea92e584bf50020130615", required = true, value = "Defines the unique ID of the specific asset.")
 
   public String getAssetId() {
@@ -148,6 +149,7 @@ public class ListAssetsDetailsRI {
    * Get assetLogo
    * @return assetLogo
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListAssetsDetailsRIAssetLogo getAssetLogo() {
@@ -170,6 +172,7 @@ public class ListAssetsDetailsRI {
    * Specifies the name of the asset in question.
    * @return assetName
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Bitcoin", required = true, value = "Specifies the name of the asset in question.")
 
   public String getAssetName() {
@@ -192,6 +195,7 @@ public class ListAssetsDetailsRI {
    * Specifies the asset&#39;s original symbol as introduced by its founders.
    * @return assetOriginalSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Specifies the asset's original symbol as introduced by its founders.")
 
   public String getAssetOriginalSymbol() {
@@ -214,6 +218,7 @@ public class ListAssetsDetailsRI {
    * Specifies the asset&#39;s unique symbol in the Crypto APIs listings.
    * @return assetSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Specifies the asset's unique symbol in the Crypto APIs listings.")
 
   public String getAssetSymbol() {
@@ -236,6 +241,7 @@ public class ListAssetsDetailsRI {
    * Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;.
    * @return assetType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "crypto", required = true, value = "Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".")
 
   public AssetTypeEnum getAssetType() {
@@ -258,6 +264,7 @@ public class ListAssetsDetailsRI {
    * Get latestRate
    * @return latestRate
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListAssetsDetailsRILatestRate getLatestRate() {
@@ -303,6 +310,7 @@ public class ListAssetsDetailsRI {
    * Get specificData
    * @return specificData
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListAssetsDetailsRIS getSpecificData() {

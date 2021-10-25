@@ -23,6 +23,7 @@ import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.ListInternalTransactionDetailsByTransactionHashR;
+import org.openapitools.client.model.ListInternalTransactionsByAddressR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.UnexpectedServerError;
 import org.openapitools.client.model.UnsupportedMediaType;
@@ -80,6 +81,27 @@ public class InternalApiTest {
         Integer limit = null;
         Integer offset = null;
         ListInternalTransactionDetailsByTransactionHashR response = api.listInternalTransactionDetailsByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Internal Transactions By Address
+     *
+     * 
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listInternalTransactionsByAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListInternalTransactionsByAddressR response = api.listInternalTransactionsByAddress(blockchain, network, address, context, limit, offset);
 
         // TODO: test validations
     }

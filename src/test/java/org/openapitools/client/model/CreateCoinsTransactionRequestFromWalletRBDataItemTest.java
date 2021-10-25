@@ -68,6 +68,22 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItemTest {
     }
 
     /**
+     * Test the property 'note'
+     */
+    @Test
+    public void noteTest() {
+        // TODO: test note
+    }
+
+    /**
+     * Test the property 'prepareStrategy'
+     */
+    @Test
+    public void prepareStrategyTest() {
+        // TODO: test prepareStrategy
+    }
+
+    /**
      * Test the property 'recipients'
      */
     @Test

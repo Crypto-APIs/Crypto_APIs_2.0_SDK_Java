@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeleteAutomaticCoinsForwardingRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class DeleteAutomaticCoinsForwardingRI {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
@@ -35,11 +35,11 @@ public class DeleteAutomaticCoinsForwardingRI {
 
   public static final String SERIALIZED_NAME_CONFIRMATIONS_COUNT = "confirmationsCount";
   @SerializedName(SERIALIZED_NAME_CONFIRMATIONS_COUNT)
-  private String confirmationsCount;
+  private Integer confirmationsCount;
 
   public static final String SERIALIZED_NAME_CREATED_TIMESTAMP = "createdTimestamp";
   @SerializedName(SERIALIZED_NAME_CREATED_TIMESTAMP)
-  private String createdTimestamp;
+  private Integer createdTimestamp;
 
   /**
    * Represents the fee priority of the automation, whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.
@@ -121,6 +121,7 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -133,7 +134,7 @@ public class DeleteAutomaticCoinsForwardingRI {
   }
 
 
-  public DeleteAutomaticCoinsForwardingRI confirmationsCount(String confirmationsCount) {
+  public DeleteAutomaticCoinsForwardingRI confirmationsCount(Integer confirmationsCount) {
     
     this.confirmationsCount = confirmationsCount;
     return this;
@@ -143,19 +144,20 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
    * @return confirmationsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
 
-  public String getConfirmationsCount() {
+  public Integer getConfirmationsCount() {
     return confirmationsCount;
   }
 
 
-  public void setConfirmationsCount(String confirmationsCount) {
+  public void setConfirmationsCount(Integer confirmationsCount) {
     this.confirmationsCount = confirmationsCount;
   }
 
 
-  public DeleteAutomaticCoinsForwardingRI createdTimestamp(String createdTimestamp) {
+  public DeleteAutomaticCoinsForwardingRI createdTimestamp(Integer createdTimestamp) {
     
     this.createdTimestamp = createdTimestamp;
     return this;
@@ -165,14 +167,15 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Defines the specific time/date when the automatic forwarding was created in Unix Timestamp.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1611238648", required = true, value = "Defines the specific time/date when the automatic forwarding was created in Unix Timestamp.")
 
-  public String getCreatedTimestamp() {
+  public Integer getCreatedTimestamp() {
     return createdTimestamp;
   }
 
 
-  public void setCreatedTimestamp(String createdTimestamp) {
+  public void setCreatedTimestamp(Integer createdTimestamp) {
     this.createdTimestamp = createdTimestamp;
   }
 
@@ -187,6 +190,7 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents the fee priority of the automation, whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.
    * @return feePriority
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "standard", required = true, value = "Represents the fee priority of the automation, whether it is \"SLOW\", \"STANDARD\" or \"FAST\".")
 
   public FeePriorityEnum getFeePriority() {
@@ -209,6 +213,7 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents the hash of the address that forwards the currency.
    * @return fromAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mzAsK3csTnozLnYVdca4gaoH1btBZBC6QB", required = true, value = "Represents the hash of the address that forwards the currency.")
 
   public String getFromAddress() {
@@ -231,6 +236,7 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents the minimum transfer amount of the currency in the &#x60;fromAddress&#x60; that can be allowed for an automatic forwarding.
    * @return minimumTransferAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00002", required = true, value = "Represents the minimum transfer amount of the currency in the `fromAddress` that can be allowed for an automatic forwarding.")
 
   public String getMinimumTransferAmount() {
@@ -253,6 +259,7 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents a unique ID used to reference the specific callback subscription.
    * @return referenceId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "601c1f23ec4b80f51245e617", required = true, value = "Represents a unique ID used to reference the specific callback subscription.")
 
   public String getReferenceId() {
@@ -275,6 +282,7 @@ public class DeleteAutomaticCoinsForwardingRI {
    * Represents the hash of the address the currency is forwarded to.
    * @return toAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mzYijhgmzZrmuB7wBDazRKirnChKyow4M3", required = true, value = "Represents the hash of the address the currency is forwarded to.")
 
   public String getToAddress() {

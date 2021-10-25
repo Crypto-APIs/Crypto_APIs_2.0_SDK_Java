@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines the total fees included in the specific block.
  */
 @ApiModel(description = "Defines the total fees included in the specific block.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleBlockDetailsByBlockHeightRITotalFees {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -49,6 +49,7 @@ public class GetXRPRippleBlockDetailsByBlockHeightRITotalFees {
    * Defines the amount of all fees included in the specific block.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.004487", required = true, value = "Defines the amount of all fees included in the specific block.")
 
   public String getAmount() {
@@ -71,6 +72,7 @@ public class GetXRPRippleBlockDetailsByBlockHeightRITotalFees {
    * Defines the unit of all fees included in the specific block.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "XRP", required = true, value = "Defines the unit of all fees included in the specific block.")
 
   public String getUnit() {

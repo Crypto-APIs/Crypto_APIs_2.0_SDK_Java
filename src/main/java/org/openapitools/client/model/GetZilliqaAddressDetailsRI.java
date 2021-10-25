@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetZilliqaAddressDetailsRIBalance;
 /**
  * GetZilliqaAddressDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetZilliqaAddressDetailsRI {
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
@@ -57,6 +57,7 @@ public class GetZilliqaAddressDetailsRI {
    * Get balance
    * @return balance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetZilliqaAddressDetailsRIBalance getBalance() {
@@ -79,6 +80,7 @@ public class GetZilliqaAddressDetailsRI {
    * Defines the received transaction count to the address.
    * @return incomingTransactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5", required = true, value = "Defines the received transaction count to the address.")
 
   public Integer getIncomingTransactionsCount() {
@@ -101,6 +103,7 @@ public class GetZilliqaAddressDetailsRI {
    * Defines the sent transaction count from the address.
    * @return outgoingTransactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Defines the sent transaction count from the address.")
 
   public Integer getOutgoingTransactionsCount() {
@@ -123,6 +126,7 @@ public class GetZilliqaAddressDetailsRI {
    * Defines the entire count of the transactions.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5", required = true, value = "Defines the entire count of the transactions.")
 
   public Integer getTransactionsCount() {

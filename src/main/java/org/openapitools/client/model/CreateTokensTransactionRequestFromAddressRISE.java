@@ -28,7 +28,7 @@ import java.io.IOException;
  * Ethereum Erc20 Token
  */
 @ApiModel(description = "Ethereum Erc20 Token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateTokensTransactionRequestFromAddressRISE {
   public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
   @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
@@ -45,6 +45,7 @@ public class CreateTokensTransactionRequestFromAddressRISE {
    * Defines the contract address in the blockchain for an ERC20 token.
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x092de782a7e1e0a92991ad829a0a33aef3c7545e", required = true, value = "Defines the contract address in the blockchain for an ERC20 token.")
 
   public String getContractAddress() {

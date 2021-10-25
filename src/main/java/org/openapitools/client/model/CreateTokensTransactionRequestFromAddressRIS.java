@@ -23,44 +23,17 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRISB;
 import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRISE;
 
 /**
  * Represents the specific token data which depends on its type - if it is a Coin or Token.
  */
 @ApiModel(description = "Represents the specific token data which depends on its type - if it is a Coin or Token.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateTokensTransactionRequestFromAddressRIS {
-  public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
-  @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  private String propertyId;
-
   public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
   @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
   private String contractAddress;
-
-
-  public CreateTokensTransactionRequestFromAddressRIS propertyId(String propertyId) {
-    
-    this.propertyId = propertyId;
-    return this;
-  }
-
-   /**
-   * Defines the &#x60;propertyID&#x60; from Omni layer.
-   * @return propertyId
-  **/
-  @ApiModelProperty(example = "1", required = true, value = "Defines the `propertyID` from Omni layer.")
-
-  public String getPropertyId() {
-    return propertyId;
-  }
-
-
-  public void setPropertyId(String propertyId) {
-    this.propertyId = propertyId;
-  }
 
 
   public CreateTokensTransactionRequestFromAddressRIS contractAddress(String contractAddress) {
@@ -73,6 +46,7 @@ public class CreateTokensTransactionRequestFromAddressRIS {
    * Defines the contract address in the blockchain for an ERC20 token.
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x092de782a7e1e0a92991ad829a0a33aef3c7545e", required = true, value = "Defines the contract address in the blockchain for an ERC20 token.")
 
   public String getContractAddress() {
@@ -94,20 +68,18 @@ public class CreateTokensTransactionRequestFromAddressRIS {
       return false;
     }
     CreateTokensTransactionRequestFromAddressRIS createTokensTransactionRequestFromAddressRIS = (CreateTokensTransactionRequestFromAddressRIS) o;
-    return Objects.equals(this.propertyId, createTokensTransactionRequestFromAddressRIS.propertyId) &&
-        Objects.equals(this.contractAddress, createTokensTransactionRequestFromAddressRIS.contractAddress);
+    return Objects.equals(this.contractAddress, createTokensTransactionRequestFromAddressRIS.contractAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(propertyId, contractAddress);
+    return Objects.hash(contractAddress);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateTokensTransactionRequestFromAddressRIS {\n");
-    sb.append("    propertyId: ").append(toIndentedString(propertyId)).append("\n");
     sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
     sb.append("}");
     return sb.toString();

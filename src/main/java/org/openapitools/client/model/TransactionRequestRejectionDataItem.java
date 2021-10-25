@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class TransactionRequestRejectionDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -65,7 +65,8 @@ public class TransactionRequestRejectionDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
-  @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ethereum", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
     return blockchain;
@@ -87,7 +88,8 @@ public class TransactionRequestRejectionDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
-  @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ropsten", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
     return network;
@@ -109,6 +111,7 @@ public class TransactionRequestRejectionDataItem {
    * The required number of approvals needed to approve the transaction.
    * @return requiredApprovals
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "The required number of approvals needed to approve the transaction.")
 
   public Integer getRequiredApprovals() {
@@ -131,6 +134,7 @@ public class TransactionRequestRejectionDataItem {
    * The required number of rejections needed to reject the transaction.
    * @return requiredRejections
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "The required number of rejections needed to reject the transaction.")
 
   public Integer getRequiredRejections() {
@@ -153,6 +157,7 @@ public class TransactionRequestRejectionDataItem {
    * The current number of approvals given for the transaction.
    * @return currentApprovals
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "The current number of approvals given for the transaction.")
 
   public Integer getCurrentApprovals() {
@@ -175,6 +180,7 @@ public class TransactionRequestRejectionDataItem {
    * The current number of rejections given for the transaction.
    * @return currentRejections
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "The current number of rejections given for the transaction.")
 
   public Integer getCurrentRejections() {

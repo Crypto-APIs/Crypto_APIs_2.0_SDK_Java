@@ -30,7 +30,7 @@ import org.openapitools.client.model.BannedIpAddressErrorDetails;
 /**
  * LimitGreaterThanAllowedError
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class LimitGreaterThanAllowedError {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -55,6 +55,7 @@ public class LimitGreaterThanAllowedError {
    * Specifies an error code, e.g. error 404.
    * @return code
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "limit_greater_than_allowed", required = true, value = "Specifies an error code, e.g. error 404.")
 
   public String getCode() {
@@ -77,6 +78,7 @@ public class LimitGreaterThanAllowedError {
    * Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.
    * @return message
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "You have reached the allowed limit. The maximum number of items for this endpoint is {limit}, please use the specific pagination attributes to get the items in portions.", required = true, value = "Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.")
 
   public String getMessage() {

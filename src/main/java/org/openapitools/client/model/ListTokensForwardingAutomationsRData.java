@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListTokensForwardingAutomationsRI;
 /**
  * ListTokensForwardingAutomationsRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTokensForwardingAutomationsRData {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
@@ -59,6 +59,7 @@ public class ListTokensForwardingAutomationsRData {
    * The starting index of the response items, i.e. where the response should start listing the returned items.
    * @return offset
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "The starting index of the response items, i.e. where the response should start listing the returned items.")
 
   public Integer getOffset() {
@@ -81,6 +82,7 @@ public class ListTokensForwardingAutomationsRData {
    * Defines how many items should be returned in the response per page basis.
    * @return limit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "50", required = true, value = "Defines how many items should be returned in the response per page basis.")
 
   public Integer getLimit() {
@@ -103,6 +105,7 @@ public class ListTokensForwardingAutomationsRData {
    * Defines the total number of items returned in the response.
    * @return total
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "100", required = true, value = "Defines the total number of items returned in the response.")
 
   public Integer getTotal() {
@@ -130,6 +133,7 @@ public class ListTokensForwardingAutomationsRData {
    * Get items
    * @return items
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "[]", required = true, value = "")
 
   public List<ListTokensForwardingAutomationsRI> getItems() {

@@ -15,6 +15,7 @@ package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
+import org.openapitools.client.model.GetTransactionRequestDetailsR;
 import org.openapitools.client.model.GetWalletAssetDetailsR;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
@@ -23,6 +24,7 @@ import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.ListDepositAddressesR;
 import org.openapitools.client.model.ListSupportedTokensR;
+import org.openapitools.client.model.ListWalletTransactionsR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.ResourceNotFound;
 import org.openapitools.client.model.UnexpectedServerError;
@@ -43,6 +45,23 @@ public class InformativeApiTest {
 
     private final InformativeApi api = new InformativeApi();
 
+    
+    /**
+     * Get Transaction Request Details
+     *
+     * Through this endpoint customers can obtain details on transaction request.    {note}This regards **transaction requests**, which is not to be confused with **transactions**. Transaction requests may not be approved due to any reason, hence a transaction may not occur.{/note}
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getTransactionRequestDetailsTest() throws ApiException {
+        String transactionRequestId = null;
+        String context = null;
+        GetTransactionRequestDetailsR response = api.getTransactionRequestDetails(transactionRequestId, context);
+
+        // TODO: test validations
+    }
     
     /**
      * Get Wallet Asset Details
@@ -98,6 +117,27 @@ public class InformativeApiTest {
         Integer limit = null;
         Integer offset = null;
         ListSupportedTokensR response = api.listSupportedTokens(blockchain, network, context, limit, offset);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Wallet Transactions
+     *
+     * Through this endpoint customers can list Transactions from and to their Wallet. The data returned will include &#x60;transactionId&#x60;, &#x60;direction&#x60; of the transaction - incoming or outgoing, &#x60;amount&#x60; and more.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listWalletTransactionsTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String walletId = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListWalletTransactionsR response = api.listWalletTransactions(blockchain, network, walletId, context, limit, offset);
 
         // TODO: test validations
     }

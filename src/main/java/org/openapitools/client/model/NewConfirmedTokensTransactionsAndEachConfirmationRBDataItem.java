@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedTokensTransactionsAndEachConfirmationRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class NewConfirmedTokensTransactionsAndEachConfirmationRBDataItem {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -60,7 +60,8 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRBDataItem {
    * Represents the address of the transaction, per which the result is returned.
    * @return address
   **/
-  @ApiModelProperty(example = "mho4jHBcrNCncKt38trJahXakuaBnS7LK5", required = true, value = "Represents the address of the transaction, per which the result is returned.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x033ef6db9fbd0ee60e2931906b987fe0280471a0", required = true, value = "Represents the address of the transaction, per which the result is returned.")
 
   public String getAddress() {
     return address;
@@ -102,11 +103,11 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRBDataItem {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "yourSecretKey", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @ApiModelProperty(example = "yourSecretKey", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -128,6 +129,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRBDataItem {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "http://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {

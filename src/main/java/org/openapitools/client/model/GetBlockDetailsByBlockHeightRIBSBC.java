@@ -28,7 +28,7 @@ import java.io.IOException;
  * Bitcoin Cash
  */
 @ApiModel(description = "Bitcoin Cash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBSBC {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -36,7 +36,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
+  private String nonce;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -73,6 +73,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * Represents a mathematical value of how hard it is to find a valid hash for this block.
    * @return difficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "209515044.4071968", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
 
   public String getDifficulty() {
@@ -85,24 +86,25 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
   }
 
 
-  public GetBlockDetailsByBlockHeightRIBSBC nonce(Integer nonce) {
+  public GetBlockDetailsByBlockHeightRIBSBC nonce(String nonce) {
     
     this.nonce = nonce;
     return this;
   }
 
    /**
-   * Represents a random value that can be adjusted to satisfy the Proof of Work
+   * Represents a random value that can be adjusted to satisfy the Proof of Work.
    * @return nonce
   **/
-  @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work.")
 
-  public Integer getNonce() {
+  public String getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(Integer nonce) {
+  public void setNonce(String nonce) {
     this.nonce = nonce;
   }
 
@@ -117,6 +119,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * Represents the total size of the block in Bytes.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3892", required = true, value = "Represents the total size of the block in Bytes.")
 
   public Integer getSize() {
@@ -139,6 +142,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * A sub-unit of BTC equal to 0.000001 BTC, or 100 Satoshi, and is the same as microbitcoin (μBTC). Bits have two-decimal precision.
    * @return bits
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1917ffc5", required = true, value = "A sub-unit of BTC equal to 0.000001 BTC, or 100 Satoshi, and is the same as microbitcoin (μBTC). Bits have two-decimal precision.")
 
   public String getBits() {
@@ -161,6 +165,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.
    * @return chainwork
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0000047a031ea2dedc1db49eee2ca6d6ac39c9362f59b25899538d43c6c68bc7", required = true, value = "Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.")
 
   public String getChainwork() {
@@ -183,6 +188,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
    * @return merkleRoot
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "263a9121b0e8aaf6a3df5f77f7658b358def7642ed8d674b97dc4e207b7f6937", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
 
   public String getMerkleRoot() {
@@ -205,6 +211,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * Represents the version of the specific block on the blockchain.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "536870912", required = true, value = "Represents the version of the specific block on the blockchain.")
 
   public Integer getVersion() {
@@ -227,6 +234,7 @@ public class GetBlockDetailsByBlockHeightRIBSBC {
    * Is the hexadecimal string representation of the block&#39;s version.
    * @return versionHex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "20000", required = true, value = "Is the hexadecimal string representation of the block's version.")
 
   public String getVersionHex() {

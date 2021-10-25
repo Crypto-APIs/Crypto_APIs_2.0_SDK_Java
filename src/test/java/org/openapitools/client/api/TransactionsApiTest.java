@@ -14,6 +14,8 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
+import org.openapitools.client.model.CreateCoinsTransactionFromAddressForWholeAmountR;
+import org.openapitools.client.model.CreateCoinsTransactionFromAddressForWholeAmountRB;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressR;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRB;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletR;
@@ -28,9 +30,9 @@ import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.UnexpectedServerError;
 import org.openapitools.client.model.UnsupportedMediaType;
+import org.openapitools.client.model.WalletAsAServiceAddressBalanceNotEnough;
 import org.openapitools.client.model.WalletAsAServiceNoDepositAddressesFound;
 import org.openapitools.client.model.WalletAsAServiceTokenNotSupported;
-import org.openapitools.client.model.WalletAsAServiceWalletBalanceNotEnough;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -47,6 +49,27 @@ public class TransactionsApiTest {
 
     private final TransactionsApi api = new TransactionsApi();
 
+    
+    /**
+     * Create Coins Transaction From Address For Whole Amount
+     *
+     * Through this endpoint customers can create a new transaction from address for **coins** specifically, which will transfer over the entire available amount.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void createCoinsTransactionFromAddressForWholeAmountTest() throws ApiException {
+        String address = null;
+        String blockchain = null;
+        String network = null;
+        String walletId = null;
+        String context = null;
+        CreateCoinsTransactionFromAddressForWholeAmountRB createCoinsTransactionFromAddressForWholeAmountRB = null;
+        CreateCoinsTransactionFromAddressForWholeAmountR response = api.createCoinsTransactionFromAddressForWholeAmount(address, blockchain, network, walletId, context, createCoinsTransactionFromAddressForWholeAmountRB);
+
+        // TODO: test validations
+    }
     
     /**
      * Create Coins Transaction Request from Address

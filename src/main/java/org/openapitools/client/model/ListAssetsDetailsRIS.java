@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListAssetsDetailsRISC;
  * Represents a specific asset&#39;s data depending on its type (whether it is \&quot;crypto\&quot; or \&quot;fiat\&quot;).
  */
 @ApiModel(description = "Represents a specific asset's data depending on its type (whether it is \"crypto\" or \"fiat\").")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListAssetsDetailsRIS {
   public static final String SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE = "1HourPriceChangeInPercentage";
   @SerializedName(SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE)
@@ -121,6 +121,7 @@ public class ListAssetsDetailsRIS {
    * Represents the percentage of the asset&#39;s current price against the its price from 1 hour ago.
    * @return _1hourPriceChangeInPercentage
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "-2.52", required = true, value = "Represents the percentage of the asset's current price against the its price from 1 hour ago.")
 
   public String get1hourPriceChangeInPercentage() {
@@ -143,6 +144,7 @@ public class ListAssetsDetailsRIS {
    * Represents the percentage of the asset&#39;s current price against the its price from 1 week ago.
    * @return _1weekPriceChangeInPercentage
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "-10.18", required = true, value = "Represents the percentage of the asset's current price against the its price from 1 week ago.")
 
   public String get1weekPriceChangeInPercentage() {
@@ -165,6 +167,7 @@ public class ListAssetsDetailsRIS {
    * Represents the percentage of the asset&#39;s current price against the its price from 24 hours ago.
    * @return _24hoursPriceChangeInPercentage
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "-3.37", required = true, value = "Represents the percentage of the asset's current price against the its price from 24 hours ago.")
 
   public String get24hoursPriceChangeInPercentage() {
@@ -187,6 +190,7 @@ public class ListAssetsDetailsRIS {
    * Represents the trading volume of the asset for the time frame of 24 hours.
    * @return _24hoursTradingVolume
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2871630447", required = true, value = "Represents the trading volume of the asset for the time frame of 24 hours.")
 
   public String get24hoursTradingVolume() {
@@ -209,6 +213,7 @@ public class ListAssetsDetailsRIS {
    * Subtype of the crypto assets. Could be COIN or TOKEN
    * @return assetType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "coin", required = true, value = "Subtype of the crypto assets. Could be COIN or TOKEN")
 
   public AssetTypeEnum getAssetType() {
@@ -231,6 +236,7 @@ public class ListAssetsDetailsRIS {
    * Represents the amount of the asset that is circulating on the market and in public hands.
    * @return circulatingSupply
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "123564.25", required = true, value = "Represents the amount of the asset that is circulating on the market and in public hands.")
 
   public String getCirculatingSupply() {
@@ -253,7 +259,8 @@ public class ListAssetsDetailsRIS {
    * Defines the total market value of the asset&#39;s circulating supply in USD.
    * @return marketCapInUSD
   **/
-  @ApiModelProperty(example = "1,056,050,713,184", required = true, value = "Defines the total market value of the asset's circulating supply in USD.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "10198150322.917389", required = true, value = "Defines the total market value of the asset's circulating supply in USD.")
 
   public String getMarketCapInUSD() {
     return marketCapInUSD;
@@ -275,7 +282,8 @@ public class ListAssetsDetailsRIS {
    * Represents the maximum amount of all coins of a specific asset that will ever exist in its lifetime.
    * @return maxSupply
   **/
-  @ApiModelProperty(example = "18,562,881", required = true, value = "Represents the maximum amount of all coins of a specific asset that will ever exist in its lifetime.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "21000000", required = true, value = "Represents the maximum amount of all coins of a specific asset that will ever exist in its lifetime.")
 
   public String getMaxSupply() {
     return maxSupply;

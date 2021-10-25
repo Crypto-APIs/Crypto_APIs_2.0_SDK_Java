@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedInternalTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class NewConfirmedInternalTransactionsRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -76,7 +76,8 @@ public class NewConfirmedInternalTransactionsRI {
    * Defines the specific address of the internal transaction.
    * @return address
   **/
-  @ApiModelProperty(required = true, value = "Defines the specific address of the internal transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0xbcc817f057950b0df41206c5d7125e6225cae18e", required = true, value = "Defines the specific address of the internal transaction.")
 
   public String getAddress() {
     return address;
@@ -95,10 +96,11 @@ public class NewConfirmedInternalTransactionsRI {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs 2.0.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs 2.0. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
-  @ApiModelProperty(example = "yourSecretKey", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs 2.0.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "yourSecretKey", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs 2.0. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -120,6 +122,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -142,6 +145,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
    * @return confirmationsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
 
   public Integer getConfirmationsCount() {
@@ -164,6 +168,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Defines the specific time/date when the subscription was created in Unix Timestamp.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1236238648", required = true, value = "Defines the specific time/date when the subscription was created in Unix Timestamp.")
 
   public Integer getCreatedTimestamp() {
@@ -186,6 +191,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Defines the type of the specific event available for the customer to subscribe to for callback notification.
    * @return eventType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ADDRESS_INTERNAL_TRANSACTION_CONFIRMED", required = true, value = "Defines the type of the specific event available for the customer to subscribe to for callback notification.")
 
   public String getEventType() {
@@ -208,6 +214,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Defines whether the subscription is active or not. Set as boolean.
    * @return isActive
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the subscription is active or not. Set as boolean.")
 
   public Boolean getIsActive() {
@@ -230,6 +237,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Represents a unique ID used to reference the specific callback subscription.
    * @return referenceId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bc243c86-0902-4386-b30d-e6b30fa1f2aa", required = true, value = "Represents a unique ID used to reference the specific callback subscription.")
 
   public String getReferenceId() {
@@ -252,6 +260,7 @@ public class NewConfirmedInternalTransactionsRI {
    * Represents the unique identification string that defines the transaction.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xe67f98e281c303dbefa8c6b3e1441ff06742a914ae240e4829629abe7e464960", required = true, value = "Represents the unique identification string that defines the transaction.")
 
   public String getTransactionId() {

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines on object array of the funds for which an offer is made.
  */
 @ApiModel(description = "Defines on object array of the funds for which an offer is made.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleTransactionDetailsByTransactionIDRIReceive {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -49,6 +49,7 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRIReceive {
    * Defines the amount of the funds for which an offer is made.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2.1256", required = true, value = "Defines the amount of the funds for which an offer is made.")
 
   public String getAmount() {
@@ -71,6 +72,7 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRIReceive {
    * Defines the unit of the funds for which an offer is made.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "XRP", required = true, value = "Defines the unit of the funds for which an offer is made.")
 
   public String getUnit() {

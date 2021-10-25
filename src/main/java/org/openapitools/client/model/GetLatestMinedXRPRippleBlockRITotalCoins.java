@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetLatestMinedXRPRippleBlockRITotalCoins
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetLatestMinedXRPRippleBlockRITotalCoins {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class GetLatestMinedXRPRippleBlockRITotalCoins {
    * Defines the amount of all coins.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "22.0012", required = true, value = "Defines the amount of all coins.")
 
   public String getAmount() {
@@ -70,6 +71,7 @@ public class GetLatestMinedXRPRippleBlockRITotalCoins {
    * Defines the unit of the amount of all coins.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "XRP", required = true, value = "Defines the unit of the amount of all coins.")
 
   public String getUnit() {

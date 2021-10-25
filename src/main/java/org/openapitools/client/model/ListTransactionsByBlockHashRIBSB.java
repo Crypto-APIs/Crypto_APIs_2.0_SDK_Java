@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBVin;
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSB {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -69,6 +69,7 @@ public class ListTransactionsByBlockHashRIBSB {
    * Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.
    * @return locktime
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1781965", required = true, value = "Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.")
 
   public Integer getLocktime() {
@@ -91,6 +92,7 @@ public class ListTransactionsByBlockHashRIBSB {
    * Represents the total size of this transaction.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "373", required = true, value = "Represents the total size of this transaction.")
 
   public Integer getSize() {
@@ -113,6 +115,7 @@ public class ListTransactionsByBlockHashRIBSB {
    * Represents the virtual size of this transaction.
    * @return vSize
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "208", required = true, value = "Represents the virtual size of this transaction.")
 
   public Integer getvSize() {
@@ -135,6 +138,7 @@ public class ListTransactionsByBlockHashRIBSB {
    * Represents the transaction version number.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the transaction version number.")
 
   public Integer getVersion() {
@@ -162,6 +166,7 @@ public class ListTransactionsByBlockHashRIBSB {
    * Represents the transaction inputs.
    * @return vin
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
   public List<ListTransactionsByBlockHashRIBSBVin> getVin() {
@@ -189,6 +194,7 @@ public class ListTransactionsByBlockHashRIBSB {
    * Represents the transaction outputs.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
   public List<GetTransactionDetailsByTransactionIDRIBSBVout> getVout() {

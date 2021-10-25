@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetWalletAssetDetailsRISentConfirmedAmount;
 /**
  * GetWalletAssetDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetWalletAssetDetailsRI {
   public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
   @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
@@ -63,6 +63,7 @@ public class GetWalletAssetDetailsRI {
    * Get confirmedBalance
    * @return confirmedBalance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetWalletAssetDetailsRIConfirmedBalance getConfirmedBalance() {
@@ -85,6 +86,7 @@ public class GetWalletAssetDetailsRI {
    * Specifies the count of deposit addresses in the Wallet.
    * @return depositAddressesCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5", required = true, value = "Specifies the count of deposit addresses in the Wallet.")
 
   public Integer getDepositAddressesCount() {
@@ -107,6 +109,7 @@ public class GetWalletAssetDetailsRI {
    * Defines the name of the Wallet given to it by the user.
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "main vault", required = true, value = "Defines the name of the Wallet given to it by the user.")
 
   public String getName() {
@@ -129,6 +132,7 @@ public class GetWalletAssetDetailsRI {
    * Get recievedConfirmedAmount
    * @return recievedConfirmedAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetWalletAssetDetailsRIRecievedConfirmedAmount getRecievedConfirmedAmount() {
@@ -151,6 +155,7 @@ public class GetWalletAssetDetailsRI {
    * Get sentConfirmedAmount
    * @return sentConfirmedAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetWalletAssetDetailsRISentConfirmedAmount getSentConfirmedAmount() {

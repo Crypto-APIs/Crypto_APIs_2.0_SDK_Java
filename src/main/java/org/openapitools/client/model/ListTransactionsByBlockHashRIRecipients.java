@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListTransactionsByBlockHashRIRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class ListTransactionsByBlockHashRIRecipients {
    * The address which receives this transaction. In UTXO-based protocols like Bitcoin there could be several senders while in account-based protocols like Ethereum there is always only one recipient.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mvuvhgT5DUjpQ2LBWQhujiFGDZiDHGdHa7", required = true, value = "The address which receives this transaction. In UTXO-based protocols like Bitcoin there could be several senders while in account-based protocols like Ethereum there is always only one recipient.")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class ListTransactionsByBlockHashRIRecipients {
    * Represents the amount received to this address.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00476076", required = true, value = "Represents the amount received to this address.")
 
   public String getAmount() {

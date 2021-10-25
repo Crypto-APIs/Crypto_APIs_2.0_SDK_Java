@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines the balance of the account.
  */
 @ApiModel(description = "Defines the balance of the account.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleAddressDetailsRIBalance {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -49,6 +49,7 @@ public class GetXRPRippleAddressDetailsRIBalance {
    * Represents the total amount of the balance.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "22.0000", required = true, value = "Represents the total amount of the balance.")
 
   public String getAmount() {
@@ -71,6 +72,7 @@ public class GetXRPRippleAddressDetailsRIBalance {
    * Represents the unit used for the balance.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "XRP", required = true, value = "Represents the unit used for the balance.")
 
   public String getUnit() {

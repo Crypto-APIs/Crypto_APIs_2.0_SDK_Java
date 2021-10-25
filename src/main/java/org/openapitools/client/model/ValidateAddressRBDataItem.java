@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ValidateAddressRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ValidateAddressRBDataItem {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -44,6 +44,7 @@ public class ValidateAddressRBDataItem {
    * Represents the specific address that will be checked if it&#39;s valid or not.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mho4jHBcrNCncKt38trJahXakuaBnS7LK5", required = true, value = "Represents the specific address that will be checked if it's valid or not.")
 
   public String getAddress() {

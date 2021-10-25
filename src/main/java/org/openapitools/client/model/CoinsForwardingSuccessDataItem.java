@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CoinsForwardingSuccessDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -81,6 +81,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -103,6 +104,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -125,6 +127,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the hash of the address that provides the coins.
    * @return fromAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "mmd963W1fECjLyaDCHcioSCZYHkRwjkGST", required = true, value = "Represents the hash of the address that provides the coins.")
 
   public String getFromAddress() {
@@ -147,6 +150,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the hash of the address to forward the coins to.
    * @return toAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ms4KNsbNpoU8g424pzmEjbkFbfAHae1msB", required = true, value = "Represents the hash of the address to forward the coins to.")
 
   public String getToAddress() {
@@ -169,6 +173,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the amount of coins that have been forwarded.
    * @return forwardedAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "00059441", required = true, value = "Represents the amount of coins that have been forwarded.")
 
   public String getForwardedAmount() {
@@ -191,6 +196,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the unit of coins that have been forwarded, e.g. BTC.
    * @return forwardedUnit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Represents the unit of coins that have been forwarded, e.g. BTC.")
 
   public String getForwardedUnit() {
@@ -213,6 +219,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the amount of the fee spent for the coins to be forwarded.
    * @return spentFeesAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00022827", required = true, value = "Represents the amount of the fee spent for the coins to be forwarded.")
 
   public String getSpentFeesAmount() {
@@ -235,6 +242,7 @@ public class CoinsForwardingSuccessDataItem {
    * Represents the unit of the fee spent for the coins to be forwarded, e.g. BTC.
    * @return spentFeesUnit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Represents the unit of the fee spent for the coins to be forwarded, e.g. BTC.")
 
   public String getSpentFeesUnit() {
@@ -257,6 +265,7 @@ public class CoinsForwardingSuccessDataItem {
    * Defines the unique Transaction ID that triggered the coin forwarding.
    * @return triggerTransactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "86a7546bde4ac28b34504909d138592a6d6fc1277ea1f8f2f9c75dc04bdf3b7b", required = true, value = "Defines the unique Transaction ID that triggered the coin forwarding.")
 
   public String getTriggerTransactionId() {
@@ -279,6 +288,7 @@ public class CoinsForwardingSuccessDataItem {
    * Defines the unique Transaction ID that forwarded the coins.
    * @return forwardingTransactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2241b5264fac8acb92e9fc597035b99cdd22f6578d63c6f52b099729f7c4f979", required = true, value = "Defines the unique Transaction ID that forwarded the coins.")
 
   public String getForwardingTransactionId() {

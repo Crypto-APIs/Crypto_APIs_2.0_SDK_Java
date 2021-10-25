@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSECGasPrice
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSEC {
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -66,7 +66,8 @@ public class ListTransactionsByBlockHeightRIBSEC {
    * Represents the specific transaction contract.
    * @return contract
   **/
-  @ApiModelProperty(required = true, value = "Represents the specific transaction contract.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x20fe562d797a42dcb3399062ae9546cd06f63280", required = true, value = "Represents the specific transaction contract.")
 
   public String getContract() {
     return contract;
@@ -88,6 +89,7 @@ public class ListTransactionsByBlockHeightRIBSEC {
    * Represents the amount of gas used by this specific transaction alone.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
 
   public String getGasLimit() {
@@ -110,6 +112,7 @@ public class ListTransactionsByBlockHeightRIBSEC {
    * Get gasPrice
    * @return gasPrice
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListTransactionsByBlockHeightRIBSECGasPrice getGasPrice() {
@@ -132,6 +135,7 @@ public class ListTransactionsByBlockHeightRIBSEC {
    * Represents the exact unit of gas that was used for the transaction.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "21000", required = true, value = "Represents the exact unit of gas that was used for the transaction.")
 
   public String getGasUsed() {
@@ -154,6 +158,7 @@ public class ListTransactionsByBlockHeightRIBSEC {
    * Represents additional information that is required for the transaction.
    * @return inputData
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x67a5cd0600000000000000000000000031f42841c2db5173425b5223809cf3a38fede360", required = true, value = "Represents additional information that is required for the transaction.")
 
   public String getInputData() {
@@ -176,6 +181,7 @@ public class ListTransactionsByBlockHeightRIBSEC {
    * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
    * @return nonce
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
   public String getNonce() {

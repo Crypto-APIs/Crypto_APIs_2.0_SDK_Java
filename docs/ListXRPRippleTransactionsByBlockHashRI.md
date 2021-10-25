@@ -8,6 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalData** | **String** | Represents any additional data that may be needed. |  [optional]
+**destinationTag** | **Integer** |  |  [optional]
 **index** | **Integer** | Represents the index position of the transaction in the specific block. | 
 **minedInBlockHeight** | **Integer** | Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block. | 
 **recipients** | [**List&lt;ListXRPRippleTransactionsByBlockHashRIRecipients&gt;**](ListXRPRippleTransactionsByBlockHashRIRecipients.md) | Represents an object of addresses that receive the transactions. | 

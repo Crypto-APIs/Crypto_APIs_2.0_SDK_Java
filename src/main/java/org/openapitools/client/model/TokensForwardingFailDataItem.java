@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class TokensForwardingFailDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -118,6 +118,7 @@ public class TokensForwardingFailDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -140,6 +141,7 @@ public class TokensForwardingFailDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -162,7 +164,8 @@ public class TokensForwardingFailDataItem {
    * Represents the hash of the address that provides the tokens.
    * @return fromAddress
   **/
-  @ApiModelProperty(example = "bc1qy4tncwfr6nw3rd8hcr6psxlrkufe6cq44tlfvv", required = true, value = "Represents the hash of the address that provides the tokens.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "mizRduUBKEbJ6uzYJUegPh78gEGgM3WjAr", required = true, value = "Represents the hash of the address that provides the tokens.")
 
   public String getFromAddress() {
     return fromAddress;
@@ -184,7 +187,8 @@ public class TokensForwardingFailDataItem {
    * Represents the hash of the address to forward the tokens to.
    * @return toAddress
   **/
-  @ApiModelProperty(example = "32Dv1CCNFagLcEdmC1uamj2k2jVDdokVQL", required = true, value = "Represents the hash of the address to forward the tokens to.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "mnumE76iEKN47bUsdni85oped5D1fRwKWi", required = true, value = "Represents the hash of the address to forward the tokens to.")
 
   public String getToAddress() {
     return toAddress;
@@ -206,7 +210,8 @@ public class TokensForwardingFailDataItem {
    * Defines the unique Transaction ID that triggered the token forwarding.
    * @return triggerTransactionId
   **/
-  @ApiModelProperty(example = "044681d8571cb55047d9425b7095272fbb8fe4f325b0cd822d374b6153af12a1", required = true, value = "Defines the unique Transaction ID that triggered the token forwarding.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ba1a4e661d36457abc46ea0effef0105f639912119fc64df8fb866118ce7c0d8", required = true, value = "Defines the unique Transaction ID that triggered the token forwarding.")
 
   public String getTriggerTransactionId() {
     return triggerTransactionId;
@@ -228,6 +233,7 @@ public class TokensForwardingFailDataItem {
    * Represents the error code received for the failed token forwarding.
    * @return errorCode
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "FEE_ADDRESS_OUT_OF_FUNDS", required = true, value = "Represents the error code received for the failed token forwarding.")
 
   public ErrorCodeEnum getErrorCode() {
@@ -250,7 +256,8 @@ public class TokensForwardingFailDataItem {
    * Represents the error message received for the failed token forwarding.
    * @return errorMessage
   **/
-  @ApiModelProperty(example = "The specified URI has not been found. Check the URI and try again.", required = true, value = "Represents the error message received for the failed token forwarding.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "You have insufficient credits.", required = true, value = "Represents the error message received for the failed token forwarding.")
 
   public String getErrorMessage() {
     return errorMessage;

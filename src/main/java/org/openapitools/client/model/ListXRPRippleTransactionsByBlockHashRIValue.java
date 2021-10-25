@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListXRPRippleTransactionsByBlockHashRIValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByBlockHashRIValue {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class ListXRPRippleTransactionsByBlockHashRIValue {
    * Defines the amount of the value.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "22.023", required = true, value = "Defines the amount of the value.")
 
   public String getAmount() {
@@ -70,6 +71,7 @@ public class ListXRPRippleTransactionsByBlockHashRIValue {
    * Defines the unit of the value.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "XRP", required = true, value = "Defines the unit of the value.")
 
   public String getUnit() {

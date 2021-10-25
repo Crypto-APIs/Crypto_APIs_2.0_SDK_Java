@@ -21,7 +21,6 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRISB;
 import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRISE;
 import org.junit.Assert;
 import org.junit.Ignore;
@@ -40,14 +39,6 @@ public class CreateTokensTransactionRequestFromAddressRISTest {
     @Test
     public void testCreateTokensTransactionRequestFromAddressRIS() {
         // TODO: test CreateTokensTransactionRequestFromAddressRIS
-    }
-
-    /**
-     * Test the property 'propertyId'
-     */
-    @Test
-    public void propertyIdTest() {
-        // TODO: test propertyId
     }
 
     /**

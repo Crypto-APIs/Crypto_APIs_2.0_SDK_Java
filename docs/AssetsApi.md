@@ -13,7 +13,7 @@ Method | HTTP request | Description
 
 List Assets Details
 
-This endpoint will return details on a requested asset. The asset could be a cryptocurrency or FIAT asset that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
+This endpoint will return a list of details on assets. These could be cryptocurrencies or FIAT assets that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
 
 ### Example
 ```java
@@ -38,7 +38,7 @@ public class Example {
 
     AssetsApi apiInstance = new AssetsApi(defaultClient);
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    String assetType = "crypto"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
+    String assetType = "fiat"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
     String cryptoType = "coin"; // String | Subtype of the crypto assets. Could be COIN or TOKEN
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.

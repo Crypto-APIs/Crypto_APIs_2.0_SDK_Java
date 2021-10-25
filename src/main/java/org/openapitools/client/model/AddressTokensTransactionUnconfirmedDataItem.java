@@ -29,7 +29,7 @@ import org.openapitools.client.model.AddressTokensTransactionUnconfirmedToken;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressTokensTransactionUnconfirmedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -52,11 +52,11 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    */
   @JsonAdapter(TokenTypeEnum.Adapter.class)
   public enum TokenTypeEnum {
-    ETHEREUMERC20TOKEN("ethereumERC20Token"),
+    ERC_20("ERC-20"),
     
-    ETHEREUMERC721TOKEN("ethereumERC721Token"),
+    ERC_721("ERC-721"),
     
-    OMNILAYERTOKEN("omniLayerToken");
+    OMNI("OMNI");
 
     private String value;
 
@@ -170,7 +170,8 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
-  @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ethereum", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
     return blockchain;
@@ -192,7 +193,8 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
-  @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ropsten", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
     return network;
@@ -214,7 +216,8 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Defines the specific address to which the token transaction has been sent and is pending confirmation.
    * @return address
   **/
-  @ApiModelProperty(example = "bc1qj9k6mryqfyl9dghdwnxx29660nws90mfarld46", required = true, value = "Defines the specific address to which the token transaction has been sent and is pending confirmation.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x65b895f400dae5541d70cbbec07527210158f6e2", required = true, value = "Defines the specific address to which the token transaction has been sent and is pending confirmation.")
 
   public String getAddress() {
     return address;
@@ -236,7 +239,8 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Defines the unique ID of the specific transaction, i.e. its identification number.
    * @return transactionId
   **/
-  @ApiModelProperty(example = "ade174e0ff264094bfcf4a83789d3aa3e7d7ab423ffa89e21871aad849f302db", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x76670f3bb45c09e69173fe74834face446edf251c5f02ec30384a0957fce482b", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
 
   public String getTransactionId() {
     return transactionId;
@@ -258,7 +262,8 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Defines the type of token sent with the transaction, e.g. ERC 20.
    * @return tokenType
   **/
-  @ApiModelProperty(example = "ethereumERC20Token", required = true, value = "Defines the type of token sent with the transaction, e.g. ERC 20.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "ERC-20", required = true, value = "Defines the type of token sent with the transaction, e.g. ERC 20.")
 
   public TokenTypeEnum getTokenType() {
     return tokenType;
@@ -280,6 +285,7 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Get token
    * @return token
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public AddressTokensTransactionUnconfirmedToken getToken() {
@@ -302,6 +308,7 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Defines whether the transaction is \&quot;incoming\&quot; or \&quot;outgoing\&quot;.
    * @return direction
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "incoming", required = true, value = "Defines whether the transaction is \"incoming\" or \"outgoing\".")
 
   public DirectionEnum getDirection() {
@@ -324,6 +331,7 @@ public class AddressTokensTransactionUnconfirmedDataItem {
    * Defines the exact time the transaction has been first accepted into the mempool to await confirmation as timestamp.
    * @return firstSeenInMempoolTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1210363220", required = true, value = "Defines the exact time the transaction has been first accepted into the mempool to await confirmation as timestamp.")
 
   public Integer getFirstSeenInMempoolTimestamp() {

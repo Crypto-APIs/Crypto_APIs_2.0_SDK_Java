@@ -27,19 +27,20 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSB;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBC;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSC;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vin;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vout;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSE;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSEC;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSECGasPrice;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSL;
 
 /**
  * GetTransactionDetailsByTransactionIDRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -65,10 +66,6 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSD2Vout>();
 
-  public static final String SERIALIZED_NAME_VSIZE = "vsize";
-  @SerializedName(SERIALIZED_NAME_VSIZE)
-  private Integer vsize;
-
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
   private String contract;
@@ -79,7 +76,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
 
   public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
   @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private GetTransactionDetailsByTransactionIDRIBSECGasPrice gasPrice;
+  private GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice;
 
   public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
   @SerializedName(SERIALIZED_NAME_GAS_USED)
@@ -91,7 +88,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
+  private Integer nonce;
 
   public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
@@ -108,6 +105,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the time at which a particular transaction can be added to the blockchain.
    * @return locktime
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
 
   public Integer getLocktime() {
@@ -130,6 +128,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the total size of this transaction.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "125", required = true, value = "Represents the total size of this transaction.")
 
   public Integer getSize() {
@@ -152,7 +151,8 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the virtual size of this transaction.
    * @return vSize
   **/
-  @ApiModelProperty(example = "166", required = true, value = "Represents the virtual size of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
 
   public Integer getvSize() {
     return vSize;
@@ -174,6 +174,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents transaction version number.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents transaction version number.")
 
   public Integer getVersion() {
@@ -201,6 +202,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the transaction inputs.
    * @return vin
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
   public List<GetTransactionDetailsByTransactionIDRIBSD2Vin> getVin() {
@@ -228,6 +230,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the transaction outputs.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
   public List<GetTransactionDetailsByTransactionIDRIBSD2Vout> getVout() {
@@ -240,28 +243,6 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBS vsize(Integer vsize) {
-    
-    this.vsize = vsize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vsize
-  **/
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getVsize() {
-    return vsize;
-  }
-
-
-  public void setVsize(Integer vsize) {
-    this.vsize = vsize;
-  }
-
-
   public GetTransactionDetailsByTransactionIDRIBS contract(String contract) {
     
     this.contract = contract;
@@ -269,10 +250,11 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
    /**
-   * Represents the specific transaction contract.
+   * Represents the specific transaction contract
    * @return contract
   **/
-  @ApiModelProperty(required = true, value = "Represents the specific transaction contract.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents the specific transaction contract")
 
   public String getContract() {
     return contract;
@@ -294,7 +276,8 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the amount of gas used by this specific transaction alone.
    * @return gasLimit
   **/
-  @ApiModelProperty(example = "552020", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
 
   public String getGasLimit() {
     return gasLimit;
@@ -306,7 +289,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBS gasPrice(GetTransactionDetailsByTransactionIDRIBSECGasPrice gasPrice) {
+  public GetTransactionDetailsByTransactionIDRIBS gasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
     
     this.gasPrice = gasPrice;
     return this;
@@ -316,14 +299,15 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Get gasPrice
    * @return gasPrice
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public GetTransactionDetailsByTransactionIDRIBSECGasPrice getGasPrice() {
+  public GetTransactionDetailsByTransactionIDRIBSBSCGasPrice getGasPrice() {
     return gasPrice;
   }
 
 
-  public void setGasPrice(GetTransactionDetailsByTransactionIDRIBSECGasPrice gasPrice) {
+  public void setGasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
     this.gasPrice = gasPrice;
   }
 
@@ -335,10 +319,11 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
    /**
-   * Represents the exact unit of gas that was used for the transaction.
+   * Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.
    * @return gasUsed
   **/
-  @ApiModelProperty(example = "24673", required = true, value = "Represents the exact unit of gas that was used for the transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "21000", required = true, value = "Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.")
 
   public String getGasUsed() {
     return gasUsed;
@@ -360,7 +345,8 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents additional information that is required for the transaction.
    * @return inputData
   **/
-  @ApiModelProperty(example = "0xa9059cbb000000000000000000000000acc59ec2f7119dc7a9e69dcd124cff75caae05bf0000000000000000000000000000000000000000000000000000000000989680", required = true, value = "Represents additional information that is required for the transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x", required = true, value = "Represents additional information that is required for the transaction.")
 
   public String getInputData() {
     return inputData;
@@ -372,7 +358,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBS nonce(String nonce) {
+  public GetTransactionDetailsByTransactionIDRIBS nonce(Integer nonce) {
     
     this.nonce = nonce;
     return this;
@@ -382,14 +368,15 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
    * @return nonce
   **/
-  @ApiModelProperty(example = "16", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "25341", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
-  public String getNonce() {
+  public Integer getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(String nonce) {
+  public void setNonce(Integer nonce) {
     this.nonce = nonce;
   }
 
@@ -404,7 +391,8 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * Represents the status of this transaction.
    * @return transactionStatus
   **/
-  @ApiModelProperty(required = true, value = "Represents the status of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x1", required = true, value = "Represents the status of this transaction.")
 
   public String getTransactionStatus() {
     return transactionStatus;
@@ -431,7 +419,6 @@ public class GetTransactionDetailsByTransactionIDRIBS {
         Objects.equals(this.version, getTransactionDetailsByTransactionIDRIBS.version) &&
         Objects.equals(this.vin, getTransactionDetailsByTransactionIDRIBS.vin) &&
         Objects.equals(this.vout, getTransactionDetailsByTransactionIDRIBS.vout) &&
-        Objects.equals(this.vsize, getTransactionDetailsByTransactionIDRIBS.vsize) &&
         Objects.equals(this.contract, getTransactionDetailsByTransactionIDRIBS.contract) &&
         Objects.equals(this.gasLimit, getTransactionDetailsByTransactionIDRIBS.gasLimit) &&
         Objects.equals(this.gasPrice, getTransactionDetailsByTransactionIDRIBS.gasPrice) &&
@@ -443,7 +430,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
 
   @Override
   public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, vsize, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus);
+    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus);
   }
 
   @Override
@@ -456,7 +443,6 @@ public class GetTransactionDetailsByTransactionIDRIBS {
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
     sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    vsize: ").append(toIndentedString(vsize)).append("\n");
     sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
     sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
     sb.append("    gasPrice: ").append(toIndentedString(gasPrice)).append("\n");

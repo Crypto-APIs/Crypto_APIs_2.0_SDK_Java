@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateCoinsTransactionRequestFromWalletRBDataItemRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRBDataItemRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,7 +48,8 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItemRecipients {
    * Defines the specific recipient/destination address.
    * @return address
   **/
-  @ApiModelProperty(example = "0x6f61e3c2fbb8c8be698bd0907ba6c04b62800fe5", required = true, value = "Defines the specific recipient/destination address.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "2MtzNEqm2D9jcbPJ5mW7Z3AUNwqt3afZH66", required = true, value = "Defines the specific recipient/destination address.")
 
   public String getAddress() {
     return address;
@@ -70,6 +71,7 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItemRecipients {
    * Represents the specific amount of the transaction&#39;s destination.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.125", required = true, value = "Represents the specific amount of the transaction's destination.")
 
   public String getAmount() {

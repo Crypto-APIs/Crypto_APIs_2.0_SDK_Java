@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * DeleteBlockchainEventSubscriptionRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class DeleteBlockchainEventSubscriptionRI {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -57,10 +57,11 @@ public class DeleteBlockchainEventSubscriptionRI {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
-  @ApiModelProperty(example = "yourSecretKey", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "yourSecretKey", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -82,6 +83,7 @@ public class DeleteBlockchainEventSubscriptionRI {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "http://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -104,6 +106,7 @@ public class DeleteBlockchainEventSubscriptionRI {
    * Defines the specific time/date when the subscription was created in Unix Timestamp.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1611238648", required = true, value = "Defines the specific time/date when the subscription was created in Unix Timestamp.")
 
   public Integer getCreatedTimestamp() {
@@ -126,6 +129,7 @@ public class DeleteBlockchainEventSubscriptionRI {
    * Defines the type of the specific event available for the customer to subscribe to for callback notification.
    * @return eventType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ADDRESS_COINS_TRANSACTION_UNCONFIRMED", required = true, value = "Defines the type of the specific event available for the customer to subscribe to for callback notification.")
 
   public String getEventType() {
@@ -148,6 +152,7 @@ public class DeleteBlockchainEventSubscriptionRI {
    * Represents a unique ID used to reference the specific callback subscription.
    * @return referenceId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "6de9a6ae-1463-458c-81a5-16d68d108012", required = true, value = "Represents a unique ID used to reference the specific callback subscription.")
 
   public String getReferenceId() {

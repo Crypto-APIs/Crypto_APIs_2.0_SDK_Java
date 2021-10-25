@@ -25,9 +25,10 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
 /**
- * GetXRPRippleBlockDetailsByBlockHashRITotalCoins
+ * Defines the total coins.
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@ApiModel(description = "Defines the total coins.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleBlockDetailsByBlockHashRITotalCoins {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -45,10 +46,11 @@ public class GetXRPRippleBlockDetailsByBlockHashRITotalCoins {
   }
 
    /**
-   * Get amount
+   * Defines the amount of the total coins.
    * @return amount
   **/
-  @ApiModelProperty(example = "22.0012", required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "22.0012", required = true, value = "Defines the amount of the total coins.")
 
   public String getAmount() {
     return amount;
@@ -67,10 +69,11 @@ public class GetXRPRippleBlockDetailsByBlockHashRITotalCoins {
   }
 
    /**
-   * Get unit
+   * Defines the unit of the total coins.
    * @return unit
   **/
-  @ApiModelProperty(example = "Drops", required = true, value = "")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "Drops", required = true, value = "Defines the unit of the total coins.")
 
   public String getUnit() {
     return unit;

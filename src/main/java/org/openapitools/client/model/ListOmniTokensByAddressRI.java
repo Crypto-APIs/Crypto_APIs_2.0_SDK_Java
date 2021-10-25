@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListOmniTokensByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListOmniTokensByAddressRI {
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
@@ -60,6 +60,7 @@ public class ListOmniTokensByAddressRI {
    * Defines the balance of the Omni tokens to send in the address.
    * @return balance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "29", required = true, value = "Defines the balance of the Omni tokens to send in the address.")
 
   public String getBalance() {
@@ -82,6 +83,7 @@ public class ListOmniTokensByAddressRI {
    * Defines the amount frozen by the issuer (applies to managed properties only).
    * @return frozen
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the amount frozen by the issuer (applies to managed properties only).")
 
   public String getFrozen() {
@@ -104,6 +106,7 @@ public class ListOmniTokensByAddressRI {
    * Defines the name of the Omni tokens to send.
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Omni tokens", required = true, value = "Defines the name of the Omni tokens to send.")
 
   public String getName() {
@@ -126,6 +129,7 @@ public class ListOmniTokensByAddressRI {
    * Represents the identifier of the tokens to send.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the identifier of the tokens to send.")
 
   public Integer getPropertyId() {
@@ -148,6 +152,7 @@ public class ListOmniTokensByAddressRI {
    * Represents the amount reserved by sell offers and accepts.
    * @return reserved
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Represents the amount reserved by sell offers and accepts.")
 
   public String getReserved() {

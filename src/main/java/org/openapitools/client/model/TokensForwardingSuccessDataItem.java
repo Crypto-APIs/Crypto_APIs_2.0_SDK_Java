@@ -29,7 +29,7 @@ import org.openapitools.client.model.TokensForwardingSuccessToken;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class TokensForwardingSuccessDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -68,11 +68,11 @@ public class TokensForwardingSuccessDataItem {
    */
   @JsonAdapter(TokenTypeEnum.Adapter.class)
   public enum TokenTypeEnum {
-    ETHEREUMERC20TOKEN("ethereumERC20Token"),
+    ERC_20("ERC-20"),
     
-    ETHEREUMERC721TOKEN("ethereumERC721Token"),
+    ERC_721("ERC-721"),
     
-    OMNILAYERTOKEN("omniLayerToken");
+    OMNI("OMNI");
 
     private String value;
 
@@ -131,6 +131,7 @@ public class TokensForwardingSuccessDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -150,10 +151,11 @@ public class TokensForwardingSuccessDataItem {
   }
 
    /**
-   * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
+   * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks.
    * @return network
   **/
-  @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.")
 
   public String getNetwork() {
     return network;
@@ -175,7 +177,8 @@ public class TokensForwardingSuccessDataItem {
    * Represents the hash of the address that provides the tokens.
    * @return fromAddress
   **/
-  @ApiModelProperty(example = "mh8E9c2YDQvn8uRf47Wy4zCv2zHQzcdgkk", required = true, value = "Represents the hash of the address that provides the tokens.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "mySJoZ6wsjrKXZQRWpGoeBW5KkdKGL79Xz", required = true, value = "Represents the hash of the address that provides the tokens.")
 
   public String getFromAddress() {
     return fromAddress;
@@ -197,7 +200,8 @@ public class TokensForwardingSuccessDataItem {
    * Represents the hash of the address to forward the tokens to.
    * @return toAddress
   **/
-  @ApiModelProperty(example = "ms4KNsbNpoU8g424pzmEjbkFbfAHae1msB", required = true, value = "Represents the hash of the address to forward the tokens to.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "mmd963W1fECjLyaDCHcioSCZYHkRwjkGST", required = true, value = "Represents the hash of the address to forward the tokens to.")
 
   public String getToAddress() {
     return toAddress;
@@ -219,6 +223,7 @@ public class TokensForwardingSuccessDataItem {
    * Represents the amount of the fee spent for the tokens to be forwarded.
    * @return spentFeesAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00013601", required = true, value = "Represents the amount of the fee spent for the tokens to be forwarded.")
 
   public String getSpentFeesAmount() {
@@ -241,6 +246,7 @@ public class TokensForwardingSuccessDataItem {
    * Represents the unit of the fee spent for the tokens to be forwarded, e.g. BTC.
    * @return spentFeesUnit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Represents the unit of the fee spent for the tokens to be forwarded, e.g. BTC.")
 
   public String getSpentFeesUnit() {
@@ -263,6 +269,7 @@ public class TokensForwardingSuccessDataItem {
    * Defines the unique Transaction ID that triggered the token forwarding.
    * @return triggerTransactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "6ed1f1c8f2887a78ee8c45a975d928ca63eafc7b63def56324606ddd3cc9854f", required = true, value = "Defines the unique Transaction ID that triggered the token forwarding.")
 
   public String getTriggerTransactionId() {
@@ -285,6 +292,7 @@ public class TokensForwardingSuccessDataItem {
    * Defines the unique Transaction ID that forwarded the tokens.
    * @return forwardingTransactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "b15ab5bbaf5107d551ae1b50181f4c55959205c4ff843e3c10d86d00e690fc72", required = true, value = "Defines the unique Transaction ID that forwarded the tokens.")
 
   public String getForwardingTransactionId() {
@@ -307,7 +315,8 @@ public class TokensForwardingSuccessDataItem {
    * Defines the type of token sent with the transaction, e.g. ERC 20.
    * @return tokenType
   **/
-  @ApiModelProperty(example = "omniLayerToken", required = true, value = "Defines the type of token sent with the transaction, e.g. ERC 20.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "OMNI", required = true, value = "Defines the type of token sent with the transaction, e.g. ERC 20.")
 
   public TokenTypeEnum getTokenType() {
     return tokenType;
@@ -329,6 +338,7 @@ public class TokensForwardingSuccessDataItem {
    * Get token
    * @return token
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public TokensForwardingSuccessToken getToken() {

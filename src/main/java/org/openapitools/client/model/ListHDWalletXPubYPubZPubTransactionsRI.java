@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRISende
 /**
  * ListHDWalletXPubYPubZPubTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListHDWalletXPubYPubZPubTransactionsRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -81,6 +81,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents the index position of the transaction in the block.
    * @return index
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the index position of the transaction in the block.")
 
   public Integer getIndex() {
@@ -103,6 +104,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return minedInBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "00000000407f119ecb74b44229228910400aaeb9f4e3b9869955b85a53e9b7db", required = true, value = "Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getMinedInBlockHash() {
@@ -125,6 +127,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.
    * @return minedInBlockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1903849", required = true, value = "Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.")
 
   public Integer getMinedInBlockHeight() {
@@ -152,6 +155,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
   public List<ListHDWalletXPubYPubZPubTransactionsRIRecipients> getRecipients() {
@@ -179,6 +183,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
   public List<ListHDWalletXPubYPubZPubTransactionsRISenders> getSenders() {
@@ -201,6 +206,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1582202940", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {
@@ -223,6 +229,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents the same as &#x60;transactionId&#x60; for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols &#x60;hash&#x60; is different from &#x60;transactionId&#x60; for SegWit transactions.
    * @return transactionHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1ec73b0f61359927d02376b35993b756b1097cb9a857bec23da4c98c4977d2b2", required = true, value = "Represents the same as `transactionId` for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols `hash` is different from `transactionId` for SegWit transactions.")
 
   public String getTransactionHash() {
@@ -245,6 +252,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Represents the unique identifier of a transaction, i.e. it could be &#x60;transactionId&#x60; in UTXO-based protocols like Bitcoin, and transaction &#x60;hash&#x60; in Ethereum blockchain.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4b66461bf88b61e1e4326356534c135129defb504c7acb2fd6c92697d79eb250", required = true, value = "Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.")
 
   public String getTransactionId() {
@@ -267,6 +275,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListHDWalletXPubYPubZPubTransactionsRIFee getFee() {

@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBS;
 /**
  * GetBlockDetailsByBlockHeightRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRI {
   public static final String SERIALIZED_NAME_HASH = "hash";
   @SerializedName(SERIALIZED_NAME_HASH)
@@ -69,6 +69,7 @@ public class GetBlockDetailsByBlockHeightRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return hash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "000000000000000cf507214c4f86a5048449230bc5c5dbbed59aa74421553f26", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getHash() {
@@ -91,6 +92,7 @@ public class GetBlockDetailsByBlockHeightRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return height
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1939743", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getHeight() {
@@ -113,6 +115,7 @@ public class GetBlockDetailsByBlockHeightRI {
    * Represents the hash of the next block. When this is the last block of the blockchain this value will be an empty string.
    * @return nextBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "000000000000000e2f2e4fab8eaaa6bb39632a79a825d34169d451a86959fe04", required = true, value = "Represents the hash of the next block. When this is the last block of the blockchain this value will be an empty string.")
 
   public String getNextBlockHash() {
@@ -135,6 +138,7 @@ public class GetBlockDetailsByBlockHeightRI {
    * Represents the hash of the previous block, also known as the parent block.
    * @return previousBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "00000000b8c2337ed1221d1861105ad227dfff93b0a1798e78fb6edff58925f5", required = true, value = "Represents the hash of the previous block, also known as the parent block.")
 
   public String getPreviousBlockHash() {
@@ -154,10 +158,11 @@ public class GetBlockDetailsByBlockHeightRI {
   }
 
    /**
-   * Defines the exact date/time when this block was mined in Unix Timestamp.
+   * Defines the exact date/time when this block was mined in Unix
    * @return timestamp
   **/
-  @ApiModelProperty(example = "1615378134", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1615378134", required = true, value = "Defines the exact date/time when this block was mined in Unix")
 
   public Integer getTimestamp() {
     return timestamp;
@@ -179,6 +184,7 @@ public class GetBlockDetailsByBlockHeightRI {
    * Represents the total number of all transactions as part of this block.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "12", required = true, value = "Represents the total number of all transactions as part of this block.")
 
   public Integer getTransactionsCount() {
@@ -201,6 +207,7 @@ public class GetBlockDetailsByBlockHeightRI {
    * Get blockchainSpecific
    * @return blockchainSpecific
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetBlockDetailsByBlockHeightRIBS getBlockchainSpecific() {

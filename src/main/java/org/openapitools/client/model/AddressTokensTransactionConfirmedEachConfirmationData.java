@@ -29,7 +29,7 @@ import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfir
  * Specifies all data, as attributes, included into the callback notification, which depends on the &#x60;event&#x60;.
  */
 @ApiModel(description = "Specifies all data, as attributes, included into the callback notification, which depends on the `event`.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressTokensTransactionConfirmedEachConfirmationData {
   public static final String SERIALIZED_NAME_PRODUCT = "product";
   @SerializedName(SERIALIZED_NAME_PRODUCT)
@@ -54,7 +54,8 @@ public class AddressTokensTransactionConfirmedEachConfirmationData {
    * Represents the Crypto APIs 2.0 product which sends the callback.
    * @return product
   **/
-  @ApiModelProperty(example = "Blockchain Events", required = true, value = "Represents the Crypto APIs 2.0 product which sends the callback.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BLOCKCHAIN_EVENTS", required = true, value = "Represents the Crypto APIs 2.0 product which sends the callback.")
 
   public String getProduct() {
     return product;
@@ -76,6 +77,7 @@ public class AddressTokensTransactionConfirmedEachConfirmationData {
    * Defines the specific event, for which a callback subscription is set.
    * @return event
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ADDRESS_TOKENS_TRANSACTION_CONFIRMED_EACH_CONFIRMATION", required = true, value = "Defines the specific event, for which a callback subscription is set.")
 
   public String getEvent() {
@@ -98,6 +100,7 @@ public class AddressTokensTransactionConfirmedEachConfirmationData {
    * Get item
    * @return item
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public AddressTokensTransactionConfirmedEachConfirmationDataItem getItem() {

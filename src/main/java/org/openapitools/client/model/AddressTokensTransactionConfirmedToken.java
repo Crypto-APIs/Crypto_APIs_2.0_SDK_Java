@@ -23,14 +23,15 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.AddressTokensTransactionConfirmedEthereumerc20token;
-import org.openapitools.client.model.AddressTokensTransactionConfirmedEthereumerc721token;
-import org.openapitools.client.model.AddressTokensTransactionConfirmedOmnilayertoken;
+import org.openapitools.client.model.AddressTokensTransactionConfirmedBep20;
+import org.openapitools.client.model.AddressTokensTransactionConfirmedErc20;
+import org.openapitools.client.model.AddressTokensTransactionConfirmedErc721;
+import org.openapitools.client.model.AddressTokensTransactionConfirmedOmni;
 
 /**
  * AddressTokensTransactionConfirmedToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressTokensTransactionConfirmedToken {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -79,7 +80,8 @@ public class AddressTokensTransactionConfirmedToken {
    * Specifies the name of the token.
    * @return name
   **/
-  @ApiModelProperty(example = "TetherUS", required = true, value = "Specifies the name of the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BEP-20", required = true, value = "Specifies the name of the token.")
 
   public String getName() {
     return name;
@@ -101,7 +103,8 @@ public class AddressTokensTransactionConfirmedToken {
    * Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.
    * @return symbol
   **/
-  @ApiModelProperty(example = "CK", required = true, value = "Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BEST", required = true, value = "Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.")
 
   public String getSymbol() {
     return symbol;
@@ -124,7 +127,7 @@ public class AddressTokensTransactionConfirmedToken {
    * @return decimals
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "5", value = "Defines how many decimals can be used to break the token.")
+  @ApiModelProperty(example = "8", value = "Defines how many decimals can be used to break the token.")
 
   public String getDecimals() {
     return decimals;
@@ -146,7 +149,8 @@ public class AddressTokensTransactionConfirmedToken {
    * Defines the amount of tokens sent with the confirmed transaction.
    * @return amount
   **/
-  @ApiModelProperty(example = "250.531586", required = true, value = "Defines the amount of tokens sent with the confirmed transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.00039", required = true, value = "Defines the amount of tokens sent with the confirmed transaction.")
 
   public String getAmount() {
     return amount;
@@ -165,10 +169,11 @@ public class AddressTokensTransactionConfirmedToken {
   }
 
    /**
-   * Specifies the address of the contract.
+   * Defines the address of the contract.
    * @return contractAddress
   **/
-  @ApiModelProperty(example = "0x06012c8cf97bead5deae237070f9587f8e7a266d", required = true, value = "Specifies the address of the contract.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0xc4a9f4217748390f597e79050de41a39293345d2", required = true, value = "Defines the address of the contract.")
 
   public String getContractAddress() {
     return contractAddress;
@@ -190,7 +195,8 @@ public class AddressTokensTransactionConfirmedToken {
    * Specifies the ID of the token.
    * @return tokenId
   **/
-  @ApiModelProperty(example = "1895557", required = true, value = "Specifies the ID of the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "5027", required = true, value = "Specifies the ID of the token.")
 
   public String getTokenId() {
     return tokenId;
@@ -212,7 +218,8 @@ public class AddressTokensTransactionConfirmedToken {
    * Defines the ID of the property for Omni Layer.
    * @return propertyId
   **/
-  @ApiModelProperty(required = true, value = "Defines the ID of the property for Omni Layer.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "31", required = true, value = "Defines the ID of the property for Omni Layer.")
 
   public String getPropertyId() {
     return propertyId;
@@ -234,7 +241,8 @@ public class AddressTokensTransactionConfirmedToken {
    * Defines the type of the transaction.
    * @return transactionType
   **/
-  @ApiModelProperty(example = "#29", required = true, value = "Defines the type of the transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "Simple Send, DEx Purchase etc.", required = true, value = "Defines the type of the transaction.")
 
   public String getTransactionType() {
     return transactionType;
@@ -256,7 +264,8 @@ public class AddressTokensTransactionConfirmedToken {
    * The transaction ID used to create the token.
    * @return createdByTransactionId
   **/
-  @ApiModelProperty(example = "Simple Send, DEx Purchase etc.", required = true, value = "The transaction ID used to create the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "be5be71feac9e7019fbcdea5a87098a7862a0ee8c60bd5809b4d3b0cda940ddc", required = true, value = "The transaction ID used to create the token.")
 
   public String getCreatedByTransactionId() {
     return createdByTransactionId;

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines details about the source, i.e. the sender.
  */
 @ApiModel(description = "Defines details about the source, i.e. the sender.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -45,6 +45,7 @@ public class CreateCoinsTransactionRequestFromAddressRISenders {
    * Defines the sender&#39;s public address.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x8798d11a96a2822ae60275f3a0798a2542912a10", required = true, value = "Defines the sender's public address.")
 
   public String getAddress() {

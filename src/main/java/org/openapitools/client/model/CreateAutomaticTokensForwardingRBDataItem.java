@@ -28,7 +28,7 @@ import org.openapitools.client.model.CreateAutomaticTokensForwardingRBTokenData;
 /**
  * CreateAutomaticTokensForwardingRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateAutomaticTokensForwardingRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -115,11 +115,11 @@ public class CreateAutomaticTokensForwardingRBDataItem {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "yourSecretString", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @ApiModelProperty(example = "yourSecretString", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -141,6 +141,7 @@ public class CreateAutomaticTokensForwardingRBDataItem {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -163,6 +164,7 @@ public class CreateAutomaticTokensForwardingRBDataItem {
    * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
    * @return confirmationsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
 
   public String getConfirmationsCount() {
@@ -185,6 +187,7 @@ public class CreateAutomaticTokensForwardingRBDataItem {
    * Represents the fee priority of the automation, whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.
    * @return feePriority
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "standard", required = true, value = "Represents the fee priority of the automation, whether it is \"SLOW\", \"STANDARD\" or \"FAST\".")
 
   public FeePriorityEnum getFeePriority() {
@@ -207,6 +210,7 @@ public class CreateAutomaticTokensForwardingRBDataItem {
    * Represents the minimum transfer amount of the currency in the &#x60;fromAddress&#x60; that can be allowed for an automatic forwarding.
    * @return minimumTransferAmount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00002", required = true, value = "Represents the minimum transfer amount of the currency in the `fromAddress` that can be allowed for an automatic forwarding.")
 
   public String getMinimumTransferAmount() {
@@ -229,6 +233,7 @@ public class CreateAutomaticTokensForwardingRBDataItem {
    * Represents the hash of the address the currency is forwarded to.
    * @return toAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "tb1q54j7qcu7kgsrx87yn0r9zjdvsxrnvxg4qua2z6", required = true, value = "Represents the hash of the address the currency is forwarded to.")
 
   public String getToAddress() {
@@ -251,6 +256,7 @@ public class CreateAutomaticTokensForwardingRBDataItem {
    * Get tokenData
    * @return tokenData
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public CreateAutomaticTokensForwardingRBTokenData getTokenData() {

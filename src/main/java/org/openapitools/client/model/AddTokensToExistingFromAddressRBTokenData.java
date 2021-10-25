@@ -24,12 +24,12 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken;
-import org.openapitools.client.model.AddTokensToExistingFromAddressRBTokenDataEthereumErc20Token;
+import org.openapitools.client.model.AddTokensToExistingFromAddressRBTokenDataEthereumToken;
 
 /**
  * AddTokensToExistingFromAddressRBTokenData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddTokensToExistingFromAddressRBTokenData {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
@@ -50,6 +50,7 @@ public class AddTokensToExistingFromAddressRBTokenData {
    * Represents the specific &#x60;propertyId&#x60; of the token data that will be forwarded.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the specific `propertyId` of the token data that will be forwarded.")
 
   public Integer getPropertyId() {
@@ -72,6 +73,7 @@ public class AddTokensToExistingFromAddressRBTokenData {
    * Represents the specific &#x60;contractAddress&#x60; of the Token that will be forwarded.
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Represents the specific `contractAddress` of the Token that will be forwarded.")
 
   public String getContractAddress() {

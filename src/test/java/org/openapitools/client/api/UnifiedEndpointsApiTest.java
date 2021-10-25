@@ -21,16 +21,19 @@ import org.openapitools.client.model.GetAddressDetailsR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetFeeRecommendationsR;
-import org.openapitools.client.model.GetLatestMinedBlockR;
+import org.openapitools.client.model.GetLastMinedBlockR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDR;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
-import org.openapitools.client.model.ListTransactionsByAddressR;
+import org.openapitools.client.model.ListAllUnconfirmedTransactionsR;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressR;
+import org.openapitools.client.model.ListLatestMinedBlocksR;
 import org.openapitools.client.model.ListTransactionsByBlockHashR;
 import org.openapitools.client.model.ListTransactionsByBlockHeightR;
+import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.ResourceNotFound;
 import org.openapitools.client.model.UnexpectedServerError;
@@ -128,7 +131,7 @@ public class UnifiedEndpointsApiTest {
     }
     
     /**
-     * Get Latest Mined Block
+     * Get Last Mined Block
      *
      * Through this endpoint customers can fetch the last mined block in a specific blockchain network, along with its details. These could include the hash of the specific, the previous and the next block, its transactions count, its height, etc.     Blockchain specific data is information such as version, nonce, size, bits, merkleroot, etc.
      *
@@ -136,11 +139,11 @@ public class UnifiedEndpointsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void getLatestMinedBlockTest() throws ApiException {
+    public void getLastMinedBlockTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String context = null;
-        GetLatestMinedBlockR response = api.getLatestMinedBlock(blockchain, network, context);
+        GetLastMinedBlockR response = api.getLastMinedBlock(blockchain, network, context);
 
         // TODO: test validations
     }
@@ -165,7 +168,27 @@ public class UnifiedEndpointsApiTest {
     }
     
     /**
-     * List Transactions By Address
+     * List All Unconfirmed Transactions
+     *
+     * Through this endpoint customers can list all **unconfirmed**  transactions for a specified blockchain and network.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listAllUnconfirmedTransactionsTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListAllUnconfirmedTransactionsR response = api.listAllUnconfirmedTransactions(blockchain, network, context, limit, offset);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Confirmed Transactions By Address
      *
      * This endpoint will list transactions by an attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.
      *
@@ -173,14 +196,33 @@ public class UnifiedEndpointsApiTest {
      *          if the Api call fails
      */
     @Test
-    public void listTransactionsByAddressTest() throws ApiException {
+    public void listConfirmedTransactionsByAddressTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String address = null;
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListTransactionsByAddressR response = api.listTransactionsByAddress(blockchain, network, address, context, limit, offset);
+        ListConfirmedTransactionsByAddressR response = api.listConfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Latest Mined Blocks
+     *
+     * Through this endpoint customers can list the latest 50 blocks that were mined.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listLatestMinedBlocksTest() throws ApiException {
+        String network = null;
+        String blockchain = null;
+        Integer count = null;
+        String context = null;
+        ListLatestMinedBlocksR response = api.listLatestMinedBlocks(network, blockchain, count, context);
 
         // TODO: test validations
     }
@@ -223,6 +265,27 @@ public class UnifiedEndpointsApiTest {
         Integer limit = null;
         Integer offset = null;
         ListTransactionsByBlockHeightR response = api.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Unconfirmed Transactions by Address
+     *
+     * Through this endpoint customers can list transactions by &#x60;address&#x60; that are **unconfirmed**.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listUnconfirmedTransactionsByAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListUnconfirmedTransactionsByAddressR response = api.listUnconfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
 
         // TODO: test validations
     }

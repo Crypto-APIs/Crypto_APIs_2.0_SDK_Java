@@ -23,14 +23,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.TokensForwardingSuccessEthereumerc20token;
-import org.openapitools.client.model.TokensForwardingSuccessEthereumerc721token;
-import org.openapitools.client.model.TokensForwardingSuccessOmnilayertoken;
+import org.openapitools.client.model.TokensForwardingSuccessErc20;
+import org.openapitools.client.model.TokensForwardingSuccessErc721;
+import org.openapitools.client.model.TokensForwardingSuccessOmni;
 
 /**
  * TokensForwardingSuccessToken
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class TokensForwardingSuccessToken {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -79,7 +79,8 @@ public class TokensForwardingSuccessToken {
    * Specifies the name of the token.
    * @return name
   **/
-  @ApiModelProperty(example = "TetherUS", required = true, value = "Specifies the name of the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "TetherUSDT", required = true, value = "Specifies the name of the token.")
 
   public String getName() {
     return name;
@@ -101,7 +102,8 @@ public class TokensForwardingSuccessToken {
    * Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.
    * @return symbol
   **/
-  @ApiModelProperty(example = "CK", required = true, value = "Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "WSTK", required = true, value = "Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.")
 
   public String getSymbol() {
     return symbol;
@@ -124,7 +126,7 @@ public class TokensForwardingSuccessToken {
    * @return decimals
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "7", value = "Defines how many decimals can be used to break the token.")
+  @ApiModelProperty(example = "6", value = "Defines how many decimals can be used to break the token.")
 
   public String getDecimals() {
     return decimals;
@@ -146,6 +148,7 @@ public class TokensForwardingSuccessToken {
    * Defines the amount of tokens sent with the confirmed transaction.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "110.531723", required = true, value = "Defines the amount of tokens sent with the confirmed transaction.")
 
   public String getAmount() {
@@ -168,7 +171,8 @@ public class TokensForwardingSuccessToken {
    * Specifies the address of the contract.
    * @return contractAddress
   **/
-  @ApiModelProperty(example = "0x06012c8cf97bead5deae237070f9587f8e7a266d", required = true, value = "Specifies the address of the contract.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x518ba36f1ca6dfe3bb1b098b8dd0444030e79d9f", required = true, value = "Specifies the address of the contract.")
 
   public String getContractAddress() {
     return contractAddress;
@@ -190,7 +194,8 @@ public class TokensForwardingSuccessToken {
    * Specifies the ID of the token.
    * @return tokenId
   **/
-  @ApiModelProperty(example = "1295570", required = true, value = "Specifies the ID of the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "5027", required = true, value = "Specifies the ID of the token.")
 
   public String getTokenId() {
     return tokenId;
@@ -212,7 +217,8 @@ public class TokensForwardingSuccessToken {
    * Defines the ID of the property for Omni Layer.
    * @return propertyId
   **/
-  @ApiModelProperty(example = "24", required = true, value = "Defines the ID of the property for Omni Layer.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "31", required = true, value = "Defines the ID of the property for Omni Layer.")
 
   public String getPropertyId() {
     return propertyId;
@@ -234,6 +240,7 @@ public class TokensForwardingSuccessToken {
    * Defines the type of the transaction.
    * @return transactionType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Simple Send, DEx Purchase etc.", required = true, value = "Defines the type of the transaction.")
 
   public String getTransactionType() {
@@ -256,7 +263,8 @@ public class TokensForwardingSuccessToken {
    * The transaction ID used to create the token.
    * @return createdByTransactionId
   **/
-  @ApiModelProperty(example = "7ed3694e8a4fa8d3ec5c75eb6789492c69e65511522b220e94ab51da2b6dd53c", required = true, value = "The transaction ID used to create the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "be5be71feac9e7019fbcdea5a87098a7862a0ee8c60bd5809b4d3b0cda940ddc", required = true, value = "The transaction ID used to create the token.")
 
   public String getCreatedByTransactionId() {
     return createdByTransactionId;

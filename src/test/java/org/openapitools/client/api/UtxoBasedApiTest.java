@@ -14,21 +14,16 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.AlreadyExists;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.GetHDWalletXPubYPubZPubDetailsR;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidXpub;
-import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsR;
+import org.openapitools.client.model.InvalidPagination;
+import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressR;
 import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.SyncHDWalletXPubYPubZPubR;
-import org.openapitools.client.model.SyncHDWalletXPubYPubZPubRB;
 import org.openapitools.client.model.UnexpectedServerError;
 import org.openapitools.client.model.UnsupportedMediaType;
-import org.openapitools.client.model.XpubNotSynced;
-import org.openapitools.client.model.XpubSyncInProgress;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -47,62 +42,22 @@ public class UtxoBasedApiTest {
 
     
     /**
-     * Get HD Wallet (xPub, yPub, zPub) Details
+     * List Unspent Transaction Outputs By Address
      *
-     * HD wallet details is useful endpoint to get the most important data about HD wallet without the need to do a lot of calculations, once the HD Wallet is synced using Sync endpoint we keep it up to date and we calculate these details in advance.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void getHDWalletXPubYPubZPubDetailsTest() throws ApiException {
-        String blockchain = null;
-        String extendedPublicKey = null;
-        String network = null;
-        String context = null;
-        String derivation = null;
-        GetHDWalletXPubYPubZPubDetailsR response = api.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * List HD Wallet (xPub, yPub, zPub) Transactions
-     *
-     * This endpoint will list HD Wallet transactions.
+     * Through this endpoint customers can list their transactions&#39; unspent outputs by &#x60;address&#x60;.
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void listHDWalletXPubYPubZPubTransactionsTest() throws ApiException {
+    public void listUnspentTransactionOutputsByAddressTest() throws ApiException {
         String blockchain = null;
-        String extendedPublicKey = null;
         String network = null;
+        String address = null;
         String context = null;
-        String derivation = null;
         Integer limit = null;
         Integer offset = null;
-        ListHDWalletXPubYPubZPubTransactionsR response = api.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Sync HD Wallet (xPub, yPub, zPub)
-     *
-     * HD wallets usually have a lot of addresses and transactions, getting the data on demand is a heavy operation. That&#39;s why we have created this feature, to be able to get HD wallet details or transactions this HD wallet must be synced first. In addition to the initial sync we keep updating the synced HD wallets all the time.
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void syncHDWalletXPubYPubZPubTest() throws ApiException {
-        String blockchain = null;
-        String network = null;
-        String context = null;
-        SyncHDWalletXPubYPubZPubRB syncHDWalletXPubYPubZPubRB = null;
-        SyncHDWalletXPubYPubZPubR response = api.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB);
+        ListUnspentTransactionOutputsByAddressR response = api.listUnspentTransactionOutputsByAddress(blockchain, network, address, context, limit, offset);
 
         // TODO: test validations
     }

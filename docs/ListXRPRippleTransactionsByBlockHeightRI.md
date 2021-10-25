@@ -8,6 +8,7 @@
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
 **additionalData** | **String** |  |  [optional]
+**destinationTag** | **Integer** |  |  [optional]
 **index** | **Integer** |  | 
 **minedInBlockHash** | **String** |  | 
 **recipients** | [**List&lt;ListXRPRippleTransactionsByBlockHeightRIRecipients&gt;**](ListXRPRippleTransactionsByBlockHeightRIRecipients.md) | Object Array representation of transaction receivers | 

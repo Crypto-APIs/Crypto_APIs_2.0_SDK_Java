@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListTransactionsByBlockHeightRIBSECGasPrice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSECGasPrice {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -48,6 +48,7 @@ public class ListTransactionsByBlockHeightRIBSECGasPrice {
    * Represents the price offered to the miner to purchase this amount of gas.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "17000000000", required = true, value = "Represents the price offered to the miner to purchase this amount of gas.")
 
   public String getAmount() {
@@ -70,6 +71,7 @@ public class ListTransactionsByBlockHeightRIBSECGasPrice {
    * Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "WEI", required = true, value = "Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.")
 
   public String getUnit() {

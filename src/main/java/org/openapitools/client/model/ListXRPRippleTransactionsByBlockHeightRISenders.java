@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListXRPRippleTransactionsByBlockHeightRISenders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByBlockHeightRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class ListXRPRippleTransactionsByBlockHeightRISenders {
    * String array representation of the sender address
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "rPmPErQe4g9725pcNxJpuvKkdqTESTQ6Tu", required = true, value = "String array representation of the sender address")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class ListXRPRippleTransactionsByBlockHeightRISenders {
    * String representation of the amount
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0001", required = true, value = "String representation of the amount")
 
   public String getAmount() {

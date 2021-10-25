@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetZilliqaTransactionDetailsByTransactionIDRIRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetZilliqaTransactionDetailsByTransactionIDRIRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRIRecipients {
    * Represents the hash of the address that receives the funds.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "zil1v25at4s3eh9w34uqqhe3vdvfsvcwq6un3fupc2", required = true, value = "Represents the hash of the address that receives the funds.")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRIRecipients {
    * Defines the amount of the received funds as a string.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the amount of the received funds as a string.")
 
   public String getAmount() {

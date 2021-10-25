@@ -68,6 +68,14 @@ public class CreateCoinsTransactionRequestFromWalletRITest {
     }
 
     /**
+     * Test the property 'note'
+     */
+    @Test
+    public void noteTest() {
+        // TODO: test note
+    }
+
+    /**
      * Test the property 'recipients'
      */
     @Test
@@ -81,6 +89,14 @@ public class CreateCoinsTransactionRequestFromWalletRITest {
     @Test
     public void totalTransactionAmountTest() {
         // TODO: test totalTransactionAmount
+    }
+
+    /**
+     * Test the property 'transactionRequestId'
+     */
+    @Test
+    public void transactionRequestIdTest() {
+        // TODO: test transactionRequestId
     }
 
     /**

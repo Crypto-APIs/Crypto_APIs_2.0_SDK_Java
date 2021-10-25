@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class BlockMinedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -61,6 +61,7 @@ public class BlockMinedDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -83,6 +84,7 @@ public class BlockMinedDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -105,6 +107,7 @@ public class BlockMinedDataItem {
    * Defines the number of blocks in the blockchain preceding this specific block.
    * @return height
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "570008", required = true, value = "Defines the number of blocks in the blockchain preceding this specific block.")
 
   public Integer getHeight() {
@@ -127,6 +130,7 @@ public class BlockMinedDataItem {
    * Represents the hash of the block&#39;s header, i.e. an output that has a fixed length.
    * @return hash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "00000000000000000006ddb5e854505f8b792122b0ac9469c07eb26db414f6fb", required = true, value = "Represents the hash of the block's header, i.e. an output that has a fixed length.")
 
   public String getHash() {
@@ -149,6 +153,7 @@ public class BlockMinedDataItem {
    * Defines the exact date/time when this block was mined in seconds since Unix Epoch time.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1610365615", required = true, value = "Defines the exact date/time when this block was mined in seconds since Unix Epoch time.")
 
   public Integer getTimestamp() {

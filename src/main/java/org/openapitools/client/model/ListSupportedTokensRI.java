@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListSupportedTokensRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListSupportedTokensRI {
   public static final String SERIALIZED_NAME_DECIMALS = "decimals";
   @SerializedName(SERIALIZED_NAME_DECIMALS)
@@ -60,6 +60,7 @@ public class ListSupportedTokensRI {
    * Defines the token&#39;s decimal number or all of its points after the zero.
    * @return decimals
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "6", required = true, value = "Defines the token's decimal number or all of its points after the zero.")
 
   public Integer getDecimals() {
@@ -82,6 +83,7 @@ public class ListSupportedTokensRI {
    * Represents a unique identifier for the specific blockchain and network, e.g. smart contract address, property ID, etc.
    * @return identifier
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Represents a unique identifier for the specific blockchain and network, e.g. smart contract address, property ID, etc.")
 
   public String getIdentifier() {
@@ -104,6 +106,7 @@ public class ListSupportedTokensRI {
    * Defines the token name.
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Tether", required = true, value = "Defines the token name.")
 
   public String getName() {
@@ -126,6 +129,7 @@ public class ListSupportedTokensRI {
    * Defines the token&#39;s unique symbol in the Crypto APIs listings.
    * @return symbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "USDT", required = true, value = "Defines the token's unique symbol in the Crypto APIs listings.")
 
   public String getSymbol() {
@@ -148,6 +152,7 @@ public class ListSupportedTokensRI {
    * Represents the token&#39;s type representation, e.g. ERC-20, Omni, etc.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ERC-20", required = true, value = "Represents the token's type representation, e.g. ERC-20, Omni, etc.")
 
   public String getType() {

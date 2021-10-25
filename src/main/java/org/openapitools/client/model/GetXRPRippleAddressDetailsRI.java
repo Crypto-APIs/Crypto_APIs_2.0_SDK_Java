@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetXRPRippleAddressDetailsRIBalance;
 /**
  * GetXRPRippleAddressDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleAddressDetailsRI {
   public static final String SERIALIZED_NAME_BALANCE = "balance";
   @SerializedName(SERIALIZED_NAME_BALANCE)
@@ -61,6 +61,7 @@ public class GetXRPRippleAddressDetailsRI {
    * Get balance
    * @return balance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetXRPRippleAddressDetailsRIBalance getBalance() {
@@ -83,6 +84,7 @@ public class GetXRPRippleAddressDetailsRI {
    * Defines the count of all confirmed incoming transactions from the address for coins. This applies to coins only, not to tokens transfers
    * @return incomingTransactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Defines the count of all confirmed incoming transactions from the address for coins. This applies to coins only, not to tokens transfers")
 
   public Integer getIncomingTransactionsCount() {
@@ -105,6 +107,7 @@ public class GetXRPRippleAddressDetailsRI {
    * Defines the count of all confirmed outgoing transactions for coins. This applies to coins only, not to tokens transfers
    * @return outgoingTransactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Defines the count of all confirmed outgoing transactions for coins. This applies to coins only, not to tokens transfers")
 
   public Integer getOutgoingTransactionsCount() {
@@ -127,6 +130,7 @@ public class GetXRPRippleAddressDetailsRI {
    * Defines the transaction input&#39;s sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.
    * @return sequence
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "25648975", required = true, value = "Defines the transaction input's sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.")
 
   public Integer getSequence() {
@@ -149,6 +153,7 @@ public class GetXRPRippleAddressDetailsRI {
    * Represents the total number of all transactions as part of this block.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the total number of all transactions as part of this block.")
 
   public Integer getTransactionsCount() {

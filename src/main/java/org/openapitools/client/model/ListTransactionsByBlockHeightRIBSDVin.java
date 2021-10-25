@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSDScriptSig
 /**
  * ListTransactionsByBlockHeightRIBSDVin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSDVin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -80,6 +80,7 @@ public class ListTransactionsByBlockHeightRIBSDVin {
    * Get addresses
    * @return addresses
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getAddresses() {
@@ -102,6 +103,7 @@ public class ListTransactionsByBlockHeightRIBSDVin {
    * Represents the coinbase hex.
    * @return coinbase
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Represents the coinbase hex.", required = true, value = "Represents the coinbase hex.")
 
   public String getCoinbase() {
@@ -124,6 +126,7 @@ public class ListTransactionsByBlockHeightRIBSDVin {
    * Get scriptSig
    * @return scriptSig
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListTransactionsByBlockHeightRIBSDScriptSig getScriptSig() {
@@ -146,6 +149,7 @@ public class ListTransactionsByBlockHeightRIBSDVin {
    * Represents the script sequence number.
    * @return sequence
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the script sequence number.")
 
   public String getSequence() {
@@ -196,6 +200,7 @@ public class ListTransactionsByBlockHeightRIBSDVin {
    * Get txinwitness
    * @return txinwitness
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getTxinwitness() {
@@ -241,6 +246,7 @@ public class ListTransactionsByBlockHeightRIBSDVin {
    * It refers to the index of the output address of this transaction. The index starts from 0.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "It refers to the index of the output address of this transaction. The index starts from 0.")
 
   public Integer getVout() {

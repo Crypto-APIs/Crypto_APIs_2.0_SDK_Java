@@ -28,7 +28,7 @@ import java.io.IOException;
  * Bitcoin Omni Token
  */
 @ApiModel(description = "Bitcoin Omni Token")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTokensForwardingAutomationsRITSBOT {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
@@ -45,6 +45,7 @@ public class ListTokensForwardingAutomationsRITSBOT {
    * Defines the Property ID of the Omni Layer token.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "31", required = true, value = "Defines the Property ID of the Omni Layer token.")
 
   public Integer getPropertyId() {

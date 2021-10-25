@@ -28,7 +28,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSLScriptPub
 /**
  * ListTransactionsByBlockHeightRIBSLVout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSLVout {
   public static final String SERIALIZED_NAME_IS_SPENT = "isSpent";
   @SerializedName(SERIALIZED_NAME_IS_SPENT)
@@ -53,6 +53,7 @@ public class ListTransactionsByBlockHeightRIBSLVout {
    * Defines whether the output is spent or not.
    * @return isSpent
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "false", required = true, value = "Defines whether the output is spent or not.")
 
   public Boolean getIsSpent() {
@@ -75,6 +76,7 @@ public class ListTransactionsByBlockHeightRIBSLVout {
    * Get scriptPubKey
    * @return scriptPubKey
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListTransactionsByBlockHeightRIBSLScriptPubKey getScriptPubKey() {
@@ -97,6 +99,7 @@ public class ListTransactionsByBlockHeightRIBSLVout {
    * Represents the sent/received amount.
    * @return value
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.03505975", required = true, value = "Represents the sent/received amount.")
 
   public String getValue() {

@@ -57,6 +57,14 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRITest {
     }
 
     /**
+     * Test the property 'destinationTag'
+     */
+    @Test
+    public void destinationTagTest() {
+        // TODO: test destinationTag
+    }
+
+    /**
      * Test the property 'index'
      */
     @Test

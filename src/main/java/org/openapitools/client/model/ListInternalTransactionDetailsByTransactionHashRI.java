@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListInternalTransactionDetailsByTransactionHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListInternalTransactionDetailsByTransactionHashRI {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -76,6 +76,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Defines the specific amount of the transaction.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.089286906469667626", required = true, value = "Defines the specific amount of the transaction.")
 
   public String getAmount() {
@@ -98,6 +99,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return blockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x85d538e441835ea749738cf690b676099d869059815842a7bde3259c58ff29eb", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getBlockHash() {
@@ -120,6 +122,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return blockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "12561919", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getBlockHeight() {
@@ -142,6 +145,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Represents the unique internal transaction ID in regards to the parent transaction (type trace address).
    * @return operationID
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "call_1", required = true, value = "Represents the unique internal transaction ID in regards to the parent transaction (type trace address).")
 
   public String getOperationID() {
@@ -164,6 +168,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Defines the call type of the internal transaction.
    * @return operationType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "CALL", required = true, value = "Defines the call type of the internal transaction.")
 
   public String getOperationType() {
@@ -186,6 +191,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Defines the specific hash of the parent transaction.
    * @return parentHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x5d4ea0471b70de09fa3d6a4bc32f703ec44483bffa4d6169fa0a36c6a1dc108a", required = true, value = "Defines the specific hash of the parent transaction.")
 
   public String getParentHash() {
@@ -208,6 +214,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Represents the recipient address with the respective amount.
    * @return recipient
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xc02aaa39b223fe8d0a0e5c4f27ead9083c756cc2", required = true, value = "Represents the recipient address with the respective amount.")
 
   public String getRecipient() {
@@ -230,6 +237,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Represents the sender address with the respective amount.
    * @return sender
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x7a250d5630b4cf539739df2c5dacb4c659f2488d", required = true, value = "Represents the sender address with the respective amount.")
 
   public String getSender() {
@@ -252,6 +260,7 @@ public class ListInternalTransactionDetailsByTransactionHashRI {
    * Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1622728329", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {

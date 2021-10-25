@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the required signatures.
  */
 @ApiModel(description = "Specifies the required signatures.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSBScriptSig {
   public static final String SERIALIZED_NAME_ASM = "asm";
   @SerializedName(SERIALIZED_NAME_ASM)
@@ -53,6 +53,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBScriptSig {
    * The asm strands for assembly, which is the symbolic representation of the Bitcoin&#39;s Script language op-codes.
    * @return asm
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0014daaf6d5cb86befe42df851a4d1df052e663754c1", required = true, value = "The asm strands for assembly, which is the symbolic representation of the Bitcoin's Script language op-codes.")
 
   public String getAsm() {
@@ -75,6 +76,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBScriptSig {
    * Represents the hex of the public key of the address.
    * @return hex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "160014daaf6d5cb86befe42df851a4d1df052e663754c1", required = true, value = "Represents the hex of the public key of the address.")
 
   public String getHex() {
@@ -97,6 +99,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBScriptSig {
    * Represents the script type of the reference transaction identifier.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "scripthash", required = true, value = "Represents the script type of the reference transaction identifier.")
 
   public String getType() {

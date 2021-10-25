@@ -23,16 +23,21 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedOutput;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedSpend;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVout;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSB;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBC;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBSC;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBSCGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2Vin;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSD2Vout;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSE;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSEC;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSEGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSL;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZ;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZVJoinSplit;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZVin;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -101,14 +106,6 @@ public class ListTransactionsByBlockHashRIBSTest {
     }
 
     /**
-     * Test the property 'vsize'
-     */
-    @Test
-    public void vsizeTest() {
-        // TODO: test vsize
-    }
-
-    /**
      * Test the property 'contract'
      */
     @Test
@@ -162,6 +159,86 @@ public class ListTransactionsByBlockHashRIBSTest {
     @Test
     public void transactionStatusTest() {
         // TODO: test transactionStatus
+    }
+
+    /**
+     * Test the property 'bindingSig'
+     */
+    @Test
+    public void bindingSigTest() {
+        // TODO: test bindingSig
+    }
+
+    /**
+     * Test the property 'expiryHeight'
+     */
+    @Test
+    public void expiryHeightTest() {
+        // TODO: test expiryHeight
+    }
+
+    /**
+     * Test the property 'joinSplitPubKey'
+     */
+    @Test
+    public void joinSplitPubKeyTest() {
+        // TODO: test joinSplitPubKey
+    }
+
+    /**
+     * Test the property 'joinSplitSig'
+     */
+    @Test
+    public void joinSplitSigTest() {
+        // TODO: test joinSplitSig
+    }
+
+    /**
+     * Test the property 'overwintered'
+     */
+    @Test
+    public void overwinteredTest() {
+        // TODO: test overwintered
+    }
+
+    /**
+     * Test the property 'vJoinSplit'
+     */
+    @Test
+    public void vJoinSplitTest() {
+        // TODO: test vJoinSplit
+    }
+
+    /**
+     * Test the property 'vShieldedOutput'
+     */
+    @Test
+    public void vShieldedOutputTest() {
+        // TODO: test vShieldedOutput
+    }
+
+    /**
+     * Test the property 'vShieldedSpend'
+     */
+    @Test
+    public void vShieldedSpendTest() {
+        // TODO: test vShieldedSpend
+    }
+
+    /**
+     * Test the property 'valueBalance'
+     */
+    @Test
+    public void valueBalanceTest() {
+        // TODO: test valueBalance
+    }
+
+    /**
+     * Test the property 'versionGroupId'
+     */
+    @Test
+    public void versionGroupIdTest() {
+        // TODO: test versionGroupId
     }
 
 }

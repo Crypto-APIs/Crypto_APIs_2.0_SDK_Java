@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * BannedIpAddressErrorDetails
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class BannedIpAddressErrorDetails {
   public static final String SERIALIZED_NAME_ATTRIBUTE = "attribute";
   @SerializedName(SERIALIZED_NAME_ATTRIBUTE)
@@ -48,6 +48,7 @@ public class BannedIpAddressErrorDetails {
    * Specifies an attribute of the error by name.
    * @return attribute
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "attribute which content caused the error", required = true, value = "Specifies an attribute of the error by name.")
 
   public String getAttribute() {
@@ -70,6 +71,7 @@ public class BannedIpAddressErrorDetails {
    * Specifies the details of an attribute as part from the error.
    * @return message
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "message describing the error", required = true, value = "Specifies the details of an attribute as part from the error.")
 
   public String getMessage() {

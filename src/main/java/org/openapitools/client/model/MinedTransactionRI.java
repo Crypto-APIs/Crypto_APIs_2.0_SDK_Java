@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MinedTransactionRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class MinedTransactionRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -76,6 +76,7 @@ public class MinedTransactionRI {
    * Represents the address of the transaction.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2NCQH4pN7nf6Jb8iGoh69dgVLcVPQXBYHHk", required = true, value = "Represents the address of the transaction.")
 
   public String getAddress() {
@@ -95,10 +96,11 @@ public class MinedTransactionRI {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
-  @ApiModelProperty(example = "yourSecretKey", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "yourSecretKey", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -120,6 +122,7 @@ public class MinedTransactionRI {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -142,6 +145,7 @@ public class MinedTransactionRI {
    * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
    * @return confirmationsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
 
   public Integer getConfirmationsCount() {
@@ -164,6 +168,7 @@ public class MinedTransactionRI {
    * Defines the specific time/date when the subscription was created in Unix Timestamp.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1611238648", required = true, value = "Defines the specific time/date when the subscription was created in Unix Timestamp.")
 
   public Integer getCreatedTimestamp() {
@@ -186,6 +191,7 @@ public class MinedTransactionRI {
    * Defines the type of the specific event available for the customer to subscribe to for callback notification.
    * @return eventType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "TRANSACTION_MINED", required = true, value = "Defines the type of the specific event available for the customer to subscribe to for callback notification.")
 
   public String getEventType() {
@@ -208,6 +214,7 @@ public class MinedTransactionRI {
    * Defines whether the subscription is active or not. Set as boolean.
    * @return isActive
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the subscription is active or not. Set as boolean.")
 
   public Boolean getIsActive() {
@@ -230,6 +237,7 @@ public class MinedTransactionRI {
    * Represents a unique ID used to reference the specific callback subscription.
    * @return referenceId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bc243c86-0902-4386-b30d-e6b30fa1f2aa", required = true, value = "Represents a unique ID used to reference the specific callback subscription.")
 
   public String getReferenceId() {
@@ -252,6 +260,7 @@ public class MinedTransactionRI {
    * Represents the unique identification string that defines the transaction.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "742b4a8d54a663d372fa16abf74093595ae6fc950f2fa2bb7388c7f4d061d7b8", required = true, value = "Represents the unique identification string that defines the transaction.")
 
   public String getTransactionId() {

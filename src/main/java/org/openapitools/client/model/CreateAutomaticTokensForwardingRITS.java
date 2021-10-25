@@ -29,7 +29,7 @@ import org.openapitools.client.model.CreateAutomaticTokensForwardingRITSET;
 /**
  * CreateAutomaticTokensForwardingRITS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateAutomaticTokensForwardingRITS {
   public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
   @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
@@ -50,6 +50,7 @@ public class CreateAutomaticTokensForwardingRITS {
    * Defines the &#x60;propertyId&#x60; of the Omni Layer token.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "31", required = true, value = "Defines the `propertyId` of the Omni Layer token.")
 
   public Integer getPropertyId() {
@@ -72,6 +73,7 @@ public class CreateAutomaticTokensForwardingRITS {
    * Represents the specific &#x60;contractAddress&#x60; of the Token that will be forwarded.
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Represents the specific `contractAddress` of the Token that will be forwarded.")
 
   public String getContractAddress() {

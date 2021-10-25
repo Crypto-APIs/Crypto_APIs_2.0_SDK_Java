@@ -30,7 +30,7 @@ import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDa
 /**
  * CreateCoinsTransactionRequestFromWalletRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -93,6 +93,61 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   @SerializedName(SERIALIZED_NAME_FEE_PRIORITY)
   private FeePriorityEnum feePriority;
 
+  public static final String SERIALIZED_NAME_NOTE = "note";
+  @SerializedName(SERIALIZED_NAME_NOTE)
+  private String note;
+
+  /**
+   * Refers to a model of a UTXO spending strategy, where customers can choose how to spend their transaction outputs from multiple Bitcoin addresses. Two options available - \&quot;minimize-dust\&quot; (select lower amounts from multiple addresses) or \&quot;optimize-size\&quot; (select higher amounts from less addresses).
+   */
+  @JsonAdapter(PrepareStrategyEnum.Adapter.class)
+  public enum PrepareStrategyEnum {
+    MINIMIZE_DUST("minimize-dust"),
+    
+    OPTIMIZE_SIZE("optimize-size");
+
+    private String value;
+
+    PrepareStrategyEnum(String value) {
+      this.value = value;
+    }
+
+    public String getValue() {
+      return value;
+    }
+
+    @Override
+    public String toString() {
+      return String.valueOf(value);
+    }
+
+    public static PrepareStrategyEnum fromValue(String value) {
+      for (PrepareStrategyEnum b : PrepareStrategyEnum.values()) {
+        if (b.value.equals(value)) {
+          return b;
+        }
+      }
+      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+    }
+
+    public static class Adapter extends TypeAdapter<PrepareStrategyEnum> {
+      @Override
+      public void write(final JsonWriter jsonWriter, final PrepareStrategyEnum enumeration) throws IOException {
+        jsonWriter.value(enumeration.getValue());
+      }
+
+      @Override
+      public PrepareStrategyEnum read(final JsonReader jsonReader) throws IOException {
+        String value =  jsonReader.nextString();
+        return PrepareStrategyEnum.fromValue(value);
+      }
+    }
+  }
+
+  public static final String SERIALIZED_NAME_PREPARE_STRATEGY = "prepareStrategy";
+  @SerializedName(SERIALIZED_NAME_PREPARE_STRATEGY)
+  private PrepareStrategyEnum prepareStrategy = PrepareStrategyEnum.MINIMIZE_DUST;
+
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
   private List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients = new ArrayList<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients>();
@@ -105,11 +160,11 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "yourSecretKey", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @ApiModelProperty(example = "yourSecretKey", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -128,11 +183,11 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   }
 
    /**
-   * Verified URL for sending callbacks
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://example.com", value = "Verified URL for sending callbacks")
+  @ApiModelProperty(example = "https://example.com", value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -154,6 +209,7 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
    * Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;.
    * @return feePriority
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "standard", required = true, value = "Represents the fee priority of the automation, whether it is \"slow\", \"standard\" or \"fast\".")
 
   public FeePriorityEnum getFeePriority() {
@@ -163,6 +219,52 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
 
   public void setFeePriority(FeePriorityEnum feePriority) {
     this.feePriority = feePriority;
+  }
+
+
+  public CreateCoinsTransactionRequestFromWalletRBDataItem note(String note) {
+    
+    this.note = note;
+    return this;
+  }
+
+   /**
+   * Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request.
+   * @return note
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "yourAdditionalInformationhere", value = "Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request.")
+
+  public String getNote() {
+    return note;
+  }
+
+
+  public void setNote(String note) {
+    this.note = note;
+  }
+
+
+  public CreateCoinsTransactionRequestFromWalletRBDataItem prepareStrategy(PrepareStrategyEnum prepareStrategy) {
+    
+    this.prepareStrategy = prepareStrategy;
+    return this;
+  }
+
+   /**
+   * Refers to a model of a UTXO spending strategy, where customers can choose how to spend their transaction outputs from multiple Bitcoin addresses. Two options available - \&quot;minimize-dust\&quot; (select lower amounts from multiple addresses) or \&quot;optimize-size\&quot; (select higher amounts from less addresses).
+   * @return prepareStrategy
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "minimize-dust", value = "Refers to a model of a UTXO spending strategy, where customers can choose how to spend their transaction outputs from multiple Bitcoin addresses. Two options available - \"minimize-dust\" (select lower amounts from multiple addresses) or \"optimize-size\" (select higher amounts from less addresses).")
+
+  public PrepareStrategyEnum getPrepareStrategy() {
+    return prepareStrategy;
+  }
+
+
+  public void setPrepareStrategy(PrepareStrategyEnum prepareStrategy) {
+    this.prepareStrategy = prepareStrategy;
   }
 
 
@@ -181,6 +283,7 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
    * Defines the destination of the transaction, whether it is incoming or outgoing.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines the destination of the transaction, whether it is incoming or outgoing.")
 
   public List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> getRecipients() {
@@ -205,12 +308,14 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
     return Objects.equals(this.callbackSecretKey, createCoinsTransactionRequestFromWalletRBDataItem.callbackSecretKey) &&
         Objects.equals(this.callbackUrl, createCoinsTransactionRequestFromWalletRBDataItem.callbackUrl) &&
         Objects.equals(this.feePriority, createCoinsTransactionRequestFromWalletRBDataItem.feePriority) &&
+        Objects.equals(this.note, createCoinsTransactionRequestFromWalletRBDataItem.note) &&
+        Objects.equals(this.prepareStrategy, createCoinsTransactionRequestFromWalletRBDataItem.prepareStrategy) &&
         Objects.equals(this.recipients, createCoinsTransactionRequestFromWalletRBDataItem.recipients);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackSecretKey, callbackUrl, feePriority, recipients);
+    return Objects.hash(callbackSecretKey, callbackUrl, feePriority, note, prepareStrategy, recipients);
   }
 
   @Override
@@ -220,6 +325,8 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
     sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    feePriority: ").append(toIndentedString(feePriority)).append("\n");
+    sb.append("    note: ").append(toIndentedString(note)).append("\n");
+    sb.append("    prepareStrategy: ").append(toIndentedString(prepareStrategy)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("}");
     return sb.toString();

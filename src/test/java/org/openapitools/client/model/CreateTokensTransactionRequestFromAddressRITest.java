@@ -70,6 +70,14 @@ public class CreateTokensTransactionRequestFromAddressRITest {
     }
 
     /**
+     * Test the property 'note'
+     */
+    @Test
+    public void noteTest() {
+        // TODO: test note
+    }
+
+    /**
      * Test the property 'recipients'
      */
     @Test
@@ -91,6 +99,14 @@ public class CreateTokensTransactionRequestFromAddressRITest {
     @Test
     public void tokenTypeSpecificDataTest() {
         // TODO: test tokenTypeSpecificData
+    }
+
+    /**
+     * Test the property 'transactionRequestId'
+     */
+    @Test
+    public void transactionRequestIdTest() {
+        // TODO: test transactionRequestId
     }
 
 }

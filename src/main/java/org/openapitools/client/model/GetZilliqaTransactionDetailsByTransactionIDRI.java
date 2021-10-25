@@ -32,7 +32,7 @@ import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionID
 /**
  * GetZilliqaTransactionDetailsByTransactionIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetZilliqaTransactionDetailsByTransactionIDRI {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
@@ -93,6 +93,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetZilliqaTransactionDetailsByTransactionIDRIFee getFee() {
@@ -115,6 +116,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "552020", required = true, value = "Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.")
 
   public Integer getGasLimit() {
@@ -137,6 +139,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Defines the price of the gas.
    * @return gasPrice
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2994782927", required = true, value = "Defines the price of the gas.")
 
   public Integer getGasPrice() {
@@ -159,6 +162,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Defines how much of the gas for the block has been used.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "24673", required = true, value = "Defines how much of the gas for the block has been used.")
 
   public Integer getGasUsed() {
@@ -181,6 +185,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return minedInBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x5ba627aed1ff0f5480694e994ee03a6ec7b5a6fa96be899c84d52725f9830891", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getMinedInBlockHash() {
@@ -203,6 +208,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return minedInBlockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1250207", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getMinedInBlockHeight() {
@@ -225,6 +231,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
    * @return nonce
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "13", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
   public Integer getNonce() {
@@ -252,6 +259,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Represents an object of addresses that receive the transactions.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
   public List<GetZilliqaTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
@@ -279,6 +287,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Represents an object of addresses that provide the funds.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
   public List<GetZilliqaTransactionDetailsByTransactionIDRISenders> getSenders() {
@@ -301,6 +310,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Defines the exact date/time when this block was mined in Unix Timestamp.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1582202940", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
 
   public Integer getTimestamp() {
@@ -323,6 +333,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Defines the numeric representation of the transaction index.
    * @return transactionIndex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the numeric representation of the transaction index.")
 
   public Integer getTransactionIndex() {
@@ -345,6 +356,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
    * Defines the status of the transaction, whether it is e.g. pending or complete.
    * @return transactionStatus
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the status of the transaction, whether it is e.g. pending or complete.")
 
   public String getTransactionStatus() {

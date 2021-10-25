@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GenerateDepositAddressRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GenerateDepositAddressRBDataItem {
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
@@ -44,6 +44,7 @@ public class GenerateDepositAddressRBDataItem {
    * Represents a custom tag that customers can set up for their Wallets and addresses. E.g. custom label named \&quot;Special addresses\&quot;.
    * @return label
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "yourLabelStringHere", required = true, value = "Represents a custom tag that customers can set up for their Wallets and addresses. E.g. custom label named \"Special addresses\".")
 
   public String getLabel() {

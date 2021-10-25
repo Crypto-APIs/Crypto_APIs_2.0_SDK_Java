@@ -30,7 +30,7 @@ import java.util.List;
  * Represents the script public key.
  */
 @ApiModel(description = "Represents the script public key.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSD2ScriptPubKey {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -68,6 +68,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2ScriptPubKey {
    * Get addresses
    * @return addresses
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getAddresses() {
@@ -90,6 +91,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2ScriptPubKey {
    * Represents the assembly of the script public key of the address.
    * @return asm
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "OP_DUP OP_HASH160 4112d3f2cc01db043c0e638bb6338c83a7b9aa8f OP_EQUALVERIFY OP_CHECKSIG", required = true, value = "Represents the assembly of the script public key of the address.")
 
   public String getAsm() {
@@ -112,6 +114,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2ScriptPubKey {
    * Represents the hex of the script public key of the address.
    * @return hex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "76a9144112d3f2cc01db043c0e638bb6338c83a7b9aa8f88ac", required = true, value = "Represents the hex of the script public key of the address.")
 
   public String getHex() {
@@ -134,6 +137,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2ScriptPubKey {
    * Represents the required signatures.
    * @return reqSigs
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the required signatures.")
 
   public Integer getReqSigs() {
@@ -156,6 +160,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2ScriptPubKey {
    * Represents the script type.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "scripthash", required = true, value = "Represents the script type.")
 
   public String getType() {

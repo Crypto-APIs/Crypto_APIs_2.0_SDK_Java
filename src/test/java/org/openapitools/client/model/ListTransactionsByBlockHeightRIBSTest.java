@@ -23,16 +23,21 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBCVin;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBCVout;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedSpend;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSB;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBC;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBSC;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBSCGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSD;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSD2;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSE;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSEC;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSECGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSL;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZ;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplit;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutput;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVin;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -157,11 +162,83 @@ public class ListTransactionsByBlockHeightRIBSTest {
     }
 
     /**
-     * Test the property 'vsize'
+     * Test the property 'bindingSig'
      */
     @Test
-    public void vsizeTest() {
-        // TODO: test vsize
+    public void bindingSigTest() {
+        // TODO: test bindingSig
+    }
+
+    /**
+     * Test the property 'expiryHeight'
+     */
+    @Test
+    public void expiryHeightTest() {
+        // TODO: test expiryHeight
+    }
+
+    /**
+     * Test the property 'joinSplitPubKey'
+     */
+    @Test
+    public void joinSplitPubKeyTest() {
+        // TODO: test joinSplitPubKey
+    }
+
+    /**
+     * Test the property 'joinSplitSig'
+     */
+    @Test
+    public void joinSplitSigTest() {
+        // TODO: test joinSplitSig
+    }
+
+    /**
+     * Test the property 'overwintered'
+     */
+    @Test
+    public void overwinteredTest() {
+        // TODO: test overwintered
+    }
+
+    /**
+     * Test the property 'vJoinSplit'
+     */
+    @Test
+    public void vJoinSplitTest() {
+        // TODO: test vJoinSplit
+    }
+
+    /**
+     * Test the property 'vShieldedOutput'
+     */
+    @Test
+    public void vShieldedOutputTest() {
+        // TODO: test vShieldedOutput
+    }
+
+    /**
+     * Test the property 'vShieldedSpend'
+     */
+    @Test
+    public void vShieldedSpendTest() {
+        // TODO: test vShieldedSpend
+    }
+
+    /**
+     * Test the property 'valueBalance'
+     */
+    @Test
+    public void valueBalanceTest() {
+        // TODO: test valueBalance
+    }
+
+    /**
+     * Test the property 'versionGroupId'
+     */
+    @Test
+    public void versionGroupIdTest() {
+        // TODO: test versionGroupId
     }
 
 }

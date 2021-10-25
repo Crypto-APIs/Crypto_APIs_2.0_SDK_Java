@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListTokensByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTokensByAddressRI {
   public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
   @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
@@ -60,6 +60,7 @@ public class ListTokensByAddressRI {
    * Defines the token balance that has been confirmed.
    * @return confirmedBalance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "287090.926632", required = true, value = "Defines the token balance that has been confirmed.")
 
   public String getConfirmedBalance() {
@@ -82,6 +83,7 @@ public class ListTokensByAddressRI {
    * Represents the contract address of the token, which controls its logic. It is not the address that holds the tokens.
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Represents the contract address of the token, which controls its logic. It is not the address that holds the tokens.")
 
   public String getContractAddress() {
@@ -104,6 +106,7 @@ public class ListTokensByAddressRI {
    * Defines the token&#39;s name as a string.
    * @return name
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Tether USD", required = true, value = "Defines the token's name as a string.")
 
   public String getName() {
@@ -126,6 +129,7 @@ public class ListTokensByAddressRI {
    * Defines the token symbol by which the token contract is known. It is usually 3-4 characters in length.
    * @return symbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "USDT", required = true, value = "Defines the token symbol by which the token contract is known. It is usually 3-4 characters in length.")
 
   public String getSymbol() {
@@ -148,6 +152,7 @@ public class ListTokensByAddressRI {
    * Defines the specific token type.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ERC-20", required = true, value = "Defines the specific token type.")
 
   public String getType() {

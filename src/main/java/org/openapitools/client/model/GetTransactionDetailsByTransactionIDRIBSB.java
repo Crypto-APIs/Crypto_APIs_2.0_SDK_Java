@@ -32,7 +32,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBVo
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSB {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -69,6 +69,7 @@ public class GetTransactionDetailsByTransactionIDRIBSB {
    * Represents the time at which a particular transaction can be added to the blockchain.
    * @return locktime
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1781965", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
 
   public Integer getLocktime() {
@@ -91,6 +92,7 @@ public class GetTransactionDetailsByTransactionIDRIBSB {
    * Represents the total size of this transaction.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "248", required = true, value = "Represents the total size of this transaction.")
 
   public Integer getSize() {
@@ -113,6 +115,7 @@ public class GetTransactionDetailsByTransactionIDRIBSB {
    * Represents the virtual size of this transaction.
    * @return vSize
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "166", required = true, value = "Represents the virtual size of this transaction.")
 
   public Integer getvSize() {
@@ -135,6 +138,7 @@ public class GetTransactionDetailsByTransactionIDRIBSB {
    * Represents the transaction version number.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the transaction version number.")
 
   public Integer getVersion() {
@@ -162,6 +166,7 @@ public class GetTransactionDetailsByTransactionIDRIBSB {
    * Represents the transaction inputs.
    * @return vin
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
   public List<GetTransactionDetailsByTransactionIDRIBSBVin> getVin() {
@@ -189,6 +194,7 @@ public class GetTransactionDetailsByTransactionIDRIBSB {
    * Represents the transaction outputs.
    * @return vout
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
   public List<GetTransactionDetailsByTransactionIDRIBSBVout> getVout() {

@@ -22,7 +22,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRITSBOT;
-import org.openapitools.client.model.AddTokensToExistingFromAddressRITSEET;
+import org.openapitools.client.model.AddTokensToExistingFromAddressRITSET;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;

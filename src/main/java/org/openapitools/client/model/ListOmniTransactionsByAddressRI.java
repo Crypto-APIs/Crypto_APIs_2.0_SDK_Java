@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListOmniTransactionsByAddressRISenders;
 /**
  * ListOmniTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListOmniTransactionsByAddressRI {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -101,6 +101,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines the amount of the sent tokens.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.01788569", required = true, value = "Defines the amount of the sent tokens.")
 
   public String getAmount() {
@@ -123,6 +124,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines whether the attribute can be divisible or not, as boolean. E.g., if it is \&quot;true\&quot;, the attribute is divisible.
    * @return divisible
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the attribute can be divisible or not, as boolean. E.g., if it is \"true\", the attribute is divisible.")
 
   public Boolean getDivisible() {
@@ -145,6 +147,7 @@ public class ListOmniTransactionsByAddressRI {
    * Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return minedInBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "00000000eafa33741ed67c863930df2af8c236568c4437c395543b5684f4f1ca", required = true, value = "Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getMinedInBlockHash() {
@@ -167,6 +170,7 @@ public class ListOmniTransactionsByAddressRI {
    * Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.
    * @return minedInBlockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1939884", required = true, value = "Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.")
 
   public Integer getMinedInBlockHeight() {
@@ -189,6 +193,7 @@ public class ListOmniTransactionsByAddressRI {
    * Represents the identifier of the tokens to send.
    * @return propertyId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2", required = true, value = "Represents the identifier of the tokens to send.")
 
   public Integer getPropertyId() {
@@ -216,6 +221,7 @@ public class ListOmniTransactionsByAddressRI {
    * Represents an object of addresses that receive the transactions.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
   public List<ListOmniTransactionsByAddressRIRecipients> getRecipients() {
@@ -243,6 +249,7 @@ public class ListOmniTransactionsByAddressRI {
    * Represents an object of addresses that provide the funds.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
   public List<ListOmniTransactionsByAddressRISenders> getSenders() {
@@ -265,6 +272,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1616420363", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {
@@ -287,6 +295,7 @@ public class ListOmniTransactionsByAddressRI {
    * Represents the unique identifier of a transaction, i.e. it could be &#x60;transactionId&#x60; in UTXO-based protocols like Bitcoin, and transaction &#x60;hash&#x60; in Ethereum blockchain.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "409adab785707784361f5e528e5fa21dc0453670f811069f88b0bb725929d945", required = true, value = "Represents the unique identifier of a transaction, i.e. it could be `transactionId` in UTXO-based protocols like Bitcoin, and transaction `hash` in Ethereum blockchain.")
 
   public String getTransactionId() {
@@ -309,6 +318,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines the type of the transaction as a string.
    * @return type
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Simple Send", required = true, value = "Defines the type of the transaction as a string.")
 
   public String getType() {
@@ -331,6 +341,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines the type of the transaction as a number.
    * @return typeInt
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the type of the transaction as a number.")
 
   public Integer getTypeInt() {
@@ -353,6 +364,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines whether the transaction is valid or not, as boolean. E.g. if set to \&quot;true\&quot;, it means the transaction is valid.
    * @return valid
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Defines whether the transaction is valid or not, as boolean. E.g. if set to \"true\", it means the transaction is valid.")
 
   public Boolean getValid() {
@@ -375,6 +387,7 @@ public class ListOmniTransactionsByAddressRI {
    * Defines the specific version.
    * @return version
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the specific version.")
 
   public Integer getVersion() {
@@ -397,6 +410,7 @@ public class ListOmniTransactionsByAddressRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public ListOmniTransactionsByAddressRIFee getFee() {

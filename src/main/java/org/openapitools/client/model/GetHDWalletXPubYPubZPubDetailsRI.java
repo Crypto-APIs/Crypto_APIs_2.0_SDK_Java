@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetHDWalletXPubYPubZPubDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetHDWalletXPubYPubZPubDetailsRI {
   public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
   @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
@@ -52,6 +52,7 @@ public class GetHDWalletXPubYPubZPubDetailsRI {
    * Specifies the confirmed coins balance of the Wallet.
    * @return confirmedBalance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0021", required = true, value = "Specifies the confirmed coins balance of the Wallet.")
 
   public String getConfirmedBalance() {
@@ -74,6 +75,7 @@ public class GetHDWalletXPubYPubZPubDetailsRI {
    * Defines the total currency received to the Wallet.
    * @return totalReceived
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0002", required = true, value = "Defines the total currency received to the Wallet.")
 
   public String getTotalReceived() {
@@ -96,6 +98,7 @@ public class GetHDWalletXPubYPubZPubDetailsRI {
    * Defines the total currency spent from the Wallet.
    * @return totalSpent
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.0001", required = true, value = "Defines the total currency spent from the Wallet.")
 
   public String getTotalSpent() {

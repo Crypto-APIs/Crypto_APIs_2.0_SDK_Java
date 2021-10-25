@@ -25,16 +25,18 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSB;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBC;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSBSC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSD2;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSE;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSEC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSL;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSZ;
 
 /**
  * GetBlockDetailsByBlockHeightRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBS {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -42,7 +44,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
+  private String nonce;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -100,6 +102,10 @@ public class GetBlockDetailsByBlockHeightRIBS {
   @SerializedName(SERIALIZED_NAME_TOTAL_DIFFICULTY)
   private String totalDifficulty;
 
+  public static final String SERIALIZED_NAME_MERKLEROOT = "merkleroot";
+  @SerializedName(SERIALIZED_NAME_MERKLEROOT)
+  private String merkleroot;
+
 
   public GetBlockDetailsByBlockHeightRIBS difficulty(String difficulty) {
     
@@ -111,6 +117,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Represents a mathematical value of how hard it is to find a valid hash for this block.
    * @return difficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "209515044.4071968", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
 
   public String getDifficulty() {
@@ -123,24 +130,25 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
 
-  public GetBlockDetailsByBlockHeightRIBS nonce(Integer nonce) {
+  public GetBlockDetailsByBlockHeightRIBS nonce(String nonce) {
     
     this.nonce = nonce;
     return this;
   }
 
    /**
-   * Represents a random value that can be adjusted to satisfy the Proof of Work
+   * Represents a random value that can be adjusted to satisfy the Proof of Work.
    * @return nonce
   **/
-  @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work.")
 
-  public Integer getNonce() {
+  public String getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(Integer nonce) {
+  public void setNonce(String nonce) {
     this.nonce = nonce;
   }
 
@@ -155,6 +163,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Represents the total size of the block in Bytes.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3892", required = true, value = "Represents the total size of the block in Bytes.")
 
   public Integer getSize() {
@@ -174,10 +183,11 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Represents a specific sub-unit of Dash. Bits have two-decimal precision.
+   * Represents a specific sub-unit of Zcash. Bits have two-decimal precision
    * @return bits
   **/
-  @ApiModelProperty(example = "1917ffc5", required = true, value = "Represents a specific sub-unit of Dash. Bits have two-decimal precision.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "524517883", required = true, value = "Represents a specific sub-unit of Zcash. Bits have two-decimal precision")
 
   public String getBits() {
     return bits;
@@ -199,7 +209,8 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.
    * @return chainwork
   **/
-  @ApiModelProperty(example = "0000000000000000000000000000000000000000000016abcea319c908148ad0", required = true, value = "Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "000000000000000000000000000000000000000000000000000000262b072797", required = true, value = "Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.")
 
   public String getChainwork() {
     return chainwork;
@@ -221,6 +232,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
    * @return merkleRoot
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0348f785f8779822c9f81d60684f320e9a230fbfe6241a0502edfe257feff3b6", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
 
   public String getMerkleRoot() {
@@ -243,6 +255,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Defines the numeric representation of the block size excluding the witness data.
    * @return strippedSize
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "930838", required = true, value = "Defines the numeric representation of the block size excluding the witness data.")
 
   public Integer getStrippedSize() {
@@ -262,10 +275,11 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Represents the version of the specific block on the blockchain.
+   * Represents the block version number.
    * @return version
   **/
-  @ApiModelProperty(example = "536870912", required = true, value = "Represents the version of the specific block on the blockchain.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "4", required = true, value = "Represents the block version number.")
 
   public Integer getVersion() {
     return version;
@@ -287,6 +301,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Is the hexadecimal string representation of the block&#39;s version.
    * @return versionHex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "30000000", required = true, value = "Is the hexadecimal string representation of the block's version.")
 
   public String getVersionHex() {
@@ -306,10 +321,11 @@ public class GetBlockDetailsByBlockHeightRIBS {
   }
 
    /**
-   * Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit.
+   * Represents a measurement to compare the size of different transactions to each other in proportion to the block size limi
    * @return weight
   **/
-  @ApiModelProperty(example = "2238302", required = true, value = "Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "2238302", required = true, value = "Represents a measurement to compare the size of different transactions to each other in proportion to the block size limi")
 
   public Integer getWeight() {
     return weight;
@@ -331,7 +347,8 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Represents any data that can be included by the miner in the block.
    * @return extraData
   **/
-  @ApiModelProperty(example = "0x307834383639373636353666366532303530366636663663", required = true, value = "Represents any data that can be included by the miner in the block.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0xd983010203844765746887676f312e342e328777696e646f7773", required = true, value = "Represents any data that can be included by the miner in the block.")
 
   public String getExtraData() {
     return extraData;
@@ -353,6 +370,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Defines the total gas limit of all transactions in the block.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3141592", required = true, value = "Defines the total gas limit of all transactions in the block.")
 
   public String getGasLimit() {
@@ -375,6 +393,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Represents the total amount of gas used by all transactions in this block.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "21000", required = true, value = "Represents the total amount of gas used by all transactions in this block.")
 
   public String getGasUsed() {
@@ -397,7 +416,8 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Specifies the amount of time required for the block to be mined in seconds.
    * @return minedInSeconds
   **/
-  @ApiModelProperty(example = "8", required = true, value = "Specifies the amount of time required for the block to be mined in seconds.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "5", required = true, value = "Specifies the amount of time required for the block to be mined in seconds.")
 
   public Integer getMinedInSeconds() {
     return minedInSeconds;
@@ -419,6 +439,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Defines the combined hash of all uncles for a given parent.
    * @return sha3Uncles
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347", required = true, value = "Defines the combined hash of all uncles for a given parent.")
 
   public String getSha3Uncles() {
@@ -441,6 +462,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
    * Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.
    * @return totalDifficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "20104747399762079739558", required = true, value = "Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.")
 
   public String getTotalDifficulty() {
@@ -450,6 +472,29 @@ public class GetBlockDetailsByBlockHeightRIBS {
 
   public void setTotalDifficulty(String totalDifficulty) {
     this.totalDifficulty = totalDifficulty;
+  }
+
+
+  public GetBlockDetailsByBlockHeightRIBS merkleroot(String merkleroot) {
+    
+    this.merkleroot = merkleroot;
+    return this;
+  }
+
+   /**
+   * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
+   * @return merkleroot
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
+
+  public String getMerkleroot() {
+    return merkleroot;
+  }
+
+
+  public void setMerkleroot(String merkleroot) {
+    this.merkleroot = merkleroot;
   }
 
 
@@ -477,12 +522,13 @@ public class GetBlockDetailsByBlockHeightRIBS {
         Objects.equals(this.gasUsed, getBlockDetailsByBlockHeightRIBS.gasUsed) &&
         Objects.equals(this.minedInSeconds, getBlockDetailsByBlockHeightRIBS.minedInSeconds) &&
         Objects.equals(this.sha3Uncles, getBlockDetailsByBlockHeightRIBS.sha3Uncles) &&
-        Objects.equals(this.totalDifficulty, getBlockDetailsByBlockHeightRIBS.totalDifficulty);
+        Objects.equals(this.totalDifficulty, getBlockDetailsByBlockHeightRIBS.totalDifficulty) &&
+        Objects.equals(this.merkleroot, getBlockDetailsByBlockHeightRIBS.merkleroot);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleRoot, strippedSize, version, versionHex, weight, extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty);
+    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleRoot, strippedSize, version, versionHex, weight, extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty, merkleroot);
   }
 
   @Override
@@ -505,6 +551,7 @@ public class GetBlockDetailsByBlockHeightRIBS {
     sb.append("    minedInSeconds: ").append(toIndentedString(minedInSeconds)).append("\n");
     sb.append("    sha3Uncles: ").append(toIndentedString(sha3Uncles)).append("\n");
     sb.append("    totalDifficulty: ").append(toIndentedString(totalDifficulty)).append("\n");
+    sb.append("    merkleroot: ").append(toIndentedString(merkleroot)).append("\n");
     sb.append("}");
     return sb.toString();
   }

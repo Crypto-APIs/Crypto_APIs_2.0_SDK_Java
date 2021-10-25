@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetFeeRecommendationsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetFeeRecommendationsRI {
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
@@ -56,6 +56,7 @@ public class GetFeeRecommendationsRI {
    * Defines the unit of the fee, e.g. BTC.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Defines the unit of the fee, e.g. BTC.")
 
   public String getUnit() {
@@ -75,10 +76,11 @@ public class GetFeeRecommendationsRI {
   }
 
    /**
-   * Defines the fee priority as \&quot;FAST\&quot;. It works per byte, for UTXO-based protocols like Bitcoin, or per gas price, for account-based protocols like Ethereum. These are calculated based on Mempool.
+   * Fast fee per byte calculated from unconfirmed transactions
    * @return fast
   **/
-  @ApiModelProperty(example = "0.00000476", required = true, value = "Defines the fee priority as \"FAST\". It works per byte, for UTXO-based protocols like Bitcoin, or per gas price, for account-based protocols like Ethereum. These are calculated based on Mempool.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.00000021", required = true, value = "Fast fee per byte calculated from unconfirmed transactions")
 
   public String getFast() {
     return fast;
@@ -97,10 +99,11 @@ public class GetFeeRecommendationsRI {
   }
 
    /**
-   * Defines the fee priority as \&quot;SLOW\&quot;. It works per byte, for UTXO-based protocols like Bitcoin, or per gas price, for account-based protocols like Ethereum. These are calculated based on Mempool.
+   * Slow fee per byte calculated from unconfirmed transactions
    * @return slow
   **/
-  @ApiModelProperty(example = "0.00000049", required = true, value = "Defines the fee priority as \"SLOW\". It works per byte, for UTXO-based protocols like Bitcoin, or per gas price, for account-based protocols like Ethereum. These are calculated based on Mempool.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.00000021", required = true, value = "Slow fee per byte calculated from unconfirmed transactions")
 
   public String getSlow() {
     return slow;
@@ -119,10 +122,11 @@ public class GetFeeRecommendationsRI {
   }
 
    /**
-   * Defines the fee priority as \&quot;STANDARD\&quot;. It works per byte, for UTXO-based protocols like Bitcoin, or per gas price, for account-based protocols like Ethereum. These are calculated based on Mempool.
+   * Standard fee per byte calculated from unconfirmed transactions
    * @return standard
   **/
-  @ApiModelProperty(example = "0.00000178", required = true, value = "Defines the fee priority as \"STANDARD\". It works per byte, for UTXO-based protocols like Bitcoin, or per gas price, for account-based protocols like Ethereum. These are calculated based on Mempool.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.00000021", required = true, value = "Standard fee per byte calculated from unconfirmed transactions")
 
   public String getStandard() {
     return standard;

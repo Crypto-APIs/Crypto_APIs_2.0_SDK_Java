@@ -15,14 +15,14 @@ package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.GetContractDetailsByAddressR;
+import org.openapitools.client.model.GetTokenDetailsByContractAddressR;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressR;
 import org.openapitools.client.model.ListTokensByAddressR;
-import org.openapitools.client.model.ListTokensTransfersByAddressR;
 import org.openapitools.client.model.ListTokensTransfersByTransactionHashR;
 import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.UnexpectedServerError;
@@ -45,20 +45,41 @@ public class TokensApiTest {
 
     
     /**
-     * Get Contract Details by Address
+     * Get Token Details by Contract Address
      *
-     * Though this endpoint customers can obtain information about a smart contract and its details. This can be done by the &#x60;address&#x60; parameter, i.e. the address of the smart contract.    {note}This address is **not** the same as the smart contract creator address.{/note}
+     * Though this endpoint customers can obtain information about token details. This can be done by providing the &#x60;contact address&#x60; parameter.    {note}This address is **not** the same as the smart contract creator address.{/note}
      *
      * @throws ApiException
      *          if the Api call fails
      */
     @Test
-    public void getContractDetailsByAddressTest() throws ApiException {
+    public void getTokenDetailsByContractAddressTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String contractAddress = null;
         String context = null;
-        GetContractDetailsByAddressR response = api.getContractDetailsByAddress(blockchain, network, contractAddress, context);
+        GetTokenDetailsByContractAddressR response = api.getTokenDetailsByContractAddress(blockchain, network, contractAddress, context);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * List Confirmed Tokens Transfers By Address
+     *
+     * Through this endpoint customers can obtain a list with **confirmed** token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **confirmed tokens** not coins.{/note}
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void listConfirmedTokensTransfersByAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListConfirmedTokensTransfersByAddressR response = api.listConfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
 
         // TODO: test validations
     }
@@ -80,27 +101,6 @@ public class TokensApiTest {
         Integer limit = null;
         Integer offset = null;
         ListTokensByAddressR response = api.listTokensByAddress(blockchain, network, address, context, limit, offset);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * List Tokens Transfers By Address
-     *
-     * Through this endpoint customers can obtain a list with token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **tokens** not coins.{/note}
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void listTokensTransfersByAddressTest() throws ApiException {
-        String blockchain = null;
-        String network = null;
-        String address = null;
-        String context = null;
-        Integer limit = null;
-        Integer offset = null;
-        ListTokensTransfersByAddressR response = api.listTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
 
         // TODO: test validations
     }

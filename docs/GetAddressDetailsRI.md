@@ -11,8 +11,8 @@ Name | Type | Description | Notes
 **confirmedBalance** | [**GetAddressDetailsRIConfirmedBalance**](GetAddressDetailsRIConfirmedBalance.md) |  | 
 **totalReceived** | [**GetAddressDetailsRITotalReceived**](GetAddressDetailsRITotalReceived.md) |  | 
 **totalSpent** | [**GetAddressDetailsRITotalSpent**](GetAddressDetailsRITotalSpent.md) |  | 
-**incomingTransactionsCount** | **Integer** | Numeric representation of the received transaction count of the address | 
-**outgoingTransactionsCount** | **Integer** | Numeric representation of the sent transaction count of the address | 
+**incomingTransactionsCount** | **Integer** | Defines the count of the incoming transactions. | 
+**outgoingTransactionsCount** | **Integer** | Defines the count of the outgoing transactions. | 
 
 
 

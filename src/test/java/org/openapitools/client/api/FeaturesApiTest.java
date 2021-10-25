@@ -18,9 +18,13 @@ import org.openapitools.client.model.AlreadyExists;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionR;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionRB;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
+import org.openapitools.client.model.GenerateAddressR;
+import org.openapitools.client.model.GenerateAddressRB;
+import org.openapitools.client.model.GetEIP1559FeeRecommendationsR;
 import org.openapitools.client.model.InsufficientCredits;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.InvalidData;
+import org.openapitools.client.model.InvalidNetwork;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.RequestLimitReached;
@@ -61,6 +65,43 @@ public class FeaturesApiTest {
         String context = null;
         BroadcastLocallySignedTransactionRB broadcastLocallySignedTransactionRB = null;
         BroadcastLocallySignedTransactionR response = api.broadcastLocallySignedTransaction(blockchain, network, context, broadcastLocallySignedTransactionRB);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Generate Address
+     *
+     * This endpoint will generate a unique address for the user along with the specific transaction script, e.g. P2PKH, a private and a public key, and WIF.     Users **must** keep their private keys and WIFs secure and accessible to only them at all times. Losing those exposes a risk of losing their funds associated with the respective address.     {warning}We generate, but **do not** save or record the response in any data base, log or anywhere else on our side! In the case a user loses their private key or WIF, Crypto APIs 2.0 **will not be able** to retrieve it.{/warning}
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void generateAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        GenerateAddressRB generateAddressRB = null;
+        GenerateAddressR response = api.generateAddress(blockchain, network, context, generateAddressRB);
+
+        // TODO: test validations
+    }
+    
+    /**
+     * Get EIP 1559 Fee Recommendations
+     *
+     * Through this endpoint customers can obtain fee recommendations specifically for EIP 1559.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getEIP1559FeeRecommendationsTest() throws ApiException {
+        String network = null;
+        String blockchain = null;
+        String context = null;
+        GetEIP1559FeeRecommendationsR response = api.getEIP1559FeeRecommendations(network, blockchain, context);
 
         // TODO: test validations
     }

@@ -29,7 +29,7 @@ import org.openapitools.client.model.GetXRPRippleBlockDetailsByBlockHeightRITota
 /**
  * GetXRPRippleBlockDetailsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleBlockDetailsByBlockHashRI {
   public static final String SERIALIZED_NAME_BLOCK_HASH = "blockHash";
   @SerializedName(SERIALIZED_NAME_BLOCK_HASH)
@@ -74,6 +74,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return blockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1ab0614d2a438da8b23086cbceef7d443edbd295d9c7619fc8a19c7618bc22c9", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getBlockHash() {
@@ -96,6 +97,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return blockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15886156", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getBlockHeight() {
@@ -118,6 +120,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Represents the hash of the next block. When this is the last block of the blockchain this value will be an empty string.
    * @return nextBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "738cf04b9e32826395a8445aa44ec6bbb83f2cc296d94201625f3a3d6ff85a5a", required = true, value = "Represents the hash of the next block. When this is the last block of the blockchain this value will be an empty string.")
 
   public String getNextBlockHash() {
@@ -140,6 +143,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Represents the hash of the previous block, also known as the parent block.
    * @return previousBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "dcf6ade36e1d5f30b3e52605692ff47123f290f4c8915cbf5a6b7c3541f2354e", required = true, value = "Represents the hash of the previous block, also known as the parent block.")
 
   public String getPreviousBlockHash() {
@@ -162,6 +166,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Defines the exact date/time when this block was mined in Unix Timestamp.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1616069434", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
 
   public Integer getTimestamp() {
@@ -184,6 +189,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Get totalCoins
    * @return totalCoins
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetXRPRippleBlockDetailsByBlockHashRITotalCoins getTotalCoins() {
@@ -206,6 +212,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Get totalFees
    * @return totalFees
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetXRPRippleBlockDetailsByBlockHeightRITotalFees getTotalFees() {
@@ -228,6 +235,7 @@ public class GetXRPRippleBlockDetailsByBlockHashRI {
    * Represents the total number of all transactions as part of this block.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Represents the total number of all transactions as part of this block.")
 
   public Integer getTransactionsCount() {

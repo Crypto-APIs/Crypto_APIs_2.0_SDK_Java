@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -60,6 +60,7 @@ public class NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem {
    * Defines the specific address of the internal transaction.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2", required = true, value = "Defines the specific address of the internal transaction.")
 
   public String getAddress() {
@@ -82,6 +83,7 @@ public class NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem {
    * Specifies a flag that permits or denies the creation of duplicate addresses.
    * @return allowDuplicates
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Specifies a flag that permits or denies the creation of duplicate addresses.")
 
   public Boolean getAllowDuplicates() {
@@ -101,10 +103,11 @@ public class NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
-  @ApiModelProperty(example = "yourSecretString", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "yourSecretString", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -126,6 +129,7 @@ public class NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -148,6 +152,7 @@ public class NewConfirmedInternalTransactionsAndEachConfirmationRBDataItem {
    * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
    * @return confirmationsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
 
   public Integer getConfirmationsCount() {

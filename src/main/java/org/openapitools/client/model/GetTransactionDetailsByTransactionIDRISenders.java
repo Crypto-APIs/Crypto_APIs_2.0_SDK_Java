@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetTransactionDetailsByTransactionIDRISenders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -48,6 +48,7 @@ public class GetTransactionDetailsByTransactionIDRISenders {
    * Represents the address which sends this transaction. In UTXO-based protocols like Bitcoin there could be several senders while in account-based protocols like Ethereum there is always only one sender.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2N5PcdirZUzKF9bWuGdugNuzcQrCbBudxv1", required = true, value = "Represents the address which sends this transaction. In UTXO-based protocols like Bitcoin there could be several senders while in account-based protocols like Ethereum there is always only one sender.")
 
   public String getAddress() {
@@ -70,6 +71,7 @@ public class GetTransactionDetailsByTransactionIDRISenders {
    * Represents the total amount sent by this address including the fee.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.00873472", required = true, value = "Represents the total amount sent by this address including the fee.")
 
   public String getAmount() {

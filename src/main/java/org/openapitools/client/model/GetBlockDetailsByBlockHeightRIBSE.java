@@ -28,7 +28,7 @@ import java.io.IOException;
  * Ethereum
  */
 @ApiModel(description = "Ethereum")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBSE {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -36,7 +36,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
+  private String nonce;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -77,6 +77,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Represents a mathematical value of how hard it is to find a valid hash for this block.
    * @return difficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "209515044.4071968", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
 
   public String getDifficulty() {
@@ -89,24 +90,25 @@ public class GetBlockDetailsByBlockHeightRIBSE {
   }
 
 
-  public GetBlockDetailsByBlockHeightRIBSE nonce(Integer nonce) {
+  public GetBlockDetailsByBlockHeightRIBSE nonce(String nonce) {
     
     this.nonce = nonce;
     return this;
   }
 
    /**
-   * Represents a random value that can be adjusted to satisfy the Proof of Work
+   * Represents a random value that can be adjusted to satisfy the Proof of Work.
    * @return nonce
   **/
-  @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1535290446", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work.")
 
-  public Integer getNonce() {
+  public String getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(Integer nonce) {
+  public void setNonce(String nonce) {
     this.nonce = nonce;
   }
 
@@ -121,6 +123,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Represents the total size of the block in Bytes.
    * @return size
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3892", required = true, value = "Represents the total size of the block in Bytes.")
 
   public Integer getSize() {
@@ -143,6 +146,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Represents any data that can be included by the miner in the block.
    * @return extraData
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xd983010203844765746887676f312e342e328777696e646f7773", required = true, value = "Represents any data that can be included by the miner in the block.")
 
   public String getExtraData() {
@@ -165,6 +169,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Defines the total gas limit of all transactions in the block.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3141592", required = true, value = "Defines the total gas limit of all transactions in the block.")
 
   public String getGasLimit() {
@@ -187,6 +192,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Represents the total amount of gas used by all transactions in this block.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "21000", required = true, value = "Represents the total amount of gas used by all transactions in this block.")
 
   public String getGasUsed() {
@@ -209,6 +215,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Specifies the amount of time required for the block to be mined in seconds.
    * @return minedInSeconds
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "8", required = true, value = "Specifies the amount of time required for the block to be mined in seconds.")
 
   public Integer getMinedInSeconds() {
@@ -231,6 +238,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Defines the combined hash of all uncles for a given parent.
    * @return sha3Uncles
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347", required = true, value = "Defines the combined hash of all uncles for a given parent.")
 
   public String getSha3Uncles() {
@@ -253,6 +261,7 @@ public class GetBlockDetailsByBlockHeightRIBSE {
    * Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.
    * @return totalDifficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "20104747399762079739558", required = true, value = "Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.")
 
   public String getTotalDifficulty() {

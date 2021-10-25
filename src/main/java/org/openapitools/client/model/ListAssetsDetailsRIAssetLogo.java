@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines the logo of the asset.
  */
 @ApiModel(description = "Defines the logo of the asset.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListAssetsDetailsRIAssetLogo {
   public static final String SERIALIZED_NAME_ENCODING = "encoding";
   @SerializedName(SERIALIZED_NAME_ENCODING)
@@ -53,6 +53,7 @@ public class ListAssetsDetailsRIAssetLogo {
    * Defines the encoding of the image data which is usually base64.
    * @return encoding
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "base64", required = true, value = "Defines the encoding of the image data which is usually base64.")
 
   public String getEncoding() {
@@ -75,6 +76,7 @@ public class ListAssetsDetailsRIAssetLogo {
    * Defines the encoded image data as a string.
    * @return imageData
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMiIgaGVpZ2h0PSIzMiI+PGcgZmlsbD0ibm9uZSIgZmlsbC1ydWxlPSJldmVub2RkIj48Y2lyY2xlIGN4PSIxNiIgY3k9IjE2IiByPSIxNiIgZmlsbD0iIzYyN0VFQSIvPjxnIGZpbGw9IiNGRkYiIGZpbGwtcnVsZT0ibm9uemVybyI+PHBhdGggZmlsbC1vcGFjaXR5PSIuNjAyIiBkPSJNMTYuNDk4IDR2OC44N2w3LjQ5NyAzLjM1eiIvPjxwYXRoIGQ9Ik0xNi40OTggNEw5IDE2LjIybDcuNDk4LTMuMzV6Ii8+PHBhdGggZmlsbC1vcGFjaXR5PSIuNjAyIiBkPSJNMTYuNDk4IDIxLjk2OHY2LjAyN0wyNCAxNy42MTZ6Ii8+PHBhdGggZD0iTTE2LjQ5OCAyNy45OTV2LTYuMDI4TDkgMTcuNjE2eiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjIiIGQ9Ik0xNi40OTggMjAuNTczbDcuNDk3LTQuMzUzLTcuNDk3LTMuMzQ4eiIvPjxwYXRoIGZpbGwtb3BhY2l0eT0iLjYwMiIgZD0iTTkgMTYuMjJsNy40OTggNC4zNTN2LTcuNzAxeiIvPjwvZz48L2c+PC9zdmc+", required = true, value = "Defines the encoded image data as a string.")
 
   public String getImageData() {
@@ -97,6 +99,7 @@ public class ListAssetsDetailsRIAssetLogo {
    * Defines the image type of the logo - jpg, png, svg, etc.
    * @return mimeType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "\"image/svg+xml\"", required = true, value = "Defines the image type of the logo - jpg, png, svg, etc.")
 
   public String getMimeType() {

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedTokensTransactionsAndEachConfirmationRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -60,7 +60,8 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
    * Represents the address of the transaction, per which the result is returned.
    * @return address
   **/
-  @ApiModelProperty(example = "mwDuExdjRewYKYoR454sZGvd15LnJVsmoR", required = true, value = "Represents the address of the transaction, per which the result is returned.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x7495fede000c8a3b77eeae09cf70fa94cd2d53f5", required = true, value = "Represents the address of the transaction, per which the result is returned.")
 
   public String getAddress() {
     return address;
@@ -82,6 +83,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
@@ -104,6 +106,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
    * Defines the specific time/date when the subscription was created in Unix Timestamp.
    * @return createdTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1236238648", required = true, value = "Defines the specific time/date when the subscription was created in Unix Timestamp.")
 
   public Integer getCreatedTimestamp() {
@@ -126,6 +129,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
    * Defines the type of the specific event available for the customer to subscribe to for callback notification.
    * @return eventType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ADDRESS_TOKENS_TRANSACTION_CONFIRMED_EACH_CONFIRAMTION", required = true, value = "Defines the type of the specific event available for the customer to subscribe to for callback notification.")
 
   public String getEventType() {
@@ -148,6 +152,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
    * Represents a unique ID used to reference the specific callback subscription.
    * @return referenceId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "c748624f-1843-4738-a7de-8258ada0f524", required = true, value = "Represents a unique ID used to reference the specific callback subscription.")
 
   public String getReferenceId() {

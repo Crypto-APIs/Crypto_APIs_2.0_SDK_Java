@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSc
 /**
  * GetTransactionDetailsByTransactionIDRIBSBCVin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSBCVin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -80,6 +80,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
    * Get addresses
    * @return addresses
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getAddresses() {
@@ -125,6 +126,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
    * Get scriptSig
    * @return scriptSig
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetTransactionDetailsByTransactionIDRIBSBScriptSig getScriptSig() {
@@ -147,6 +149,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
    * Represents the script sequence number.
    * @return sequence
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4294967295", required = true, value = "Represents the script sequence number.")
 
   public String getSequence() {
@@ -197,6 +200,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
    * Get txinwitness
    * @return txinwitness
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getTxinwitness() {

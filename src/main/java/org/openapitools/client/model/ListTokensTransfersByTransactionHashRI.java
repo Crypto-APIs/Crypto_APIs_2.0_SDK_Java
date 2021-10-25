@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListTokensTransfersByTransactionHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTokensTransfersByTransactionHashRI {
   public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
   @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
@@ -84,6 +84,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Represents the contract address of the token, which controls its logic. It is not the address that holds the tokens.
    * @return contractAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x7495fede000c8a3b77eeae09cf70fa94cd2d53f5", required = true, value = "Represents the contract address of the token, which controls its logic. It is not the address that holds the tokens.")
 
   public String getContractAddress() {
@@ -106,6 +107,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the block height in which this transaction was confirmed/mined.
    * @return minedInBlockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "9841271", required = true, value = "Defines the block height in which this transaction was confirmed/mined.")
 
   public Integer getMinedInBlockHeight() {
@@ -128,6 +130,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the address to which the recipient receives the transferred tokens.
    * @return recipientAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x9e91eb3a35b96f0f0fe71f3c17fe8d29eb406b16", required = true, value = "Defines the address to which the recipient receives the transferred tokens.")
 
   public String getRecipientAddress() {
@@ -150,6 +153,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the address from which the sender transfers tokens.
    * @return senderAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x9df8a6441e8a3dda75019595d431f9aa0dec475c", required = true, value = "Defines the address from which the sender transfers tokens.")
 
   public String getSenderAddress() {
@@ -172,7 +176,8 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the decimals of the token, i.e. the number of digits that come after the decimal coma of the token.
    * @return tokenDecimals
   **/
-  @ApiModelProperty(example = "18", required = true, value = "Defines the decimals of the token, i.e. the number of digits that come after the decimal coma of the token.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "6", required = true, value = "Defines the decimals of the token, i.e. the number of digits that come after the decimal coma of the token.")
 
   public Integer getTokenDecimals() {
     return tokenDecimals;
@@ -194,7 +199,8 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the token&#39;s name as a string.
    * @return tokenName
   **/
-  @ApiModelProperty(example = "Band Protocol", required = true, value = "Defines the token's name as a string.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "Tether USD", required = true, value = "Defines the token's name as a string.")
 
   public String getTokenName() {
     return tokenName;
@@ -216,6 +222,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the token symbol by which the token contract is known. It is usually 3-4 characters in length.
    * @return tokenSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BAND", required = true, value = "Defines the token symbol by which the token contract is known. It is usually 3-4 characters in length.")
 
   public String getTokenSymbol() {
@@ -238,6 +245,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the specific token type.
    * @return tokenType
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "ERC-20", required = true, value = "Defines the specific token type.")
 
   public String getTokenType() {
@@ -260,7 +268,8 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the token amount of the transfer.
    * @return tokensAmount
   **/
-  @ApiModelProperty(example = "0.001", required = true, value = "Defines the token amount of the transfer.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.0012", required = true, value = "Defines the token amount of the transfer.")
 
   public String getTokensAmount() {
     return tokensAmount;
@@ -282,6 +291,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Represents the hash of the transaction, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return transactionHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x60ba3dded833e61f63b6b6d62afe5c7526c5ca09c6744749f13eef11afde2cb4", required = true, value = "Represents the hash of the transaction, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getTransactionHash() {
@@ -304,6 +314,7 @@ public class ListTokensTransfersByTransactionHashRI {
    * Defines the specific time/date when the transaction was created in Unix Timestamp.
    * @return transactionTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1615818368", required = true, value = "Defines the specific time/date when the transaction was created in Unix Timestamp.")
 
   public Integer getTransactionTimestamp() {

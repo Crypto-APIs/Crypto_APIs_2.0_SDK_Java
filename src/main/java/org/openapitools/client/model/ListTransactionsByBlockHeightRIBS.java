@@ -25,21 +25,26 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBCVin;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBCVout;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedSpend;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSB;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBC;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBSC;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBSCGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSD;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSD2;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSE;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSEC;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSECGasPrice;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSL;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZ;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplit;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutput;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVin;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
 
 /**
  * ListTransactionsByBlockHeightRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -59,11 +64,11 @@ public class ListTransactionsByBlockHeightRIBS {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListTransactionsByBlockHashRIBSBCVin> vin = new ArrayList<ListTransactionsByBlockHashRIBSBCVin>();
+  private List<ListTransactionsByBlockHeightRIBSZVin> vin = new ArrayList<ListTransactionsByBlockHeightRIBSZVin>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHashRIBSBCVout> vout = new ArrayList<ListTransactionsByBlockHashRIBSBCVout>();
+  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<ListTransactionsByBlockHeightRIBSZVout>();
 
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -75,7 +80,7 @@ public class ListTransactionsByBlockHeightRIBS {
 
   public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
   @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private ListTransactionsByBlockHeightRIBSECGasPrice gasPrice;
+  private ListTransactionsByBlockHeightRIBSBSCGasPrice gasPrice;
 
   public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
   @SerializedName(SERIALIZED_NAME_GAS_USED)
@@ -87,15 +92,51 @@ public class ListTransactionsByBlockHeightRIBS {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
+  private Integer nonce;
 
   public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
   private String transactionStatus;
 
-  public static final String SERIALIZED_NAME_VSIZE = "vsize";
-  @SerializedName(SERIALIZED_NAME_VSIZE)
-  private Integer vsize;
+  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
+  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
+  private String bindingSig;
+
+  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
+  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
+  private Integer expiryHeight;
+
+  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
+  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
+  private String joinSplitPubKey;
+
+  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
+  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
+  private String joinSplitSig;
+
+  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
+  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
+  private Boolean overwintered;
+
+  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
+  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
+  private List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit = new ArrayList<ListTransactionsByBlockHeightRIBSZVJoinSplit>();
+
+  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
+  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
+  private List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<ListTransactionsByBlockHeightRIBSZVShieldedOutput>();
+
+  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
+  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
+  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend>();
+
+  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
+  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
+  private String valueBalance;
+
+  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
+  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
+  private String versionGroupId;
 
 
   public ListTransactionsByBlockHeightRIBS locktime(Integer locktime) {
@@ -108,6 +149,7 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the time at which a particular transaction can be added to the blockchain.
    * @return locktime
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1781965", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
 
   public Integer getLocktime() {
@@ -130,7 +172,8 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the total size of this transaction.
    * @return size
   **/
-  @ApiModelProperty(example = "248", required = true, value = "Represents the total size of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
 
   public Integer getSize() {
     return size;
@@ -152,7 +195,8 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the virtual size of this transaction.
    * @return vSize
   **/
-  @ApiModelProperty(example = "166", required = true, value = "Represents the virtual size of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
 
   public Integer getvSize() {
     return vSize;
@@ -171,10 +215,11 @@ public class ListTransactionsByBlockHeightRIBS {
   }
 
    /**
-   * Represents the total size of this transaction.
+   * Represents the transaction version number.
    * @return version
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Represents the total size of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1", required = true, value = "Represents the transaction version number.")
 
   public Integer getVersion() {
     return version;
@@ -186,56 +231,58 @@ public class ListTransactionsByBlockHeightRIBS {
   }
 
 
-  public ListTransactionsByBlockHeightRIBS vin(List<ListTransactionsByBlockHashRIBSBCVin> vin) {
+  public ListTransactionsByBlockHeightRIBS vin(List<ListTransactionsByBlockHeightRIBSZVin> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBS addVinItem(ListTransactionsByBlockHashRIBSBCVin vinItem) {
+  public ListTransactionsByBlockHeightRIBS addVinItem(ListTransactionsByBlockHeightRIBSZVin vinItem) {
     this.vin.add(vinItem);
     return this;
   }
 
    /**
-   * Represents the transaction inputs.
+   * Object Array representation of transaction inputs
    * @return vin
   **/
-  @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
 
-  public List<ListTransactionsByBlockHashRIBSBCVin> getVin() {
+  public List<ListTransactionsByBlockHeightRIBSZVin> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<ListTransactionsByBlockHashRIBSBCVin> vin) {
+  public void setVin(List<ListTransactionsByBlockHeightRIBSZVin> vin) {
     this.vin = vin;
   }
 
 
-  public ListTransactionsByBlockHeightRIBS vout(List<ListTransactionsByBlockHashRIBSBCVout> vout) {
+  public ListTransactionsByBlockHeightRIBS vout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBS addVoutItem(ListTransactionsByBlockHashRIBSBCVout voutItem) {
+  public ListTransactionsByBlockHeightRIBS addVoutItem(ListTransactionsByBlockHeightRIBSZVout voutItem) {
     this.vout.add(voutItem);
     return this;
   }
 
    /**
-   * Represents the transaction outputs.
+   * Object Array representation of transaction outputs
    * @return vout
   **/
-  @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<ListTransactionsByBlockHashRIBSBCVout> getVout() {
+  public List<ListTransactionsByBlockHeightRIBSZVout> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListTransactionsByBlockHashRIBSBCVout> vout) {
+  public void setVout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
     this.vout = vout;
   }
 
@@ -250,6 +297,7 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the specific transaction contract.
    * @return contract
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the specific transaction contract.")
 
   public String getContract() {
@@ -272,6 +320,7 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the amount of gas used by this specific transaction alone.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
 
   public String getGasLimit() {
@@ -284,7 +333,7 @@ public class ListTransactionsByBlockHeightRIBS {
   }
 
 
-  public ListTransactionsByBlockHeightRIBS gasPrice(ListTransactionsByBlockHeightRIBSECGasPrice gasPrice) {
+  public ListTransactionsByBlockHeightRIBS gasPrice(ListTransactionsByBlockHeightRIBSBSCGasPrice gasPrice) {
     
     this.gasPrice = gasPrice;
     return this;
@@ -294,14 +343,15 @@ public class ListTransactionsByBlockHeightRIBS {
    * Get gasPrice
    * @return gasPrice
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public ListTransactionsByBlockHeightRIBSECGasPrice getGasPrice() {
+  public ListTransactionsByBlockHeightRIBSBSCGasPrice getGasPrice() {
     return gasPrice;
   }
 
 
-  public void setGasPrice(ListTransactionsByBlockHeightRIBSECGasPrice gasPrice) {
+  public void setGasPrice(ListTransactionsByBlockHeightRIBSBSCGasPrice gasPrice) {
     this.gasPrice = gasPrice;
   }
 
@@ -316,6 +366,7 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the exact unit of gas that was used for the transaction.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "21000", required = true, value = "Represents the exact unit of gas that was used for the transaction.")
 
   public String getGasUsed() {
@@ -338,7 +389,8 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents additional information that is required for the transaction.
    * @return inputData
   **/
-  @ApiModelProperty(example = "0x67a5cd0600000000000000000000000031f42841c2db5173425b5223809cf3a38fede360", required = true, value = "Represents additional information that is required for the transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0xe656e7110000000000000000000000000000000000000000000000000000000000000001", required = true, value = "Represents additional information that is required for the transaction.")
 
   public String getInputData() {
     return inputData;
@@ -350,7 +402,7 @@ public class ListTransactionsByBlockHeightRIBS {
   }
 
 
-  public ListTransactionsByBlockHeightRIBS nonce(String nonce) {
+  public ListTransactionsByBlockHeightRIBS nonce(Integer nonce) {
     
     this.nonce = nonce;
     return this;
@@ -360,14 +412,15 @@ public class ListTransactionsByBlockHeightRIBS {
    * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
    * @return nonce
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "15", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
-  public String getNonce() {
+  public Integer getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(String nonce) {
+  public void setNonce(Integer nonce) {
     this.nonce = nonce;
   }
 
@@ -379,10 +432,11 @@ public class ListTransactionsByBlockHeightRIBS {
   }
 
    /**
-   * Represents the status of this transaction.
+   * Represents the status of this transaction
    * @return transactionStatus
   **/
-  @ApiModelProperty(required = true, value = "Represents the status of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x1", required = true, value = "Represents the status of this transaction")
 
   public String getTransactionStatus() {
     return transactionStatus;
@@ -394,25 +448,248 @@ public class ListTransactionsByBlockHeightRIBS {
   }
 
 
-  public ListTransactionsByBlockHeightRIBS vsize(Integer vsize) {
+  public ListTransactionsByBlockHeightRIBS bindingSig(String bindingSig) {
     
-    this.vsize = vsize;
+    this.bindingSig = bindingSig;
     return this;
   }
 
    /**
-   * Represents the virtual size of this transaction.
-   * @return vsize
+   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
+   * @return bindingSig
   **/
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
 
-  public Integer getVsize() {
-    return vsize;
+  public String getBindingSig() {
+    return bindingSig;
   }
 
 
-  public void setVsize(Integer vsize) {
-    this.vsize = vsize;
+  public void setBindingSig(String bindingSig) {
+    this.bindingSig = bindingSig;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS expiryHeight(Integer expiryHeight) {
+    
+    this.expiryHeight = expiryHeight;
+    return this;
+  }
+
+   /**
+   * Represents a block height after which the transaction will expire.
+   * @return expiryHeight
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
+
+  public Integer getExpiryHeight() {
+    return expiryHeight;
+  }
+
+
+  public void setExpiryHeight(Integer expiryHeight) {
+    this.expiryHeight = expiryHeight;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS joinSplitPubKey(String joinSplitPubKey) {
+    
+    this.joinSplitPubKey = joinSplitPubKey;
+    return this;
+  }
+
+   /**
+   * Represents an encoding of a JoinSplitSig public validating key.
+   * @return joinSplitPubKey
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
+
+  public String getJoinSplitPubKey() {
+    return joinSplitPubKey;
+  }
+
+
+  public void setJoinSplitPubKey(String joinSplitPubKey) {
+    this.joinSplitPubKey = joinSplitPubKey;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS joinSplitSig(String joinSplitSig) {
+    
+    this.joinSplitSig = joinSplitSig;
+    return this;
+  }
+
+   /**
+   * Is used to sign transactions that contain at least one JoinSplit description.
+   * @return joinSplitSig
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
+
+  public String getJoinSplitSig() {
+    return joinSplitSig;
+  }
+
+
+  public void setJoinSplitSig(String joinSplitSig) {
+    this.joinSplitSig = joinSplitSig;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS overwintered(Boolean overwintered) {
+    
+    this.overwintered = overwintered;
+    return this;
+  }
+
+   /**
+   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
+   * @return overwintered
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
+
+  public Boolean getOverwintered() {
+    return overwintered;
+  }
+
+
+  public void setOverwintered(Boolean overwintered) {
+    this.overwintered = overwintered;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS vJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit) {
+    
+    this.vJoinSplit = vJoinSplit;
+    return this;
+  }
+
+  public ListTransactionsByBlockHeightRIBS addVJoinSplitItem(ListTransactionsByBlockHeightRIBSZVJoinSplit vJoinSplitItem) {
+    this.vJoinSplit.add(vJoinSplitItem);
+    return this;
+  }
+
+   /**
+   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
+   * @return vJoinSplit
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
+
+  public List<ListTransactionsByBlockHeightRIBSZVJoinSplit> getvJoinSplit() {
+    return vJoinSplit;
+  }
+
+
+  public void setvJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit) {
+    this.vJoinSplit = vJoinSplit;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS vShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput) {
+    
+    this.vShieldedOutput = vShieldedOutput;
+    return this;
+  }
+
+  public ListTransactionsByBlockHeightRIBS addVShieldedOutputItem(ListTransactionsByBlockHeightRIBSZVShieldedOutput vShieldedOutputItem) {
+    this.vShieldedOutput.add(vShieldedOutputItem);
+    return this;
+  }
+
+   /**
+   * Object Array representation of transaction output descriptions
+   * @return vShieldedOutput
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
+
+  public List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> getvShieldedOutput() {
+    return vShieldedOutput;
+  }
+
+
+  public void setvShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput) {
+    this.vShieldedOutput = vShieldedOutput;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS vShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+    
+    this.vShieldedSpend = vShieldedSpend;
+    return this;
+  }
+
+  public ListTransactionsByBlockHeightRIBS addVShieldedSpendItem(ListConfirmedTransactionsByAddressRIBSZVShieldedSpend vShieldedSpendItem) {
+    this.vShieldedSpend.add(vShieldedSpendItem);
+    return this;
+  }
+
+   /**
+   * Object Array representation of transaction spend descriptions
+   * @return vShieldedSpend
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
+
+  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> getvShieldedSpend() {
+    return vShieldedSpend;
+  }
+
+
+  public void setvShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+    this.vShieldedSpend = vShieldedSpend;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS valueBalance(String valueBalance) {
+    
+    this.valueBalance = valueBalance;
+    return this;
+  }
+
+   /**
+   * Defines the transaction value balance.
+   * @return valueBalance
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0", required = true, value = "Defines the transaction value balance.")
+
+  public String getValueBalance() {
+    return valueBalance;
+  }
+
+
+  public void setValueBalance(String valueBalance) {
+    this.valueBalance = valueBalance;
+  }
+
+
+  public ListTransactionsByBlockHeightRIBS versionGroupId(String versionGroupId) {
+    
+    this.versionGroupId = versionGroupId;
+    return this;
+  }
+
+   /**
+   * Represents the transaction version group ID.
+   * @return versionGroupId
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID.")
+
+  public String getVersionGroupId() {
+    return versionGroupId;
+  }
+
+
+  public void setVersionGroupId(String versionGroupId) {
+    this.versionGroupId = versionGroupId;
   }
 
 
@@ -438,12 +715,21 @@ public class ListTransactionsByBlockHeightRIBS {
         Objects.equals(this.inputData, listTransactionsByBlockHeightRIBS.inputData) &&
         Objects.equals(this.nonce, listTransactionsByBlockHeightRIBS.nonce) &&
         Objects.equals(this.transactionStatus, listTransactionsByBlockHeightRIBS.transactionStatus) &&
-        Objects.equals(this.vsize, listTransactionsByBlockHeightRIBS.vsize);
+        Objects.equals(this.bindingSig, listTransactionsByBlockHeightRIBS.bindingSig) &&
+        Objects.equals(this.expiryHeight, listTransactionsByBlockHeightRIBS.expiryHeight) &&
+        Objects.equals(this.joinSplitPubKey, listTransactionsByBlockHeightRIBS.joinSplitPubKey) &&
+        Objects.equals(this.joinSplitSig, listTransactionsByBlockHeightRIBS.joinSplitSig) &&
+        Objects.equals(this.overwintered, listTransactionsByBlockHeightRIBS.overwintered) &&
+        Objects.equals(this.vJoinSplit, listTransactionsByBlockHeightRIBS.vJoinSplit) &&
+        Objects.equals(this.vShieldedOutput, listTransactionsByBlockHeightRIBS.vShieldedOutput) &&
+        Objects.equals(this.vShieldedSpend, listTransactionsByBlockHeightRIBS.vShieldedSpend) &&
+        Objects.equals(this.valueBalance, listTransactionsByBlockHeightRIBS.valueBalance) &&
+        Objects.equals(this.versionGroupId, listTransactionsByBlockHeightRIBS.versionGroupId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, vsize);
+    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId);
   }
 
   @Override
@@ -463,7 +749,16 @@ public class ListTransactionsByBlockHeightRIBS {
     sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
     sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
     sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    vsize: ").append(toIndentedString(vsize)).append("\n");
+    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
+    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
+    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
+    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
+    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
+    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
+    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
+    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
+    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
+    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

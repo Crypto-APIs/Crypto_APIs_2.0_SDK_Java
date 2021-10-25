@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetAddressDetailsRITotalSpent;
 /**
  * GetAddressDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetAddressDetailsRI {
   public static final String SERIALIZED_NAME_TRANSACTIONS_COUNT = "transactionsCount";
   @SerializedName(SERIALIZED_NAME_TRANSACTIONS_COUNT)
@@ -67,6 +67,7 @@ public class GetAddressDetailsRI {
    * Represents the total number of confirmed coins transactions for this address, both incoming and outgoing. Applies for coins only **and not** tokens transfers e.g. for Ethereum. &#x60;transactionsCount&#x60; could result as less than incoming and outgoing transactions put together (e.g. in Bitcoin), due to the fact that one and the same address could be in senders and receivers addresses.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3", required = true, value = "Represents the total number of confirmed coins transactions for this address, both incoming and outgoing. Applies for coins only **and not** tokens transfers e.g. for Ethereum. `transactionsCount` could result as less than incoming and outgoing transactions put together (e.g. in Bitcoin), due to the fact that one and the same address could be in senders and receivers addresses.")
 
   public Integer getTransactionsCount() {
@@ -89,6 +90,7 @@ public class GetAddressDetailsRI {
    * Get confirmedBalance
    * @return confirmedBalance
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetAddressDetailsRIConfirmedBalance getConfirmedBalance() {
@@ -111,6 +113,7 @@ public class GetAddressDetailsRI {
    * Get totalReceived
    * @return totalReceived
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetAddressDetailsRITotalReceived getTotalReceived() {
@@ -133,6 +136,7 @@ public class GetAddressDetailsRI {
    * Get totalSpent
    * @return totalSpent
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetAddressDetailsRITotalSpent getTotalSpent() {
@@ -152,10 +156,11 @@ public class GetAddressDetailsRI {
   }
 
    /**
-   * Numeric representation of the received transaction count of the address
+   * Defines the count of the incoming transactions.
    * @return incomingTransactionsCount
   **/
-  @ApiModelProperty(example = "1", required = true, value = "Numeric representation of the received transaction count of the address")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1", required = true, value = "Defines the count of the incoming transactions.")
 
   public Integer getIncomingTransactionsCount() {
     return incomingTransactionsCount;
@@ -174,10 +179,11 @@ public class GetAddressDetailsRI {
   }
 
    /**
-   * Numeric representation of the sent transaction count of the address
+   * Defines the count of the outgoing transactions.
    * @return outgoingTransactionsCount
   **/
-  @ApiModelProperty(example = "2", required = true, value = "Numeric representation of the sent transaction count of the address")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "2", required = true, value = "Defines the count of the outgoing transactions.")
 
   public Integer getOutgoingTransactionsCount() {
     return outgoingTransactionsCount;

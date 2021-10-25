@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetExchangeRateByAssetsIDsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetExchangeRateByAssetsIDsRI {
   public static final String SERIALIZED_NAME_CALCULATION_TIMESTAMP = "calculationTimestamp";
   @SerializedName(SERIALIZED_NAME_CALCULATION_TIMESTAMP)
@@ -64,6 +64,7 @@ public class GetExchangeRateByAssetsIDsRI {
    * Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp.
    * @return calculationTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1618577849", required = true, value = "Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp.")
 
   public Integer getCalculationTimestamp() {
@@ -86,6 +87,7 @@ public class GetExchangeRateByAssetsIDsRI {
    * Defines the base asset Reference ID to get a rate for.
    * @return fromAssetId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5b1ea92e584bf50020130612", required = true, value = "Defines the base asset Reference ID to get a rate for.")
 
   public String getFromAssetId() {
@@ -108,6 +110,7 @@ public class GetExchangeRateByAssetsIDsRI {
    * Defines the base asset symbol to get a rate for.
    * @return fromAssetSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Defines the base asset symbol to get a rate for.")
 
   public String getFromAssetSymbol() {
@@ -130,6 +133,7 @@ public class GetExchangeRateByAssetsIDsRI {
    * Defines the exchange rate between assets calculated by weighted average of the last trades in every exchange for the last 24 hours by giving more weight to exchanges with higher volume.
    * @return rate
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "54691.40481689715", required = true, value = "Defines the exchange rate between assets calculated by weighted average of the last trades in every exchange for the last 24 hours by giving more weight to exchanges with higher volume.")
 
   public String getRate() {
@@ -152,6 +156,7 @@ public class GetExchangeRateByAssetsIDsRI {
    * Defines the relation asset Reference ID in which the base asset rate will be displayed.
    * @return toAssetId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "5b1ea92e584bf50020130615", required = true, value = "Defines the relation asset Reference ID in which the base asset rate will be displayed.")
 
   public String getToAssetId() {
@@ -174,6 +179,7 @@ public class GetExchangeRateByAssetsIDsRI {
    * Defines the relation asset symbol in which the base asset rate will be displayed.
    * @return toAssetSymbol
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "USD", required = true, value = "Defines the relation asset symbol in which the base asset rate will be displayed.")
 
   public String getToAssetSymbol() {

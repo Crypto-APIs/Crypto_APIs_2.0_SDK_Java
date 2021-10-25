@@ -23,12 +23,12 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.NewUnconfirmedTokensTransactionsRBData;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsRBData;
 
 /**
  * NewConfirmedTokensTransactionsRB
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class NewConfirmedTokensTransactionsRB {
   public static final String SERIALIZED_NAME_CONTEXT = "context";
   @SerializedName(SERIALIZED_NAME_CONTEXT)
@@ -36,7 +36,7 @@ public class NewConfirmedTokensTransactionsRB {
 
   public static final String SERIALIZED_NAME_DATA = "data";
   @SerializedName(SERIALIZED_NAME_DATA)
-  private NewUnconfirmedTokensTransactionsRBData data;
+  private NewConfirmedTokensTransactionsRBData data;
 
 
   public NewConfirmedTokensTransactionsRB context(String context) {
@@ -62,7 +62,7 @@ public class NewConfirmedTokensTransactionsRB {
   }
 
 
-  public NewConfirmedTokensTransactionsRB data(NewUnconfirmedTokensTransactionsRBData data) {
+  public NewConfirmedTokensTransactionsRB data(NewConfirmedTokensTransactionsRBData data) {
     
     this.data = data;
     return this;
@@ -72,14 +72,15 @@ public class NewConfirmedTokensTransactionsRB {
    * Get data
    * @return data
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public NewUnconfirmedTokensTransactionsRBData getData() {
+  public NewConfirmedTokensTransactionsRBData getData() {
     return data;
   }
 
 
-  public void setData(NewUnconfirmedTokensTransactionsRBData data) {
+  public void setData(NewConfirmedTokensTransactionsRBData data) {
     this.data = data;
   }
 

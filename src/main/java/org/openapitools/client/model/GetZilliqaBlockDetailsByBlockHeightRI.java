@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * GetZilliqaBlockDetailsByBlockHeightRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetZilliqaBlockDetailsByBlockHeightRI {
   public static final String SERIALIZED_NAME_BLOCK_HASH = "blockHash";
   @SerializedName(SERIALIZED_NAME_BLOCK_HASH)
@@ -90,6 +90,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
    * @return blockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xf679d0b5387f0b0b3c3c1f368305512b23860888ba4415063d464a09b8bb6205 Block 1244297 Block 1244299", required = true, value = "Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
 
   public String getBlockHash() {
@@ -112,6 +113,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Defines how difficult it is for a specific miner to mine the block.
    * @return difficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "41.375", required = true, value = "Defines how difficult it is for a specific miner to mine the block.")
 
   public String getDifficulty() {
@@ -134,6 +136,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Represents the Directory Service block which contains metadata about the miners who participate in the consensus protocol.
    * @return dsBlock
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "12443", required = true, value = "Represents the Directory Service block which contains metadata about the miners who participate in the consensus protocol.")
 
   public Integer getDsBlock() {
@@ -156,6 +159,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Defines how difficult it is to mine the dsBlocks.
    * @return dsDifficulty
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "48.625", required = true, value = "Defines how difficult it is to mine the dsBlocks.")
 
   public String getDsDifficulty() {
@@ -178,6 +182,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Represents a part of the DS Committee which leads the consensus protocol for the epoch.
    * @return dsLeader
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "zil1k9hne0uu86wuj2n7qdqwhrm9uma0xn7ut42tsj", required = true, value = "Represents a part of the DS Committee which leads the consensus protocol for the epoch.")
 
   public String getDsLeader() {
@@ -200,6 +205,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "550000", required = true, value = "Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.")
 
   public Integer getGasLimit() {
@@ -222,6 +228,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Defines how much of the gas for the block has been used.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines how much of the gas for the block has been used.")
 
   public Integer getGasUsed() {
@@ -249,6 +256,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Get microBlocks
    * @return microBlocks
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public List<String> getMicroBlocks() {
@@ -271,6 +279,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Defines the hash of the next block from the specific blockchain.
    * @return nextBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x07939adbc3f5a6ba75968012acfe0fee9a351dca72c814e499fee554281b56b6 Block 1244298 Block 1244300", required = true, value = "Defines the hash of the next block from the specific blockchain.")
 
   public String getNextBlockHash() {
@@ -293,6 +302,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Represents the hash of the previous block, also known as the parent block.
    * @return previousBlockHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xe347b6c09e54a582478f6ccc9f85a386616ad1367e9965e5409fab790e538d16 Block 1244296 Block 1244298", required = true, value = "Represents the hash of the previous block, also known as the parent block.")
 
   public String getPreviousBlockHash() {
@@ -315,6 +325,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Defines the exact date/time when this block was mined in Unix Timestamp.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1616069434", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
 
   public Integer getTimestamp() {
@@ -337,6 +348,7 @@ public class GetZilliqaBlockDetailsByBlockHeightRI {
    * Represents the total number of all transactions as part of this block.
    * @return transactionsCount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the total number of all transactions as part of this block.")
 
   public Integer getTransactionsCount() {

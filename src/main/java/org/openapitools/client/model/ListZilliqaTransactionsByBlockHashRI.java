@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListZilliqaTransactionsByAddressRISenders;
 /**
  * ListZilliqaTransactionsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class ListZilliqaTransactionsByBlockHashRI {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
@@ -93,6 +93,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Get fee
    * @return fee
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public GetZilliqaTransactionDetailsByTransactionIDRIFee getFee() {
@@ -115,6 +116,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.
    * @return gasLimit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "550000", required = true, value = "Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.")
 
   public Integer getGasLimit() {
@@ -137,6 +139,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Defines the price of the gas.
    * @return gasPrice
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "2994782927", required = true, value = "Defines the price of the gas.")
 
   public Integer getGasPrice() {
@@ -159,6 +162,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Defines how much of the gas for the block has been used.
    * @return gasUsed
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "24673", required = true, value = "Defines how much of the gas for the block has been used.")
 
   public Integer getGasUsed() {
@@ -181,6 +185,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;.
    * @return minedInBlockHeight
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1250392", required = true, value = "Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \"Genesis block\".")
 
   public Integer getMinedInBlockHeight() {
@@ -203,6 +208,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Represents a random value that can be adjusted to satisfy the Proof of Work.
    * @return nonce
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "13", required = true, value = "Represents a random value that can be adjusted to satisfy the Proof of Work.")
 
   public Integer getNonce() {
@@ -230,6 +236,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Defines an object array of the transaction recipients.
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines an object array of the transaction recipients.")
 
   public List<ListZilliqaTransactionsByAddressRIRecipients> getRecipients() {
@@ -257,6 +264,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Represents an object of addresses that provide the funds.
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
   public List<ListZilliqaTransactionsByAddressRISenders> getSenders() {
@@ -279,6 +287,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Defines the exact date/time when this block was mined in Unix Timestamp.
    * @return timestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1582202940", required = true, value = "Defines the exact date/time when this block was mined in Unix Timestamp.")
 
   public Integer getTimestamp() {
@@ -301,6 +310,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Represents the hash of the transaction, which is its unique identifier.
    * @return transactionHash
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xf4a847a1489a043ee509d5d7df48f2bf7ba1b15354ed14600b035ff2f7670203", required = true, value = "Represents the hash of the transaction, which is its unique identifier.")
 
   public String getTransactionHash() {
@@ -323,6 +333,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Defines the numeric representation of the transaction index.
    * @return transactionIndex
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the numeric representation of the transaction index.")
 
   public Integer getTransactionIndex() {
@@ -345,6 +356,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
    * Defines the status of the transaction, whether it is e.g. pending or complete.
    * @return transactionStatus
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Defines the status of the transaction, whether it is e.g. pending or complete.")
 
   public String getTransactionStatus() {

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateCoinsTransactionRequestFromAddressRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -94,6 +94,10 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   @SerializedName(SERIALIZED_NAME_FEE_PRIORITY)
   private FeePriorityEnum feePriority;
 
+  public static final String SERIALIZED_NAME_NOTE = "note";
+  @SerializedName(SERIALIZED_NAME_NOTE)
+  private String note;
+
   public static final String SERIALIZED_NAME_RECIPIENT_ADDRESS = "recipientAddress";
   @SerializedName(SERIALIZED_NAME_RECIPIENT_ADDRESS)
   private String recipientAddress;
@@ -109,6 +113,7 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
    * Represents the specific amount of the transaction.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.2", required = true, value = "Represents the specific amount of the transaction.")
 
   public String getAmount() {
@@ -128,11 +133,11 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "yourSecretString", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @ApiModelProperty(example = "yourSecretString", value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -151,11 +156,11 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   }
 
    /**
-   * Verified URL for sending callbacks
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://example.com", value = "Verified URL for sending callbacks")
+  @ApiModelProperty(example = "https://example.com", value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -177,6 +182,7 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
    * Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;.
    * @return feePriority
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "slow", required = true, value = "Represents the fee priority of the automation, whether it is \"slow\", \"standard\" or \"fast\".")
 
   public FeePriorityEnum getFeePriority() {
@@ -186,6 +192,29 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
 
   public void setFeePriority(FeePriorityEnum feePriority) {
     this.feePriority = feePriority;
+  }
+
+
+  public CreateCoinsTransactionRequestFromAddressRBDataItem note(String note) {
+    
+    this.note = note;
+    return this;
+  }
+
+   /**
+   * Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request.
+   * @return note
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "yourAdditionalInformationhere", value = "Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request.")
+
+  public String getNote() {
+    return note;
+  }
+
+
+  public void setNote(String note) {
+    this.note = note;
   }
 
 
@@ -199,6 +228,7 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
    * Defines the specific recipient address for the transaction.
    * @return recipientAddress
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0xc065b539490f81b6c297c37b1925c3be2f190732", required = true, value = "Defines the specific recipient address for the transaction.")
 
   public String getRecipientAddress() {
@@ -224,12 +254,13 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
         Objects.equals(this.callbackSecretKey, createCoinsTransactionRequestFromAddressRBDataItem.callbackSecretKey) &&
         Objects.equals(this.callbackUrl, createCoinsTransactionRequestFromAddressRBDataItem.callbackUrl) &&
         Objects.equals(this.feePriority, createCoinsTransactionRequestFromAddressRBDataItem.feePriority) &&
+        Objects.equals(this.note, createCoinsTransactionRequestFromAddressRBDataItem.note) &&
         Objects.equals(this.recipientAddress, createCoinsTransactionRequestFromAddressRBDataItem.recipientAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, callbackSecretKey, callbackUrl, feePriority, recipientAddress);
+    return Objects.hash(amount, callbackSecretKey, callbackUrl, feePriority, note, recipientAddress);
   }
 
   @Override
@@ -240,6 +271,7 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
     sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    feePriority: ").append(toIndentedString(feePriority)).append("\n");
+    sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    recipientAddress: ").append(toIndentedString(recipientAddress)).append("\n");
     sb.append("}");
     return sb.toString();

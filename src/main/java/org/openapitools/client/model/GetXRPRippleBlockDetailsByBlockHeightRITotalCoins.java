@@ -28,7 +28,7 @@ import java.io.IOException;
  * Represents the total Coins of the block as a string.
  */
 @ApiModel(description = "Represents the total Coins of the block as a string.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class GetXRPRippleBlockDetailsByBlockHeightRITotalCoins {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -49,6 +49,7 @@ public class GetXRPRippleBlockDetailsByBlockHeightRITotalCoins {
    * Represents the total amount of all Coins of the block as a string.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "22.0012", required = true, value = "Represents the total amount of all Coins of the block as a string.")
 
   public String getAmount() {
@@ -71,6 +72,7 @@ public class GetXRPRippleBlockDetailsByBlockHeightRITotalCoins {
    * Represents the unit of total Coins of the block as a string.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "Drops", required = true, value = "Represents the unit of total Coins of the block as a string.")
 
   public String getUnit() {

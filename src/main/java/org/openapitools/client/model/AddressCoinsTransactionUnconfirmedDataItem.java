@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class AddressCoinsTransactionUnconfirmedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -183,6 +183,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
    * @return blockchain
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "bitcoin", required = true, value = "Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.")
 
   public String getBlockchain() {
@@ -205,6 +206,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot;, \&quot;rinkeby\&quot; are test networks.
    * @return network
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "testnet", required = true, value = "Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\", \"rinkeby\" are test networks.")
 
   public String getNetwork() {
@@ -227,6 +229,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Defines the specific address to which the coin transaction has been sent and is pending confirmation.
    * @return address
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "3CzKAnCXt7ePb5NCp5qrAEimrxjY81oLoT", required = true, value = "Defines the specific address to which the coin transaction has been sent and is pending confirmation.")
 
   public String getAddress() {
@@ -249,6 +252,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Defines the unique ID of the specific transaction, i.e. its identification number.
    * @return transactionId
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "4b2159770f75a7200ea168eb56ebbf3303b025d838f743fb6e785bc32d5ac65b", required = true, value = "Defines the unique ID of the specific transaction, i.e. its identification number.")
 
   public String getTransactionId() {
@@ -271,6 +275,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Defines the amount of coins sent with the transaction that is pending confirmation.
    * @return amount
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0.6508984", required = true, value = "Defines the amount of coins sent with the transaction that is pending confirmation.")
 
   public String getAmount() {
@@ -293,6 +298,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Defines the unit of the transaction, e.g. BTC.
    * @return unit
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "BTC", required = true, value = "Defines the unit of the transaction, e.g. BTC.")
 
   public UnitEnum getUnit() {
@@ -315,6 +321,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Defines whether the transaction is \&quot;incoming\&quot; or \&quot;outgoing\&quot;.
    * @return direction
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "incoming", required = true, value = "Defines whether the transaction is \"incoming\" or \"outgoing\".")
 
   public DirectionEnum getDirection() {
@@ -337,6 +344,7 @@ public class AddressCoinsTransactionUnconfirmedDataItem {
    * Defines the exact time the transaction has been first accepted into the mempool to await confirmation as timestamp.
    * @return firstSeenInMempoolTimestamp
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "1610365615", required = true, value = "Defines the exact time the transaction has been first accepted into the mempool to await confirmation as timestamp.")
 
   public Integer getFirstSeenInMempoolTimestamp() {

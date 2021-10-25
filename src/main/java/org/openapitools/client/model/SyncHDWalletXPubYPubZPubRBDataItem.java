@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * SyncHDWalletXPubYPubZPubRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class SyncHDWalletXPubYPubZPubRBDataItem {
   public static final String SERIALIZED_NAME_EXTENDED_PUBLIC_KEY = "extendedPublicKey";
   @SerializedName(SERIALIZED_NAME_EXTENDED_PUBLIC_KEY)
@@ -44,6 +44,7 @@ public class SyncHDWalletXPubYPubZPubRBDataItem {
    * Defines the account extended publicly known key which is used to derive all child public keys.
    * @return extendedPublicKey
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "upub5Ei6bRNneqozk6smK7dvtXHC5PjUyEL4ynCfMKvjznLcXi9DQaikETzQjHvJC43XexMvQs64jxB1njMjCHpRZ4xQWAmv3ge9cVtjfsHmbvQ", required = true, value = "Defines the account extended publicly known key which is used to derive all child public keys.")
 
   public String getExtendedPublicKey() {

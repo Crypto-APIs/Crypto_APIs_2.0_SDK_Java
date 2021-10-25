@@ -23,9 +23,9 @@ Name | Type | Description | Notes
 
 Name | Value
 ---- | -----
-ETHEREUMERC20TOKEN | &quot;ethereumERC20Token&quot;
-ETHEREUMERC721TOKEN | &quot;ethereumERC721Token&quot;
-OMNILAYERTOKEN | &quot;omniLayerToken&quot;
+ERC_20 | &quot;ERC-20&quot;
+ERC_721 | &quot;ERC-721&quot;
+OMNI | &quot;OMNI&quot;
 
 
 

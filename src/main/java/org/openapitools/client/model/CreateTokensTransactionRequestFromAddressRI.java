@@ -32,7 +32,7 @@ import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRI
 /**
  * CreateTokensTransactionRequestFromAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-07-30T08:15:40.964553Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
 public class CreateTokensTransactionRequestFromAddressRI {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -95,6 +95,10 @@ public class CreateTokensTransactionRequestFromAddressRI {
   @SerializedName(SERIALIZED_NAME_FEE_PRIORITY)
   private FeePriorityEnum feePriority;
 
+  public static final String SERIALIZED_NAME_NOTE = "note";
+  @SerializedName(SERIALIZED_NAME_NOTE)
+  private String note;
+
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
   private List<CreateTokensTransactionRequestFromAddressRIRecipients> recipients = new ArrayList<CreateTokensTransactionRequestFromAddressRIRecipients>();
@@ -107,6 +111,10 @@ public class CreateTokensTransactionRequestFromAddressRI {
   @SerializedName(SERIALIZED_NAME_TOKEN_TYPE_SPECIFIC_DATA)
   private CreateTokensTransactionRequestFromAddressRIS tokenTypeSpecificData;
 
+  public static final String SERIALIZED_NAME_TRANSACTION_REQUEST_ID = "transactionRequestId";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_REQUEST_ID)
+  private String transactionRequestId;
+
 
   public CreateTokensTransactionRequestFromAddressRI callbackSecretKey(String callbackSecretKey) {
     
@@ -115,10 +123,11 @@ public class CreateTokensTransactionRequestFromAddressRI {
   }
 
    /**
-   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.
+   * Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).
    * @return callbackSecretKey
   **/
-  @ApiModelProperty(example = "yourSecretString", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs.")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "yourSecretString", required = true, value = "Represents the Secret Key value provided by the customer. This field is used for security purposes during the callback notification, in order to prove the sender of the callback as Crypto APIs. For more information please see our [Documentation](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-security).")
 
   public String getCallbackSecretKey() {
     return callbackSecretKey;
@@ -137,10 +146,11 @@ public class CreateTokensTransactionRequestFromAddressRI {
   }
 
    /**
-   * Verified URL for sending callbacks
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
-  @ApiModelProperty(example = "https://example.com", required = true, value = "Verified URL for sending callbacks")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -162,6 +172,7 @@ public class CreateTokensTransactionRequestFromAddressRI {
    * Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;.
    * @return feePriority
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "fast", required = true, value = "Represents the fee priority of the automation, whether it is \"slow\", \"standard\" or \"fast\".")
 
   public FeePriorityEnum getFeePriority() {
@@ -171,6 +182,29 @@ public class CreateTokensTransactionRequestFromAddressRI {
 
   public void setFeePriority(FeePriorityEnum feePriority) {
     this.feePriority = feePriority;
+  }
+
+
+  public CreateTokensTransactionRequestFromAddressRI note(String note) {
+    
+    this.note = note;
+    return this;
+  }
+
+   /**
+   * Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request.
+   * @return note
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "yourAdditionalInformationhere", value = "Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request.")
+
+  public String getNote() {
+    return note;
+  }
+
+
+  public void setNote(String note) {
+    this.note = note;
   }
 
 
@@ -189,6 +223,7 @@ public class CreateTokensTransactionRequestFromAddressRI {
    * Defines the destination for the transaction, i.e. the recipient(s).
    * @return recipients
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x1316bea88fb7cd4ccc4a57e2f9f4f43d1a86ee59", required = true, value = "Defines the destination for the transaction, i.e. the recipient(s).")
 
   public List<CreateTokensTransactionRequestFromAddressRIRecipients> getRecipients() {
@@ -211,6 +246,7 @@ public class CreateTokensTransactionRequestFromAddressRI {
    * Get senders
    * @return senders
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public CreateTokensTransactionRequestFromAddressRISenders getSenders() {
@@ -233,6 +269,7 @@ public class CreateTokensTransactionRequestFromAddressRI {
    * Get tokenTypeSpecificData
    * @return tokenTypeSpecificData
   **/
+  @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
   public CreateTokensTransactionRequestFromAddressRIS getTokenTypeSpecificData() {
@@ -242,6 +279,29 @@ public class CreateTokensTransactionRequestFromAddressRI {
 
   public void setTokenTypeSpecificData(CreateTokensTransactionRequestFromAddressRIS tokenTypeSpecificData) {
     this.tokenTypeSpecificData = tokenTypeSpecificData;
+  }
+
+
+  public CreateTokensTransactionRequestFromAddressRI transactionRequestId(String transactionRequestId) {
+    
+    this.transactionRequestId = transactionRequestId;
+    return this;
+  }
+
+   /**
+   * Represents a unique identifier of the transaction request (the request sent to make a transaction), which helps in identifying which callback and which &#x60;referenceId&#x60; concern that specific transaction request.
+   * @return transactionRequestId
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "6038d09050653d1f0e40584c", required = true, value = "Represents a unique identifier of the transaction request (the request sent to make a transaction), which helps in identifying which callback and which `referenceId` concern that specific transaction request.")
+
+  public String getTransactionRequestId() {
+    return transactionRequestId;
+  }
+
+
+  public void setTransactionRequestId(String transactionRequestId) {
+    this.transactionRequestId = transactionRequestId;
   }
 
 
@@ -257,14 +317,16 @@ public class CreateTokensTransactionRequestFromAddressRI {
     return Objects.equals(this.callbackSecretKey, createTokensTransactionRequestFromAddressRI.callbackSecretKey) &&
         Objects.equals(this.callbackUrl, createTokensTransactionRequestFromAddressRI.callbackUrl) &&
         Objects.equals(this.feePriority, createTokensTransactionRequestFromAddressRI.feePriority) &&
+        Objects.equals(this.note, createTokensTransactionRequestFromAddressRI.note) &&
         Objects.equals(this.recipients, createTokensTransactionRequestFromAddressRI.recipients) &&
         Objects.equals(this.senders, createTokensTransactionRequestFromAddressRI.senders) &&
-        Objects.equals(this.tokenTypeSpecificData, createTokensTransactionRequestFromAddressRI.tokenTypeSpecificData);
+        Objects.equals(this.tokenTypeSpecificData, createTokensTransactionRequestFromAddressRI.tokenTypeSpecificData) &&
+        Objects.equals(this.transactionRequestId, createTokensTransactionRequestFromAddressRI.transactionRequestId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackSecretKey, callbackUrl, feePriority, recipients, senders, tokenTypeSpecificData);
+    return Objects.hash(callbackSecretKey, callbackUrl, feePriority, note, recipients, senders, tokenTypeSpecificData, transactionRequestId);
   }
 
   @Override
@@ -274,9 +336,11 @@ public class CreateTokensTransactionRequestFromAddressRI {
     sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
     sb.append("    feePriority: ").append(toIndentedString(feePriority)).append("\n");
+    sb.append("    note: ").append(toIndentedString(note)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("    senders: ").append(toIndentedString(senders)).append("\n");
     sb.append("    tokenTypeSpecificData: ").append(toIndentedString(tokenTypeSpecificData)).append("\n");
+    sb.append("    transactionRequestId: ").append(toIndentedString(transactionRequestId)).append("\n");
     sb.append("}");
     return sb.toString();
   }
