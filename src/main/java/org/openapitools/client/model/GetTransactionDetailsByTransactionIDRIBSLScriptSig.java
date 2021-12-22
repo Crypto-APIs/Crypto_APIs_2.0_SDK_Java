@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the required signatures.
  */
 @ApiModel(description = "Specifies the required signatures.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSLScriptSig {
   public static final String SERIALIZED_NAME_ASM = "asm";
   @SerializedName(SERIALIZED_NAME_ASM)
@@ -42,6 +42,8 @@ public class GetTransactionDetailsByTransactionIDRIBSLScriptSig {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private String type;
 
+  public GetTransactionDetailsByTransactionIDRIBSLScriptSig() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSLScriptSig asm(String asm) {
     
@@ -54,7 +56,7 @@ public class GetTransactionDetailsByTransactionIDRIBSLScriptSig {
    * @return asm
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "The asm strands for assembly, which is the symbolic representation of the Bitcoin's Script language op-codes.")
+  @ApiModelProperty(example = "3045022100f031442894c0fd60c195fbdb29c0bf72f143a815689b8840cd31ec31cc6a7721022028f74f0869e4666761c9ba1035cc714528a17de873dfc7b3a541d29f3942a2d8[ALL] 028c533b6c0ce0ad714a8af36b64d207c4f61cd6d5af210362447c92b4105a4fab", required = true, value = "The asm strands for assembly, which is the symbolic representation of the Bitcoin's Script language op-codes.")
 
   public String getAsm() {
     return asm;
@@ -77,7 +79,7 @@ public class GetTransactionDetailsByTransactionIDRIBSLScriptSig {
    * @return hex
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the hex of the public key of the address.")
+  @ApiModelProperty(example = "483045022100f031442894c0fd60c195fbdb29c0bf72f143a815689b8840cd31ec31cc6a7721022028f74f0869e4666761c9ba1035cc714528a17de873dfc7b3a541d29f3942a2d80121028c533b6c0ce0ad714a8af36b64d207c4f61cd6d5af210362447c92b4105a4fab", required = true, value = "Represents the hex of the public key of the address.")
 
   public String getHex() {
     return hex;

@@ -14,16 +14,16 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40052;
+import org.openapitools.client.model.InlineResponse40152;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40352;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -57,8 +57,7 @@ public class UtxoBasedApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListUnspentTransactionOutputsByAddressR response = api.listUnspentTransactionOutputsByAddress(blockchain, network, address, context, limit, offset);
-
+                ListUnspentTransactionOutputsByAddressR response = api.listUnspentTransactionOutputsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
     

@@ -28,12 +28,14 @@ import org.openapitools.client.model.DeleteAutomaticTokensForwardingRI;
 /**
  * DeleteAutomaticTokensForwardingRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class DeleteAutomaticTokensForwardingRData {
   public static final String SERIALIZED_NAME_ITEM = "item";
   @SerializedName(SERIALIZED_NAME_ITEM)
   private DeleteAutomaticTokensForwardingRI item;
 
+  public DeleteAutomaticTokensForwardingRData() { 
+  }
 
   public DeleteAutomaticTokensForwardingRData item(DeleteAutomaticTokensForwardingRI item) {
     

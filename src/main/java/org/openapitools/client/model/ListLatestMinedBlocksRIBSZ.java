@@ -30,8 +30,12 @@ import java.util.List;
  * Zilliqa
  */
 @ApiModel(description = "Zilliqa")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListLatestMinedBlocksRIBSZ {
+  public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
+  @SerializedName(SERIALIZED_NAME_DIFFICULTY)
+  private String difficulty;
+
   public static final String SERIALIZED_NAME_DS_BLOCK = "dsBlock";
   @SerializedName(SERIALIZED_NAME_DS_BLOCK)
   private Integer dsBlock;
@@ -55,6 +59,31 @@ public class ListLatestMinedBlocksRIBSZ {
   public static final String SERIALIZED_NAME_MICRO_BLOCKS = "microBlocks";
   @SerializedName(SERIALIZED_NAME_MICRO_BLOCKS)
   private List<String> microBlocks = new ArrayList<String>();
+
+  public ListLatestMinedBlocksRIBSZ() { 
+  }
+
+  public ListLatestMinedBlocksRIBSZ difficulty(String difficulty) {
+    
+    this.difficulty = difficulty;
+    return this;
+  }
+
+   /**
+   * Represents a mathematical value of how hard it is to find a valid hash for this block.
+   * @return difficulty
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "21448277761059.71", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
+
+  public String getDifficulty() {
+    return difficulty;
+  }
+
+
+  public void setDifficulty(String difficulty) {
+    this.difficulty = difficulty;
+  }
 
 
   public ListLatestMinedBlocksRIBSZ dsBlock(Integer dsBlock) {
@@ -209,7 +238,8 @@ public class ListLatestMinedBlocksRIBSZ {
       return false;
     }
     ListLatestMinedBlocksRIBSZ listLatestMinedBlocksRIBSZ = (ListLatestMinedBlocksRIBSZ) o;
-    return Objects.equals(this.dsBlock, listLatestMinedBlocksRIBSZ.dsBlock) &&
+    return Objects.equals(this.difficulty, listLatestMinedBlocksRIBSZ.difficulty) &&
+        Objects.equals(this.dsBlock, listLatestMinedBlocksRIBSZ.dsBlock) &&
         Objects.equals(this.dsDifficulty, listLatestMinedBlocksRIBSZ.dsDifficulty) &&
         Objects.equals(this.dsLeader, listLatestMinedBlocksRIBSZ.dsLeader) &&
         Objects.equals(this.gasLimit, listLatestMinedBlocksRIBSZ.gasLimit) &&
@@ -219,13 +249,14 @@ public class ListLatestMinedBlocksRIBSZ {
 
   @Override
   public int hashCode() {
-    return Objects.hash(dsBlock, dsDifficulty, dsLeader, gasLimit, gasUsed, microBlocks);
+    return Objects.hash(difficulty, dsBlock, dsDifficulty, dsLeader, gasLimit, gasUsed, microBlocks);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListLatestMinedBlocksRIBSZ {\n");
+    sb.append("    difficulty: ").append(toIndentedString(difficulty)).append("\n");
     sb.append("    dsBlock: ").append(toIndentedString(dsBlock)).append("\n");
     sb.append("    dsDifficulty: ").append(toIndentedString(dsDifficulty)).append("\n");
     sb.append("    dsLeader: ").append(toIndentedString(dsLeader)).append("\n");

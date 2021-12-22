@@ -30,7 +30,7 @@ import java.util.List;
  * Binance Smart Chain
  */
 @ApiModel(description = "Binance Smart Chain")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetLastMinedBlockRIBSBSC {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -72,6 +72,8 @@ public class GetLastMinedBlockRIBSBSC {
   @SerializedName(SERIALIZED_NAME_UNCLES)
   private List<String> uncles = new ArrayList<String>();
 
+  public GetLastMinedBlockRIBSBSC() { 
+  }
 
   public GetLastMinedBlockRIBSBSC difficulty(String difficulty) {
     

@@ -30,7 +30,7 @@ import java.util.List;
  * Represents the script public key.
  */
 @ApiModel(description = "Represents the script public key.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSDScriptPubKey {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -52,6 +52,8 @@ public class ListTransactionsByBlockHashRIBSDScriptPubKey {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private String type;
 
+  public ListTransactionsByBlockHashRIBSDScriptPubKey() { 
+  }
 
   public ListTransactionsByBlockHashRIBSDScriptPubKey addresses(List<String> addresses) {
     

@@ -30,8 +30,12 @@ import java.util.List;
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListLatestMinedBlocksRIBSEC {
+  public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
+  @SerializedName(SERIALIZED_NAME_DIFFICULTY)
+  private String difficulty;
+
   public static final String SERIALIZED_NAME_EXTRA_DATA = "extraData";
   @SerializedName(SERIALIZED_NAME_EXTRA_DATA)
   private String extraData;
@@ -48,9 +52,17 @@ public class ListLatestMinedBlocksRIBSEC {
   @SerializedName(SERIALIZED_NAME_MINED_IN_SECONDS)
   private Integer minedInSeconds;
 
+  public static final String SERIALIZED_NAME_NONCE = "nonce";
+  @SerializedName(SERIALIZED_NAME_NONCE)
+  private String nonce;
+
   public static final String SERIALIZED_NAME_SHA3_UNCLES = "sha3Uncles";
   @SerializedName(SERIALIZED_NAME_SHA3_UNCLES)
   private String sha3Uncles;
+
+  public static final String SERIALIZED_NAME_SIZE = "size";
+  @SerializedName(SERIALIZED_NAME_SIZE)
+  private Integer size;
 
   public static final String SERIALIZED_NAME_TOTAL_DIFFICULTY = "totalDifficulty";
   @SerializedName(SERIALIZED_NAME_TOTAL_DIFFICULTY)
@@ -59,6 +71,31 @@ public class ListLatestMinedBlocksRIBSEC {
   public static final String SERIALIZED_NAME_UNCLES = "uncles";
   @SerializedName(SERIALIZED_NAME_UNCLES)
   private List<String> uncles = new ArrayList<String>();
+
+  public ListLatestMinedBlocksRIBSEC() { 
+  }
+
+  public ListLatestMinedBlocksRIBSEC difficulty(String difficulty) {
+    
+    this.difficulty = difficulty;
+    return this;
+  }
+
+   /**
+   * Represents a mathematical value of how hard it is to find a valid hash for this block.
+   * @return difficulty
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "21448277761059.71", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
+
+  public String getDifficulty() {
+    return difficulty;
+  }
+
+
+  public void setDifficulty(String difficulty) {
+    this.difficulty = difficulty;
+  }
 
 
   public ListLatestMinedBlocksRIBSEC extraData(String extraData) {
@@ -153,6 +190,29 @@ public class ListLatestMinedBlocksRIBSEC {
   }
 
 
+  public ListLatestMinedBlocksRIBSEC nonce(String nonce) {
+    
+    this.nonce = nonce;
+    return this;
+  }
+
+   /**
+   * Represents a random value that can be adjusted to satisfy the proof of work
+   * @return nonce
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "2113101077", required = true, value = "Represents a random value that can be adjusted to satisfy the proof of work")
+
+  public String getNonce() {
+    return nonce;
+  }
+
+
+  public void setNonce(String nonce) {
+    this.nonce = nonce;
+  }
+
+
   public ListLatestMinedBlocksRIBSEC sha3Uncles(String sha3Uncles) {
     
     this.sha3Uncles = sha3Uncles;
@@ -173,6 +233,29 @@ public class ListLatestMinedBlocksRIBSEC {
 
   public void setSha3Uncles(String sha3Uncles) {
     this.sha3Uncles = sha3Uncles;
+  }
+
+
+  public ListLatestMinedBlocksRIBSEC size(Integer size) {
+    
+    this.size = size;
+    return this;
+  }
+
+   /**
+   * Represents the total size of the block in Bytes.
+   * @return size
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1408113", required = true, value = "Represents the total size of the block in Bytes.")
+
+  public Integer getSize() {
+    return size;
+  }
+
+
+  public void setSize(Integer size) {
+    this.size = size;
   }
 
 
@@ -236,29 +319,35 @@ public class ListLatestMinedBlocksRIBSEC {
       return false;
     }
     ListLatestMinedBlocksRIBSEC listLatestMinedBlocksRIBSEC = (ListLatestMinedBlocksRIBSEC) o;
-    return Objects.equals(this.extraData, listLatestMinedBlocksRIBSEC.extraData) &&
+    return Objects.equals(this.difficulty, listLatestMinedBlocksRIBSEC.difficulty) &&
+        Objects.equals(this.extraData, listLatestMinedBlocksRIBSEC.extraData) &&
         Objects.equals(this.gasLimit, listLatestMinedBlocksRIBSEC.gasLimit) &&
         Objects.equals(this.gasUsed, listLatestMinedBlocksRIBSEC.gasUsed) &&
         Objects.equals(this.minedInSeconds, listLatestMinedBlocksRIBSEC.minedInSeconds) &&
+        Objects.equals(this.nonce, listLatestMinedBlocksRIBSEC.nonce) &&
         Objects.equals(this.sha3Uncles, listLatestMinedBlocksRIBSEC.sha3Uncles) &&
+        Objects.equals(this.size, listLatestMinedBlocksRIBSEC.size) &&
         Objects.equals(this.totalDifficulty, listLatestMinedBlocksRIBSEC.totalDifficulty) &&
         Objects.equals(this.uncles, listLatestMinedBlocksRIBSEC.uncles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty, uncles);
+    return Objects.hash(difficulty, extraData, gasLimit, gasUsed, minedInSeconds, nonce, sha3Uncles, size, totalDifficulty, uncles);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListLatestMinedBlocksRIBSEC {\n");
+    sb.append("    difficulty: ").append(toIndentedString(difficulty)).append("\n");
     sb.append("    extraData: ").append(toIndentedString(extraData)).append("\n");
     sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
     sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
     sb.append("    minedInSeconds: ").append(toIndentedString(minedInSeconds)).append("\n");
+    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
     sb.append("    sha3Uncles: ").append(toIndentedString(sha3Uncles)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    totalDifficulty: ").append(toIndentedString(totalDifficulty)).append("\n");
     sb.append("    uncles: ").append(toIndentedString(uncles)).append("\n");
     sb.append("}");

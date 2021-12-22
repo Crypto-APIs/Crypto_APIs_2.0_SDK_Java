@@ -29,7 +29,7 @@ import org.openapitools.client.model.GetXRPRippleBlockDetailsByBlockHeightRITota
 /**
  * GetXRPRippleBlockDetailsByBlockHeightRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetXRPRippleBlockDetailsByBlockHeightRI {
   public static final String SERIALIZED_NAME_BLOCK_HASH = "blockHash";
   @SerializedName(SERIALIZED_NAME_BLOCK_HASH)
@@ -63,6 +63,8 @@ public class GetXRPRippleBlockDetailsByBlockHeightRI {
   @SerializedName(SERIALIZED_NAME_TRANSACTIONS_COUNT)
   private Integer transactionsCount;
 
+  public GetXRPRippleBlockDetailsByBlockHeightRI() { 
+  }
 
   public GetXRPRippleBlockDetailsByBlockHeightRI blockHash(String blockHash) {
     

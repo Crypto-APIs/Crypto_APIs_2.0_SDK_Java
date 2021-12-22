@@ -27,12 +27,51 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.AlreadyExists;
-import org.openapitools.client.model.BlockchainEventsCallbacksLimitReached;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40058;
+import org.openapitools.client.model.InlineResponse40059;
+import org.openapitools.client.model.InlineResponse40060;
+import org.openapitools.client.model.InlineResponse40061;
+import org.openapitools.client.model.InlineResponse40062;
+import org.openapitools.client.model.InlineResponse40063;
+import org.openapitools.client.model.InlineResponse40064;
+import org.openapitools.client.model.InlineResponse40065;
+import org.openapitools.client.model.InlineResponse40073;
+import org.openapitools.client.model.InlineResponse40074;
+import org.openapitools.client.model.InlineResponse40158;
+import org.openapitools.client.model.InlineResponse40159;
+import org.openapitools.client.model.InlineResponse40160;
+import org.openapitools.client.model.InlineResponse40161;
+import org.openapitools.client.model.InlineResponse40162;
+import org.openapitools.client.model.InlineResponse40163;
+import org.openapitools.client.model.InlineResponse40164;
+import org.openapitools.client.model.InlineResponse40165;
+import org.openapitools.client.model.InlineResponse40173;
+import org.openapitools.client.model.InlineResponse40174;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40358;
+import org.openapitools.client.model.InlineResponse40359;
+import org.openapitools.client.model.InlineResponse40360;
+import org.openapitools.client.model.InlineResponse40361;
+import org.openapitools.client.model.InlineResponse40362;
+import org.openapitools.client.model.InlineResponse40363;
+import org.openapitools.client.model.InlineResponse40364;
+import org.openapitools.client.model.InlineResponse40365;
+import org.openapitools.client.model.InlineResponse40373;
+import org.openapitools.client.model.InlineResponse40374;
+import org.openapitools.client.model.InlineResponse40910;
+import org.openapitools.client.model.InlineResponse40911;
+import org.openapitools.client.model.InlineResponse40912;
+import org.openapitools.client.model.InlineResponse40913;
+import org.openapitools.client.model.InlineResponse40914;
+import org.openapitools.client.model.InlineResponse40915;
+import org.openapitools.client.model.InlineResponse4096;
+import org.openapitools.client.model.InlineResponse4097;
+import org.openapitools.client.model.InlineResponse4098;
+import org.openapitools.client.model.InlineResponse4099;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.MinedTransactionR;
 import org.openapitools.client.model.MinedTransactionRB;
 import org.openapitools.client.model.NewBlockR;
@@ -53,9 +92,6 @@ import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsRB;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsRB;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -65,6 +101,8 @@ import java.util.Map;
 
 public class CreateSubscriptionsForApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public CreateSubscriptionsForApi() {
         this(Configuration.getDefaultApiClient());
@@ -82,6 +120,22 @@ public class CreateSubscriptionsForApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for minedTransaction
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
@@ -95,11 +149,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -107,6 +161,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call minedTransactionCall(String blockchain, String network, String context, MinedTransactionRB minedTransactionRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = minedTransactionRB;
 
         // create path and map variables
@@ -136,10 +204,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -174,11 +244,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -203,11 +273,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -234,11 +304,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -265,11 +335,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -277,6 +347,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newBlockCall(String blockchain, String network, String context, NewBlockRB newBlockRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newBlockRB;
 
         // create path and map variables
@@ -306,10 +390,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -344,11 +430,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -373,11 +459,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -404,11 +490,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -435,11 +521,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -447,6 +533,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newConfirmedCoinsTransactionsCall(String blockchain, String network, String context, NewConfirmedCoinsTransactionsRB newConfirmedCoinsTransactionsRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newConfirmedCoinsTransactionsRB;
 
         // create path and map variables
@@ -476,10 +576,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -514,11 +616,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -543,11 +645,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -574,11 +676,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -605,11 +707,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -617,6 +719,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newConfirmedCoinsTransactionsAndEachConfirmationCall(String blockchain, String network, String context, NewConfirmedCoinsTransactionsAndEachConfirmationRB newConfirmedCoinsTransactionsAndEachConfirmationRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newConfirmedCoinsTransactionsAndEachConfirmationRB;
 
         // create path and map variables
@@ -646,10 +762,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -684,11 +802,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -713,11 +831,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -744,11 +862,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -775,11 +893,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -787,6 +905,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newConfirmedInternalTransactionsCall(String blockchain, String network, String context, NewConfirmedInternalTransactionsRB newConfirmedInternalTransactionsRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newConfirmedInternalTransactionsRB;
 
         // create path and map variables
@@ -816,10 +948,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -854,11 +988,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -883,11 +1017,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -914,11 +1048,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -945,11 +1079,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -957,6 +1091,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newConfirmedInternalTransactionsAndEachConfirmationCall(String blockchain, String network, String context, NewConfirmedInternalTransactionsAndEachConfirmationRB newConfirmedInternalTransactionsAndEachConfirmationRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newConfirmedInternalTransactionsAndEachConfirmationRB;
 
         // create path and map variables
@@ -986,10 +1134,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1024,11 +1174,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1053,11 +1203,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1084,11 +1234,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1115,11 +1265,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1127,6 +1277,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newConfirmedTokensTransactionsCall(String blockchain, String network, String context, NewConfirmedTokensTransactionsRB newConfirmedTokensTransactionsRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newConfirmedTokensTransactionsRB;
 
         // create path and map variables
@@ -1156,10 +1320,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1194,11 +1360,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1223,11 +1389,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1254,11 +1420,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1285,11 +1451,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1297,6 +1463,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newConfirmedTokensTransactionsAndEachConfirmationCall(String blockchain, String network, String context, NewConfirmedTokensTransactionsAndEachConfirmationRB newConfirmedTokensTransactionsAndEachConfirmationRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newConfirmedTokensTransactionsAndEachConfirmationRB;
 
         // create path and map variables
@@ -1326,10 +1506,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1364,11 +1546,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1393,11 +1575,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1424,11 +1606,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1455,11 +1637,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1467,6 +1649,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newUnconfirmedCoinsTransactionsCall(String blockchain, String network, String context, NewUnconfirmedCoinsTransactionsRB newUnconfirmedCoinsTransactionsRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newUnconfirmedCoinsTransactionsRB;
 
         // create path and map variables
@@ -1496,10 +1692,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1534,11 +1732,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1563,11 +1761,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1594,11 +1792,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1625,11 +1823,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1637,6 +1835,20 @@ public class CreateSubscriptionsForApi {
      </table>
      */
     public okhttp3.Call newUnconfirmedTokensTransactionsCall(String blockchain, String network, String context, NewUnconfirmedTokensTransactionsRB newUnconfirmedTokensTransactionsRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = newUnconfirmedTokensTransactionsRB;
 
         // create path and map variables
@@ -1666,10 +1878,12 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1704,11 +1918,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1733,11 +1947,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -1764,11 +1978,11 @@ public class CreateSubscriptionsForApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The specified resource already exists. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>

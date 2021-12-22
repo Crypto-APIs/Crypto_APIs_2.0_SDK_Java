@@ -29,7 +29,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSECG
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSEC {
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -53,8 +53,10 @@ public class GetTransactionDetailsByTransactionIDRIBSEC {
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
+  private Integer nonce;
 
+  public GetTransactionDetailsByTransactionIDRIBSEC() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSEC contract(String contract) {
     
@@ -171,7 +173,7 @@ public class GetTransactionDetailsByTransactionIDRIBSEC {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBSEC nonce(String nonce) {
+  public GetTransactionDetailsByTransactionIDRIBSEC nonce(Integer nonce) {
     
     this.nonce = nonce;
     return this;
@@ -184,12 +186,12 @@ public class GetTransactionDetailsByTransactionIDRIBSEC {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "16", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
 
-  public String getNonce() {
+  public Integer getNonce() {
     return nonce;
   }
 
 
-  public void setNonce(String nonce) {
+  public void setNonce(Integer nonce) {
     this.nonce = nonce;
   }
 

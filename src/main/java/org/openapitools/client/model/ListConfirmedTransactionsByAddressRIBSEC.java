@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSECGas
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListConfirmedTransactionsByAddressRIBSEC {
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -59,6 +59,8 @@ public class ListConfirmedTransactionsByAddressRIBSEC {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
   private String transactionStatus;
 
+  public ListConfirmedTransactionsByAddressRIBSEC() { 
+  }
 
   public ListConfirmedTransactionsByAddressRIBSEC contract(String contract) {
     

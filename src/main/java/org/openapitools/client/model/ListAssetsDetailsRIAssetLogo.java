@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines the logo of the asset.
  */
 @ApiModel(description = "Defines the logo of the asset.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAssetsDetailsRIAssetLogo {
   public static final String SERIALIZED_NAME_ENCODING = "encoding";
   @SerializedName(SERIALIZED_NAME_ENCODING)
@@ -42,6 +42,8 @@ public class ListAssetsDetailsRIAssetLogo {
   @SerializedName(SERIALIZED_NAME_MIME_TYPE)
   private String mimeType;
 
+  public ListAssetsDetailsRIAssetLogo() { 
+  }
 
   public ListAssetsDetailsRIAssetLogo encoding(String encoding) {
     

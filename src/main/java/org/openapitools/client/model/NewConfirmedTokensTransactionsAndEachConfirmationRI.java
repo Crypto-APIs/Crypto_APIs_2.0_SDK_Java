@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedTokensTransactionsAndEachConfirmationRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -36,6 +36,10 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
   private String callbackUrl;
+
+  public static final String SERIALIZED_NAME_CONFIRMATIONS_COUNT = "confirmationsCount";
+  @SerializedName(SERIALIZED_NAME_CONFIRMATIONS_COUNT)
+  private Integer confirmationsCount;
 
   public static final String SERIALIZED_NAME_CREATED_TIMESTAMP = "createdTimestamp";
   @SerializedName(SERIALIZED_NAME_CREATED_TIMESTAMP)
@@ -49,6 +53,8 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
   @SerializedName(SERIALIZED_NAME_REFERENCE_ID)
   private String referenceId;
 
+  public NewConfirmedTokensTransactionsAndEachConfirmationRI() { 
+  }
 
   public NewConfirmedTokensTransactionsAndEachConfirmationRI address(String address) {
     
@@ -93,6 +99,29 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
 
   public void setCallbackUrl(String callbackUrl) {
     this.callbackUrl = callbackUrl;
+  }
+
+
+  public NewConfirmedTokensTransactionsAndEachConfirmationRI confirmationsCount(Integer confirmationsCount) {
+    
+    this.confirmationsCount = confirmationsCount;
+    return this;
+  }
+
+   /**
+   * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
+   * @return confirmationsCount
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "3", value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
+
+  public Integer getConfirmationsCount() {
+    return confirmationsCount;
+  }
+
+
+  public void setConfirmationsCount(Integer confirmationsCount) {
+    this.confirmationsCount = confirmationsCount;
   }
 
 
@@ -176,6 +205,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
     NewConfirmedTokensTransactionsAndEachConfirmationRI newConfirmedTokensTransactionsAndEachConfirmationRI = (NewConfirmedTokensTransactionsAndEachConfirmationRI) o;
     return Objects.equals(this.address, newConfirmedTokensTransactionsAndEachConfirmationRI.address) &&
         Objects.equals(this.callbackUrl, newConfirmedTokensTransactionsAndEachConfirmationRI.callbackUrl) &&
+        Objects.equals(this.confirmationsCount, newConfirmedTokensTransactionsAndEachConfirmationRI.confirmationsCount) &&
         Objects.equals(this.createdTimestamp, newConfirmedTokensTransactionsAndEachConfirmationRI.createdTimestamp) &&
         Objects.equals(this.eventType, newConfirmedTokensTransactionsAndEachConfirmationRI.eventType) &&
         Objects.equals(this.referenceId, newConfirmedTokensTransactionsAndEachConfirmationRI.referenceId);
@@ -183,7 +213,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, callbackUrl, createdTimestamp, eventType, referenceId);
+    return Objects.hash(address, callbackUrl, confirmationsCount, createdTimestamp, eventType, referenceId);
   }
 
   @Override
@@ -192,6 +222,7 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRI {
     sb.append("class NewConfirmedTokensTransactionsAndEachConfirmationRI {\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
+    sb.append("    confirmationsCount: ").append(toIndentedString(confirmationsCount)).append("\n");
     sb.append("    createdTimestamp: ").append(toIndentedString(createdTimestamp)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");

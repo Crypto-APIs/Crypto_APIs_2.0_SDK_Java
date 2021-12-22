@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetLatestMinedZilliqaBlockRData;
 /**
  * GetLatestMinedZilliqaBlockR
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetLatestMinedZilliqaBlockR {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
@@ -46,6 +46,8 @@ public class GetLatestMinedZilliqaBlockR {
   @SerializedName(SERIALIZED_NAME_DATA)
   private GetLatestMinedZilliqaBlockRData data;
 
+  public GetLatestMinedZilliqaBlockR() { 
+  }
 
   public GetLatestMinedZilliqaBlockR apiVersion(String apiVersion) {
     

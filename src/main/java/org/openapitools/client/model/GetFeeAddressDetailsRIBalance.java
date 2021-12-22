@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the balance of the fee address.
  */
 @ApiModel(description = "Specifies the balance of the fee address.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetFeeAddressDetailsRIBalance {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -38,6 +38,8 @@ public class GetFeeAddressDetailsRIBalance {
   @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
+  public GetFeeAddressDetailsRIBalance() { 
+  }
 
   public GetFeeAddressDetailsRIBalance amount(String amount) {
     

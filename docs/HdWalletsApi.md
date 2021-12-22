@@ -85,13 +85,13 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | This xPub is not yet synced, please first use endpoint “Sync HD (xPub, yPub, zPub) wallet” to synchronize it. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
+**403** | 403 |  -  |
 **409** | The data provided seems to be invalid. |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
-**422** | Your wallet (xPub, yPub, zPub) is still syncing, it should take few seconds depending on how many transactions it has. |  -  |
+**422** | 422 |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
 **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
 
@@ -175,13 +175,13 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | This xPub is not yet synced, please first use endpoint “Sync HD (xPub, yPub, zPub) wallet” to synchronize it. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
+**403** | 403 |  -  |
 **409** | The data provided seems to be invalid. |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
-**422** | Your wallet (xPub, yPub, zPub) is still syncing, it should take few seconds depending on how many transactions it has. |  -  |
+**422** | 422 |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
 **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
 
@@ -259,13 +259,13 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The provided Xpub is invalid. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
-**422** | Your wallet (xPub, yPub, zPub) is still syncing, it should take few seconds depending on how many transactions it has. |  -  |
+**422** | 422 |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
 **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
 

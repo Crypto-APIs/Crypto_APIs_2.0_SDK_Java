@@ -28,7 +28,7 @@ import java.io.IOException;
  * ERC-721
  */
 @ApiModel(description = "ERC-721")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class AddressTokensTransactionUnconfirmedErc721 {
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -46,6 +46,8 @@ public class AddressTokensTransactionUnconfirmedErc721 {
   @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
   private String contractAddress;
 
+  public AddressTokensTransactionUnconfirmedErc721() { 
+  }
 
   public AddressTokensTransactionUnconfirmedErc721 name(String name) {
     

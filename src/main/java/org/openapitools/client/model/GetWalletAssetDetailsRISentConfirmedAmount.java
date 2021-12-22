@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the confirmed amount that has been sent.
  */
 @ApiModel(description = "Specifies the confirmed amount that has been sent.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetWalletAssetDetailsRISentConfirmedAmount {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -38,6 +38,8 @@ public class GetWalletAssetDetailsRISentConfirmedAmount {
   @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
+  public GetWalletAssetDetailsRISentConfirmedAmount() { 
+  }
 
   public GetWalletAssetDetailsRISentConfirmedAmount amount(String amount) {
     

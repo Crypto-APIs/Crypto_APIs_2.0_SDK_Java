@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewUnconfirmedCoinsTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewUnconfirmedCoinsTransactionsRI {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -36,10 +36,6 @@ public class NewUnconfirmedCoinsTransactionsRI {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
   private String callbackUrl;
-
-  public static final String SERIALIZED_NAME_CONFIRMATIONS_COUNT = "confirmationsCount";
-  @SerializedName(SERIALIZED_NAME_CONFIRMATIONS_COUNT)
-  private Integer confirmationsCount;
 
   public static final String SERIALIZED_NAME_CREATED_TIMESTAMP = "createdTimestamp";
   @SerializedName(SERIALIZED_NAME_CREATED_TIMESTAMP)
@@ -57,10 +53,8 @@ public class NewUnconfirmedCoinsTransactionsRI {
   @SerializedName(SERIALIZED_NAME_REFERENCE_ID)
   private String referenceId;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
-  private String transactionId;
-
+  public NewUnconfirmedCoinsTransactionsRI() { 
+  }
 
   public NewUnconfirmedCoinsTransactionsRI callbackSecretKey(String callbackSecretKey) {
     
@@ -105,29 +99,6 @@ public class NewUnconfirmedCoinsTransactionsRI {
 
   public void setCallbackUrl(String callbackUrl) {
     this.callbackUrl = callbackUrl;
-  }
-
-
-  public NewUnconfirmedCoinsTransactionsRI confirmationsCount(Integer confirmationsCount) {
-    
-    this.confirmationsCount = confirmationsCount;
-    return this;
-  }
-
-   /**
-   * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
-   * @return confirmationsCount
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "4", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
-
-  public Integer getConfirmationsCount() {
-    return confirmationsCount;
-  }
-
-
-  public void setConfirmationsCount(Integer confirmationsCount) {
-    this.confirmationsCount = confirmationsCount;
   }
 
 
@@ -223,29 +194,6 @@ public class NewUnconfirmedCoinsTransactionsRI {
   }
 
 
-  public NewUnconfirmedCoinsTransactionsRI transactionId(String transactionId) {
-    
-    this.transactionId = transactionId;
-    return this;
-  }
-
-   /**
-   * Represents the unique identification string that defines the transaction.
-   * @return transactionId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "96b4ea92dcca3a046c0ca2738ed9400f3c04f6c5f497cce4f3a148b1c948a1b3", required = true, value = "Represents the unique identification string that defines the transaction.")
-
-  public String getTransactionId() {
-    return transactionId;
-  }
-
-
-  public void setTransactionId(String transactionId) {
-    this.transactionId = transactionId;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -257,17 +205,15 @@ public class NewUnconfirmedCoinsTransactionsRI {
     NewUnconfirmedCoinsTransactionsRI newUnconfirmedCoinsTransactionsRI = (NewUnconfirmedCoinsTransactionsRI) o;
     return Objects.equals(this.callbackSecretKey, newUnconfirmedCoinsTransactionsRI.callbackSecretKey) &&
         Objects.equals(this.callbackUrl, newUnconfirmedCoinsTransactionsRI.callbackUrl) &&
-        Objects.equals(this.confirmationsCount, newUnconfirmedCoinsTransactionsRI.confirmationsCount) &&
         Objects.equals(this.createdTimestamp, newUnconfirmedCoinsTransactionsRI.createdTimestamp) &&
         Objects.equals(this.eventType, newUnconfirmedCoinsTransactionsRI.eventType) &&
         Objects.equals(this.isActive, newUnconfirmedCoinsTransactionsRI.isActive) &&
-        Objects.equals(this.referenceId, newUnconfirmedCoinsTransactionsRI.referenceId) &&
-        Objects.equals(this.transactionId, newUnconfirmedCoinsTransactionsRI.transactionId);
+        Objects.equals(this.referenceId, newUnconfirmedCoinsTransactionsRI.referenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(callbackSecretKey, callbackUrl, confirmationsCount, createdTimestamp, eventType, isActive, referenceId, transactionId);
+    return Objects.hash(callbackSecretKey, callbackUrl, createdTimestamp, eventType, isActive, referenceId);
   }
 
   @Override
@@ -276,12 +222,10 @@ public class NewUnconfirmedCoinsTransactionsRI {
     sb.append("class NewUnconfirmedCoinsTransactionsRI {\n");
     sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
-    sb.append("    confirmationsCount: ").append(toIndentedString(confirmationsCount)).append("\n");
     sb.append("    createdTimestamp: ").append(toIndentedString(createdTimestamp)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

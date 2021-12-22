@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSLSc
 /**
  * GetTransactionDetailsByTransactionIDRIBSLVin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSLVin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -46,7 +46,7 @@ public class GetTransactionDetailsByTransactionIDRIBSLVin {
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
-  private String sequence;
+  private Integer sequence;
 
   public static final String SERIALIZED_NAME_TXID = "txid";
   @SerializedName(SERIALIZED_NAME_TXID)
@@ -64,6 +64,8 @@ public class GetTransactionDetailsByTransactionIDRIBSLVin {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private Integer vout;
 
+  public GetTransactionDetailsByTransactionIDRIBSLVin() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSLVin addresses(List<String> addresses) {
     
@@ -104,7 +106,7 @@ public class GetTransactionDetailsByTransactionIDRIBSLVin {
    * @return coinbase
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Represents the coinbase hex.")
+  @ApiModelProperty(example = "0399d620046183f4502cfabe6d6d54cff85e53693837dc613bc4cc4b78986c2193a4e2902e3da62aa311957f50844000000000000000042f4c502f08220000b0e1110000", value = "Represents the coinbase hex.")
 
   public String getCoinbase() {
     return coinbase;
@@ -139,7 +141,7 @@ public class GetTransactionDetailsByTransactionIDRIBSLVin {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBSLVin sequence(String sequence) {
+  public GetTransactionDetailsByTransactionIDRIBSLVin sequence(Integer sequence) {
     
     this.sequence = sequence;
     return this;
@@ -152,12 +154,12 @@ public class GetTransactionDetailsByTransactionIDRIBSLVin {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "4294967294", required = true, value = "Represents the script sequence number.")
 
-  public String getSequence() {
+  public Integer getSequence() {
     return sequence;
   }
 
 
-  public void setSequence(String sequence) {
+  public void setSequence(Integer sequence) {
     this.sequence = sequence;
   }
 

@@ -83,12 +83,12 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Your current package plan coins forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. |  -  |
+**403** | 403 |  -  |
 **404** | The specified resource has not been found. |  -  |
-**409** | The specified resource already exists. |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -168,10 +168,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The delete request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
+**403** | 403 |  -  |
 **404** | The specified resource has not been found. |  -  |
 **409** | The data provided seems to be invalid. |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
@@ -255,10 +255,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
+**403** | 403 |  -  |
 **404** | The specified resource has not been found. |  -  |
 **409** | The data provided seems to be invalid. |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |

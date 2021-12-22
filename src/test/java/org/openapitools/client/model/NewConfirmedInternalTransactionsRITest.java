@@ -65,14 +65,6 @@ public class NewConfirmedInternalTransactionsRITest {
     }
 
     /**
-     * Test the property 'confirmationsCount'
-     */
-    @Test
-    public void confirmationsCountTest() {
-        // TODO: test confirmationsCount
-    }
-
-    /**
      * Test the property 'createdTimestamp'
      */
     @Test
@@ -102,14 +94,6 @@ public class NewConfirmedInternalTransactionsRITest {
     @Test
     public void referenceIdTest() {
         // TODO: test referenceId
-    }
-
-    /**
-     * Test the property 'transactionId'
-     */
-    @Test
-    public void transactionIdTest() {
-        // TODO: test transactionId
     }
 
 }

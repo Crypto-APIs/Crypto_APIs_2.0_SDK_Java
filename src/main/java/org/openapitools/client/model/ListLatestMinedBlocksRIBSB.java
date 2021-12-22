@@ -28,7 +28,7 @@ import java.io.IOException;
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListLatestMinedBlocksRIBSB {
   public static final String SERIALIZED_NAME_BITS = "bits";
   @SerializedName(SERIALIZED_NAME_BITS)
@@ -38,9 +38,21 @@ public class ListLatestMinedBlocksRIBSB {
   @SerializedName(SERIALIZED_NAME_CHAINWORK)
   private String chainwork;
 
+  public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
+  @SerializedName(SERIALIZED_NAME_DIFFICULTY)
+  private String difficulty;
+
   public static final String SERIALIZED_NAME_MERKLE_ROOT = "merkleRoot";
   @SerializedName(SERIALIZED_NAME_MERKLE_ROOT)
   private String merkleRoot;
+
+  public static final String SERIALIZED_NAME_NONCE = "nonce";
+  @SerializedName(SERIALIZED_NAME_NONCE)
+  private Integer nonce;
+
+  public static final String SERIALIZED_NAME_SIZE = "size";
+  @SerializedName(SERIALIZED_NAME_SIZE)
+  private Integer size;
 
   public static final String SERIALIZED_NAME_STRIPPED_SIZE = "strippedSize";
   @SerializedName(SERIALIZED_NAME_STRIPPED_SIZE)
@@ -58,6 +70,8 @@ public class ListLatestMinedBlocksRIBSB {
   @SerializedName(SERIALIZED_NAME_WEIGHT)
   private Integer weight;
 
+  public ListLatestMinedBlocksRIBSB() { 
+  }
 
   public ListLatestMinedBlocksRIBSB bits(String bits) {
     
@@ -105,6 +119,29 @@ public class ListLatestMinedBlocksRIBSB {
   }
 
 
+  public ListLatestMinedBlocksRIBSB difficulty(String difficulty) {
+    
+    this.difficulty = difficulty;
+    return this;
+  }
+
+   /**
+   * Represents a mathematical value of how hard it is to find a valid hash for this block.
+   * @return difficulty
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "21448277761059.71", value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
+
+  public String getDifficulty() {
+    return difficulty;
+  }
+
+
+  public void setDifficulty(String difficulty) {
+    this.difficulty = difficulty;
+  }
+
+
   public ListLatestMinedBlocksRIBSB merkleRoot(String merkleRoot) {
     
     this.merkleRoot = merkleRoot;
@@ -125,6 +162,52 @@ public class ListLatestMinedBlocksRIBSB {
 
   public void setMerkleRoot(String merkleRoot) {
     this.merkleRoot = merkleRoot;
+  }
+
+
+  public ListLatestMinedBlocksRIBSB nonce(Integer nonce) {
+    
+    this.nonce = nonce;
+    return this;
+  }
+
+   /**
+   * Represents a random value that can be adjusted to satisfy the proof of work
+   * @return nonce
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "500511677", value = "Represents a random value that can be adjusted to satisfy the proof of work")
+
+  public Integer getNonce() {
+    return nonce;
+  }
+
+
+  public void setNonce(Integer nonce) {
+    this.nonce = nonce;
+  }
+
+
+  public ListLatestMinedBlocksRIBSB size(Integer size) {
+    
+    this.size = size;
+    return this;
+  }
+
+   /**
+   * Represents the block size
+   * @return size
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "1864409", value = "Represents the block size")
+
+  public Integer getSize() {
+    return size;
+  }
+
+
+  public void setSize(Integer size) {
+    this.size = size;
   }
 
 
@@ -231,7 +314,10 @@ public class ListLatestMinedBlocksRIBSB {
     ListLatestMinedBlocksRIBSB listLatestMinedBlocksRIBSB = (ListLatestMinedBlocksRIBSB) o;
     return Objects.equals(this.bits, listLatestMinedBlocksRIBSB.bits) &&
         Objects.equals(this.chainwork, listLatestMinedBlocksRIBSB.chainwork) &&
+        Objects.equals(this.difficulty, listLatestMinedBlocksRIBSB.difficulty) &&
         Objects.equals(this.merkleRoot, listLatestMinedBlocksRIBSB.merkleRoot) &&
+        Objects.equals(this.nonce, listLatestMinedBlocksRIBSB.nonce) &&
+        Objects.equals(this.size, listLatestMinedBlocksRIBSB.size) &&
         Objects.equals(this.strippedSize, listLatestMinedBlocksRIBSB.strippedSize) &&
         Objects.equals(this.version, listLatestMinedBlocksRIBSB.version) &&
         Objects.equals(this.versionHex, listLatestMinedBlocksRIBSB.versionHex) &&
@@ -240,7 +326,7 @@ public class ListLatestMinedBlocksRIBSB {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bits, chainwork, merkleRoot, strippedSize, version, versionHex, weight);
+    return Objects.hash(bits, chainwork, difficulty, merkleRoot, nonce, size, strippedSize, version, versionHex, weight);
   }
 
   @Override
@@ -249,7 +335,10 @@ public class ListLatestMinedBlocksRIBSB {
     sb.append("class ListLatestMinedBlocksRIBSB {\n");
     sb.append("    bits: ").append(toIndentedString(bits)).append("\n");
     sb.append("    chainwork: ").append(toIndentedString(chainwork)).append("\n");
+    sb.append("    difficulty: ").append(toIndentedString(difficulty)).append("\n");
     sb.append("    merkleRoot: ").append(toIndentedString(merkleRoot)).append("\n");
+    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
+    sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    strippedSize: ").append(toIndentedString(strippedSize)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    versionHex: ").append(toIndentedString(versionHex)).append("\n");

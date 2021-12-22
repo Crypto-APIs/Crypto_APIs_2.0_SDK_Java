@@ -81,11 +81,11 @@ public class GetBlockDetailsByBlockHeightRIBSZTest {
     }
 
     /**
-     * Test the property 'merkleroot'
+     * Test the property 'merkleRoot'
      */
     @Test
-    public void merklerootTest() {
-        // TODO: test merkleroot
+    public void merkleRootTest() {
+        // TODO: test merkleRoot
     }
 
     /**

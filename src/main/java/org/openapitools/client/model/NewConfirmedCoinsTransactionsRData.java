@@ -28,12 +28,14 @@ import org.openapitools.client.model.NewConfirmedCoinsTransactionsRI;
 /**
  * NewConfirmedCoinsTransactionsRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewConfirmedCoinsTransactionsRData {
   public static final String SERIALIZED_NAME_ITEM = "item";
   @SerializedName(SERIALIZED_NAME_ITEM)
   private NewConfirmedCoinsTransactionsRI item;
 
+  public NewConfirmedCoinsTransactionsRData() { 
+  }
 
   public NewConfirmedCoinsTransactionsRData item(NewConfirmedCoinsTransactionsRI item) {
     

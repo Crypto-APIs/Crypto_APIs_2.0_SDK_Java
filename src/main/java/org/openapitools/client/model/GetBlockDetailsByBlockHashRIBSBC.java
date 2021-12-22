@@ -28,7 +28,7 @@ import java.io.IOException;
  * Bitcoin Cash
  */
 @ApiModel(description = "Bitcoin Cash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashRIBSBC {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -50,9 +50,9 @@ public class GetBlockDetailsByBlockHashRIBSBC {
   @SerializedName(SERIALIZED_NAME_CHAINWORK)
   private String chainwork;
 
-  public static final String SERIALIZED_NAME_MERKLEROOT = "merkleroot";
-  @SerializedName(SERIALIZED_NAME_MERKLEROOT)
-  private String merkleroot;
+  public static final String SERIALIZED_NAME_MERKLE_ROOT = "merkleRoot";
+  @SerializedName(SERIALIZED_NAME_MERKLE_ROOT)
+  private String merkleRoot;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
@@ -62,6 +62,8 @@ public class GetBlockDetailsByBlockHashRIBSBC {
   @SerializedName(SERIALIZED_NAME_VERSION_HEX)
   private String versionHex;
 
+  public GetBlockDetailsByBlockHashRIBSBC() { 
+  }
 
   public GetBlockDetailsByBlockHashRIBSBC difficulty(String difficulty) {
     
@@ -178,26 +180,26 @@ public class GetBlockDetailsByBlockHashRIBSBC {
   }
 
 
-  public GetBlockDetailsByBlockHashRIBSBC merkleroot(String merkleroot) {
+  public GetBlockDetailsByBlockHashRIBSBC merkleRoot(String merkleRoot) {
     
-    this.merkleroot = merkleroot;
+    this.merkleRoot = merkleRoot;
     return this;
   }
 
    /**
    * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
-   * @return merkleroot
+   * @return merkleRoot
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "14add5ff6fb9dfc58767228b658a48f85d988a1cc49151238f9cef85b53e54d2", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
 
-  public String getMerkleroot() {
-    return merkleroot;
+  public String getMerkleRoot() {
+    return merkleRoot;
   }
 
 
-  public void setMerkleroot(String merkleroot) {
-    this.merkleroot = merkleroot;
+  public void setMerkleRoot(String merkleRoot) {
+    this.merkleRoot = merkleRoot;
   }
 
 
@@ -261,14 +263,14 @@ public class GetBlockDetailsByBlockHashRIBSBC {
         Objects.equals(this.size, getBlockDetailsByBlockHashRIBSBC.size) &&
         Objects.equals(this.bits, getBlockDetailsByBlockHashRIBSBC.bits) &&
         Objects.equals(this.chainwork, getBlockDetailsByBlockHashRIBSBC.chainwork) &&
-        Objects.equals(this.merkleroot, getBlockDetailsByBlockHashRIBSBC.merkleroot) &&
+        Objects.equals(this.merkleRoot, getBlockDetailsByBlockHashRIBSBC.merkleRoot) &&
         Objects.equals(this.version, getBlockDetailsByBlockHashRIBSBC.version) &&
         Objects.equals(this.versionHex, getBlockDetailsByBlockHashRIBSBC.versionHex);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleroot, version, versionHex);
+    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleRoot, version, versionHex);
   }
 
   @Override
@@ -280,7 +282,7 @@ public class GetBlockDetailsByBlockHashRIBSBC {
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    bits: ").append(toIndentedString(bits)).append("\n");
     sb.append("    chainwork: ").append(toIndentedString(chainwork)).append("\n");
-    sb.append("    merkleroot: ").append(toIndentedString(merkleroot)).append("\n");
+    sb.append("    merkleRoot: ").append(toIndentedString(merkleRoot)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("    versionHex: ").append(toIndentedString(versionHex)).append("\n");
     sb.append("}");

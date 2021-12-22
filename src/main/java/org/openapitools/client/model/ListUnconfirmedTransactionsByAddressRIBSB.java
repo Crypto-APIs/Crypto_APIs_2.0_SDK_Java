@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSBVo
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListUnconfirmedTransactionsByAddressRIBSB {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -58,6 +58,8 @@ public class ListUnconfirmedTransactionsByAddressRIBSB {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private List<ListUnconfirmedTransactionsByAddressRIBSBVout> vout = new ArrayList<ListUnconfirmedTransactionsByAddressRIBSBVout>();
 
+  public ListUnconfirmedTransactionsByAddressRIBSB() { 
+  }
 
   public ListUnconfirmedTransactionsByAddressRIBSB locktime(Integer locktime) {
     

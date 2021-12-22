@@ -14,24 +14,45 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.BlockchainDataTransactionNotFound;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetOmniTransactionDetailsByTransactionIDTxidR;
 import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse4001;
+import org.openapitools.client.model.InlineResponse40012;
+import org.openapitools.client.model.InlineResponse40019;
+import org.openapitools.client.model.InlineResponse40028;
+import org.openapitools.client.model.InlineResponse40032;
+import org.openapitools.client.model.InlineResponse40038;
+import org.openapitools.client.model.InlineResponse40044;
+import org.openapitools.client.model.InlineResponse4005;
+import org.openapitools.client.model.InlineResponse4011;
+import org.openapitools.client.model.InlineResponse40112;
+import org.openapitools.client.model.InlineResponse40119;
+import org.openapitools.client.model.InlineResponse40128;
+import org.openapitools.client.model.InlineResponse40132;
+import org.openapitools.client.model.InlineResponse40138;
+import org.openapitools.client.model.InlineResponse40144;
+import org.openapitools.client.model.InlineResponse4015;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse4031;
+import org.openapitools.client.model.InlineResponse40312;
+import org.openapitools.client.model.InlineResponse40319;
+import org.openapitools.client.model.InlineResponse40328;
+import org.openapitools.client.model.InlineResponse40332;
+import org.openapitools.client.model.InlineResponse40338;
+import org.openapitools.client.model.InlineResponse40344;
+import org.openapitools.client.model.InlineResponse4035;
+import org.openapitools.client.model.InlineResponse404;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListOmniTokensByAddressR;
 import org.openapitools.client.model.ListOmniTransactionsByAddressR;
 import org.openapitools.client.model.ListOmniTransactionsByBlockHashR;
 import org.openapitools.client.model.ListOmniTransactionsByBlockHeightR;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressR;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByPropertyIDR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -63,8 +84,7 @@ public class OmniLayerApiTest {
         String blockchain = null;
         String transactionId = null;
         String context = null;
-        GetOmniTransactionDetailsByTransactionIDTxidR response = api.getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context);
-
+                GetOmniTransactionDetailsByTransactionIDTxidR response = api.getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context);
         // TODO: test validations
     }
     
@@ -82,8 +102,7 @@ public class OmniLayerApiTest {
         String blockchain = null;
         String transactionId = null;
         String context = null;
-        GetUnconfirmedOmniTransactionByTransactionIDTxidR response = api.getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context);
-
+                GetUnconfirmedOmniTransactionByTransactionIDTxidR response = api.getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context);
         // TODO: test validations
     }
     
@@ -101,8 +120,7 @@ public class OmniLayerApiTest {
         String blockchain = null;
         String address = null;
         String context = null;
-        ListOmniTokensByAddressR response = api.listOmniTokensByAddress(network, blockchain, address, context);
-
+                ListOmniTokensByAddressR response = api.listOmniTokensByAddress(network, blockchain, address, context);
         // TODO: test validations
     }
     
@@ -122,8 +140,7 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListOmniTransactionsByAddressR response = api.listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
-
+                ListOmniTransactionsByAddressR response = api.listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
         // TODO: test validations
     }
     
@@ -143,8 +160,7 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListOmniTransactionsByBlockHashR response = api.listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset);
-
+                ListOmniTransactionsByBlockHashR response = api.listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset);
         // TODO: test validations
     }
     
@@ -164,8 +180,7 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListOmniTransactionsByBlockHeightR response = api.listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset);
-
+                ListOmniTransactionsByBlockHeightR response = api.listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset);
         // TODO: test validations
     }
     
@@ -185,8 +200,7 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListUnconfirmedOmniTransactionsByAddressR response = api.listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
-
+                ListUnconfirmedOmniTransactionsByAddressR response = api.listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
         // TODO: test validations
     }
     
@@ -206,8 +220,7 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListUnconfirmedOmniTransactionsByPropertyIDR response = api.listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset);
-
+                ListUnconfirmedOmniTransactionsByPropertyIDR response = api.listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset);
         // TODO: test validations
     }
     

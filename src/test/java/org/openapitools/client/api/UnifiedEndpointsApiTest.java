@@ -14,30 +14,63 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.BlockchainDataBlockNotFound;
-import org.openapitools.client.model.BlockchainDataTransactionNotFound;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetAddressDetailsR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetFeeRecommendationsR;
 import org.openapitools.client.model.GetLastMinedBlockR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse40010;
+import org.openapitools.client.model.InlineResponse40015;
+import org.openapitools.client.model.InlineResponse40016;
+import org.openapitools.client.model.InlineResponse40017;
+import org.openapitools.client.model.InlineResponse40024;
+import org.openapitools.client.model.InlineResponse40026;
+import org.openapitools.client.model.InlineResponse40030;
+import org.openapitools.client.model.InlineResponse40037;
+import org.openapitools.client.model.InlineResponse4004;
+import org.openapitools.client.model.InlineResponse40042;
+import org.openapitools.client.model.InlineResponse40053;
+import org.openapitools.client.model.InlineResponse401;
+import org.openapitools.client.model.InlineResponse40110;
+import org.openapitools.client.model.InlineResponse40115;
+import org.openapitools.client.model.InlineResponse40116;
+import org.openapitools.client.model.InlineResponse40117;
+import org.openapitools.client.model.InlineResponse40124;
+import org.openapitools.client.model.InlineResponse40126;
+import org.openapitools.client.model.InlineResponse40130;
+import org.openapitools.client.model.InlineResponse40137;
+import org.openapitools.client.model.InlineResponse4014;
+import org.openapitools.client.model.InlineResponse40142;
+import org.openapitools.client.model.InlineResponse40153;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse403;
+import org.openapitools.client.model.InlineResponse40310;
+import org.openapitools.client.model.InlineResponse40315;
+import org.openapitools.client.model.InlineResponse40316;
+import org.openapitools.client.model.InlineResponse40317;
+import org.openapitools.client.model.InlineResponse40324;
+import org.openapitools.client.model.InlineResponse40326;
+import org.openapitools.client.model.InlineResponse40330;
+import org.openapitools.client.model.InlineResponse40337;
+import org.openapitools.client.model.InlineResponse4034;
+import org.openapitools.client.model.InlineResponse40342;
+import org.openapitools.client.model.InlineResponse40353;
+import org.openapitools.client.model.InlineResponse404;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse4042;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsR;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressR;
 import org.openapitools.client.model.ListLatestMinedBlocksR;
 import org.openapitools.client.model.ListTransactionsByBlockHashR;
 import org.openapitools.client.model.ListTransactionsByBlockHeightR;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -58,7 +91,7 @@ public class UnifiedEndpointsApiTest {
     /**
      * Get Address Details
      *
-     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here.
+     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here. Applies only for coins.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -69,8 +102,7 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String address = null;
         String context = null;
-        GetAddressDetailsR response = api.getAddressDetails(blockchain, network, address, context);
-
+                GetAddressDetailsR response = api.getAddressDetails(blockchain, network, address, context);
         // TODO: test validations
     }
     
@@ -88,8 +120,7 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String blockHash = null;
         String context = null;
-        GetBlockDetailsByBlockHashR response = api.getBlockDetailsByBlockHash(blockchain, network, blockHash, context);
-
+                GetBlockDetailsByBlockHashR response = api.getBlockDetailsByBlockHash(blockchain, network, blockHash, context);
         // TODO: test validations
     }
     
@@ -107,8 +138,7 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         Integer height = null;
         String context = null;
-        GetBlockDetailsByBlockHeightR response = api.getBlockDetailsByBlockHeight(blockchain, network, height, context);
-
+                GetBlockDetailsByBlockHeightR response = api.getBlockDetailsByBlockHeight(blockchain, network, height, context);
         // TODO: test validations
     }
     
@@ -125,8 +155,7 @@ public class UnifiedEndpointsApiTest {
         String blockchain = null;
         String network = null;
         String context = null;
-        GetFeeRecommendationsR response = api.getFeeRecommendations(blockchain, network, context);
-
+                GetFeeRecommendationsR response = api.getFeeRecommendations(blockchain, network, context);
         // TODO: test validations
     }
     
@@ -143,8 +172,7 @@ public class UnifiedEndpointsApiTest {
         String blockchain = null;
         String network = null;
         String context = null;
-        GetLastMinedBlockR response = api.getLastMinedBlock(blockchain, network, context);
-
+                GetLastMinedBlockR response = api.getLastMinedBlock(blockchain, network, context);
         // TODO: test validations
     }
     
@@ -162,8 +190,7 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String transactionId = null;
         String context = null;
-        GetTransactionDetailsByTransactionIDR response = api.getTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
-
+                GetTransactionDetailsByTransactionIDR response = api.getTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
         // TODO: test validations
     }
     
@@ -182,8 +209,7 @@ public class UnifiedEndpointsApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListAllUnconfirmedTransactionsR response = api.listAllUnconfirmedTransactions(blockchain, network, context, limit, offset);
-
+                ListAllUnconfirmedTransactionsR response = api.listAllUnconfirmedTransactions(blockchain, network, context, limit, offset);
         // TODO: test validations
     }
     
@@ -203,15 +229,14 @@ public class UnifiedEndpointsApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListConfirmedTransactionsByAddressR response = api.listConfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
-
+                ListConfirmedTransactionsByAddressR response = api.listConfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
     
     /**
      * List Latest Mined Blocks
      *
-     * Through this endpoint customers can list the latest 50 blocks that were mined.
+     * Through this endpoint customers can list **up to 50** from the latest blocks that were mined.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -222,8 +247,7 @@ public class UnifiedEndpointsApiTest {
         String blockchain = null;
         Integer count = null;
         String context = null;
-        ListLatestMinedBlocksR response = api.listLatestMinedBlocks(network, blockchain, count, context);
-
+                ListLatestMinedBlocksR response = api.listLatestMinedBlocks(network, blockchain, count, context);
         // TODO: test validations
     }
     
@@ -243,8 +267,7 @@ public class UnifiedEndpointsApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListTransactionsByBlockHashR response = api.listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset);
-
+                ListTransactionsByBlockHashR response = api.listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset);
         // TODO: test validations
     }
     
@@ -264,8 +287,7 @@ public class UnifiedEndpointsApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListTransactionsByBlockHeightR response = api.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
-
+                ListTransactionsByBlockHeightR response = api.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
         // TODO: test validations
     }
     
@@ -285,8 +307,7 @@ public class UnifiedEndpointsApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListUnconfirmedTransactionsByAddressR response = api.listUnconfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
-
+                ListUnconfirmedTransactionsByAddressR response = api.listUnconfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
     

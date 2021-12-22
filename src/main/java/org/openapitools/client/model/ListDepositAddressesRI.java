@@ -23,24 +23,47 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ListDepositAddressesRIConfirmedBalance;
+import org.openapitools.client.model.ListDepositAddressesRIFungibleTokens;
+import org.openapitools.client.model.ListDepositAddressesRINonFungibleTokens;
 
 /**
  * ListDepositAddressesRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListDepositAddressesRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private String address;
 
+  public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
+  @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
+  private ListDepositAddressesRIConfirmedBalance confirmedBalance;
+
   public static final String SERIALIZED_NAME_CREATED_TIMESTAMP = "createdTimestamp";
   @SerializedName(SERIALIZED_NAME_CREATED_TIMESTAMP)
   private Integer createdTimestamp;
+
+  public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
+  @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
+  private List<ListDepositAddressesRIFungibleTokens> fungibleTokens = new ArrayList<ListDepositAddressesRIFungibleTokens>();
+
+  public static final String SERIALIZED_NAME_INDEX = "index";
+  @SerializedName(SERIALIZED_NAME_INDEX)
+  private String index;
 
   public static final String SERIALIZED_NAME_LABEL = "label";
   @SerializedName(SERIALIZED_NAME_LABEL)
   private String label;
 
+  public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
+  @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
+  private List<ListDepositAddressesRINonFungibleTokens> nonFungibleTokens = new ArrayList<ListDepositAddressesRINonFungibleTokens>();
+
+  public ListDepositAddressesRI() { 
+  }
 
   public ListDepositAddressesRI address(String address) {
     
@@ -62,6 +85,29 @@ public class ListDepositAddressesRI {
 
   public void setAddress(String address) {
     this.address = address;
+  }
+
+
+  public ListDepositAddressesRI confirmedBalance(ListDepositAddressesRIConfirmedBalance confirmedBalance) {
+    
+    this.confirmedBalance = confirmedBalance;
+    return this;
+  }
+
+   /**
+   * Get confirmedBalance
+   * @return confirmedBalance
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "")
+
+  public ListDepositAddressesRIConfirmedBalance getConfirmedBalance() {
+    return confirmedBalance;
+  }
+
+
+  public void setConfirmedBalance(ListDepositAddressesRIConfirmedBalance confirmedBalance) {
+    this.confirmedBalance = confirmedBalance;
   }
 
 
@@ -88,6 +134,57 @@ public class ListDepositAddressesRI {
   }
 
 
+  public ListDepositAddressesRI fungibleTokens(List<ListDepositAddressesRIFungibleTokens> fungibleTokens) {
+    
+    this.fungibleTokens = fungibleTokens;
+    return this;
+  }
+
+  public ListDepositAddressesRI addFungibleTokensItem(ListDepositAddressesRIFungibleTokens fungibleTokensItem) {
+    this.fungibleTokens.add(fungibleTokensItem);
+    return this;
+  }
+
+   /**
+   * Represents fungible tokens&#39;es detailed information
+   * @return fungibleTokens
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents fungible tokens'es detailed information")
+
+  public List<ListDepositAddressesRIFungibleTokens> getFungibleTokens() {
+    return fungibleTokens;
+  }
+
+
+  public void setFungibleTokens(List<ListDepositAddressesRIFungibleTokens> fungibleTokens) {
+    this.fungibleTokens = fungibleTokens;
+  }
+
+
+  public ListDepositAddressesRI index(String index) {
+    
+    this.index = index;
+    return this;
+  }
+
+   /**
+   * Represents the index of the address in the wallet.
+   * @return index
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1", required = true, value = "Represents the index of the address in the wallet.")
+
+  public String getIndex() {
+    return index;
+  }
+
+
+  public void setIndex(String index) {
+    this.index = index;
+  }
+
+
   public ListDepositAddressesRI label(String label) {
     
     this.label = label;
@@ -111,6 +208,34 @@ public class ListDepositAddressesRI {
   }
 
 
+  public ListDepositAddressesRI nonFungibleTokens(List<ListDepositAddressesRINonFungibleTokens> nonFungibleTokens) {
+    
+    this.nonFungibleTokens = nonFungibleTokens;
+    return this;
+  }
+
+  public ListDepositAddressesRI addNonFungibleTokensItem(ListDepositAddressesRINonFungibleTokens nonFungibleTokensItem) {
+    this.nonFungibleTokens.add(nonFungibleTokensItem);
+    return this;
+  }
+
+   /**
+   * Represents non-fungible tokens&#39;es detailed information.
+   * @return nonFungibleTokens
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents non-fungible tokens'es detailed information.")
+
+  public List<ListDepositAddressesRINonFungibleTokens> getNonFungibleTokens() {
+    return nonFungibleTokens;
+  }
+
+
+  public void setNonFungibleTokens(List<ListDepositAddressesRINonFungibleTokens> nonFungibleTokens) {
+    this.nonFungibleTokens = nonFungibleTokens;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -121,13 +246,17 @@ public class ListDepositAddressesRI {
     }
     ListDepositAddressesRI listDepositAddressesRI = (ListDepositAddressesRI) o;
     return Objects.equals(this.address, listDepositAddressesRI.address) &&
+        Objects.equals(this.confirmedBalance, listDepositAddressesRI.confirmedBalance) &&
         Objects.equals(this.createdTimestamp, listDepositAddressesRI.createdTimestamp) &&
-        Objects.equals(this.label, listDepositAddressesRI.label);
+        Objects.equals(this.fungibleTokens, listDepositAddressesRI.fungibleTokens) &&
+        Objects.equals(this.index, listDepositAddressesRI.index) &&
+        Objects.equals(this.label, listDepositAddressesRI.label) &&
+        Objects.equals(this.nonFungibleTokens, listDepositAddressesRI.nonFungibleTokens);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, createdTimestamp, label);
+    return Objects.hash(address, confirmedBalance, createdTimestamp, fungibleTokens, index, label, nonFungibleTokens);
   }
 
   @Override
@@ -135,8 +264,12 @@ public class ListDepositAddressesRI {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListDepositAddressesRI {\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    confirmedBalance: ").append(toIndentedString(confirmedBalance)).append("\n");
     sb.append("    createdTimestamp: ").append(toIndentedString(createdTimestamp)).append("\n");
+    sb.append("    fungibleTokens: ").append(toIndentedString(fungibleTokens)).append("\n");
+    sb.append("    index: ").append(toIndentedString(index)).append("\n");
     sb.append("    label: ").append(toIndentedString(label)).append("\n");
+    sb.append("    nonFungibleTokens: ").append(toIndentedString(nonFungibleTokens)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHashRIBSDVout;
  * Dogecoin
  */
 @ApiModel(description = "Dogecoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSD {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -54,6 +54,8 @@ public class ListTransactionsByBlockHashRIBSD {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private List<ListTransactionsByBlockHashRIBSDVout> vout = new ArrayList<ListTransactionsByBlockHashRIBSDVout>();
 
+  public ListTransactionsByBlockHashRIBSD() { 
+  }
 
   public ListTransactionsByBlockHashRIBSD locktime(Integer locktime) {
     

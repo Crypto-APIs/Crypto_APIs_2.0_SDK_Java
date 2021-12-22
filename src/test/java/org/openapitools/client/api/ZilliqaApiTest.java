@@ -14,25 +14,46 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.BlockchainDataBlockNotFound;
-import org.openapitools.client.model.BlockchainDataTransactionNotFound;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetLatestMinedZilliqaBlockR;
 import org.openapitools.client.model.GetZilliqaAddressDetailsR;
 import org.openapitools.client.model.GetZilliqaBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetZilliqaBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40014;
+import org.openapitools.client.model.InlineResponse40021;
+import org.openapitools.client.model.InlineResponse40022;
+import org.openapitools.client.model.InlineResponse40029;
+import org.openapitools.client.model.InlineResponse4003;
+import org.openapitools.client.model.InlineResponse40033;
+import org.openapitools.client.model.InlineResponse40040;
+import org.openapitools.client.model.InlineResponse4009;
+import org.openapitools.client.model.InlineResponse40114;
+import org.openapitools.client.model.InlineResponse40121;
+import org.openapitools.client.model.InlineResponse40122;
+import org.openapitools.client.model.InlineResponse40129;
+import org.openapitools.client.model.InlineResponse4013;
+import org.openapitools.client.model.InlineResponse40133;
+import org.openapitools.client.model.InlineResponse40140;
+import org.openapitools.client.model.InlineResponse4019;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40314;
+import org.openapitools.client.model.InlineResponse40321;
+import org.openapitools.client.model.InlineResponse40322;
+import org.openapitools.client.model.InlineResponse40329;
+import org.openapitools.client.model.InlineResponse4033;
+import org.openapitools.client.model.InlineResponse40333;
+import org.openapitools.client.model.InlineResponse40340;
+import org.openapitools.client.model.InlineResponse4039;
+import org.openapitools.client.model.InlineResponse404;
+import org.openapitools.client.model.InlineResponse4042;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListZilliqaTransactionsByAddressR;
 import org.openapitools.client.model.ListZilliqaTransactionsByBlockHashR;
 import org.openapitools.client.model.ListZilliqaTransactionsByBlockHeightR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -62,8 +83,7 @@ public class ZilliqaApiTest {
     public void getLatestMinedZilliqaBlockTest() throws ApiException {
         String network = null;
         String context = null;
-        GetLatestMinedZilliqaBlockR response = api.getLatestMinedZilliqaBlock(network, context);
-
+                GetLatestMinedZilliqaBlockR response = api.getLatestMinedZilliqaBlock(network, context);
         // TODO: test validations
     }
     
@@ -80,8 +100,7 @@ public class ZilliqaApiTest {
         String network = null;
         String address = null;
         String context = null;
-        GetZilliqaAddressDetailsR response = api.getZilliqaAddressDetails(network, address, context);
-
+                GetZilliqaAddressDetailsR response = api.getZilliqaAddressDetails(network, address, context);
         // TODO: test validations
     }
     
@@ -98,8 +117,7 @@ public class ZilliqaApiTest {
         String network = null;
         String blockHash = null;
         String context = null;
-        GetZilliqaBlockDetailsByBlockHashR response = api.getZilliqaBlockDetailsByBlockHash(network, blockHash, context);
-
+                GetZilliqaBlockDetailsByBlockHashR response = api.getZilliqaBlockDetailsByBlockHash(network, blockHash, context);
         // TODO: test validations
     }
     
@@ -116,8 +134,7 @@ public class ZilliqaApiTest {
         String network = null;
         Integer blockHeight = null;
         String context = null;
-        GetZilliqaBlockDetailsByBlockHeightR response = api.getZilliqaBlockDetailsByBlockHeight(network, blockHeight, context);
-
+                GetZilliqaBlockDetailsByBlockHeightR response = api.getZilliqaBlockDetailsByBlockHeight(network, blockHeight, context);
         // TODO: test validations
     }
     
@@ -134,8 +151,7 @@ public class ZilliqaApiTest {
         String network = null;
         String transactionHash = null;
         String context = null;
-        GetZilliqaTransactionDetailsByTransactionIDR response = api.getZilliqaTransactionDetailsByTransactionID(network, transactionHash, context);
-
+                GetZilliqaTransactionDetailsByTransactionIDR response = api.getZilliqaTransactionDetailsByTransactionID(network, transactionHash, context);
         // TODO: test validations
     }
     
@@ -154,8 +170,7 @@ public class ZilliqaApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListZilliqaTransactionsByAddressR response = api.listZilliqaTransactionsByAddress(network, address, context, limit, offset);
-
+                ListZilliqaTransactionsByAddressR response = api.listZilliqaTransactionsByAddress(network, address, context, limit, offset);
         // TODO: test validations
     }
     
@@ -174,8 +189,7 @@ public class ZilliqaApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListZilliqaTransactionsByBlockHashR response = api.listZilliqaTransactionsByBlockHash(network, blockHash, context, limit, offset);
-
+                ListZilliqaTransactionsByBlockHashR response = api.listZilliqaTransactionsByBlockHash(network, blockHash, context, limit, offset);
         // TODO: test validations
     }
     
@@ -194,8 +208,7 @@ public class ZilliqaApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListZilliqaTransactionsByBlockHeightR response = api.listZilliqaTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
-
+                ListZilliqaTransactionsByBlockHeightR response = api.listZilliqaTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
         // TODO: test validations
     }
     

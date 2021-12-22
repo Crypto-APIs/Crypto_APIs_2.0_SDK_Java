@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetFeeRecommendationsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetFeeRecommendationsRI {
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
@@ -45,6 +45,8 @@ public class GetFeeRecommendationsRI {
   @SerializedName(SERIALIZED_NAME_STANDARD)
   private String standard;
 
+  public GetFeeRecommendationsRI() { 
+  }
 
   public GetFeeRecommendationsRI unit(String unit) {
     

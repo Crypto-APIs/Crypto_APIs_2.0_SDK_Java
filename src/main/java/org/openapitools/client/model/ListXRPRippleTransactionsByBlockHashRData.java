@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRI;
 /**
  * ListXRPRippleTransactionsByBlockHashRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByBlockHashRData {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
@@ -48,6 +48,8 @@ public class ListXRPRippleTransactionsByBlockHashRData {
   @SerializedName(SERIALIZED_NAME_ITEMS)
   private List<ListXRPRippleTransactionsByBlockHashRI> items = new ArrayList<ListXRPRippleTransactionsByBlockHashRI>();
 
+  public ListXRPRippleTransactionsByBlockHashRData() { 
+  }
 
   public ListXRPRippleTransactionsByBlockHashRData offset(Integer offset) {
     

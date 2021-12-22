@@ -29,7 +29,7 @@ import java.util.List;
 /**
  * GetZilliqaBlockDetailsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetZilliqaBlockDetailsByBlockHashRI {
   public static final String SERIALIZED_NAME_BLOCK_HEIGHT = "blockHeight";
   @SerializedName(SERIALIZED_NAME_BLOCK_HEIGHT)
@@ -79,6 +79,8 @@ public class GetZilliqaBlockDetailsByBlockHashRI {
   @SerializedName(SERIALIZED_NAME_TRANSACTIONS_COUNT)
   private Integer transactionsCount;
 
+  public GetZilliqaBlockDetailsByBlockHashRI() { 
+  }
 
   public GetZilliqaBlockDetailsByBlockHashRI blockHeight(Integer blockHeight) {
     

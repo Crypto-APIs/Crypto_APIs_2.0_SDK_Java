@@ -43,6 +43,14 @@ public class ListLatestMinedBlocksRIBSZTest {
     }
 
     /**
+     * Test the property 'difficulty'
+     */
+    @Test
+    public void difficultyTest() {
+        // TODO: test difficulty
+    }
+
+    /**
      * Test the property 'dsBlock'
      */
     @Test

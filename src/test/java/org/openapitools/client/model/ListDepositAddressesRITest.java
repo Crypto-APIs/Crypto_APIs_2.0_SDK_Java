@@ -21,6 +21,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ListDepositAddressesRIConfirmedBalance;
+import org.openapitools.client.model.ListDepositAddressesRIFungibleTokens;
+import org.openapitools.client.model.ListDepositAddressesRINonFungibleTokens;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -49,6 +54,14 @@ public class ListDepositAddressesRITest {
     }
 
     /**
+     * Test the property 'confirmedBalance'
+     */
+    @Test
+    public void confirmedBalanceTest() {
+        // TODO: test confirmedBalance
+    }
+
+    /**
      * Test the property 'createdTimestamp'
      */
     @Test
@@ -57,11 +70,35 @@ public class ListDepositAddressesRITest {
     }
 
     /**
+     * Test the property 'fungibleTokens'
+     */
+    @Test
+    public void fungibleTokensTest() {
+        // TODO: test fungibleTokens
+    }
+
+    /**
+     * Test the property 'index'
+     */
+    @Test
+    public void indexTest() {
+        // TODO: test index
+    }
+
+    /**
      * Test the property 'label'
      */
     @Test
     public void labelTest() {
         // TODO: test label
+    }
+
+    /**
+     * Test the property 'nonFungibleTokens'
+     */
+    @Test
+    public void nonFungibleTokensTest() {
+        // TODO: test nonFungibleTokens
     }
 
 }

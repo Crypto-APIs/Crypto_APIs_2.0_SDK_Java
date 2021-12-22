@@ -14,19 +14,28 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetTokenDetailsByContractAddressR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40054;
+import org.openapitools.client.model.InlineResponse40055;
+import org.openapitools.client.model.InlineResponse40056;
+import org.openapitools.client.model.InlineResponse40057;
+import org.openapitools.client.model.InlineResponse40154;
+import org.openapitools.client.model.InlineResponse40155;
+import org.openapitools.client.model.InlineResponse40156;
+import org.openapitools.client.model.InlineResponse40157;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40354;
+import org.openapitools.client.model.InlineResponse40355;
+import org.openapitools.client.model.InlineResponse40356;
+import org.openapitools.client.model.InlineResponse40357;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressR;
 import org.openapitools.client.model.ListTokensByAddressR;
 import org.openapitools.client.model.ListTokensTransfersByTransactionHashR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -58,8 +67,7 @@ public class TokensApiTest {
         String network = null;
         String contractAddress = null;
         String context = null;
-        GetTokenDetailsByContractAddressR response = api.getTokenDetailsByContractAddress(blockchain, network, contractAddress, context);
-
+                GetTokenDetailsByContractAddressR response = api.getTokenDetailsByContractAddress(blockchain, network, contractAddress, context);
         // TODO: test validations
     }
     
@@ -79,8 +87,7 @@ public class TokensApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListConfirmedTokensTransfersByAddressR response = api.listConfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
-
+                ListConfirmedTokensTransfersByAddressR response = api.listConfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
     
@@ -100,8 +107,7 @@ public class TokensApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListTokensByAddressR response = api.listTokensByAddress(blockchain, network, address, context, limit, offset);
-
+                ListTokensByAddressR response = api.listTokensByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
     
@@ -121,8 +127,7 @@ public class TokensApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListTokensTransfersByTransactionHashR response = api.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
-
+                ListTokensTransfersByTransactionHashR response = api.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
         // TODO: test validations
     }
     

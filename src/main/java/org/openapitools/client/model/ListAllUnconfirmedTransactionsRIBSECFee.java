@@ -28,12 +28,18 @@ import java.io.IOException;
  * Object representation of the transaction fee
  */
 @ApiModel(description = "Object representation of the transaction fee")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRIBSECFee {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
 
+  public static final String SERIALIZED_NAME_UNIT = "unit";
+  @SerializedName(SERIALIZED_NAME_UNIT)
+  private String unit;
+
+  public ListAllUnconfirmedTransactionsRIBSECFee() { 
+  }
 
   public ListAllUnconfirmedTransactionsRIBSECFee amount(String amount) {
     
@@ -58,6 +64,29 @@ public class ListAllUnconfirmedTransactionsRIBSECFee {
   }
 
 
+  public ListAllUnconfirmedTransactionsRIBSECFee unit(String unit) {
+    
+    this.unit = unit;
+    return this;
+  }
+
+   /**
+   * Represents the fee unit.
+   * @return unit
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "BTC", required = true, value = "Represents the fee unit.")
+
+  public String getUnit() {
+    return unit;
+  }
+
+
+  public void setUnit(String unit) {
+    this.unit = unit;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -67,12 +96,13 @@ public class ListAllUnconfirmedTransactionsRIBSECFee {
       return false;
     }
     ListAllUnconfirmedTransactionsRIBSECFee listAllUnconfirmedTransactionsRIBSECFee = (ListAllUnconfirmedTransactionsRIBSECFee) o;
-    return Objects.equals(this.amount, listAllUnconfirmedTransactionsRIBSECFee.amount);
+    return Objects.equals(this.amount, listAllUnconfirmedTransactionsRIBSECFee.amount) &&
+        Objects.equals(this.unit, listAllUnconfirmedTransactionsRIBSECFee.unit);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount);
+    return Objects.hash(amount, unit);
   }
 
   @Override
@@ -80,6 +110,7 @@ public class ListAllUnconfirmedTransactionsRIBSECFee {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListAllUnconfirmedTransactionsRIBSECFee {\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
     sb.append("}");
     return sb.toString();
   }

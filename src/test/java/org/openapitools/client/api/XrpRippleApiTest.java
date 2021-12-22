@@ -14,24 +14,45 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetLatestMinedXRPRippleBlockR;
 import org.openapitools.client.model.GetXRPRippleAddressDetailsR;
 import org.openapitools.client.model.GetXRPRippleBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetXRPRippleBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40011;
+import org.openapitools.client.model.InlineResponse40018;
+import org.openapitools.client.model.InlineResponse4002;
+import org.openapitools.client.model.InlineResponse40023;
+import org.openapitools.client.model.InlineResponse40027;
+import org.openapitools.client.model.InlineResponse40031;
+import org.openapitools.client.model.InlineResponse40039;
+import org.openapitools.client.model.InlineResponse4006;
+import org.openapitools.client.model.InlineResponse40111;
+import org.openapitools.client.model.InlineResponse40118;
+import org.openapitools.client.model.InlineResponse4012;
+import org.openapitools.client.model.InlineResponse40123;
+import org.openapitools.client.model.InlineResponse40127;
+import org.openapitools.client.model.InlineResponse40131;
+import org.openapitools.client.model.InlineResponse40139;
+import org.openapitools.client.model.InlineResponse4016;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40311;
+import org.openapitools.client.model.InlineResponse40318;
+import org.openapitools.client.model.InlineResponse4032;
+import org.openapitools.client.model.InlineResponse40323;
+import org.openapitools.client.model.InlineResponse40327;
+import org.openapitools.client.model.InlineResponse40331;
+import org.openapitools.client.model.InlineResponse40339;
+import org.openapitools.client.model.InlineResponse4036;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -61,8 +82,7 @@ public class XrpRippleApiTest {
     public void getLatestMinedXRPRippleBlockTest() throws ApiException {
         String network = null;
         String context = null;
-        GetLatestMinedXRPRippleBlockR response = api.getLatestMinedXRPRippleBlock(network, context);
-
+                GetLatestMinedXRPRippleBlockR response = api.getLatestMinedXRPRippleBlock(network, context);
         // TODO: test validations
     }
     
@@ -79,8 +99,7 @@ public class XrpRippleApiTest {
         String network = null;
         String address = null;
         String context = null;
-        GetXRPRippleAddressDetailsR response = api.getXRPRippleAddressDetails(network, address, context);
-
+                GetXRPRippleAddressDetailsR response = api.getXRPRippleAddressDetails(network, address, context);
         // TODO: test validations
     }
     
@@ -97,8 +116,7 @@ public class XrpRippleApiTest {
         String network = null;
         String blockHash = null;
         String context = null;
-        GetXRPRippleBlockDetailsByBlockHashR response = api.getXRPRippleBlockDetailsByBlockHash(network, blockHash, context);
-
+                GetXRPRippleBlockDetailsByBlockHashR response = api.getXRPRippleBlockDetailsByBlockHash(network, blockHash, context);
         // TODO: test validations
     }
     
@@ -115,8 +133,7 @@ public class XrpRippleApiTest {
         String network = null;
         String blockHeight = null;
         String context = null;
-        GetXRPRippleBlockDetailsByBlockHeightR response = api.getXRPRippleBlockDetailsByBlockHeight(network, blockHeight, context);
-
+                GetXRPRippleBlockDetailsByBlockHeightR response = api.getXRPRippleBlockDetailsByBlockHeight(network, blockHeight, context);
         // TODO: test validations
     }
     
@@ -133,8 +150,7 @@ public class XrpRippleApiTest {
         String network = null;
         String transactionHash = null;
         String context = null;
-        GetXRPRippleTransactionDetailsByTransactionIDR response = api.getXRPRippleTransactionDetailsByTransactionID(network, transactionHash, context);
-
+                GetXRPRippleTransactionDetailsByTransactionIDR response = api.getXRPRippleTransactionDetailsByTransactionID(network, transactionHash, context);
         // TODO: test validations
     }
     
@@ -154,8 +170,7 @@ public class XrpRippleApiTest {
         Integer limit = null;
         Integer offset = null;
         String transactionType = null;
-        ListXRPRippleTransactionsByAddressR response = api.listXRPRippleTransactionsByAddress(network, address, context, limit, offset, transactionType);
-
+                ListXRPRippleTransactionsByAddressR response = api.listXRPRippleTransactionsByAddress(network, address, context, limit, offset, transactionType);
         // TODO: test validations
     }
     
@@ -174,8 +189,7 @@ public class XrpRippleApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListXRPRippleTransactionsByBlockHashR response = api.listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset);
-
+                ListXRPRippleTransactionsByBlockHashR response = api.listXRPRippleTransactionsByBlockHash(network, blockHash, context, limit, offset);
         // TODO: test validations
     }
     
@@ -194,8 +208,7 @@ public class XrpRippleApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListXRPRippleTransactionsByBlockHeightR response = api.listXRPRippleTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
-
+                ListXRPRippleTransactionsByBlockHeightR response = api.listXRPRippleTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
         // TODO: test validations
     }
     

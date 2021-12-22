@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListHDWalletXPubYPubZPubTransactionsRISenders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListHDWalletXPubYPubZPubTransactionsRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -41,6 +41,8 @@ public class ListHDWalletXPubYPubZPubTransactionsRISenders {
   @SerializedName(SERIALIZED_NAME_IS_MEMBER)
   private Boolean isMember;
 
+  public ListHDWalletXPubYPubZPubTransactionsRISenders() { 
+  }
 
   public ListHDWalletXPubYPubZPubTransactionsRISenders address(String address) {
     

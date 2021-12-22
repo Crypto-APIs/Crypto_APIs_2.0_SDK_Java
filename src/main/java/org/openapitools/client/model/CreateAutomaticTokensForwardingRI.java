@@ -28,7 +28,7 @@ import org.openapitools.client.model.CreateAutomaticTokensForwardingRITS;
 /**
  * CreateAutomaticTokensForwardingRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class CreateAutomaticTokensForwardingRI {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
@@ -119,6 +119,8 @@ public class CreateAutomaticTokensForwardingRI {
   @SerializedName(SERIALIZED_NAME_TOKEN_DATA)
   private CreateAutomaticTokensForwardingRITS tokenData;
 
+  public CreateAutomaticTokensForwardingRI() { 
+  }
 
   public CreateAutomaticTokensForwardingRI callbackUrl(String callbackUrl) {
     

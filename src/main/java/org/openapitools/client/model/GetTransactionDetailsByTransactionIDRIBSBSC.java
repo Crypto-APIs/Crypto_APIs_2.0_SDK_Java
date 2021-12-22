@@ -29,7 +29,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSC
  * Binance Smart Chain
  */
 @ApiModel(description = "Binance Smart Chain")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSBSC {
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -55,6 +55,8 @@ public class GetTransactionDetailsByTransactionIDRIBSBSC {
   @SerializedName(SERIALIZED_NAME_NONCE)
   private Integer nonce;
 
+  public GetTransactionDetailsByTransactionIDRIBSBSC() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSBSC contract(String contract) {
     
@@ -66,8 +68,8 @@ public class GetTransactionDetailsByTransactionIDRIBSBSC {
    * Represents the specific transaction contract
    * @return contract
   **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Represents the specific transaction contract")
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x0000000000000000000000000000000000001000", required = true, value = "Represents the specific transaction contract")
 
   public String getContract() {
     return contract;

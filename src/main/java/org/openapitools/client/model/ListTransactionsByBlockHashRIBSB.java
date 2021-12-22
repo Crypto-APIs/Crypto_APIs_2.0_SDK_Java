@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBVout;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBVin;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBVout;
 
 /**
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSB {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -56,8 +56,10 @@ public class ListTransactionsByBlockHashRIBSB {
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSBVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSBVout>();
+  private List<ListTransactionsByBlockHashRIBSBVout> vout = new ArrayList<ListTransactionsByBlockHashRIBSBVout>();
 
+  public ListTransactionsByBlockHashRIBSB() { 
+  }
 
   public ListTransactionsByBlockHashRIBSB locktime(Integer locktime) {
     
@@ -179,13 +181,13 @@ public class ListTransactionsByBlockHashRIBSB {
   }
 
 
-  public ListTransactionsByBlockHashRIBSB vout(List<GetTransactionDetailsByTransactionIDRIBSBVout> vout) {
+  public ListTransactionsByBlockHashRIBSB vout(List<ListTransactionsByBlockHashRIBSBVout> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListTransactionsByBlockHashRIBSB addVoutItem(GetTransactionDetailsByTransactionIDRIBSBVout voutItem) {
+  public ListTransactionsByBlockHashRIBSB addVoutItem(ListTransactionsByBlockHashRIBSBVout voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -197,12 +199,12 @@ public class ListTransactionsByBlockHashRIBSB {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSBVout> getVout() {
+  public List<ListTransactionsByBlockHashRIBSBVout> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSBVout> vout) {
+  public void setVout(List<ListTransactionsByBlockHashRIBSBVout> vout) {
     this.vout = vout;
   }
 

@@ -27,18 +27,26 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.ActivateBlockchainEventSubscriptionR;
+import org.openapitools.client.model.ActivateBlockchainEventSubscriptionRB;
 import org.openapitools.client.model.DeleteBlockchainEventSubscriptionR;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40066;
+import org.openapitools.client.model.InlineResponse40067;
+import org.openapitools.client.model.InlineResponse40068;
+import org.openapitools.client.model.InlineResponse40166;
+import org.openapitools.client.model.InlineResponse40167;
+import org.openapitools.client.model.InlineResponse40168;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40366;
+import org.openapitools.client.model.InlineResponse40367;
+import org.openapitools.client.model.InlineResponse40368;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListBlockchainEventsSubscriptionsR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -48,6 +56,8 @@ import java.util.Map;
 
 public class ManageSubscriptionsApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public ManageSubscriptionsApi() {
         this(Configuration.getDefaultApiClient());
@@ -65,6 +75,202 @@ public class ManageSubscriptionsApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
+    /**
+     * Build call for activateBlockchainEventSubscription
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param activateBlockchainEventSubscriptionRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call activateBlockchainEventSubscriptionCall(String referenceId, String context, ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = activateBlockchainEventSubscriptionRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-events/subscriptions/{referenceId}/activate"
+            .replaceAll("\\{" + "referenceId" + "\\}", localVarApiClient.escapeString(referenceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call activateBlockchainEventSubscriptionValidateBeforeCall(String referenceId, String context, ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'referenceId' is set
+        if (referenceId == null) {
+            throw new ApiException("Missing the required parameter 'referenceId' when calling activateBlockchainEventSubscription(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = activateBlockchainEventSubscriptionCall(referenceId, context, activateBlockchainEventSubscriptionRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Activate Blockchain Event Subscription
+     * Through this endpoint customers can reactivate an event subscription (callback) which has been deactivated by the system. Deactivations could happen due to various reasons, most often \&quot;maximum retry attempts reached\&quot;.
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param activateBlockchainEventSubscriptionRB  (optional)
+     * @return ActivateBlockchainEventSubscriptionR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ActivateBlockchainEventSubscriptionR activateBlockchainEventSubscription(String referenceId, String context, ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB) throws ApiException {
+        ApiResponse<ActivateBlockchainEventSubscriptionR> localVarResp = activateBlockchainEventSubscriptionWithHttpInfo(referenceId, context, activateBlockchainEventSubscriptionRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Activate Blockchain Event Subscription
+     * Through this endpoint customers can reactivate an event subscription (callback) which has been deactivated by the system. Deactivations could happen due to various reasons, most often \&quot;maximum retry attempts reached\&quot;.
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param activateBlockchainEventSubscriptionRB  (optional)
+     * @return ApiResponse&lt;ActivateBlockchainEventSubscriptionR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ActivateBlockchainEventSubscriptionR> activateBlockchainEventSubscriptionWithHttpInfo(String referenceId, String context, ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB) throws ApiException {
+        okhttp3.Call localVarCall = activateBlockchainEventSubscriptionValidateBeforeCall(referenceId, context, activateBlockchainEventSubscriptionRB, null);
+        Type localVarReturnType = new TypeToken<ActivateBlockchainEventSubscriptionR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Activate Blockchain Event Subscription (asynchronously)
+     * Through this endpoint customers can reactivate an event subscription (callback) which has been deactivated by the system. Deactivations could happen due to various reasons, most often \&quot;maximum retry attempts reached\&quot;.
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param activateBlockchainEventSubscriptionRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call activateBlockchainEventSubscriptionAsync(String referenceId, String context, ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB, final ApiCallback<ActivateBlockchainEventSubscriptionR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = activateBlockchainEventSubscriptionValidateBeforeCall(referenceId, context, activateBlockchainEventSubscriptionRB, _callback);
+        Type localVarReturnType = new TypeToken<ActivateBlockchainEventSubscriptionR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
     /**
      * Build call for deleteBlockchainEventSubscription
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
@@ -78,10 +284,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -91,6 +297,20 @@ public class ManageSubscriptionsApi {
      </table>
      */
     public okhttp3.Call deleteBlockchainEventSubscriptionCall(String blockchain, String network, String referenceId, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -121,10 +341,12 @@ public class ManageSubscriptionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -164,10 +386,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -194,10 +416,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -226,10 +448,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -259,10 +481,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -271,6 +493,20 @@ public class ManageSubscriptionsApi {
      </table>
      */
     public okhttp3.Call listBlockchainEventsSubscriptionsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -308,10 +544,12 @@ public class ManageSubscriptionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -347,10 +585,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -377,10 +615,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -409,10 +647,10 @@ public class ManageSubscriptionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>

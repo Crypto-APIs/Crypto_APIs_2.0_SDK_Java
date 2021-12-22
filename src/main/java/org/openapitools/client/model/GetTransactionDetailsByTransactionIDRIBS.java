@@ -31,16 +31,20 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSC
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vin;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vout;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSE;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSEC;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSL;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZ;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplit;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVin;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
 
 /**
  * GetTransactionDetailsByTransactionIDRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -60,11 +64,11 @@ public class GetTransactionDetailsByTransactionIDRIBS {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetTransactionDetailsByTransactionIDRIBSD2Vin> vin = new ArrayList<GetTransactionDetailsByTransactionIDRIBSD2Vin>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVin>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSD2Vout>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVout>();
 
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -94,6 +98,48 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
   private String transactionStatus;
 
+  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
+  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
+  private String bindingSig;
+
+  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
+  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
+  private Integer expiryHeight;
+
+  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
+  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
+  private String joinSplitPubKey;
+
+  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
+  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
+  private String joinSplitSig;
+
+  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
+  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
+  private Boolean overwintered;
+
+  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
+  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
+  private List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit>();
+
+  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
+  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
+
+  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
+  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
+
+  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
+  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
+  private String valueBalance;
+
+  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
+  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
+  private String versionGroupId;
+
+  public GetTransactionDetailsByTransactionIDRIBS() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBS locktime(Integer locktime) {
     
@@ -102,11 +148,11 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
    /**
-   * Represents the time at which a particular transaction can be added to the blockchain.
+   * Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.
    * @return locktime
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
+  @ApiModelProperty(example = "1781965", required = true, value = "Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.")
 
   public Integer getLocktime() {
     return locktime;
@@ -129,7 +175,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * @return size
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "125", required = true, value = "Represents the total size of this transaction.")
+  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
 
   public Integer getSize() {
     return size;
@@ -171,11 +217,11 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
    /**
-   * Represents transaction version number.
+   * Defines the version of the transaction.
    * @return version
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Represents transaction version number.")
+  @ApiModelProperty(example = "1", required = true, value = "Defines the version of the transaction.")
 
   public Integer getVersion() {
     return version;
@@ -187,58 +233,58 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBS vin(List<GetTransactionDetailsByTransactionIDRIBSD2Vin> vin) {
+  public GetTransactionDetailsByTransactionIDRIBS vin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public GetTransactionDetailsByTransactionIDRIBS addVinItem(GetTransactionDetailsByTransactionIDRIBSD2Vin vinItem) {
+  public GetTransactionDetailsByTransactionIDRIBS addVinItem(GetTransactionDetailsByTransactionIDRIBSZVin vinItem) {
     this.vin.add(vinItem);
     return this;
   }
 
    /**
-   * Represents the transaction inputs.
+   * Object Array representation of transaction inputs
    * @return vin
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSD2Vin> getVin() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVin> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<GetTransactionDetailsByTransactionIDRIBSD2Vin> vin) {
+  public void setVin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
     this.vin = vin;
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBS vout(List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout) {
+  public GetTransactionDetailsByTransactionIDRIBS vout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public GetTransactionDetailsByTransactionIDRIBS addVoutItem(GetTransactionDetailsByTransactionIDRIBSD2Vout voutItem) {
+  public GetTransactionDetailsByTransactionIDRIBS addVoutItem(GetTransactionDetailsByTransactionIDRIBSZVout voutItem) {
     this.vout.add(voutItem);
     return this;
   }
 
    /**
-   * Represents the transaction outputs.
+   * Object Array representation of transaction outputs
    * @return vout
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSD2Vout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVout> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
     this.vout = vout;
   }
 
@@ -254,7 +300,7 @@ public class GetTransactionDetailsByTransactionIDRIBS {
    * @return contract
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the specific transaction contract")
+  @ApiModelProperty(example = "0x0000000000000000000000000000000000001000", required = true, value = "Represents the specific transaction contract")
 
   public String getContract() {
     return contract;
@@ -404,6 +450,251 @@ public class GetTransactionDetailsByTransactionIDRIBS {
   }
 
 
+  public GetTransactionDetailsByTransactionIDRIBS bindingSig(String bindingSig) {
+    
+    this.bindingSig = bindingSig;
+    return this;
+  }
+
+   /**
+   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
+   * @return bindingSig
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
+
+  public String getBindingSig() {
+    return bindingSig;
+  }
+
+
+  public void setBindingSig(String bindingSig) {
+    this.bindingSig = bindingSig;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS expiryHeight(Integer expiryHeight) {
+    
+    this.expiryHeight = expiryHeight;
+    return this;
+  }
+
+   /**
+   * Represents a block height after which the transaction will expire.
+   * @return expiryHeight
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
+
+  public Integer getExpiryHeight() {
+    return expiryHeight;
+  }
+
+
+  public void setExpiryHeight(Integer expiryHeight) {
+    this.expiryHeight = expiryHeight;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS joinSplitPubKey(String joinSplitPubKey) {
+    
+    this.joinSplitPubKey = joinSplitPubKey;
+    return this;
+  }
+
+   /**
+   * Represents an encoding of a JoinSplitSig public validating key.
+   * @return joinSplitPubKey
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
+
+  public String getJoinSplitPubKey() {
+    return joinSplitPubKey;
+  }
+
+
+  public void setJoinSplitPubKey(String joinSplitPubKey) {
+    this.joinSplitPubKey = joinSplitPubKey;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS joinSplitSig(String joinSplitSig) {
+    
+    this.joinSplitSig = joinSplitSig;
+    return this;
+  }
+
+   /**
+   * Is used to sign transactions that contain at least one JoinSplit description.
+   * @return joinSplitSig
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
+
+  public String getJoinSplitSig() {
+    return joinSplitSig;
+  }
+
+
+  public void setJoinSplitSig(String joinSplitSig) {
+    this.joinSplitSig = joinSplitSig;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS overwintered(Boolean overwintered) {
+    
+    this.overwintered = overwintered;
+    return this;
+  }
+
+   /**
+   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
+   * @return overwintered
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
+
+  public Boolean getOverwintered() {
+    return overwintered;
+  }
+
+
+  public void setOverwintered(Boolean overwintered) {
+    this.overwintered = overwintered;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS vJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
+    
+    this.vJoinSplit = vJoinSplit;
+    return this;
+  }
+
+  public GetTransactionDetailsByTransactionIDRIBS addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplit vJoinSplitItem) {
+    this.vJoinSplit.add(vJoinSplitItem);
+    return this;
+  }
+
+   /**
+   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
+   * @return vJoinSplit
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
+
+  public List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> getvJoinSplit() {
+    return vJoinSplit;
+  }
+
+
+  public void setvJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
+    this.vJoinSplit = vJoinSplit;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
+    
+    this.vShieldedOutput = vShieldedOutput;
+    return this;
+  }
+
+  public GetTransactionDetailsByTransactionIDRIBS addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
+    this.vShieldedOutput.add(vShieldedOutputItem);
+    return this;
+  }
+
+   /**
+   * Object Array representation of transaction output descriptions
+   * @return vShieldedOutput
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
+
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
+    return vShieldedOutput;
+  }
+
+
+  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
+    this.vShieldedOutput = vShieldedOutput;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
+    
+    this.vShieldedSpend = vShieldedSpend;
+    return this;
+  }
+
+  public GetTransactionDetailsByTransactionIDRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
+    this.vShieldedSpend.add(vShieldedSpendItem);
+    return this;
+  }
+
+   /**
+   * Object Array representation of transaction spend descriptions
+   * @return vShieldedSpend
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
+
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
+    return vShieldedSpend;
+  }
+
+
+  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
+    this.vShieldedSpend = vShieldedSpend;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS valueBalance(String valueBalance) {
+    
+    this.valueBalance = valueBalance;
+    return this;
+  }
+
+   /**
+   * String representation of the transaction value balance
+   * @return valueBalance
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0", required = true, value = "String representation of the transaction value balance")
+
+  public String getValueBalance() {
+    return valueBalance;
+  }
+
+
+  public void setValueBalance(String valueBalance) {
+    this.valueBalance = valueBalance;
+  }
+
+
+  public GetTransactionDetailsByTransactionIDRIBS versionGroupId(String versionGroupId) {
+    
+    this.versionGroupId = versionGroupId;
+    return this;
+  }
+
+   /**
+   * Represents the transaction version group ID.
+   * @return versionGroupId
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID.")
+
+  public String getVersionGroupId() {
+    return versionGroupId;
+  }
+
+
+  public void setVersionGroupId(String versionGroupId) {
+    this.versionGroupId = versionGroupId;
+  }
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -425,12 +716,22 @@ public class GetTransactionDetailsByTransactionIDRIBS {
         Objects.equals(this.gasUsed, getTransactionDetailsByTransactionIDRIBS.gasUsed) &&
         Objects.equals(this.inputData, getTransactionDetailsByTransactionIDRIBS.inputData) &&
         Objects.equals(this.nonce, getTransactionDetailsByTransactionIDRIBS.nonce) &&
-        Objects.equals(this.transactionStatus, getTransactionDetailsByTransactionIDRIBS.transactionStatus);
+        Objects.equals(this.transactionStatus, getTransactionDetailsByTransactionIDRIBS.transactionStatus) &&
+        Objects.equals(this.bindingSig, getTransactionDetailsByTransactionIDRIBS.bindingSig) &&
+        Objects.equals(this.expiryHeight, getTransactionDetailsByTransactionIDRIBS.expiryHeight) &&
+        Objects.equals(this.joinSplitPubKey, getTransactionDetailsByTransactionIDRIBS.joinSplitPubKey) &&
+        Objects.equals(this.joinSplitSig, getTransactionDetailsByTransactionIDRIBS.joinSplitSig) &&
+        Objects.equals(this.overwintered, getTransactionDetailsByTransactionIDRIBS.overwintered) &&
+        Objects.equals(this.vJoinSplit, getTransactionDetailsByTransactionIDRIBS.vJoinSplit) &&
+        Objects.equals(this.vShieldedOutput, getTransactionDetailsByTransactionIDRIBS.vShieldedOutput) &&
+        Objects.equals(this.vShieldedSpend, getTransactionDetailsByTransactionIDRIBS.vShieldedSpend) &&
+        Objects.equals(this.valueBalance, getTransactionDetailsByTransactionIDRIBS.valueBalance) &&
+        Objects.equals(this.versionGroupId, getTransactionDetailsByTransactionIDRIBS.versionGroupId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus);
+    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId);
   }
 
   @Override
@@ -450,6 +751,16 @@ public class GetTransactionDetailsByTransactionIDRIBS {
     sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
     sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
     sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
+    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
+    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
+    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
+    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
+    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
+    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
+    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
+    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
+    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
+    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

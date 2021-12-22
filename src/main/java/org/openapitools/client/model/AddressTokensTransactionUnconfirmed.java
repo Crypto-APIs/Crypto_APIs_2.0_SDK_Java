@@ -28,7 +28,7 @@ import org.openapitools.client.model.AddressTokensTransactionUnconfirmedData;
 /**
  * AddressTokensTransactionUnconfirmed
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class AddressTokensTransactionUnconfirmed {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
@@ -46,6 +46,8 @@ public class AddressTokensTransactionUnconfirmed {
   @SerializedName(SERIALIZED_NAME_DATA)
   private AddressTokensTransactionUnconfirmedData data;
 
+  public AddressTokensTransactionUnconfirmed() { 
+  }
 
   public AddressTokensTransactionUnconfirmed apiVersion(String apiVersion) {
     

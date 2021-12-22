@@ -48,4 +48,12 @@ public class ListAllUnconfirmedTransactionsRIBSECFeeTest {
         // TODO: test amount
     }
 
+    /**
+     * Test the property 'unit'
+     */
+    @Test
+    public void unitTest() {
+        // TODO: test unit
+    }
+
 }

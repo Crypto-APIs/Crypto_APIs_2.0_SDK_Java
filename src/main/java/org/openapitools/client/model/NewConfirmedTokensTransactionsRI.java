@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedTokensTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewConfirmedTokensTransactionsRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -40,10 +40,6 @@ public class NewConfirmedTokensTransactionsRI {
   public static final String SERIALIZED_NAME_CALLBACK_URL = "callbackUrl";
   @SerializedName(SERIALIZED_NAME_CALLBACK_URL)
   private String callbackUrl;
-
-  public static final String SERIALIZED_NAME_CONFIRMATIONS_COUNT = "confirmationsCount";
-  @SerializedName(SERIALIZED_NAME_CONFIRMATIONS_COUNT)
-  private String confirmationsCount;
 
   public static final String SERIALIZED_NAME_CREATED_TIMESTAMP = "createdTimestamp";
   @SerializedName(SERIALIZED_NAME_CREATED_TIMESTAMP)
@@ -61,10 +57,8 @@ public class NewConfirmedTokensTransactionsRI {
   @SerializedName(SERIALIZED_NAME_REFERENCE_ID)
   private String referenceId;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
-  private String transactionId;
-
+  public NewConfirmedTokensTransactionsRI() { 
+  }
 
   public NewConfirmedTokensTransactionsRI address(String address) {
     
@@ -132,29 +126,6 @@ public class NewConfirmedTokensTransactionsRI {
 
   public void setCallbackUrl(String callbackUrl) {
     this.callbackUrl = callbackUrl;
-  }
-
-
-  public NewConfirmedTokensTransactionsRI confirmationsCount(String confirmationsCount) {
-    
-    this.confirmationsCount = confirmationsCount;
-    return this;
-  }
-
-   /**
-   * Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.
-   * @return confirmationsCount
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
-
-  public String getConfirmationsCount() {
-    return confirmationsCount;
-  }
-
-
-  public void setConfirmationsCount(String confirmationsCount) {
-    this.confirmationsCount = confirmationsCount;
   }
 
 
@@ -250,29 +221,6 @@ public class NewConfirmedTokensTransactionsRI {
   }
 
 
-  public NewConfirmedTokensTransactionsRI transactionId(String transactionId) {
-    
-    this.transactionId = transactionId;
-    return this;
-  }
-
-   /**
-   * Represents the unique identification string that defines the transaction.
-   * @return transactionId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xbe38781783b1b9d480219255ff98e20335a39e13979a66112efa33f05fde0a33", required = true, value = "Represents the unique identification string that defines the transaction.")
-
-  public String getTransactionId() {
-    return transactionId;
-  }
-
-
-  public void setTransactionId(String transactionId) {
-    this.transactionId = transactionId;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -285,17 +233,15 @@ public class NewConfirmedTokensTransactionsRI {
     return Objects.equals(this.address, newConfirmedTokensTransactionsRI.address) &&
         Objects.equals(this.callbackSecretKey, newConfirmedTokensTransactionsRI.callbackSecretKey) &&
         Objects.equals(this.callbackUrl, newConfirmedTokensTransactionsRI.callbackUrl) &&
-        Objects.equals(this.confirmationsCount, newConfirmedTokensTransactionsRI.confirmationsCount) &&
         Objects.equals(this.createdTimestamp, newConfirmedTokensTransactionsRI.createdTimestamp) &&
         Objects.equals(this.eventType, newConfirmedTokensTransactionsRI.eventType) &&
         Objects.equals(this.isActive, newConfirmedTokensTransactionsRI.isActive) &&
-        Objects.equals(this.referenceId, newConfirmedTokensTransactionsRI.referenceId) &&
-        Objects.equals(this.transactionId, newConfirmedTokensTransactionsRI.transactionId);
+        Objects.equals(this.referenceId, newConfirmedTokensTransactionsRI.referenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, callbackSecretKey, callbackUrl, confirmationsCount, createdTimestamp, eventType, isActive, referenceId, transactionId);
+    return Objects.hash(address, callbackSecretKey, callbackUrl, createdTimestamp, eventType, isActive, referenceId);
   }
 
   @Override
@@ -305,12 +251,10 @@ public class NewConfirmedTokensTransactionsRI {
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
     sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
     sb.append("    callbackUrl: ").append(toIndentedString(callbackUrl)).append("\n");
-    sb.append("    confirmationsCount: ").append(toIndentedString(confirmationsCount)).append("\n");
     sb.append("    createdTimestamp: ").append(toIndentedString(createdTimestamp)).append("\n");
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

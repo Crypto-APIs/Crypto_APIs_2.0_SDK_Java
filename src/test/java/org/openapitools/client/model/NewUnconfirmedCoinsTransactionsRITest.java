@@ -57,14 +57,6 @@ public class NewUnconfirmedCoinsTransactionsRITest {
     }
 
     /**
-     * Test the property 'confirmationsCount'
-     */
-    @Test
-    public void confirmationsCountTest() {
-        // TODO: test confirmationsCount
-    }
-
-    /**
      * Test the property 'createdTimestamp'
      */
     @Test
@@ -94,14 +86,6 @@ public class NewUnconfirmedCoinsTransactionsRITest {
     @Test
     public void referenceIdTest() {
         // TODO: test referenceId
-    }
-
-    /**
-     * Test the property 'transactionId'
-     */
-    @Test
-    public void transactionIdTest() {
-        // TODO: test transactionId
     }
 
 }

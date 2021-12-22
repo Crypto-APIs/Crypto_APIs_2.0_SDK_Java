@@ -28,12 +28,14 @@ import java.io.IOException;
  * Object representation of the transaction fee
  */
 @ApiModel(description = "Object representation of the transaction fee")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRIBSEFee {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
 
+  public ListAllUnconfirmedTransactionsRIBSEFee() { 
+  }
 
   public ListAllUnconfirmedTransactionsRIBSEFee amount(String amount) {
     

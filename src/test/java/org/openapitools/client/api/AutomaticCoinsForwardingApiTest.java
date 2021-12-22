@@ -14,22 +14,27 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.AlreadyExists;
-import org.openapitools.client.model.CoinsForwardingAutomationsLimitReached;
 import org.openapitools.client.model.CreateAutomaticCoinsForwardingR;
 import org.openapitools.client.model.CreateAutomaticCoinsForwardingRB;
 import org.openapitools.client.model.DeleteAutomaticCoinsForwardingR;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40075;
+import org.openapitools.client.model.InlineResponse40076;
+import org.openapitools.client.model.InlineResponse40077;
+import org.openapitools.client.model.InlineResponse40175;
+import org.openapitools.client.model.InlineResponse40176;
+import org.openapitools.client.model.InlineResponse40177;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40375;
+import org.openapitools.client.model.InlineResponse40376;
+import org.openapitools.client.model.InlineResponse40377;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse40916;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListCoinsForwardingAutomationsR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -61,8 +66,7 @@ public class AutomaticCoinsForwardingApiTest {
         String network = null;
         String context = null;
         CreateAutomaticCoinsForwardingRB createAutomaticCoinsForwardingRB = null;
-        CreateAutomaticCoinsForwardingR response = api.createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRB);
-
+                CreateAutomaticCoinsForwardingR response = api.createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRB);
         // TODO: test validations
     }
     
@@ -80,8 +84,7 @@ public class AutomaticCoinsForwardingApiTest {
         String network = null;
         String referenceId = null;
         String context = null;
-        DeleteAutomaticCoinsForwardingR response = api.deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context);
-
+                DeleteAutomaticCoinsForwardingR response = api.deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context);
         // TODO: test validations
     }
     
@@ -100,8 +103,7 @@ public class AutomaticCoinsForwardingApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListCoinsForwardingAutomationsR response = api.listCoinsForwardingAutomations(blockchain, network, context, limit, offset);
-
+                ListCoinsForwardingAutomationsR response = api.listCoinsForwardingAutomations(blockchain, network, context, limit, offset);
         // TODO: test validations
     }
     

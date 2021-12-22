@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSc
 /**
  * GetTransactionDetailsByTransactionIDRIBSBVout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSBVout {
   public static final String SERIALIZED_NAME_IS_SPENT = "isSpent";
   @SerializedName(SERIALIZED_NAME_IS_SPENT)
@@ -42,6 +42,8 @@ public class GetTransactionDetailsByTransactionIDRIBSBVout {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
+  public GetTransactionDetailsByTransactionIDRIBSBVout() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSBVout isSpent(Boolean isSpent) {
     
@@ -54,7 +56,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBVout {
    * @return isSpent
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "Defines whether the output is spent or not.")
+  @ApiModelProperty(example = "false", required = true, value = "Defines whether the output is spent or not.")
 
   public Boolean getIsSpent() {
     return isSpent;
@@ -100,7 +102,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBVout {
    * @return value
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0.000144", required = true, value = "Represents the sent/received amount.")
+  @ApiModelProperty(example = "0.00014400", required = true, value = "Represents the sent/received amount.")
 
   public String getValue() {
     return value;

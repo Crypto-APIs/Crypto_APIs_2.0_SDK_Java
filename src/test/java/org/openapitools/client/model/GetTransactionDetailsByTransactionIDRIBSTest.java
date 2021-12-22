@@ -29,11 +29,15 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSC
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vin;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vout;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSE;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSEC;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSL;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZ;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplit;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVin;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -155,6 +159,86 @@ public class GetTransactionDetailsByTransactionIDRIBSTest {
     @Test
     public void transactionStatusTest() {
         // TODO: test transactionStatus
+    }
+
+    /**
+     * Test the property 'bindingSig'
+     */
+    @Test
+    public void bindingSigTest() {
+        // TODO: test bindingSig
+    }
+
+    /**
+     * Test the property 'expiryHeight'
+     */
+    @Test
+    public void expiryHeightTest() {
+        // TODO: test expiryHeight
+    }
+
+    /**
+     * Test the property 'joinSplitPubKey'
+     */
+    @Test
+    public void joinSplitPubKeyTest() {
+        // TODO: test joinSplitPubKey
+    }
+
+    /**
+     * Test the property 'joinSplitSig'
+     */
+    @Test
+    public void joinSplitSigTest() {
+        // TODO: test joinSplitSig
+    }
+
+    /**
+     * Test the property 'overwintered'
+     */
+    @Test
+    public void overwinteredTest() {
+        // TODO: test overwintered
+    }
+
+    /**
+     * Test the property 'vJoinSplit'
+     */
+    @Test
+    public void vJoinSplitTest() {
+        // TODO: test vJoinSplit
+    }
+
+    /**
+     * Test the property 'vShieldedOutput'
+     */
+    @Test
+    public void vShieldedOutputTest() {
+        // TODO: test vShieldedOutput
+    }
+
+    /**
+     * Test the property 'vShieldedSpend'
+     */
+    @Test
+    public void vShieldedSpendTest() {
+        // TODO: test vShieldedSpend
+    }
+
+    /**
+     * Test the property 'valueBalance'
+     */
+    @Test
+    public void valueBalanceTest() {
+        // TODO: test valueBalance
+    }
+
+    /**
+     * Test the property 'versionGroupId'
+     */
+    @Test
+    public void versionGroupIdTest() {
+        // TODO: test versionGroupId
     }
 
 }

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListWalletTransactionsRIValue
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListWalletTransactionsRIValue {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -45,10 +45,8 @@ public class ListWalletTransactionsRIValue {
   @SerializedName(SERIALIZED_NAME_SYMBOL)
   private String symbol;
 
-  public static final String SERIALIZED_NAME_TOKEN_IDENTIFIER = "tokenIdentifier";
-  @SerializedName(SERIALIZED_NAME_TOKEN_IDENTIFIER)
-  private String tokenIdentifier;
-
+  public ListWalletTransactionsRIValue() { 
+  }
 
   public ListWalletTransactionsRIValue amount(String amount) {
     
@@ -142,29 +140,6 @@ public class ListWalletTransactionsRIValue {
   }
 
 
-  public ListWalletTransactionsRIValue tokenIdentifier(String tokenIdentifier) {
-    
-    this.tokenIdentifier = tokenIdentifier;
-    return this;
-  }
-
-   /**
-   * Defines the token&#39;s identifier of the transaction&#39;s amount.
-   * @return tokenIdentifier
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "0x20fe562d797a42dcb3399062ae9546cd06f63280", value = "Defines the token's identifier of the transaction's amount.")
-
-  public String getTokenIdentifier() {
-    return tokenIdentifier;
-  }
-
-
-  public void setTokenIdentifier(String tokenIdentifier) {
-    this.tokenIdentifier = tokenIdentifier;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -177,13 +152,12 @@ public class ListWalletTransactionsRIValue {
     return Objects.equals(this.amount, listWalletTransactionsRIValue.amount) &&
         Objects.equals(this.convertedAmount, listWalletTransactionsRIValue.convertedAmount) &&
         Objects.equals(this.exchangeRateUnit, listWalletTransactionsRIValue.exchangeRateUnit) &&
-        Objects.equals(this.symbol, listWalletTransactionsRIValue.symbol) &&
-        Objects.equals(this.tokenIdentifier, listWalletTransactionsRIValue.tokenIdentifier);
+        Objects.equals(this.symbol, listWalletTransactionsRIValue.symbol);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(amount, convertedAmount, exchangeRateUnit, symbol, tokenIdentifier);
+    return Objects.hash(amount, convertedAmount, exchangeRateUnit, symbol);
   }
 
   @Override
@@ -194,7 +168,6 @@ public class ListWalletTransactionsRIValue {
     sb.append("    convertedAmount: ").append(toIndentedString(convertedAmount)).append("\n");
     sb.append("    exchangeRateUnit: ").append(toIndentedString(exchangeRateUnit)).append("\n");
     sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
-    sb.append("    tokenIdentifier: ").append(toIndentedString(tokenIdentifier)).append("\n");
     sb.append("}");
     return sb.toString();
   }

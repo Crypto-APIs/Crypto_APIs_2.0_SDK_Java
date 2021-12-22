@@ -24,6 +24,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListWalletTransactionsRIFee;
+import org.openapitools.client.model.ListWalletTransactionsRIFungibleTokens;
+import org.openapitools.client.model.ListWalletTransactionsRIInternalTransactions;
+import org.openapitools.client.model.ListWalletTransactionsRINonFungibleTokens;
 import org.openapitools.client.model.ListWalletTransactionsRIRecipients;
 import org.openapitools.client.model.ListWalletTransactionsRISenders;
 import org.openapitools.client.model.ListWalletTransactionsRIValue;
@@ -60,6 +63,30 @@ public class ListWalletTransactionsRITest {
     @Test
     public void feeTest() {
         // TODO: test fee
+    }
+
+    /**
+     * Test the property 'fungibleTokens'
+     */
+    @Test
+    public void fungibleTokensTest() {
+        // TODO: test fungibleTokens
+    }
+
+    /**
+     * Test the property 'internalTransactions'
+     */
+    @Test
+    public void internalTransactionsTest() {
+        // TODO: test internalTransactions
+    }
+
+    /**
+     * Test the property 'nonFungibleTokens'
+     */
+    @Test
+    public void nonFungibleTokensTest() {
+        // TODO: test nonFungibleTokens
     }
 
     /**

@@ -69,11 +69,35 @@ public class ListLatestMinedBlocksRIBSTest {
     }
 
     /**
+     * Test the property 'difficulty'
+     */
+    @Test
+    public void difficultyTest() {
+        // TODO: test difficulty
+    }
+
+    /**
      * Test the property 'merkleRoot'
      */
     @Test
     public void merkleRootTest() {
         // TODO: test merkleRoot
+    }
+
+    /**
+     * Test the property 'nonce'
+     */
+    @Test
+    public void nonceTest() {
+        // TODO: test nonce
+    }
+
+    /**
+     * Test the property 'size'
+     */
+    @Test
+    public void sizeTest() {
+        // TODO: test size
     }
 
     /**
@@ -165,14 +189,6 @@ public class ListLatestMinedBlocksRIBSTest {
     }
 
     /**
-     * Test the property 'difficulty'
-     */
-    @Test
-    public void difficultyTest() {
-        // TODO: test difficulty
-    }
-
-    /**
      * Test the property 'dsBlock'
      */
     @Test
@@ -202,30 +218,6 @@ public class ListLatestMinedBlocksRIBSTest {
     @Test
     public void microBlocksTest() {
         // TODO: test microBlocks
-    }
-
-    /**
-     * Test the property 'merkleroot'
-     */
-    @Test
-    public void merklerootTest() {
-        // TODO: test merkleroot
-    }
-
-    /**
-     * Test the property 'nonce'
-     */
-    @Test
-    public void nonceTest() {
-        // TODO: test nonce
-    }
-
-    /**
-     * Test the property 'size'
-     */
-    @Test
-    public void sizeTest() {
-        // TODO: test size
     }
 
 }

@@ -16,13 +16,13 @@ Name | Type | Description | Notes
 **overwintered** | **Boolean** | \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain. | 
 **size** | **Integer** | Represents the total size of this transaction. | 
 **vJoinSplit** | [**List&lt;ListTransactionsByBlockHashRIBSZVJoinSplit&gt;**](ListTransactionsByBlockHashRIBSZVJoinSplit.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. | 
-**vShieldedOutput** | [**List&lt;ListConfirmedTransactionsByAddressRIBSZVShieldedOutput&gt;**](ListConfirmedTransactionsByAddressRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions | 
-**vShieldedSpend** | [**List&lt;ListConfirmedTransactionsByAddressRIBSZVShieldedSpend&gt;**](ListConfirmedTransactionsByAddressRIBSZVShieldedSpend.md) | Object Array representation of transaction spend descriptions | 
+**vShieldedOutput** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput&gt;**](GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions | 
+**vShieldedSpend** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend&gt;**](GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.md) | Object Array representation of transaction spend descriptions | 
 **valueBalance** | **String** | Defines the transaction value balance. | 
 **version** | **Integer** | Numeric representation of the transaction Represents the transaction version number. | 
 **versionGroupId** | **String** | Represents the transaction version group ID. | 
 **vin** | [**List&lt;ListTransactionsByBlockHashRIBSZVin&gt;**](ListTransactionsByBlockHashRIBSZVin.md) | Object Array representation of transaction inputs | 
-**vout** | [**List&lt;ListConfirmedTransactionsByAddressRIBSZVout&gt;**](ListConfirmedTransactionsByAddressRIBSZVout.md) | Object Array representation of transaction outputs | 
+**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVout&gt;**](GetTransactionDetailsByTransactionIDRIBSZVout.md) | Object Array representation of transaction outputs | 
 
 
 

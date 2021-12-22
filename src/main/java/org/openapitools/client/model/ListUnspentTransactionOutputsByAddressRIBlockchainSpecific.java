@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedOutput;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
 import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVJoinSplit;
 import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend;
 
 /**
  * ListUnspentTransactionOutputsByAddressRIBlockchainSpecific
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecific {
   public static final String SERIALIZED_NAME_V_SIZE = "vSize";
   @SerializedName(SERIALIZED_NAME_V_SIZE)
@@ -64,7 +64,7 @@ public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecific {
 
   public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput = null;
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = null;
 
   public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
@@ -78,6 +78,8 @@ public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecific {
   @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
   private String versionGroupId;
 
+  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific() { 
+  }
 
   public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific vSize(Integer vSize) {
     
@@ -248,15 +250,15 @@ public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecific {
   }
 
 
-  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific vShieldedOutput(List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput) {
+  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
     
     this.vShieldedOutput = vShieldedOutput;
     return this;
   }
 
-  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific addVShieldedOutputItem(ListConfirmedTransactionsByAddressRIBSZVShieldedOutput vShieldedOutputItem) {
+  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
     if (this.vShieldedOutput == null) {
-      this.vShieldedOutput = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput>();
+      this.vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
     }
     this.vShieldedOutput.add(vShieldedOutputItem);
     return this;
@@ -269,12 +271,12 @@ public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecific {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Object Array representation of transaction output descriptions")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> getvShieldedOutput() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
     return vShieldedOutput;
   }
 
 
-  public void setvShieldedOutput(List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput) {
+  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
     this.vShieldedOutput = vShieldedOutput;
   }
 

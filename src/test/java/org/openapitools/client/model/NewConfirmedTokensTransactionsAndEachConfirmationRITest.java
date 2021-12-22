@@ -57,6 +57,14 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRITest {
     }
 
     /**
+     * Test the property 'confirmationsCount'
+     */
+    @Test
+    public void confirmationsCountTest() {
+        // TODO: test confirmationsCount
+    }
+
+    /**
      * Test the property 'createdTimestamp'
      */
     @Test

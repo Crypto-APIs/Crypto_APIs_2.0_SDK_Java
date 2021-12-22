@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListAssetsDetailsRIS;
 /**
  * ListAssetsDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAssetsDetailsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -115,6 +115,8 @@ public class ListAssetsDetailsRI {
   @SerializedName(SERIALIZED_NAME_SPECIFIC_DATA)
   private ListAssetsDetailsRIS specificData;
 
+  public ListAssetsDetailsRI() { 
+  }
 
   public ListAssetsDetailsRI assetId(String assetId) {
     
@@ -284,11 +286,11 @@ public class ListAssetsDetailsRI {
   }
 
    /**
-   * Asset&#x60;s unique slug string in Crypto APIs listings
+   * Represents the asset&#x60;s unique slug string in Crypto APIs listings.
    * @return slug
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "tether", value = "Asset`s unique slug string in Crypto APIs listings")
+  @ApiModelProperty(example = "tether", value = "Represents the asset`s unique slug string in Crypto APIs listings.")
 
   public String getSlug() {
     return slug;

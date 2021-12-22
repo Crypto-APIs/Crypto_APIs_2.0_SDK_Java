@@ -25,14 +25,14 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSLVout;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSLVin;
-import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSLVout;
 
 /**
  * Litecoin
  */
 @ApiModel(description = "Litecoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRIBSL {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -56,8 +56,10 @@ public class ListAllUnconfirmedTransactionsRIBSL {
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListAllUnconfirmedTransactionsRIBSLVout> vout = new ArrayList<ListAllUnconfirmedTransactionsRIBSLVout>();
+  private List<GetTransactionDetailsByTransactionIDRIBSLVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSLVout>();
 
+  public ListAllUnconfirmedTransactionsRIBSL() { 
+  }
 
   public ListAllUnconfirmedTransactionsRIBSL locktime(Integer locktime) {
     
@@ -179,13 +181,13 @@ public class ListAllUnconfirmedTransactionsRIBSL {
   }
 
 
-  public ListAllUnconfirmedTransactionsRIBSL vout(List<ListAllUnconfirmedTransactionsRIBSLVout> vout) {
+  public ListAllUnconfirmedTransactionsRIBSL vout(List<GetTransactionDetailsByTransactionIDRIBSLVout> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListAllUnconfirmedTransactionsRIBSL addVoutItem(ListAllUnconfirmedTransactionsRIBSLVout voutItem) {
+  public ListAllUnconfirmedTransactionsRIBSL addVoutItem(GetTransactionDetailsByTransactionIDRIBSLVout voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -197,12 +199,12 @@ public class ListAllUnconfirmedTransactionsRIBSL {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
-  public List<ListAllUnconfirmedTransactionsRIBSLVout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSLVout> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListAllUnconfirmedTransactionsRIBSLVout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSLVout> vout) {
     this.vout = vout;
   }
 

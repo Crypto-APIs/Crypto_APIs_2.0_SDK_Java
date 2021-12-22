@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetEIP1559FeeRecommendationsRIMaxPriorityFeePerGas
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetEIP1559FeeRecommendationsRIMaxPriorityFeePerGas {
   public static final String SERIALIZED_NAME_FAST = "fast";
   @SerializedName(SERIALIZED_NAME_FAST)
@@ -45,6 +45,8 @@ public class GetEIP1559FeeRecommendationsRIMaxPriorityFeePerGas {
   @SerializedName(SERIALIZED_NAME_UNIT)
   private String unit;
 
+  public GetEIP1559FeeRecommendationsRIMaxPriorityFeePerGas() { 
+  }
 
   public GetEIP1559FeeRecommendationsRIMaxPriorityFeePerGas fast(String fast) {
     

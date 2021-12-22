@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplit;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutput;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVin;
@@ -35,7 +35,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSZ {
   public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
   @SerializedName(SERIALIZED_NAME_BINDING_SIG)
@@ -75,7 +75,7 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
   public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
 
   public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
   @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
@@ -97,6 +97,8 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<ListTransactionsByBlockHeightRIBSZVout>();
 
+  public ListTransactionsByBlockHeightRIBSZ() { 
+  }
 
   public ListTransactionsByBlockHeightRIBSZ bindingSig(String bindingSig) {
     
@@ -315,13 +317,13 @@ public class ListTransactionsByBlockHeightRIBSZ {
   }
 
 
-  public ListTransactionsByBlockHeightRIBSZ vShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+  public ListTransactionsByBlockHeightRIBSZ vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
     
     this.vShieldedSpend = vShieldedSpend;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSZ addVShieldedSpendItem(ListConfirmedTransactionsByAddressRIBSZVShieldedSpend vShieldedSpendItem) {
+  public ListTransactionsByBlockHeightRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
     this.vShieldedSpend.add(vShieldedSpendItem);
     return this;
   }
@@ -333,12 +335,12 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> getvShieldedSpend() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
     return vShieldedSpend;
   }
 
 
-  public void setvShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
     this.vShieldedSpend = vShieldedSpend;
   }
 

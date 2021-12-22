@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionRequestDetailsRIRecipients;
 /**
  * GetTransactionRequestDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionRequestDetailsRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DETAILS = "additionalDetails";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DETAILS)
@@ -52,6 +52,8 @@ public class GetTransactionRequestDetailsRI {
     DASH("dash"),
     
     ETHEREUM("ethereum"),
+    
+    ETHEREUM_CLASSIC("ethereum-classic"),
     
     ZCASH("zcash");
 
@@ -159,7 +161,9 @@ public class GetTransactionRequestDetailsRI {
     
     TESTNET("testnet"),
     
-    ROPSTEN("ropsten");
+    ROPSTEN("ropsten"),
+    
+    MORDOR("mordor");
 
     private String value;
 
@@ -337,6 +341,8 @@ public class GetTransactionRequestDetailsRI {
   @SerializedName(SERIALIZED_NAME_WALLET_ID)
   private String walletId;
 
+  public GetTransactionRequestDetailsRI() { 
+  }
 
   public GetTransactionRequestDetailsRI additionalDetails(String additionalDetails) {
     

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MinedTransactionRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class MinedTransactionRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -65,6 +65,8 @@ public class MinedTransactionRI {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
   private String transactionId;
 
+  public MinedTransactionRI() { 
+  }
 
   public MinedTransactionRI address(String address) {
     

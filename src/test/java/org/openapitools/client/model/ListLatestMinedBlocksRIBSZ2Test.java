@@ -57,11 +57,19 @@ public class ListLatestMinedBlocksRIBSZ2Test {
     }
 
     /**
-     * Test the property 'merkleroot'
+     * Test the property 'difficulty'
      */
     @Test
-    public void merklerootTest() {
-        // TODO: test merkleroot
+    public void difficultyTest() {
+        // TODO: test difficulty
+    }
+
+    /**
+     * Test the property 'merkleRoot'
+     */
+    @Test
+    public void merkleRootTest() {
+        // TODO: test merkleRoot
     }
 
     /**

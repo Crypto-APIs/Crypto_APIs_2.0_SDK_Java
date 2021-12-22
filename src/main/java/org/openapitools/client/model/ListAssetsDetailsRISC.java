@@ -28,7 +28,7 @@ import java.io.IOException;
  * Crypto Type Data
  */
 @ApiModel(description = "Crypto Type Data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAssetsDetailsRISC {
   public static final String SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE = "1HourPriceChangeInPercentage";
   @SerializedName(SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE)
@@ -47,7 +47,7 @@ public class ListAssetsDetailsRISC {
   private String _24hoursTradingVolume;
 
   /**
-   * Subtype of the crypto assets. Could be COIN or TOKEN
+   * Represent a subtype of the crypto assets. Could be COIN or TOKEN.
    */
   @JsonAdapter(AssetTypeEnum.Adapter.class)
   public enum AssetTypeEnum {
@@ -109,6 +109,8 @@ public class ListAssetsDetailsRISC {
   @SerializedName(SERIALIZED_NAME_MAX_SUPPLY)
   private String maxSupply;
 
+  public ListAssetsDetailsRISC() { 
+  }
 
   public ListAssetsDetailsRISC _1hourPriceChangeInPercentage(String _1hourPriceChangeInPercentage) {
     
@@ -209,11 +211,11 @@ public class ListAssetsDetailsRISC {
   }
 
    /**
-   * Subtype of the crypto assets. Could be COIN or TOKEN
+   * Represent a subtype of the crypto assets. Could be COIN or TOKEN.
    * @return assetType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "coin", required = true, value = "Subtype of the crypto assets. Could be COIN or TOKEN")
+  @ApiModelProperty(example = "coin", required = true, value = "Represent a subtype of the crypto assets. Could be COIN or TOKEN.")
 
   public AssetTypeEnum getAssetType() {
     return assetType;

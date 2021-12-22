@@ -14,23 +14,26 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.AlreadyExists;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionR;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionRB;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.GenerateAddressR;
-import org.openapitools.client.model.GenerateAddressRB;
 import org.openapitools.client.model.GetEIP1559FeeRecommendationsR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidNetwork;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
+import org.openapitools.client.model.InlineResponse40083;
+import org.openapitools.client.model.InlineResponse40084;
+import org.openapitools.client.model.InlineResponse40085;
+import org.openapitools.client.model.InlineResponse40183;
+import org.openapitools.client.model.InlineResponse40184;
+import org.openapitools.client.model.InlineResponse40185;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40383;
+import org.openapitools.client.model.InlineResponse40384;
+import org.openapitools.client.model.InlineResponse40385;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse40917;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ValidateAddressR;
 import org.openapitools.client.model.ValidateAddressRB;
 import org.junit.Test;
@@ -53,7 +56,7 @@ public class FeaturesApiTest {
     /**
      * Broadcast Locally Signed Transaction
      *
-     * Through this endpoint customers can broadcast transactions that have been already signed locally. Instead of using a node for broadcasting a signed transaction users can use this endpoint. We then keep the user posted about the status by sending you a callback with a success or failure status.
+     * Through this endpoint customers can broadcast transactions that have been already signed locally. Instead of using a node for broadcasting a signed transaction users can use this endpoint. We then keep the user posted about the status by sending you a callback with a success or failure status.    {warning}This can be prepared and signed **only** locally, not through the API. We can provide support only for the process of broadcasting.{/warning}
      *
      * @throws ApiException
      *          if the Api call fails
@@ -64,27 +67,7 @@ public class FeaturesApiTest {
         String network = null;
         String context = null;
         BroadcastLocallySignedTransactionRB broadcastLocallySignedTransactionRB = null;
-        BroadcastLocallySignedTransactionR response = api.broadcastLocallySignedTransaction(blockchain, network, context, broadcastLocallySignedTransactionRB);
-
-        // TODO: test validations
-    }
-    
-    /**
-     * Generate Address
-     *
-     * This endpoint will generate a unique address for the user along with the specific transaction script, e.g. P2PKH, a private and a public key, and WIF.     Users **must** keep their private keys and WIFs secure and accessible to only them at all times. Losing those exposes a risk of losing their funds associated with the respective address.     {warning}We generate, but **do not** save or record the response in any data base, log or anywhere else on our side! In the case a user loses their private key or WIF, Crypto APIs 2.0 **will not be able** to retrieve it.{/warning}
-     *
-     * @throws ApiException
-     *          if the Api call fails
-     */
-    @Test
-    public void generateAddressTest() throws ApiException {
-        String blockchain = null;
-        String network = null;
-        String context = null;
-        GenerateAddressRB generateAddressRB = null;
-        GenerateAddressR response = api.generateAddress(blockchain, network, context, generateAddressRB);
-
+                BroadcastLocallySignedTransactionR response = api.broadcastLocallySignedTransaction(blockchain, network, context, broadcastLocallySignedTransactionRB);
         // TODO: test validations
     }
     
@@ -101,8 +84,7 @@ public class FeaturesApiTest {
         String network = null;
         String blockchain = null;
         String context = null;
-        GetEIP1559FeeRecommendationsR response = api.getEIP1559FeeRecommendations(network, blockchain, context);
-
+                GetEIP1559FeeRecommendationsR response = api.getEIP1559FeeRecommendations(network, blockchain, context);
         // TODO: test validations
     }
     
@@ -120,8 +102,7 @@ public class FeaturesApiTest {
         String network = null;
         String context = null;
         ValidateAddressRB validateAddressRB = null;
-        ValidateAddressR response = api.validateAddress(blockchain, network, context, validateAddressRB);
-
+                ValidateAddressR response = api.validateAddress(blockchain, network, context, validateAddressRB);
         // TODO: test validations
     }
     

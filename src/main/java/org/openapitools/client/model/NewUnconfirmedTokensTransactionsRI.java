@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewUnconfirmedTokensTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewUnconfirmedTokensTransactionsRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -57,10 +57,8 @@ public class NewUnconfirmedTokensTransactionsRI {
   @SerializedName(SERIALIZED_NAME_REFERENCE_ID)
   private String referenceId;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
-  private String transactionId;
-
+  public NewUnconfirmedTokensTransactionsRI() { 
+  }
 
   public NewUnconfirmedTokensTransactionsRI address(String address) {
     
@@ -223,29 +221,6 @@ public class NewUnconfirmedTokensTransactionsRI {
   }
 
 
-  public NewUnconfirmedTokensTransactionsRI transactionId(String transactionId) {
-    
-    this.transactionId = transactionId;
-    return this;
-  }
-
-   /**
-   * Represents the unique identification string that defines the transaction.
-   * @return transactionId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x32de09d747bcbed41e8162681a72b2a6c760cf2116ce372fcd357c260909838a", required = true, value = "Represents the unique identification string that defines the transaction.")
-
-  public String getTransactionId() {
-    return transactionId;
-  }
-
-
-  public void setTransactionId(String transactionId) {
-    this.transactionId = transactionId;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -261,13 +236,12 @@ public class NewUnconfirmedTokensTransactionsRI {
         Objects.equals(this.createdTimestamp, newUnconfirmedTokensTransactionsRI.createdTimestamp) &&
         Objects.equals(this.eventType, newUnconfirmedTokensTransactionsRI.eventType) &&
         Objects.equals(this.isActive, newUnconfirmedTokensTransactionsRI.isActive) &&
-        Objects.equals(this.referenceId, newUnconfirmedTokensTransactionsRI.referenceId) &&
-        Objects.equals(this.transactionId, newUnconfirmedTokensTransactionsRI.transactionId);
+        Objects.equals(this.referenceId, newUnconfirmedTokensTransactionsRI.referenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, callbackSecretKey, callbackUrl, createdTimestamp, eventType, isActive, referenceId, transactionId);
+    return Objects.hash(address, callbackSecretKey, callbackUrl, createdTimestamp, eventType, isActive, referenceId);
   }
 
   @Override
@@ -281,7 +255,6 @@ public class NewUnconfirmedTokensTransactionsRI {
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

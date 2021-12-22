@@ -57,11 +57,35 @@ public class ListLatestMinedBlocksRIBSLTest {
     }
 
     /**
+     * Test the property 'difficulty'
+     */
+    @Test
+    public void difficultyTest() {
+        // TODO: test difficulty
+    }
+
+    /**
      * Test the property 'merkleRoot'
      */
     @Test
     public void merkleRootTest() {
         // TODO: test merkleRoot
+    }
+
+    /**
+     * Test the property 'nonce'
+     */
+    @Test
+    public void nonceTest() {
+        // TODO: test nonce
+    }
+
+    /**
+     * Test the property 'size'
+     */
+    @Test
+    public void sizeTest() {
+        // TODO: test size
     }
 
     /**

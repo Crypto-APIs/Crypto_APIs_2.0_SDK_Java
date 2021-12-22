@@ -27,7 +27,7 @@ Name | Type | Description | Notes
 **overwintered** | **Boolean** | \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain. | 
 **vJoinSplit** | [**List&lt;ListTransactionsByBlockHeightRIBSZVJoinSplit&gt;**](ListTransactionsByBlockHeightRIBSZVJoinSplit.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. | 
 **vShieldedOutput** | [**List&lt;ListTransactionsByBlockHeightRIBSZVShieldedOutput&gt;**](ListTransactionsByBlockHeightRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions | 
-**vShieldedSpend** | [**List&lt;ListConfirmedTransactionsByAddressRIBSZVShieldedSpend&gt;**](ListConfirmedTransactionsByAddressRIBSZVShieldedSpend.md) | Object Array representation of transaction spend descriptions | 
+**vShieldedSpend** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend&gt;**](GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.md) | Object Array representation of transaction spend descriptions | 
 **valueBalance** | **String** | Defines the transaction value balance. | 
 **versionGroupId** | **String** | Represents the transaction version group ID. | 
 

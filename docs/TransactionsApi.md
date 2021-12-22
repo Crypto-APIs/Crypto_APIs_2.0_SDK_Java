@@ -7,7 +7,7 @@ Method | HTTP request | Description
 [**createCoinsTransactionFromAddressForWholeAmount**](TransactionsApi.md#createCoinsTransactionFromAddressForWholeAmount) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/all-transaction-requests | Create Coins Transaction From Address For Whole Amount
 [**createCoinsTransactionRequestFromAddress**](TransactionsApi.md#createCoinsTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/transaction-requests | Create Coins Transaction Request from Address
 [**createCoinsTransactionRequestFromWallet**](TransactionsApi.md#createCoinsTransactionRequestFromWallet) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/transaction-requests | Create Coins Transaction Request from Wallet
-[**createTokensTransactionRequestFromAddress**](TransactionsApi.md#createTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/token-transaction-requests | Create Tokens Transaction Request from Address
+[**createFungibleTokensTransactionRequestFromAddress**](TransactionsApi.md#createFungibleTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/token-transaction-requests | Create Fungible Tokens Transaction Request from Address
 
 
 <a name="createCoinsTransactionFromAddressForWholeAmount"></a>
@@ -65,8 +65,8 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **String**| Defines the source address. |
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet]
  **walletId** | **String**| Represents the sender&#39;s specific and unique Wallet ID of the sender. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **createCoinsTransactionFromAddressForWholeAmountRB** | [**CreateCoinsTransactionFromAddressForWholeAmountRB**](CreateCoinsTransactionFromAddressForWholeAmountRB.md)|  | [optional]
@@ -88,11 +88,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
-**409** | Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -153,8 +153,8 @@ public class Example {
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
  **address** | **String**| Defines the specific source address for the transaction. |
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet]
  **walletId** | **String**| Represents the sender&#39;s specific and unique Wallet ID of the sender. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **createCoinsTransactionRequestFromAddressRB** | [**CreateCoinsTransactionRequestFromAddressRB**](CreateCoinsTransactionRequestFromAddressRB.md)|  | [optional]
@@ -176,11 +176,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
-**409** | Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -262,23 +262,23 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
-**409** | Please first create a deposit address for the specific blockchain and network, in order to be able to make transactions. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
 **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
 
-<a name="createTokensTransactionRequestFromAddress"></a>
-# **createTokensTransactionRequestFromAddress**
-> CreateTokensTransactionRequestFromAddressR createTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB)
+<a name="createFungibleTokensTransactionRequestFromAddress"></a>
+# **createFungibleTokensTransactionRequestFromAddress**
+> CreateFungibleTokensTransactionRequestFromAddressR createFungibleTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB)
 
-Create Tokens Transaction Request from Address
+Create Fungible Tokens Transaction Request from Address
 
-Through this endpoint users can make a single token transaction.    {warning}This applies only to **fungible** tokens, **not** NFTs (non-fungible tokens).{/warning}    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
+Through this endpoint users can make a single token transaction.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
 
 ### Example
 ```java
@@ -307,12 +307,12 @@ public class Example {
     String senderAddress = "0x6f61e3c2fbb8c8be698bd0907ba6c04b62800fe5"; // String | Defines the specific source address for the transaction.
     String walletId = "609e221675d04500068718dc"; // String | Defines the unique ID of the Wallet.
     String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB = new CreateTokensTransactionRequestFromAddressRB(); // CreateTokensTransactionRequestFromAddressRB | 
+    CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB = new CreateFungibleTokensTransactionRequestFromAddressRB(); // CreateFungibleTokensTransactionRequestFromAddressRB | 
     try {
-      CreateTokensTransactionRequestFromAddressR result = apiInstance.createTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB);
+      CreateFungibleTokensTransactionRequestFromAddressR result = apiInstance.createFungibleTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB);
       System.out.println(result);
     } catch (ApiException e) {
-      System.err.println("Exception when calling TransactionsApi#createTokensTransactionRequestFromAddress");
+      System.err.println("Exception when calling TransactionsApi#createFungibleTokensTransactionRequestFromAddress");
       System.err.println("Status code: " + e.getCode());
       System.err.println("Reason: " + e.getResponseBody());
       System.err.println("Response headers: " + e.getResponseHeaders());
@@ -326,16 +326,16 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [default to ethereum] [enum: ethereum]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [default to mainnet] [enum: mainnet, ropsten]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [default to ethereum] [enum: ethereum, ethereum-classic, binance-smart-chain]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [default to mainnet] [enum: mainnet, ropsten, mordor, testnet]
  **senderAddress** | **String**| Defines the specific source address for the transaction. |
  **walletId** | **String**| Defines the unique ID of the Wallet. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **createTokensTransactionRequestFromAddressRB** | [**CreateTokensTransactionRequestFromAddressRB**](CreateTokensTransactionRequestFromAddressRB.md)|  | [optional]
+ **createFungibleTokensTransactionRequestFromAddressRB** | [**CreateFungibleTokensTransactionRequestFromAddressRB**](CreateFungibleTokensTransactionRequestFromAddressRB.md)|  | [optional]
 
 ### Return type
 
-[**CreateTokensTransactionRequestFromAddressR**](CreateTokensTransactionRequestFromAddressR.md)
+[**CreateFungibleTokensTransactionRequestFromAddressR**](CreateFungibleTokensTransactionRequestFromAddressR.md)
 
 ### Authorization
 
@@ -350,11 +350,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. |  -  |
-**409** | The token is not supported for this blockchain and network. To be supported, please contact our team. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |

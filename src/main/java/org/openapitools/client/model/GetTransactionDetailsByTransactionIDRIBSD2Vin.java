@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2S
 /**
  * GetTransactionDetailsByTransactionIDRIBSD2Vin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSD2Vin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -46,7 +46,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2Vin {
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
-  private String sequence;
+  private Integer sequence;
 
   public static final String SERIALIZED_NAME_TXID = "txid";
   @SerializedName(SERIALIZED_NAME_TXID)
@@ -64,6 +64,8 @@ public class GetTransactionDetailsByTransactionIDRIBSD2Vin {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private Integer vout;
 
+  public GetTransactionDetailsByTransactionIDRIBSD2Vin() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSD2Vin addresses(List<String> addresses) {
     
@@ -139,7 +141,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2Vin {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBSD2Vin sequence(String sequence) {
+  public GetTransactionDetailsByTransactionIDRIBSD2Vin sequence(Integer sequence) {
     
     this.sequence = sequence;
     return this;
@@ -152,12 +154,12 @@ public class GetTransactionDetailsByTransactionIDRIBSD2Vin {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "4294967295", required = true, value = "Represents the script sequence number.")
 
-  public String getSequence() {
+  public Integer getSequence() {
     return sequence;
   }
 
 
-  public void setSequence(String sequence) {
+  public void setSequence(Integer sequence) {
     this.sequence = sequence;
   }
 
@@ -173,7 +175,7 @@ public class GetTransactionDetailsByTransactionIDRIBSD2Vin {
    * @return txid
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(value = "Represents the reference transaction identifier.")
+  @ApiModelProperty(example = "f60cf447159b08e9857cbc96688ba80beff23c6f032f6545044ab40a771b15f5", value = "Represents the reference transaction identifier.")
 
   public String getTxid() {
     return txid;

@@ -177,12 +177,4 @@ public class GetBlockDetailsByBlockHeightRIBSTest {
         // TODO: test totalDifficulty
     }
 
-    /**
-     * Test the property 'merkleroot'
-     */
-    @Test
-    public void merklerootTest() {
-        // TODO: test merkleroot
-    }
-
 }

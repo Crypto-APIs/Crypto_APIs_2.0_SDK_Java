@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListSupportedAssetsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListSupportedAssetsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -96,6 +96,8 @@ public class ListSupportedAssetsRI {
   @SerializedName(SERIALIZED_NAME_ORIGINAL_SYMBOL)
   private String originalSymbol;
 
+  public ListSupportedAssetsRI() { 
+  }
 
   public ListSupportedAssetsRI assetId(String assetId) {
     

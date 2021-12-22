@@ -32,19 +32,30 @@ import org.openapitools.client.model.AddTokensToExistingFromAddressRB;
 import org.openapitools.client.model.CreateAutomaticTokensForwardingR;
 import org.openapitools.client.model.CreateAutomaticTokensForwardingRB;
 import org.openapitools.client.model.DeleteAutomaticTokensForwardingR;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetFeeAddressDetailsR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40078;
+import org.openapitools.client.model.InlineResponse40079;
+import org.openapitools.client.model.InlineResponse40080;
+import org.openapitools.client.model.InlineResponse40081;
+import org.openapitools.client.model.InlineResponse40082;
+import org.openapitools.client.model.InlineResponse40178;
+import org.openapitools.client.model.InlineResponse40179;
+import org.openapitools.client.model.InlineResponse40180;
+import org.openapitools.client.model.InlineResponse40181;
+import org.openapitools.client.model.InlineResponse40182;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40378;
+import org.openapitools.client.model.InlineResponse40379;
+import org.openapitools.client.model.InlineResponse40380;
+import org.openapitools.client.model.InlineResponse40381;
+import org.openapitools.client.model.InlineResponse40382;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListTokensForwardingAutomationsR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.TokensForwardingAutomationsLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -54,6 +65,8 @@ import java.util.Map;
 
 public class AutomaticTokensForwardingApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public AutomaticTokensForwardingApi() {
         this(Configuration.getDefaultApiClient());
@@ -71,6 +84,22 @@ public class AutomaticTokensForwardingApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for addTokensToExistingFromAddress
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
@@ -84,10 +113,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -97,6 +126,20 @@ public class AutomaticTokensForwardingApi {
      </table>
      */
     public okhttp3.Call addTokensToExistingFromAddressCall(String blockchain, String network, String context, AddTokensToExistingFromAddressRB addTokensToExistingFromAddressRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = addTokensToExistingFromAddressRB;
 
         // create path and map variables
@@ -126,10 +169,12 @@ public class AutomaticTokensForwardingApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -153,7 +198,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Add Tokens To Existing fromAddress
-     * Through this endpoint customers can add **Automatic Tokens forwardings** to an already existing &#x60;fromAddress&#x60;. Unlike the \&quot;Create Automatic Tokens Forwarding\&quot; endpoint, where the &#x60;fromAddress&#x60; is generated each time, with this endpoint customers can add an automation from another token to one and the same &#x60;fromAddress&#x60;.    The &#x60;fromAddress&#x60; can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation. The  &#x60;toAddress&#x60; is essentially the main address and destination for the automatic tokens forwarding.    There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can add **Automatic Tokens forwardings** to an already existing &#x60;fromAddress&#x60;. Unlike the \&quot;Create Automatic Tokens Forwarding\&quot; endpoint, where the &#x60;fromAddress&#x60; is generated each time, with this endpoint customers can add an automation from another token to one and the same &#x60;fromAddress&#x60;.    The &#x60;fromAddress&#x60; can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation. The  &#x60;toAddress&#x60; is essentially the main address and destination for the automatic tokens forwarding.    There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    For this automatic forwarding the customer can set a callback subscription.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -164,10 +209,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -183,7 +228,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Add Tokens To Existing fromAddress
-     * Through this endpoint customers can add **Automatic Tokens forwardings** to an already existing &#x60;fromAddress&#x60;. Unlike the \&quot;Create Automatic Tokens Forwarding\&quot; endpoint, where the &#x60;fromAddress&#x60; is generated each time, with this endpoint customers can add an automation from another token to one and the same &#x60;fromAddress&#x60;.    The &#x60;fromAddress&#x60; can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation. The  &#x60;toAddress&#x60; is essentially the main address and destination for the automatic tokens forwarding.    There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can add **Automatic Tokens forwardings** to an already existing &#x60;fromAddress&#x60;. Unlike the \&quot;Create Automatic Tokens Forwarding\&quot; endpoint, where the &#x60;fromAddress&#x60; is generated each time, with this endpoint customers can add an automation from another token to one and the same &#x60;fromAddress&#x60;.    The &#x60;fromAddress&#x60; can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation. The  &#x60;toAddress&#x60; is essentially the main address and destination for the automatic tokens forwarding.    There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    For this automatic forwarding the customer can set a callback subscription.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -194,10 +239,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -214,7 +259,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Add Tokens To Existing fromAddress (asynchronously)
-     * Through this endpoint customers can add **Automatic Tokens forwardings** to an already existing &#x60;fromAddress&#x60;. Unlike the \&quot;Create Automatic Tokens Forwarding\&quot; endpoint, where the &#x60;fromAddress&#x60; is generated each time, with this endpoint customers can add an automation from another token to one and the same &#x60;fromAddress&#x60;.    The &#x60;fromAddress&#x60; can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation. The  &#x60;toAddress&#x60; is essentially the main address and destination for the automatic tokens forwarding.    There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can add **Automatic Tokens forwardings** to an already existing &#x60;fromAddress&#x60;. Unlike the \&quot;Create Automatic Tokens Forwarding\&quot; endpoint, where the &#x60;fromAddress&#x60; is generated each time, with this endpoint customers can add an automation from another token to one and the same &#x60;fromAddress&#x60;.    The &#x60;fromAddress&#x60; can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation. The  &#x60;toAddress&#x60; is essentially the main address and destination for the automatic tokens forwarding.    There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    For this automatic forwarding the customer can set a callback subscription.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -226,10 +271,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -258,10 +303,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -271,6 +316,20 @@ public class AutomaticTokensForwardingApi {
      </table>
      */
     public okhttp3.Call createAutomaticTokensForwardingCall(String blockchain, String network, String context, CreateAutomaticTokensForwardingRB createAutomaticTokensForwardingRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = createAutomaticTokensForwardingRB;
 
         // create path and map variables
@@ -300,10 +359,12 @@ public class AutomaticTokensForwardingApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -327,7 +388,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Create Automatic Tokens Forwarding
-     * Through this endpoint customers can set up an automatic forwarding function specifically for tokens (**not** coins). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic tokens forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
+     * Through this endpoint customers can set up an automatic forwarding function specifically for tokens (**not** coins). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic tokens forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -338,10 +399,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -357,7 +418,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Create Automatic Tokens Forwarding
-     * Through this endpoint customers can set up an automatic forwarding function specifically for tokens (**not** coins). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic tokens forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
+     * Through this endpoint customers can set up an automatic forwarding function specifically for tokens (**not** coins). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic tokens forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -368,10 +429,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -388,7 +449,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Create Automatic Tokens Forwarding (asynchronously)
-     * Through this endpoint customers can set up an automatic forwarding function specifically for tokens (**not** coins). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic tokens forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
+     * Through this endpoint customers can set up an automatic forwarding function specifically for tokens (**not** coins). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic tokens forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the tokens once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -400,10 +461,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Your current package plan tokens forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -432,10 +493,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -445,6 +506,20 @@ public class AutomaticTokensForwardingApi {
      </table>
      */
     public okhttp3.Call deleteAutomaticTokensForwardingCall(String blockchain, String network, String referenceId, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -475,10 +550,12 @@ public class AutomaticTokensForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -507,7 +584,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Delete Automatic Tokens Forwarding
-     * Through this endpoint customers can delete a forwarding function they have set for **tokens** (**not** coins).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, tokens can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can delete a forwarding function they have set for **tokens** (**not** coins).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, tokens can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
@@ -518,10 +595,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -537,7 +614,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Delete Automatic Tokens Forwarding
-     * Through this endpoint customers can delete a forwarding function they have set for **tokens** (**not** coins).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, tokens can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can delete a forwarding function they have set for **tokens** (**not** coins).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, tokens can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
@@ -548,10 +625,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -568,7 +645,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Delete Automatic Tokens Forwarding (asynchronously)
-     * Through this endpoint customers can delete a forwarding function they have set for **tokens** (**not** coins).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, tokens can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can delete a forwarding function they have set for **tokens** (**not** coins).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, tokens can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
@@ -580,10 +657,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The delete request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -611,10 +688,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -624,6 +701,20 @@ public class AutomaticTokensForwardingApi {
      </table>
      */
     public okhttp3.Call getFeeAddressDetailsCall(String blockchain, String network, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -653,10 +744,12 @@ public class AutomaticTokensForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -680,7 +773,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Get Fee Address Details
-     * Through this endpoint customers can obtain details about a fee address. Only one fee address per currency per network for a user&#39;s account can be set no matter how many tokens or subscriptions they have or want to automatically forward.
+     * Through this endpoint customers can obtain details about a fee address. Only one fee address per currency per network for a user&#39;s account can be set no matter how many tokens or subscriptions they have or want to automatically forward.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -690,10 +783,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -709,7 +802,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Get Fee Address Details
-     * Through this endpoint customers can obtain details about a fee address. Only one fee address per currency per network for a user&#39;s account can be set no matter how many tokens or subscriptions they have or want to automatically forward.
+     * Through this endpoint customers can obtain details about a fee address. Only one fee address per currency per network for a user&#39;s account can be set no matter how many tokens or subscriptions they have or want to automatically forward.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -719,10 +812,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -739,7 +832,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * Get Fee Address Details (asynchronously)
-     * Through this endpoint customers can obtain details about a fee address. Only one fee address per currency per network for a user&#39;s account can be set no matter how many tokens or subscriptions they have or want to automatically forward.
+     * Through this endpoint customers can obtain details about a fee address. Only one fee address per currency per network for a user&#39;s account can be set no matter how many tokens or subscriptions they have or want to automatically forward.    {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -750,10 +843,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -783,10 +876,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -796,6 +889,20 @@ public class AutomaticTokensForwardingApi {
      </table>
      */
     public okhttp3.Call listTokensForwardingAutomationsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -833,10 +940,12 @@ public class AutomaticTokensForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -860,7 +969,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * List Tokens Forwarding Automations
-     * Through this endpoint customers can list all of their **tokens** forwarding automations (**not** coins).    Customers can set up automatic forwarding functions for tokens by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.     {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can list all of their **tokens** forwarding automations (**not** coins).    Customers can set up automatic forwarding functions for tokens by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.     {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -872,10 +981,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -891,7 +1000,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * List Tokens Forwarding Automations
-     * Through this endpoint customers can list all of their **tokens** forwarding automations (**not** coins).    Customers can set up automatic forwarding functions for tokens by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.     {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can list all of their **tokens** forwarding automations (**not** coins).    Customers can set up automatic forwarding functions for tokens by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.     {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -903,10 +1012,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -923,7 +1032,7 @@ public class AutomaticTokensForwardingApi {
 
     /**
      * List Tokens Forwarding Automations (asynchronously)
-     * Through this endpoint customers can list all of their **tokens** forwarding automations (**not** coins).    Customers can set up automatic forwarding functions for tokens by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.     {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
+     * Through this endpoint customers can list all of their **tokens** forwarding automations (**not** coins).    Customers can set up automatic forwarding functions for tokens by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.     {warning}Currently we support fungible tokens (ERC-20) **only**, NFTs (ERC-721) are **not** supported.{/warning}    {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
@@ -936,10 +1045,10 @@ public class AutomaticTokensForwardingApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>

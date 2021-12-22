@@ -28,12 +28,14 @@ import org.openapitools.client.model.GetEIP1559FeeRecommendationsRI;
 /**
  * GetEIP1559FeeRecommendationsRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetEIP1559FeeRecommendationsRData {
   public static final String SERIALIZED_NAME_ITEM = "item";
   @SerializedName(SERIALIZED_NAME_ITEM)
   private GetEIP1559FeeRecommendationsRI item;
 
+  public GetEIP1559FeeRecommendationsRData() { 
+  }
 
   public GetEIP1559FeeRecommendationsRData item(GetEIP1559FeeRecommendationsRI item) {
     

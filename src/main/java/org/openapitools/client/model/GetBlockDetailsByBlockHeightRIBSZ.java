@@ -28,7 +28,7 @@ import java.io.IOException;
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBSZ {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -50,14 +50,16 @@ public class GetBlockDetailsByBlockHeightRIBSZ {
   @SerializedName(SERIALIZED_NAME_CHAINWORK)
   private String chainwork;
 
-  public static final String SERIALIZED_NAME_MERKLEROOT = "merkleroot";
-  @SerializedName(SERIALIZED_NAME_MERKLEROOT)
-  private String merkleroot;
+  public static final String SERIALIZED_NAME_MERKLE_ROOT = "merkleRoot";
+  @SerializedName(SERIALIZED_NAME_MERKLE_ROOT)
+  private String merkleRoot;
 
   public static final String SERIALIZED_NAME_VERSION = "version";
   @SerializedName(SERIALIZED_NAME_VERSION)
   private Integer version;
 
+  public GetBlockDetailsByBlockHeightRIBSZ() { 
+  }
 
   public GetBlockDetailsByBlockHeightRIBSZ difficulty(String difficulty) {
     
@@ -174,26 +176,26 @@ public class GetBlockDetailsByBlockHeightRIBSZ {
   }
 
 
-  public GetBlockDetailsByBlockHeightRIBSZ merkleroot(String merkleroot) {
+  public GetBlockDetailsByBlockHeightRIBSZ merkleRoot(String merkleRoot) {
     
-    this.merkleroot = merkleroot;
+    this.merkleRoot = merkleRoot;
     return this;
   }
 
    /**
    * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
-   * @return merkleroot
+   * @return merkleRoot
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
 
-  public String getMerkleroot() {
-    return merkleroot;
+  public String getMerkleRoot() {
+    return merkleRoot;
   }
 
 
-  public void setMerkleroot(String merkleroot) {
-    this.merkleroot = merkleroot;
+  public void setMerkleRoot(String merkleRoot) {
+    this.merkleRoot = merkleRoot;
   }
 
 
@@ -234,13 +236,13 @@ public class GetBlockDetailsByBlockHeightRIBSZ {
         Objects.equals(this.size, getBlockDetailsByBlockHeightRIBSZ.size) &&
         Objects.equals(this.bits, getBlockDetailsByBlockHeightRIBSZ.bits) &&
         Objects.equals(this.chainwork, getBlockDetailsByBlockHeightRIBSZ.chainwork) &&
-        Objects.equals(this.merkleroot, getBlockDetailsByBlockHeightRIBSZ.merkleroot) &&
+        Objects.equals(this.merkleRoot, getBlockDetailsByBlockHeightRIBSZ.merkleRoot) &&
         Objects.equals(this.version, getBlockDetailsByBlockHeightRIBSZ.version);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleroot, version);
+    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleRoot, version);
   }
 
   @Override
@@ -252,7 +254,7 @@ public class GetBlockDetailsByBlockHeightRIBSZ {
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    bits: ").append(toIndentedString(bits)).append("\n");
     sb.append("    chainwork: ").append(toIndentedString(chainwork)).append("\n");
-    sb.append("    merkleroot: ").append(toIndentedString(merkleroot)).append("\n");
+    sb.append("    merkleRoot: ").append(toIndentedString(merkleRoot)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");
     sb.append("}");
     return sb.toString();

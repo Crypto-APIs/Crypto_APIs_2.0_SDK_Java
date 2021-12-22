@@ -14,12 +14,51 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.AlreadyExists;
-import org.openapitools.client.model.BlockchainEventsCallbacksLimitReached;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40058;
+import org.openapitools.client.model.InlineResponse40059;
+import org.openapitools.client.model.InlineResponse40060;
+import org.openapitools.client.model.InlineResponse40061;
+import org.openapitools.client.model.InlineResponse40062;
+import org.openapitools.client.model.InlineResponse40063;
+import org.openapitools.client.model.InlineResponse40064;
+import org.openapitools.client.model.InlineResponse40065;
+import org.openapitools.client.model.InlineResponse40073;
+import org.openapitools.client.model.InlineResponse40074;
+import org.openapitools.client.model.InlineResponse40158;
+import org.openapitools.client.model.InlineResponse40159;
+import org.openapitools.client.model.InlineResponse40160;
+import org.openapitools.client.model.InlineResponse40161;
+import org.openapitools.client.model.InlineResponse40162;
+import org.openapitools.client.model.InlineResponse40163;
+import org.openapitools.client.model.InlineResponse40164;
+import org.openapitools.client.model.InlineResponse40165;
+import org.openapitools.client.model.InlineResponse40173;
+import org.openapitools.client.model.InlineResponse40174;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40358;
+import org.openapitools.client.model.InlineResponse40359;
+import org.openapitools.client.model.InlineResponse40360;
+import org.openapitools.client.model.InlineResponse40361;
+import org.openapitools.client.model.InlineResponse40362;
+import org.openapitools.client.model.InlineResponse40363;
+import org.openapitools.client.model.InlineResponse40364;
+import org.openapitools.client.model.InlineResponse40365;
+import org.openapitools.client.model.InlineResponse40373;
+import org.openapitools.client.model.InlineResponse40374;
+import org.openapitools.client.model.InlineResponse40910;
+import org.openapitools.client.model.InlineResponse40911;
+import org.openapitools.client.model.InlineResponse40912;
+import org.openapitools.client.model.InlineResponse40913;
+import org.openapitools.client.model.InlineResponse40914;
+import org.openapitools.client.model.InlineResponse40915;
+import org.openapitools.client.model.InlineResponse4096;
+import org.openapitools.client.model.InlineResponse4097;
+import org.openapitools.client.model.InlineResponse4098;
+import org.openapitools.client.model.InlineResponse4099;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.MinedTransactionR;
 import org.openapitools.client.model.MinedTransactionRB;
 import org.openapitools.client.model.NewBlockR;
@@ -40,9 +79,6 @@ import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsRB;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsRB;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -74,8 +110,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         MinedTransactionRB minedTransactionRB = null;
-        MinedTransactionR response = api.minedTransaction(blockchain, network, context, minedTransactionRB);
-
+                MinedTransactionR response = api.minedTransaction(blockchain, network, context, minedTransactionRB);
         // TODO: test validations
     }
     
@@ -93,8 +128,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewBlockRB newBlockRB = null;
-        NewBlockR response = api.newBlock(blockchain, network, context, newBlockRB);
-
+                NewBlockR response = api.newBlock(blockchain, network, context, newBlockRB);
         // TODO: test validations
     }
     
@@ -112,8 +146,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewConfirmedCoinsTransactionsRB newConfirmedCoinsTransactionsRB = null;
-        NewConfirmedCoinsTransactionsR response = api.newConfirmedCoinsTransactions(blockchain, network, context, newConfirmedCoinsTransactionsRB);
-
+                NewConfirmedCoinsTransactionsR response = api.newConfirmedCoinsTransactions(blockchain, network, context, newConfirmedCoinsTransactionsRB);
         // TODO: test validations
     }
     
@@ -131,8 +164,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewConfirmedCoinsTransactionsAndEachConfirmationRB newConfirmedCoinsTransactionsAndEachConfirmationRB = null;
-        NewConfirmedCoinsTransactionsAndEachConfirmationR response = api.newConfirmedCoinsTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedCoinsTransactionsAndEachConfirmationRB);
-
+                NewConfirmedCoinsTransactionsAndEachConfirmationR response = api.newConfirmedCoinsTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedCoinsTransactionsAndEachConfirmationRB);
         // TODO: test validations
     }
     
@@ -150,8 +182,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewConfirmedInternalTransactionsRB newConfirmedInternalTransactionsRB = null;
-        NewConfirmedInternalTransactionsR response = api.newConfirmedInternalTransactions(blockchain, network, context, newConfirmedInternalTransactionsRB);
-
+                NewConfirmedInternalTransactionsR response = api.newConfirmedInternalTransactions(blockchain, network, context, newConfirmedInternalTransactionsRB);
         // TODO: test validations
     }
     
@@ -169,8 +200,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewConfirmedInternalTransactionsAndEachConfirmationRB newConfirmedInternalTransactionsAndEachConfirmationRB = null;
-        NewConfirmedInternalTransactionsAndEachConfirmationR response = api.newConfirmedInternalTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedInternalTransactionsAndEachConfirmationRB);
-
+                NewConfirmedInternalTransactionsAndEachConfirmationR response = api.newConfirmedInternalTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedInternalTransactionsAndEachConfirmationRB);
         // TODO: test validations
     }
     
@@ -188,8 +218,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewConfirmedTokensTransactionsRB newConfirmedTokensTransactionsRB = null;
-        NewConfirmedTokensTransactionsR response = api.newConfirmedTokensTransactions(blockchain, network, context, newConfirmedTokensTransactionsRB);
-
+                NewConfirmedTokensTransactionsR response = api.newConfirmedTokensTransactions(blockchain, network, context, newConfirmedTokensTransactionsRB);
         // TODO: test validations
     }
     
@@ -207,8 +236,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewConfirmedTokensTransactionsAndEachConfirmationRB newConfirmedTokensTransactionsAndEachConfirmationRB = null;
-        NewConfirmedTokensTransactionsAndEachConfirmationR response = api.newConfirmedTokensTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedTokensTransactionsAndEachConfirmationRB);
-
+                NewConfirmedTokensTransactionsAndEachConfirmationR response = api.newConfirmedTokensTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedTokensTransactionsAndEachConfirmationRB);
         // TODO: test validations
     }
     
@@ -226,8 +254,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewUnconfirmedCoinsTransactionsRB newUnconfirmedCoinsTransactionsRB = null;
-        NewUnconfirmedCoinsTransactionsR response = api.newUnconfirmedCoinsTransactions(blockchain, network, context, newUnconfirmedCoinsTransactionsRB);
-
+                NewUnconfirmedCoinsTransactionsR response = api.newUnconfirmedCoinsTransactions(blockchain, network, context, newUnconfirmedCoinsTransactionsRB);
         // TODO: test validations
     }
     
@@ -245,8 +272,7 @@ public class CreateSubscriptionsForApiTest {
         String network = null;
         String context = null;
         NewUnconfirmedTokensTransactionsRB newUnconfirmedTokensTransactionsRB = null;
-        NewUnconfirmedTokensTransactionsR response = api.newUnconfirmedTokensTransactions(blockchain, network, context, newUnconfirmedTokensTransactionsRB);
-
+                NewUnconfirmedTokensTransactionsR response = api.newUnconfirmedTokensTransactions(blockchain, network, context, newUnconfirmedTokensTransactionsRB);
         // TODO: test validations
     }
     

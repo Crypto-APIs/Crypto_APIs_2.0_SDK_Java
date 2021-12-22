@@ -28,7 +28,7 @@ import java.io.IOException;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class BlockMinedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -50,6 +50,8 @@ public class BlockMinedDataItem {
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
   private Integer timestamp;
 
+  public BlockMinedDataItem() { 
+  }
 
   public BlockMinedDataItem blockchain(String blockchain) {
     

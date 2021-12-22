@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBSCGa
  * Binance Smart Chain
  */
 @ApiModel(description = "Binance Smart Chain")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListUnconfirmedTransactionsByAddressRIBSBSC {
   public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
   @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
@@ -51,6 +51,8 @@ public class ListUnconfirmedTransactionsByAddressRIBSBSC {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
   private String transactionStatus;
 
+  public ListUnconfirmedTransactionsByAddressRIBSBSC() { 
+  }
 
   public ListUnconfirmedTransactionsByAddressRIBSBSC gasLimit(String gasLimit) {
     

@@ -30,7 +30,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSc
 /**
  * GetTransactionDetailsByTransactionIDRIBSBCVin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRIBSBCVin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -46,7 +46,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
-  private String sequence;
+  private Integer sequence;
 
   public static final String SERIALIZED_NAME_TXID = "txid";
   @SerializedName(SERIALIZED_NAME_TXID)
@@ -64,6 +64,8 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private Integer vout;
 
+  public GetTransactionDetailsByTransactionIDRIBSBCVin() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRIBSBCVin addresses(List<String> addresses) {
     
@@ -139,7 +141,7 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRIBSBCVin sequence(String sequence) {
+  public GetTransactionDetailsByTransactionIDRIBSBCVin sequence(Integer sequence) {
     
     this.sequence = sequence;
     return this;
@@ -152,12 +154,12 @@ public class GetTransactionDetailsByTransactionIDRIBSBCVin {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "4294967295", required = true, value = "Represents the script sequence number.")
 
-  public String getSequence() {
+  public Integer getSequence() {
     return sequence;
   }
 
 
-  public void setSequence(String sequence) {
+  public void setSequence(Integer sequence) {
     this.sequence = sequence;
   }
 

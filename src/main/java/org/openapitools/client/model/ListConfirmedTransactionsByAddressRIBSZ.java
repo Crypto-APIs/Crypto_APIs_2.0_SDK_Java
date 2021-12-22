@@ -25,17 +25,17 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplit;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedOutput;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedSpend;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVin;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVout;
 
 /**
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListConfirmedTransactionsByAddressRIBSZ {
   public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
   @SerializedName(SERIALIZED_NAME_BINDING_SIG)
@@ -71,11 +71,11 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
 
   public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
 
   public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
 
   public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
   @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
@@ -95,8 +95,10 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListConfirmedTransactionsByAddressRIBSZVout> vout = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVout>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVout>();
 
+  public ListConfirmedTransactionsByAddressRIBSZ() { 
+  }
 
   public ListConfirmedTransactionsByAddressRIBSZ bindingSig(String bindingSig) {
     
@@ -287,13 +289,13 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
   }
 
 
-  public ListConfirmedTransactionsByAddressRIBSZ vShieldedOutput(List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput) {
+  public ListConfirmedTransactionsByAddressRIBSZ vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
     
     this.vShieldedOutput = vShieldedOutput;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressRIBSZ addVShieldedOutputItem(ListConfirmedTransactionsByAddressRIBSZVShieldedOutput vShieldedOutputItem) {
+  public ListConfirmedTransactionsByAddressRIBSZ addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
     this.vShieldedOutput.add(vShieldedOutputItem);
     return this;
   }
@@ -305,23 +307,23 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> getvShieldedOutput() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
     return vShieldedOutput;
   }
 
 
-  public void setvShieldedOutput(List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput) {
+  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
     this.vShieldedOutput = vShieldedOutput;
   }
 
 
-  public ListConfirmedTransactionsByAddressRIBSZ vShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+  public ListConfirmedTransactionsByAddressRIBSZ vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
     
     this.vShieldedSpend = vShieldedSpend;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressRIBSZ addVShieldedSpendItem(ListConfirmedTransactionsByAddressRIBSZVShieldedSpend vShieldedSpendItem) {
+  public ListConfirmedTransactionsByAddressRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
     this.vShieldedSpend.add(vShieldedSpendItem);
     return this;
   }
@@ -333,12 +335,12 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> getvShieldedSpend() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
     return vShieldedSpend;
   }
 
 
-  public void setvShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
     this.vShieldedSpend = vShieldedSpend;
   }
 
@@ -440,13 +442,13 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
   }
 
 
-  public ListConfirmedTransactionsByAddressRIBSZ vout(List<ListConfirmedTransactionsByAddressRIBSZVout> vout) {
+  public ListConfirmedTransactionsByAddressRIBSZ vout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressRIBSZ addVoutItem(ListConfirmedTransactionsByAddressRIBSZVout voutItem) {
+  public ListConfirmedTransactionsByAddressRIBSZ addVoutItem(GetTransactionDetailsByTransactionIDRIBSZVout voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -458,12 +460,12 @@ public class ListConfirmedTransactionsByAddressRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVout> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListConfirmedTransactionsByAddressRIBSZVout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
     this.vout = vout;
   }
 

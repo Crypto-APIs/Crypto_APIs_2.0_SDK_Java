@@ -38,7 +38,7 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSZ;
 /**
  * GetBlockDetailsByBlockHashRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashRIBS {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -108,10 +108,8 @@ public class GetBlockDetailsByBlockHashRIBS {
   @SerializedName(SERIALIZED_NAME_UNCLES)
   private List<String> uncles = new ArrayList<String>();
 
-  public static final String SERIALIZED_NAME_MERKLEROOT = "merkleroot";
-  @SerializedName(SERIALIZED_NAME_MERKLEROOT)
-  private String merkleroot;
-
+  public GetBlockDetailsByBlockHashRIBS() { 
+  }
 
   public GetBlockDetailsByBlockHashRIBS difficulty(String difficulty) {
     
@@ -239,7 +237,7 @@ public class GetBlockDetailsByBlockHashRIBS {
    * @return merkleRoot
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "14add5ff6fb9dfc58767228b658a48f85d988a1cc49151238f9cef85b53e54d2", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
+  @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
 
   public String getMerkleRoot() {
     return merkleRoot;
@@ -509,29 +507,6 @@ public class GetBlockDetailsByBlockHashRIBS {
   }
 
 
-  public GetBlockDetailsByBlockHashRIBS merkleroot(String merkleroot) {
-    
-    this.merkleroot = merkleroot;
-    return this;
-  }
-
-   /**
-   * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
-   * @return merkleroot
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
-
-  public String getMerkleroot() {
-    return merkleroot;
-  }
-
-
-  public void setMerkleroot(String merkleroot) {
-    this.merkleroot = merkleroot;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -557,13 +532,12 @@ public class GetBlockDetailsByBlockHashRIBS {
         Objects.equals(this.minedInSeconds, getBlockDetailsByBlockHashRIBS.minedInSeconds) &&
         Objects.equals(this.sha3Uncles, getBlockDetailsByBlockHashRIBS.sha3Uncles) &&
         Objects.equals(this.totalDifficulty, getBlockDetailsByBlockHashRIBS.totalDifficulty) &&
-        Objects.equals(this.uncles, getBlockDetailsByBlockHashRIBS.uncles) &&
-        Objects.equals(this.merkleroot, getBlockDetailsByBlockHashRIBS.merkleroot);
+        Objects.equals(this.uncles, getBlockDetailsByBlockHashRIBS.uncles);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleRoot, strippedSize, version, versionHex, weight, extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty, uncles, merkleroot);
+    return Objects.hash(difficulty, nonce, size, bits, chainwork, merkleRoot, strippedSize, version, versionHex, weight, extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty, uncles);
   }
 
   @Override
@@ -587,7 +561,6 @@ public class GetBlockDetailsByBlockHashRIBS {
     sb.append("    sha3Uncles: ").append(toIndentedString(sha3Uncles)).append("\n");
     sb.append("    totalDifficulty: ").append(toIndentedString(totalDifficulty)).append("\n");
     sb.append("    uncles: ").append(toIndentedString(uncles)).append("\n");
-    sb.append("    merkleroot: ").append(toIndentedString(merkleroot)).append("\n");
     sb.append("}");
     return sb.toString();
   }

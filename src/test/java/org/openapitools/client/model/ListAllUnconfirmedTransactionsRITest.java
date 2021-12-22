@@ -70,6 +70,14 @@ public class ListAllUnconfirmedTransactionsRITest {
     }
 
     /**
+     * Test the property 'transactionHash'
+     */
+    @Test
+    public void transactionHashTest() {
+        // TODO: test transactionHash
+    }
+
+    /**
      * Test the property 'transactionId'
      */
     @Test

@@ -21,7 +21,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.EndpointNotAllowedForApiKeyError;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.BannedIpAddressDetails;
 import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -42,35 +44,27 @@ public class EndpointNotAllowedForApiKeyTest {
     }
 
     /**
-     * Test the property 'apiVersion'
+     * Test the property 'code'
      */
     @Test
-    public void apiVersionTest() {
-        // TODO: test apiVersion
+    public void codeTest() {
+        // TODO: test code
     }
 
     /**
-     * Test the property 'requestId'
+     * Test the property 'message'
      */
     @Test
-    public void requestIdTest() {
-        // TODO: test requestId
+    public void messageTest() {
+        // TODO: test message
     }
 
     /**
-     * Test the property 'context'
+     * Test the property 'details'
      */
     @Test
-    public void contextTest() {
-        // TODO: test context
-    }
-
-    /**
-     * Test the property 'error'
-     */
-    @Test
-    public void errorTest() {
-        // TODO: test error
+    public void detailsTest() {
+        // TODO: test details
     }
 
 }

@@ -14,21 +14,37 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetTransactionRequestDetailsR;
 import org.openapitools.client.model.GetWalletAssetDetailsR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDR;
+import org.openapitools.client.model.InlineResponse40034;
+import org.openapitools.client.model.InlineResponse40035;
+import org.openapitools.client.model.InlineResponse40041;
+import org.openapitools.client.model.InlineResponse40045;
+import org.openapitools.client.model.InlineResponse40046;
+import org.openapitools.client.model.InlineResponse4007;
+import org.openapitools.client.model.InlineResponse40134;
+import org.openapitools.client.model.InlineResponse40135;
+import org.openapitools.client.model.InlineResponse40141;
+import org.openapitools.client.model.InlineResponse40145;
+import org.openapitools.client.model.InlineResponse40146;
+import org.openapitools.client.model.InlineResponse4017;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40334;
+import org.openapitools.client.model.InlineResponse40335;
+import org.openapitools.client.model.InlineResponse40341;
+import org.openapitools.client.model.InlineResponse40345;
+import org.openapitools.client.model.InlineResponse40346;
+import org.openapitools.client.model.InlineResponse4037;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListDepositAddressesR;
 import org.openapitools.client.model.ListSupportedTokensR;
 import org.openapitools.client.model.ListWalletTransactionsR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -58,8 +74,7 @@ public class InformativeApiTest {
     public void getTransactionRequestDetailsTest() throws ApiException {
         String transactionRequestId = null;
         String context = null;
-        GetTransactionRequestDetailsR response = api.getTransactionRequestDetails(transactionRequestId, context);
-
+                GetTransactionRequestDetailsR response = api.getTransactionRequestDetails(transactionRequestId, context);
         // TODO: test validations
     }
     
@@ -77,8 +92,25 @@ public class InformativeApiTest {
         String network = null;
         String walletId = null;
         String context = null;
-        GetWalletAssetDetailsR response = api.getWalletAssetDetails(blockchain, network, walletId, context);
-
+                GetWalletAssetDetailsR response = api.getWalletAssetDetails(blockchain, network, walletId, context);
+        // TODO: test validations
+    }
+    
+    /**
+     * Get Wallet Transaction Details By Transaction ID
+     *
+     * Through this endpoint users can obtain Wallet transaction information by providing a &#x60;transactionId&#x60;. Customers can receive information only for a transaction that has been made from their own wallet.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void getWalletTransactionDetailsByTransactionIDTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String transactionId = null;
+        String context = null;
+                GetWalletTransactionDetailsByTransactionIDR response = api.getWalletTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
         // TODO: test validations
     }
     
@@ -96,8 +128,7 @@ public class InformativeApiTest {
         String network = null;
         String walletId = null;
         String context = null;
-        ListDepositAddressesR response = api.listDepositAddresses(blockchain, network, walletId, context);
-
+                ListDepositAddressesR response = api.listDepositAddresses(blockchain, network, walletId, context);
         // TODO: test validations
     }
     
@@ -116,8 +147,7 @@ public class InformativeApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListSupportedTokensR response = api.listSupportedTokens(blockchain, network, context, limit, offset);
-
+                ListSupportedTokensR response = api.listSupportedTokens(blockchain, network, context, limit, offset);
         // TODO: test validations
     }
     
@@ -137,8 +167,7 @@ public class InformativeApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListWalletTransactionsR response = api.listWalletTransactions(blockchain, network, walletId, context, limit, offset);
-
+                ListWalletTransactionsR response = api.listWalletTransactions(blockchain, network, walletId, context, limit, offset);
         // TODO: test validations
     }
     

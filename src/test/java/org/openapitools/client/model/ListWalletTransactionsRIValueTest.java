@@ -72,12 +72,4 @@ public class ListWalletTransactionsRIValueTest {
         // TODO: test symbol
     }
 
-    /**
-     * Test the property 'tokenIdentifier'
-     */
-    @Test
-    public void tokenIdentifierTest() {
-        // TODO: test tokenIdentifier
-    }
-
 }

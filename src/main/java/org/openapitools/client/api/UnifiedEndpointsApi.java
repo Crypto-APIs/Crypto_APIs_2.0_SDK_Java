@@ -27,30 +27,63 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.BlockchainDataBlockNotFound;
-import org.openapitools.client.model.BlockchainDataTransactionNotFound;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetAddressDetailsR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetFeeRecommendationsR;
 import org.openapitools.client.model.GetLastMinedBlockR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse400;
+import org.openapitools.client.model.InlineResponse40010;
+import org.openapitools.client.model.InlineResponse40015;
+import org.openapitools.client.model.InlineResponse40016;
+import org.openapitools.client.model.InlineResponse40017;
+import org.openapitools.client.model.InlineResponse40024;
+import org.openapitools.client.model.InlineResponse40026;
+import org.openapitools.client.model.InlineResponse40030;
+import org.openapitools.client.model.InlineResponse40037;
+import org.openapitools.client.model.InlineResponse4004;
+import org.openapitools.client.model.InlineResponse40042;
+import org.openapitools.client.model.InlineResponse40053;
+import org.openapitools.client.model.InlineResponse401;
+import org.openapitools.client.model.InlineResponse40110;
+import org.openapitools.client.model.InlineResponse40115;
+import org.openapitools.client.model.InlineResponse40116;
+import org.openapitools.client.model.InlineResponse40117;
+import org.openapitools.client.model.InlineResponse40124;
+import org.openapitools.client.model.InlineResponse40126;
+import org.openapitools.client.model.InlineResponse40130;
+import org.openapitools.client.model.InlineResponse40137;
+import org.openapitools.client.model.InlineResponse4014;
+import org.openapitools.client.model.InlineResponse40142;
+import org.openapitools.client.model.InlineResponse40153;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse403;
+import org.openapitools.client.model.InlineResponse40310;
+import org.openapitools.client.model.InlineResponse40315;
+import org.openapitools.client.model.InlineResponse40316;
+import org.openapitools.client.model.InlineResponse40317;
+import org.openapitools.client.model.InlineResponse40324;
+import org.openapitools.client.model.InlineResponse40326;
+import org.openapitools.client.model.InlineResponse40330;
+import org.openapitools.client.model.InlineResponse40337;
+import org.openapitools.client.model.InlineResponse4034;
+import org.openapitools.client.model.InlineResponse40342;
+import org.openapitools.client.model.InlineResponse40353;
+import org.openapitools.client.model.InlineResponse404;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse4042;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsR;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressR;
 import org.openapitools.client.model.ListLatestMinedBlocksR;
 import org.openapitools.client.model.ListTransactionsByBlockHashR;
 import org.openapitools.client.model.ListTransactionsByBlockHeightR;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -60,6 +93,8 @@ import java.util.Map;
 
 public class UnifiedEndpointsApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public UnifiedEndpointsApi() {
         this(Configuration.getDefaultApiClient());
@@ -77,6 +112,22 @@ public class UnifiedEndpointsApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for getAddressDetails
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
@@ -90,10 +141,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -102,6 +153,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call getAddressDetailsCall(String blockchain, String network, String address, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -132,10 +197,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -164,7 +231,7 @@ public class UnifiedEndpointsApi {
 
     /**
      * Get Address Details
-     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here.
+     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here. Applies only for coins.
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
@@ -175,10 +242,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -193,7 +260,7 @@ public class UnifiedEndpointsApi {
 
     /**
      * Get Address Details
-     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here.
+     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here. Applies only for coins.
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
@@ -204,10 +271,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -223,7 +290,7 @@ public class UnifiedEndpointsApi {
 
     /**
      * Get Address Details (asynchronously)
-     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here.
+     * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here. Applies only for coins.
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
@@ -235,10 +302,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -266,10 +333,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -279,6 +346,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call getBlockDetailsByBlockHashCall(String blockchain, String network, String blockHash, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -309,10 +390,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -352,10 +435,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -382,10 +465,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -414,10 +497,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -446,10 +529,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -459,6 +542,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call getBlockDetailsByBlockHeightCall(String blockchain, String network, Integer height, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -489,10 +586,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -532,10 +631,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -562,10 +661,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -594,10 +693,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -625,10 +724,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -638,6 +737,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call getFeeRecommendationsCall(String blockchain, String network, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -667,10 +780,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -704,10 +819,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -733,10 +848,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -764,10 +879,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -795,10 +910,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -808,6 +923,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call getLastMinedBlockCall(String blockchain, String network, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -837,10 +966,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -874,10 +1005,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -903,10 +1034,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -934,10 +1065,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -966,10 +1097,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -979,6 +1110,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call getTransactionDetailsByTransactionIDCall(String blockchain, String network, String transactionId, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1009,10 +1154,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1052,10 +1199,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1082,10 +1229,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1114,10 +1261,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1147,10 +1294,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1159,6 +1306,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call listAllUnconfirmedTransactionsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1196,10 +1357,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1235,10 +1398,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1265,10 +1428,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1297,10 +1460,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1330,10 +1493,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1342,6 +1505,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call listConfirmedTransactionsByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1380,10 +1557,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1425,10 +1604,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1456,10 +1635,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1489,10 +1668,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1520,10 +1699,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1533,6 +1712,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call listLatestMinedBlocksCall(String network, String blockchain, Integer count, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1563,10 +1756,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1595,7 +1790,7 @@ public class UnifiedEndpointsApi {
 
     /**
      * List Latest Mined Blocks
-     * Through this endpoint customers can list the latest 50 blocks that were mined.
+     * Through this endpoint customers can list **up to 50** from the latest blocks that were mined.
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param count Specifies how many records were requested. (required)
@@ -1606,10 +1801,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1625,7 +1820,7 @@ public class UnifiedEndpointsApi {
 
     /**
      * List Latest Mined Blocks
-     * Through this endpoint customers can list the latest 50 blocks that were mined.
+     * Through this endpoint customers can list **up to 50** from the latest blocks that were mined.
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param count Specifies how many records were requested. (required)
@@ -1636,10 +1831,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1656,7 +1851,7 @@ public class UnifiedEndpointsApi {
 
     /**
      * List Latest Mined Blocks (asynchronously)
-     * Through this endpoint customers can list the latest 50 blocks that were mined.
+     * Through this endpoint customers can list **up to 50** from the latest blocks that were mined.
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param count Specifies how many records were requested. (required)
@@ -1668,10 +1863,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1702,10 +1897,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1714,6 +1909,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call listTransactionsByBlockHashCall(String blockchain, String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1752,10 +1961,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1797,10 +2008,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1828,10 +2039,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1861,10 +2072,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -1894,10 +2105,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -1907,6 +2118,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call listTransactionsByBlockHeightCall(String blockchain, String network, Integer height, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -1945,10 +2170,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -1990,10 +2217,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -2022,10 +2249,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -2056,10 +2283,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 404 </td><td> The specified block has not been found on the specific blockchain. </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
@@ -2090,10 +2317,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -2102,6 +2329,20 @@ public class UnifiedEndpointsApi {
      </table>
      */
     public okhttp3.Call listUnconfirmedTransactionsByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = null;
 
         // create path and map variables
@@ -2140,10 +2381,12 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -2185,10 +2428,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -2216,10 +2459,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
@@ -2249,10 +2492,10 @@ public class UnifiedEndpointsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
         <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>

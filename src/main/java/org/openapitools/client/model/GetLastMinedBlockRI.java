@@ -28,7 +28,7 @@ import org.openapitools.client.model.GetLastMinedBlockRIBS;
 /**
  * GetLastMinedBlockRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetLastMinedBlockRI {
   public static final String SERIALIZED_NAME_HASH = "hash";
   @SerializedName(SERIALIZED_NAME_HASH)
@@ -54,6 +54,8 @@ public class GetLastMinedBlockRI {
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC)
   private GetLastMinedBlockRIBS blockchainSpecific;
 
+  public GetLastMinedBlockRI() { 
+  }
 
   public GetLastMinedBlockRI hash(String hash) {
     

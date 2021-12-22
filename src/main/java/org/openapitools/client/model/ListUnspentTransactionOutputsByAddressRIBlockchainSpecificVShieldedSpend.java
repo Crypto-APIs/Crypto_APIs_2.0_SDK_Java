@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend {
   public static final String SERIALIZED_NAME_ANCHOR = "anchor";
   @SerializedName(SERIALIZED_NAME_ANCHOR)
@@ -53,6 +53,8 @@ public class ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShielded
   @SerializedName(SERIALIZED_NAME_SPEND_AUTH_SIG)
   private String spendAuthSig;
 
+  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend() { 
+  }
 
   public ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend anchor(String anchor) {
     

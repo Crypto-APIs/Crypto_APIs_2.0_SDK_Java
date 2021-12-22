@@ -32,7 +32,7 @@ import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRISende
 /**
  * ListAllUnconfirmedTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRI {
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
@@ -46,6 +46,10 @@ public class ListAllUnconfirmedTransactionsRI {
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
   private Integer timestamp;
 
+  public static final String SERIALIZED_NAME_TRANSACTION_HASH = "transactionHash";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_HASH)
+  private String transactionHash;
+
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
   private String transactionId;
@@ -54,6 +58,8 @@ public class ListAllUnconfirmedTransactionsRI {
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC)
   private ListAllUnconfirmedTransactionsRIBS blockchainSpecific;
 
+  public ListAllUnconfirmedTransactionsRI() { 
+  }
 
   public ListAllUnconfirmedTransactionsRI recipients(List<ListUnconfirmedTransactionsByAddressRIRecipients> recipients) {
     
@@ -134,6 +140,29 @@ public class ListAllUnconfirmedTransactionsRI {
   }
 
 
+  public ListAllUnconfirmedTransactionsRI transactionHash(String transactionHash) {
+    
+    this.transactionHash = transactionHash;
+    return this;
+  }
+
+   /**
+   * String representation of the transaction hash
+   * @return transactionHash
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "aac825d18dfe6cba2eb22532f206fccbaf3b08c3c1457faac9568c1a4a6dfc00", required = true, value = "String representation of the transaction hash")
+
+  public String getTransactionHash() {
+    return transactionHash;
+  }
+
+
+  public void setTransactionHash(String transactionHash) {
+    this.transactionHash = transactionHash;
+  }
+
+
   public ListAllUnconfirmedTransactionsRI transactionId(String transactionId) {
     
     this.transactionId = transactionId;
@@ -192,13 +221,14 @@ public class ListAllUnconfirmedTransactionsRI {
     return Objects.equals(this.recipients, listAllUnconfirmedTransactionsRI.recipients) &&
         Objects.equals(this.senders, listAllUnconfirmedTransactionsRI.senders) &&
         Objects.equals(this.timestamp, listAllUnconfirmedTransactionsRI.timestamp) &&
+        Objects.equals(this.transactionHash, listAllUnconfirmedTransactionsRI.transactionHash) &&
         Objects.equals(this.transactionId, listAllUnconfirmedTransactionsRI.transactionId) &&
         Objects.equals(this.blockchainSpecific, listAllUnconfirmedTransactionsRI.blockchainSpecific);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(recipients, senders, timestamp, transactionId, blockchainSpecific);
+    return Objects.hash(recipients, senders, timestamp, transactionHash, transactionId, blockchainSpecific);
   }
 
   @Override
@@ -208,6 +238,7 @@ public class ListAllUnconfirmedTransactionsRI {
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("    senders: ").append(toIndentedString(senders)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
+    sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    blockchainSpecific: ").append(toIndentedString(blockchainSpecific)).append("\n");
     sb.append("}");

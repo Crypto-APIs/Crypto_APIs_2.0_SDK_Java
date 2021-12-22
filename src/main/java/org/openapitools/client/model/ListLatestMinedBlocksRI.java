@@ -23,14 +23,14 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalCoins;
-import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalFees;
 import org.openapitools.client.model.ListLatestMinedBlocksRIBS;
+import org.openapitools.client.model.ListLatestMinedBlocksRITotalCoins;
+import org.openapitools.client.model.ListLatestMinedBlocksRITotalFees;
 
 /**
  * ListLatestMinedBlocksRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListLatestMinedBlocksRI {
   public static final String SERIALIZED_NAME_HASH = "hash";
   @SerializedName(SERIALIZED_NAME_HASH)
@@ -54,16 +54,18 @@ public class ListLatestMinedBlocksRI {
 
   public static final String SERIALIZED_NAME_TOTAL_COINS = "totalCoins";
   @SerializedName(SERIALIZED_NAME_TOTAL_COINS)
-  private GetLatestMinedXRPRippleBlockRITotalCoins totalCoins;
+  private ListLatestMinedBlocksRITotalCoins totalCoins;
 
   public static final String SERIALIZED_NAME_TOTAL_FEES = "totalFees";
   @SerializedName(SERIALIZED_NAME_TOTAL_FEES)
-  private GetLatestMinedXRPRippleBlockRITotalFees totalFees;
+  private ListLatestMinedBlocksRITotalFees totalFees;
 
   public static final String SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC = "blockchainSpecific";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC)
   private ListLatestMinedBlocksRIBS blockchainSpecific;
 
+  public ListLatestMinedBlocksRI() { 
+  }
 
   public ListLatestMinedBlocksRI hash(String hash) {
     
@@ -180,7 +182,7 @@ public class ListLatestMinedBlocksRI {
   }
 
 
-  public ListLatestMinedBlocksRI totalCoins(GetLatestMinedXRPRippleBlockRITotalCoins totalCoins) {
+  public ListLatestMinedBlocksRI totalCoins(ListLatestMinedBlocksRITotalCoins totalCoins) {
     
     this.totalCoins = totalCoins;
     return this;
@@ -193,17 +195,17 @@ public class ListLatestMinedBlocksRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public GetLatestMinedXRPRippleBlockRITotalCoins getTotalCoins() {
+  public ListLatestMinedBlocksRITotalCoins getTotalCoins() {
     return totalCoins;
   }
 
 
-  public void setTotalCoins(GetLatestMinedXRPRippleBlockRITotalCoins totalCoins) {
+  public void setTotalCoins(ListLatestMinedBlocksRITotalCoins totalCoins) {
     this.totalCoins = totalCoins;
   }
 
 
-  public ListLatestMinedBlocksRI totalFees(GetLatestMinedXRPRippleBlockRITotalFees totalFees) {
+  public ListLatestMinedBlocksRI totalFees(ListLatestMinedBlocksRITotalFees totalFees) {
     
     this.totalFees = totalFees;
     return this;
@@ -216,12 +218,12 @@ public class ListLatestMinedBlocksRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public GetLatestMinedXRPRippleBlockRITotalFees getTotalFees() {
+  public ListLatestMinedBlocksRITotalFees getTotalFees() {
     return totalFees;
   }
 
 
-  public void setTotalFees(GetLatestMinedXRPRippleBlockRITotalFees totalFees) {
+  public void setTotalFees(ListLatestMinedBlocksRITotalFees totalFees) {
     this.totalFees = totalFees;
   }
 

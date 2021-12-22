@@ -33,19 +33,29 @@ import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressR;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRB;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletR;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRB;
-import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressR;
-import org.openapitools.client.model.CreateTokensTransactionRequestFromAddressRB;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
-import org.openapitools.client.model.WalletAsAServiceAddressBalanceNotEnough;
-import org.openapitools.client.model.WalletAsAServiceNoDepositAddressesFound;
-import org.openapitools.client.model.WalletAsAServiceTokenNotSupported;
+import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressR;
+import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRB;
+import org.openapitools.client.model.InlineResponse40013;
+import org.openapitools.client.model.InlineResponse40020;
+import org.openapitools.client.model.InlineResponse40025;
+import org.openapitools.client.model.InlineResponse40036;
+import org.openapitools.client.model.InlineResponse40113;
+import org.openapitools.client.model.InlineResponse40120;
+import org.openapitools.client.model.InlineResponse40125;
+import org.openapitools.client.model.InlineResponse40136;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40313;
+import org.openapitools.client.model.InlineResponse40320;
+import org.openapitools.client.model.InlineResponse40325;
+import org.openapitools.client.model.InlineResponse40336;
+import org.openapitools.client.model.InlineResponse4091;
+import org.openapitools.client.model.InlineResponse4092;
+import org.openapitools.client.model.InlineResponse4093;
+import org.openapitools.client.model.InlineResponse4094;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -55,6 +65,8 @@ import java.util.Map;
 
 public class TransactionsApi {
     private ApiClient localVarApiClient;
+    private int localHostIndex;
+    private String localCustomBaseUrl;
 
     public TransactionsApi() {
         this(Configuration.getDefaultApiClient());
@@ -72,6 +84,22 @@ public class TransactionsApi {
         this.localVarApiClient = apiClient;
     }
 
+    public int getHostIndex() {
+        return localHostIndex;
+    }
+
+    public void setHostIndex(int hostIndex) {
+        this.localHostIndex = hostIndex;
+    }
+
+    public String getCustomBaseUrl() {
+        return localCustomBaseUrl;
+    }
+
+    public void setCustomBaseUrl(String customBaseUrl) {
+        this.localCustomBaseUrl = customBaseUrl;
+    }
+
     /**
      * Build call for createCoinsTransactionFromAddressForWholeAmount
      * @param address Defines the source address. (required)
@@ -87,11 +115,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -99,6 +127,20 @@ public class TransactionsApi {
      </table>
      */
     public okhttp3.Call createCoinsTransactionFromAddressForWholeAmountCall(String address, String blockchain, String network, String walletId, String context, CreateCoinsTransactionFromAddressForWholeAmountRB createCoinsTransactionFromAddressForWholeAmountRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = createCoinsTransactionFromAddressForWholeAmountRB;
 
         // create path and map variables
@@ -130,10 +172,12 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -180,11 +224,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -211,11 +255,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -244,11 +288,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -277,11 +321,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -289,6 +333,20 @@ public class TransactionsApi {
      </table>
      */
     public okhttp3.Call createCoinsTransactionRequestFromAddressCall(String address, String blockchain, String network, String walletId, String context, CreateCoinsTransactionRequestFromAddressRB createCoinsTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = createCoinsTransactionRequestFromAddressRB;
 
         // create path and map variables
@@ -320,10 +378,12 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -370,11 +430,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -401,11 +461,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -434,11 +494,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -466,11 +526,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Please first create a deposit address for the specific blockchain and network, in order to be able to make transactions. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -478,6 +538,20 @@ public class TransactionsApi {
      </table>
      */
     public okhttp3.Call createCoinsTransactionRequestFromWalletCall(String blockchain, String network, String walletId, String context, CreateCoinsTransactionRequestFromWalletRB createCoinsTransactionRequestFromWalletRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
         Object localVarPostBody = createCoinsTransactionRequestFromWalletRB;
 
         // create path and map variables
@@ -508,10 +582,12 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
@@ -552,11 +628,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Please first create a deposit address for the specific blockchain and network, in order to be able to make transactions. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -582,11 +658,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Please first create a deposit address for the specific blockchain and network, in order to be able to make transactions. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -614,11 +690,11 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> Please first create a deposit address for the specific blockchain and network, in order to be able to make transactions. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
@@ -633,13 +709,13 @@ public class TransactionsApi {
         return localVarCall;
     }
     /**
-     * Build call for createTokensTransactionRequestFromAddress
+     * Build call for createFungibleTokensTransactionRequestFromAddress
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param senderAddress Defines the specific source address for the transaction. (required)
      * @param walletId Defines the unique ID of the Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param createTokensTransactionRequestFromAddressRB  (optional)
+     * @param createFungibleTokensTransactionRequestFromAddressRB  (optional)
      * @param _callback Callback for upload/download progress
      * @return Call to execute
      * @throws ApiException If fail to serialize the request body object
@@ -647,19 +723,33 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The token is not supported for this blockchain and network. To be supported, please contact our team. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTokensTransactionRequestFromAddressCall(String blockchain, String network, String senderAddress, String walletId, String context, CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
-        Object localVarPostBody = createTokensTransactionRequestFromAddressRB;
+    public okhttp3.Call createFungibleTokensTransactionRequestFromAddressCall(String blockchain, String network, String senderAddress, String walletId, String context, CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = createFungibleTokensTransactionRequestFromAddressRB;
 
         // create path and map variables
         String localVarPath = "/wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/token-transaction-requests"
@@ -690,113 +780,115 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
+        if (localVarHeaderParams != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
 
         String[] localVarAuthNames = new String[] { "ApiKey" };
-        return localVarApiClient.buildCall(localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call createTokensTransactionRequestFromAddressValidateBeforeCall(String blockchain, String network, String senderAddress, String walletId, String context, CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call createFungibleTokensTransactionRequestFromAddressValidateBeforeCall(String blockchain, String network, String senderAddress, String walletId, String context, CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
-            throw new ApiException("Missing the required parameter 'blockchain' when calling createTokensTransactionRequestFromAddress(Async)");
+            throw new ApiException("Missing the required parameter 'blockchain' when calling createFungibleTokensTransactionRequestFromAddress(Async)");
         }
         
         // verify the required parameter 'network' is set
         if (network == null) {
-            throw new ApiException("Missing the required parameter 'network' when calling createTokensTransactionRequestFromAddress(Async)");
+            throw new ApiException("Missing the required parameter 'network' when calling createFungibleTokensTransactionRequestFromAddress(Async)");
         }
         
         // verify the required parameter 'senderAddress' is set
         if (senderAddress == null) {
-            throw new ApiException("Missing the required parameter 'senderAddress' when calling createTokensTransactionRequestFromAddress(Async)");
+            throw new ApiException("Missing the required parameter 'senderAddress' when calling createFungibleTokensTransactionRequestFromAddress(Async)");
         }
         
         // verify the required parameter 'walletId' is set
         if (walletId == null) {
-            throw new ApiException("Missing the required parameter 'walletId' when calling createTokensTransactionRequestFromAddress(Async)");
+            throw new ApiException("Missing the required parameter 'walletId' when calling createFungibleTokensTransactionRequestFromAddress(Async)");
         }
         
 
-        okhttp3.Call localVarCall = createTokensTransactionRequestFromAddressCall(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB, _callback);
+        okhttp3.Call localVarCall = createFungibleTokensTransactionRequestFromAddressCall(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB, _callback);
         return localVarCall;
 
     }
 
     /**
-     * Create Tokens Transaction Request from Address
-     * Through this endpoint users can make a single token transaction.    {warning}This applies only to **fungible** tokens, **not** NFTs (non-fungible tokens).{/warning}    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
+     * Create Fungible Tokens Transaction Request from Address
+     * Through this endpoint users can make a single token transaction.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param senderAddress Defines the specific source address for the transaction. (required)
      * @param walletId Defines the unique ID of the Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param createTokensTransactionRequestFromAddressRB  (optional)
-     * @return CreateTokensTransactionRequestFromAddressR
+     * @param createFungibleTokensTransactionRequestFromAddressRB  (optional)
+     * @return CreateFungibleTokensTransactionRequestFromAddressR
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The token is not supported for this blockchain and network. To be supported, please contact our team. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public CreateTokensTransactionRequestFromAddressR createTokensTransactionRequestFromAddress(String blockchain, String network, String senderAddress, String walletId, String context, CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB) throws ApiException {
-        ApiResponse<CreateTokensTransactionRequestFromAddressR> localVarResp = createTokensTransactionRequestFromAddressWithHttpInfo(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB);
+    public CreateFungibleTokensTransactionRequestFromAddressR createFungibleTokensTransactionRequestFromAddress(String blockchain, String network, String senderAddress, String walletId, String context, CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB) throws ApiException {
+        ApiResponse<CreateFungibleTokensTransactionRequestFromAddressR> localVarResp = createFungibleTokensTransactionRequestFromAddressWithHttpInfo(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB);
         return localVarResp.getData();
     }
 
     /**
-     * Create Tokens Transaction Request from Address
-     * Through this endpoint users can make a single token transaction.    {warning}This applies only to **fungible** tokens, **not** NFTs (non-fungible tokens).{/warning}    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
+     * Create Fungible Tokens Transaction Request from Address
+     * Through this endpoint users can make a single token transaction.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param senderAddress Defines the specific source address for the transaction. (required)
      * @param walletId Defines the unique ID of the Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param createTokensTransactionRequestFromAddressRB  (optional)
-     * @return ApiResponse&lt;CreateTokensTransactionRequestFromAddressR&gt;
+     * @param createFungibleTokensTransactionRequestFromAddressRB  (optional)
+     * @return ApiResponse&lt;CreateFungibleTokensTransactionRequestFromAddressR&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The token is not supported for this blockchain and network. To be supported, please contact our team. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<CreateTokensTransactionRequestFromAddressR> createTokensTransactionRequestFromAddressWithHttpInfo(String blockchain, String network, String senderAddress, String walletId, String context, CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB) throws ApiException {
-        okhttp3.Call localVarCall = createTokensTransactionRequestFromAddressValidateBeforeCall(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB, null);
-        Type localVarReturnType = new TypeToken<CreateTokensTransactionRequestFromAddressR>(){}.getType();
+    public ApiResponse<CreateFungibleTokensTransactionRequestFromAddressR> createFungibleTokensTransactionRequestFromAddressWithHttpInfo(String blockchain, String network, String senderAddress, String walletId, String context, CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB) throws ApiException {
+        okhttp3.Call localVarCall = createFungibleTokensTransactionRequestFromAddressValidateBeforeCall(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB, null);
+        Type localVarReturnType = new TypeToken<CreateFungibleTokensTransactionRequestFromAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
     }
 
     /**
-     * Create Tokens Transaction Request from Address (asynchronously)
-     * Through this endpoint users can make a single token transaction.    {warning}This applies only to **fungible** tokens, **not** NFTs (non-fungible tokens).{/warning}    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
+     * Create Fungible Tokens Transaction Request from Address (asynchronously)
+     * Through this endpoint users can make a single token transaction.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param senderAddress Defines the specific source address for the transaction. (required)
      * @param walletId Defines the unique ID of the Wallet. (required)
      * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
-     * @param createTokensTransactionRequestFromAddressRB  (optional)
+     * @param createFungibleTokensTransactionRequestFromAddressRB  (optional)
      * @param _callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
@@ -804,21 +896,21 @@ public class TransactionsApi {
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
         <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
-        <tr><td> 400 </td><td> The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. </td><td>  -  </td></tr>
-        <tr><td> 401 </td><td> The provided API key is invalid. Please, generate a new one from your Dashboard. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
-        <tr><td> 403 </td><td> Mainnets access is not available for your current subscription plan, please upgrade your plan to be able to use it. </td><td>  -  </td></tr>
-        <tr><td> 409 </td><td> The token is not supported for this blockchain and network. To be supported, please contact our team. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
         <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
         <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
         <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call createTokensTransactionRequestFromAddressAsync(String blockchain, String network, String senderAddress, String walletId, String context, CreateTokensTransactionRequestFromAddressRB createTokensTransactionRequestFromAddressRB, final ApiCallback<CreateTokensTransactionRequestFromAddressR> _callback) throws ApiException {
+    public okhttp3.Call createFungibleTokensTransactionRequestFromAddressAsync(String blockchain, String network, String senderAddress, String walletId, String context, CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB, final ApiCallback<CreateFungibleTokensTransactionRequestFromAddressR> _callback) throws ApiException {
 
-        okhttp3.Call localVarCall = createTokensTransactionRequestFromAddressValidateBeforeCall(blockchain, network, senderAddress, walletId, context, createTokensTransactionRequestFromAddressRB, _callback);
-        Type localVarReturnType = new TypeToken<CreateTokensTransactionRequestFromAddressR>(){}.getType();
+        okhttp3.Call localVarCall = createFungibleTokensTransactionRequestFromAddressValidateBeforeCall(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB, _callback);
+        Type localVarReturnType = new TypeToken<CreateFungibleTokensTransactionRequestFromAddressR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

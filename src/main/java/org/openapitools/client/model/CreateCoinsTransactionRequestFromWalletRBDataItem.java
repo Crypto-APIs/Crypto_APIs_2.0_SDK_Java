@@ -30,7 +30,7 @@ import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDa
 /**
  * CreateCoinsTransactionRequestFromWalletRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -152,6 +152,8 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
   private List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients = new ArrayList<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients>();
 
+  public CreateCoinsTransactionRequestFromWalletRBDataItem() { 
+  }
 
   public CreateCoinsTransactionRequestFromWalletRBDataItem callbackSecretKey(String callbackSecretKey) {
     

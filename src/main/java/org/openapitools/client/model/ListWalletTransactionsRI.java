@@ -26,6 +26,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListWalletTransactionsRIFee;
+import org.openapitools.client.model.ListWalletTransactionsRIFungibleTokens;
+import org.openapitools.client.model.ListWalletTransactionsRIInternalTransactions;
+import org.openapitools.client.model.ListWalletTransactionsRINonFungibleTokens;
 import org.openapitools.client.model.ListWalletTransactionsRIRecipients;
 import org.openapitools.client.model.ListWalletTransactionsRISenders;
 import org.openapitools.client.model.ListWalletTransactionsRIValue;
@@ -33,7 +36,7 @@ import org.openapitools.client.model.ListWalletTransactionsRIValue;
 /**
  * ListWalletTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListWalletTransactionsRI {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
@@ -42,6 +45,18 @@ public class ListWalletTransactionsRI {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
   private ListWalletTransactionsRIFee fee;
+
+  public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
+  @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
+  private List<ListWalletTransactionsRIFungibleTokens> fungibleTokens = null;
+
+  public static final String SERIALIZED_NAME_INTERNAL_TRANSACTIONS = "internalTransactions";
+  @SerializedName(SERIALIZED_NAME_INTERNAL_TRANSACTIONS)
+  private List<ListWalletTransactionsRIInternalTransactions> internalTransactions = null;
+
+  public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
+  @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
+  private List<ListWalletTransactionsRINonFungibleTokens> nonFungibleTokens = null;
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
@@ -67,6 +82,8 @@ public class ListWalletTransactionsRI {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private ListWalletTransactionsRIValue value;
 
+  public ListWalletTransactionsRI() { 
+  }
 
   public ListWalletTransactionsRI direction(String direction) {
     
@@ -111,6 +128,99 @@ public class ListWalletTransactionsRI {
 
   public void setFee(ListWalletTransactionsRIFee fee) {
     this.fee = fee;
+  }
+
+
+  public ListWalletTransactionsRI fungibleTokens(List<ListWalletTransactionsRIFungibleTokens> fungibleTokens) {
+    
+    this.fungibleTokens = fungibleTokens;
+    return this;
+  }
+
+  public ListWalletTransactionsRI addFungibleTokensItem(ListWalletTransactionsRIFungibleTokens fungibleTokensItem) {
+    if (this.fungibleTokens == null) {
+      this.fungibleTokens = new ArrayList<ListWalletTransactionsRIFungibleTokens>();
+    }
+    this.fungibleTokens.add(fungibleTokensItem);
+    return this;
+  }
+
+   /**
+   * Represents fungible tokens&#39;es detailed information
+   * @return fungibleTokens
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Represents fungible tokens'es detailed information")
+
+  public List<ListWalletTransactionsRIFungibleTokens> getFungibleTokens() {
+    return fungibleTokens;
+  }
+
+
+  public void setFungibleTokens(List<ListWalletTransactionsRIFungibleTokens> fungibleTokens) {
+    this.fungibleTokens = fungibleTokens;
+  }
+
+
+  public ListWalletTransactionsRI internalTransactions(List<ListWalletTransactionsRIInternalTransactions> internalTransactions) {
+    
+    this.internalTransactions = internalTransactions;
+    return this;
+  }
+
+  public ListWalletTransactionsRI addInternalTransactionsItem(ListWalletTransactionsRIInternalTransactions internalTransactionsItem) {
+    if (this.internalTransactions == null) {
+      this.internalTransactions = new ArrayList<ListWalletTransactionsRIInternalTransactions>();
+    }
+    this.internalTransactions.add(internalTransactionsItem);
+    return this;
+  }
+
+   /**
+   * Get internalTransactions
+   * @return internalTransactions
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "")
+
+  public List<ListWalletTransactionsRIInternalTransactions> getInternalTransactions() {
+    return internalTransactions;
+  }
+
+
+  public void setInternalTransactions(List<ListWalletTransactionsRIInternalTransactions> internalTransactions) {
+    this.internalTransactions = internalTransactions;
+  }
+
+
+  public ListWalletTransactionsRI nonFungibleTokens(List<ListWalletTransactionsRINonFungibleTokens> nonFungibleTokens) {
+    
+    this.nonFungibleTokens = nonFungibleTokens;
+    return this;
+  }
+
+  public ListWalletTransactionsRI addNonFungibleTokensItem(ListWalletTransactionsRINonFungibleTokens nonFungibleTokensItem) {
+    if (this.nonFungibleTokens == null) {
+      this.nonFungibleTokens = new ArrayList<ListWalletTransactionsRINonFungibleTokens>();
+    }
+    this.nonFungibleTokens.add(nonFungibleTokensItem);
+    return this;
+  }
+
+   /**
+   * Represents non-fungible tokens&#39;es detailed information.
+   * @return nonFungibleTokens
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(value = "Represents non-fungible tokens'es detailed information.")
+
+  public List<ListWalletTransactionsRINonFungibleTokens> getNonFungibleTokens() {
+    return nonFungibleTokens;
+  }
+
+
+  public void setNonFungibleTokens(List<ListWalletTransactionsRINonFungibleTokens> nonFungibleTokens) {
+    this.nonFungibleTokens = nonFungibleTokens;
   }
 
 
@@ -273,6 +383,9 @@ public class ListWalletTransactionsRI {
     ListWalletTransactionsRI listWalletTransactionsRI = (ListWalletTransactionsRI) o;
     return Objects.equals(this.direction, listWalletTransactionsRI.direction) &&
         Objects.equals(this.fee, listWalletTransactionsRI.fee) &&
+        Objects.equals(this.fungibleTokens, listWalletTransactionsRI.fungibleTokens) &&
+        Objects.equals(this.internalTransactions, listWalletTransactionsRI.internalTransactions) &&
+        Objects.equals(this.nonFungibleTokens, listWalletTransactionsRI.nonFungibleTokens) &&
         Objects.equals(this.recipients, listWalletTransactionsRI.recipients) &&
         Objects.equals(this.senders, listWalletTransactionsRI.senders) &&
         Objects.equals(this.status, listWalletTransactionsRI.status) &&
@@ -283,7 +396,7 @@ public class ListWalletTransactionsRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(direction, fee, recipients, senders, status, timestamp, transactionId, value);
+    return Objects.hash(direction, fee, fungibleTokens, internalTransactions, nonFungibleTokens, recipients, senders, status, timestamp, transactionId, value);
   }
 
   @Override
@@ -292,6 +405,9 @@ public class ListWalletTransactionsRI {
     sb.append("class ListWalletTransactionsRI {\n");
     sb.append("    direction: ").append(toIndentedString(direction)).append("\n");
     sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
+    sb.append("    fungibleTokens: ").append(toIndentedString(fungibleTokens)).append("\n");
+    sb.append("    internalTransactions: ").append(toIndentedString(internalTransactions)).append("\n");
+    sb.append("    nonFungibleTokens: ").append(toIndentedString(nonFungibleTokens)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("    senders: ").append(toIndentedString(senders)).append("\n");
     sb.append("    status: ").append(toIndentedString(status)).append("\n");

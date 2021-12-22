@@ -14,18 +14,26 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
+import org.openapitools.client.model.ActivateBlockchainEventSubscriptionR;
+import org.openapitools.client.model.ActivateBlockchainEventSubscriptionRB;
 import org.openapitools.client.model.DeleteBlockchainEventSubscriptionR;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40066;
+import org.openapitools.client.model.InlineResponse40067;
+import org.openapitools.client.model.InlineResponse40068;
+import org.openapitools.client.model.InlineResponse40166;
+import org.openapitools.client.model.InlineResponse40167;
+import org.openapitools.client.model.InlineResponse40168;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40366;
+import org.openapitools.client.model.InlineResponse40367;
+import org.openapitools.client.model.InlineResponse40368;
+import org.openapitools.client.model.InlineResponse4041;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListBlockchainEventsSubscriptionsR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.ResourceNotFound;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -44,6 +52,23 @@ public class ManageSubscriptionsApiTest {
 
     
     /**
+     * Activate Blockchain Event Subscription
+     *
+     * Through this endpoint customers can reactivate an event subscription (callback) which has been deactivated by the system. Deactivations could happen due to various reasons, most often \&quot;maximum retry attempts reached\&quot;.
+     *
+     * @throws ApiException
+     *          if the Api call fails
+     */
+    @Test
+    public void activateBlockchainEventSubscriptionTest() throws ApiException {
+        String referenceId = null;
+        String context = null;
+        ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB = null;
+                ActivateBlockchainEventSubscriptionR response = api.activateBlockchainEventSubscription(referenceId, context, activateBlockchainEventSubscriptionRB);
+        // TODO: test validations
+    }
+    
+    /**
      * Delete Blockchain Event Subscription
      *
      * Through this endpoint the customer can delete blockchain event subscriptions they have by attributes &#x60;referenceId&#x60; and &#x60;network&#x60;.    Currently Crypto APIs 2.0 offers certain Blockchain event endpoints which allow the user to subscribe for one/a few/all and receive callback notifications when the specific event occurs.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
@@ -57,8 +82,7 @@ public class ManageSubscriptionsApiTest {
         String network = null;
         String referenceId = null;
         String context = null;
-        DeleteBlockchainEventSubscriptionR response = api.deleteBlockchainEventSubscription(blockchain, network, referenceId, context);
-
+                DeleteBlockchainEventSubscriptionR response = api.deleteBlockchainEventSubscription(blockchain, network, referenceId, context);
         // TODO: test validations
     }
     
@@ -77,8 +101,7 @@ public class ManageSubscriptionsApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListBlockchainEventsSubscriptionsR response = api.listBlockchainEventsSubscriptions(blockchain, network, context, limit, offset);
-
+                ListBlockchainEventsSubscriptionsR response = api.listBlockchainEventsSubscriptions(blockchain, network, context, limit, offset);
         // TODO: test validations
     }
     

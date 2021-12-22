@@ -25,12 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSLScriptSig;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSLScriptSig;
 
 /**
  * ListTransactionsByBlockHashRIBSLVin
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSLVin {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
@@ -42,7 +42,7 @@ public class ListTransactionsByBlockHashRIBSLVin {
 
   public static final String SERIALIZED_NAME_SCRIPT_SIG = "scriptSig";
   @SerializedName(SERIALIZED_NAME_SCRIPT_SIG)
-  private GetTransactionDetailsByTransactionIDRIBSLScriptSig scriptSig;
+  private ListTransactionsByBlockHashRIBSLScriptSig scriptSig;
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
@@ -64,6 +64,8 @@ public class ListTransactionsByBlockHashRIBSLVin {
   @SerializedName(SERIALIZED_NAME_VOUT)
   private Integer vout;
 
+  public ListTransactionsByBlockHashRIBSLVin() { 
+  }
 
   public ListTransactionsByBlockHashRIBSLVin addresses(List<String> addresses) {
     
@@ -116,7 +118,7 @@ public class ListTransactionsByBlockHashRIBSLVin {
   }
 
 
-  public ListTransactionsByBlockHashRIBSLVin scriptSig(GetTransactionDetailsByTransactionIDRIBSLScriptSig scriptSig) {
+  public ListTransactionsByBlockHashRIBSLVin scriptSig(ListTransactionsByBlockHashRIBSLScriptSig scriptSig) {
     
     this.scriptSig = scriptSig;
     return this;
@@ -129,12 +131,12 @@ public class ListTransactionsByBlockHashRIBSLVin {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public GetTransactionDetailsByTransactionIDRIBSLScriptSig getScriptSig() {
+  public ListTransactionsByBlockHashRIBSLScriptSig getScriptSig() {
     return scriptSig;
   }
 
 
-  public void setScriptSig(GetTransactionDetailsByTransactionIDRIBSLScriptSig scriptSig) {
+  public void setScriptSig(ListTransactionsByBlockHashRIBSLScriptSig scriptSig) {
     this.scriptSig = scriptSig;
   }
 

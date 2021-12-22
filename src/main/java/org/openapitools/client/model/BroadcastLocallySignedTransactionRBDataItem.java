@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * BroadcastLocallySignedTransactionRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class BroadcastLocallySignedTransactionRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -41,6 +41,8 @@ public class BroadcastLocallySignedTransactionRBDataItem {
   @SerializedName(SERIALIZED_NAME_SIGNED_TRANSACTION_HEX)
   private String signedTransactionHex;
 
+  public BroadcastLocallySignedTransactionRBDataItem() { 
+  }
 
   public BroadcastLocallySignedTransactionRBDataItem callbackSecretKey(String callbackSecretKey) {
     
@@ -75,8 +77,8 @@ public class BroadcastLocallySignedTransactionRBDataItem {
    * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
    * @return callbackUrl
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "https://example.com", value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
 
   public String getCallbackUrl() {
     return callbackUrl;

@@ -14,17 +14,21 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.CouldNotCalculateRateForPair;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetExchangeRateByAssetSymbolsR;
 import org.openapitools.client.model.GetExchangeRateByAssetsIDsR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
+import org.openapitools.client.model.InlineResponse40087;
+import org.openapitools.client.model.InlineResponse40088;
+import org.openapitools.client.model.InlineResponse40187;
+import org.openapitools.client.model.InlineResponse40188;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40387;
+import org.openapitools.client.model.InlineResponse40388;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse4224;
+import org.openapitools.client.model.InlineResponse4225;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -56,8 +60,7 @@ public class ExchangeRatesApiTest {
         String toAssetSymbol = null;
         String context = null;
         Integer calculationTimestamp = null;
-        GetExchangeRateByAssetSymbolsR response = api.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
-
+                GetExchangeRateByAssetSymbolsR response = api.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
         // TODO: test validations
     }
     
@@ -75,8 +78,7 @@ public class ExchangeRatesApiTest {
         String toAssetId = null;
         String context = null;
         Integer calculationTimestamp = null;
-        GetExchangeRateByAssetsIDsR response = api.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
-
+                GetExchangeRateByAssetsIDsR response = api.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
         // TODO: test validations
     }
     

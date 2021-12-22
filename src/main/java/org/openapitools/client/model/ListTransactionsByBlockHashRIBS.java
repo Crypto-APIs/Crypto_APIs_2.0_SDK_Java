@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedOutput;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedSpend;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSB;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBC;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSBSC;
@@ -44,7 +44,7 @@ import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZVin;
 /**
  * ListTransactionsByBlockHashRIBS
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBS {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -68,7 +68,7 @@ public class ListTransactionsByBlockHashRIBS {
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListConfirmedTransactionsByAddressRIBSZVout> vout = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVout>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVout>();
 
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -124,11 +124,11 @@ public class ListTransactionsByBlockHashRIBS {
 
   public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
 
   public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
 
   public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
   @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
@@ -138,6 +138,8 @@ public class ListTransactionsByBlockHashRIBS {
   @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
   private String versionGroupId;
 
+  public ListTransactionsByBlockHashRIBS() { 
+  }
 
   public ListTransactionsByBlockHashRIBS locktime(Integer locktime) {
     
@@ -259,13 +261,13 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
 
-  public ListTransactionsByBlockHashRIBS vout(List<ListConfirmedTransactionsByAddressRIBSZVout> vout) {
+  public ListTransactionsByBlockHashRIBS vout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListTransactionsByBlockHashRIBS addVoutItem(ListConfirmedTransactionsByAddressRIBSZVout voutItem) {
+  public ListTransactionsByBlockHashRIBS addVoutItem(GetTransactionDetailsByTransactionIDRIBSZVout voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -277,12 +279,12 @@ public class ListTransactionsByBlockHashRIBS {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVout> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListConfirmedTransactionsByAddressRIBSZVout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
     this.vout = vout;
   }
 
@@ -591,13 +593,13 @@ public class ListTransactionsByBlockHashRIBS {
   }
 
 
-  public ListTransactionsByBlockHashRIBS vShieldedOutput(List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput) {
+  public ListTransactionsByBlockHashRIBS vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
     
     this.vShieldedOutput = vShieldedOutput;
     return this;
   }
 
-  public ListTransactionsByBlockHashRIBS addVShieldedOutputItem(ListConfirmedTransactionsByAddressRIBSZVShieldedOutput vShieldedOutputItem) {
+  public ListTransactionsByBlockHashRIBS addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
     this.vShieldedOutput.add(vShieldedOutputItem);
     return this;
   }
@@ -609,23 +611,23 @@ public class ListTransactionsByBlockHashRIBS {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> getvShieldedOutput() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
     return vShieldedOutput;
   }
 
 
-  public void setvShieldedOutput(List<ListConfirmedTransactionsByAddressRIBSZVShieldedOutput> vShieldedOutput) {
+  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
     this.vShieldedOutput = vShieldedOutput;
   }
 
 
-  public ListTransactionsByBlockHashRIBS vShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+  public ListTransactionsByBlockHashRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
     
     this.vShieldedSpend = vShieldedSpend;
     return this;
   }
 
-  public ListTransactionsByBlockHashRIBS addVShieldedSpendItem(ListConfirmedTransactionsByAddressRIBSZVShieldedSpend vShieldedSpendItem) {
+  public ListTransactionsByBlockHashRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
     this.vShieldedSpend.add(vShieldedSpendItem);
     return this;
   }
@@ -637,12 +639,12 @@ public class ListTransactionsByBlockHashRIBS {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
 
-  public List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> getvShieldedSpend() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
     return vShieldedSpend;
   }
 
 
-  public void setvShieldedSpend(List<ListConfirmedTransactionsByAddressRIBSZVShieldedSpend> vShieldedSpend) {
+  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
     this.vShieldedSpend = vShieldedSpend;
   }
 

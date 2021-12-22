@@ -21,7 +21,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.client.model.GetWalletAssetDetailsRIConfirmedBalance;
+import org.openapitools.client.model.GetWalletAssetDetailsRIFungibleTokens;
+import org.openapitools.client.model.GetWalletAssetDetailsRINonFungibleTokens;
 import org.openapitools.client.model.GetWalletAssetDetailsRIRecievedConfirmedAmount;
 import org.openapitools.client.model.GetWalletAssetDetailsRISentConfirmedAmount;
 import org.junit.Assert;
@@ -60,11 +64,27 @@ public class GetWalletAssetDetailsRITest {
     }
 
     /**
+     * Test the property 'fungibleTokens'
+     */
+    @Test
+    public void fungibleTokensTest() {
+        // TODO: test fungibleTokens
+    }
+
+    /**
      * Test the property 'name'
      */
     @Test
     public void nameTest() {
         // TODO: test name
+    }
+
+    /**
+     * Test the property 'nonFungibleTokens'
+     */
+    @Test
+    public void nonFungibleTokensTest() {
+        // TODO: test nonFungibleTokens
     }
 
     /**

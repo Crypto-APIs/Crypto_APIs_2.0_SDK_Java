@@ -14,7 +14,7 @@ Name | Type | Description | Notes
 **joinSplitSig** | **String** | Is used to sign transactions that contain at least one JoinSplit description. | 
 **overwintered** | **Boolean** | \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain. | 
 **vJoinSplit** | [**List&lt;ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVJoinSplit&gt;**](ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVJoinSplit.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. |  [optional]
-**vShieldedOutput** | [**List&lt;ListConfirmedTransactionsByAddressRIBSZVShieldedOutput&gt;**](ListConfirmedTransactionsByAddressRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions |  [optional]
+**vShieldedOutput** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput&gt;**](GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions |  [optional]
 **vShieldedSpend** | [**List&lt;ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend&gt;**](ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend.md) | Object Array representation of transaction spend descriptions | 
 **valueBalance** | **String** | Defines the transaction value balance. | 
 **versionGroupId** | **String** | Represents the transaction version group ID. | 

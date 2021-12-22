@@ -60,8 +60,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, zcash]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, testnet, ropsten]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: bitcoin, bitcoin-cash, litecoin, dogecoin, dash, ethereum, ethereum-classic, zcash, binance-smart-chain]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, testnet, ropsten, mordor]
  **walletId** | **String**| Represents the unique ID of the specific Wallet. |
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **generateDepositAddressRB** | [**GenerateDepositAddressRB**](GenerateDepositAddressRB.md)|  | [optional]
@@ -83,10 +83,10 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum Deposit Addresses count which is currently {depositAddressesCount}. Please, upgrade your plan in order to have a higher Deposit Address count. |  -  |
+**403** | 403 |  -  |
 **404** | The specified resource has not been found. |  -  |
 **409** | The data provided seems to be invalid. |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |

@@ -28,7 +28,7 @@ import java.io.IOException;
  * Specifies the required signatures.
  */
 @ApiModel(description = "Specifies the required signatures.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRIBSD2ScriptSig {
   public static final String SERIALIZED_NAME_ASM = "asm";
   @SerializedName(SERIALIZED_NAME_ASM)
@@ -42,6 +42,8 @@ public class ListTransactionsByBlockHashRIBSD2ScriptSig {
   @SerializedName(SERIALIZED_NAME_TYPE)
   private String type;
 
+  public ListTransactionsByBlockHashRIBSD2ScriptSig() { 
+  }
 
   public ListTransactionsByBlockHashRIBSD2ScriptSig asm(String asm) {
     

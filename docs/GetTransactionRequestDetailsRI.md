@@ -30,6 +30,7 @@ LITECOIN | &quot;litecoin&quot;
 DOGECOIN | &quot;dogecoin&quot;
 DASH | &quot;dash&quot;
 ETHEREUM | &quot;ethereum&quot;
+ETHEREUM_CLASSIC | &quot;ethereum-classic&quot;
 ZCASH | &quot;zcash&quot;
 
 
@@ -51,6 +52,7 @@ Name | Value
 MAINNET | &quot;mainnet&quot;
 TESTNET | &quot;testnet&quot;
 ROPSTEN | &quot;ropsten&quot;
+MORDOR | &quot;mordor&quot;
 
 
 

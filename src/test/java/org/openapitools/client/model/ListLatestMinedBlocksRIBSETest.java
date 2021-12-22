@@ -83,11 +83,35 @@ public class ListLatestMinedBlocksRIBSETest {
     }
 
     /**
+     * Test the property 'nonce'
+     */
+    @Test
+    public void nonceTest() {
+        // TODO: test nonce
+    }
+
+    /**
      * Test the property 'sha3Uncles'
      */
     @Test
     public void sha3UnclesTest() {
         // TODO: test sha3Uncles
+    }
+
+    /**
+     * Test the property 'size'
+     */
+    @Test
+    public void sizeTest() {
+        // TODO: test size
+    }
+
+    /**
+     * Test the property 'totalDifficulty'
+     */
+    @Test
+    public void totalDifficultyTest() {
+        // TODO: test totalDifficulty
     }
 
     /**

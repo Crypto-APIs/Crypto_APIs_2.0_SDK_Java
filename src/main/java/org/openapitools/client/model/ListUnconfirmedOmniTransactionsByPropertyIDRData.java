@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByPropertyID
 /**
  * ListUnconfirmedOmniTransactionsByPropertyIDRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListUnconfirmedOmniTransactionsByPropertyIDRData {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
@@ -48,6 +48,8 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRData {
   @SerializedName(SERIALIZED_NAME_ITEMS)
   private List<ListUnconfirmedOmniTransactionsByPropertyIDRI> items = new ArrayList<ListUnconfirmedOmniTransactionsByPropertyIDRI>();
 
+  public ListUnconfirmedOmniTransactionsByPropertyIDRData() { 
+  }
 
   public ListUnconfirmedOmniTransactionsByPropertyIDRData offset(Integer offset) {
     

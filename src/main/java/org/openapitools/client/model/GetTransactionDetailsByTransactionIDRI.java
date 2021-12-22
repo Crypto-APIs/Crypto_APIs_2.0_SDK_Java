@@ -33,7 +33,7 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRISende
 /**
  * GetTransactionDetailsByTransactionIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -41,7 +41,7 @@ public class GetTransactionDetailsByTransactionIDRI {
 
   public static final String SERIALIZED_NAME_IS_CONFIRMED = "isConfirmed";
   @SerializedName(SERIALIZED_NAME_IS_CONFIRMED)
-  private String isConfirmed;
+  private Boolean isConfirmed;
 
   public static final String SERIALIZED_NAME_MINED_IN_BLOCK_HASH = "minedInBlockHash";
   @SerializedName(SERIALIZED_NAME_MINED_IN_BLOCK_HASH)
@@ -79,6 +79,8 @@ public class GetTransactionDetailsByTransactionIDRI {
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC)
   private GetTransactionDetailsByTransactionIDRIBS blockchainSpecific;
 
+  public GetTransactionDetailsByTransactionIDRI() { 
+  }
 
   public GetTransactionDetailsByTransactionIDRI index(Integer index) {
     
@@ -103,7 +105,7 @@ public class GetTransactionDetailsByTransactionIDRI {
   }
 
 
-  public GetTransactionDetailsByTransactionIDRI isConfirmed(String isConfirmed) {
+  public GetTransactionDetailsByTransactionIDRI isConfirmed(Boolean isConfirmed) {
     
     this.isConfirmed = isConfirmed;
     return this;
@@ -116,12 +118,12 @@ public class GetTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "true", required = true, value = "Represents the state of the transaction whether it is confirmed or not confirmed.")
 
-  public String getIsConfirmed() {
+  public Boolean getIsConfirmed() {
     return isConfirmed;
   }
 
 
-  public void setIsConfirmed(String isConfirmed) {
+  public void setIsConfirmed(Boolean isConfirmed) {
     this.isConfirmed = isConfirmed;
   }
 

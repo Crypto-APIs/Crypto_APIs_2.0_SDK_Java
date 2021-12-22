@@ -28,7 +28,7 @@ import java.io.IOException;
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBSB {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -70,6 +70,8 @@ public class GetBlockDetailsByBlockHeightRIBSB {
   @SerializedName(SERIALIZED_NAME_WEIGHT)
   private Integer weight;
 
+  public GetBlockDetailsByBlockHeightRIBSB() { 
+  }
 
   public GetBlockDetailsByBlockHeightRIBSB difficulty(String difficulty) {
     

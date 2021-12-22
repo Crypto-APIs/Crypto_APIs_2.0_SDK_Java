@@ -14,19 +14,25 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.BlockchainDataInternalTransactionNotFound;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetInternalTransactionByTransactionHashAndOperationIdR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidPagination;
-import org.openapitools.client.model.InvalidRequestBodyStructure;
+import org.openapitools.client.model.InlineResponse40048;
+import org.openapitools.client.model.InlineResponse40050;
+import org.openapitools.client.model.InlineResponse40051;
+import org.openapitools.client.model.InlineResponse40148;
+import org.openapitools.client.model.InlineResponse40150;
+import org.openapitools.client.model.InlineResponse40151;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40348;
+import org.openapitools.client.model.InlineResponse40350;
+import org.openapitools.client.model.InlineResponse40351;
+import org.openapitools.client.model.InlineResponse4043;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse422;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListInternalTransactionDetailsByTransactionHashR;
 import org.openapitools.client.model.ListInternalTransactionsByAddressR;
-import org.openapitools.client.model.RequestLimitReached;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -59,8 +65,7 @@ public class InternalApiTest {
         String operationId = null;
         String transactionHash = null;
         String context = null;
-        GetInternalTransactionByTransactionHashAndOperationIdR response = api.getInternalTransactionByTransactionHashAndOperationId(blockchain, network, operationId, transactionHash, context);
-
+                GetInternalTransactionByTransactionHashAndOperationIdR response = api.getInternalTransactionByTransactionHashAndOperationId(blockchain, network, operationId, transactionHash, context);
         // TODO: test validations
     }
     
@@ -80,15 +85,14 @@ public class InternalApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListInternalTransactionDetailsByTransactionHashR response = api.listInternalTransactionDetailsByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
-
+                ListInternalTransactionDetailsByTransactionHashR response = api.listInternalTransactionDetailsByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
         // TODO: test validations
     }
     
     /**
      * List Internal Transactions By Address
      *
-     * 
+     * Through this endpoint customers can list internal transactions by the &#x60;address&#x60; attribute.
      *
      * @throws ApiException
      *          if the Api call fails
@@ -101,8 +105,7 @@ public class InternalApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-        ListInternalTransactionsByAddressR response = api.listInternalTransactionsByAddress(blockchain, network, address, context, limit, offset);
-
+                ListInternalTransactionsByAddressR response = api.listInternalTransactionsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
     

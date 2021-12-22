@@ -81,6 +81,14 @@ public class ListConfirmedTokensTransfersByAddressRITest {
     }
 
     /**
+     * Test the property 'tokenId'
+     */
+    @Test
+    public void tokenIdTest() {
+        // TODO: test tokenId
+    }
+
+    /**
      * Test the property 'tokenName'
      */
     @Test

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateAutomaticCoinsForwardingRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class CreateAutomaticCoinsForwardingRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -102,6 +102,8 @@ public class CreateAutomaticCoinsForwardingRBDataItem {
   @SerializedName(SERIALIZED_NAME_TO_ADDRESS)
   private String toAddress;
 
+  public CreateAutomaticCoinsForwardingRBDataItem() { 
+  }
 
   public CreateAutomaticCoinsForwardingRBDataItem callbackSecretKey(String callbackSecretKey) {
     
@@ -206,7 +208,7 @@ public class CreateAutomaticCoinsForwardingRBDataItem {
    * @return minimumTransferAmount
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0.0002", required = true, value = "Represents the minimum transfer amount of the currency in the `fromAddress` that can be allowed for an automatic forwarding.")
+  @ApiModelProperty(example = "0.02", required = true, value = "Represents the minimum transfer amount of the currency in the `fromAddress` that can be allowed for an automatic forwarding.")
 
   public String getMinimumTransferAmount() {
     return minimumTransferAmount;

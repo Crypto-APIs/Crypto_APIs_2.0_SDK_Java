@@ -90,11 +90,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -174,11 +174,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -258,11 +258,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -342,11 +342,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -404,8 +404,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, testnet, ropsten, mordor]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **newConfirmedInternalTransactionsRB** | [**NewConfirmedInternalTransactionsRB**](NewConfirmedInternalTransactionsRB.md)|  | [optional]
 
@@ -426,11 +426,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -488,8 +488,8 @@ public class Example {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic]
- **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor]
+ **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain]
+ **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, testnet, ropsten, mordor]
  **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
  **newConfirmedInternalTransactionsAndEachConfirmationRB** | [**NewConfirmedInternalTransactionsAndEachConfirmationRB**](NewConfirmedInternalTransactionsAndEachConfirmationRB.md)|  | [optional]
 
@@ -510,11 +510,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -594,11 +594,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -678,11 +678,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **200** | The request has been successful. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -762,11 +762,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
@@ -846,11 +846,11 @@ Name | Type | Description  | Notes
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
 **201** | The resource has been successfully created. |  -  |
-**400** | The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination. |  -  |
-**401** | The provided API key is invalid. Please, generate a new one from your Dashboard. |  -  |
+**400** | 400 |  -  |
+**401** | 401 |  -  |
 **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | You have reached the maximum number of active Blockchain Events subscriptions which is {callbacks_limit} now. Please upgrade your plan to be get higher number of active subscriptions. |  -  |
-**409** | The specified resource already exists. |  -  |
+**403** | 403 |  -  |
+**409** | 409 |  -  |
 **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
 **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
 **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |

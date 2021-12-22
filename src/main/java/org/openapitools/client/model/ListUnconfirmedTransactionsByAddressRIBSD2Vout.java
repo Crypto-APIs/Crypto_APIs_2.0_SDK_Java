@@ -28,7 +28,7 @@ import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSD2Scr
 /**
  * ListUnconfirmedTransactionsByAddressRIBSD2Vout
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListUnconfirmedTransactionsByAddressRIBSD2Vout {
   public static final String SERIALIZED_NAME_IS_SPENT = "isSpent";
   @SerializedName(SERIALIZED_NAME_IS_SPENT)
@@ -42,6 +42,8 @@ public class ListUnconfirmedTransactionsByAddressRIBSD2Vout {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private String value;
 
+  public ListUnconfirmedTransactionsByAddressRIBSD2Vout() { 
+  }
 
   public ListUnconfirmedTransactionsByAddressRIBSD2Vout isSpent(Boolean isSpent) {
     

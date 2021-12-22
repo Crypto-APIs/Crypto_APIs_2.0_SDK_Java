@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -37,6 +37,8 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders {
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
 
+  public GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders() { 
+  }
 
   public GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders address(String address) {
     

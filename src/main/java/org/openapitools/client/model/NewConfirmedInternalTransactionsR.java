@@ -28,7 +28,7 @@ import org.openapitools.client.model.NewConfirmedInternalTransactionsRData;
 /**
  * NewConfirmedInternalTransactionsR
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewConfirmedInternalTransactionsR {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
@@ -46,6 +46,8 @@ public class NewConfirmedInternalTransactionsR {
   @SerializedName(SERIALIZED_NAME_DATA)
   private NewConfirmedInternalTransactionsRData data;
 
+  public NewConfirmedInternalTransactionsR() { 
+  }
 
   public NewConfirmedInternalTransactionsR apiVersion(String apiVersion) {
     

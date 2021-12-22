@@ -96,12 +96,4 @@ public class NewUnconfirmedTokensTransactionsRITest {
         // TODO: test referenceId
     }
 
-    /**
-     * Test the property 'transactionId'
-     */
-    @Test
-    public void transactionIdTest() {
-        // TODO: test transactionId
-    }
-
 }

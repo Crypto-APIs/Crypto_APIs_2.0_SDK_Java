@@ -35,7 +35,7 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIValue;
 /**
  * ListXRPRippleTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByAddressRI {
   public static final String SERIALIZED_NAME_DESTINATION_TAG = "destinationTag";
   @SerializedName(SERIALIZED_NAME_DESTINATION_TAG)
@@ -97,6 +97,8 @@ public class ListXRPRippleTransactionsByAddressRI {
   @SerializedName(SERIALIZED_NAME_VALUE)
   private ListXRPRippleTransactionsByAddressRIValue value;
 
+  public ListXRPRippleTransactionsByAddressRI() { 
+  }
 
   public ListXRPRippleTransactionsByAddressRI destinationTag(Integer destinationTag) {
     

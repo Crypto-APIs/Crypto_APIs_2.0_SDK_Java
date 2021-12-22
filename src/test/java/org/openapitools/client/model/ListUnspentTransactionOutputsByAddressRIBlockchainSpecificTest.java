@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVShieldedOutput;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
 import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVJoinSplit;
 import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIBlockchainSpecificVShieldedSpend;
 import org.junit.Assert;

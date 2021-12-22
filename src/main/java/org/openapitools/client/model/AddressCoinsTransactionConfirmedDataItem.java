@@ -29,7 +29,7 @@ import org.openapitools.client.model.AddressCoinsTransactionConfirmedDataItemMin
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class AddressCoinsTransactionConfirmedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -110,6 +110,8 @@ public class AddressCoinsTransactionConfirmedDataItem {
   @SerializedName(SERIALIZED_NAME_DIRECTION)
   private DirectionEnum direction;
 
+  public AddressCoinsTransactionConfirmedDataItem() { 
+  }
 
   public AddressCoinsTransactionConfirmedDataItem blockchain(String blockchain) {
     

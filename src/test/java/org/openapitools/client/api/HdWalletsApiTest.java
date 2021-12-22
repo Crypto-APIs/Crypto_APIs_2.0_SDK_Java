@@ -14,21 +14,28 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.AlreadyExists;
-import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.GetHDWalletXPubYPubZPubDetailsR;
-import org.openapitools.client.model.InsufficientCredits;
-import org.openapitools.client.model.InvalidApiKey;
-import org.openapitools.client.model.InvalidData;
-import org.openapitools.client.model.InvalidXpub;
+import org.openapitools.client.model.InlineResponse40043;
+import org.openapitools.client.model.InlineResponse40047;
+import org.openapitools.client.model.InlineResponse40049;
+import org.openapitools.client.model.InlineResponse40143;
+import org.openapitools.client.model.InlineResponse40147;
+import org.openapitools.client.model.InlineResponse40149;
+import org.openapitools.client.model.InlineResponse402;
+import org.openapitools.client.model.InlineResponse40343;
+import org.openapitools.client.model.InlineResponse40347;
+import org.openapitools.client.model.InlineResponse40349;
+import org.openapitools.client.model.InlineResponse409;
+import org.openapitools.client.model.InlineResponse4095;
+import org.openapitools.client.model.InlineResponse415;
+import org.openapitools.client.model.InlineResponse4221;
+import org.openapitools.client.model.InlineResponse4222;
+import org.openapitools.client.model.InlineResponse4223;
+import org.openapitools.client.model.InlineResponse429;
+import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsR;
-import org.openapitools.client.model.RequestLimitReached;
 import org.openapitools.client.model.SyncHDWalletXPubYPubZPubR;
 import org.openapitools.client.model.SyncHDWalletXPubYPubZPubRB;
-import org.openapitools.client.model.UnexpectedServerError;
-import org.openapitools.client.model.UnsupportedMediaType;
-import org.openapitools.client.model.XpubNotSynced;
-import org.openapitools.client.model.XpubSyncInProgress;
 import org.junit.Test;
 import org.junit.Ignore;
 
@@ -61,8 +68,7 @@ public class HdWalletsApiTest {
         String network = null;
         String context = null;
         String derivation = null;
-        GetHDWalletXPubYPubZPubDetailsR response = api.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
-
+                GetHDWalletXPubYPubZPubDetailsR response = api.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
         // TODO: test validations
     }
     
@@ -83,8 +89,7 @@ public class HdWalletsApiTest {
         String derivation = null;
         Integer limit = null;
         Integer offset = null;
-        ListHDWalletXPubYPubZPubTransactionsR response = api.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
-
+                ListHDWalletXPubYPubZPubTransactionsR response = api.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
         // TODO: test validations
     }
     
@@ -102,8 +107,7 @@ public class HdWalletsApiTest {
         String network = null;
         String context = null;
         SyncHDWalletXPubYPubZPubRB syncHDWalletXPubYPubZPubRB = null;
-        SyncHDWalletXPubYPubZPubR response = api.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB);
-
+                SyncHDWalletXPubYPubZPubR response = api.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB);
         // TODO: test validations
     }
     

@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * NewConfirmedCoinsTransactionsAndEachConfirmationRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class NewConfirmedCoinsTransactionsAndEachConfirmationRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -61,10 +61,8 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRI {
   @SerializedName(SERIALIZED_NAME_REFERENCE_ID)
   private String referenceId;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
-  private String transactionId;
-
+  public NewConfirmedCoinsTransactionsAndEachConfirmationRI() { 
+  }
 
   public NewConfirmedCoinsTransactionsAndEachConfirmationRI address(String address) {
     
@@ -146,7 +144,7 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRI {
    * @return confirmationsCount
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
+  @ApiModelProperty(example = "3", required = true, value = "Represents the number of confirmations, i.e. the amount of blocks that have been built on top of this block.")
 
   public Integer getConfirmationsCount() {
     return confirmationsCount;
@@ -250,29 +248,6 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRI {
   }
 
 
-  public NewConfirmedCoinsTransactionsAndEachConfirmationRI transactionId(String transactionId) {
-    
-    this.transactionId = transactionId;
-    return this;
-  }
-
-   /**
-   * Represents the unique identification string that defines the transaction.
-   * @return transactionId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "96b4ea92dcca3a046c0ca2738ed9400f3c04f6c5f497cce4f3a148b1c948a1b3", required = true, value = "Represents the unique identification string that defines the transaction.")
-
-  public String getTransactionId() {
-    return transactionId;
-  }
-
-
-  public void setTransactionId(String transactionId) {
-    this.transactionId = transactionId;
-  }
-
-
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -289,13 +264,12 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRI {
         Objects.equals(this.createdTimestamp, newConfirmedCoinsTransactionsAndEachConfirmationRI.createdTimestamp) &&
         Objects.equals(this.eventType, newConfirmedCoinsTransactionsAndEachConfirmationRI.eventType) &&
         Objects.equals(this.isActive, newConfirmedCoinsTransactionsAndEachConfirmationRI.isActive) &&
-        Objects.equals(this.referenceId, newConfirmedCoinsTransactionsAndEachConfirmationRI.referenceId) &&
-        Objects.equals(this.transactionId, newConfirmedCoinsTransactionsAndEachConfirmationRI.transactionId);
+        Objects.equals(this.referenceId, newConfirmedCoinsTransactionsAndEachConfirmationRI.referenceId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, callbackSecretKey, callbackUrl, confirmationsCount, createdTimestamp, eventType, isActive, referenceId, transactionId);
+    return Objects.hash(address, callbackSecretKey, callbackUrl, confirmationsCount, createdTimestamp, eventType, isActive, referenceId);
   }
 
   @Override
@@ -310,7 +284,6 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRI {
     sb.append("    eventType: ").append(toIndentedString(eventType)).append("\n");
     sb.append("    isActive: ").append(toIndentedString(isActive)).append("\n");
     sb.append("    referenceId: ").append(toIndentedString(referenceId)).append("\n");
-    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("}");
     return sb.toString();
   }

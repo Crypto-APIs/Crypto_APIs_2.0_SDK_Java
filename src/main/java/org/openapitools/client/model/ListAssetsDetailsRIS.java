@@ -29,7 +29,7 @@ import org.openapitools.client.model.ListAssetsDetailsRISC;
  * Represents a specific asset&#39;s data depending on its type (whether it is \&quot;crypto\&quot; or \&quot;fiat\&quot;).
  */
 @ApiModel(description = "Represents a specific asset's data depending on its type (whether it is \"crypto\" or \"fiat\").")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListAssetsDetailsRIS {
   public static final String SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE = "1HourPriceChangeInPercentage";
   @SerializedName(SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE)
@@ -48,7 +48,7 @@ public class ListAssetsDetailsRIS {
   private String _24hoursTradingVolume;
 
   /**
-   * Subtype of the crypto assets. Could be COIN or TOKEN
+   * Represent a subtype of the crypto assets. Could be COIN or TOKEN.
    */
   @JsonAdapter(AssetTypeEnum.Adapter.class)
   public enum AssetTypeEnum {
@@ -110,6 +110,8 @@ public class ListAssetsDetailsRIS {
   @SerializedName(SERIALIZED_NAME_MAX_SUPPLY)
   private String maxSupply;
 
+  public ListAssetsDetailsRIS() { 
+  }
 
   public ListAssetsDetailsRIS _1hourPriceChangeInPercentage(String _1hourPriceChangeInPercentage) {
     
@@ -210,11 +212,11 @@ public class ListAssetsDetailsRIS {
   }
 
    /**
-   * Subtype of the crypto assets. Could be COIN or TOKEN
+   * Represent a subtype of the crypto assets. Could be COIN or TOKEN.
    * @return assetType
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "coin", required = true, value = "Subtype of the crypto assets. Could be COIN or TOKEN")
+  @ApiModelProperty(example = "coin", required = true, value = "Represent a subtype of the crypto assets. Could be COIN or TOKEN.")
 
   public AssetTypeEnum getAssetType() {
     return assetType;

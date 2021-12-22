@@ -28,7 +28,7 @@ import java.io.IOException;
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListLatestMinedBlocksRIBSZ2 {
   public static final String SERIALIZED_NAME_BITS = "bits";
   @SerializedName(SERIALIZED_NAME_BITS)
@@ -38,9 +38,13 @@ public class ListLatestMinedBlocksRIBSZ2 {
   @SerializedName(SERIALIZED_NAME_CHAINWORK)
   private String chainwork;
 
-  public static final String SERIALIZED_NAME_MERKLEROOT = "merkleroot";
-  @SerializedName(SERIALIZED_NAME_MERKLEROOT)
-  private String merkleroot;
+  public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
+  @SerializedName(SERIALIZED_NAME_DIFFICULTY)
+  private String difficulty;
+
+  public static final String SERIALIZED_NAME_MERKLE_ROOT = "merkleRoot";
+  @SerializedName(SERIALIZED_NAME_MERKLE_ROOT)
+  private String merkleRoot;
 
   public static final String SERIALIZED_NAME_NONCE = "nonce";
   @SerializedName(SERIALIZED_NAME_NONCE)
@@ -54,6 +58,8 @@ public class ListLatestMinedBlocksRIBSZ2 {
   @SerializedName(SERIALIZED_NAME_VERSION)
   private Integer version;
 
+  public ListLatestMinedBlocksRIBSZ2() { 
+  }
 
   public ListLatestMinedBlocksRIBSZ2 bits(String bits) {
     
@@ -101,26 +107,49 @@ public class ListLatestMinedBlocksRIBSZ2 {
   }
 
 
-  public ListLatestMinedBlocksRIBSZ2 merkleroot(String merkleroot) {
+  public ListLatestMinedBlocksRIBSZ2 difficulty(String difficulty) {
     
-    this.merkleroot = merkleroot;
+    this.difficulty = difficulty;
+    return this;
+  }
+
+   /**
+   * Represents a mathematical value of how hard it is to find a valid hash for this block.
+   * @return difficulty
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "21448277761059.71", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
+
+  public String getDifficulty() {
+    return difficulty;
+  }
+
+
+  public void setDifficulty(String difficulty) {
+    this.difficulty = difficulty;
+  }
+
+
+  public ListLatestMinedBlocksRIBSZ2 merkleRoot(String merkleRoot) {
+    
+    this.merkleRoot = merkleRoot;
     return this;
   }
 
    /**
    * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
-   * @return merkleroot
+   * @return merkleRoot
   **/
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
 
-  public String getMerkleroot() {
-    return merkleroot;
+  public String getMerkleRoot() {
+    return merkleRoot;
   }
 
 
-  public void setMerkleroot(String merkleroot) {
-    this.merkleroot = merkleroot;
+  public void setMerkleRoot(String merkleRoot) {
+    this.merkleRoot = merkleRoot;
   }
 
 
@@ -181,7 +210,7 @@ public class ListLatestMinedBlocksRIBSZ2 {
    * @return version
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the transaction version number.")
+  @ApiModelProperty(example = "536870916", required = true, value = "Represents the transaction version number.")
 
   public Integer getVersion() {
     return version;
@@ -204,7 +233,8 @@ public class ListLatestMinedBlocksRIBSZ2 {
     ListLatestMinedBlocksRIBSZ2 listLatestMinedBlocksRIBSZ2 = (ListLatestMinedBlocksRIBSZ2) o;
     return Objects.equals(this.bits, listLatestMinedBlocksRIBSZ2.bits) &&
         Objects.equals(this.chainwork, listLatestMinedBlocksRIBSZ2.chainwork) &&
-        Objects.equals(this.merkleroot, listLatestMinedBlocksRIBSZ2.merkleroot) &&
+        Objects.equals(this.difficulty, listLatestMinedBlocksRIBSZ2.difficulty) &&
+        Objects.equals(this.merkleRoot, listLatestMinedBlocksRIBSZ2.merkleRoot) &&
         Objects.equals(this.nonce, listLatestMinedBlocksRIBSZ2.nonce) &&
         Objects.equals(this.size, listLatestMinedBlocksRIBSZ2.size) &&
         Objects.equals(this.version, listLatestMinedBlocksRIBSZ2.version);
@@ -212,7 +242,7 @@ public class ListLatestMinedBlocksRIBSZ2 {
 
   @Override
   public int hashCode() {
-    return Objects.hash(bits, chainwork, merkleroot, nonce, size, version);
+    return Objects.hash(bits, chainwork, difficulty, merkleRoot, nonce, size, version);
   }
 
   @Override
@@ -221,7 +251,8 @@ public class ListLatestMinedBlocksRIBSZ2 {
     sb.append("class ListLatestMinedBlocksRIBSZ2 {\n");
     sb.append("    bits: ").append(toIndentedString(bits)).append("\n");
     sb.append("    chainwork: ").append(toIndentedString(chainwork)).append("\n");
-    sb.append("    merkleroot: ").append(toIndentedString(merkleroot)).append("\n");
+    sb.append("    difficulty: ").append(toIndentedString(difficulty)).append("\n");
+    sb.append("    merkleRoot: ").append(toIndentedString(merkleRoot)).append("\n");
     sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
     sb.append("    size: ").append(toIndentedString(size)).append("\n");
     sb.append("    version: ").append(toIndentedString(version)).append("\n");

@@ -23,14 +23,18 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 import org.openapitools.client.model.GetWalletAssetDetailsRIConfirmedBalance;
+import org.openapitools.client.model.GetWalletAssetDetailsRIFungibleTokens;
+import org.openapitools.client.model.GetWalletAssetDetailsRINonFungibleTokens;
 import org.openapitools.client.model.GetWalletAssetDetailsRIRecievedConfirmedAmount;
 import org.openapitools.client.model.GetWalletAssetDetailsRISentConfirmedAmount;
 
 /**
  * GetWalletAssetDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetWalletAssetDetailsRI {
   public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
   @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
@@ -40,9 +44,17 @@ public class GetWalletAssetDetailsRI {
   @SerializedName(SERIALIZED_NAME_DEPOSIT_ADDRESSES_COUNT)
   private Integer depositAddressesCount;
 
+  public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
+  @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
+  private List<GetWalletAssetDetailsRIFungibleTokens> fungibleTokens = new ArrayList<GetWalletAssetDetailsRIFungibleTokens>();
+
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
   private String name;
+
+  public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
+  @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
+  private List<GetWalletAssetDetailsRINonFungibleTokens> nonFungibleTokens = new ArrayList<GetWalletAssetDetailsRINonFungibleTokens>();
 
   public static final String SERIALIZED_NAME_RECIEVED_CONFIRMED_AMOUNT = "recievedConfirmedAmount";
   @SerializedName(SERIALIZED_NAME_RECIEVED_CONFIRMED_AMOUNT)
@@ -52,6 +64,8 @@ public class GetWalletAssetDetailsRI {
   @SerializedName(SERIALIZED_NAME_SENT_CONFIRMED_AMOUNT)
   private GetWalletAssetDetailsRISentConfirmedAmount sentConfirmedAmount;
 
+  public GetWalletAssetDetailsRI() { 
+  }
 
   public GetWalletAssetDetailsRI confirmedBalance(GetWalletAssetDetailsRIConfirmedBalance confirmedBalance) {
     
@@ -99,6 +113,34 @@ public class GetWalletAssetDetailsRI {
   }
 
 
+  public GetWalletAssetDetailsRI fungibleTokens(List<GetWalletAssetDetailsRIFungibleTokens> fungibleTokens) {
+    
+    this.fungibleTokens = fungibleTokens;
+    return this;
+  }
+
+  public GetWalletAssetDetailsRI addFungibleTokensItem(GetWalletAssetDetailsRIFungibleTokens fungibleTokensItem) {
+    this.fungibleTokens.add(fungibleTokensItem);
+    return this;
+  }
+
+   /**
+   * Represents fungible tokens&#39;es detailed information
+   * @return fungibleTokens
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents fungible tokens'es detailed information")
+
+  public List<GetWalletAssetDetailsRIFungibleTokens> getFungibleTokens() {
+    return fungibleTokens;
+  }
+
+
+  public void setFungibleTokens(List<GetWalletAssetDetailsRIFungibleTokens> fungibleTokens) {
+    this.fungibleTokens = fungibleTokens;
+  }
+
+
   public GetWalletAssetDetailsRI name(String name) {
     
     this.name = name;
@@ -119,6 +161,34 @@ public class GetWalletAssetDetailsRI {
 
   public void setName(String name) {
     this.name = name;
+  }
+
+
+  public GetWalletAssetDetailsRI nonFungibleTokens(List<GetWalletAssetDetailsRINonFungibleTokens> nonFungibleTokens) {
+    
+    this.nonFungibleTokens = nonFungibleTokens;
+    return this;
+  }
+
+  public GetWalletAssetDetailsRI addNonFungibleTokensItem(GetWalletAssetDetailsRINonFungibleTokens nonFungibleTokensItem) {
+    this.nonFungibleTokens.add(nonFungibleTokensItem);
+    return this;
+  }
+
+   /**
+   * Represents non-fungible tokens&#39;es detailed information.
+   * @return nonFungibleTokens
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(required = true, value = "Represents non-fungible tokens'es detailed information.")
+
+  public List<GetWalletAssetDetailsRINonFungibleTokens> getNonFungibleTokens() {
+    return nonFungibleTokens;
+  }
+
+
+  public void setNonFungibleTokens(List<GetWalletAssetDetailsRINonFungibleTokens> nonFungibleTokens) {
+    this.nonFungibleTokens = nonFungibleTokens;
   }
 
 
@@ -179,14 +249,16 @@ public class GetWalletAssetDetailsRI {
     GetWalletAssetDetailsRI getWalletAssetDetailsRI = (GetWalletAssetDetailsRI) o;
     return Objects.equals(this.confirmedBalance, getWalletAssetDetailsRI.confirmedBalance) &&
         Objects.equals(this.depositAddressesCount, getWalletAssetDetailsRI.depositAddressesCount) &&
+        Objects.equals(this.fungibleTokens, getWalletAssetDetailsRI.fungibleTokens) &&
         Objects.equals(this.name, getWalletAssetDetailsRI.name) &&
+        Objects.equals(this.nonFungibleTokens, getWalletAssetDetailsRI.nonFungibleTokens) &&
         Objects.equals(this.recievedConfirmedAmount, getWalletAssetDetailsRI.recievedConfirmedAmount) &&
         Objects.equals(this.sentConfirmedAmount, getWalletAssetDetailsRI.sentConfirmedAmount);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(confirmedBalance, depositAddressesCount, name, recievedConfirmedAmount, sentConfirmedAmount);
+    return Objects.hash(confirmedBalance, depositAddressesCount, fungibleTokens, name, nonFungibleTokens, recievedConfirmedAmount, sentConfirmedAmount);
   }
 
   @Override
@@ -195,7 +267,9 @@ public class GetWalletAssetDetailsRI {
     sb.append("class GetWalletAssetDetailsRI {\n");
     sb.append("    confirmedBalance: ").append(toIndentedString(confirmedBalance)).append("\n");
     sb.append("    depositAddressesCount: ").append(toIndentedString(depositAddressesCount)).append("\n");
+    sb.append("    fungibleTokens: ").append(toIndentedString(fungibleTokens)).append("\n");
     sb.append("    name: ").append(toIndentedString(name)).append("\n");
+    sb.append("    nonFungibleTokens: ").append(toIndentedString(nonFungibleTokens)).append("\n");
     sb.append("    recievedConfirmedAmount: ").append(toIndentedString(recievedConfirmedAmount)).append("\n");
     sb.append("    sentConfirmedAmount: ").append(toIndentedString(sentConfirmedAmount)).append("\n");
     sb.append("}");

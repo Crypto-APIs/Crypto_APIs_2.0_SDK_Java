@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * MinedTransactionRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class MinedTransactionRBDataItem {
   public static final String SERIALIZED_NAME_ALLOW_DUPLICATES = "allowDuplicates";
   @SerializedName(SERIALIZED_NAME_ALLOW_DUPLICATES)
@@ -45,6 +45,8 @@ public class MinedTransactionRBDataItem {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
   private String transactionId;
 
+  public MinedTransactionRBDataItem() { 
+  }
 
   public MinedTransactionRBDataItem allowDuplicates(Boolean allowDuplicates) {
     

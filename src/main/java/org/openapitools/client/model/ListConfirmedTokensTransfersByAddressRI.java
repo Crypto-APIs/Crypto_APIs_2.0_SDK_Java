@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * ListConfirmedTokensTransfersByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListConfirmedTokensTransfersByAddressRI {
   public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
   @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
@@ -48,6 +48,10 @@ public class ListConfirmedTokensTransfersByAddressRI {
   public static final String SERIALIZED_NAME_TOKEN_DECIMALS = "tokenDecimals";
   @SerializedName(SERIALIZED_NAME_TOKEN_DECIMALS)
   private Integer tokenDecimals;
+
+  public static final String SERIALIZED_NAME_TOKEN_ID = "tokenId";
+  @SerializedName(SERIALIZED_NAME_TOKEN_ID)
+  private String tokenId;
 
   public static final String SERIALIZED_NAME_TOKEN_NAME = "tokenName";
   @SerializedName(SERIALIZED_NAME_TOKEN_NAME)
@@ -73,6 +77,8 @@ public class ListConfirmedTokensTransfersByAddressRI {
   @SerializedName(SERIALIZED_NAME_TRANSACTION_TIMESTAMP)
   private Integer transactionTimestamp;
 
+  public ListConfirmedTokensTransfersByAddressRI() { 
+  }
 
   public ListConfirmedTokensTransfersByAddressRI contractAddress(String contractAddress) {
     
@@ -189,6 +195,29 @@ public class ListConfirmedTokensTransfersByAddressRI {
   }
 
 
+  public ListConfirmedTokensTransfersByAddressRI tokenId(String tokenId) {
+    
+    this.tokenId = tokenId;
+    return this;
+  }
+
+   /**
+   * Represents the unique token identifier.
+   * @return tokenId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "16721", value = "Represents the unique token identifier.")
+
+  public String getTokenId() {
+    return tokenId;
+  }
+
+
+  public void setTokenId(String tokenId) {
+    this.tokenId = tokenId;
+  }
+
+
   public ListConfirmedTokensTransfersByAddressRI tokenName(String tokenName) {
     
     this.tokenName = tokenName;
@@ -268,8 +297,8 @@ public class ListConfirmedTokensTransfersByAddressRI {
    * Defines the token amount of the transfer.
    * @return tokensAmount
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "9.146383", required = true, value = "Defines the token amount of the transfer.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "9.146383", value = "Defines the token amount of the transfer.")
 
   public String getTokensAmount() {
     return tokensAmount;
@@ -341,6 +370,7 @@ public class ListConfirmedTokensTransfersByAddressRI {
         Objects.equals(this.recipientAddress, listConfirmedTokensTransfersByAddressRI.recipientAddress) &&
         Objects.equals(this.senderAddress, listConfirmedTokensTransfersByAddressRI.senderAddress) &&
         Objects.equals(this.tokenDecimals, listConfirmedTokensTransfersByAddressRI.tokenDecimals) &&
+        Objects.equals(this.tokenId, listConfirmedTokensTransfersByAddressRI.tokenId) &&
         Objects.equals(this.tokenName, listConfirmedTokensTransfersByAddressRI.tokenName) &&
         Objects.equals(this.tokenSymbol, listConfirmedTokensTransfersByAddressRI.tokenSymbol) &&
         Objects.equals(this.tokenType, listConfirmedTokensTransfersByAddressRI.tokenType) &&
@@ -351,7 +381,7 @@ public class ListConfirmedTokensTransfersByAddressRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(contractAddress, minedInBlockHeight, recipientAddress, senderAddress, tokenDecimals, tokenName, tokenSymbol, tokenType, tokensAmount, transactionHash, transactionTimestamp);
+    return Objects.hash(contractAddress, minedInBlockHeight, recipientAddress, senderAddress, tokenDecimals, tokenId, tokenName, tokenSymbol, tokenType, tokensAmount, transactionHash, transactionTimestamp);
   }
 
   @Override
@@ -363,6 +393,7 @@ public class ListConfirmedTokensTransfersByAddressRI {
     sb.append("    recipientAddress: ").append(toIndentedString(recipientAddress)).append("\n");
     sb.append("    senderAddress: ").append(toIndentedString(senderAddress)).append("\n");
     sb.append("    tokenDecimals: ").append(toIndentedString(tokenDecimals)).append("\n");
+    sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
     sb.append("    tokenName: ").append(toIndentedString(tokenName)).append("\n");
     sb.append("    tokenSymbol: ").append(toIndentedString(tokenSymbol)).append("\n");
     sb.append("    tokenType: ").append(toIndentedString(tokenType)).append("\n");

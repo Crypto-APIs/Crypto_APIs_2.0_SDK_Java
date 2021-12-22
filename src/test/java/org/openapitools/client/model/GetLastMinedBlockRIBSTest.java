@@ -187,12 +187,4 @@ public class GetLastMinedBlockRIBSTest {
         // TODO: test uncles
     }
 
-    /**
-     * Test the property 'merkleroot'
-     */
-    @Test
-    public void merklerootTest() {
-        // TODO: test merkleroot
-    }
-
 }

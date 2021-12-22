@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * CreateCoinsTransactionFromAddressForWholeAmountRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class CreateCoinsTransactionFromAddressForWholeAmountRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -98,6 +98,8 @@ public class CreateCoinsTransactionFromAddressForWholeAmountRBDataItem {
   @SerializedName(SERIALIZED_NAME_RECIPIENT_ADDRESS)
   private String recipientAddress;
 
+  public CreateCoinsTransactionFromAddressForWholeAmountRBDataItem() { 
+  }
 
   public CreateCoinsTransactionFromAddressForWholeAmountRBDataItem callbackSecretKey(String callbackSecretKey) {
     

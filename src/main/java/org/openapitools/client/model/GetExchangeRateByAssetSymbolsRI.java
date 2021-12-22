@@ -27,7 +27,7 @@ import java.io.IOException;
 /**
  * GetExchangeRateByAssetSymbolsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class GetExchangeRateByAssetSymbolsRI {
   public static final String SERIALIZED_NAME_CALCULATION_TIMESTAMP = "calculationTimestamp";
   @SerializedName(SERIALIZED_NAME_CALCULATION_TIMESTAMP)
@@ -53,6 +53,8 @@ public class GetExchangeRateByAssetSymbolsRI {
   @SerializedName(SERIALIZED_NAME_TO_ASSET_SYMBOL)
   private String toAssetSymbol;
 
+  public GetExchangeRateByAssetSymbolsRI() { 
+  }
 
   public GetExchangeRateByAssetSymbolsRI calculationTimestamp(Integer calculationTimestamp) {
     

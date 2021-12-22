@@ -30,7 +30,7 @@ import org.openapitools.client.model.ListTokensTransfersByTransactionHashRI;
 /**
  * ListTokensTransfersByTransactionHashRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-10-25T12:38:09.413192Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
 public class ListTokensTransfersByTransactionHashRData {
   public static final String SERIALIZED_NAME_OFFSET = "offset";
   @SerializedName(SERIALIZED_NAME_OFFSET)
@@ -48,6 +48,8 @@ public class ListTokensTransfersByTransactionHashRData {
   @SerializedName(SERIALIZED_NAME_ITEMS)
   private List<ListTokensTransfersByTransactionHashRI> items = new ArrayList<ListTokensTransfersByTransactionHashRI>();
 
+  public ListTokensTransfersByTransactionHashRData() { 
+  }
 
   public ListTokensTransfersByTransactionHashRData offset(Integer offset) {
     
