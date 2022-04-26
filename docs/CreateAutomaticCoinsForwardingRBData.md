@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**CreateAutomaticCoinsForwardingRBDataItem**](CreateAutomaticCoinsForwardingRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**CreateAutomaticCoinsForwardingRBDataItem**](CreateAutomaticCoinsForwardingRBDataItem.md) |  |  |
 
 
 

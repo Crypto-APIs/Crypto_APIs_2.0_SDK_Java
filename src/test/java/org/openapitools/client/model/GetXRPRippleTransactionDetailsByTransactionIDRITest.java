@@ -29,9 +29,8 @@ import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransaction
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIRecipients;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRISenders;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIValue;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

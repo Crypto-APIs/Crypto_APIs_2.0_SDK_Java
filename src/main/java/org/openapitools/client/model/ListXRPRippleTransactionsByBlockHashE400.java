@@ -30,143 +30,305 @@ import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.LimitGreaterThanAllowed;
 import org.openapitools.client.model.UriNotFound;
 
-/**
- * ListXRPRippleTransactionsByBlockHashE400
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class ListXRPRippleTransactionsByBlockHashE400 {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_DETAILS = "details";
-  @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<BannedIpAddressDetails> details = null;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public ListXRPRippleTransactionsByBlockHashE400() { 
-  }
+import io.cryptoapis.sdk.JSON;
 
-  public ListXRPRippleTransactionsByBlockHashE400 code(String code) {
-    
-    this.code = code;
-    return this;
-  }
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class ListXRPRippleTransactionsByBlockHashE400 extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(ListXRPRippleTransactionsByBlockHashE400.class.getName());
 
-   /**
-   * Specifies an error code, e.g. error 404.
-   * @return code
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "invalid_pagination", required = true, value = "Specifies an error code, e.g. error 404.")
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!ListXRPRippleTransactionsByBlockHashE400.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'ListXRPRippleTransactionsByBlockHashE400' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<InvalidPagination> adapterInvalidPagination = gson.getDelegateAdapter(this, TypeToken.get(InvalidPagination.class));
+            final TypeAdapter<LimitGreaterThanAllowed> adapterLimitGreaterThanAllowed = gson.getDelegateAdapter(this, TypeToken.get(LimitGreaterThanAllowed.class));
+            final TypeAdapter<UriNotFound> adapterUriNotFound = gson.getDelegateAdapter(this, TypeToken.get(UriNotFound.class));
 
-  public String getCode() {
-    return code;
-  }
+            return (TypeAdapter<T>) new TypeAdapter<ListXRPRippleTransactionsByBlockHashE400>() {
+                @Override
+                public void write(JsonWriter out, ListXRPRippleTransactionsByBlockHashE400 value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `InvalidPagination`
+                    if (value.getActualInstance() instanceof InvalidPagination) {
+                        JsonObject obj = adapterInvalidPagination.toJsonTree((InvalidPagination)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+                    // check if the actual instance is of the type `LimitGreaterThanAllowed`
+                    if (value.getActualInstance() instanceof LimitGreaterThanAllowed) {
+                        JsonObject obj = adapterLimitGreaterThanAllowed.toJsonTree((LimitGreaterThanAllowed)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `UriNotFound`
+                    if (value.getActualInstance() instanceof UriNotFound) {
+                        JsonObject obj = adapterUriNotFound.toJsonTree((UriNotFound)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public ListXRPRippleTransactionsByBlockHashE400 message(String message) {
-    
-    this.message = message;
-    return this;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: InvalidPagination, LimitGreaterThanAllowed, UriNotFound");
+                }
 
-   /**
-   * Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.
-   * @return message
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "The pagination attributes that have been used are invalid. Please check the Documentation to see details on pagination.", required = true, value = "Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.")
+                @Override
+                public ListXRPRippleTransactionsByBlockHashE400 read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public String getMessage() {
-    return message;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize InvalidPagination
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidPagination.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidPagination;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidPagination'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidPagination'", e);
+                    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+                    // deserialize LimitGreaterThanAllowed
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        LimitGreaterThanAllowed.validateJsonObject(jsonObject);
+                        actualAdapter = adapterLimitGreaterThanAllowed;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'LimitGreaterThanAllowed'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'LimitGreaterThanAllowed'", e);
+                    }
 
+                    // deserialize UriNotFound
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UriNotFound.validateJsonObject(jsonObject);
+                        actualAdapter = adapterUriNotFound;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'UriNotFound'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'UriNotFound'", e);
+                    }
 
-  public ListXRPRippleTransactionsByBlockHashE400 details(List<BannedIpAddressDetails> details) {
-    
-    this.details = details;
-    return this;
-  }
+                    if (match == 1) {
+                        ListXRPRippleTransactionsByBlockHashE400 ret = new ListXRPRippleTransactionsByBlockHashE400();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-  public ListXRPRippleTransactionsByBlockHashE400 addDetailsItem(BannedIpAddressDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<BannedIpAddressDetails>();
+                    throw new IOException(String.format("Failed deserialization for ListXRPRippleTransactionsByBlockHashE400: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.details.add(detailsItem);
-    return this;
-  }
 
-   /**
-   * Get details
-   * @return details
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<BannedIpAddressDetails> getDetails() {
-    return details;
-  }
-
-
-  public void setDetails(List<BannedIpAddressDetails> details) {
-    this.details = details;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public ListXRPRippleTransactionsByBlockHashE400() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public ListXRPRippleTransactionsByBlockHashE400(InvalidPagination o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    ListXRPRippleTransactionsByBlockHashE400 listXRPRippleTransactionsByBlockHashE400 = (ListXRPRippleTransactionsByBlockHashE400) o;
-    return Objects.equals(this.code, listXRPRippleTransactionsByBlockHashE400.code) &&
-        Objects.equals(this.message, listXRPRippleTransactionsByBlockHashE400.message) &&
-        Objects.equals(this.details, listXRPRippleTransactionsByBlockHashE400.details);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code, message, details);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListXRPRippleTransactionsByBlockHashE400 {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public ListXRPRippleTransactionsByBlockHashE400(LimitGreaterThanAllowed o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public ListXRPRippleTransactionsByBlockHashE400(UriNotFound o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("InvalidPagination", new GenericType<InvalidPagination>() {
+        });
+        schemas.put("LimitGreaterThanAllowed", new GenericType<LimitGreaterThanAllowed>() {
+        });
+        schemas.put("UriNotFound", new GenericType<UriNotFound>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return ListXRPRippleTransactionsByBlockHashE400.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * InvalidPagination, LimitGreaterThanAllowed, UriNotFound
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof InvalidPagination) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof LimitGreaterThanAllowed) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UriNotFound) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be InvalidPagination, LimitGreaterThanAllowed, UriNotFound");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * InvalidPagination, LimitGreaterThanAllowed, UriNotFound
+     *
+     * @return The actual instance (InvalidPagination, LimitGreaterThanAllowed, UriNotFound)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidPagination`. If the actual instance is not `InvalidPagination`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidPagination`
+     * @throws ClassCastException if the instance is not `InvalidPagination`
+     */
+    public InvalidPagination getInvalidPagination() throws ClassCastException {
+        return (InvalidPagination)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `LimitGreaterThanAllowed`. If the actual instance is not `LimitGreaterThanAllowed`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `LimitGreaterThanAllowed`
+     * @throws ClassCastException if the instance is not `LimitGreaterThanAllowed`
+     */
+    public LimitGreaterThanAllowed getLimitGreaterThanAllowed() throws ClassCastException {
+        return (LimitGreaterThanAllowed)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UriNotFound`. If the actual instance is not `UriNotFound`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UriNotFound`
+     * @throws ClassCastException if the instance is not `UriNotFound`
+     */
+    public UriNotFound getUriNotFound() throws ClassCastException {
+        return (UriNotFound)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListXRPRippleTransactionsByBlockHashE400
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with InvalidPagination
+    try {
+      InvalidPagination.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with LimitGreaterThanAllowed
+    try {
+      LimitGreaterThanAllowed.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with UriNotFound
+    try {
+      UriNotFound.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for ListXRPRippleTransactionsByBlockHashE400 with oneOf schemas: InvalidPagination, LimitGreaterThanAllowed, UriNotFound. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of ListXRPRippleTransactionsByBlockHashE400 given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListXRPRippleTransactionsByBlockHashE400
+  * @throws IOException if the JSON string is invalid with respect to ListXRPRippleTransactionsByBlockHashE400
+  */
+  public static ListXRPRippleTransactionsByBlockHashE400 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListXRPRippleTransactionsByBlockHashE400.class);
+  }
+
+ /**
+  * Convert an instance of ListXRPRippleTransactionsByBlockHashE400 to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

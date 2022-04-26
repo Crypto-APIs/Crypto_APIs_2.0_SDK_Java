@@ -38,9 +38,8 @@ import org.openapitools.client.model.ListTransactionsByBlockHashRIBSL;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZ;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZVJoinSplit;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBSZVin;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

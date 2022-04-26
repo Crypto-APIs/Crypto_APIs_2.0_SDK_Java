@@ -27,10 +27,30 @@ import org.openapitools.client.model.ListAssetsDetailsRIAssetLogo;
 import org.openapitools.client.model.ListAssetsDetailsRILatestRate;
 import org.openapitools.client.model.ListAssetsDetailsRIS;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListAssetsDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListAssetsDetailsRI {
   public static final String SERIALIZED_NAME_ASSET_ID = "assetId";
   @SerializedName(SERIALIZED_NAME_ASSET_ID)
@@ -325,6 +345,7 @@ public class ListAssetsDetailsRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -378,5 +399,143 @@ public class ListAssetsDetailsRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("assetId");
+    openapiFields.add("assetLogo");
+    openapiFields.add("assetName");
+    openapiFields.add("assetOriginalSymbol");
+    openapiFields.add("assetSymbol");
+    openapiFields.add("assetType");
+    openapiFields.add("latestRate");
+    openapiFields.add("slug");
+    openapiFields.add("specificData");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("assetId");
+    openapiRequiredFields.add("assetLogo");
+    openapiRequiredFields.add("assetName");
+    openapiRequiredFields.add("assetOriginalSymbol");
+    openapiRequiredFields.add("assetSymbol");
+    openapiRequiredFields.add("assetType");
+    openapiRequiredFields.add("latestRate");
+    openapiRequiredFields.add("specificData");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListAssetsDetailsRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListAssetsDetailsRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListAssetsDetailsRI is not found in the empty JSON string", ListAssetsDetailsRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListAssetsDetailsRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListAssetsDetailsRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListAssetsDetailsRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("assetId") != null && !jsonObj.get("assetId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetId").toString()));
+      }
+      // validate the optional field `assetLogo`
+      if (jsonObj.getAsJsonObject("assetLogo") != null) {
+        ListAssetsDetailsRIAssetLogo.validateJsonObject(jsonObj.getAsJsonObject("assetLogo"));
+      }
+      if (jsonObj.get("assetName") != null && !jsonObj.get("assetName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetName").toString()));
+      }
+      if (jsonObj.get("assetOriginalSymbol") != null && !jsonObj.get("assetOriginalSymbol").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetOriginalSymbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetOriginalSymbol").toString()));
+      }
+      if (jsonObj.get("assetSymbol") != null && !jsonObj.get("assetSymbol").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetSymbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetSymbol").toString()));
+      }
+      if (jsonObj.get("assetType") != null && !jsonObj.get("assetType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetType").toString()));
+      }
+      // validate the optional field `latestRate`
+      if (jsonObj.getAsJsonObject("latestRate") != null) {
+        ListAssetsDetailsRILatestRate.validateJsonObject(jsonObj.getAsJsonObject("latestRate"));
+      }
+      if (jsonObj.get("slug") != null && !jsonObj.get("slug").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slug` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slug").toString()));
+      }
+      // validate the optional field `specificData`
+      if (jsonObj.getAsJsonObject("specificData") != null) {
+        ListAssetsDetailsRIS.validateJsonObject(jsonObj.getAsJsonObject("specificData"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListAssetsDetailsRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListAssetsDetailsRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListAssetsDetailsRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListAssetsDetailsRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListAssetsDetailsRI>() {
+           @Override
+           public void write(JsonWriter out, ListAssetsDetailsRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListAssetsDetailsRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListAssetsDetailsRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListAssetsDetailsRI
+  * @throws IOException if the JSON string is invalid with respect to ListAssetsDetailsRI
+  */
+  public static ListAssetsDetailsRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListAssetsDetailsRI.class);
+  }
+
+ /**
+  * Convert an instance of ListAssetsDetailsRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

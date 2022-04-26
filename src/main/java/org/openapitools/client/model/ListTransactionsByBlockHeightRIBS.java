@@ -41,740 +41,605 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShielded
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVin;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
 
-/**
- * ListTransactionsByBlockHeightRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class ListTransactionsByBlockHeightRIBS {
-  public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
-  @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
-  @SerializedName(SERIALIZED_NAME_V_SIZE)
-  private Integer vSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VIN = "vin";
-  @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListTransactionsByBlockHeightRIBSZVin> vin = new ArrayList<ListTransactionsByBlockHeightRIBSZVin>();
-
-  public static final String SERIALIZED_NAME_VOUT = "vout";
-  @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<ListTransactionsByBlockHeightRIBSZVout>();
-
-  public static final String SERIALIZED_NAME_CONTRACT = "contract";
-  @SerializedName(SERIALIZED_NAME_CONTRACT)
-  private String contract;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private String gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
-  @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private ListTransactionsByBlockHeightRIBSBSCGasPrice gasPrice;
-
-  public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
-  @SerializedName(SERIALIZED_NAME_GAS_USED)
-  private String gasUsed;
-
-  public static final String SERIALIZED_NAME_INPUT_DATA = "inputData";
-  @SerializedName(SERIALIZED_NAME_INPUT_DATA)
-  private String inputData;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
-  private String transactionStatus;
-
-  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
-  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
-  private String bindingSig;
-
-  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
-  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
-  private Integer expiryHeight;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
-  private String joinSplitPubKey;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
-  private String joinSplitSig;
-
-  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
-  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
-  private Boolean overwintered;
-
-  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
-  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit = new ArrayList<ListTransactionsByBlockHeightRIBSZVJoinSplit>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<ListTransactionsByBlockHeightRIBSZVShieldedOutput>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
-
-  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
-  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
-  private String valueBalance;
-
-  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
-  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
-  private String versionGroupId;
-
-  public ListTransactionsByBlockHeightRIBS() { 
-  }
-
-  public ListTransactionsByBlockHeightRIBS locktime(Integer locktime) {
-    
-    this.locktime = locktime;
-    return this;
-  }
-
-   /**
-   * Represents the time at which a particular transaction can be added to the blockchain.
-   * @return locktime
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1781965", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
-
-  public Integer getLocktime() {
-    return locktime;
-  }
-
-
-  public void setLocktime(Integer locktime) {
-    this.locktime = locktime;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of this transaction.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS vSize(Integer vSize) {
-    
-    this.vSize = vSize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getvSize() {
-    return vSize;
-  }
-
-
-  public void setvSize(Integer vSize) {
-    this.vSize = vSize;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version number.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Represents the transaction version number.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS vin(List<ListTransactionsByBlockHeightRIBSZVin> vin) {
-    
-    this.vin = vin;
-    return this;
-  }
-
-  public ListTransactionsByBlockHeightRIBS addVinItem(ListTransactionsByBlockHeightRIBSZVin vinItem) {
-    this.vin.add(vinItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction inputs
-   * @return vin
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
-
-  public List<ListTransactionsByBlockHeightRIBSZVin> getVin() {
-    return vin;
-  }
-
-
-  public void setVin(List<ListTransactionsByBlockHeightRIBSZVin> vin) {
-    this.vin = vin;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS vout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
-    
-    this.vout = vout;
-    return this;
-  }
-
-  public ListTransactionsByBlockHeightRIBS addVoutItem(ListTransactionsByBlockHeightRIBSZVout voutItem) {
-    this.vout.add(voutItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction outputs
-   * @return vout
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
-
-  public List<ListTransactionsByBlockHeightRIBSZVout> getVout() {
-    return vout;
-  }
-
-
-  public void setVout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
-    this.vout = vout;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS contract(String contract) {
-    
-    this.contract = contract;
-    return this;
-  }
-
-   /**
-   * Represents the specific transaction contract.
-   * @return contract
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the specific transaction contract.")
-
-  public String getContract() {
-    return contract;
-  }
-
-
-  public void setContract(String contract) {
-    this.contract = contract;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS gasLimit(String gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the amount of gas used by this specific transaction alone.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
-
-  public String getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(String gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS gasPrice(ListTransactionsByBlockHeightRIBSBSCGasPrice gasPrice) {
-    
-    this.gasPrice = gasPrice;
-    return this;
-  }
-
-   /**
-   * Get gasPrice
-   * @return gasPrice
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public ListTransactionsByBlockHeightRIBSBSCGasPrice getGasPrice() {
-    return gasPrice;
-  }
-
-
-  public void setGasPrice(ListTransactionsByBlockHeightRIBSBSCGasPrice gasPrice) {
-    this.gasPrice = gasPrice;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS gasUsed(String gasUsed) {
-    
-    this.gasUsed = gasUsed;
-    return this;
-  }
-
-   /**
-   * Represents the exact unit of gas that was used for the transaction.
-   * @return gasUsed
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Represents the exact unit of gas that was used for the transaction.")
-
-  public String getGasUsed() {
-    return gasUsed;
-  }
-
-
-  public void setGasUsed(String gasUsed) {
-    this.gasUsed = gasUsed;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS inputData(String inputData) {
-    
-    this.inputData = inputData;
-    return this;
-  }
-
-   /**
-   * Represents additional information that is required for the transaction.
-   * @return inputData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xe656e7110000000000000000000000000000000000000000000000000000000000000001", required = true, value = "Represents additional information that is required for the transaction.")
-
-  public String getInputData() {
-    return inputData;
-  }
-
-
-  public void setInputData(String inputData) {
-    this.inputData = inputData;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS nonce(Integer nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "15", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
-
-  public Integer getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(Integer nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS transactionStatus(String transactionStatus) {
-    
-    this.transactionStatus = transactionStatus;
-    return this;
-  }
-
-   /**
-   * Represents the status of this transaction
-   * @return transactionStatus
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1", required = true, value = "Represents the status of this transaction")
-
-  public String getTransactionStatus() {
-    return transactionStatus;
-  }
-
-
-  public void setTransactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS bindingSig(String bindingSig) {
-    
-    this.bindingSig = bindingSig;
-    return this;
-  }
-
-   /**
-   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
-   * @return bindingSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
-
-  public String getBindingSig() {
-    return bindingSig;
-  }
-
-
-  public void setBindingSig(String bindingSig) {
-    this.bindingSig = bindingSig;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS expiryHeight(Integer expiryHeight) {
-    
-    this.expiryHeight = expiryHeight;
-    return this;
-  }
-
-   /**
-   * Represents a block height after which the transaction will expire.
-   * @return expiryHeight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
-
-  public Integer getExpiryHeight() {
-    return expiryHeight;
-  }
-
-
-  public void setExpiryHeight(Integer expiryHeight) {
-    this.expiryHeight = expiryHeight;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS joinSplitPubKey(String joinSplitPubKey) {
-    
-    this.joinSplitPubKey = joinSplitPubKey;
-    return this;
-  }
-
-   /**
-   * Represents an encoding of a JoinSplitSig public validating key.
-   * @return joinSplitPubKey
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
-
-  public String getJoinSplitPubKey() {
-    return joinSplitPubKey;
-  }
-
-
-  public void setJoinSplitPubKey(String joinSplitPubKey) {
-    this.joinSplitPubKey = joinSplitPubKey;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS joinSplitSig(String joinSplitSig) {
-    
-    this.joinSplitSig = joinSplitSig;
-    return this;
-  }
-
-   /**
-   * Is used to sign transactions that contain at least one JoinSplit description.
-   * @return joinSplitSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
-
-  public String getJoinSplitSig() {
-    return joinSplitSig;
-  }
-
-
-  public void setJoinSplitSig(String joinSplitSig) {
-    this.joinSplitSig = joinSplitSig;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS overwintered(Boolean overwintered) {
-    
-    this.overwintered = overwintered;
-    return this;
-  }
-
-   /**
-   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
-   * @return overwintered
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
-
-  public Boolean getOverwintered() {
-    return overwintered;
-  }
-
-
-  public void setOverwintered(Boolean overwintered) {
-    this.overwintered = overwintered;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS vJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit) {
-    
-    this.vJoinSplit = vJoinSplit;
-    return this;
-  }
-
-  public ListTransactionsByBlockHeightRIBS addVJoinSplitItem(ListTransactionsByBlockHeightRIBSZVJoinSplit vJoinSplitItem) {
-    this.vJoinSplit.add(vJoinSplitItem);
-    return this;
-  }
-
-   /**
-   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
-   * @return vJoinSplit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
-
-  public List<ListTransactionsByBlockHeightRIBSZVJoinSplit> getvJoinSplit() {
-    return vJoinSplit;
-  }
-
-
-  public void setvJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit) {
-    this.vJoinSplit = vJoinSplit;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS vShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput) {
-    
-    this.vShieldedOutput = vShieldedOutput;
-    return this;
-  }
-
-  public ListTransactionsByBlockHeightRIBS addVShieldedOutputItem(ListTransactionsByBlockHeightRIBSZVShieldedOutput vShieldedOutputItem) {
-    this.vShieldedOutput.add(vShieldedOutputItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction output descriptions
-   * @return vShieldedOutput
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
-
-  public List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> getvShieldedOutput() {
-    return vShieldedOutput;
-  }
-
-
-  public void setvShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput) {
-    this.vShieldedOutput = vShieldedOutput;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    
-    this.vShieldedSpend = vShieldedSpend;
-    return this;
-  }
-
-  public ListTransactionsByBlockHeightRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
-    this.vShieldedSpend.add(vShieldedSpendItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction spend descriptions
-   * @return vShieldedSpend
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
-    return vShieldedSpend;
-  }
-
-
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    this.vShieldedSpend = vShieldedSpend;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS valueBalance(String valueBalance) {
-    
-    this.valueBalance = valueBalance;
-    return this;
-  }
-
-   /**
-   * Defines the transaction value balance.
-   * @return valueBalance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Defines the transaction value balance.")
-
-  public String getValueBalance() {
-    return valueBalance;
-  }
-
-
-  public void setValueBalance(String valueBalance) {
-    this.valueBalance = valueBalance;
-  }
-
-
-  public ListTransactionsByBlockHeightRIBS versionGroupId(String versionGroupId) {
-    
-    this.versionGroupId = versionGroupId;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version group ID.
-   * @return versionGroupId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID.")
-
-  public String getVersionGroupId() {
-    return versionGroupId;
-  }
-
-
-  public void setVersionGroupId(String versionGroupId) {
-    this.versionGroupId = versionGroupId;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(ListTransactionsByBlockHeightRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!ListTransactionsByBlockHeightRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'ListTransactionsByBlockHeightRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSB> adapterListTransactionsByBlockHeightRIBSB = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSB.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSBC> adapterListTransactionsByBlockHeightRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSBC.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSBSC> adapterListTransactionsByBlockHeightRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSBSC.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSD> adapterListTransactionsByBlockHeightRIBSD = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSD.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSD2> adapterListTransactionsByBlockHeightRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSD2.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSE> adapterListTransactionsByBlockHeightRIBSE = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSE.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSEC> adapterListTransactionsByBlockHeightRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSEC.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSL> adapterListTransactionsByBlockHeightRIBSL = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSL.class));
+            final TypeAdapter<ListTransactionsByBlockHeightRIBSZ> adapterListTransactionsByBlockHeightRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSZ.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<ListTransactionsByBlockHeightRIBS>() {
+                @Override
+                public void write(JsonWriter out, ListTransactionsByBlockHeightRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSB`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSB) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSB.toJsonTree((ListTransactionsByBlockHeightRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSBC`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSBC) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSBC.toJsonTree((ListTransactionsByBlockHeightRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSBSC`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSBSC) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSBSC.toJsonTree((ListTransactionsByBlockHeightRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSD`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSD) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSD.toJsonTree((ListTransactionsByBlockHeightRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSD2`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSD2) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSD2.toJsonTree((ListTransactionsByBlockHeightRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSE`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSE) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSE.toJsonTree((ListTransactionsByBlockHeightRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSEC`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSEC) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSEC.toJsonTree((ListTransactionsByBlockHeightRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSL`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSL) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSL.toJsonTree((ListTransactionsByBlockHeightRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListTransactionsByBlockHeightRIBSZ`
+                    if (value.getActualInstance() instanceof ListTransactionsByBlockHeightRIBSZ) {
+                        JsonObject obj = adapterListTransactionsByBlockHeightRIBSZ.toJsonTree((ListTransactionsByBlockHeightRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ");
+                }
+
+                @Override
+                public ListTransactionsByBlockHeightRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize ListTransactionsByBlockHeightRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSB'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSBC'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSBSC'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSD'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSD2'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSE'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSEC'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSL'", e);
+                    }
+
+                    // deserialize ListTransactionsByBlockHeightRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListTransactionsByBlockHeightRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListTransactionsByBlockHeightRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSZ'", e);
+                    }
+
+                    if (match == 1) {
+                        ListTransactionsByBlockHeightRIBS ret = new ListTransactionsByBlockHeightRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for ListTransactionsByBlockHeightRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public ListTransactionsByBlockHeightRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    ListTransactionsByBlockHeightRIBS listTransactionsByBlockHeightRIBS = (ListTransactionsByBlockHeightRIBS) o;
-    return Objects.equals(this.locktime, listTransactionsByBlockHeightRIBS.locktime) &&
-        Objects.equals(this.size, listTransactionsByBlockHeightRIBS.size) &&
-        Objects.equals(this.vSize, listTransactionsByBlockHeightRIBS.vSize) &&
-        Objects.equals(this.version, listTransactionsByBlockHeightRIBS.version) &&
-        Objects.equals(this.vin, listTransactionsByBlockHeightRIBS.vin) &&
-        Objects.equals(this.vout, listTransactionsByBlockHeightRIBS.vout) &&
-        Objects.equals(this.contract, listTransactionsByBlockHeightRIBS.contract) &&
-        Objects.equals(this.gasLimit, listTransactionsByBlockHeightRIBS.gasLimit) &&
-        Objects.equals(this.gasPrice, listTransactionsByBlockHeightRIBS.gasPrice) &&
-        Objects.equals(this.gasUsed, listTransactionsByBlockHeightRIBS.gasUsed) &&
-        Objects.equals(this.inputData, listTransactionsByBlockHeightRIBS.inputData) &&
-        Objects.equals(this.nonce, listTransactionsByBlockHeightRIBS.nonce) &&
-        Objects.equals(this.transactionStatus, listTransactionsByBlockHeightRIBS.transactionStatus) &&
-        Objects.equals(this.bindingSig, listTransactionsByBlockHeightRIBS.bindingSig) &&
-        Objects.equals(this.expiryHeight, listTransactionsByBlockHeightRIBS.expiryHeight) &&
-        Objects.equals(this.joinSplitPubKey, listTransactionsByBlockHeightRIBS.joinSplitPubKey) &&
-        Objects.equals(this.joinSplitSig, listTransactionsByBlockHeightRIBS.joinSplitSig) &&
-        Objects.equals(this.overwintered, listTransactionsByBlockHeightRIBS.overwintered) &&
-        Objects.equals(this.vJoinSplit, listTransactionsByBlockHeightRIBS.vJoinSplit) &&
-        Objects.equals(this.vShieldedOutput, listTransactionsByBlockHeightRIBS.vShieldedOutput) &&
-        Objects.equals(this.vShieldedSpend, listTransactionsByBlockHeightRIBS.vShieldedSpend) &&
-        Objects.equals(this.valueBalance, listTransactionsByBlockHeightRIBS.valueBalance) &&
-        Objects.equals(this.versionGroupId, listTransactionsByBlockHeightRIBS.versionGroupId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListTransactionsByBlockHeightRIBS {\n");
-    sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
-    sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasPrice: ").append(toIndentedString(gasPrice)).append("\n");
-    sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
-    sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
-    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
-    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
-    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
-    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
-    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
-    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
-    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
-    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
-    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListTransactionsByBlockHeightRIBS(ListTransactionsByBlockHeightRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("ListTransactionsByBlockHeightRIBSB", new GenericType<ListTransactionsByBlockHeightRIBSB>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSBC", new GenericType<ListTransactionsByBlockHeightRIBSBC>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSBSC", new GenericType<ListTransactionsByBlockHeightRIBSBSC>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSD", new GenericType<ListTransactionsByBlockHeightRIBSD>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSD2", new GenericType<ListTransactionsByBlockHeightRIBSD2>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSE", new GenericType<ListTransactionsByBlockHeightRIBSE>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSEC", new GenericType<ListTransactionsByBlockHeightRIBSEC>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSL", new GenericType<ListTransactionsByBlockHeightRIBSL>() {
+        });
+        schemas.put("ListTransactionsByBlockHeightRIBSZ", new GenericType<ListTransactionsByBlockHeightRIBSZ>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return ListTransactionsByBlockHeightRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof ListTransactionsByBlockHeightRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListTransactionsByBlockHeightRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ
+     *
+     * @return The actual instance (ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSB`. If the actual instance is not `ListTransactionsByBlockHeightRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSB`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSB`
+     */
+    public ListTransactionsByBlockHeightRIBSB getListTransactionsByBlockHeightRIBSB() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSBC`. If the actual instance is not `ListTransactionsByBlockHeightRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSBC`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSBC`
+     */
+    public ListTransactionsByBlockHeightRIBSBC getListTransactionsByBlockHeightRIBSBC() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSBSC`. If the actual instance is not `ListTransactionsByBlockHeightRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSBSC`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSBSC`
+     */
+    public ListTransactionsByBlockHeightRIBSBSC getListTransactionsByBlockHeightRIBSBSC() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSD`. If the actual instance is not `ListTransactionsByBlockHeightRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSD`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSD`
+     */
+    public ListTransactionsByBlockHeightRIBSD getListTransactionsByBlockHeightRIBSD() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSD2`. If the actual instance is not `ListTransactionsByBlockHeightRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSD2`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSD2`
+     */
+    public ListTransactionsByBlockHeightRIBSD2 getListTransactionsByBlockHeightRIBSD2() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSE`. If the actual instance is not `ListTransactionsByBlockHeightRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSE`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSE`
+     */
+    public ListTransactionsByBlockHeightRIBSE getListTransactionsByBlockHeightRIBSE() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSEC`. If the actual instance is not `ListTransactionsByBlockHeightRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSEC`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSEC`
+     */
+    public ListTransactionsByBlockHeightRIBSEC getListTransactionsByBlockHeightRIBSEC() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSL`. If the actual instance is not `ListTransactionsByBlockHeightRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSL`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSL`
+     */
+    public ListTransactionsByBlockHeightRIBSL getListTransactionsByBlockHeightRIBSL() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListTransactionsByBlockHeightRIBSZ`. If the actual instance is not `ListTransactionsByBlockHeightRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListTransactionsByBlockHeightRIBSZ`
+     * @throws ClassCastException if the instance is not `ListTransactionsByBlockHeightRIBSZ`
+     */
+    public ListTransactionsByBlockHeightRIBSZ getListTransactionsByBlockHeightRIBSZ() throws ClassCastException {
+        return (ListTransactionsByBlockHeightRIBSZ)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListTransactionsByBlockHeightRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with ListTransactionsByBlockHeightRIBSB
+    try {
+      ListTransactionsByBlockHeightRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSBC
+    try {
+      ListTransactionsByBlockHeightRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSBSC
+    try {
+      ListTransactionsByBlockHeightRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSD
+    try {
+      ListTransactionsByBlockHeightRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSD2
+    try {
+      ListTransactionsByBlockHeightRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSE
+    try {
+      ListTransactionsByBlockHeightRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSEC
+    try {
+      ListTransactionsByBlockHeightRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSL
+    try {
+      ListTransactionsByBlockHeightRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListTransactionsByBlockHeightRIBSZ
+    try {
+      ListTransactionsByBlockHeightRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for ListTransactionsByBlockHeightRIBS with oneOf schemas: ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of ListTransactionsByBlockHeightRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListTransactionsByBlockHeightRIBS
+  * @throws IOException if the JSON string is invalid with respect to ListTransactionsByBlockHeightRIBS
+  */
+  public static ListTransactionsByBlockHeightRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListTransactionsByBlockHeightRIBS.class);
+  }
+
+ /**
+  * Convert an instance of ListTransactionsByBlockHeightRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

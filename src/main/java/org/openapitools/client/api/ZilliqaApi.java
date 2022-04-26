@@ -33,29 +33,29 @@ import org.openapitools.client.model.GetZilliqaBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetZilliqaBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDR;
 import org.openapitools.client.model.InlineResponse40014;
-import org.openapitools.client.model.InlineResponse40021;
 import org.openapitools.client.model.InlineResponse40022;
-import org.openapitools.client.model.InlineResponse40029;
+import org.openapitools.client.model.InlineResponse40023;
 import org.openapitools.client.model.InlineResponse4003;
-import org.openapitools.client.model.InlineResponse40033;
-import org.openapitools.client.model.InlineResponse40040;
+import org.openapitools.client.model.InlineResponse40030;
+import org.openapitools.client.model.InlineResponse40034;
+import org.openapitools.client.model.InlineResponse40043;
 import org.openapitools.client.model.InlineResponse4009;
 import org.openapitools.client.model.InlineResponse40114;
-import org.openapitools.client.model.InlineResponse40121;
 import org.openapitools.client.model.InlineResponse40122;
-import org.openapitools.client.model.InlineResponse40129;
+import org.openapitools.client.model.InlineResponse40123;
 import org.openapitools.client.model.InlineResponse4013;
-import org.openapitools.client.model.InlineResponse40133;
-import org.openapitools.client.model.InlineResponse40140;
+import org.openapitools.client.model.InlineResponse40130;
+import org.openapitools.client.model.InlineResponse40134;
+import org.openapitools.client.model.InlineResponse40143;
 import org.openapitools.client.model.InlineResponse4019;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse40314;
-import org.openapitools.client.model.InlineResponse40321;
 import org.openapitools.client.model.InlineResponse40322;
-import org.openapitools.client.model.InlineResponse40329;
+import org.openapitools.client.model.InlineResponse40323;
 import org.openapitools.client.model.InlineResponse4033;
-import org.openapitools.client.model.InlineResponse40333;
-import org.openapitools.client.model.InlineResponse40340;
+import org.openapitools.client.model.InlineResponse40330;
+import org.openapitools.client.model.InlineResponse40334;
+import org.openapitools.client.model.InlineResponse40343;
 import org.openapitools.client.model.InlineResponse4039;
 import org.openapitools.client.model.InlineResponse404;
 import org.openapitools.client.model.InlineResponse4042;
@@ -73,6 +73,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ZilliqaApi {
     private ApiClient localVarApiClient;
@@ -136,7 +137,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call getLatestMinedZilliqaBlockCall(String network, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -177,7 +177,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -312,7 +312,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call getZilliqaAddressDetailsCall(String network, String address, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -354,7 +353,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -495,7 +494,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call getZilliqaBlockDetailsByBlockHashCall(String network, String blockHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -537,7 +535,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -681,7 +679,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call getZilliqaBlockDetailsByBlockHeightCall(String network, Integer blockHeight, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -723,7 +720,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -867,7 +864,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call getZilliqaTransactionDetailsByTransactionIDCall(String network, String transactionHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -909,7 +905,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1054,7 +1050,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call listZilliqaTransactionsByAddressCall(String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1104,7 +1099,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1252,7 +1247,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call listZilliqaTransactionsByBlockHashCall(String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1302,7 +1296,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1450,7 +1444,6 @@ public class ZilliqaApi {
      */
     public okhttp3.Call listZilliqaTransactionsByBlockHeightCall(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1500,7 +1493,7 @@ public class ZilliqaApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

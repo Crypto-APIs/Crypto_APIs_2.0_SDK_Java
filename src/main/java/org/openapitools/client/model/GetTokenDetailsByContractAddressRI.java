@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * GetTokenDetailsByContractAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetTokenDetailsByContractAddressRI {
   public static final String SERIALIZED_NAME_TOKEN_DECIMALS = "tokenDecimals";
   @SerializedName(SERIALIZED_NAME_TOKEN_DECIMALS)
@@ -167,6 +187,7 @@ public class GetTokenDetailsByContractAddressRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -212,5 +233,119 @@ public class GetTokenDetailsByContractAddressRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("tokenDecimals");
+    openapiFields.add("tokenName");
+    openapiFields.add("tokenSymbol");
+    openapiFields.add("tokenType");
+    openapiFields.add("totalSupply");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("tokenDecimals");
+    openapiRequiredFields.add("tokenType");
+    openapiRequiredFields.add("totalSupply");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetTokenDetailsByContractAddressRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetTokenDetailsByContractAddressRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetTokenDetailsByContractAddressRI is not found in the empty JSON string", GetTokenDetailsByContractAddressRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetTokenDetailsByContractAddressRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetTokenDetailsByContractAddressRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetTokenDetailsByContractAddressRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("tokenDecimals") != null && !jsonObj.get("tokenDecimals").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tokenDecimals` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenDecimals").toString()));
+      }
+      if (jsonObj.get("tokenName") != null && !jsonObj.get("tokenName").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tokenName` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenName").toString()));
+      }
+      if (jsonObj.get("tokenSymbol") != null && !jsonObj.get("tokenSymbol").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tokenSymbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenSymbol").toString()));
+      }
+      if (jsonObj.get("tokenType") != null && !jsonObj.get("tokenType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tokenType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenType").toString()));
+      }
+      if (jsonObj.get("totalSupply") != null && !jsonObj.get("totalSupply").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `totalSupply` to be a primitive type in the JSON string but got `%s`", jsonObj.get("totalSupply").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetTokenDetailsByContractAddressRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetTokenDetailsByContractAddressRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetTokenDetailsByContractAddressRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetTokenDetailsByContractAddressRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetTokenDetailsByContractAddressRI>() {
+           @Override
+           public void write(JsonWriter out, GetTokenDetailsByContractAddressRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetTokenDetailsByContractAddressRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetTokenDetailsByContractAddressRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetTokenDetailsByContractAddressRI
+  * @throws IOException if the JSON string is invalid with respect to GetTokenDetailsByContractAddressRI
+  */
+  public static GetTokenDetailsByContractAddressRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetTokenDetailsByContractAddressRI.class);
+  }
+
+ /**
+  * Convert an instance of GetTokenDetailsByContractAddressRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

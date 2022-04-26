@@ -26,9 +26,8 @@ import java.util.List;
 import org.openapitools.client.model.BannedIpAddressDetails;
 import org.openapitools.client.model.InvalidRequestBodyStructure;
 import org.openapitools.client.model.XpubSyncInProgress;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

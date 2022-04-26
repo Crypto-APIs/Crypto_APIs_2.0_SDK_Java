@@ -29,16 +29,16 @@ import java.io.IOException;
 
 import org.openapitools.client.model.GetAssetDetailsByAssetIDR;
 import org.openapitools.client.model.GetAssetDetailsByAssetSymbolR;
-import org.openapitools.client.model.InlineResponse40089;
-import org.openapitools.client.model.InlineResponse40090;
-import org.openapitools.client.model.InlineResponse40091;
-import org.openapitools.client.model.InlineResponse40189;
-import org.openapitools.client.model.InlineResponse40190;
-import org.openapitools.client.model.InlineResponse40191;
+import org.openapitools.client.model.InlineResponse400108;
+import org.openapitools.client.model.InlineResponse400109;
+import org.openapitools.client.model.InlineResponse400110;
+import org.openapitools.client.model.InlineResponse401108;
+import org.openapitools.client.model.InlineResponse401109;
+import org.openapitools.client.model.InlineResponse401110;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40389;
-import org.openapitools.client.model.InlineResponse40390;
-import org.openapitools.client.model.InlineResponse40391;
+import org.openapitools.client.model.InlineResponse403108;
+import org.openapitools.client.model.InlineResponse403109;
+import org.openapitools.client.model.InlineResponse403110;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
@@ -51,6 +51,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class AssetsApi {
     private ApiClient localVarApiClient;
@@ -113,7 +114,6 @@ public class AssetsApi {
      */
     public okhttp3.Call getAssetDetailsByAssetIDCall(String assetId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -154,7 +154,7 @@ public class AssetsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -285,7 +285,6 @@ public class AssetsApi {
      */
     public okhttp3.Call getAssetDetailsByAssetSymbolCall(String assetSymbol, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -326,7 +325,7 @@ public class AssetsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -461,7 +460,6 @@ public class AssetsApi {
      */
     public okhttp3.Call listAssetsDetailsCall(String context, String assetType, String cryptoType, Integer limit, Integer offset, Boolean waasEnabled, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -521,7 +519,7 @@ public class AssetsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

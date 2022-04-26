@@ -30,9 +30,8 @@ import org.openapitools.client.model.ListWalletTransactionsRINonFungibleTokens;
 import org.openapitools.client.model.ListWalletTransactionsRIRecipients;
 import org.openapitools.client.model.ListWalletTransactionsRISenders;
 import org.openapitools.client.model.ListWalletTransactionsRIValue;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

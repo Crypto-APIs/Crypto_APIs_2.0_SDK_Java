@@ -26,11 +26,31 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Zilliqa
  */
 @ApiModel(description = "Zilliqa")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightFromCallbackRIBSZ {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -58,7 +78,7 @@ public class GetBlockDetailsByBlockHeightFromCallbackRIBSZ {
 
   public static final String SERIALIZED_NAME_MICRO_BLOCKS = "microBlocks";
   @SerializedName(SERIALIZED_NAME_MICRO_BLOCKS)
-  private List<String> microBlocks = new ArrayList<String>();
+  private List<String> microBlocks = new ArrayList<>();
 
   public GetBlockDetailsByBlockHeightFromCallbackRIBSZ() { 
   }
@@ -229,6 +249,7 @@ public class GetBlockDetailsByBlockHeightFromCallbackRIBSZ {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -278,5 +299,123 @@ public class GetBlockDetailsByBlockHeightFromCallbackRIBSZ {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("difficulty");
+    openapiFields.add("dsBlock");
+    openapiFields.add("dsDifficulty");
+    openapiFields.add("dsLeader");
+    openapiFields.add("gasLimit");
+    openapiFields.add("gasUsed");
+    openapiFields.add("microBlocks");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("difficulty");
+    openapiRequiredFields.add("dsBlock");
+    openapiRequiredFields.add("dsDifficulty");
+    openapiRequiredFields.add("dsLeader");
+    openapiRequiredFields.add("gasLimit");
+    openapiRequiredFields.add("gasUsed");
+    openapiRequiredFields.add("microBlocks");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetBlockDetailsByBlockHeightFromCallbackRIBSZ
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetBlockDetailsByBlockHeightFromCallbackRIBSZ.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetBlockDetailsByBlockHeightFromCallbackRIBSZ is not found in the empty JSON string", GetBlockDetailsByBlockHeightFromCallbackRIBSZ.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetBlockDetailsByBlockHeightFromCallbackRIBSZ.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetBlockDetailsByBlockHeightFromCallbackRIBSZ` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetBlockDetailsByBlockHeightFromCallbackRIBSZ.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("difficulty") != null && !jsonObj.get("difficulty").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `difficulty` to be a primitive type in the JSON string but got `%s`", jsonObj.get("difficulty").toString()));
+      }
+      if (jsonObj.get("dsDifficulty") != null && !jsonObj.get("dsDifficulty").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dsDifficulty` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dsDifficulty").toString()));
+      }
+      if (jsonObj.get("dsLeader") != null && !jsonObj.get("dsLeader").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `dsLeader` to be a primitive type in the JSON string but got `%s`", jsonObj.get("dsLeader").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("microBlocks") != null && !jsonObj.get("microBlocks").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `microBlocks` to be an array in the JSON string but got `%s`", jsonObj.get("microBlocks").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetBlockDetailsByBlockHeightFromCallbackRIBSZ.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetBlockDetailsByBlockHeightFromCallbackRIBSZ' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSZ> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSZ.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSZ>() {
+           @Override
+           public void write(JsonWriter out, GetBlockDetailsByBlockHeightFromCallbackRIBSZ value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetBlockDetailsByBlockHeightFromCallbackRIBSZ read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetBlockDetailsByBlockHeightFromCallbackRIBSZ given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetBlockDetailsByBlockHeightFromCallbackRIBSZ
+  * @throws IOException if the JSON string is invalid with respect to GetBlockDetailsByBlockHeightFromCallbackRIBSZ
+  */
+  public static GetBlockDetailsByBlockHeightFromCallbackRIBSZ fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetBlockDetailsByBlockHeightFromCallbackRIBSZ.class);
+  }
+
+ /**
+  * Convert an instance of GetBlockDetailsByBlockHeightFromCallbackRIBSZ to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

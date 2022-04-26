@@ -21,9 +21,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -46,6 +45,14 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRITest {
     @Test
     public void addressTest() {
         // TODO: test address
+    }
+
+    /**
+     * Test the property 'callbackSecretKey'
+     */
+    @Test
+    public void callbackSecretKeyTest() {
+        // TODO: test callbackSecretKey
     }
 
     /**
@@ -78,6 +85,14 @@ public class NewConfirmedTokensTransactionsAndEachConfirmationRITest {
     @Test
     public void eventTypeTest() {
         // TODO: test eventType
+    }
+
+    /**
+     * Test the property 'isActive'
+     */
+    @Test
+    public void isActiveTest() {
+        // TODO: test isActive
     }
 
     /**

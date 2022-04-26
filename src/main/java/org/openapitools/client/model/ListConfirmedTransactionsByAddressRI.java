@@ -30,10 +30,30 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRISende
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBS;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIFee;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListConfirmedTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListConfirmedTransactionsByAddressRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -49,11 +69,11 @@ public class ListConfirmedTransactionsByAddressRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<GetTransactionDetailsByTransactionIDRIRecipients>();
+  private List<GetTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<GetTransactionDetailsByTransactionIDRISenders>();
+  private List<GetTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -318,6 +338,7 @@ public class ListConfirmedTransactionsByAddressRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -373,5 +394,155 @@ public class ListConfirmedTransactionsByAddressRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("index");
+    openapiFields.add("minedInBlockHash");
+    openapiFields.add("minedInBlockHeight");
+    openapiFields.add("recipients");
+    openapiFields.add("senders");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionHash");
+    openapiFields.add("transactionId");
+    openapiFields.add("fee");
+    openapiFields.add("blockchainSpecific");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("index");
+    openapiRequiredFields.add("recipients");
+    openapiRequiredFields.add("senders");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionHash");
+    openapiRequiredFields.add("transactionId");
+    openapiRequiredFields.add("fee");
+    openapiRequiredFields.add("blockchainSpecific");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListConfirmedTransactionsByAddressRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListConfirmedTransactionsByAddressRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListConfirmedTransactionsByAddressRI is not found in the empty JSON string", ListConfirmedTransactionsByAddressRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListConfirmedTransactionsByAddressRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListConfirmedTransactionsByAddressRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListConfirmedTransactionsByAddressRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("minedInBlockHash") != null && !jsonObj.get("minedInBlockHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `minedInBlockHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minedInBlockHash").toString()));
+      }
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
+      if (jsonArrayrecipients != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("recipients").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `recipients` to be an array in the JSON string but got `%s`", jsonObj.get("recipients").toString()));
+        }
+
+        // validate the optional field `recipients` (array)
+        for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+          GetTransactionDetailsByTransactionIDRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
+      if (jsonArraysenders != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("senders").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `senders` to be an array in the JSON string but got `%s`", jsonObj.get("senders").toString()));
+        }
+
+        // validate the optional field `senders` (array)
+        for (int i = 0; i < jsonArraysenders.size(); i++) {
+          GetTransactionDetailsByTransactionIDRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionHash").toString()));
+      }
+      if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
+      }
+      // validate the optional field `fee`
+      if (jsonObj.getAsJsonObject("fee") != null) {
+        ListConfirmedTransactionsByAddressRIFee.validateJsonObject(jsonObj.getAsJsonObject("fee"));
+      }
+      // validate the optional field `blockchainSpecific`
+      if (jsonObj.getAsJsonObject("blockchainSpecific") != null) {
+        ListConfirmedTransactionsByAddressRIBS.validateJsonObject(jsonObj.getAsJsonObject("blockchainSpecific"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListConfirmedTransactionsByAddressRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListConfirmedTransactionsByAddressRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListConfirmedTransactionsByAddressRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListConfirmedTransactionsByAddressRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListConfirmedTransactionsByAddressRI>() {
+           @Override
+           public void write(JsonWriter out, ListConfirmedTransactionsByAddressRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListConfirmedTransactionsByAddressRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListConfirmedTransactionsByAddressRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListConfirmedTransactionsByAddressRI
+  * @throws IOException if the JSON string is invalid with respect to ListConfirmedTransactionsByAddressRI
+  */
+  public static ListConfirmedTransactionsByAddressRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListConfirmedTransactionsByAddressRI.class);
+  }
+
+ /**
+  * Convert an instance of ListConfirmedTransactionsByAddressRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

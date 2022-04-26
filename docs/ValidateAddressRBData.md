@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**ValidateAddressRBDataItem**](ValidateAddressRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**ValidateAddressRBDataItem**](ValidateAddressRBDataItem.md) |  |  |
 
 
 

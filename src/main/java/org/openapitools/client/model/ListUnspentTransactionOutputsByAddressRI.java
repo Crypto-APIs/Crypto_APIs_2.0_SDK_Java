@@ -23,82 +23,104 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBVout;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIBlockchainSpecific;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIFee;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRISenders;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIVin;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
 
 /**
  * ListUnspentTransactionOutputsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListUnspentTransactionOutputsByAddressRI {
+  public static final String SERIALIZED_NAME_ADDRESS = "address";
+  @SerializedName(SERIALIZED_NAME_ADDRESS)
+  private String address;
+
+  public static final String SERIALIZED_NAME_AMOUNT = "amount";
+  @SerializedName(SERIALIZED_NAME_AMOUNT)
+  private String amount;
+
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
   private Integer index;
 
-  public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
-  @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
-
-  public static final String SERIALIZED_NAME_MINED_IN_BLOCK_HASH = "minedInBlockHash";
-  @SerializedName(SERIALIZED_NAME_MINED_IN_BLOCK_HASH)
-  private String minedInBlockHash;
-
-  public static final String SERIALIZED_NAME_MINED_IN_BLOCK_HEIGHT = "minedInBlockHeight";
-  @SerializedName(SERIALIZED_NAME_MINED_IN_BLOCK_HEIGHT)
-  private Integer minedInBlockHeight;
-
-  public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
-  @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<GetTransactionDetailsByTransactionIDRIRecipients>();
-
-  public static final String SERIALIZED_NAME_SENDERS = "senders";
-  @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListUnspentTransactionOutputsByAddressRISenders> senders = new ArrayList<ListUnspentTransactionOutputsByAddressRISenders>();
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
+  public static final String SERIALIZED_NAME_IS_CONFIRMED = "isConfirmed";
+  @SerializedName(SERIALIZED_NAME_IS_CONFIRMED)
+  private Boolean isConfirmed;
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
   private Integer timestamp;
 
-  public static final String SERIALIZED_NAME_TRANSACTION_HASH = "transactionHash";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_HASH)
-  private String transactionHash;
-
   public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
   @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
   private String transactionId;
 
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VIN = "vin";
-  @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListUnspentTransactionOutputsByAddressRIVin> vin = new ArrayList<ListUnspentTransactionOutputsByAddressRIVin>();
-
-  public static final String SERIALIZED_NAME_VOUT = "vout";
-  @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListConfirmedTransactionsByAddressRIBSBVout> vout = new ArrayList<ListConfirmedTransactionsByAddressRIBSBVout>();
-
-  public static final String SERIALIZED_NAME_FEE = "fee";
-  @SerializedName(SERIALIZED_NAME_FEE)
-  private ListUnspentTransactionOutputsByAddressRIFee fee;
-
-  public static final String SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC = "blockchainSpecific";
-  @SerializedName(SERIALIZED_NAME_BLOCKCHAIN_SPECIFIC)
-  private ListUnspentTransactionOutputsByAddressRIBlockchainSpecific blockchainSpecific;
-
   public ListUnspentTransactionOutputsByAddressRI() { 
   }
+
+  public ListUnspentTransactionOutputsByAddressRI address(String address) {
+    
+    this.address = address;
+    return this;
+  }
+
+   /**
+   * Represents the address that has unspend funds per which the result is returned.
+   * @return address
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "2N5PcdirZUzKF9bWuGdugNuzcQrCbBudxv1", required = true, value = "Represents the address that has unspend funds per which the result is returned.")
+
+  public String getAddress() {
+    return address;
+  }
+
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+
+  public ListUnspentTransactionOutputsByAddressRI amount(String amount) {
+    
+    this.amount = amount;
+    return this;
+  }
+
+   /**
+   * Represents the sent/received amount.
+   * @return amount
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0.00873472", required = true, value = "Represents the sent/received amount.")
+
+  public String getAmount() {
+    return amount;
+  }
+
+
+  public void setAmount(String amount) {
+    this.amount = amount;
+  }
+
 
   public ListUnspentTransactionOutputsByAddressRI index(Integer index) {
     
@@ -123,151 +145,26 @@ public class ListUnspentTransactionOutputsByAddressRI {
   }
 
 
-  public ListUnspentTransactionOutputsByAddressRI locktime(Integer locktime) {
+  public ListUnspentTransactionOutputsByAddressRI isConfirmed(Boolean isConfirmed) {
     
-    this.locktime = locktime;
+    this.isConfirmed = isConfirmed;
     return this;
   }
 
    /**
-   * Represents the time at which a particular transaction can be added to the blockchain
-   * @return locktime
+   * Represents the state of the transaction whether it is confirmed or not confirmed.
+   * @return isConfirmed
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1781965", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain")
+  @ApiModelProperty(example = "true", required = true, value = "Represents the state of the transaction whether it is confirmed or not confirmed.")
 
-  public Integer getLocktime() {
-    return locktime;
+  public Boolean getIsConfirmed() {
+    return isConfirmed;
   }
 
 
-  public void setLocktime(Integer locktime) {
-    this.locktime = locktime;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI minedInBlockHash(String minedInBlockHash) {
-    
-    this.minedInBlockHash = minedInBlockHash;
-    return this;
-  }
-
-   /**
-   * Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
-   * @return minedInBlockHash
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "00000000407f119ecb74b44229228910400aaeb9f4e3b9869955b85a53e9b7db", required = true, value = "Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.")
-
-  public String getMinedInBlockHash() {
-    return minedInBlockHash;
-  }
-
-
-  public void setMinedInBlockHash(String minedInBlockHash) {
-    this.minedInBlockHash = minedInBlockHash;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI minedInBlockHeight(Integer minedInBlockHeight) {
-    
-    this.minedInBlockHeight = minedInBlockHeight;
-    return this;
-  }
-
-   /**
-   * Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.
-   * @return minedInBlockHeight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1903849", required = true, value = "Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block.")
-
-  public Integer getMinedInBlockHeight() {
-    return minedInBlockHeight;
-  }
-
-
-  public void setMinedInBlockHeight(Integer minedInBlockHeight) {
-    this.minedInBlockHeight = minedInBlockHeight;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI recipients(List<GetTransactionDetailsByTransactionIDRIRecipients> recipients) {
-    
-    this.recipients = recipients;
-    return this;
-  }
-
-  public ListUnspentTransactionOutputsByAddressRI addRecipientsItem(GetTransactionDetailsByTransactionIDRIRecipients recipientsItem) {
-    this.recipients.add(recipientsItem);
-    return this;
-  }
-
-   /**
-   * Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.
-   * @return recipients
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
-
-  public List<GetTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
-    return recipients;
-  }
-
-
-  public void setRecipients(List<GetTransactionDetailsByTransactionIDRIRecipients> recipients) {
-    this.recipients = recipients;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI senders(List<ListUnspentTransactionOutputsByAddressRISenders> senders) {
-    
-    this.senders = senders;
-    return this;
-  }
-
-  public ListUnspentTransactionOutputsByAddressRI addSendersItem(ListUnspentTransactionOutputsByAddressRISenders sendersItem) {
-    this.senders.add(sendersItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction senders
-   * @return senders
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction senders")
-
-  public List<ListUnspentTransactionOutputsByAddressRISenders> getSenders() {
-    return senders;
-  }
-
-
-  public void setSenders(List<ListUnspentTransactionOutputsByAddressRISenders> senders) {
-    this.senders = senders;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of this transaction
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "248", required = true, value = "Represents the total size of this transaction")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
+  public void setIsConfirmed(Boolean isConfirmed) {
+    this.isConfirmed = isConfirmed;
   }
 
 
@@ -282,7 +179,7 @@ public class ListUnspentTransactionOutputsByAddressRI {
    * @return timestamp
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1582202940", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
+  @ApiModelProperty(example = "1622466746", required = true, value = "Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed.")
 
   public Integer getTimestamp() {
     return timestamp;
@@ -291,29 +188,6 @@ public class ListUnspentTransactionOutputsByAddressRI {
 
   public void setTimestamp(Integer timestamp) {
     this.timestamp = timestamp;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI transactionHash(String transactionHash) {
-    
-    this.transactionHash = transactionHash;
-    return this;
-  }
-
-   /**
-   * Represents the same as &#x60;transactionId&#x60; for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols &#x60;hash&#x60; is different from &#x60;transactionId&#x60; for SegWit transactions.
-   * @return transactionHash
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "d52da8685adf02b11b72ca8dcf26b38b257bb04a1666cb7195400a3cfc87ae17", required = true, value = "Represents the same as `transactionId` for account-based protocols like Ethereum, while it could be different in UTXO-based protocols like Bitcoin. E.g., in UTXO-based protocols `hash` is different from `transactionId` for SegWit transactions.")
-
-  public String getTransactionHash() {
-    return transactionHash;
-  }
-
-
-  public void setTransactionHash(String transactionHash) {
-    this.transactionHash = transactionHash;
   }
 
 
@@ -340,130 +214,6 @@ public class ListUnspentTransactionOutputsByAddressRI {
   }
 
 
-  public ListUnspentTransactionOutputsByAddressRI version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version number.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Represents the transaction version number.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI vin(List<ListUnspentTransactionOutputsByAddressRIVin> vin) {
-    
-    this.vin = vin;
-    return this;
-  }
-
-  public ListUnspentTransactionOutputsByAddressRI addVinItem(ListUnspentTransactionOutputsByAddressRIVin vinItem) {
-    this.vin.add(vinItem);
-    return this;
-  }
-
-   /**
-   * Represents the transaction inputs.
-   * @return vin
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
-
-  public List<ListUnspentTransactionOutputsByAddressRIVin> getVin() {
-    return vin;
-  }
-
-
-  public void setVin(List<ListUnspentTransactionOutputsByAddressRIVin> vin) {
-    this.vin = vin;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI vout(List<ListConfirmedTransactionsByAddressRIBSBVout> vout) {
-    
-    this.vout = vout;
-    return this;
-  }
-
-  public ListUnspentTransactionOutputsByAddressRI addVoutItem(ListConfirmedTransactionsByAddressRIBSBVout voutItem) {
-    this.vout.add(voutItem);
-    return this;
-  }
-
-   /**
-   * Represents the transaction outputs.
-   * @return vout
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
-
-  public List<ListConfirmedTransactionsByAddressRIBSBVout> getVout() {
-    return vout;
-  }
-
-
-  public void setVout(List<ListConfirmedTransactionsByAddressRIBSBVout> vout) {
-    this.vout = vout;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI fee(ListUnspentTransactionOutputsByAddressRIFee fee) {
-    
-    this.fee = fee;
-    return this;
-  }
-
-   /**
-   * Get fee
-   * @return fee
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public ListUnspentTransactionOutputsByAddressRIFee getFee() {
-    return fee;
-  }
-
-
-  public void setFee(ListUnspentTransactionOutputsByAddressRIFee fee) {
-    this.fee = fee;
-  }
-
-
-  public ListUnspentTransactionOutputsByAddressRI blockchainSpecific(ListUnspentTransactionOutputsByAddressRIBlockchainSpecific blockchainSpecific) {
-    
-    this.blockchainSpecific = blockchainSpecific;
-    return this;
-  }
-
-   /**
-   * Get blockchainSpecific
-   * @return blockchainSpecific
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public ListUnspentTransactionOutputsByAddressRIBlockchainSpecific getBlockchainSpecific() {
-    return blockchainSpecific;
-  }
-
-
-  public void setBlockchainSpecific(ListUnspentTransactionOutputsByAddressRIBlockchainSpecific blockchainSpecific) {
-    this.blockchainSpecific = blockchainSpecific;
-  }
-
 
   @Override
   public boolean equals(Object o) {
@@ -474,47 +224,29 @@ public class ListUnspentTransactionOutputsByAddressRI {
       return false;
     }
     ListUnspentTransactionOutputsByAddressRI listUnspentTransactionOutputsByAddressRI = (ListUnspentTransactionOutputsByAddressRI) o;
-    return Objects.equals(this.index, listUnspentTransactionOutputsByAddressRI.index) &&
-        Objects.equals(this.locktime, listUnspentTransactionOutputsByAddressRI.locktime) &&
-        Objects.equals(this.minedInBlockHash, listUnspentTransactionOutputsByAddressRI.minedInBlockHash) &&
-        Objects.equals(this.minedInBlockHeight, listUnspentTransactionOutputsByAddressRI.minedInBlockHeight) &&
-        Objects.equals(this.recipients, listUnspentTransactionOutputsByAddressRI.recipients) &&
-        Objects.equals(this.senders, listUnspentTransactionOutputsByAddressRI.senders) &&
-        Objects.equals(this.size, listUnspentTransactionOutputsByAddressRI.size) &&
+    return Objects.equals(this.address, listUnspentTransactionOutputsByAddressRI.address) &&
+        Objects.equals(this.amount, listUnspentTransactionOutputsByAddressRI.amount) &&
+        Objects.equals(this.index, listUnspentTransactionOutputsByAddressRI.index) &&
+        Objects.equals(this.isConfirmed, listUnspentTransactionOutputsByAddressRI.isConfirmed) &&
         Objects.equals(this.timestamp, listUnspentTransactionOutputsByAddressRI.timestamp) &&
-        Objects.equals(this.transactionHash, listUnspentTransactionOutputsByAddressRI.transactionHash) &&
-        Objects.equals(this.transactionId, listUnspentTransactionOutputsByAddressRI.transactionId) &&
-        Objects.equals(this.version, listUnspentTransactionOutputsByAddressRI.version) &&
-        Objects.equals(this.vin, listUnspentTransactionOutputsByAddressRI.vin) &&
-        Objects.equals(this.vout, listUnspentTransactionOutputsByAddressRI.vout) &&
-        Objects.equals(this.fee, listUnspentTransactionOutputsByAddressRI.fee) &&
-        Objects.equals(this.blockchainSpecific, listUnspentTransactionOutputsByAddressRI.blockchainSpecific);
+        Objects.equals(this.transactionId, listUnspentTransactionOutputsByAddressRI.transactionId);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(index, locktime, minedInBlockHash, minedInBlockHeight, recipients, senders, size, timestamp, transactionHash, transactionId, version, vin, vout, fee, blockchainSpecific);
+    return Objects.hash(address, amount, index, isConfirmed, timestamp, transactionId);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListUnspentTransactionOutputsByAddressRI {\n");
+    sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
     sb.append("    index: ").append(toIndentedString(index)).append("\n");
-    sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
-    sb.append("    minedInBlockHash: ").append(toIndentedString(minedInBlockHash)).append("\n");
-    sb.append("    minedInBlockHeight: ").append(toIndentedString(minedInBlockHeight)).append("\n");
-    sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
-    sb.append("    senders: ").append(toIndentedString(senders)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
+    sb.append("    isConfirmed: ").append(toIndentedString(isConfirmed)).append("\n");
     sb.append("    timestamp: ").append(toIndentedString(timestamp)).append("\n");
-    sb.append("    transactionHash: ").append(toIndentedString(transactionHash)).append("\n");
     sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
-    sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
-    sb.append("    blockchainSpecific: ").append(toIndentedString(blockchainSpecific)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -530,5 +262,117 @@ public class ListUnspentTransactionOutputsByAddressRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("address");
+    openapiFields.add("amount");
+    openapiFields.add("index");
+    openapiFields.add("isConfirmed");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionId");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("address");
+    openapiRequiredFields.add("amount");
+    openapiRequiredFields.add("index");
+    openapiRequiredFields.add("isConfirmed");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionId");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListUnspentTransactionOutputsByAddressRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListUnspentTransactionOutputsByAddressRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListUnspentTransactionOutputsByAddressRI is not found in the empty JSON string", ListUnspentTransactionOutputsByAddressRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListUnspentTransactionOutputsByAddressRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListUnspentTransactionOutputsByAddressRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListUnspentTransactionOutputsByAddressRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if (jsonObj.get("amount") != null && !jsonObj.get("amount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `amount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("amount").toString()));
+      }
+      if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListUnspentTransactionOutputsByAddressRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListUnspentTransactionOutputsByAddressRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListUnspentTransactionOutputsByAddressRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListUnspentTransactionOutputsByAddressRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListUnspentTransactionOutputsByAddressRI>() {
+           @Override
+           public void write(JsonWriter out, ListUnspentTransactionOutputsByAddressRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListUnspentTransactionOutputsByAddressRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListUnspentTransactionOutputsByAddressRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListUnspentTransactionOutputsByAddressRI
+  * @throws IOException if the JSON string is invalid with respect to ListUnspentTransactionOutputsByAddressRI
+  */
+  public static ListUnspentTransactionOutputsByAddressRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListUnspentTransactionOutputsByAddressRI.class);
+  }
+
+ /**
+  * Convert an instance of ListUnspentTransactionOutputsByAddressRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

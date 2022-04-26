@@ -26,11 +26,31 @@ import java.io.IOException;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSECFee;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSECGasPrice;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRIBSEC {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
@@ -170,6 +190,7 @@ public class ListAllUnconfirmedTransactionsRIBSEC {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -215,5 +236,120 @@ public class ListAllUnconfirmedTransactionsRIBSEC {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("fee");
+    openapiFields.add("gasLimit");
+    openapiFields.add("gasPrice");
+    openapiFields.add("nonce");
+    openapiFields.add("transactionStatus");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("fee");
+    openapiRequiredFields.add("gasLimit");
+    openapiRequiredFields.add("gasPrice");
+    openapiRequiredFields.add("nonce");
+    openapiRequiredFields.add("transactionStatus");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListAllUnconfirmedTransactionsRIBSEC
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListAllUnconfirmedTransactionsRIBSEC.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListAllUnconfirmedTransactionsRIBSEC is not found in the empty JSON string", ListAllUnconfirmedTransactionsRIBSEC.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListAllUnconfirmedTransactionsRIBSEC.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListAllUnconfirmedTransactionsRIBSEC` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListAllUnconfirmedTransactionsRIBSEC.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      // validate the optional field `fee`
+      if (jsonObj.getAsJsonObject("fee") != null) {
+        ListAllUnconfirmedTransactionsRIBSECFee.validateJsonObject(jsonObj.getAsJsonObject("fee"));
+      }
+      if (jsonObj.get("gasLimit") != null && !jsonObj.get("gasLimit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gasLimit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gasLimit").toString()));
+      }
+      // validate the optional field `gasPrice`
+      if (jsonObj.getAsJsonObject("gasPrice") != null) {
+        ListAllUnconfirmedTransactionsRIBSECGasPrice.validateJsonObject(jsonObj.getAsJsonObject("gasPrice"));
+      }
+      if (jsonObj.get("transactionStatus") != null && !jsonObj.get("transactionStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionStatus").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListAllUnconfirmedTransactionsRIBSEC.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListAllUnconfirmedTransactionsRIBSEC' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListAllUnconfirmedTransactionsRIBSEC> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListAllUnconfirmedTransactionsRIBSEC.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListAllUnconfirmedTransactionsRIBSEC>() {
+           @Override
+           public void write(JsonWriter out, ListAllUnconfirmedTransactionsRIBSEC value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListAllUnconfirmedTransactionsRIBSEC read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListAllUnconfirmedTransactionsRIBSEC given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListAllUnconfirmedTransactionsRIBSEC
+  * @throws IOException if the JSON string is invalid with respect to ListAllUnconfirmedTransactionsRIBSEC
+  */
+  public static ListAllUnconfirmedTransactionsRIBSEC fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListAllUnconfirmedTransactionsRIBSEC.class);
+  }
+
+ /**
+  * Convert an instance of ListAllUnconfirmedTransactionsRIBSEC to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

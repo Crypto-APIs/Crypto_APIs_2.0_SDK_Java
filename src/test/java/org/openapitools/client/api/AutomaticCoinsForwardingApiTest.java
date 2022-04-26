@@ -17,16 +17,16 @@ import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.CreateAutomaticCoinsForwardingR;
 import org.openapitools.client.model.CreateAutomaticCoinsForwardingRB;
 import org.openapitools.client.model.DeleteAutomaticCoinsForwardingR;
-import org.openapitools.client.model.InlineResponse40075;
-import org.openapitools.client.model.InlineResponse40076;
-import org.openapitools.client.model.InlineResponse40077;
-import org.openapitools.client.model.InlineResponse40175;
-import org.openapitools.client.model.InlineResponse40176;
-import org.openapitools.client.model.InlineResponse40177;
+import org.openapitools.client.model.InlineResponse40089;
+import org.openapitools.client.model.InlineResponse40090;
+import org.openapitools.client.model.InlineResponse40091;
+import org.openapitools.client.model.InlineResponse40189;
+import org.openapitools.client.model.InlineResponse40190;
+import org.openapitools.client.model.InlineResponse40191;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40375;
-import org.openapitools.client.model.InlineResponse40376;
-import org.openapitools.client.model.InlineResponse40377;
+import org.openapitools.client.model.InlineResponse40389;
+import org.openapitools.client.model.InlineResponse40390;
+import org.openapitools.client.model.InlineResponse40391;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse40916;
@@ -35,8 +35,8 @@ import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListCoinsForwardingAutomationsR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -46,19 +46,17 @@ import java.util.Map;
 /**
  * API tests for AutomaticCoinsForwardingApi
  */
-@Ignore
+@Disabled
 public class AutomaticCoinsForwardingApiTest {
 
     private final AutomaticCoinsForwardingApi api = new AutomaticCoinsForwardingApi();
 
-    
     /**
      * Create Automatic Coins Forwarding
      *
      * Through this endpoint customers can set up an automatic forwarding function specifically for coins (**not** tokens). They can have a &#x60;toAddress&#x60; which is essentially the main address and the destination for the automatic coins forwarding.     There is also a &#x60;minimumTransferAmount&#x60; which only when reached will then trigger the forwarding. Through this the customer can save from fees.    Moreover, &#x60;feePriority&#x60; can be also set,  which defines how quickly to move the coins once they are received. The higher priority, the larger the fee will be. It can be \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; or \&quot;FAST\&quot;.    The response of this endpoint contains an attribute &#x60;fromAddress&#x60; which can be used as a deposit address. Any funds received by this address will be automatically forwarded to &#x60;toAddress&#x60; based on what the customer has set for the automation.    For this automatic forwarding the customer can set a callback subscription.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}    {note}This endpoint generates a new &#x60;fromAddress&#x60; each time.{/note}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createAutomaticCoinsForwardingTest() throws ApiException {
@@ -66,17 +64,16 @@ public class AutomaticCoinsForwardingApiTest {
         String network = null;
         String context = null;
         CreateAutomaticCoinsForwardingRB createAutomaticCoinsForwardingRB = null;
-                CreateAutomaticCoinsForwardingR response = api.createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRB);
+        CreateAutomaticCoinsForwardingR response = api.createAutomaticCoinsForwarding(blockchain, network, context, createAutomaticCoinsForwardingRB);
         // TODO: test validations
     }
-    
+
     /**
      * Delete Automatic Coins Forwarding
      *
      * Through this endpoint customers can delete a forwarding function they have set for **coins** (**not** tokens).    By setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount, coins can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}The subscription will work for all incoming transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void deleteAutomaticCoinsForwardingTest() throws ApiException {
@@ -84,17 +81,16 @@ public class AutomaticCoinsForwardingApiTest {
         String network = null;
         String referenceId = null;
         String context = null;
-                DeleteAutomaticCoinsForwardingR response = api.deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context);
+        DeleteAutomaticCoinsForwardingR response = api.deleteAutomaticCoinsForwarding(blockchain, network, referenceId, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Coins Forwarding Automations
      *
      * Through this endpoint customers can list all of their **coins** forwarding automations (**not** tokens).    Customers can set up automatic forwarding functions for coins by setting a &#x60;fromAddress&#x60; and a &#x60;toAddress&#x60;, and specifying the amount that can be transferred between addresses.     A &#x60;feePriority&#x60; will be returned which represents the fee priority of the automation whether it is \&quot;SLOW\&quot;, \&quot;STANDARD\&quot; OR \&quot;FAST\&quot;.    {warning}The subscription will work for all transactions until it is deleted. There is no need to do that for every transaction.{/warning}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listCoinsForwardingAutomationsTest() throws ApiException {
@@ -103,8 +99,8 @@ public class AutomaticCoinsForwardingApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListCoinsForwardingAutomationsR response = api.listCoinsForwardingAutomations(blockchain, network, context, limit, offset);
+        ListCoinsForwardingAutomationsR response = api.listCoinsForwardingAutomations(blockchain, network, context, limit, offset);
         // TODO: test validations
     }
-    
+
 }

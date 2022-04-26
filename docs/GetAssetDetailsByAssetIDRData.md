@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetAssetDetailsByAssetIDRI**](GetAssetDetailsByAssetIDRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetAssetDetailsByAssetIDRI**](GetAssetDetailsByAssetIDRI.md) |  |  |
 
 
 

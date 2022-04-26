@@ -29,9 +29,8 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIRecei
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIRecipients;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRISenders;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIValue;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

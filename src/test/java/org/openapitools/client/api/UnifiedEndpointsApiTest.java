@@ -14,49 +14,73 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
+import org.openapitools.client.model.EstimateTransactionSmartFeeR;
 import org.openapitools.client.model.GetAddressDetailsR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetFeeRecommendationsR;
 import org.openapitools.client.model.GetLastMinedBlockR;
+import org.openapitools.client.model.GetNextAvailableNonceR;
+import org.openapitools.client.model.GetRawTransactionDataR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDR;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse40010;
 import org.openapitools.client.model.InlineResponse40015;
-import org.openapitools.client.model.InlineResponse40016;
 import org.openapitools.client.model.InlineResponse40017;
-import org.openapitools.client.model.InlineResponse40024;
-import org.openapitools.client.model.InlineResponse40026;
-import org.openapitools.client.model.InlineResponse40030;
-import org.openapitools.client.model.InlineResponse40037;
+import org.openapitools.client.model.InlineResponse40018;
+import org.openapitools.client.model.InlineResponse40025;
+import org.openapitools.client.model.InlineResponse40027;
+import org.openapitools.client.model.InlineResponse40031;
 import org.openapitools.client.model.InlineResponse4004;
-import org.openapitools.client.model.InlineResponse40042;
-import org.openapitools.client.model.InlineResponse40053;
+import org.openapitools.client.model.InlineResponse40040;
+import org.openapitools.client.model.InlineResponse40045;
+import org.openapitools.client.model.InlineResponse40057;
+import org.openapitools.client.model.InlineResponse40058;
+import org.openapitools.client.model.InlineResponse40059;
+import org.openapitools.client.model.InlineResponse40061;
+import org.openapitools.client.model.InlineResponse40062;
+import org.openapitools.client.model.InlineResponse40063;
+import org.openapitools.client.model.InlineResponse40065;
+import org.openapitools.client.model.InlineResponse40068;
 import org.openapitools.client.model.InlineResponse401;
 import org.openapitools.client.model.InlineResponse40110;
 import org.openapitools.client.model.InlineResponse40115;
-import org.openapitools.client.model.InlineResponse40116;
 import org.openapitools.client.model.InlineResponse40117;
-import org.openapitools.client.model.InlineResponse40124;
-import org.openapitools.client.model.InlineResponse40126;
-import org.openapitools.client.model.InlineResponse40130;
-import org.openapitools.client.model.InlineResponse40137;
+import org.openapitools.client.model.InlineResponse40118;
+import org.openapitools.client.model.InlineResponse40125;
+import org.openapitools.client.model.InlineResponse40127;
+import org.openapitools.client.model.InlineResponse40131;
 import org.openapitools.client.model.InlineResponse4014;
-import org.openapitools.client.model.InlineResponse40142;
-import org.openapitools.client.model.InlineResponse40153;
+import org.openapitools.client.model.InlineResponse40140;
+import org.openapitools.client.model.InlineResponse40145;
+import org.openapitools.client.model.InlineResponse40157;
+import org.openapitools.client.model.InlineResponse40158;
+import org.openapitools.client.model.InlineResponse40159;
+import org.openapitools.client.model.InlineResponse40161;
+import org.openapitools.client.model.InlineResponse40162;
+import org.openapitools.client.model.InlineResponse40163;
+import org.openapitools.client.model.InlineResponse40165;
+import org.openapitools.client.model.InlineResponse40168;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse403;
 import org.openapitools.client.model.InlineResponse40310;
 import org.openapitools.client.model.InlineResponse40315;
-import org.openapitools.client.model.InlineResponse40316;
 import org.openapitools.client.model.InlineResponse40317;
-import org.openapitools.client.model.InlineResponse40324;
-import org.openapitools.client.model.InlineResponse40326;
-import org.openapitools.client.model.InlineResponse40330;
-import org.openapitools.client.model.InlineResponse40337;
+import org.openapitools.client.model.InlineResponse40318;
+import org.openapitools.client.model.InlineResponse40325;
+import org.openapitools.client.model.InlineResponse40327;
+import org.openapitools.client.model.InlineResponse40331;
 import org.openapitools.client.model.InlineResponse4034;
-import org.openapitools.client.model.InlineResponse40342;
-import org.openapitools.client.model.InlineResponse40353;
+import org.openapitools.client.model.InlineResponse40340;
+import org.openapitools.client.model.InlineResponse40345;
+import org.openapitools.client.model.InlineResponse40357;
+import org.openapitools.client.model.InlineResponse40358;
+import org.openapitools.client.model.InlineResponse40359;
+import org.openapitools.client.model.InlineResponse40361;
+import org.openapitools.client.model.InlineResponse40362;
+import org.openapitools.client.model.InlineResponse40363;
+import org.openapitools.client.model.InlineResponse40365;
+import org.openapitools.client.model.InlineResponse40368;
 import org.openapitools.client.model.InlineResponse404;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse4042;
@@ -65,14 +89,19 @@ import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.InlineResponse501;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsR;
+import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressAndTimeRangeR;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeR;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressR;
+import org.openapitools.client.model.ListInternalTransactionsByAddressAndTimeRangeR;
 import org.openapitools.client.model.ListLatestMinedBlocksR;
 import org.openapitools.client.model.ListTransactionsByBlockHashR;
 import org.openapitools.client.model.ListTransactionsByBlockHeightR;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressR;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -82,19 +111,35 @@ import java.util.Map;
 /**
  * API tests for UnifiedEndpointsApi
  */
-@Ignore
+@Disabled
 public class UnifiedEndpointsApiTest {
 
     private final UnifiedEndpointsApi api = new UnifiedEndpointsApi();
 
-    
+    /**
+     * Estimate Transaction Smart Fee
+     *
+     * Through this endpoint, customers can estimate the approximate fee per kilobyte needed for a transaction to begin confirmation within the &#x60;confirmationTarget&#x60; blocks when possible. After which it will return the number of blocks for which the estimate is valid.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void estimateTransactionSmartFeeTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        Integer confirmationTarget = null;
+        String estimateMode = null;
+        EstimateTransactionSmartFeeR response = api.estimateTransactionSmartFee(blockchain, network, context, confirmationTarget, estimateMode);
+        // TODO: test validations
+    }
+
     /**
      * Get Address Details
      *
      * Through this endpoint the customer can receive basic information about a given address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here. Applies only for coins.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getAddressDetailsTest() throws ApiException {
@@ -102,17 +147,16 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String address = null;
         String context = null;
-                GetAddressDetailsR response = api.getAddressDetails(blockchain, network, address, context);
+        GetAddressDetailsR response = api.getAddressDetails(blockchain, network, address, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Block Details By Block Hash
      *
      * Through this endpoint customers can obtain basic information about a given mined block, specifically by using the &#x60;hash&#x60; parameter. These block details could include the hash of the specific, the previous and the next block, its transactions count, its height, etc.     Blockchain specific data is information such as version, nonce, size, bits, merkleroot, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getBlockDetailsByBlockHashTest() throws ApiException {
@@ -120,17 +164,16 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String blockHash = null;
         String context = null;
-                GetBlockDetailsByBlockHashR response = api.getBlockDetailsByBlockHash(blockchain, network, blockHash, context);
+        GetBlockDetailsByBlockHashR response = api.getBlockDetailsByBlockHash(blockchain, network, blockHash, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Block Details By Block Height
      *
      * Through this endpoint customers can obtain basic information about a given mined block, specifically by using the &#x60;height&#x60; parameter. These block details could include the hash of the specific, the previous and the next block, its transactions count, its height, etc.     Blockchain specific data is information such as version, nonce, size, bits, merkleroot, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getBlockDetailsByBlockHeightTest() throws ApiException {
@@ -138,51 +181,82 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         Integer height = null;
         String context = null;
-                GetBlockDetailsByBlockHeightR response = api.getBlockDetailsByBlockHeight(blockchain, network, height, context);
+        GetBlockDetailsByBlockHeightR response = api.getBlockDetailsByBlockHeight(blockchain, network, height, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Fee Recommendations
      *
      * Through this endpoint customers can obtain fee recommendations. Our fees recommendations are based on Mempool data which makes them much more accurate than fees based on already mined blocks. Calculations are done in real time live. Using this endpoint customers can get gas price for Ethereum, fee per byte for Bitcoin, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getFeeRecommendationsTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String context = null;
-                GetFeeRecommendationsR response = api.getFeeRecommendations(blockchain, network, context);
+        GetFeeRecommendationsR response = api.getFeeRecommendations(blockchain, network, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Last Mined Block
      *
      * Through this endpoint customers can fetch the last mined block in a specific blockchain network, along with its details. These could include the hash of the specific, the previous and the next block, its transactions count, its height, etc.     Blockchain specific data is information such as version, nonce, size, bits, merkleroot, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getLastMinedBlockTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String context = null;
-                GetLastMinedBlockR response = api.getLastMinedBlock(blockchain, network, context);
+        GetLastMinedBlockR response = api.getLastMinedBlock(blockchain, network, context);
         // TODO: test validations
     }
-    
+
+    /**
+     * Get Next Available Nonce
+     *
+     * Through this endpoint customers can get information about the next available nonce by providing the specific blockchain, network and address.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getNextAvailableNonceTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        String context = null;
+        GetNextAvailableNonceR response = api.getNextAvailableNonce(blockchain, network, address, context);
+        // TODO: test validations
+    }
+
+    /**
+     * Get Raw Transaction Data
+     *
+     * Through this endpoint customers can get information on a transaction in its raw format by providing its &#x60;transactionId&#x60;.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getRawTransactionDataTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String transactionId = null;
+        String context = null;
+        GetRawTransactionDataR response = api.getRawTransactionData(blockchain, network, transactionId, context);
+        // TODO: test validations
+    }
+
     /**
      * Get Transaction Details By Transaction ID
      *
      * Through this endpoint customers can obtain details about a transaction by the transaction&#39;s unique identifier. In UTXO-based protocols like BTC there are attributes such as &#x60;transactionId&#x60; and transaction &#x60;hash&#x60;. They still could be different. In protocols like Ethereum there is only one unique value and it&#39;s &#x60;hash&#x60;.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getTransactionDetailsByTransactionIDTest() throws ApiException {
@@ -190,36 +264,55 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String transactionId = null;
         String context = null;
-                GetTransactionDetailsByTransactionIDR response = api.getTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
+        GetTransactionDetailsByTransactionIDR response = api.getTransactionDetailsByTransactionID(blockchain, network, transactionId, context);
         // TODO: test validations
     }
-    
+
     /**
      * List All Unconfirmed Transactions
      *
      * Through this endpoint customers can list all **unconfirmed**  transactions for a specified blockchain and network.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listAllUnconfirmedTransactionsTest() throws ApiException {
         String blockchain = null;
         String network = null;
         String context = null;
-        Integer limit = null;
-        Integer offset = null;
-                ListAllUnconfirmedTransactionsR response = api.listAllUnconfirmedTransactions(blockchain, network, context, limit, offset);
+        Long limit = null;
+        Long offset = null;
+        ListAllUnconfirmedTransactionsR response = api.listAllUnconfirmedTransactions(blockchain, network, context, limit, offset);
         // TODO: test validations
     }
-    
+
+    /**
+     * List Confirmed Tokens Transfers By Address And Time Range
+     *
+     * Through this endpoint customers can obtain a list with **confirmed** token transfers by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.    {note}This refers only to transfers done for **confirmed tokens** not coins.{/note}
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listConfirmedTokensTransfersByAddressAndTimeRangeTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        Integer fromTimestamp = null;
+        Integer toTimestamp = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListConfirmedTokensTransfersByAddressAndTimeRangeR response = api.listConfirmedTokensTransfersByAddressAndTimeRange(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset);
+        // TODO: test validations
+    }
+
     /**
      * List Confirmed Transactions By Address
      *
      * This endpoint will list transactions by an attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listConfirmedTransactionsByAddressTest() throws ApiException {
@@ -227,19 +320,60 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String address = null;
         String context = null;
-        Integer limit = null;
-        Integer offset = null;
-                ListConfirmedTransactionsByAddressR response = api.listConfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
+        Long limit = null;
+        Long offset = null;
+        ListConfirmedTransactionsByAddressR response = api.listConfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
+    /**
+     * List Confirmed Transactions By Address And Time Range
+     *
+     * This endpoint will list confirmed transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listConfirmedTransactionsByAddressAndTimeRangeTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        Integer fromTimestamp = null;
+        Integer toTimestamp = null;
+        String context = null;
+        Long limit = null;
+        Long offset = null;
+        ListConfirmedTransactionsByAddressAndTimeRangeR response = api.listConfirmedTransactionsByAddressAndTimeRange(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset);
+        // TODO: test validations
+    }
+
+    /**
+     * List Internal Transactions By Address And Time Range
+     *
+     * Through this endpoint customers can list internal transactions by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listInternalTransactionsByAddressAndTimeRangeTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        Integer fromTimestamp = null;
+        Integer toTimestamp = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListInternalTransactionsByAddressAndTimeRangeR response = api.listInternalTransactionsByAddressAndTimeRange(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset);
+        // TODO: test validations
+    }
+
     /**
      * List Latest Mined Blocks
      *
      * Through this endpoint customers can list **up to 50** from the latest blocks that were mined.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listLatestMinedBlocksTest() throws ApiException {
@@ -247,17 +381,16 @@ public class UnifiedEndpointsApiTest {
         String blockchain = null;
         Integer count = null;
         String context = null;
-                ListLatestMinedBlocksR response = api.listLatestMinedBlocks(network, blockchain, count, context);
+        ListLatestMinedBlocksR response = api.listLatestMinedBlocks(network, blockchain, count, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Transactions by Block Hash
      *
      * This endpoint will list transactions by an attribute &#x60;transactionHash&#x60;. The transactions listed will detail additional information such as addresses, height, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listTransactionsByBlockHashTest() throws ApiException {
@@ -265,39 +398,37 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String blockHash = null;
         String context = null;
-        Integer limit = null;
-        Integer offset = null;
-                ListTransactionsByBlockHashR response = api.listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset);
+        Long limit = null;
+        Long offset = null;
+        ListTransactionsByBlockHashR response = api.listTransactionsByBlockHash(blockchain, network, blockHash, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Transactions by Block Height
      *
      * This endpoint will list transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listTransactionsByBlockHeightTest() throws ApiException {
         String blockchain = null;
         String network = null;
-        Integer height = null;
+        Long height = null;
         String context = null;
-        Integer limit = null;
-        Integer offset = null;
-                ListTransactionsByBlockHeightR response = api.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
+        Long limit = null;
+        Long offset = null;
+        ListTransactionsByBlockHeightR response = api.listTransactionsByBlockHeight(blockchain, network, height, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Unconfirmed Transactions by Address
      *
      * Through this endpoint customers can list transactions by &#x60;address&#x60; that are **unconfirmed**.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listUnconfirmedTransactionsByAddressTest() throws ApiException {
@@ -305,10 +436,29 @@ public class UnifiedEndpointsApiTest {
         String network = null;
         String address = null;
         String context = null;
-        Integer limit = null;
-        Integer offset = null;
-                ListUnconfirmedTransactionsByAddressR response = api.listUnconfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
+        Long limit = null;
+        Long offset = null;
+        ListUnconfirmedTransactionsByAddressR response = api.listUnconfirmedTransactionsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
+    /**
+     * List Unspent Transaction Outputs By Address
+     *
+     * Through this endpoint customers can list their transactions&#39; unspent outputs by &#x60;address&#x60;.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listUnspentTransactionOutputsByAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListUnspentTransactionOutputsByAddressR response = api.listUnspentTransactionOutputsByAddress(blockchain, network, address, context, limit, offset);
+        // TODO: test validations
+    }
+
 }

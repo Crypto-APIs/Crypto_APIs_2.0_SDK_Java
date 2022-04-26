@@ -36,18 +36,18 @@ import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRB;
 import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressR;
 import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRB;
 import org.openapitools.client.model.InlineResponse40013;
-import org.openapitools.client.model.InlineResponse40020;
-import org.openapitools.client.model.InlineResponse40025;
-import org.openapitools.client.model.InlineResponse40036;
+import org.openapitools.client.model.InlineResponse40021;
+import org.openapitools.client.model.InlineResponse40026;
+import org.openapitools.client.model.InlineResponse40037;
 import org.openapitools.client.model.InlineResponse40113;
-import org.openapitools.client.model.InlineResponse40120;
-import org.openapitools.client.model.InlineResponse40125;
-import org.openapitools.client.model.InlineResponse40136;
+import org.openapitools.client.model.InlineResponse40121;
+import org.openapitools.client.model.InlineResponse40126;
+import org.openapitools.client.model.InlineResponse40137;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse40313;
-import org.openapitools.client.model.InlineResponse40320;
-import org.openapitools.client.model.InlineResponse40325;
-import org.openapitools.client.model.InlineResponse40336;
+import org.openapitools.client.model.InlineResponse40321;
+import org.openapitools.client.model.InlineResponse40326;
+import org.openapitools.client.model.InlineResponse40337;
 import org.openapitools.client.model.InlineResponse4091;
 import org.openapitools.client.model.InlineResponse4092;
 import org.openapitools.client.model.InlineResponse4093;
@@ -62,6 +62,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class TransactionsApi {
     private ApiClient localVarApiClient;
@@ -128,7 +129,6 @@ public class TransactionsApi {
      */
     public okhttp3.Call createCoinsTransactionFromAddressForWholeAmountCall(String address, String blockchain, String network, String walletId, String context, CreateCoinsTransactionFromAddressForWholeAmountRB createCoinsTransactionFromAddressForWholeAmountRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -172,7 +172,7 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -308,7 +308,7 @@ public class TransactionsApi {
     }
     /**
      * Build call for createCoinsTransactionRequestFromAddress
-     * @param address Defines the specific source address for the transaction. (required)
+     * @param address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param walletId Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -334,7 +334,6 @@ public class TransactionsApi {
      */
     public okhttp3.Call createCoinsTransactionRequestFromAddressCall(String address, String blockchain, String network, String walletId, String context, CreateCoinsTransactionRequestFromAddressRB createCoinsTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -378,7 +377,7 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -418,7 +417,7 @@ public class TransactionsApi {
     /**
      * Create Coins Transaction Request from Address
      * Through this endpoint users can create a new single transaction request from one address to another.
-     * @param address Defines the specific source address for the transaction. (required)
+     * @param address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param walletId Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -449,7 +448,7 @@ public class TransactionsApi {
     /**
      * Create Coins Transaction Request from Address
      * Through this endpoint users can create a new single transaction request from one address to another.
-     * @param address Defines the specific source address for the transaction. (required)
+     * @param address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param walletId Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -481,7 +480,7 @@ public class TransactionsApi {
     /**
      * Create Coins Transaction Request from Address (asynchronously)
      * Through this endpoint users can create a new single transaction request from one address to another.
-     * @param address Defines the specific source address for the transaction. (required)
+     * @param address Defines the specific source address for the transaction. For XRP we also support the X-address format. (required)
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
      * @param walletId Represents the sender&#39;s specific and unique Wallet ID of the sender. (required)
@@ -539,7 +538,6 @@ public class TransactionsApi {
      */
     public okhttp3.Call createCoinsTransactionRequestFromWalletCall(String blockchain, String network, String walletId, String context, CreateCoinsTransactionRequestFromWalletRB createCoinsTransactionRequestFromWalletRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -582,7 +580,7 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -736,7 +734,6 @@ public class TransactionsApi {
      */
     public okhttp3.Call createFungibleTokensTransactionRequestFromAddressCall(String blockchain, String network, String senderAddress, String walletId, String context, CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -780,7 +777,7 @@ public class TransactionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

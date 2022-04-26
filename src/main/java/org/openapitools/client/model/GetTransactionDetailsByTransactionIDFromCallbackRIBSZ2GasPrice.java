@@ -24,14 +24,34 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private Integer amount;
+  private Long amount;
 
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
@@ -40,7 +60,7 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice {
   public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice() { 
   }
 
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice amount(Integer amount) {
+  public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice amount(Long amount) {
     
     this.amount = amount;
     return this;
@@ -53,12 +73,12 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "2994782927", required = true, value = "Defines the price of the gas.")
 
-  public Integer getAmount() {
+  public Long getAmount() {
     return amount;
   }
 
 
-  public void setAmount(Integer amount) {
+  public void setAmount(Long amount) {
     this.amount = amount;
   }
 
@@ -84,6 +104,7 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice {
   public void setUnit(String unit) {
     this.unit = unit;
   }
+
 
 
   @Override
@@ -125,5 +146,103 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("amount");
+    openapiFields.add("unit");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("amount");
+    openapiRequiredFields.add("unit");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice is not found in the empty JSON string", GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice>() {
+           @Override
+           public void write(JsonWriter out, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice
+  * @throws IOException if the JSON string is invalid with respect to GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice
+  */
+  public static GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.class);
+  }
+
+ /**
+  * Convert an instance of GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

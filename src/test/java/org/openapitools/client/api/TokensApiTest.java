@@ -15,19 +15,22 @@ package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.GetTokenDetailsByContractAddressR;
-import org.openapitools.client.model.InlineResponse40054;
-import org.openapitools.client.model.InlineResponse40055;
-import org.openapitools.client.model.InlineResponse40056;
-import org.openapitools.client.model.InlineResponse40057;
-import org.openapitools.client.model.InlineResponse40154;
-import org.openapitools.client.model.InlineResponse40155;
-import org.openapitools.client.model.InlineResponse40156;
-import org.openapitools.client.model.InlineResponse40157;
+import org.openapitools.client.model.InlineResponse40060;
+import org.openapitools.client.model.InlineResponse40064;
+import org.openapitools.client.model.InlineResponse40066;
+import org.openapitools.client.model.InlineResponse40067;
+import org.openapitools.client.model.InlineResponse40069;
+import org.openapitools.client.model.InlineResponse40160;
+import org.openapitools.client.model.InlineResponse40164;
+import org.openapitools.client.model.InlineResponse40166;
+import org.openapitools.client.model.InlineResponse40167;
+import org.openapitools.client.model.InlineResponse40169;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40354;
-import org.openapitools.client.model.InlineResponse40355;
-import org.openapitools.client.model.InlineResponse40356;
-import org.openapitools.client.model.InlineResponse40357;
+import org.openapitools.client.model.InlineResponse40360;
+import org.openapitools.client.model.InlineResponse40364;
+import org.openapitools.client.model.InlineResponse40366;
+import org.openapitools.client.model.InlineResponse40367;
+import org.openapitools.client.model.InlineResponse40369;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
@@ -36,8 +39,9 @@ import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressR;
 import org.openapitools.client.model.ListTokensByAddressR;
 import org.openapitools.client.model.ListTokensTransfersByTransactionHashR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.openapitools.client.model.ListUnconfirmedTokensTransfersByAddressR;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,19 +51,17 @@ import java.util.Map;
 /**
  * API tests for TokensApi
  */
-@Ignore
+@Disabled
 public class TokensApiTest {
 
     private final TokensApi api = new TokensApi();
 
-    
     /**
      * Get Token Details by Contract Address
      *
      * Though this endpoint customers can obtain information about token details. This can be done by providing the &#x60;contact address&#x60; parameter.    {note}This address is **not** the same as the smart contract creator address.{/note}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getTokenDetailsByContractAddressTest() throws ApiException {
@@ -67,17 +69,16 @@ public class TokensApiTest {
         String network = null;
         String contractAddress = null;
         String context = null;
-                GetTokenDetailsByContractAddressR response = api.getTokenDetailsByContractAddress(blockchain, network, contractAddress, context);
+        GetTokenDetailsByContractAddressR response = api.getTokenDetailsByContractAddress(blockchain, network, contractAddress, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Confirmed Tokens Transfers By Address
      *
      * Through this endpoint customers can obtain a list with **confirmed** token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **confirmed tokens** not coins.{/note}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listConfirmedTokensTransfersByAddressTest() throws ApiException {
@@ -87,17 +88,16 @@ public class TokensApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListConfirmedTokensTransfersByAddressR response = api.listConfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
+        ListConfirmedTokensTransfersByAddressR response = api.listConfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Tokens By Address
      *
      * Through this endpoint customers can obtain token data by providing an attribute - &#x60;address&#x60;.  The information that can be returned can include the contract address, the token symbol, type and balance.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listTokensByAddressTest() throws ApiException {
@@ -107,17 +107,16 @@ public class TokensApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListTokensByAddressR response = api.listTokensByAddress(blockchain, network, address, context, limit, offset);
+        ListTokensByAddressR response = api.listTokensByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Tokens Transfers By Transaction Hash
      *
      * Through this endpoint customers can obtain a list with token transfers by the &#x60;transactionHash&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **tokens** not coins.{/note}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listTokensTransfersByTransactionHashTest() throws ApiException {
@@ -127,8 +126,27 @@ public class TokensApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListTokensTransfersByTransactionHashR response = api.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
+        ListTokensTransfersByTransactionHashR response = api.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
         // TODO: test validations
     }
-    
+
+    /**
+     * List Unconfirmed Tokens Transfers By Address
+     *
+     * Through this endpoint customers can obtain a list with **unconfirmed** token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **unconfirmed tokens** not coins.{/note}
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listUnconfirmedTokensTransfersByAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String address = null;
+        String context = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListUnconfirmedTokensTransfersByAddressR response = api.listUnconfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
+        // TODO: test validations
+    }
+
 }

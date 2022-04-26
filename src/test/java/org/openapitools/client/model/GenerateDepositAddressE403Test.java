@@ -29,9 +29,8 @@ import org.openapitools.client.model.EndpointNotAllowedForApiKey;
 import org.openapitools.client.model.EndpointNotAllowedForPlan;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 import org.openapitools.client.model.WalletAsAServiceDepositAddressesLimitReached;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

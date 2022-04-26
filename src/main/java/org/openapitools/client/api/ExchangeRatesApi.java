@@ -29,17 +29,17 @@ import java.io.IOException;
 
 import org.openapitools.client.model.GetExchangeRateByAssetSymbolsR;
 import org.openapitools.client.model.GetExchangeRateByAssetsIDsR;
-import org.openapitools.client.model.InlineResponse40087;
-import org.openapitools.client.model.InlineResponse40088;
-import org.openapitools.client.model.InlineResponse40187;
-import org.openapitools.client.model.InlineResponse40188;
+import org.openapitools.client.model.InlineResponse400106;
+import org.openapitools.client.model.InlineResponse400107;
+import org.openapitools.client.model.InlineResponse401106;
+import org.openapitools.client.model.InlineResponse401107;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40387;
-import org.openapitools.client.model.InlineResponse40388;
+import org.openapitools.client.model.InlineResponse403106;
+import org.openapitools.client.model.InlineResponse403107;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse4224;
-import org.openapitools.client.model.InlineResponse4225;
+import org.openapitools.client.model.InlineResponse4226;
+import org.openapitools.client.model.InlineResponse4227;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 
@@ -48,6 +48,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ExchangeRatesApi {
     private ApiClient localVarApiClient;
@@ -112,7 +113,6 @@ public class ExchangeRatesApi {
      */
     public okhttp3.Call getExchangeRateByAssetSymbolsCall(String fromAssetSymbol, String toAssetSymbol, String context, Integer calculationTimestamp, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -158,7 +158,7 @@ public class ExchangeRatesApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -302,7 +302,6 @@ public class ExchangeRatesApi {
      */
     public okhttp3.Call getExchangeRateByAssetsIDsCall(String fromAssetId, String toAssetId, String context, Integer calculationTimestamp, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -348,7 +347,7 @@ public class ExchangeRatesApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

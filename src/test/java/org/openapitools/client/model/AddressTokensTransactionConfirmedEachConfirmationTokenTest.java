@@ -25,9 +25,8 @@ import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfir
 import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfirmationErc20;
 import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfirmationErc721;
 import org.openapitools.client.model.AddressTokensTransactionConfirmedEachConfirmationOmni;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**DeleteBlockchainEventSubscriptionRI**](DeleteBlockchainEventSubscriptionRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**DeleteBlockchainEventSubscriptionRI**](DeleteBlockchainEventSubscriptionRI.md) |  |  |
 
 
 

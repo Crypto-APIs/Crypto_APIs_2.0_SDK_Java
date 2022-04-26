@@ -32,14 +32,34 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIOffer;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIReceive;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIValue;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListXRPRippleTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByAddressRI {
   public static final String SERIALIZED_NAME_DESTINATION_TAG = "destinationTag";
   @SerializedName(SERIALIZED_NAME_DESTINATION_TAG)
-  private Integer destinationTag;
+  private Long destinationTag;
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -55,15 +75,15 @@ public class ListXRPRippleTransactionsByAddressRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients>();
+  private List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<GetXRPRippleTransactionDetailsByTransactionIDRISenders>();
+  private List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
-  private Integer sequence;
+  private Long sequence;
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -100,7 +120,7 @@ public class ListXRPRippleTransactionsByAddressRI {
   public ListXRPRippleTransactionsByAddressRI() { 
   }
 
-  public ListXRPRippleTransactionsByAddressRI destinationTag(Integer destinationTag) {
+  public ListXRPRippleTransactionsByAddressRI destinationTag(Long destinationTag) {
     
     this.destinationTag = destinationTag;
     return this;
@@ -113,12 +133,12 @@ public class ListXRPRippleTransactionsByAddressRI {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "3999472835", value = "")
 
-  public Integer getDestinationTag() {
+  public Long getDestinationTag() {
     return destinationTag;
   }
 
 
-  public void setDestinationTag(Integer destinationTag) {
+  public void setDestinationTag(Long destinationTag) {
     this.destinationTag = destinationTag;
   }
 
@@ -248,7 +268,7 @@ public class ListXRPRippleTransactionsByAddressRI {
   }
 
 
-  public ListXRPRippleTransactionsByAddressRI sequence(Integer sequence) {
+  public ListXRPRippleTransactionsByAddressRI sequence(Long sequence) {
     
     this.sequence = sequence;
     return this;
@@ -261,12 +281,12 @@ public class ListXRPRippleTransactionsByAddressRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "39673", required = true, value = "Defines the transaction input's sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.")
 
-  public Integer getSequence() {
+  public Long getSequence() {
     return sequence;
   }
 
 
-  public void setSequence(Integer sequence) {
+  public void setSequence(Long sequence) {
     this.sequence = sequence;
   }
 
@@ -455,6 +475,7 @@ public class ListXRPRippleTransactionsByAddressRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -520,5 +541,177 @@ public class ListXRPRippleTransactionsByAddressRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("destinationTag");
+    openapiFields.add("index");
+    openapiFields.add("minedInBlockHash");
+    openapiFields.add("minedInBlockHeight");
+    openapiFields.add("recipients");
+    openapiFields.add("senders");
+    openapiFields.add("sequence");
+    openapiFields.add("status");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionHash");
+    openapiFields.add("type");
+    openapiFields.add("fee");
+    openapiFields.add("offer");
+    openapiFields.add("receive");
+    openapiFields.add("value");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("index");
+    openapiRequiredFields.add("minedInBlockHash");
+    openapiRequiredFields.add("minedInBlockHeight");
+    openapiRequiredFields.add("recipients");
+    openapiRequiredFields.add("senders");
+    openapiRequiredFields.add("sequence");
+    openapiRequiredFields.add("status");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionHash");
+    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("fee");
+    openapiRequiredFields.add("offer");
+    openapiRequiredFields.add("receive");
+    openapiRequiredFields.add("value");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListXRPRippleTransactionsByAddressRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListXRPRippleTransactionsByAddressRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListXRPRippleTransactionsByAddressRI is not found in the empty JSON string", ListXRPRippleTransactionsByAddressRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListXRPRippleTransactionsByAddressRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListXRPRippleTransactionsByAddressRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListXRPRippleTransactionsByAddressRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("minedInBlockHash") != null && !jsonObj.get("minedInBlockHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `minedInBlockHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minedInBlockHash").toString()));
+      }
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
+      if (jsonArrayrecipients != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("recipients").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `recipients` to be an array in the JSON string but got `%s`", jsonObj.get("recipients").toString()));
+        }
+
+        // validate the optional field `recipients` (array)
+        for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+          GetXRPRippleTransactionDetailsByTransactionIDRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
+      if (jsonArraysenders != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("senders").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `senders` to be an array in the JSON string but got `%s`", jsonObj.get("senders").toString()));
+        }
+
+        // validate the optional field `senders` (array)
+        for (int i = 0; i < jsonArraysenders.size(); i++) {
+          GetXRPRippleTransactionDetailsByTransactionIDRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionHash").toString()));
+      }
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `fee`
+      if (jsonObj.getAsJsonObject("fee") != null) {
+        ListXRPRippleTransactionsByAddressRIFee.validateJsonObject(jsonObj.getAsJsonObject("fee"));
+      }
+      // validate the optional field `offer`
+      if (jsonObj.getAsJsonObject("offer") != null) {
+        ListXRPRippleTransactionsByAddressRIOffer.validateJsonObject(jsonObj.getAsJsonObject("offer"));
+      }
+      // validate the optional field `receive`
+      if (jsonObj.getAsJsonObject("receive") != null) {
+        ListXRPRippleTransactionsByAddressRIReceive.validateJsonObject(jsonObj.getAsJsonObject("receive"));
+      }
+      // validate the optional field `value`
+      if (jsonObj.getAsJsonObject("value") != null) {
+        ListXRPRippleTransactionsByAddressRIValue.validateJsonObject(jsonObj.getAsJsonObject("value"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListXRPRippleTransactionsByAddressRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListXRPRippleTransactionsByAddressRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListXRPRippleTransactionsByAddressRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListXRPRippleTransactionsByAddressRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListXRPRippleTransactionsByAddressRI>() {
+           @Override
+           public void write(JsonWriter out, ListXRPRippleTransactionsByAddressRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListXRPRippleTransactionsByAddressRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListXRPRippleTransactionsByAddressRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListXRPRippleTransactionsByAddressRI
+  * @throws IOException if the JSON string is invalid with respect to ListXRPRippleTransactionsByAddressRI
+  */
+  public static ListXRPRippleTransactionsByAddressRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListXRPRippleTransactionsByAddressRI.class);
+  }
+
+ /**
+  * Convert an instance of ListXRPRippleTransactionsByAddressRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

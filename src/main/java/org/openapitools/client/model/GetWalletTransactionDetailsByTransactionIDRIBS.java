@@ -41,749 +41,605 @@ import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDR
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVin;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
 
-/**
- * GetWalletTransactionDetailsByTransactionIDRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class GetWalletTransactionDetailsByTransactionIDRIBS {
-  public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
-  @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
-  @SerializedName(SERIALIZED_NAME_V_SIZE)
-  private Integer vSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VIN = "vin";
-  @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<GetWalletTransactionDetailsByTransactionIDRIBSZVin>();
-
-  public static final String SERIALIZED_NAME_VOUT = "vout";
-  @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<ListTransactionsByBlockHeightRIBSZVout>();
-
-  public static final String SERIALIZED_NAME_CONTRACT = "contract";
-  @SerializedName(SERIALIZED_NAME_CONTRACT)
-  private String contract;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private String gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
-  @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice;
-
-  public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
-  @SerializedName(SERIALIZED_NAME_GAS_USED)
-  private String gasUsed;
-
-  public static final String SERIALIZED_NAME_INPUT_DATA = "inputData";
-  @SerializedName(SERIALIZED_NAME_INPUT_DATA)
-  private String inputData;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
-  private String transactionStatus;
-
-  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
-  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
-  private String bindingSig;
-
-  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
-  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
-  private Integer expiryHeight;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
-  private String joinSplitPubKey;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
-  private String joinSplitSig;
-
-  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
-  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
-  private Boolean overwintered;
-
-  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
-  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit = null;
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = null;
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = null;
-
-  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
-  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
-  private String valueBalance;
-
-  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
-  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
-  private String versionGroupId;
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS() { 
-  }
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS locktime(Integer locktime) {
-    
-    this.locktime = locktime;
-    return this;
-  }
-
-   /**
-   * Represents the time at which a particular transaction can be added to the blockchain.
-   * @return locktime
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1781965", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
-
-  public Integer getLocktime() {
-    return locktime;
-  }
-
-
-  public void setLocktime(Integer locktime) {
-    this.locktime = locktime;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of this transaction.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS vSize(Integer vSize) {
-    
-    this.vSize = vSize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getvSize() {
-    return vSize;
-  }
-
-
-  public void setvSize(Integer vSize) {
-    this.vSize = vSize;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version number.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Represents the transaction version number.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS vin(List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    
-    this.vin = vin;
-    return this;
-  }
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS addVinItem(GetWalletTransactionDetailsByTransactionIDRIBSZVin vinItem) {
-    this.vin.add(vinItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction inputs
-   * @return vin
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
-
-  public List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> getVin() {
-    return vin;
-  }
-
-
-  public void setVin(List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    this.vin = vin;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS vout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
-    
-    this.vout = vout;
-    return this;
-  }
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS addVoutItem(ListTransactionsByBlockHeightRIBSZVout voutItem) {
-    this.vout.add(voutItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction outputs
-   * @return vout
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
-
-  public List<ListTransactionsByBlockHeightRIBSZVout> getVout() {
-    return vout;
-  }
-
-
-  public void setVout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
-    this.vout = vout;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS contract(String contract) {
-    
-    this.contract = contract;
-    return this;
-  }
-
-   /**
-   * Represents the specific transaction contract
-   * @return contract
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x0000000000000000000000000000000000001000", required = true, value = "Represents the specific transaction contract")
-
-  public String getContract() {
-    return contract;
-  }
-
-
-  public void setContract(String contract) {
-    this.contract = contract;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS gasLimit(String gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the amount of gas used by this specific transaction alone.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
-
-  public String getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(String gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS gasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
-    
-    this.gasPrice = gasPrice;
-    return this;
-  }
-
-   /**
-   * Get gasPrice
-   * @return gasPrice
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetTransactionDetailsByTransactionIDRIBSBSCGasPrice getGasPrice() {
-    return gasPrice;
-  }
-
-
-  public void setGasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
-    this.gasPrice = gasPrice;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS gasUsed(String gasUsed) {
-    
-    this.gasUsed = gasUsed;
-    return this;
-  }
-
-   /**
-   * Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.
-   * @return gasUsed
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.")
-
-  public String getGasUsed() {
-    return gasUsed;
-  }
-
-
-  public void setGasUsed(String gasUsed) {
-    this.gasUsed = gasUsed;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS inputData(String inputData) {
-    
-    this.inputData = inputData;
-    return this;
-  }
-
-   /**
-   * Represents additional information that is required for the transaction.
-   * @return inputData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x", required = true, value = "Represents additional information that is required for the transaction.")
-
-  public String getInputData() {
-    return inputData;
-  }
-
-
-  public void setInputData(String inputData) {
-    this.inputData = inputData;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS nonce(Integer nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "25341", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
-
-  public Integer getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(Integer nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS transactionStatus(String transactionStatus) {
-    
-    this.transactionStatus = transactionStatus;
-    return this;
-  }
-
-   /**
-   * String representation of the transaction status
-   * @return transactionStatus
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1", required = true, value = "String representation of the transaction status")
-
-  public String getTransactionStatus() {
-    return transactionStatus;
-  }
-
-
-  public void setTransactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS bindingSig(String bindingSig) {
-    
-    this.bindingSig = bindingSig;
-    return this;
-  }
-
-   /**
-   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
-   * @return bindingSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
-
-  public String getBindingSig() {
-    return bindingSig;
-  }
-
-
-  public void setBindingSig(String bindingSig) {
-    this.bindingSig = bindingSig;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS expiryHeight(Integer expiryHeight) {
-    
-    this.expiryHeight = expiryHeight;
-    return this;
-  }
-
-   /**
-   * Represents a block height after which the transaction will expire.
-   * @return expiryHeight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
-
-  public Integer getExpiryHeight() {
-    return expiryHeight;
-  }
-
-
-  public void setExpiryHeight(Integer expiryHeight) {
-    this.expiryHeight = expiryHeight;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS joinSplitPubKey(String joinSplitPubKey) {
-    
-    this.joinSplitPubKey = joinSplitPubKey;
-    return this;
-  }
-
-   /**
-   * Represents an encoding of a JoinSplitSig public validating key.
-   * @return joinSplitPubKey
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
-
-  public String getJoinSplitPubKey() {
-    return joinSplitPubKey;
-  }
-
-
-  public void setJoinSplitPubKey(String joinSplitPubKey) {
-    this.joinSplitPubKey = joinSplitPubKey;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS joinSplitSig(String joinSplitSig) {
-    
-    this.joinSplitSig = joinSplitSig;
-    return this;
-  }
-
-   /**
-   * Is used to sign transactions that contain at least one JoinSplit description.
-   * @return joinSplitSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
-
-  public String getJoinSplitSig() {
-    return joinSplitSig;
-  }
-
-
-  public void setJoinSplitSig(String joinSplitSig) {
-    this.joinSplitSig = joinSplitSig;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS overwintered(Boolean overwintered) {
-    
-    this.overwintered = overwintered;
-    return this;
-  }
-
-   /**
-   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
-   * @return overwintered
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
-
-  public Boolean getOverwintered() {
-    return overwintered;
-  }
-
-
-  public void setOverwintered(Boolean overwintered) {
-    this.overwintered = overwintered;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS vJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
-    
-    this.vJoinSplit = vJoinSplit;
-    return this;
-  }
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplit vJoinSplitItem) {
-    if (this.vJoinSplit == null) {
-      this.vJoinSplit = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit>();
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetWalletTransactionDetailsByTransactionIDRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetWalletTransactionDetailsByTransactionIDRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetWalletTransactionDetailsByTransactionIDRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSB> adapterGetWalletTransactionDetailsByTransactionIDRIBSB = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSB.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSBC> adapterGetWalletTransactionDetailsByTransactionIDRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSBC.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSBSC> adapterGetWalletTransactionDetailsByTransactionIDRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSBSC.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSD> adapterGetWalletTransactionDetailsByTransactionIDRIBSD = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSD.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSD2> adapterGetWalletTransactionDetailsByTransactionIDRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSD2.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSE> adapterGetWalletTransactionDetailsByTransactionIDRIBSE = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSE.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSEC> adapterGetWalletTransactionDetailsByTransactionIDRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSEC.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSL> adapterGetWalletTransactionDetailsByTransactionIDRIBSL = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSL.class));
+            final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSZ> adapterGetWalletTransactionDetailsByTransactionIDRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSZ.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBS>() {
+                @Override
+                public void write(JsonWriter out, GetWalletTransactionDetailsByTransactionIDRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSB`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSB) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSB.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSBC`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSBC) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSBC.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSBSC`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSBSC) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSBSC.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSD`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSD) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSD.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSD2`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSD2) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSD2.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSE`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSE) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSE.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSEC`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSEC) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSEC.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSL`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSL) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSL.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetWalletTransactionDetailsByTransactionIDRIBSZ`
+                    if (value.getActualInstance() instanceof GetWalletTransactionDetailsByTransactionIDRIBSZ) {
+                        JsonObject obj = adapterGetWalletTransactionDetailsByTransactionIDRIBSZ.toJsonTree((GetWalletTransactionDetailsByTransactionIDRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ");
+                }
+
+                @Override
+                public GetWalletTransactionDetailsByTransactionIDRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSB'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSBC'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSBSC'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSD'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSD2'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSE'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSEC'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSL'", e);
+                    }
+
+                    // deserialize GetWalletTransactionDetailsByTransactionIDRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetWalletTransactionDetailsByTransactionIDRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetWalletTransactionDetailsByTransactionIDRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSZ'", e);
+                    }
+
+                    if (match == 1) {
+                        GetWalletTransactionDetailsByTransactionIDRIBS ret = new GetWalletTransactionDetailsByTransactionIDRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetWalletTransactionDetailsByTransactionIDRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.vJoinSplit.add(vJoinSplitItem);
-    return this;
-  }
 
-   /**
-   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
-   * @return vJoinSplit
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> getvJoinSplit() {
-    return vJoinSplit;
-  }
-
-
-  public void setvJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
-    this.vJoinSplit = vJoinSplit;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    
-    this.vShieldedOutput = vShieldedOutput;
-    return this;
-  }
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
-    if (this.vShieldedOutput == null) {
-      this.vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
+    public GetWalletTransactionDetailsByTransactionIDRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    this.vShieldedOutput.add(vShieldedOutputItem);
-    return this;
-  }
 
-   /**
-   * Object Array representation of transaction output descriptions
-   * @return vShieldedOutput
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Object Array representation of transaction output descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
-    return vShieldedOutput;
-  }
-
-
-  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    this.vShieldedOutput = vShieldedOutput;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    
-    this.vShieldedSpend = vShieldedSpend;
-    return this;
-  }
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
-    if (this.vShieldedSpend == null) {
-      this.vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    this.vShieldedSpend.add(vShieldedSpendItem);
-    return this;
-  }
 
-   /**
-   * Object Array representation of transaction spend descriptions
-   * @return vShieldedSpend
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "Object Array representation of transaction spend descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
-    return vShieldedSpend;
-  }
-
-
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    this.vShieldedSpend = vShieldedSpend;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS valueBalance(String valueBalance) {
-    
-    this.valueBalance = valueBalance;
-    return this;
-  }
-
-   /**
-   * String representation of the transaction value balance
-   * @return valueBalance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "String representation of the transaction value balance")
-
-  public String getValueBalance() {
-    return valueBalance;
-  }
-
-
-  public void setValueBalance(String valueBalance) {
-    this.valueBalance = valueBalance;
-  }
-
-
-  public GetWalletTransactionDetailsByTransactionIDRIBS versionGroupId(String versionGroupId) {
-    
-    this.versionGroupId = versionGroupId;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version group ID.
-   * @return versionGroupId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID.")
-
-  public String getVersionGroupId() {
-    return versionGroupId;
-  }
-
-
-  public void setVersionGroupId(String versionGroupId) {
-    this.versionGroupId = versionGroupId;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    GetWalletTransactionDetailsByTransactionIDRIBS getWalletTransactionDetailsByTransactionIDRIBS = (GetWalletTransactionDetailsByTransactionIDRIBS) o;
-    return Objects.equals(this.locktime, getWalletTransactionDetailsByTransactionIDRIBS.locktime) &&
-        Objects.equals(this.size, getWalletTransactionDetailsByTransactionIDRIBS.size) &&
-        Objects.equals(this.vSize, getWalletTransactionDetailsByTransactionIDRIBS.vSize) &&
-        Objects.equals(this.version, getWalletTransactionDetailsByTransactionIDRIBS.version) &&
-        Objects.equals(this.vin, getWalletTransactionDetailsByTransactionIDRIBS.vin) &&
-        Objects.equals(this.vout, getWalletTransactionDetailsByTransactionIDRIBS.vout) &&
-        Objects.equals(this.contract, getWalletTransactionDetailsByTransactionIDRIBS.contract) &&
-        Objects.equals(this.gasLimit, getWalletTransactionDetailsByTransactionIDRIBS.gasLimit) &&
-        Objects.equals(this.gasPrice, getWalletTransactionDetailsByTransactionIDRIBS.gasPrice) &&
-        Objects.equals(this.gasUsed, getWalletTransactionDetailsByTransactionIDRIBS.gasUsed) &&
-        Objects.equals(this.inputData, getWalletTransactionDetailsByTransactionIDRIBS.inputData) &&
-        Objects.equals(this.nonce, getWalletTransactionDetailsByTransactionIDRIBS.nonce) &&
-        Objects.equals(this.transactionStatus, getWalletTransactionDetailsByTransactionIDRIBS.transactionStatus) &&
-        Objects.equals(this.bindingSig, getWalletTransactionDetailsByTransactionIDRIBS.bindingSig) &&
-        Objects.equals(this.expiryHeight, getWalletTransactionDetailsByTransactionIDRIBS.expiryHeight) &&
-        Objects.equals(this.joinSplitPubKey, getWalletTransactionDetailsByTransactionIDRIBS.joinSplitPubKey) &&
-        Objects.equals(this.joinSplitSig, getWalletTransactionDetailsByTransactionIDRIBS.joinSplitSig) &&
-        Objects.equals(this.overwintered, getWalletTransactionDetailsByTransactionIDRIBS.overwintered) &&
-        Objects.equals(this.vJoinSplit, getWalletTransactionDetailsByTransactionIDRIBS.vJoinSplit) &&
-        Objects.equals(this.vShieldedOutput, getWalletTransactionDetailsByTransactionIDRIBS.vShieldedOutput) &&
-        Objects.equals(this.vShieldedSpend, getWalletTransactionDetailsByTransactionIDRIBS.vShieldedSpend) &&
-        Objects.equals(this.valueBalance, getWalletTransactionDetailsByTransactionIDRIBS.valueBalance) &&
-        Objects.equals(this.versionGroupId, getWalletTransactionDetailsByTransactionIDRIBS.versionGroupId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetWalletTransactionDetailsByTransactionIDRIBS {\n");
-    sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
-    sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasPrice: ").append(toIndentedString(gasPrice)).append("\n");
-    sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
-    sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
-    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
-    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
-    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
-    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
-    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
-    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
-    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
-    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
-    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetWalletTransactionDetailsByTransactionIDRIBS(GetWalletTransactionDetailsByTransactionIDRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSB", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSB>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSBC", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSBC>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSBSC", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSBSC>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSD", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSD>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSD2", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSD2>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSE", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSE>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSEC", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSEC>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSL", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSL>() {
+        });
+        schemas.put("GetWalletTransactionDetailsByTransactionIDRIBSZ", new GenericType<GetWalletTransactionDetailsByTransactionIDRIBSZ>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return GetWalletTransactionDetailsByTransactionIDRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetWalletTransactionDetailsByTransactionIDRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ
+     *
+     * @return The actual instance (GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSB`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSB`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSB`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSB getGetWalletTransactionDetailsByTransactionIDRIBSB() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSBC`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSBC`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSBC`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSBC getGetWalletTransactionDetailsByTransactionIDRIBSBC() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSBSC`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSBSC`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSBSC`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSBSC getGetWalletTransactionDetailsByTransactionIDRIBSBSC() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSD`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSD`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSD`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSD getGetWalletTransactionDetailsByTransactionIDRIBSD() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSD2`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSD2`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSD2`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSD2 getGetWalletTransactionDetailsByTransactionIDRIBSD2() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSE`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSE`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSE`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSE getGetWalletTransactionDetailsByTransactionIDRIBSE() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSEC`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSEC`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSEC`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSEC getGetWalletTransactionDetailsByTransactionIDRIBSEC() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSL`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSL`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSL`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSL getGetWalletTransactionDetailsByTransactionIDRIBSL() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSZ`. If the actual instance is not `GetWalletTransactionDetailsByTransactionIDRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetWalletTransactionDetailsByTransactionIDRIBSZ`
+     * @throws ClassCastException if the instance is not `GetWalletTransactionDetailsByTransactionIDRIBSZ`
+     */
+    public GetWalletTransactionDetailsByTransactionIDRIBSZ getGetWalletTransactionDetailsByTransactionIDRIBSZ() throws ClassCastException {
+        return (GetWalletTransactionDetailsByTransactionIDRIBSZ)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetWalletTransactionDetailsByTransactionIDRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSB
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSBC
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSBSC
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSD
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSD2
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSE
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSEC
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSL
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSZ
+    try {
+      GetWalletTransactionDetailsByTransactionIDRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for GetWalletTransactionDetailsByTransactionIDRIBS with oneOf schemas: GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of GetWalletTransactionDetailsByTransactionIDRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetWalletTransactionDetailsByTransactionIDRIBS
+  * @throws IOException if the JSON string is invalid with respect to GetWalletTransactionDetailsByTransactionIDRIBS
+  */
+  public static GetWalletTransactionDetailsByTransactionIDRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetWalletTransactionDetailsByTransactionIDRIBS.class);
+  }
+
+ /**
+  * Convert an instance of GetWalletTransactionDetailsByTransactionIDRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

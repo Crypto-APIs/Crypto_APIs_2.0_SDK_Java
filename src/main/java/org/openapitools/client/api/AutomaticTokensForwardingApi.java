@@ -33,22 +33,22 @@ import org.openapitools.client.model.CreateAutomaticTokensForwardingR;
 import org.openapitools.client.model.CreateAutomaticTokensForwardingRB;
 import org.openapitools.client.model.DeleteAutomaticTokensForwardingR;
 import org.openapitools.client.model.GetFeeAddressDetailsR;
-import org.openapitools.client.model.InlineResponse40078;
-import org.openapitools.client.model.InlineResponse40079;
-import org.openapitools.client.model.InlineResponse40080;
-import org.openapitools.client.model.InlineResponse40081;
-import org.openapitools.client.model.InlineResponse40082;
-import org.openapitools.client.model.InlineResponse40178;
-import org.openapitools.client.model.InlineResponse40179;
-import org.openapitools.client.model.InlineResponse40180;
-import org.openapitools.client.model.InlineResponse40181;
-import org.openapitools.client.model.InlineResponse40182;
+import org.openapitools.client.model.InlineResponse40092;
+import org.openapitools.client.model.InlineResponse40093;
+import org.openapitools.client.model.InlineResponse40094;
+import org.openapitools.client.model.InlineResponse40095;
+import org.openapitools.client.model.InlineResponse40096;
+import org.openapitools.client.model.InlineResponse40192;
+import org.openapitools.client.model.InlineResponse40193;
+import org.openapitools.client.model.InlineResponse40194;
+import org.openapitools.client.model.InlineResponse40195;
+import org.openapitools.client.model.InlineResponse40196;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40378;
-import org.openapitools.client.model.InlineResponse40379;
-import org.openapitools.client.model.InlineResponse40380;
-import org.openapitools.client.model.InlineResponse40381;
-import org.openapitools.client.model.InlineResponse40382;
+import org.openapitools.client.model.InlineResponse40392;
+import org.openapitools.client.model.InlineResponse40393;
+import org.openapitools.client.model.InlineResponse40394;
+import org.openapitools.client.model.InlineResponse40395;
+import org.openapitools.client.model.InlineResponse40396;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
@@ -62,6 +62,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class AutomaticTokensForwardingApi {
     private ApiClient localVarApiClient;
@@ -127,7 +128,6 @@ public class AutomaticTokensForwardingApi {
      */
     public okhttp3.Call addTokensToExistingFromAddressCall(String blockchain, String network, String context, AddTokensToExistingFromAddressRB addTokensToExistingFromAddressRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -169,7 +169,7 @@ public class AutomaticTokensForwardingApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -317,7 +317,6 @@ public class AutomaticTokensForwardingApi {
      */
     public okhttp3.Call createAutomaticTokensForwardingCall(String blockchain, String network, String context, CreateAutomaticTokensForwardingRB createAutomaticTokensForwardingRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -359,7 +358,7 @@ public class AutomaticTokensForwardingApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -507,7 +506,6 @@ public class AutomaticTokensForwardingApi {
      */
     public okhttp3.Call deleteAutomaticTokensForwardingCall(String blockchain, String network, String referenceId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -550,7 +548,7 @@ public class AutomaticTokensForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -702,7 +700,6 @@ public class AutomaticTokensForwardingApi {
      */
     public okhttp3.Call getFeeAddressDetailsCall(String blockchain, String network, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -744,7 +741,7 @@ public class AutomaticTokensForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -890,7 +887,6 @@ public class AutomaticTokensForwardingApi {
      */
     public okhttp3.Call listTokensForwardingAutomationsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -940,7 +936,7 @@ public class AutomaticTokensForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

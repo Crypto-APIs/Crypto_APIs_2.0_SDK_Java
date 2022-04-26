@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetXRPRippleTransactionDetailsByTransactionIDRI**](GetXRPRippleTransactionDetailsByTransactionIDRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetXRPRippleTransactionDetailsByTransactionIDRI**](GetXRPRippleTransactionDetailsByTransactionIDRI.md) |  |  |
 
 
 

@@ -24,9 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListInternalTransactionsByAddressRI;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -44,19 +43,19 @@ public class ListInternalTransactionsByAddressRDataTest {
     }
 
     /**
-     * Test the property 'offset'
-     */
-    @Test
-    public void offsetTest() {
-        // TODO: test offset
-    }
-
-    /**
      * Test the property 'limit'
      */
     @Test
     public void limitTest() {
         // TODO: test limit
+    }
+
+    /**
+     * Test the property 'offset'
+     */
+    @Test
+    public void offsetTest() {
+        // TODO: test offset
     }
 
     /**

@@ -21,17 +21,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBVout;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIBlockchainSpecific;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIFee;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRISenders;
-import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressRIVin;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -49,6 +40,22 @@ public class ListUnspentTransactionOutputsByAddressRITest {
     }
 
     /**
+     * Test the property 'address'
+     */
+    @Test
+    public void addressTest() {
+        // TODO: test address
+    }
+
+    /**
+     * Test the property 'amount'
+     */
+    @Test
+    public void amountTest() {
+        // TODO: test amount
+    }
+
+    /**
      * Test the property 'index'
      */
     @Test
@@ -57,51 +64,11 @@ public class ListUnspentTransactionOutputsByAddressRITest {
     }
 
     /**
-     * Test the property 'locktime'
+     * Test the property 'isConfirmed'
      */
     @Test
-    public void locktimeTest() {
-        // TODO: test locktime
-    }
-
-    /**
-     * Test the property 'minedInBlockHash'
-     */
-    @Test
-    public void minedInBlockHashTest() {
-        // TODO: test minedInBlockHash
-    }
-
-    /**
-     * Test the property 'minedInBlockHeight'
-     */
-    @Test
-    public void minedInBlockHeightTest() {
-        // TODO: test minedInBlockHeight
-    }
-
-    /**
-     * Test the property 'recipients'
-     */
-    @Test
-    public void recipientsTest() {
-        // TODO: test recipients
-    }
-
-    /**
-     * Test the property 'senders'
-     */
-    @Test
-    public void sendersTest() {
-        // TODO: test senders
-    }
-
-    /**
-     * Test the property 'size'
-     */
-    @Test
-    public void sizeTest() {
-        // TODO: test size
+    public void isConfirmedTest() {
+        // TODO: test isConfirmed
     }
 
     /**
@@ -113,59 +80,11 @@ public class ListUnspentTransactionOutputsByAddressRITest {
     }
 
     /**
-     * Test the property 'transactionHash'
-     */
-    @Test
-    public void transactionHashTest() {
-        // TODO: test transactionHash
-    }
-
-    /**
      * Test the property 'transactionId'
      */
     @Test
     public void transactionIdTest() {
         // TODO: test transactionId
-    }
-
-    /**
-     * Test the property 'version'
-     */
-    @Test
-    public void versionTest() {
-        // TODO: test version
-    }
-
-    /**
-     * Test the property 'vin'
-     */
-    @Test
-    public void vinTest() {
-        // TODO: test vin
-    }
-
-    /**
-     * Test the property 'vout'
-     */
-    @Test
-    public void voutTest() {
-        // TODO: test vout
-    }
-
-    /**
-     * Test the property 'fee'
-     */
-    @Test
-    public void feeTest() {
-        // TODO: test fee
-    }
-
-    /**
-     * Test the property 'blockchainSpecific'
-     */
-    @Test
-    public void blockchainSpecificTest() {
-        // TODO: test blockchainSpecific
     }
 
 }

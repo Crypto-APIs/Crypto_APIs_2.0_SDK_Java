@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetBlockDetailsByBlockHeightFromCallbackRI**](GetBlockDetailsByBlockHeightFromCallbackRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetBlockDetailsByBlockHeightFromCallbackRI**](GetBlockDetailsByBlockHeightFromCallbackRI.md) |  |  |
 
 
 

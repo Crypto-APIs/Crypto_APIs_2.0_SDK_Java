@@ -21,9 +21,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -49,11 +48,27 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipientsTest {
     }
 
     /**
+     * Test the property 'addressTag'
+     */
+    @Test
+    public void addressTagTest() {
+        // TODO: test addressTag
+    }
+
+    /**
      * Test the property 'amount'
      */
     @Test
     public void amountTest() {
         // TODO: test amount
+    }
+
+    /**
+     * Test the property 'classicAddress'
+     */
+    @Test
+    public void classicAddressTest() {
+        // TODO: test classicAddress
     }
 
 }

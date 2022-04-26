@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetLatestMinedXRPRippleBlockRI**](GetLatestMinedXRPRippleBlockRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetLatestMinedXRPRippleBlockRI**](GetLatestMinedXRPRippleBlockRI.md) |  |  |
 
 
 

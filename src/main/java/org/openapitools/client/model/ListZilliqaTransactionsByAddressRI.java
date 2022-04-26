@@ -29,10 +29,30 @@ import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionID
 import org.openapitools.client.model.ListZilliqaTransactionsByAddressRIRecipients;
 import org.openapitools.client.model.ListZilliqaTransactionsByAddressRISenders;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListZilliqaTransactionsByAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListZilliqaTransactionsByAddressRI {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
@@ -64,11 +84,11 @@ public class ListZilliqaTransactionsByAddressRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListZilliqaTransactionsByAddressRIRecipients> recipients = new ArrayList<ListZilliqaTransactionsByAddressRIRecipients>();
+  private List<ListZilliqaTransactionsByAddressRIRecipients> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListZilliqaTransactionsByAddressRISenders> senders = new ArrayList<ListZilliqaTransactionsByAddressRISenders>();
+  private List<ListZilliqaTransactionsByAddressRISenders> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -398,6 +418,7 @@ public class ListZilliqaTransactionsByAddressRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -459,5 +480,159 @@ public class ListZilliqaTransactionsByAddressRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("fee");
+    openapiFields.add("gasLimit");
+    openapiFields.add("gasPrice");
+    openapiFields.add("gasUsed");
+    openapiFields.add("minedInBlockHash");
+    openapiFields.add("minedInBlockHeight");
+    openapiFields.add("nonce");
+    openapiFields.add("recipients");
+    openapiFields.add("senders");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionHash");
+    openapiFields.add("transactionIndex");
+    openapiFields.add("transactionStatus");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("fee");
+    openapiRequiredFields.add("gasLimit");
+    openapiRequiredFields.add("gasPrice");
+    openapiRequiredFields.add("gasUsed");
+    openapiRequiredFields.add("minedInBlockHash");
+    openapiRequiredFields.add("minedInBlockHeight");
+    openapiRequiredFields.add("nonce");
+    openapiRequiredFields.add("recipients");
+    openapiRequiredFields.add("senders");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionHash");
+    openapiRequiredFields.add("transactionIndex");
+    openapiRequiredFields.add("transactionStatus");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListZilliqaTransactionsByAddressRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListZilliqaTransactionsByAddressRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListZilliqaTransactionsByAddressRI is not found in the empty JSON string", ListZilliqaTransactionsByAddressRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListZilliqaTransactionsByAddressRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListZilliqaTransactionsByAddressRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListZilliqaTransactionsByAddressRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      // validate the optional field `fee`
+      if (jsonObj.getAsJsonObject("fee") != null) {
+        GetZilliqaTransactionDetailsByTransactionIDRIFee.validateJsonObject(jsonObj.getAsJsonObject("fee"));
+      }
+      if (jsonObj.get("minedInBlockHash") != null && !jsonObj.get("minedInBlockHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `minedInBlockHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minedInBlockHash").toString()));
+      }
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
+      if (jsonArrayrecipients != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("recipients").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `recipients` to be an array in the JSON string but got `%s`", jsonObj.get("recipients").toString()));
+        }
+
+        // validate the optional field `recipients` (array)
+        for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+          ListZilliqaTransactionsByAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
+      if (jsonArraysenders != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("senders").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `senders` to be an array in the JSON string but got `%s`", jsonObj.get("senders").toString()));
+        }
+
+        // validate the optional field `senders` (array)
+        for (int i = 0; i < jsonArraysenders.size(); i++) {
+          ListZilliqaTransactionsByAddressRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionHash").toString()));
+      }
+      if (jsonObj.get("transactionStatus") != null && !jsonObj.get("transactionStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionStatus").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListZilliqaTransactionsByAddressRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListZilliqaTransactionsByAddressRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListZilliqaTransactionsByAddressRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListZilliqaTransactionsByAddressRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListZilliqaTransactionsByAddressRI>() {
+           @Override
+           public void write(JsonWriter out, ListZilliqaTransactionsByAddressRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListZilliqaTransactionsByAddressRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListZilliqaTransactionsByAddressRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListZilliqaTransactionsByAddressRI
+  * @throws IOException if the JSON string is invalid with respect to ListZilliqaTransactionsByAddressRI
+  */
+  public static ListZilliqaTransactionsByAddressRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListZilliqaTransactionsByAddressRI.class);
+  }
+
+ /**
+  * Convert an instance of ListZilliqaTransactionsByAddressRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

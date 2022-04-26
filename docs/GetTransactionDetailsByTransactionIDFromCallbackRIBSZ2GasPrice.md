@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**amount** | **Integer** | Defines the price of the gas. | 
-**unit** | **String** | Defines the unit of the gas price amount, e.g. BTC, ETH, XRP. | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**amount** | **Long** | Defines the price of the gas. |  |
+|**unit** | **String** | Defines the unit of the gas price amount, e.g. BTC, ETH, XRP. |  |
 
 
 

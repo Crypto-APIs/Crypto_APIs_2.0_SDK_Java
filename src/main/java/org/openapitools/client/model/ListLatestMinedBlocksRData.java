@@ -27,18 +27,38 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListLatestMinedBlocksRI;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListLatestMinedBlocksRData
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListLatestMinedBlocksRData {
-  public static final String SERIALIZED_NAME_OFFSET = "offset";
-  @SerializedName(SERIALIZED_NAME_OFFSET)
-  private Integer offset;
-
   public static final String SERIALIZED_NAME_LIMIT = "limit";
   @SerializedName(SERIALIZED_NAME_LIMIT)
   private Integer limit;
+
+  public static final String SERIALIZED_NAME_OFFSET = "offset";
+  @SerializedName(SERIALIZED_NAME_OFFSET)
+  private Integer offset;
 
   public static final String SERIALIZED_NAME_TOTAL = "total";
   @SerializedName(SERIALIZED_NAME_TOTAL)
@@ -46,33 +66,10 @@ public class ListLatestMinedBlocksRData {
 
   public static final String SERIALIZED_NAME_ITEMS = "items";
   @SerializedName(SERIALIZED_NAME_ITEMS)
-  private List<ListLatestMinedBlocksRI> items = new ArrayList<ListLatestMinedBlocksRI>();
+  private List<ListLatestMinedBlocksRI> items = new ArrayList<>();
 
   public ListLatestMinedBlocksRData() { 
   }
-
-  public ListLatestMinedBlocksRData offset(Integer offset) {
-    
-    this.offset = offset;
-    return this;
-  }
-
-   /**
-   * The starting index of the response items, i.e. where the response should start listing the returned items.
-   * @return offset
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "The starting index of the response items, i.e. where the response should start listing the returned items.")
-
-  public Integer getOffset() {
-    return offset;
-  }
-
-
-  public void setOffset(Integer offset) {
-    this.offset = offset;
-  }
-
 
   public ListLatestMinedBlocksRData limit(Integer limit) {
     
@@ -94,6 +91,29 @@ public class ListLatestMinedBlocksRData {
 
   public void setLimit(Integer limit) {
     this.limit = limit;
+  }
+
+
+  public ListLatestMinedBlocksRData offset(Integer offset) {
+    
+    this.offset = offset;
+    return this;
+  }
+
+   /**
+   * The starting index of the response items, i.e. where the response should start listing the returned items.
+   * @return offset
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "0", required = true, value = "The starting index of the response items, i.e. where the response should start listing the returned items.")
+
+  public Integer getOffset() {
+    return offset;
+  }
+
+
+  public void setOffset(Integer offset) {
+    this.offset = offset;
   }
 
 
@@ -148,6 +168,7 @@ public class ListLatestMinedBlocksRData {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -157,23 +178,23 @@ public class ListLatestMinedBlocksRData {
       return false;
     }
     ListLatestMinedBlocksRData listLatestMinedBlocksRData = (ListLatestMinedBlocksRData) o;
-    return Objects.equals(this.offset, listLatestMinedBlocksRData.offset) &&
-        Objects.equals(this.limit, listLatestMinedBlocksRData.limit) &&
+    return Objects.equals(this.limit, listLatestMinedBlocksRData.limit) &&
+        Objects.equals(this.offset, listLatestMinedBlocksRData.offset) &&
         Objects.equals(this.total, listLatestMinedBlocksRData.total) &&
         Objects.equals(this.items, listLatestMinedBlocksRData.items);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(offset, limit, total, items);
+    return Objects.hash(limit, offset, total, items);
   }
 
   @Override
   public String toString() {
     StringBuilder sb = new StringBuilder();
     sb.append("class ListLatestMinedBlocksRData {\n");
-    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    limit: ").append(toIndentedString(limit)).append("\n");
+    sb.append("    offset: ").append(toIndentedString(offset)).append("\n");
     sb.append("    total: ").append(toIndentedString(total)).append("\n");
     sb.append("    items: ").append(toIndentedString(items)).append("\n");
     sb.append("}");
@@ -191,5 +212,116 @@ public class ListLatestMinedBlocksRData {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("limit");
+    openapiFields.add("offset");
+    openapiFields.add("total");
+    openapiFields.add("items");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("limit");
+    openapiRequiredFields.add("offset");
+    openapiRequiredFields.add("total");
+    openapiRequiredFields.add("items");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListLatestMinedBlocksRData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListLatestMinedBlocksRData.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListLatestMinedBlocksRData is not found in the empty JSON string", ListLatestMinedBlocksRData.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListLatestMinedBlocksRData.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListLatestMinedBlocksRData` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListLatestMinedBlocksRData.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArrayitems = jsonObj.getAsJsonArray("items");
+      if (jsonArrayitems != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("items").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `items` to be an array in the JSON string but got `%s`", jsonObj.get("items").toString()));
+        }
+
+        // validate the optional field `items` (array)
+        for (int i = 0; i < jsonArrayitems.size(); i++) {
+          ListLatestMinedBlocksRI.validateJsonObject(jsonArrayitems.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListLatestMinedBlocksRData.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListLatestMinedBlocksRData' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListLatestMinedBlocksRData> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRData.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListLatestMinedBlocksRData>() {
+           @Override
+           public void write(JsonWriter out, ListLatestMinedBlocksRData value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListLatestMinedBlocksRData read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListLatestMinedBlocksRData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListLatestMinedBlocksRData
+  * @throws IOException if the JSON string is invalid with respect to ListLatestMinedBlocksRData
+  */
+  public static ListLatestMinedBlocksRData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListLatestMinedBlocksRData.class);
+  }
+
+ /**
+  * Convert an instance of ListLatestMinedBlocksRData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

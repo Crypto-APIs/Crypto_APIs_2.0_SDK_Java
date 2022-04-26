@@ -14,18 +14,18 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.InlineResponse40086;
-import org.openapitools.client.model.InlineResponse40186;
+import org.openapitools.client.model.InlineResponse400105;
+import org.openapitools.client.model.InlineResponse401105;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40386;
+import org.openapitools.client.model.InlineResponse403105;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListSupportedAssetsR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -35,19 +35,17 @@ import java.util.Map;
 /**
  * API tests for MetadataApi
  */
-@Ignore
+@Disabled
 public class MetadataApiTest {
 
     private final MetadataApi api = new MetadataApi();
 
-    
     /**
      * List Supported Assets
      *
      * This endpoint will return a list of supported assets. The asset could be a cryptocurrency or FIAT assets that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listSupportedAssetsTest() throws ApiException {
@@ -55,8 +53,8 @@ public class MetadataApiTest {
         String assetType = null;
         Integer limit = null;
         Integer offset = null;
-                ListSupportedAssetsR response = api.listSupportedAssets(context, assetType, limit, offset);
+        ListSupportedAssetsR response = api.listSupportedAssets(context, assetType, limit, offset);
         // TODO: test validations
     }
-    
+
 }

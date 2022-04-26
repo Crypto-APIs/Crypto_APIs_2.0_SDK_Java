@@ -29,10 +29,30 @@ import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionI
 import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipients;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRIFee;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListUnconfirmedOmniTransactionsByPropertyIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -52,11 +72,11 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListOmniTransactionsByAddressRIRecipients> recipients = new ArrayList<ListOmniTransactionsByAddressRIRecipients>();
+  private List<ListOmniTransactionsByAddressRIRecipients> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> senders = new ArrayList<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders>();
+  private List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENT = "sent";
   @SerializedName(SERIALIZED_NAME_SENT)
@@ -398,6 +418,7 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -459,5 +480,159 @@ public class ListUnconfirmedOmniTransactionsByPropertyIDRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("amount");
+    openapiFields.add("divisible");
+    openapiFields.add("mined");
+    openapiFields.add("propertyId");
+    openapiFields.add("recipients");
+    openapiFields.add("senders");
+    openapiFields.add("sent");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionId");
+    openapiFields.add("type");
+    openapiFields.add("typeIint");
+    openapiFields.add("version");
+    openapiFields.add("fee");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("amount");
+    openapiRequiredFields.add("divisible");
+    openapiRequiredFields.add("mined");
+    openapiRequiredFields.add("propertyId");
+    openapiRequiredFields.add("recipients");
+    openapiRequiredFields.add("senders");
+    openapiRequiredFields.add("sent");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionId");
+    openapiRequiredFields.add("type");
+    openapiRequiredFields.add("typeIint");
+    openapiRequiredFields.add("version");
+    openapiRequiredFields.add("fee");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListUnconfirmedOmniTransactionsByPropertyIDRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListUnconfirmedOmniTransactionsByPropertyIDRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListUnconfirmedOmniTransactionsByPropertyIDRI is not found in the empty JSON string", ListUnconfirmedOmniTransactionsByPropertyIDRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListUnconfirmedOmniTransactionsByPropertyIDRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListUnconfirmedOmniTransactionsByPropertyIDRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListUnconfirmedOmniTransactionsByPropertyIDRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("amount") != null && !jsonObj.get("amount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `amount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("amount").toString()));
+      }
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
+      if (jsonArrayrecipients != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("recipients").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `recipients` to be an array in the JSON string but got `%s`", jsonObj.get("recipients").toString()));
+        }
+
+        // validate the optional field `recipients` (array)
+        for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+          ListOmniTransactionsByAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
+      if (jsonArraysenders != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("senders").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `senders` to be an array in the JSON string but got `%s`", jsonObj.get("senders").toString()));
+        }
+
+        // validate the optional field `senders` (array)
+        for (int i = 0; i < jsonArraysenders.size(); i++) {
+          GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
+      }
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+      // validate the optional field `fee`
+      if (jsonObj.getAsJsonObject("fee") != null) {
+        ListUnconfirmedOmniTransactionsByAddressRIFee.validateJsonObject(jsonObj.getAsJsonObject("fee"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListUnconfirmedOmniTransactionsByPropertyIDRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListUnconfirmedOmniTransactionsByPropertyIDRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListUnconfirmedOmniTransactionsByPropertyIDRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedOmniTransactionsByPropertyIDRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListUnconfirmedOmniTransactionsByPropertyIDRI>() {
+           @Override
+           public void write(JsonWriter out, ListUnconfirmedOmniTransactionsByPropertyIDRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListUnconfirmedOmniTransactionsByPropertyIDRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListUnconfirmedOmniTransactionsByPropertyIDRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListUnconfirmedOmniTransactionsByPropertyIDRI
+  * @throws IOException if the JSON string is invalid with respect to ListUnconfirmedOmniTransactionsByPropertyIDRI
+  */
+  public static ListUnconfirmedOmniTransactionsByPropertyIDRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListUnconfirmedOmniTransactionsByPropertyIDRI.class);
+  }
+
+ /**
+  * Convert an instance of ListUnconfirmedOmniTransactionsByPropertyIDRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

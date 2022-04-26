@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetInternalTransactionByTransactionHashAndOperationIdRI**](GetInternalTransactionByTransactionHashAndOperationIdRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetInternalTransactionByTransactionHashAndOperationIdRI**](GetInternalTransactionByTransactionHashAndOperationIdRI.md) |  |  |
 
 
 

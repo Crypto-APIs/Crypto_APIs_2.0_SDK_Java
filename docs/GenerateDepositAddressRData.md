@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GenerateDepositAddressRI**](GenerateDepositAddressRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GenerateDepositAddressRI**](GenerateDepositAddressRI.md) |  |  |
 
 
 

@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**NewConfirmedCoinsTransactionsRBDataItem**](NewConfirmedCoinsTransactionsRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**NewConfirmedCoinsTransactionsRBDataItem**](NewConfirmedCoinsTransactionsRBDataItem.md) |  |  |
 
 
 

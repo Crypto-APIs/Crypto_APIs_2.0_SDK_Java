@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**NewConfirmedInternalTransactionsAndEachConfirmationRI**](NewConfirmedInternalTransactionsAndEachConfirmationRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**NewConfirmedInternalTransactionsAndEachConfirmationRI**](NewConfirmedInternalTransactionsAndEachConfirmationRI.md) |  |  |
 
 
 

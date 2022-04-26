@@ -5,10 +5,10 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**amount** | **String** | Defines the amount of the fee. | 
-**unit** | **String** | Defines the specific unit of the fee. | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**amount** | **String** | Defines the amount of the fee. |  |
+|**unit** | **String** | Defines the specific unit of the fee. |  |
 
 
 

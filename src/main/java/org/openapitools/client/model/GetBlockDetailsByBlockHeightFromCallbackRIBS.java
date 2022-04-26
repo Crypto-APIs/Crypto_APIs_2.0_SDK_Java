@@ -39,757 +39,705 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallbackRIB
 import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalCoins;
 import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalFees;
 
-/**
- * GetBlockDetailsByBlockHeightFromCallbackRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class GetBlockDetailsByBlockHeightFromCallbackRIBS {
-  public static final String SERIALIZED_NAME_BITS = "bits";
-  @SerializedName(SERIALIZED_NAME_BITS)
-  private String bits;
-
-  public static final String SERIALIZED_NAME_CHAINWORK = "chainwork";
-  @SerializedName(SERIALIZED_NAME_CHAINWORK)
-  private String chainwork;
-
-  public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
-  @SerializedName(SERIALIZED_NAME_DIFFICULTY)
-  private String difficulty;
-
-  public static final String SERIALIZED_NAME_MERKLE_ROOT = "merkleRoot";
-  @SerializedName(SERIALIZED_NAME_MERKLE_ROOT)
-  private String merkleRoot;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_STRIPPED_SIZE = "strippedSize";
-  @SerializedName(SERIALIZED_NAME_STRIPPED_SIZE)
-  private Integer strippedSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VERSION_HEX = "versionHex";
-  @SerializedName(SERIALIZED_NAME_VERSION_HEX)
-  private String versionHex;
-
-  public static final String SERIALIZED_NAME_WEIGHT = "weight";
-  @SerializedName(SERIALIZED_NAME_WEIGHT)
-  private Integer weight;
-
-  public static final String SERIALIZED_NAME_STRIPPEDSIZE = "strippedsize";
-  @SerializedName(SERIALIZED_NAME_STRIPPEDSIZE)
-  private Integer strippedsize;
-
-  public static final String SERIALIZED_NAME_EXTRA_DATA = "extraData";
-  @SerializedName(SERIALIZED_NAME_EXTRA_DATA)
-  private String extraData;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private Integer gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
-  @SerializedName(SERIALIZED_NAME_GAS_USED)
-  private Integer gasUsed;
-
-  public static final String SERIALIZED_NAME_MINED_IN_SECONDS = "minedInSeconds";
-  @SerializedName(SERIALIZED_NAME_MINED_IN_SECONDS)
-  private Integer minedInSeconds;
-
-  public static final String SERIALIZED_NAME_SHA3_UNCLES = "sha3Uncles";
-  @SerializedName(SERIALIZED_NAME_SHA3_UNCLES)
-  private String sha3Uncles;
-
-  public static final String SERIALIZED_NAME_TOTAL_DIFFICULTY = "totalDifficulty";
-  @SerializedName(SERIALIZED_NAME_TOTAL_DIFFICULTY)
-  private String totalDifficulty;
-
-  public static final String SERIALIZED_NAME_UNCLES = "uncles";
-  @SerializedName(SERIALIZED_NAME_UNCLES)
-  private List<String> uncles = null;
-
-  public static final String SERIALIZED_NAME_DS_BLOCK = "dsBlock";
-  @SerializedName(SERIALIZED_NAME_DS_BLOCK)
-  private Integer dsBlock;
-
-  public static final String SERIALIZED_NAME_DS_DIFFICULTY = "dsDifficulty";
-  @SerializedName(SERIALIZED_NAME_DS_DIFFICULTY)
-  private String dsDifficulty;
-
-  public static final String SERIALIZED_NAME_DS_LEADER = "dsLeader";
-  @SerializedName(SERIALIZED_NAME_DS_LEADER)
-  private String dsLeader;
-
-  public static final String SERIALIZED_NAME_MICRO_BLOCKS = "microBlocks";
-  @SerializedName(SERIALIZED_NAME_MICRO_BLOCKS)
-  private List<String> microBlocks = new ArrayList<String>();
-
-  public static final String SERIALIZED_NAME_TOTAL_COINS = "totalCoins";
-  @SerializedName(SERIALIZED_NAME_TOTAL_COINS)
-  private GetLatestMinedXRPRippleBlockRITotalCoins totalCoins;
-
-  public static final String SERIALIZED_NAME_TOTAL_FEES = "totalFees";
-  @SerializedName(SERIALIZED_NAME_TOTAL_FEES)
-  private GetLatestMinedXRPRippleBlockRITotalFees totalFees;
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS() { 
-  }
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS bits(String bits) {
-    
-    this.bits = bits;
-    return this;
-  }
-
-   /**
-   * Represents a specific sub-unit of Zcash. Bits have two-decimal precision
-   * @return bits
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "524517883", required = true, value = "Represents a specific sub-unit of Zcash. Bits have two-decimal precision")
-
-  public String getBits() {
-    return bits;
-  }
-
-
-  public void setBits(String bits) {
-    this.bits = bits;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS chainwork(String chainwork) {
-    
-    this.chainwork = chainwork;
-    return this;
-  }
-
-   /**
-   * Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.
-   * @return chainwork
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "000000000000000000000000000000000000000000000000000000262b072797", required = true, value = "Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.")
-
-  public String getChainwork() {
-    return chainwork;
-  }
-
-
-  public void setChainwork(String chainwork) {
-    this.chainwork = chainwork;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS difficulty(String difficulty) {
-    
-    this.difficulty = difficulty;
-    return this;
-  }
-
-   /**
-   * Defines how difficult it is for a specific miner to mine the block.
-   * @return difficulty
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "41.375", required = true, value = "Defines how difficult it is for a specific miner to mine the block.")
-
-  public String getDifficulty() {
-    return difficulty;
-  }
-
-
-  public void setDifficulty(String difficulty) {
-    this.difficulty = difficulty;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS merkleRoot(String merkleRoot) {
-    
-    this.merkleRoot = merkleRoot;
-    return this;
-  }
-
-   /**
-   * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
-   * @return merkleRoot
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
-
-  public String getMerkleRoot() {
-    return merkleRoot;
-  }
-
-
-  public void setMerkleRoot(String merkleRoot) {
-    this.merkleRoot = merkleRoot;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS nonce(String nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents a random value that can be adjusted to satisfy the proof of work
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2113101077", required = true, value = "Represents a random value that can be adjusted to satisfy the proof of work")
-
-  public String getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(String nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of the block in Bytes.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1408113", required = true, value = "Represents the total size of the block in Bytes.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS strippedSize(Integer strippedSize) {
-    
-    this.strippedSize = strippedSize;
-    return this;
-  }
-
-   /**
-   * Defines the numeric representation of the block size excluding the witness data.
-   * @return strippedSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "12125", required = true, value = "Defines the numeric representation of the block size excluding the witness data.")
-
-  public Integer getStrippedSize() {
-    return strippedSize;
-  }
-
-
-  public void setStrippedSize(Integer strippedSize) {
-    this.strippedSize = strippedSize;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version number.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "536870916", required = true, value = "Represents the transaction version number.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS versionHex(String versionHex) {
-    
-    this.versionHex = versionHex;
-    return this;
-  }
-
-   /**
-   * Is the hexadecimal string representation of the block&#39;s version.
-   * @return versionHex
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "20000000", required = true, value = "Is the hexadecimal string representation of the block's version.")
-
-  public String getVersionHex() {
-    return versionHex;
-  }
-
-
-  public void setVersionHex(String versionHex) {
-    this.versionHex = versionHex;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS weight(Integer weight) {
-    
-    this.weight = weight;
-    return this;
-  }
-
-   /**
-   * Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit.
-   * @return weight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "48500", required = true, value = "Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit.")
-
-  public Integer getWeight() {
-    return weight;
-  }
-
-
-  public void setWeight(Integer weight) {
-    this.weight = weight;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS strippedsize(Integer strippedsize) {
-    
-    this.strippedsize = strippedsize;
-    return this;
-  }
-
-   /**
-   * Defines the numeric representation of the block size excluding the witness data.
-   * @return strippedsize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "220208", required = true, value = "Defines the numeric representation of the block size excluding the witness data.")
-
-  public Integer getStrippedsize() {
-    return strippedsize;
-  }
-
-
-  public void setStrippedsize(Integer strippedsize) {
-    this.strippedsize = strippedsize;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS extraData(String extraData) {
-    
-    this.extraData = extraData;
-    return this;
-  }
-
-   /**
-   * Represents any data that can be included by the miner in the block.
-   * @return extraData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xd983010203844765746887676f312e342e328777696e646f7773", required = true, value = "Represents any data that can be included by the miner in the block.")
-
-  public String getExtraData() {
-    return extraData;
-  }
-
-
-  public void setExtraData(String extraData) {
-    this.extraData = extraData;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS gasLimit(Integer gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "550000", required = true, value = "Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.")
-
-  public Integer getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(Integer gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS gasUsed(Integer gasUsed) {
-    
-    this.gasUsed = gasUsed;
-    return this;
-  }
-
-   /**
-   * Defines how much of the gas for the block has been used.
-   * @return gasUsed
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "10028", required = true, value = "Defines how much of the gas for the block has been used.")
-
-  public Integer getGasUsed() {
-    return gasUsed;
-  }
-
-
-  public void setGasUsed(Integer gasUsed) {
-    this.gasUsed = gasUsed;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS minedInSeconds(Integer minedInSeconds) {
-    
-    this.minedInSeconds = minedInSeconds;
-    return this;
-  }
-
-   /**
-   * Specifies the amount of time required for the block to be mined in seconds.
-   * @return minedInSeconds
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "6", required = true, value = "Specifies the amount of time required for the block to be mined in seconds.")
-
-  public Integer getMinedInSeconds() {
-    return minedInSeconds;
-  }
-
-
-  public void setMinedInSeconds(Integer minedInSeconds) {
-    this.minedInSeconds = minedInSeconds;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS sha3Uncles(String sha3Uncles) {
-    
-    this.sha3Uncles = sha3Uncles;
-    return this;
-  }
-
-   /**
-   * Defines the combined hash of all uncles for a given parent.
-   * @return sha3Uncles
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347", required = true, value = "Defines the combined hash of all uncles for a given parent.")
-
-  public String getSha3Uncles() {
-    return sha3Uncles;
-  }
-
-
-  public void setSha3Uncles(String sha3Uncles) {
-    this.sha3Uncles = sha3Uncles;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS totalDifficulty(String totalDifficulty) {
-    
-    this.totalDifficulty = totalDifficulty;
-    return this;
-  }
-
-   /**
-   * Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.
-   * @return totalDifficulty
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1086033282060494457577", required = true, value = "Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block.")
-
-  public String getTotalDifficulty() {
-    return totalDifficulty;
-  }
-
-
-  public void setTotalDifficulty(String totalDifficulty) {
-    this.totalDifficulty = totalDifficulty;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS uncles(List<String> uncles) {
-    
-    this.uncles = uncles;
-    return this;
-  }
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS addUnclesItem(String unclesItem) {
-    if (this.uncles == null) {
-      this.uncles = new ArrayList<String>();
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class GetBlockDetailsByBlockHeightFromCallbackRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetBlockDetailsByBlockHeightFromCallbackRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetBlockDetailsByBlockHeightFromCallbackRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetBlockDetailsByBlockHeightFromCallbackRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSB> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSB = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSB.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSBC> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSBC.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSBSC> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSBSC.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSD> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSD = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSD.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSD2> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSD2.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSE> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSE = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSE.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSEC> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSEC.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSL> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSL = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSL.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSX> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSX = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSX.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSZ> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSZ.class));
+            final TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBSZ2> adapterGetBlockDetailsByBlockHeightFromCallbackRIBSZ2 = gson.getDelegateAdapter(this, TypeToken.get(GetBlockDetailsByBlockHeightFromCallbackRIBSZ2.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<GetBlockDetailsByBlockHeightFromCallbackRIBS>() {
+                @Override
+                public void write(JsonWriter out, GetBlockDetailsByBlockHeightFromCallbackRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSB`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSB) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSB.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSBC`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSBC) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSBC.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSBSC`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSBSC) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSBSC.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSD`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSD) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSD.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSD2`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSD2) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSD2.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSE`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSE) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSE.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSEC`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSEC) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSEC.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSL`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSL) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSL.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSX`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSX) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSX.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSX)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSZ`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSZ) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSZ.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetBlockDetailsByBlockHeightFromCallbackRIBSZ2`
+                    if (value.getActualInstance() instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSZ2) {
+                        JsonObject obj = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSZ2.toJsonTree((GetBlockDetailsByBlockHeightFromCallbackRIBSZ2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: GetBlockDetailsByBlockHeightFromCallbackRIBSB, GetBlockDetailsByBlockHeightFromCallbackRIBSBC, GetBlockDetailsByBlockHeightFromCallbackRIBSBSC, GetBlockDetailsByBlockHeightFromCallbackRIBSD, GetBlockDetailsByBlockHeightFromCallbackRIBSD2, GetBlockDetailsByBlockHeightFromCallbackRIBSE, GetBlockDetailsByBlockHeightFromCallbackRIBSEC, GetBlockDetailsByBlockHeightFromCallbackRIBSL, GetBlockDetailsByBlockHeightFromCallbackRIBSX, GetBlockDetailsByBlockHeightFromCallbackRIBSZ, GetBlockDetailsByBlockHeightFromCallbackRIBSZ2");
+                }
+
+                @Override
+                public GetBlockDetailsByBlockHeightFromCallbackRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSB'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSBC'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSBSC'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSD'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSD2'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSE'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSEC'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSL'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSX
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSX.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSX;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSX'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSX'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSZ'", e);
+                    }
+
+                    // deserialize GetBlockDetailsByBlockHeightFromCallbackRIBSZ2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetBlockDetailsByBlockHeightFromCallbackRIBSZ2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetBlockDetailsByBlockHeightFromCallbackRIBSZ2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSZ2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightFromCallbackRIBSZ2'", e);
+                    }
+
+                    if (match == 1) {
+                        GetBlockDetailsByBlockHeightFromCallbackRIBS ret = new GetBlockDetailsByBlockHeightFromCallbackRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHeightFromCallbackRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.uncles.add(unclesItem);
-    return this;
-  }
 
-   /**
-   * Get uncles
-   * @return uncles
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<String> getUncles() {
-    return uncles;
-  }
-
-
-  public void setUncles(List<String> uncles) {
-    this.uncles = uncles;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS dsBlock(Integer dsBlock) {
-    
-    this.dsBlock = dsBlock;
-    return this;
-  }
-
-   /**
-   * Represents the Directory Service block which contains metadata about the miners who participate in the consensus protocol.
-   * @return dsBlock
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "12443", required = true, value = "Represents the Directory Service block which contains metadata about the miners who participate in the consensus protocol.")
-
-  public Integer getDsBlock() {
-    return dsBlock;
-  }
-
-
-  public void setDsBlock(Integer dsBlock) {
-    this.dsBlock = dsBlock;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS dsDifficulty(String dsDifficulty) {
-    
-    this.dsDifficulty = dsDifficulty;
-    return this;
-  }
-
-   /**
-   * Defines how difficult it is to mine the dsBlocks.
-   * @return dsDifficulty
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "48.625", required = true, value = "Defines how difficult it is to mine the dsBlocks.")
-
-  public String getDsDifficulty() {
-    return dsDifficulty;
-  }
-
-
-  public void setDsDifficulty(String dsDifficulty) {
-    this.dsDifficulty = dsDifficulty;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS dsLeader(String dsLeader) {
-    
-    this.dsLeader = dsLeader;
-    return this;
-  }
-
-   /**
-   * Represents a part of the DS Committee which leads the consensus protocol for the epoch.
-   * @return dsLeader
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "zil1k9hne0uu86wuj2n7qdqwhrm9uma0xn7ut42tsj", required = true, value = "Represents a part of the DS Committee which leads the consensus protocol for the epoch.")
-
-  public String getDsLeader() {
-    return dsLeader;
-  }
-
-
-  public void setDsLeader(String dsLeader) {
-    this.dsLeader = dsLeader;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS microBlocks(List<String> microBlocks) {
-    
-    this.microBlocks = microBlocks;
-    return this;
-  }
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS addMicroBlocksItem(String microBlocksItem) {
-    this.microBlocks.add(microBlocksItem);
-    return this;
-  }
-
-   /**
-   * Get microBlocks
-   * @return microBlocks
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public List<String> getMicroBlocks() {
-    return microBlocks;
-  }
-
-
-  public void setMicroBlocks(List<String> microBlocks) {
-    this.microBlocks = microBlocks;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS totalCoins(GetLatestMinedXRPRippleBlockRITotalCoins totalCoins) {
-    
-    this.totalCoins = totalCoins;
-    return this;
-  }
-
-   /**
-   * Get totalCoins
-   * @return totalCoins
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetLatestMinedXRPRippleBlockRITotalCoins getTotalCoins() {
-    return totalCoins;
-  }
-
-
-  public void setTotalCoins(GetLatestMinedXRPRippleBlockRITotalCoins totalCoins) {
-    this.totalCoins = totalCoins;
-  }
-
-
-  public GetBlockDetailsByBlockHeightFromCallbackRIBS totalFees(GetLatestMinedXRPRippleBlockRITotalFees totalFees) {
-    
-    this.totalFees = totalFees;
-    return this;
-  }
-
-   /**
-   * Get totalFees
-   * @return totalFees
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetLatestMinedXRPRippleBlockRITotalFees getTotalFees() {
-    return totalFees;
-  }
-
-
-  public void setTotalFees(GetLatestMinedXRPRippleBlockRITotalFees totalFees) {
-    this.totalFees = totalFees;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    GetBlockDetailsByBlockHeightFromCallbackRIBS getBlockDetailsByBlockHeightFromCallbackRIBS = (GetBlockDetailsByBlockHeightFromCallbackRIBS) o;
-    return Objects.equals(this.bits, getBlockDetailsByBlockHeightFromCallbackRIBS.bits) &&
-        Objects.equals(this.chainwork, getBlockDetailsByBlockHeightFromCallbackRIBS.chainwork) &&
-        Objects.equals(this.difficulty, getBlockDetailsByBlockHeightFromCallbackRIBS.difficulty) &&
-        Objects.equals(this.merkleRoot, getBlockDetailsByBlockHeightFromCallbackRIBS.merkleRoot) &&
-        Objects.equals(this.nonce, getBlockDetailsByBlockHeightFromCallbackRIBS.nonce) &&
-        Objects.equals(this.size, getBlockDetailsByBlockHeightFromCallbackRIBS.size) &&
-        Objects.equals(this.strippedSize, getBlockDetailsByBlockHeightFromCallbackRIBS.strippedSize) &&
-        Objects.equals(this.version, getBlockDetailsByBlockHeightFromCallbackRIBS.version) &&
-        Objects.equals(this.versionHex, getBlockDetailsByBlockHeightFromCallbackRIBS.versionHex) &&
-        Objects.equals(this.weight, getBlockDetailsByBlockHeightFromCallbackRIBS.weight) &&
-        Objects.equals(this.strippedsize, getBlockDetailsByBlockHeightFromCallbackRIBS.strippedsize) &&
-        Objects.equals(this.extraData, getBlockDetailsByBlockHeightFromCallbackRIBS.extraData) &&
-        Objects.equals(this.gasLimit, getBlockDetailsByBlockHeightFromCallbackRIBS.gasLimit) &&
-        Objects.equals(this.gasUsed, getBlockDetailsByBlockHeightFromCallbackRIBS.gasUsed) &&
-        Objects.equals(this.minedInSeconds, getBlockDetailsByBlockHeightFromCallbackRIBS.minedInSeconds) &&
-        Objects.equals(this.sha3Uncles, getBlockDetailsByBlockHeightFromCallbackRIBS.sha3Uncles) &&
-        Objects.equals(this.totalDifficulty, getBlockDetailsByBlockHeightFromCallbackRIBS.totalDifficulty) &&
-        Objects.equals(this.uncles, getBlockDetailsByBlockHeightFromCallbackRIBS.uncles) &&
-        Objects.equals(this.dsBlock, getBlockDetailsByBlockHeightFromCallbackRIBS.dsBlock) &&
-        Objects.equals(this.dsDifficulty, getBlockDetailsByBlockHeightFromCallbackRIBS.dsDifficulty) &&
-        Objects.equals(this.dsLeader, getBlockDetailsByBlockHeightFromCallbackRIBS.dsLeader) &&
-        Objects.equals(this.microBlocks, getBlockDetailsByBlockHeightFromCallbackRIBS.microBlocks) &&
-        Objects.equals(this.totalCoins, getBlockDetailsByBlockHeightFromCallbackRIBS.totalCoins) &&
-        Objects.equals(this.totalFees, getBlockDetailsByBlockHeightFromCallbackRIBS.totalFees);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(bits, chainwork, difficulty, merkleRoot, nonce, size, strippedSize, version, versionHex, weight, strippedsize, extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty, uncles, dsBlock, dsDifficulty, dsLeader, microBlocks, totalCoins, totalFees);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetBlockDetailsByBlockHeightFromCallbackRIBS {\n");
-    sb.append("    bits: ").append(toIndentedString(bits)).append("\n");
-    sb.append("    chainwork: ").append(toIndentedString(chainwork)).append("\n");
-    sb.append("    difficulty: ").append(toIndentedString(difficulty)).append("\n");
-    sb.append("    merkleRoot: ").append(toIndentedString(merkleRoot)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    strippedSize: ").append(toIndentedString(strippedSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    versionHex: ").append(toIndentedString(versionHex)).append("\n");
-    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-    sb.append("    strippedsize: ").append(toIndentedString(strippedsize)).append("\n");
-    sb.append("    extraData: ").append(toIndentedString(extraData)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
-    sb.append("    minedInSeconds: ").append(toIndentedString(minedInSeconds)).append("\n");
-    sb.append("    sha3Uncles: ").append(toIndentedString(sha3Uncles)).append("\n");
-    sb.append("    totalDifficulty: ").append(toIndentedString(totalDifficulty)).append("\n");
-    sb.append("    uncles: ").append(toIndentedString(uncles)).append("\n");
-    sb.append("    dsBlock: ").append(toIndentedString(dsBlock)).append("\n");
-    sb.append("    dsDifficulty: ").append(toIndentedString(dsDifficulty)).append("\n");
-    sb.append("    dsLeader: ").append(toIndentedString(dsLeader)).append("\n");
-    sb.append("    microBlocks: ").append(toIndentedString(microBlocks)).append("\n");
-    sb.append("    totalCoins: ").append(toIndentedString(totalCoins)).append("\n");
-    sb.append("    totalFees: ").append(toIndentedString(totalFees)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSX o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetBlockDetailsByBlockHeightFromCallbackRIBS(GetBlockDetailsByBlockHeightFromCallbackRIBSZ2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSB", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSB>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSBC", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSBC>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSBSC", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSBSC>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSD", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSD>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSD2", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSD2>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSE", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSE>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSEC", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSEC>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSL", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSL>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSX", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSX>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSZ", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSZ>() {
+        });
+        schemas.put("GetBlockDetailsByBlockHeightFromCallbackRIBSZ2", new GenericType<GetBlockDetailsByBlockHeightFromCallbackRIBSZ2>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return GetBlockDetailsByBlockHeightFromCallbackRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * GetBlockDetailsByBlockHeightFromCallbackRIBSB, GetBlockDetailsByBlockHeightFromCallbackRIBSBC, GetBlockDetailsByBlockHeightFromCallbackRIBSBSC, GetBlockDetailsByBlockHeightFromCallbackRIBSD, GetBlockDetailsByBlockHeightFromCallbackRIBSD2, GetBlockDetailsByBlockHeightFromCallbackRIBSE, GetBlockDetailsByBlockHeightFromCallbackRIBSEC, GetBlockDetailsByBlockHeightFromCallbackRIBSL, GetBlockDetailsByBlockHeightFromCallbackRIBSX, GetBlockDetailsByBlockHeightFromCallbackRIBSZ, GetBlockDetailsByBlockHeightFromCallbackRIBSZ2
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSX) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetBlockDetailsByBlockHeightFromCallbackRIBSZ2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be GetBlockDetailsByBlockHeightFromCallbackRIBSB, GetBlockDetailsByBlockHeightFromCallbackRIBSBC, GetBlockDetailsByBlockHeightFromCallbackRIBSBSC, GetBlockDetailsByBlockHeightFromCallbackRIBSD, GetBlockDetailsByBlockHeightFromCallbackRIBSD2, GetBlockDetailsByBlockHeightFromCallbackRIBSE, GetBlockDetailsByBlockHeightFromCallbackRIBSEC, GetBlockDetailsByBlockHeightFromCallbackRIBSL, GetBlockDetailsByBlockHeightFromCallbackRIBSX, GetBlockDetailsByBlockHeightFromCallbackRIBSZ, GetBlockDetailsByBlockHeightFromCallbackRIBSZ2");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * GetBlockDetailsByBlockHeightFromCallbackRIBSB, GetBlockDetailsByBlockHeightFromCallbackRIBSBC, GetBlockDetailsByBlockHeightFromCallbackRIBSBSC, GetBlockDetailsByBlockHeightFromCallbackRIBSD, GetBlockDetailsByBlockHeightFromCallbackRIBSD2, GetBlockDetailsByBlockHeightFromCallbackRIBSE, GetBlockDetailsByBlockHeightFromCallbackRIBSEC, GetBlockDetailsByBlockHeightFromCallbackRIBSL, GetBlockDetailsByBlockHeightFromCallbackRIBSX, GetBlockDetailsByBlockHeightFromCallbackRIBSZ, GetBlockDetailsByBlockHeightFromCallbackRIBSZ2
+     *
+     * @return The actual instance (GetBlockDetailsByBlockHeightFromCallbackRIBSB, GetBlockDetailsByBlockHeightFromCallbackRIBSBC, GetBlockDetailsByBlockHeightFromCallbackRIBSBSC, GetBlockDetailsByBlockHeightFromCallbackRIBSD, GetBlockDetailsByBlockHeightFromCallbackRIBSD2, GetBlockDetailsByBlockHeightFromCallbackRIBSE, GetBlockDetailsByBlockHeightFromCallbackRIBSEC, GetBlockDetailsByBlockHeightFromCallbackRIBSL, GetBlockDetailsByBlockHeightFromCallbackRIBSX, GetBlockDetailsByBlockHeightFromCallbackRIBSZ, GetBlockDetailsByBlockHeightFromCallbackRIBSZ2)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSB`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSB`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSB`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSB getGetBlockDetailsByBlockHeightFromCallbackRIBSB() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSBC`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSBC`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSBC`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSBC getGetBlockDetailsByBlockHeightFromCallbackRIBSBC() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSBSC`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSBSC`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSBSC`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSBSC getGetBlockDetailsByBlockHeightFromCallbackRIBSBSC() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSD`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSD`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSD`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSD getGetBlockDetailsByBlockHeightFromCallbackRIBSD() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSD2`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSD2`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSD2`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSD2 getGetBlockDetailsByBlockHeightFromCallbackRIBSD2() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSE`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSE`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSE`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSE getGetBlockDetailsByBlockHeightFromCallbackRIBSE() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSEC`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSEC`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSEC`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSEC getGetBlockDetailsByBlockHeightFromCallbackRIBSEC() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSL`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSL`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSL`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSL getGetBlockDetailsByBlockHeightFromCallbackRIBSL() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSX`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSX`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSX`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSX`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSX getGetBlockDetailsByBlockHeightFromCallbackRIBSX() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSX)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSZ`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSZ`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSZ`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSZ getGetBlockDetailsByBlockHeightFromCallbackRIBSZ() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSZ)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSZ2`. If the actual instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSZ2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetBlockDetailsByBlockHeightFromCallbackRIBSZ2`
+     * @throws ClassCastException if the instance is not `GetBlockDetailsByBlockHeightFromCallbackRIBSZ2`
+     */
+    public GetBlockDetailsByBlockHeightFromCallbackRIBSZ2 getGetBlockDetailsByBlockHeightFromCallbackRIBSZ2() throws ClassCastException {
+        return (GetBlockDetailsByBlockHeightFromCallbackRIBSZ2)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetBlockDetailsByBlockHeightFromCallbackRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSB
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSBC
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSBSC
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSD
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSD2
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSE
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSEC
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSL
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSX
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSX.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSZ
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetBlockDetailsByBlockHeightFromCallbackRIBSZ2
+    try {
+      GetBlockDetailsByBlockHeightFromCallbackRIBSZ2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHeightFromCallbackRIBS with oneOf schemas: GetBlockDetailsByBlockHeightFromCallbackRIBSB, GetBlockDetailsByBlockHeightFromCallbackRIBSBC, GetBlockDetailsByBlockHeightFromCallbackRIBSBSC, GetBlockDetailsByBlockHeightFromCallbackRIBSD, GetBlockDetailsByBlockHeightFromCallbackRIBSD2, GetBlockDetailsByBlockHeightFromCallbackRIBSE, GetBlockDetailsByBlockHeightFromCallbackRIBSEC, GetBlockDetailsByBlockHeightFromCallbackRIBSL, GetBlockDetailsByBlockHeightFromCallbackRIBSX, GetBlockDetailsByBlockHeightFromCallbackRIBSZ, GetBlockDetailsByBlockHeightFromCallbackRIBSZ2. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of GetBlockDetailsByBlockHeightFromCallbackRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetBlockDetailsByBlockHeightFromCallbackRIBS
+  * @throws IOException if the JSON string is invalid with respect to GetBlockDetailsByBlockHeightFromCallbackRIBS
+  */
+  public static GetBlockDetailsByBlockHeightFromCallbackRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetBlockDetailsByBlockHeightFromCallbackRIBS.class);
+  }
+
+ /**
+  * Convert an instance of GetBlockDetailsByBlockHeightFromCallbackRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

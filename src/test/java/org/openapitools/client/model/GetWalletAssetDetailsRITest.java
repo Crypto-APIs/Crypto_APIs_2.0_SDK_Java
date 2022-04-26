@@ -28,9 +28,8 @@ import org.openapitools.client.model.GetWalletAssetDetailsRIFungibleTokens;
 import org.openapitools.client.model.GetWalletAssetDetailsRINonFungibleTokens;
 import org.openapitools.client.model.GetWalletAssetDetailsRIRecievedConfirmedAmount;
 import org.openapitools.client.model.GetWalletAssetDetailsRISentConfirmedAmount;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

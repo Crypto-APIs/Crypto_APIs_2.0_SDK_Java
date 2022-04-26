@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**CreateCoinsTransactionRequestFromAddressRI**](CreateCoinsTransactionRequestFromAddressRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**CreateCoinsTransactionRequestFromAddressRI**](CreateCoinsTransactionRequestFromAddressRI.md) |  |  |
 
 
 

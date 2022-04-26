@@ -15,16 +15,16 @@ package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.GetInternalTransactionByTransactionHashAndOperationIdR;
-import org.openapitools.client.model.InlineResponse40048;
-import org.openapitools.client.model.InlineResponse40050;
-import org.openapitools.client.model.InlineResponse40051;
-import org.openapitools.client.model.InlineResponse40148;
-import org.openapitools.client.model.InlineResponse40150;
-import org.openapitools.client.model.InlineResponse40151;
+import org.openapitools.client.model.InlineResponse40052;
+import org.openapitools.client.model.InlineResponse40054;
+import org.openapitools.client.model.InlineResponse40056;
+import org.openapitools.client.model.InlineResponse40152;
+import org.openapitools.client.model.InlineResponse40154;
+import org.openapitools.client.model.InlineResponse40156;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40348;
-import org.openapitools.client.model.InlineResponse40350;
-import org.openapitools.client.model.InlineResponse40351;
+import org.openapitools.client.model.InlineResponse40352;
+import org.openapitools.client.model.InlineResponse40354;
+import org.openapitools.client.model.InlineResponse40356;
 import org.openapitools.client.model.InlineResponse4043;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
@@ -33,8 +33,8 @@ import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListInternalTransactionDetailsByTransactionHashR;
 import org.openapitools.client.model.ListInternalTransactionsByAddressR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -44,19 +44,17 @@ import java.util.Map;
 /**
  * API tests for InternalApi
  */
-@Ignore
+@Disabled
 public class InternalApiTest {
 
     private final InternalApi api = new InternalApi();
 
-    
     /**
      * Get Internal Transaction by Transaction Hash and Operation Id
      *
      * Through this endpoint customers can obtain detailed information about a specific Internal Transaction by using the attributes &#x60;transactionHash&#x60;  (the parent transaction&#39;s Hash) and &#x60;operationId&#x60; (type trace address).    An internal transaction is the result of a smart contract being triggered by an EOA or a subsequent contract call.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getInternalTransactionByTransactionHashAndOperationIdTest() throws ApiException {
@@ -65,17 +63,16 @@ public class InternalApiTest {
         String operationId = null;
         String transactionHash = null;
         String context = null;
-                GetInternalTransactionByTransactionHashAndOperationIdR response = api.getInternalTransactionByTransactionHashAndOperationId(blockchain, network, operationId, transactionHash, context);
+        GetInternalTransactionByTransactionHashAndOperationIdR response = api.getInternalTransactionByTransactionHashAndOperationId(blockchain, network, operationId, transactionHash, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Internal Transaction Details by Transaction Hash
      *
      * Through this endpoint customers can list internal transactions along with their details by a specific attribute &#x60;transactionHash&#x60;, which is the parent transaction&#39;s Hash.    An internal transaction is the result of a smart contract being triggered by an EOA or a subsequent contract call.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listInternalTransactionDetailsByTransactionHashTest() throws ApiException {
@@ -85,17 +82,16 @@ public class InternalApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListInternalTransactionDetailsByTransactionHashR response = api.listInternalTransactionDetailsByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
+        ListInternalTransactionDetailsByTransactionHashR response = api.listInternalTransactionDetailsByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Internal Transactions By Address
      *
      * Through this endpoint customers can list internal transactions by the &#x60;address&#x60; attribute.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listInternalTransactionsByAddressTest() throws ApiException {
@@ -105,8 +101,8 @@ public class InternalApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListInternalTransactionsByAddressR response = api.listInternalTransactionsByAddress(blockchain, network, address, context, limit, offset);
+        ListInternalTransactionsByAddressR response = api.listInternalTransactionsByAddress(blockchain, network, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
 }

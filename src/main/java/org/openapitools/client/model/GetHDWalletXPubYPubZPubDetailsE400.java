@@ -34,143 +34,505 @@ import org.openapitools.client.model.LimitGreaterThanAllowed;
 import org.openapitools.client.model.UriNotFound;
 import org.openapitools.client.model.XpubNotSynced;
 
-/**
- * GetHDWalletXPubYPubZPubDetailsE400
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class GetHDWalletXPubYPubZPubDetailsE400 {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_DETAILS = "details";
-  @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<BannedIpAddressDetails> details = null;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public GetHDWalletXPubYPubZPubDetailsE400() { 
-  }
+import io.cryptoapis.sdk.JSON;
 
-  public GetHDWalletXPubYPubZPubDetailsE400 code(String code) {
-    
-    this.code = code;
-    return this;
-  }
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class GetHDWalletXPubYPubZPubDetailsE400 extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetHDWalletXPubYPubZPubDetailsE400.class.getName());
 
-   /**
-   * Specifies an error code, e.g. error 404.
-   * @return code
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "xpub_not_synced", required = true, value = "Specifies an error code, e.g. error 404.")
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetHDWalletXPubYPubZPubDetailsE400.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetHDWalletXPubYPubZPubDetailsE400' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<InvalidBlockchain> adapterInvalidBlockchain = gson.getDelegateAdapter(this, TypeToken.get(InvalidBlockchain.class));
+            final TypeAdapter<InvalidNetwork> adapterInvalidNetwork = gson.getDelegateAdapter(this, TypeToken.get(InvalidNetwork.class));
+            final TypeAdapter<InvalidPagination> adapterInvalidPagination = gson.getDelegateAdapter(this, TypeToken.get(InvalidPagination.class));
+            final TypeAdapter<InvalidXpub> adapterInvalidXpub = gson.getDelegateAdapter(this, TypeToken.get(InvalidXpub.class));
+            final TypeAdapter<LimitGreaterThanAllowed> adapterLimitGreaterThanAllowed = gson.getDelegateAdapter(this, TypeToken.get(LimitGreaterThanAllowed.class));
+            final TypeAdapter<UriNotFound> adapterUriNotFound = gson.getDelegateAdapter(this, TypeToken.get(UriNotFound.class));
+            final TypeAdapter<XpubNotSynced> adapterXpubNotSynced = gson.getDelegateAdapter(this, TypeToken.get(XpubNotSynced.class));
 
-  public String getCode() {
-    return code;
-  }
+            return (TypeAdapter<T>) new TypeAdapter<GetHDWalletXPubYPubZPubDetailsE400>() {
+                @Override
+                public void write(JsonWriter out, GetHDWalletXPubYPubZPubDetailsE400 value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `InvalidBlockchain`
+                    if (value.getActualInstance() instanceof InvalidBlockchain) {
+                        JsonObject obj = adapterInvalidBlockchain.toJsonTree((InvalidBlockchain)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+                    // check if the actual instance is of the type `InvalidNetwork`
+                    if (value.getActualInstance() instanceof InvalidNetwork) {
+                        JsonObject obj = adapterInvalidNetwork.toJsonTree((InvalidNetwork)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `InvalidPagination`
+                    if (value.getActualInstance() instanceof InvalidPagination) {
+                        JsonObject obj = adapterInvalidPagination.toJsonTree((InvalidPagination)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public GetHDWalletXPubYPubZPubDetailsE400 message(String message) {
-    
-    this.message = message;
-    return this;
-  }
+                    // check if the actual instance is of the type `InvalidXpub`
+                    if (value.getActualInstance() instanceof InvalidXpub) {
+                        JsonObject obj = adapterInvalidXpub.toJsonTree((InvalidXpub)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-   /**
-   * Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.
-   * @return message
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "This xPub is not yet synced, please first use endpoint “Sync HD (xPub, yPub, zPub) wallet” to synchronize it.", required = true, value = "Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.")
+                    // check if the actual instance is of the type `LimitGreaterThanAllowed`
+                    if (value.getActualInstance() instanceof LimitGreaterThanAllowed) {
+                        JsonObject obj = adapterLimitGreaterThanAllowed.toJsonTree((LimitGreaterThanAllowed)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public String getMessage() {
-    return message;
-  }
+                    // check if the actual instance is of the type `UriNotFound`
+                    if (value.getActualInstance() instanceof UriNotFound) {
+                        JsonObject obj = adapterUriNotFound.toJsonTree((UriNotFound)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `XpubNotSynced`
+                    if (value.getActualInstance() instanceof XpubNotSynced) {
+                        JsonObject obj = adapterXpubNotSynced.toJsonTree((XpubNotSynced)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: InvalidBlockchain, InvalidNetwork, InvalidPagination, InvalidXpub, LimitGreaterThanAllowed, UriNotFound, XpubNotSynced");
+                }
 
+                @Override
+                public GetHDWalletXPubYPubZPubDetailsE400 read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public GetHDWalletXPubYPubZPubDetailsE400 details(List<BannedIpAddressDetails> details) {
-    
-    this.details = details;
-    return this;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
-  public GetHDWalletXPubYPubZPubDetailsE400 addDetailsItem(BannedIpAddressDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<BannedIpAddressDetails>();
+                    // deserialize InvalidBlockchain
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidBlockchain.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidBlockchain;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidBlockchain'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidBlockchain'", e);
+                    }
+
+                    // deserialize InvalidNetwork
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidNetwork.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidNetwork;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidNetwork'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidNetwork'", e);
+                    }
+
+                    // deserialize InvalidPagination
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidPagination.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidPagination;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidPagination'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidPagination'", e);
+                    }
+
+                    // deserialize InvalidXpub
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidXpub.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidXpub;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidXpub'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidXpub'", e);
+                    }
+
+                    // deserialize LimitGreaterThanAllowed
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        LimitGreaterThanAllowed.validateJsonObject(jsonObject);
+                        actualAdapter = adapterLimitGreaterThanAllowed;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'LimitGreaterThanAllowed'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'LimitGreaterThanAllowed'", e);
+                    }
+
+                    // deserialize UriNotFound
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        UriNotFound.validateJsonObject(jsonObject);
+                        actualAdapter = adapterUriNotFound;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'UriNotFound'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'UriNotFound'", e);
+                    }
+
+                    // deserialize XpubNotSynced
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        XpubNotSynced.validateJsonObject(jsonObject);
+                        actualAdapter = adapterXpubNotSynced;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'XpubNotSynced'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'XpubNotSynced'", e);
+                    }
+
+                    if (match == 1) {
+                        GetHDWalletXPubYPubZPubDetailsE400 ret = new GetHDWalletXPubYPubZPubDetailsE400();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetHDWalletXPubYPubZPubDetailsE400: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.details.add(detailsItem);
-    return this;
-  }
 
-   /**
-   * Get details
-   * @return details
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<BannedIpAddressDetails> getDetails() {
-    return details;
-  }
-
-
-  public void setDetails(List<BannedIpAddressDetails> details) {
-    this.details = details;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public GetHDWalletXPubYPubZPubDetailsE400() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public GetHDWalletXPubYPubZPubDetailsE400(InvalidBlockchain o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    GetHDWalletXPubYPubZPubDetailsE400 getHDWalletXPubYPubZPubDetailsE400 = (GetHDWalletXPubYPubZPubDetailsE400) o;
-    return Objects.equals(this.code, getHDWalletXPubYPubZPubDetailsE400.code) &&
-        Objects.equals(this.message, getHDWalletXPubYPubZPubDetailsE400.message) &&
-        Objects.equals(this.details, getHDWalletXPubYPubZPubDetailsE400.details);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code, message, details);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetHDWalletXPubYPubZPubDetailsE400 {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public GetHDWalletXPubYPubZPubDetailsE400(InvalidNetwork o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public GetHDWalletXPubYPubZPubDetailsE400(InvalidPagination o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetHDWalletXPubYPubZPubDetailsE400(InvalidXpub o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetHDWalletXPubYPubZPubDetailsE400(LimitGreaterThanAllowed o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetHDWalletXPubYPubZPubDetailsE400(UriNotFound o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetHDWalletXPubYPubZPubDetailsE400(XpubNotSynced o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("InvalidBlockchain", new GenericType<InvalidBlockchain>() {
+        });
+        schemas.put("InvalidNetwork", new GenericType<InvalidNetwork>() {
+        });
+        schemas.put("InvalidPagination", new GenericType<InvalidPagination>() {
+        });
+        schemas.put("InvalidXpub", new GenericType<InvalidXpub>() {
+        });
+        schemas.put("LimitGreaterThanAllowed", new GenericType<LimitGreaterThanAllowed>() {
+        });
+        schemas.put("UriNotFound", new GenericType<UriNotFound>() {
+        });
+        schemas.put("XpubNotSynced", new GenericType<XpubNotSynced>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return GetHDWalletXPubYPubZPubDetailsE400.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * InvalidBlockchain, InvalidNetwork, InvalidPagination, InvalidXpub, LimitGreaterThanAllowed, UriNotFound, XpubNotSynced
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof InvalidBlockchain) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof InvalidNetwork) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof InvalidPagination) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof InvalidXpub) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof LimitGreaterThanAllowed) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof UriNotFound) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof XpubNotSynced) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be InvalidBlockchain, InvalidNetwork, InvalidPagination, InvalidXpub, LimitGreaterThanAllowed, UriNotFound, XpubNotSynced");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * InvalidBlockchain, InvalidNetwork, InvalidPagination, InvalidXpub, LimitGreaterThanAllowed, UriNotFound, XpubNotSynced
+     *
+     * @return The actual instance (InvalidBlockchain, InvalidNetwork, InvalidPagination, InvalidXpub, LimitGreaterThanAllowed, UriNotFound, XpubNotSynced)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidBlockchain`. If the actual instance is not `InvalidBlockchain`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidBlockchain`
+     * @throws ClassCastException if the instance is not `InvalidBlockchain`
+     */
+    public InvalidBlockchain getInvalidBlockchain() throws ClassCastException {
+        return (InvalidBlockchain)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidNetwork`. If the actual instance is not `InvalidNetwork`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidNetwork`
+     * @throws ClassCastException if the instance is not `InvalidNetwork`
+     */
+    public InvalidNetwork getInvalidNetwork() throws ClassCastException {
+        return (InvalidNetwork)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidPagination`. If the actual instance is not `InvalidPagination`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidPagination`
+     * @throws ClassCastException if the instance is not `InvalidPagination`
+     */
+    public InvalidPagination getInvalidPagination() throws ClassCastException {
+        return (InvalidPagination)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidXpub`. If the actual instance is not `InvalidXpub`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidXpub`
+     * @throws ClassCastException if the instance is not `InvalidXpub`
+     */
+    public InvalidXpub getInvalidXpub() throws ClassCastException {
+        return (InvalidXpub)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `LimitGreaterThanAllowed`. If the actual instance is not `LimitGreaterThanAllowed`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `LimitGreaterThanAllowed`
+     * @throws ClassCastException if the instance is not `LimitGreaterThanAllowed`
+     */
+    public LimitGreaterThanAllowed getLimitGreaterThanAllowed() throws ClassCastException {
+        return (LimitGreaterThanAllowed)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `UriNotFound`. If the actual instance is not `UriNotFound`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `UriNotFound`
+     * @throws ClassCastException if the instance is not `UriNotFound`
+     */
+    public UriNotFound getUriNotFound() throws ClassCastException {
+        return (UriNotFound)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `XpubNotSynced`. If the actual instance is not `XpubNotSynced`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `XpubNotSynced`
+     * @throws ClassCastException if the instance is not `XpubNotSynced`
+     */
+    public XpubNotSynced getXpubNotSynced() throws ClassCastException {
+        return (XpubNotSynced)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetHDWalletXPubYPubZPubDetailsE400
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with InvalidBlockchain
+    try {
+      InvalidBlockchain.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with InvalidNetwork
+    try {
+      InvalidNetwork.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with InvalidPagination
+    try {
+      InvalidPagination.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with InvalidXpub
+    try {
+      InvalidXpub.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with LimitGreaterThanAllowed
+    try {
+      LimitGreaterThanAllowed.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with UriNotFound
+    try {
+      UriNotFound.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with XpubNotSynced
+    try {
+      XpubNotSynced.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for GetHDWalletXPubYPubZPubDetailsE400 with oneOf schemas: InvalidBlockchain, InvalidNetwork, InvalidPagination, InvalidXpub, LimitGreaterThanAllowed, UriNotFound, XpubNotSynced. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of GetHDWalletXPubYPubZPubDetailsE400 given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetHDWalletXPubYPubZPubDetailsE400
+  * @throws IOException if the JSON string is invalid with respect to GetHDWalletXPubYPubZPubDetailsE400
+  */
+  public static GetHDWalletXPubYPubZPubDetailsE400 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetHDWalletXPubYPubZPubDetailsE400.class);
+  }
+
+ /**
+  * Convert an instance of GetHDWalletXPubYPubZPubDetailsE400 to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

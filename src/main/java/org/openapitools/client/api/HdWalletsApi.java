@@ -27,26 +27,36 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsR;
 import org.openapitools.client.model.GetHDWalletXPubYPubZPubDetailsR;
-import org.openapitools.client.model.InlineResponse40043;
-import org.openapitools.client.model.InlineResponse40047;
-import org.openapitools.client.model.InlineResponse40049;
-import org.openapitools.client.model.InlineResponse40143;
-import org.openapitools.client.model.InlineResponse40147;
-import org.openapitools.client.model.InlineResponse40149;
+import org.openapitools.client.model.InlineResponse40046;
+import org.openapitools.client.model.InlineResponse40050;
+import org.openapitools.client.model.InlineResponse40051;
+import org.openapitools.client.model.InlineResponse40053;
+import org.openapitools.client.model.InlineResponse40055;
+import org.openapitools.client.model.InlineResponse40146;
+import org.openapitools.client.model.InlineResponse40150;
+import org.openapitools.client.model.InlineResponse40151;
+import org.openapitools.client.model.InlineResponse40153;
+import org.openapitools.client.model.InlineResponse40155;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40343;
-import org.openapitools.client.model.InlineResponse40347;
-import org.openapitools.client.model.InlineResponse40349;
+import org.openapitools.client.model.InlineResponse40346;
+import org.openapitools.client.model.InlineResponse40350;
+import org.openapitools.client.model.InlineResponse40351;
+import org.openapitools.client.model.InlineResponse40353;
+import org.openapitools.client.model.InlineResponse40355;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse4095;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse4221;
 import org.openapitools.client.model.InlineResponse4222;
 import org.openapitools.client.model.InlineResponse4223;
+import org.openapitools.client.model.InlineResponse4224;
+import org.openapitools.client.model.InlineResponse4225;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsR;
+import org.openapitools.client.model.ListHDWalletXPubYPubZPubUTXOsR;
 import org.openapitools.client.model.SyncHDWalletXPubYPubZPubR;
 import org.openapitools.client.model.SyncHDWalletXPubYPubZPubRB;
 
@@ -55,6 +65,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class HdWalletsApi {
     private ApiClient localVarApiClient;
@@ -94,6 +105,205 @@ public class HdWalletsApi {
     }
 
     /**
+     * Build call for getHDWalletXPubYPubZPubAssets
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getHDWalletXPubYPubZPubAssetsCall(String blockchain, String extendedPublicKey, String network, String context, String derivation, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/assets"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "extendedPublicKey" + "\\}", localVarApiClient.escapeString(extendedPublicKey.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (derivation != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("derivation", derivation));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getHDWalletXPubYPubZPubAssetsValidateBeforeCall(String blockchain, String extendedPublicKey, String network, String context, String derivation, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling getHDWalletXPubYPubZPubAssets(Async)");
+        }
+        
+        // verify the required parameter 'extendedPublicKey' is set
+        if (extendedPublicKey == null) {
+            throw new ApiException("Missing the required parameter 'extendedPublicKey' when calling getHDWalletXPubYPubZPubAssets(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling getHDWalletXPubYPubZPubAssets(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getHDWalletXPubYPubZPubAssetsCall(blockchain, extendedPublicKey, network, context, derivation, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get HD Wallet (xPub, yPub, zPub) Assets
+     * This endpoint will return details on assets we support for a specified from the customer extended public key (xPub). These could be cryptocurrencies, fungible or non-fungible (NFT) tokens. Each asset has a unique identifier - assetId, and a unique symbol in the form of a string, e.g. \&quot;USDT\&quot;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @return GetHDWalletXPubYPubZPubAssetsR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public GetHDWalletXPubYPubZPubAssetsR getHDWalletXPubYPubZPubAssets(String blockchain, String extendedPublicKey, String network, String context, String derivation) throws ApiException {
+        ApiResponse<GetHDWalletXPubYPubZPubAssetsR> localVarResp = getHDWalletXPubYPubZPubAssetsWithHttpInfo(blockchain, extendedPublicKey, network, context, derivation);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get HD Wallet (xPub, yPub, zPub) Assets
+     * This endpoint will return details on assets we support for a specified from the customer extended public key (xPub). These could be cryptocurrencies, fungible or non-fungible (NFT) tokens. Each asset has a unique identifier - assetId, and a unique symbol in the form of a string, e.g. \&quot;USDT\&quot;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @return ApiResponse&lt;GetHDWalletXPubYPubZPubAssetsR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetHDWalletXPubYPubZPubAssetsR> getHDWalletXPubYPubZPubAssetsWithHttpInfo(String blockchain, String extendedPublicKey, String network, String context, String derivation) throws ApiException {
+        okhttp3.Call localVarCall = getHDWalletXPubYPubZPubAssetsValidateBeforeCall(blockchain, extendedPublicKey, network, context, derivation, null);
+        Type localVarReturnType = new TypeToken<GetHDWalletXPubYPubZPubAssetsR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get HD Wallet (xPub, yPub, zPub) Assets (asynchronously)
+     * This endpoint will return details on assets we support for a specified from the customer extended public key (xPub). These could be cryptocurrencies, fungible or non-fungible (NFT) tokens. Each asset has a unique identifier - assetId, and a unique symbol in the form of a string, e.g. \&quot;USDT\&quot;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getHDWalletXPubYPubZPubAssetsAsync(String blockchain, String extendedPublicKey, String network, String context, String derivation, final ApiCallback<GetHDWalletXPubYPubZPubAssetsR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getHDWalletXPubYPubZPubAssetsValidateBeforeCall(blockchain, extendedPublicKey, network, context, derivation, _callback);
+        Type localVarReturnType = new TypeToken<GetHDWalletXPubYPubZPubAssetsR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getHDWalletXPubYPubZPubDetails
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
@@ -120,7 +330,6 @@ public class HdWalletsApi {
      */
     public okhttp3.Call getHDWalletXPubYPubZPubDetailsCall(String blockchain, String extendedPublicKey, String network, String context, String derivation, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -167,7 +376,7 @@ public class HdWalletsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -322,7 +531,6 @@ public class HdWalletsApi {
      */
     public okhttp3.Call listHDWalletXPubYPubZPubTransactionsCall(String blockchain, String extendedPublicKey, String network, String context, String derivation, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -377,7 +585,7 @@ public class HdWalletsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -510,6 +718,221 @@ public class HdWalletsApi {
         return localVarCall;
     }
     /**
+     * Build call for listHDWalletXPubYPubZPubUTXOs
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listHDWalletXPubYPubZPubUTXOsCall(String blockchain, String extendedPublicKey, String network, String context, String derivation, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/utxos"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "extendedPublicKey" + "\\}", localVarApiClient.escapeString(extendedPublicKey.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (derivation != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("derivation", derivation));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listHDWalletXPubYPubZPubUTXOsValidateBeforeCall(String blockchain, String extendedPublicKey, String network, String context, String derivation, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listHDWalletXPubYPubZPubUTXOs(Async)");
+        }
+        
+        // verify the required parameter 'extendedPublicKey' is set
+        if (extendedPublicKey == null) {
+            throw new ApiException("Missing the required parameter 'extendedPublicKey' when calling listHDWalletXPubYPubZPubUTXOs(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listHDWalletXPubYPubZPubUTXOs(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listHDWalletXPubYPubZPubUTXOsCall(blockchain, extendedPublicKey, network, context, derivation, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List HD Wallet (xPub, yPub, zPub) UTXOs
+     * Through this endpoint you can list HD wallet&#39;s UTXOs (Unspent Transaction Outputs) by providing extended public key of an already synced HD wallet.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListHDWalletXPubYPubZPubUTXOsR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListHDWalletXPubYPubZPubUTXOsR listHDWalletXPubYPubZPubUTXOs(String blockchain, String extendedPublicKey, String network, String context, String derivation, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ListHDWalletXPubYPubZPubUTXOsR> localVarResp = listHDWalletXPubYPubZPubUTXOsWithHttpInfo(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List HD Wallet (xPub, yPub, zPub) UTXOs
+     * Through this endpoint you can list HD wallet&#39;s UTXOs (Unspent Transaction Outputs) by providing extended public key of an already synced HD wallet.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListHDWalletXPubYPubZPubUTXOsR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListHDWalletXPubYPubZPubUTXOsR> listHDWalletXPubYPubZPubUTXOsWithHttpInfo(String blockchain, String extendedPublicKey, String network, String context, String derivation, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listHDWalletXPubYPubZPubUTXOsValidateBeforeCall(blockchain, extendedPublicKey, network, context, derivation, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListHDWalletXPubYPubZPubUTXOsR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List HD Wallet (xPub, yPub, zPub) UTXOs (asynchronously)
+     * Through this endpoint you can list HD wallet&#39;s UTXOs (Unspent Transaction Outputs) by providing extended public key of an already synced HD wallet.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param derivation The way how the HD walled derives, for example when the type is ACCOUNT, it derives change and receive addresses while when the type is BIP32 it derives directly. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> 422 </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listHDWalletXPubYPubZPubUTXOsAsync(String blockchain, String extendedPublicKey, String network, String context, String derivation, Integer limit, Integer offset, final ApiCallback<ListHDWalletXPubYPubZPubUTXOsR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listHDWalletXPubYPubZPubUTXOsValidateBeforeCall(blockchain, extendedPublicKey, network, context, derivation, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListHDWalletXPubYPubZPubUTXOsR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for syncHDWalletXPubYPubZPub
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
@@ -535,7 +958,6 @@ public class HdWalletsApi {
      */
     public okhttp3.Call syncHDWalletXPubYPubZPubCall(String blockchain, String network, String context, SyncHDWalletXPubYPubZPubRB syncHDWalletXPubYPubZPubRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -577,7 +999,7 @@ public class HdWalletsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

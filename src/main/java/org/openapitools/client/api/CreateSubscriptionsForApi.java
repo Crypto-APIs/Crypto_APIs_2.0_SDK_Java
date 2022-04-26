@@ -27,37 +27,37 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse40058;
-import org.openapitools.client.model.InlineResponse40059;
-import org.openapitools.client.model.InlineResponse40060;
-import org.openapitools.client.model.InlineResponse40061;
-import org.openapitools.client.model.InlineResponse40062;
-import org.openapitools.client.model.InlineResponse40063;
-import org.openapitools.client.model.InlineResponse40064;
-import org.openapitools.client.model.InlineResponse40065;
+import org.openapitools.client.model.InlineResponse40071;
+import org.openapitools.client.model.InlineResponse40072;
 import org.openapitools.client.model.InlineResponse40073;
 import org.openapitools.client.model.InlineResponse40074;
-import org.openapitools.client.model.InlineResponse40158;
-import org.openapitools.client.model.InlineResponse40159;
-import org.openapitools.client.model.InlineResponse40160;
-import org.openapitools.client.model.InlineResponse40161;
-import org.openapitools.client.model.InlineResponse40162;
-import org.openapitools.client.model.InlineResponse40163;
-import org.openapitools.client.model.InlineResponse40164;
-import org.openapitools.client.model.InlineResponse40165;
+import org.openapitools.client.model.InlineResponse40075;
+import org.openapitools.client.model.InlineResponse40076;
+import org.openapitools.client.model.InlineResponse40077;
+import org.openapitools.client.model.InlineResponse40078;
+import org.openapitools.client.model.InlineResponse40087;
+import org.openapitools.client.model.InlineResponse40088;
+import org.openapitools.client.model.InlineResponse40171;
+import org.openapitools.client.model.InlineResponse40172;
 import org.openapitools.client.model.InlineResponse40173;
 import org.openapitools.client.model.InlineResponse40174;
+import org.openapitools.client.model.InlineResponse40175;
+import org.openapitools.client.model.InlineResponse40176;
+import org.openapitools.client.model.InlineResponse40177;
+import org.openapitools.client.model.InlineResponse40178;
+import org.openapitools.client.model.InlineResponse40187;
+import org.openapitools.client.model.InlineResponse40188;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40358;
-import org.openapitools.client.model.InlineResponse40359;
-import org.openapitools.client.model.InlineResponse40360;
-import org.openapitools.client.model.InlineResponse40361;
-import org.openapitools.client.model.InlineResponse40362;
-import org.openapitools.client.model.InlineResponse40363;
-import org.openapitools.client.model.InlineResponse40364;
-import org.openapitools.client.model.InlineResponse40365;
+import org.openapitools.client.model.InlineResponse40371;
+import org.openapitools.client.model.InlineResponse40372;
 import org.openapitools.client.model.InlineResponse40373;
 import org.openapitools.client.model.InlineResponse40374;
+import org.openapitools.client.model.InlineResponse40375;
+import org.openapitools.client.model.InlineResponse40376;
+import org.openapitools.client.model.InlineResponse40377;
+import org.openapitools.client.model.InlineResponse40378;
+import org.openapitools.client.model.InlineResponse40387;
+import org.openapitools.client.model.InlineResponse40388;
 import org.openapitools.client.model.InlineResponse40910;
 import org.openapitools.client.model.InlineResponse40911;
 import org.openapitools.client.model.InlineResponse40912;
@@ -98,6 +98,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class CreateSubscriptionsForApi {
     private ApiClient localVarApiClient;
@@ -162,7 +163,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call minedTransactionCall(String blockchain, String network, String context, MinedTransactionRB minedTransactionRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -204,7 +204,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -348,7 +348,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newBlockCall(String blockchain, String network, String context, NewBlockRB newBlockRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -390,7 +389,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -534,7 +533,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newConfirmedCoinsTransactionsCall(String blockchain, String network, String context, NewConfirmedCoinsTransactionsRB newConfirmedCoinsTransactionsRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -576,7 +574,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -720,7 +718,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newConfirmedCoinsTransactionsAndEachConfirmationCall(String blockchain, String network, String context, NewConfirmedCoinsTransactionsAndEachConfirmationRB newConfirmedCoinsTransactionsAndEachConfirmationRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -762,7 +759,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -906,7 +903,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newConfirmedInternalTransactionsCall(String blockchain, String network, String context, NewConfirmedInternalTransactionsRB newConfirmedInternalTransactionsRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -948,7 +944,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1092,7 +1088,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newConfirmedInternalTransactionsAndEachConfirmationCall(String blockchain, String network, String context, NewConfirmedInternalTransactionsAndEachConfirmationRB newConfirmedInternalTransactionsAndEachConfirmationRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1134,7 +1129,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1278,7 +1273,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newConfirmedTokensTransactionsCall(String blockchain, String network, String context, NewConfirmedTokensTransactionsRB newConfirmedTokensTransactionsRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1320,7 +1314,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1464,7 +1458,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newConfirmedTokensTransactionsAndEachConfirmationCall(String blockchain, String network, String context, NewConfirmedTokensTransactionsAndEachConfirmationRB newConfirmedTokensTransactionsAndEachConfirmationRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1506,7 +1499,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1650,7 +1643,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newUnconfirmedCoinsTransactionsCall(String blockchain, String network, String context, NewUnconfirmedCoinsTransactionsRB newUnconfirmedCoinsTransactionsRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1692,7 +1684,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1836,7 +1828,6 @@ public class CreateSubscriptionsForApi {
      */
     public okhttp3.Call newUnconfirmedTokensTransactionsCall(String blockchain, String network, String context, NewUnconfirmedTokensTransactionsRB newUnconfirmedTokensTransactionsRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1878,7 +1869,7 @@ public class CreateSubscriptionsForApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

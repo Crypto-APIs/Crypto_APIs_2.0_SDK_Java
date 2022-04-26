@@ -24,9 +24,8 @@ import java.io.IOException;
 import org.openapitools.client.model.ListAssetsDetailsRIAssetLogo;
 import org.openapitools.client.model.ListAssetsDetailsRILatestRate;
 import org.openapitools.client.model.ListAssetsDetailsRIS;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

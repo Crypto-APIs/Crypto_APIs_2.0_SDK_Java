@@ -42,711 +42,605 @@ import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSECF
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSL;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSZ;
 
-/**
- * ListUnconfirmedTransactionsByAddressRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class ListUnconfirmedTransactionsByAddressRIBS {
-  public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
-  @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
-  @SerializedName(SERIALIZED_NAME_V_SIZE)
-  private Integer vSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VIN = "vin";
-  @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVin>();
-
-  public static final String SERIALIZED_NAME_VOUT = "vout";
-  @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVout>();
-
-  public static final String SERIALIZED_NAME_FEE = "fee";
-  @SerializedName(SERIALIZED_NAME_FEE)
-  private ListUnconfirmedTransactionsByAddressRIBSECFee fee;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private String gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
-  @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private ListConfirmedTransactionsByAddressRIBSBSCGasPrice gasPrice;
-
-  public static final String SERIALIZED_NAME_INPUT_DATA = "inputData";
-  @SerializedName(SERIALIZED_NAME_INPUT_DATA)
-  private String inputData;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
-  private String transactionStatus;
-
-  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
-  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
-  private String bindingSig;
-
-  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
-  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
-  private Integer expiryHeight;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
-  private String joinSplitPubKey;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
-  private String joinSplitSig;
-
-  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
-  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
-  private Boolean overwintered;
-
-  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
-  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<ListConfirmedTransactionsByAddressRIBSZVJoinSplit> vJoinSplit = new ArrayList<ListConfirmedTransactionsByAddressRIBSZVJoinSplit>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
-
-  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
-  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
-  private String valueBalance;
-
-  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
-  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
-  private String versionGroupId;
-
-  public ListUnconfirmedTransactionsByAddressRIBS() { 
-  }
-
-  public ListUnconfirmedTransactionsByAddressRIBS locktime(Integer locktime) {
-    
-    this.locktime = locktime;
-    return this;
-  }
-
-   /**
-   * Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.
-   * @return locktime
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1781965", required = true, value = "Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.")
-
-  public Integer getLocktime() {
-    return locktime;
-  }
-
-
-  public void setLocktime(Integer locktime) {
-    this.locktime = locktime;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of this transaction.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS vSize(Integer vSize) {
-    
-    this.vSize = vSize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getvSize() {
-    return vSize;
-  }
-
-
-  public void setvSize(Integer vSize) {
-    this.vSize = vSize;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Defines the version of the transaction.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Defines the version of the transaction.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS vin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    
-    this.vin = vin;
-    return this;
-  }
-
-  public ListUnconfirmedTransactionsByAddressRIBS addVinItem(GetTransactionDetailsByTransactionIDRIBSZVin vinItem) {
-    this.vin.add(vinItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction inputs
-   * @return vin
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVin> getVin() {
-    return vin;
-  }
-
-
-  public void setVin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    this.vin = vin;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS vout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
-    
-    this.vout = vout;
-    return this;
-  }
-
-  public ListUnconfirmedTransactionsByAddressRIBS addVoutItem(GetTransactionDetailsByTransactionIDRIBSZVout voutItem) {
-    this.vout.add(voutItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction outputs
-   * @return vout
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVout> getVout() {
-    return vout;
-  }
-
-
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
-    this.vout = vout;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS fee(ListUnconfirmedTransactionsByAddressRIBSECFee fee) {
-    
-    this.fee = fee;
-    return this;
-  }
-
-   /**
-   * Get fee
-   * @return fee
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public ListUnconfirmedTransactionsByAddressRIBSECFee getFee() {
-    return fee;
-  }
-
-
-  public void setFee(ListUnconfirmedTransactionsByAddressRIBSECFee fee) {
-    this.fee = fee;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS gasLimit(String gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the amount of gas used by this specific transaction alone.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
-
-  public String getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(String gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS gasPrice(ListConfirmedTransactionsByAddressRIBSBSCGasPrice gasPrice) {
-    
-    this.gasPrice = gasPrice;
-    return this;
-  }
-
-   /**
-   * Get gasPrice
-   * @return gasPrice
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public ListConfirmedTransactionsByAddressRIBSBSCGasPrice getGasPrice() {
-    return gasPrice;
-  }
-
-
-  public void setGasPrice(ListConfirmedTransactionsByAddressRIBSBSCGasPrice gasPrice) {
-    this.gasPrice = gasPrice;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS inputData(String inputData) {
-    
-    this.inputData = inputData;
-    return this;
-  }
-
-   /**
-   * Represents additional information that is required for the transaction.
-   * @return inputData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x", required = true, value = "Represents additional information that is required for the transaction.")
-
-  public String getInputData() {
-    return inputData;
-  }
-
-
-  public void setInputData(String inputData) {
-    this.inputData = inputData;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS nonce(Integer nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "25341", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
-
-  public Integer getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(Integer nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS transactionStatus(String transactionStatus) {
-    
-    this.transactionStatus = transactionStatus;
-    return this;
-  }
-
-   /**
-   * String representation of the transaction status
-   * @return transactionStatus
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1", required = true, value = "String representation of the transaction status")
-
-  public String getTransactionStatus() {
-    return transactionStatus;
-  }
-
-
-  public void setTransactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS bindingSig(String bindingSig) {
-    
-    this.bindingSig = bindingSig;
-    return this;
-  }
-
-   /**
-   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
-   * @return bindingSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
-
-  public String getBindingSig() {
-    return bindingSig;
-  }
-
-
-  public void setBindingSig(String bindingSig) {
-    this.bindingSig = bindingSig;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS expiryHeight(Integer expiryHeight) {
-    
-    this.expiryHeight = expiryHeight;
-    return this;
-  }
-
-   /**
-   * Represents a block height after which the transaction will expire.
-   * @return expiryHeight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
-
-  public Integer getExpiryHeight() {
-    return expiryHeight;
-  }
-
-
-  public void setExpiryHeight(Integer expiryHeight) {
-    this.expiryHeight = expiryHeight;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS joinSplitPubKey(String joinSplitPubKey) {
-    
-    this.joinSplitPubKey = joinSplitPubKey;
-    return this;
-  }
-
-   /**
-   * Represents an encoding of a JoinSplitSig public validating key.
-   * @return joinSplitPubKey
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
-
-  public String getJoinSplitPubKey() {
-    return joinSplitPubKey;
-  }
-
-
-  public void setJoinSplitPubKey(String joinSplitPubKey) {
-    this.joinSplitPubKey = joinSplitPubKey;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS joinSplitSig(String joinSplitSig) {
-    
-    this.joinSplitSig = joinSplitSig;
-    return this;
-  }
-
-   /**
-   * Is used to sign transactions that contain at least one JoinSplit description.
-   * @return joinSplitSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
-
-  public String getJoinSplitSig() {
-    return joinSplitSig;
-  }
-
-
-  public void setJoinSplitSig(String joinSplitSig) {
-    this.joinSplitSig = joinSplitSig;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS overwintered(Boolean overwintered) {
-    
-    this.overwintered = overwintered;
-    return this;
-  }
-
-   /**
-   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
-   * @return overwintered
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
-
-  public Boolean getOverwintered() {
-    return overwintered;
-  }
-
-
-  public void setOverwintered(Boolean overwintered) {
-    this.overwintered = overwintered;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS vJoinSplit(List<ListConfirmedTransactionsByAddressRIBSZVJoinSplit> vJoinSplit) {
-    
-    this.vJoinSplit = vJoinSplit;
-    return this;
-  }
-
-  public ListUnconfirmedTransactionsByAddressRIBS addVJoinSplitItem(ListConfirmedTransactionsByAddressRIBSZVJoinSplit vJoinSplitItem) {
-    this.vJoinSplit.add(vJoinSplitItem);
-    return this;
-  }
-
-   /**
-   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
-   * @return vJoinSplit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
-
-  public List<ListConfirmedTransactionsByAddressRIBSZVJoinSplit> getvJoinSplit() {
-    return vJoinSplit;
-  }
-
-
-  public void setvJoinSplit(List<ListConfirmedTransactionsByAddressRIBSZVJoinSplit> vJoinSplit) {
-    this.vJoinSplit = vJoinSplit;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    
-    this.vShieldedOutput = vShieldedOutput;
-    return this;
-  }
-
-  public ListUnconfirmedTransactionsByAddressRIBS addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
-    this.vShieldedOutput.add(vShieldedOutputItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction output descriptions
-   * @return vShieldedOutput
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
-    return vShieldedOutput;
-  }
-
-
-  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    this.vShieldedOutput = vShieldedOutput;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    
-    this.vShieldedSpend = vShieldedSpend;
-    return this;
-  }
-
-  public ListUnconfirmedTransactionsByAddressRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
-    this.vShieldedSpend.add(vShieldedSpendItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction spend descriptions
-   * @return vShieldedSpend
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
-    return vShieldedSpend;
-  }
-
-
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    this.vShieldedSpend = vShieldedSpend;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS valueBalance(String valueBalance) {
-    
-    this.valueBalance = valueBalance;
-    return this;
-  }
-
-   /**
-   * Defines the transaction value balance.
-   * @return valueBalance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Defines the transaction value balance.")
-
-  public String getValueBalance() {
-    return valueBalance;
-  }
-
-
-  public void setValueBalance(String valueBalance) {
-    this.valueBalance = valueBalance;
-  }
-
-
-  public ListUnconfirmedTransactionsByAddressRIBS versionGroupId(String versionGroupId) {
-    
-    this.versionGroupId = versionGroupId;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version group ID.
-   * @return versionGroupId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID.")
-
-  public String getVersionGroupId() {
-    return versionGroupId;
-  }
-
-
-  public void setVersionGroupId(String versionGroupId) {
-    this.versionGroupId = versionGroupId;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(ListUnconfirmedTransactionsByAddressRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!ListUnconfirmedTransactionsByAddressRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'ListUnconfirmedTransactionsByAddressRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSB> adapterListUnconfirmedTransactionsByAddressRIBSB = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSB.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSBC> adapterListUnconfirmedTransactionsByAddressRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSBC.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSBSC> adapterListUnconfirmedTransactionsByAddressRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSBSC.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSD> adapterListUnconfirmedTransactionsByAddressRIBSD = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSD.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSD2> adapterListUnconfirmedTransactionsByAddressRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSD2.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSE> adapterListUnconfirmedTransactionsByAddressRIBSE = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSE.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSEC> adapterListUnconfirmedTransactionsByAddressRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSEC.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSL> adapterListUnconfirmedTransactionsByAddressRIBSL = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSL.class));
+            final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSZ> adapterListUnconfirmedTransactionsByAddressRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSZ.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<ListUnconfirmedTransactionsByAddressRIBS>() {
+                @Override
+                public void write(JsonWriter out, ListUnconfirmedTransactionsByAddressRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSB`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSB) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSB.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSBC`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSBC) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSBC.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSBSC`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSBSC) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSBSC.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSD`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSD) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSD.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSD2`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSD2) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSD2.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSE`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSE) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSE.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSEC`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSEC) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSEC.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSL`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSL) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSL.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListUnconfirmedTransactionsByAddressRIBSZ`
+                    if (value.getActualInstance() instanceof ListUnconfirmedTransactionsByAddressRIBSZ) {
+                        JsonObject obj = adapterListUnconfirmedTransactionsByAddressRIBSZ.toJsonTree((ListUnconfirmedTransactionsByAddressRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ");
+                }
+
+                @Override
+                public ListUnconfirmedTransactionsByAddressRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSB'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSBC'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSBSC'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSD'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSD2'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSE'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSEC'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSL'", e);
+                    }
+
+                    // deserialize ListUnconfirmedTransactionsByAddressRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListUnconfirmedTransactionsByAddressRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListUnconfirmedTransactionsByAddressRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSZ'", e);
+                    }
+
+                    if (match == 1) {
+                        ListUnconfirmedTransactionsByAddressRIBS ret = new ListUnconfirmedTransactionsByAddressRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for ListUnconfirmedTransactionsByAddressRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public ListUnconfirmedTransactionsByAddressRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    ListUnconfirmedTransactionsByAddressRIBS listUnconfirmedTransactionsByAddressRIBS = (ListUnconfirmedTransactionsByAddressRIBS) o;
-    return Objects.equals(this.locktime, listUnconfirmedTransactionsByAddressRIBS.locktime) &&
-        Objects.equals(this.size, listUnconfirmedTransactionsByAddressRIBS.size) &&
-        Objects.equals(this.vSize, listUnconfirmedTransactionsByAddressRIBS.vSize) &&
-        Objects.equals(this.version, listUnconfirmedTransactionsByAddressRIBS.version) &&
-        Objects.equals(this.vin, listUnconfirmedTransactionsByAddressRIBS.vin) &&
-        Objects.equals(this.vout, listUnconfirmedTransactionsByAddressRIBS.vout) &&
-        Objects.equals(this.fee, listUnconfirmedTransactionsByAddressRIBS.fee) &&
-        Objects.equals(this.gasLimit, listUnconfirmedTransactionsByAddressRIBS.gasLimit) &&
-        Objects.equals(this.gasPrice, listUnconfirmedTransactionsByAddressRIBS.gasPrice) &&
-        Objects.equals(this.inputData, listUnconfirmedTransactionsByAddressRIBS.inputData) &&
-        Objects.equals(this.nonce, listUnconfirmedTransactionsByAddressRIBS.nonce) &&
-        Objects.equals(this.transactionStatus, listUnconfirmedTransactionsByAddressRIBS.transactionStatus) &&
-        Objects.equals(this.bindingSig, listUnconfirmedTransactionsByAddressRIBS.bindingSig) &&
-        Objects.equals(this.expiryHeight, listUnconfirmedTransactionsByAddressRIBS.expiryHeight) &&
-        Objects.equals(this.joinSplitPubKey, listUnconfirmedTransactionsByAddressRIBS.joinSplitPubKey) &&
-        Objects.equals(this.joinSplitSig, listUnconfirmedTransactionsByAddressRIBS.joinSplitSig) &&
-        Objects.equals(this.overwintered, listUnconfirmedTransactionsByAddressRIBS.overwintered) &&
-        Objects.equals(this.vJoinSplit, listUnconfirmedTransactionsByAddressRIBS.vJoinSplit) &&
-        Objects.equals(this.vShieldedOutput, listUnconfirmedTransactionsByAddressRIBS.vShieldedOutput) &&
-        Objects.equals(this.vShieldedSpend, listUnconfirmedTransactionsByAddressRIBS.vShieldedSpend) &&
-        Objects.equals(this.valueBalance, listUnconfirmedTransactionsByAddressRIBS.valueBalance) &&
-        Objects.equals(this.versionGroupId, listUnconfirmedTransactionsByAddressRIBS.versionGroupId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, fee, gasLimit, gasPrice, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListUnconfirmedTransactionsByAddressRIBS {\n");
-    sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
-    sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    fee: ").append(toIndentedString(fee)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasPrice: ").append(toIndentedString(gasPrice)).append("\n");
-    sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
-    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
-    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
-    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
-    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
-    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
-    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
-    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
-    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
-    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListUnconfirmedTransactionsByAddressRIBS(ListUnconfirmedTransactionsByAddressRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSB", new GenericType<ListUnconfirmedTransactionsByAddressRIBSB>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSBC", new GenericType<ListUnconfirmedTransactionsByAddressRIBSBC>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSBSC", new GenericType<ListUnconfirmedTransactionsByAddressRIBSBSC>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSD", new GenericType<ListUnconfirmedTransactionsByAddressRIBSD>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSD2", new GenericType<ListUnconfirmedTransactionsByAddressRIBSD2>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSE", new GenericType<ListUnconfirmedTransactionsByAddressRIBSE>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSEC", new GenericType<ListUnconfirmedTransactionsByAddressRIBSEC>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSL", new GenericType<ListUnconfirmedTransactionsByAddressRIBSL>() {
+        });
+        schemas.put("ListUnconfirmedTransactionsByAddressRIBSZ", new GenericType<ListUnconfirmedTransactionsByAddressRIBSZ>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return ListUnconfirmedTransactionsByAddressRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListUnconfirmedTransactionsByAddressRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ
+     *
+     * @return The actual instance (ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSB`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSB`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSB`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSB getListUnconfirmedTransactionsByAddressRIBSB() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSBC`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSBC`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSBC`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSBC getListUnconfirmedTransactionsByAddressRIBSBC() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSBSC`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSBSC`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSBSC`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSBSC getListUnconfirmedTransactionsByAddressRIBSBSC() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSD`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSD`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSD`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSD getListUnconfirmedTransactionsByAddressRIBSD() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSD2`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSD2`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSD2`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSD2 getListUnconfirmedTransactionsByAddressRIBSD2() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSE`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSE`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSE`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSE getListUnconfirmedTransactionsByAddressRIBSE() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSEC`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSEC`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSEC`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSEC getListUnconfirmedTransactionsByAddressRIBSEC() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSL`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSL`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSL`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSL getListUnconfirmedTransactionsByAddressRIBSL() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListUnconfirmedTransactionsByAddressRIBSZ`. If the actual instance is not `ListUnconfirmedTransactionsByAddressRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListUnconfirmedTransactionsByAddressRIBSZ`
+     * @throws ClassCastException if the instance is not `ListUnconfirmedTransactionsByAddressRIBSZ`
+     */
+    public ListUnconfirmedTransactionsByAddressRIBSZ getListUnconfirmedTransactionsByAddressRIBSZ() throws ClassCastException {
+        return (ListUnconfirmedTransactionsByAddressRIBSZ)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListUnconfirmedTransactionsByAddressRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSB
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSBC
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSBSC
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSD
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSD2
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSE
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSEC
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSL
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListUnconfirmedTransactionsByAddressRIBSZ
+    try {
+      ListUnconfirmedTransactionsByAddressRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for ListUnconfirmedTransactionsByAddressRIBS with oneOf schemas: ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of ListUnconfirmedTransactionsByAddressRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListUnconfirmedTransactionsByAddressRIBS
+  * @throws IOException if the JSON string is invalid with respect to ListUnconfirmedTransactionsByAddressRIBS
+  */
+  public static ListUnconfirmedTransactionsByAddressRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListUnconfirmedTransactionsByAddressRIBS.class);
+  }
+
+ /**
+  * Convert an instance of ListUnconfirmedTransactionsByAddressRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

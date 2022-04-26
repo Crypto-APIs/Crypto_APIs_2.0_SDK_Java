@@ -28,15 +28,35 @@ import java.util.List;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBVin;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBVout;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetWalletTransactionDetailsByTransactionIDRIBSB {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
+  private Long locktime;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -52,16 +72,16 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSB {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetWalletTransactionDetailsByTransactionIDRIBSBVin> vin = new ArrayList<GetWalletTransactionDetailsByTransactionIDRIBSBVin>();
+  private List<GetWalletTransactionDetailsByTransactionIDRIBSBVin> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetWalletTransactionDetailsByTransactionIDRIBSBVout> vout = new ArrayList<GetWalletTransactionDetailsByTransactionIDRIBSBVout>();
+  private List<GetWalletTransactionDetailsByTransactionIDRIBSBVout> vout = new ArrayList<>();
 
   public GetWalletTransactionDetailsByTransactionIDRIBSB() { 
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSB locktime(Integer locktime) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSB locktime(Long locktime) {
     
     this.locktime = locktime;
     return this;
@@ -74,12 +94,12 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSB {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "0", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
 
-  public Integer getLocktime() {
+  public Long getLocktime() {
     return locktime;
   }
 
 
-  public void setLocktime(Integer locktime) {
+  public void setLocktime(Long locktime) {
     this.locktime = locktime;
   }
 
@@ -209,6 +229,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSB {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,5 +277,132 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSB {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("locktime");
+    openapiFields.add("size");
+    openapiFields.add("vSize");
+    openapiFields.add("version");
+    openapiFields.add("vin");
+    openapiFields.add("vout");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("locktime");
+    openapiRequiredFields.add("size");
+    openapiRequiredFields.add("vSize");
+    openapiRequiredFields.add("version");
+    openapiRequiredFields.add("vin");
+    openapiRequiredFields.add("vout");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetWalletTransactionDetailsByTransactionIDRIBSB
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetWalletTransactionDetailsByTransactionIDRIBSB.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetWalletTransactionDetailsByTransactionIDRIBSB is not found in the empty JSON string", GetWalletTransactionDetailsByTransactionIDRIBSB.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetWalletTransactionDetailsByTransactionIDRIBSB.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetWalletTransactionDetailsByTransactionIDRIBSB` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetWalletTransactionDetailsByTransactionIDRIBSB.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArrayvin = jsonObj.getAsJsonArray("vin");
+      if (jsonArrayvin != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vin").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vin` to be an array in the JSON string but got `%s`", jsonObj.get("vin").toString()));
+        }
+
+        // validate the optional field `vin` (array)
+        for (int i = 0; i < jsonArrayvin.size(); i++) {
+          GetWalletTransactionDetailsByTransactionIDRIBSBVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
+      if (jsonArrayvout != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vout").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vout` to be an array in the JSON string but got `%s`", jsonObj.get("vout").toString()));
+        }
+
+        // validate the optional field `vout` (array)
+        for (int i = 0; i < jsonArrayvout.size(); i++) {
+          GetWalletTransactionDetailsByTransactionIDRIBSBVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetWalletTransactionDetailsByTransactionIDRIBSB.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetWalletTransactionDetailsByTransactionIDRIBSB' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSB> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSB.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSB>() {
+           @Override
+           public void write(JsonWriter out, GetWalletTransactionDetailsByTransactionIDRIBSB value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetWalletTransactionDetailsByTransactionIDRIBSB read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetWalletTransactionDetailsByTransactionIDRIBSB given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetWalletTransactionDetailsByTransactionIDRIBSB
+  * @throws IOException if the JSON string is invalid with respect to GetWalletTransactionDetailsByTransactionIDRIBSB
+  */
+  public static GetWalletTransactionDetailsByTransactionIDRIBSB fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetWalletTransactionDetailsByTransactionIDRIBSB.class);
+  }
+
+ /**
+  * Convert an instance of GetWalletTransactionDetailsByTransactionIDRIBSB to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -29,17 +29,44 @@ import java.io.IOException;
 
 import org.openapitools.client.model.BroadcastLocallySignedTransactionR;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionRB;
+import org.openapitools.client.model.DecodeRawTransactionHexR;
+import org.openapitools.client.model.DecodeRawTransactionHexRB;
+import org.openapitools.client.model.DecodeXAddressR;
+import org.openapitools.client.model.DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR;
+import org.openapitools.client.model.EncodeXAddressR;
+import org.openapitools.client.model.EstimateGasLimitR;
+import org.openapitools.client.model.EstimateGasLimitRB;
+import org.openapitools.client.model.EstimateTokenGasLimitR;
+import org.openapitools.client.model.EstimateTokenGasLimitRB;
 import org.openapitools.client.model.GetEIP1559FeeRecommendationsR;
-import org.openapitools.client.model.InlineResponse40083;
-import org.openapitools.client.model.InlineResponse40084;
-import org.openapitools.client.model.InlineResponse40085;
-import org.openapitools.client.model.InlineResponse40183;
-import org.openapitools.client.model.InlineResponse40184;
-import org.openapitools.client.model.InlineResponse40185;
+import org.openapitools.client.model.InlineResponse400100;
+import org.openapitools.client.model.InlineResponse400101;
+import org.openapitools.client.model.InlineResponse400102;
+import org.openapitools.client.model.InlineResponse400103;
+import org.openapitools.client.model.InlineResponse400104;
+import org.openapitools.client.model.InlineResponse40070;
+import org.openapitools.client.model.InlineResponse40097;
+import org.openapitools.client.model.InlineResponse40098;
+import org.openapitools.client.model.InlineResponse40099;
+import org.openapitools.client.model.InlineResponse401100;
+import org.openapitools.client.model.InlineResponse401101;
+import org.openapitools.client.model.InlineResponse401102;
+import org.openapitools.client.model.InlineResponse401103;
+import org.openapitools.client.model.InlineResponse401104;
+import org.openapitools.client.model.InlineResponse40170;
+import org.openapitools.client.model.InlineResponse40197;
+import org.openapitools.client.model.InlineResponse40198;
+import org.openapitools.client.model.InlineResponse40199;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40383;
-import org.openapitools.client.model.InlineResponse40384;
-import org.openapitools.client.model.InlineResponse40385;
+import org.openapitools.client.model.InlineResponse403100;
+import org.openapitools.client.model.InlineResponse403101;
+import org.openapitools.client.model.InlineResponse403102;
+import org.openapitools.client.model.InlineResponse403103;
+import org.openapitools.client.model.InlineResponse403104;
+import org.openapitools.client.model.InlineResponse40370;
+import org.openapitools.client.model.InlineResponse40397;
+import org.openapitools.client.model.InlineResponse40398;
+import org.openapitools.client.model.InlineResponse40399;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse40917;
@@ -55,6 +82,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class FeaturesApi {
     private ApiClient localVarApiClient;
@@ -105,7 +133,7 @@ public class FeaturesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully submitted. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
@@ -120,7 +148,6 @@ public class FeaturesApi {
      */
     public okhttp3.Call broadcastLocallySignedTransactionCall(String blockchain, String network, String context, BroadcastLocallySignedTransactionRB broadcastLocallySignedTransactionRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -162,7 +189,7 @@ public class FeaturesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -201,7 +228,7 @@ public class FeaturesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully submitted. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
@@ -231,7 +258,7 @@ public class FeaturesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully submitted. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
@@ -263,7 +290,7 @@ public class FeaturesApi {
      * @http.response.details
      <table summary="Response Details" border="1">
         <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
-        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully submitted. </td><td>  -  </td></tr>
         <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
         <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
         <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
@@ -280,6 +307,1180 @@ public class FeaturesApi {
 
         okhttp3.Call localVarCall = broadcastLocallySignedTransactionValidateBeforeCall(blockchain, network, context, broadcastLocallySignedTransactionRB, _callback);
         Type localVarReturnType = new TypeToken<BroadcastLocallySignedTransactionR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for decodeRawTransactionHex
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param decodeRawTransactionHexRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call decodeRawTransactionHexCall(String blockchain, String network, String context, DecodeRawTransactionHexRB decodeRawTransactionHexRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = decodeRawTransactionHexRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-tools/{blockchain}/{network}/decode-raw-transaction"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call decodeRawTransactionHexValidateBeforeCall(String blockchain, String network, String context, DecodeRawTransactionHexRB decodeRawTransactionHexRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling decodeRawTransactionHex(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling decodeRawTransactionHex(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = decodeRawTransactionHexCall(blockchain, network, context, decodeRawTransactionHexRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Decode Raw Transaction Hex
+     * Through this endpoint customers can decode a raw transaction hex and see the decoded transactions&#39; details.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param decodeRawTransactionHexRB  (optional)
+     * @return DecodeRawTransactionHexR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public DecodeRawTransactionHexR decodeRawTransactionHex(String blockchain, String network, String context, DecodeRawTransactionHexRB decodeRawTransactionHexRB) throws ApiException {
+        ApiResponse<DecodeRawTransactionHexR> localVarResp = decodeRawTransactionHexWithHttpInfo(blockchain, network, context, decodeRawTransactionHexRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Decode Raw Transaction Hex
+     * Through this endpoint customers can decode a raw transaction hex and see the decoded transactions&#39; details.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param decodeRawTransactionHexRB  (optional)
+     * @return ApiResponse&lt;DecodeRawTransactionHexR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DecodeRawTransactionHexR> decodeRawTransactionHexWithHttpInfo(String blockchain, String network, String context, DecodeRawTransactionHexRB decodeRawTransactionHexRB) throws ApiException {
+        okhttp3.Call localVarCall = decodeRawTransactionHexValidateBeforeCall(blockchain, network, context, decodeRawTransactionHexRB, null);
+        Type localVarReturnType = new TypeToken<DecodeRawTransactionHexR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Decode Raw Transaction Hex (asynchronously)
+     * Through this endpoint customers can decode a raw transaction hex and see the decoded transactions&#39; details.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param decodeRawTransactionHexRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call decodeRawTransactionHexAsync(String blockchain, String network, String context, DecodeRawTransactionHexRB decodeRawTransactionHexRB, final ApiCallback<DecodeRawTransactionHexR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = decodeRawTransactionHexValidateBeforeCall(blockchain, network, context, decodeRawTransactionHexRB, _callback);
+        Type localVarReturnType = new TypeToken<DecodeRawTransactionHexR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for decodeXAddress
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param xAddress Represents the encoded classic address with its destination tag. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call decodeXAddressCall(String blockchain, String network, String xAddress, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-tools/{blockchain}/{network}/decode-x-address/{xAddress}"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "xAddress" + "\\}", localVarApiClient.escapeString(xAddress.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call decodeXAddressValidateBeforeCall(String blockchain, String network, String xAddress, String context, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling decodeXAddress(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling decodeXAddress(Async)");
+        }
+        
+        // verify the required parameter 'xAddress' is set
+        if (xAddress == null) {
+            throw new ApiException("Missing the required parameter 'xAddress' when calling decodeXAddress(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = decodeXAddressCall(blockchain, network, xAddress, context, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Decode X-Address
+     * Through this endpoint, customers can decode an encoded XRP address with tag, by providing the specific x-address. The response includes the decoded classic address and the tag.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param xAddress Represents the encoded classic address with its destination tag. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return DecodeXAddressR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public DecodeXAddressR decodeXAddress(String blockchain, String network, String xAddress, String context) throws ApiException {
+        ApiResponse<DecodeXAddressR> localVarResp = decodeXAddressWithHttpInfo(blockchain, network, xAddress, context);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Decode X-Address
+     * Through this endpoint, customers can decode an encoded XRP address with tag, by providing the specific x-address. The response includes the decoded classic address and the tag.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param xAddress Represents the encoded classic address with its destination tag. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return ApiResponse&lt;DecodeXAddressR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DecodeXAddressR> decodeXAddressWithHttpInfo(String blockchain, String network, String xAddress, String context) throws ApiException {
+        okhttp3.Call localVarCall = decodeXAddressValidateBeforeCall(blockchain, network, xAddress, context, null);
+        Type localVarReturnType = new TypeToken<DecodeXAddressR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Decode X-Address (asynchronously)
+     * Through this endpoint, customers can decode an encoded XRP address with tag, by providing the specific x-address. The response includes the decoded classic address and the tag.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param xAddress Represents the encoded classic address with its destination tag. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call decodeXAddressAsync(String blockchain, String network, String xAddress, String context, final ApiCallback<DecodeXAddressR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = decodeXAddressValidateBeforeCall(blockchain, network, xAddress, context, _callback);
+        Type localVarReturnType = new TypeToken<DecodeXAddressR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param addressFormat Represents the format of the address. (optional)
+     * @param addressesCount Represents the addresses count. (optional)
+     * @param isChange Defines if the specific address is a change or deposit address. If the value is True - it is a change address, if it is False - it is a Deposit address. (optional)
+     * @param startIndex The starting index of the response items, i.e. where the response should start listing the returned items. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesCall(String blockchain, String extendedPublicKey, String network, String context, String addressFormat, Integer addressesCount, Boolean isChange, Integer startIndex, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-tools/{blockchain}/{network}/hd/{extendedPublicKey}/addresses/derive-address"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "extendedPublicKey" + "\\}", localVarApiClient.escapeString(extendedPublicKey.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (addressFormat != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("addressFormat", addressFormat));
+        }
+
+        if (addressesCount != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("addressesCount", addressesCount));
+        }
+
+        if (isChange != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("isChange", isChange));
+        }
+
+        if (startIndex != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("startIndex", startIndex));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesValidateBeforeCall(String blockchain, String extendedPublicKey, String network, String context, String addressFormat, Integer addressesCount, Boolean isChange, Integer startIndex, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses(Async)");
+        }
+        
+        // verify the required parameter 'extendedPublicKey' is set
+        if (extendedPublicKey == null) {
+            throw new ApiException("Missing the required parameter 'extendedPublicKey' when calling deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesCall(blockchain, extendedPublicKey, network, context, addressFormat, addressesCount, isChange, startIndex, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Derive HD Wallet (xPub, yPub, zPub) Change Or Receiving Addresses
+     * Through this endpoint, customers can derive up to 10 addresses - both change and receive, from a certain HD Wallet (xPub, yPub, zPub), by providing an extended public key. By default the system creates a receiving/deposit address, unless the isChange attribute is set to &#39;true&#39;. In that case the system derives a &#39;change&#39; address. The change address can be derived only for UTXO based blockchains, for all the rest, this endpoint always creates a deposit/receiving address.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param addressFormat Represents the format of the address. (optional)
+     * @param addressesCount Represents the addresses count. (optional)
+     * @param isChange Defines if the specific address is a change or deposit address. If the value is True - it is a change address, if it is False - it is a Deposit address. (optional)
+     * @param startIndex The starting index of the response items, i.e. where the response should start listing the returned items. (optional)
+     * @return DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses(String blockchain, String extendedPublicKey, String network, String context, String addressFormat, Integer addressesCount, Boolean isChange, Integer startIndex) throws ApiException {
+        ApiResponse<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR> localVarResp = deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesWithHttpInfo(blockchain, extendedPublicKey, network, context, addressFormat, addressesCount, isChange, startIndex);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Derive HD Wallet (xPub, yPub, zPub) Change Or Receiving Addresses
+     * Through this endpoint, customers can derive up to 10 addresses - both change and receive, from a certain HD Wallet (xPub, yPub, zPub), by providing an extended public key. By default the system creates a receiving/deposit address, unless the isChange attribute is set to &#39;true&#39;. In that case the system derives a &#39;change&#39; address. The change address can be derived only for UTXO based blockchains, for all the rest, this endpoint always creates a deposit/receiving address.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param addressFormat Represents the format of the address. (optional)
+     * @param addressesCount Represents the addresses count. (optional)
+     * @param isChange Defines if the specific address is a change or deposit address. If the value is True - it is a change address, if it is False - it is a Deposit address. (optional)
+     * @param startIndex The starting index of the response items, i.e. where the response should start listing the returned items. (optional)
+     * @return ApiResponse&lt;DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR> deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesWithHttpInfo(String blockchain, String extendedPublicKey, String network, String context, String addressFormat, Integer addressesCount, Boolean isChange, Integer startIndex) throws ApiException {
+        okhttp3.Call localVarCall = deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesValidateBeforeCall(blockchain, extendedPublicKey, network, context, addressFormat, addressesCount, isChange, startIndex, null);
+        Type localVarReturnType = new TypeToken<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Derive HD Wallet (xPub, yPub, zPub) Change Or Receiving Addresses (asynchronously)
+     * Through this endpoint, customers can derive up to 10 addresses - both change and receive, from a certain HD Wallet (xPub, yPub, zPub), by providing an extended public key. By default the system creates a receiving/deposit address, unless the isChange attribute is set to &#39;true&#39;. In that case the system derives a &#39;change&#39; address. The change address can be derived only for UTXO based blockchains, for all the rest, this endpoint always creates a deposit/receiving address.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param extendedPublicKey Defines the account extended publicly known key which is used to derive all child public keys. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param addressFormat Represents the format of the address. (optional)
+     * @param addressesCount Represents the addresses count. (optional)
+     * @param isChange Defines if the specific address is a change or deposit address. If the value is True - it is a change address, if it is False - it is a Deposit address. (optional)
+     * @param startIndex The starting index of the response items, i.e. where the response should start listing the returned items. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesAsync(String blockchain, String extendedPublicKey, String network, String context, String addressFormat, Integer addressesCount, Boolean isChange, Integer startIndex, final ApiCallback<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesValidateBeforeCall(blockchain, extendedPublicKey, network, context, addressFormat, addressesCount, isChange, startIndex, _callback);
+        Type localVarReturnType = new TypeToken<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for encodeXAddress
+     * @param addressTag Defines a specific Tag that is an additional XRP address feature. It helps identifying a transaction recipient beyond a wallet address. (required)
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param classicAddress Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call encodeXAddressCall(Integer addressTag, String blockchain, String classicAddress, String network, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-tools/{blockchain}/{network}/encode-x-address/{classicAddress}/{addressTag}"
+            .replaceAll("\\{" + "addressTag" + "\\}", localVarApiClient.escapeString(addressTag.toString()))
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "classicAddress" + "\\}", localVarApiClient.escapeString(classicAddress.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call encodeXAddressValidateBeforeCall(Integer addressTag, String blockchain, String classicAddress, String network, String context, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'addressTag' is set
+        if (addressTag == null) {
+            throw new ApiException("Missing the required parameter 'addressTag' when calling encodeXAddress(Async)");
+        }
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling encodeXAddress(Async)");
+        }
+        
+        // verify the required parameter 'classicAddress' is set
+        if (classicAddress == null) {
+            throw new ApiException("Missing the required parameter 'classicAddress' when calling encodeXAddress(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling encodeXAddress(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = encodeXAddressCall(addressTag, blockchain, classicAddress, network, context, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Encode X-Address
+     * Through this endpoint, customers can encode an encoded XRP address with tag, by providing the specific x-address. The response includes the encoded classic address and the tag.
+     * @param addressTag Defines a specific Tag that is an additional XRP address feature. It helps identifying a transaction recipient beyond a wallet address. (required)
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param classicAddress Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return EncodeXAddressR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EncodeXAddressR encodeXAddress(Integer addressTag, String blockchain, String classicAddress, String network, String context) throws ApiException {
+        ApiResponse<EncodeXAddressR> localVarResp = encodeXAddressWithHttpInfo(addressTag, blockchain, classicAddress, network, context);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Encode X-Address
+     * Through this endpoint, customers can encode an encoded XRP address with tag, by providing the specific x-address. The response includes the encoded classic address and the tag.
+     * @param addressTag Defines a specific Tag that is an additional XRP address feature. It helps identifying a transaction recipient beyond a wallet address. (required)
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param classicAddress Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return ApiResponse&lt;EncodeXAddressR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EncodeXAddressR> encodeXAddressWithHttpInfo(Integer addressTag, String blockchain, String classicAddress, String network, String context) throws ApiException {
+        okhttp3.Call localVarCall = encodeXAddressValidateBeforeCall(addressTag, blockchain, classicAddress, network, context, null);
+        Type localVarReturnType = new TypeToken<EncodeXAddressR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Encode X-Address (asynchronously)
+     * Through this endpoint, customers can encode an encoded XRP address with tag, by providing the specific x-address. The response includes the encoded classic address and the tag.
+     * @param addressTag Defines a specific Tag that is an additional XRP address feature. It helps identifying a transaction recipient beyond a wallet address. (required)
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param classicAddress Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call encodeXAddressAsync(Integer addressTag, String blockchain, String classicAddress, String network, String context, final ApiCallback<EncodeXAddressR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = encodeXAddressValidateBeforeCall(addressTag, blockchain, classicAddress, network, context, _callback);
+        Type localVarReturnType = new TypeToken<EncodeXAddressR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for estimateGasLimit
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateGasLimitRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call estimateGasLimitCall(String blockchain, String network, String context, EstimateGasLimitRB estimateGasLimitRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = estimateGasLimitRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-tools/{blockchain}/{network}/gas-limit"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call estimateGasLimitValidateBeforeCall(String blockchain, String network, String context, EstimateGasLimitRB estimateGasLimitRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling estimateGasLimit(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling estimateGasLimit(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = estimateGasLimitCall(blockchain, network, context, estimateGasLimitRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Estimate Gas Limit
+     * This endpoint helps customer in estimating the gas limit needed for a transaction. It gives information for gas expenses when sending ether to contracts or making a transaction with additional data in it.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateGasLimitRB  (optional)
+     * @return EstimateGasLimitR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EstimateGasLimitR estimateGasLimit(String blockchain, String network, String context, EstimateGasLimitRB estimateGasLimitRB) throws ApiException {
+        ApiResponse<EstimateGasLimitR> localVarResp = estimateGasLimitWithHttpInfo(blockchain, network, context, estimateGasLimitRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Estimate Gas Limit
+     * This endpoint helps customer in estimating the gas limit needed for a transaction. It gives information for gas expenses when sending ether to contracts or making a transaction with additional data in it.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateGasLimitRB  (optional)
+     * @return ApiResponse&lt;EstimateGasLimitR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EstimateGasLimitR> estimateGasLimitWithHttpInfo(String blockchain, String network, String context, EstimateGasLimitRB estimateGasLimitRB) throws ApiException {
+        okhttp3.Call localVarCall = estimateGasLimitValidateBeforeCall(blockchain, network, context, estimateGasLimitRB, null);
+        Type localVarReturnType = new TypeToken<EstimateGasLimitR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Estimate Gas Limit (asynchronously)
+     * This endpoint helps customer in estimating the gas limit needed for a transaction. It gives information for gas expenses when sending ether to contracts or making a transaction with additional data in it.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateGasLimitRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call estimateGasLimitAsync(String blockchain, String network, String context, EstimateGasLimitRB estimateGasLimitRB, final ApiCallback<EstimateGasLimitR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = estimateGasLimitValidateBeforeCall(blockchain, network, context, estimateGasLimitRB, _callback);
+        Type localVarReturnType = new TypeToken<EstimateGasLimitR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for estimateTokenGasLimit
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateTokenGasLimitRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call estimateTokenGasLimitCall(String blockchain, String network, String context, EstimateTokenGasLimitRB estimateTokenGasLimitRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = estimateTokenGasLimitRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-tools/{blockchain}/{network}/gas-limit/contract"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call estimateTokenGasLimitValidateBeforeCall(String blockchain, String network, String context, EstimateTokenGasLimitRB estimateTokenGasLimitRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling estimateTokenGasLimit(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling estimateTokenGasLimit(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = estimateTokenGasLimitCall(blockchain, network, context, estimateTokenGasLimitRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Estimate Token Gas Limit
+     * This endpoint helps customer in estimating the Contract Gas Limit needed for a transaction. It gives information for gas expenses for a specific contract when sending ethers or making a transaction with additional data in it.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateTokenGasLimitRB  (optional)
+     * @return EstimateTokenGasLimitR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EstimateTokenGasLimitR estimateTokenGasLimit(String blockchain, String network, String context, EstimateTokenGasLimitRB estimateTokenGasLimitRB) throws ApiException {
+        ApiResponse<EstimateTokenGasLimitR> localVarResp = estimateTokenGasLimitWithHttpInfo(blockchain, network, context, estimateTokenGasLimitRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Estimate Token Gas Limit
+     * This endpoint helps customer in estimating the Contract Gas Limit needed for a transaction. It gives information for gas expenses for a specific contract when sending ethers or making a transaction with additional data in it.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateTokenGasLimitRB  (optional)
+     * @return ApiResponse&lt;EstimateTokenGasLimitR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EstimateTokenGasLimitR> estimateTokenGasLimitWithHttpInfo(String blockchain, String network, String context, EstimateTokenGasLimitRB estimateTokenGasLimitRB) throws ApiException {
+        okhttp3.Call localVarCall = estimateTokenGasLimitValidateBeforeCall(blockchain, network, context, estimateTokenGasLimitRB, null);
+        Type localVarReturnType = new TypeToken<EstimateTokenGasLimitR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Estimate Token Gas Limit (asynchronously)
+     * This endpoint helps customer in estimating the Contract Gas Limit needed for a transaction. It gives information for gas expenses for a specific contract when sending ethers or making a transaction with additional data in it.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param estimateTokenGasLimitRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call estimateTokenGasLimitAsync(String blockchain, String network, String context, EstimateTokenGasLimitRB estimateTokenGasLimitRB, final ApiCallback<EstimateTokenGasLimitR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = estimateTokenGasLimitValidateBeforeCall(blockchain, network, context, estimateTokenGasLimitRB, _callback);
+        Type localVarReturnType = new TypeToken<EstimateTokenGasLimitR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -309,7 +1510,6 @@ public class FeaturesApi {
      */
     public okhttp3.Call getEIP1559FeeRecommendationsCall(String network, String blockchain, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -351,7 +1551,7 @@ public class FeaturesApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -495,7 +1695,6 @@ public class FeaturesApi {
      */
     public okhttp3.Call validateAddressCall(String blockchain, String network, String context, ValidateAddressRB validateAddressRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -537,7 +1736,7 @@ public class FeaturesApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

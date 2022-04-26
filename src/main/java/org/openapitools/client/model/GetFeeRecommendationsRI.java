@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * GetFeeRecommendationsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetFeeRecommendationsRI {
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
@@ -44,6 +64,10 @@ public class GetFeeRecommendationsRI {
   public static final String SERIALIZED_NAME_STANDARD = "standard";
   @SerializedName(SERIALIZED_NAME_STANDARD)
   private String standard;
+
+  public static final String SERIALIZED_NAME_FEE_CUSHION_MULTIPLIER = "feeCushionMultiplier";
+  @SerializedName(SERIALIZED_NAME_FEE_CUSHION_MULTIPLIER)
+  private String feeCushionMultiplier;
 
   public GetFeeRecommendationsRI() { 
   }
@@ -82,7 +106,7 @@ public class GetFeeRecommendationsRI {
    * @return fast
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0.00000021", required = true, value = "Fast fee per byte calculated from unconfirmed transactions")
+  @ApiModelProperty(example = "0.000025", required = true, value = "Fast fee per byte calculated from unconfirmed transactions")
 
   public String getFast() {
     return fast;
@@ -105,7 +129,7 @@ public class GetFeeRecommendationsRI {
    * @return slow
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0.00000021", required = true, value = "Slow fee per byte calculated from unconfirmed transactions")
+  @ApiModelProperty(example = "0.000010", required = true, value = "Slow fee per byte calculated from unconfirmed transactions")
 
   public String getSlow() {
     return slow;
@@ -128,7 +152,7 @@ public class GetFeeRecommendationsRI {
    * @return standard
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0.00000021", required = true, value = "Standard fee per byte calculated from unconfirmed transactions")
+  @ApiModelProperty(example = "\"0.000015", required = true, value = "Standard fee per byte calculated from unconfirmed transactions")
 
   public String getStandard() {
     return standard;
@@ -138,6 +162,30 @@ public class GetFeeRecommendationsRI {
   public void setStandard(String standard) {
     this.standard = standard;
   }
+
+
+  public GetFeeRecommendationsRI feeCushionMultiplier(String feeCushionMultiplier) {
+    
+    this.feeCushionMultiplier = feeCushionMultiplier;
+    return this;
+  }
+
+   /**
+   * Represents the fee cushion multiplier used to multiply the base fee.
+   * @return feeCushionMultiplier
+  **/
+  @javax.annotation.Nonnull
+  @ApiModelProperty(example = "1.2", required = true, value = "Represents the fee cushion multiplier used to multiply the base fee.")
+
+  public String getFeeCushionMultiplier() {
+    return feeCushionMultiplier;
+  }
+
+
+  public void setFeeCushionMultiplier(String feeCushionMultiplier) {
+    this.feeCushionMultiplier = feeCushionMultiplier;
+  }
+
 
 
   @Override
@@ -152,12 +200,13 @@ public class GetFeeRecommendationsRI {
     return Objects.equals(this.unit, getFeeRecommendationsRI.unit) &&
         Objects.equals(this.fast, getFeeRecommendationsRI.fast) &&
         Objects.equals(this.slow, getFeeRecommendationsRI.slow) &&
-        Objects.equals(this.standard, getFeeRecommendationsRI.standard);
+        Objects.equals(this.standard, getFeeRecommendationsRI.standard) &&
+        Objects.equals(this.feeCushionMultiplier, getFeeRecommendationsRI.feeCushionMultiplier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(unit, fast, slow, standard);
+    return Objects.hash(unit, fast, slow, standard, feeCushionMultiplier);
   }
 
   @Override
@@ -168,6 +217,7 @@ public class GetFeeRecommendationsRI {
     sb.append("    fast: ").append(toIndentedString(fast)).append("\n");
     sb.append("    slow: ").append(toIndentedString(slow)).append("\n");
     sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
+    sb.append("    feeCushionMultiplier: ").append(toIndentedString(feeCushionMultiplier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -183,5 +233,121 @@ public class GetFeeRecommendationsRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("unit");
+    openapiFields.add("fast");
+    openapiFields.add("slow");
+    openapiFields.add("standard");
+    openapiFields.add("feeCushionMultiplier");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("unit");
+    openapiRequiredFields.add("fast");
+    openapiRequiredFields.add("slow");
+    openapiRequiredFields.add("standard");
+    openapiRequiredFields.add("feeCushionMultiplier");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetFeeRecommendationsRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetFeeRecommendationsRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetFeeRecommendationsRI is not found in the empty JSON string", GetFeeRecommendationsRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetFeeRecommendationsRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetFeeRecommendationsRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetFeeRecommendationsRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+      if (jsonObj.get("fast") != null && !jsonObj.get("fast").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fast` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fast").toString()));
+      }
+      if (jsonObj.get("slow") != null && !jsonObj.get("slow").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `slow` to be a primitive type in the JSON string but got `%s`", jsonObj.get("slow").toString()));
+      }
+      if (jsonObj.get("standard") != null && !jsonObj.get("standard").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `standard` to be a primitive type in the JSON string but got `%s`", jsonObj.get("standard").toString()));
+      }
+      if (jsonObj.get("feeCushionMultiplier") != null && !jsonObj.get("feeCushionMultiplier").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `feeCushionMultiplier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feeCushionMultiplier").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetFeeRecommendationsRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetFeeRecommendationsRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetFeeRecommendationsRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetFeeRecommendationsRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetFeeRecommendationsRI>() {
+           @Override
+           public void write(JsonWriter out, GetFeeRecommendationsRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetFeeRecommendationsRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetFeeRecommendationsRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetFeeRecommendationsRI
+  * @throws IOException if the JSON string is invalid with respect to GetFeeRecommendationsRI
+  */
+  public static GetFeeRecommendationsRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetFeeRecommendationsRI.class);
+  }
+
+ /**
+  * Convert an instance of GetFeeRecommendationsRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

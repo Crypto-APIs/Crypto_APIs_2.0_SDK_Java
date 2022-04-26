@@ -26,10 +26,30 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListTransactionsByBlockHeightRIBSZVJoinSplit
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSZVJoinSplit {
   public static final String SERIALIZED_NAME_ANCHOR = "anchor";
   @SerializedName(SERIALIZED_NAME_ANCHOR)
@@ -37,19 +57,19 @@ public class ListTransactionsByBlockHeightRIBSZVJoinSplit {
 
   public static final String SERIALIZED_NAME_CIPHER_TEXTS = "cipherTexts";
   @SerializedName(SERIALIZED_NAME_CIPHER_TEXTS)
-  private List<String> cipherTexts = new ArrayList<String>();
+  private List<String> cipherTexts = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_COMMITMENTS = "commitments";
   @SerializedName(SERIALIZED_NAME_COMMITMENTS)
-  private List<String> commitments = new ArrayList<String>();
+  private List<String> commitments = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_MACS = "macs";
   @SerializedName(SERIALIZED_NAME_MACS)
-  private List<String> macs = new ArrayList<String>();
+  private List<String> macs = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NULLIFIERS = "nullifiers";
   @SerializedName(SERIALIZED_NAME_NULLIFIERS)
-  private List<String> nullifiers = new ArrayList<String>();
+  private List<String> nullifiers = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_ONE_TIME_PUB_KEY = "oneTimePubKey";
   @SerializedName(SERIALIZED_NAME_ONE_TIME_PUB_KEY)
@@ -324,6 +344,7 @@ public class ListTransactionsByBlockHeightRIBSZVJoinSplit {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -379,5 +400,150 @@ public class ListTransactionsByBlockHeightRIBSZVJoinSplit {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("anchor");
+    openapiFields.add("cipherTexts");
+    openapiFields.add("commitments");
+    openapiFields.add("macs");
+    openapiFields.add("nullifiers");
+    openapiFields.add("oneTimePubKey");
+    openapiFields.add("proof");
+    openapiFields.add("randomSeed");
+    openapiFields.add("vPubNew");
+    openapiFields.add("vPubOld");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("anchor");
+    openapiRequiredFields.add("cipherTexts");
+    openapiRequiredFields.add("commitments");
+    openapiRequiredFields.add("macs");
+    openapiRequiredFields.add("nullifiers");
+    openapiRequiredFields.add("oneTimePubKey");
+    openapiRequiredFields.add("proof");
+    openapiRequiredFields.add("randomSeed");
+    openapiRequiredFields.add("vPubNew");
+    openapiRequiredFields.add("vPubOld");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListTransactionsByBlockHeightRIBSZVJoinSplit
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListTransactionsByBlockHeightRIBSZVJoinSplit.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListTransactionsByBlockHeightRIBSZVJoinSplit is not found in the empty JSON string", ListTransactionsByBlockHeightRIBSZVJoinSplit.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListTransactionsByBlockHeightRIBSZVJoinSplit.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListTransactionsByBlockHeightRIBSZVJoinSplit` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListTransactionsByBlockHeightRIBSZVJoinSplit.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("anchor") != null && !jsonObj.get("anchor").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `anchor` to be a primitive type in the JSON string but got `%s`", jsonObj.get("anchor").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("cipherTexts") != null && !jsonObj.get("cipherTexts").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `cipherTexts` to be an array in the JSON string but got `%s`", jsonObj.get("cipherTexts").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("commitments") != null && !jsonObj.get("commitments").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `commitments` to be an array in the JSON string but got `%s`", jsonObj.get("commitments").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("macs") != null && !jsonObj.get("macs").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `macs` to be an array in the JSON string but got `%s`", jsonObj.get("macs").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("nullifiers") != null && !jsonObj.get("nullifiers").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nullifiers` to be an array in the JSON string but got `%s`", jsonObj.get("nullifiers").toString()));
+      }
+      if (jsonObj.get("oneTimePubKey") != null && !jsonObj.get("oneTimePubKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `oneTimePubKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("oneTimePubKey").toString()));
+      }
+      if (jsonObj.get("proof") != null && !jsonObj.get("proof").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `proof` to be a primitive type in the JSON string but got `%s`", jsonObj.get("proof").toString()));
+      }
+      if (jsonObj.get("randomSeed") != null && !jsonObj.get("randomSeed").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `randomSeed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("randomSeed").toString()));
+      }
+      if (jsonObj.get("vPubNew") != null && !jsonObj.get("vPubNew").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `vPubNew` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vPubNew").toString()));
+      }
+      if (jsonObj.get("vPubOld") != null && !jsonObj.get("vPubOld").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `vPubOld` to be a primitive type in the JSON string but got `%s`", jsonObj.get("vPubOld").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListTransactionsByBlockHeightRIBSZVJoinSplit.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListTransactionsByBlockHeightRIBSZVJoinSplit' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListTransactionsByBlockHeightRIBSZVJoinSplit> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSZVJoinSplit.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListTransactionsByBlockHeightRIBSZVJoinSplit>() {
+           @Override
+           public void write(JsonWriter out, ListTransactionsByBlockHeightRIBSZVJoinSplit value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListTransactionsByBlockHeightRIBSZVJoinSplit read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListTransactionsByBlockHeightRIBSZVJoinSplit given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListTransactionsByBlockHeightRIBSZVJoinSplit
+  * @throws IOException if the JSON string is invalid with respect to ListTransactionsByBlockHeightRIBSZVJoinSplit
+  */
+  public static ListTransactionsByBlockHeightRIBSZVJoinSplit fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListTransactionsByBlockHeightRIBSZVJoinSplit.class);
+  }
+
+ /**
+  * Convert an instance of ListTransactionsByBlockHeightRIBSZVJoinSplit to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

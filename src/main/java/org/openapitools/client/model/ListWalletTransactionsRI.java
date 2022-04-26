@@ -33,10 +33,30 @@ import org.openapitools.client.model.ListWalletTransactionsRIRecipients;
 import org.openapitools.client.model.ListWalletTransactionsRISenders;
 import org.openapitools.client.model.ListWalletTransactionsRIValue;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListWalletTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListWalletTransactionsRI {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
@@ -60,11 +80,11 @@ public class ListWalletTransactionsRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListWalletTransactionsRIRecipients> recipients = new ArrayList<ListWalletTransactionsRIRecipients>();
+  private List<ListWalletTransactionsRIRecipients> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListWalletTransactionsRISenders> senders = new ArrayList<ListWalletTransactionsRISenders>();
+  private List<ListWalletTransactionsRISenders> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -139,7 +159,7 @@ public class ListWalletTransactionsRI {
 
   public ListWalletTransactionsRI addFungibleTokensItem(ListWalletTransactionsRIFungibleTokens fungibleTokensItem) {
     if (this.fungibleTokens == null) {
-      this.fungibleTokens = new ArrayList<ListWalletTransactionsRIFungibleTokens>();
+      this.fungibleTokens = new ArrayList<>();
     }
     this.fungibleTokens.add(fungibleTokensItem);
     return this;
@@ -170,7 +190,7 @@ public class ListWalletTransactionsRI {
 
   public ListWalletTransactionsRI addInternalTransactionsItem(ListWalletTransactionsRIInternalTransactions internalTransactionsItem) {
     if (this.internalTransactions == null) {
-      this.internalTransactions = new ArrayList<ListWalletTransactionsRIInternalTransactions>();
+      this.internalTransactions = new ArrayList<>();
     }
     this.internalTransactions.add(internalTransactionsItem);
     return this;
@@ -201,7 +221,7 @@ public class ListWalletTransactionsRI {
 
   public ListWalletTransactionsRI addNonFungibleTokensItem(ListWalletTransactionsRINonFungibleTokens nonFungibleTokensItem) {
     if (this.nonFungibleTokens == null) {
-      this.nonFungibleTokens = new ArrayList<ListWalletTransactionsRINonFungibleTokens>();
+      this.nonFungibleTokens = new ArrayList<>();
     }
     this.nonFungibleTokens.add(nonFungibleTokensItem);
     return this;
@@ -372,6 +392,7 @@ public class ListWalletTransactionsRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -429,5 +450,192 @@ public class ListWalletTransactionsRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("direction");
+    openapiFields.add("fee");
+    openapiFields.add("fungibleTokens");
+    openapiFields.add("internalTransactions");
+    openapiFields.add("nonFungibleTokens");
+    openapiFields.add("recipients");
+    openapiFields.add("senders");
+    openapiFields.add("status");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionId");
+    openapiFields.add("value");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("direction");
+    openapiRequiredFields.add("fee");
+    openapiRequiredFields.add("recipients");
+    openapiRequiredFields.add("senders");
+    openapiRequiredFields.add("status");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionId");
+    openapiRequiredFields.add("value");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListWalletTransactionsRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListWalletTransactionsRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListWalletTransactionsRI is not found in the empty JSON string", ListWalletTransactionsRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListWalletTransactionsRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListWalletTransactionsRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListWalletTransactionsRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("direction") != null && !jsonObj.get("direction").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `direction` to be a primitive type in the JSON string but got `%s`", jsonObj.get("direction").toString()));
+      }
+      // validate the optional field `fee`
+      if (jsonObj.getAsJsonObject("fee") != null) {
+        ListWalletTransactionsRIFee.validateJsonObject(jsonObj.getAsJsonObject("fee"));
+      }
+      JsonArray jsonArrayfungibleTokens = jsonObj.getAsJsonArray("fungibleTokens");
+      if (jsonArrayfungibleTokens != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("fungibleTokens").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `fungibleTokens` to be an array in the JSON string but got `%s`", jsonObj.get("fungibleTokens").toString()));
+        }
+
+        // validate the optional field `fungibleTokens` (array)
+        for (int i = 0; i < jsonArrayfungibleTokens.size(); i++) {
+          ListWalletTransactionsRIFungibleTokens.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayinternalTransactions = jsonObj.getAsJsonArray("internalTransactions");
+      if (jsonArrayinternalTransactions != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("internalTransactions").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `internalTransactions` to be an array in the JSON string but got `%s`", jsonObj.get("internalTransactions").toString()));
+        }
+
+        // validate the optional field `internalTransactions` (array)
+        for (int i = 0; i < jsonArrayinternalTransactions.size(); i++) {
+          ListWalletTransactionsRIInternalTransactions.validateJsonObject(jsonArrayinternalTransactions.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraynonFungibleTokens = jsonObj.getAsJsonArray("nonFungibleTokens");
+      if (jsonArraynonFungibleTokens != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("nonFungibleTokens").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `nonFungibleTokens` to be an array in the JSON string but got `%s`", jsonObj.get("nonFungibleTokens").toString()));
+        }
+
+        // validate the optional field `nonFungibleTokens` (array)
+        for (int i = 0; i < jsonArraynonFungibleTokens.size(); i++) {
+          ListWalletTransactionsRINonFungibleTokens.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
+      if (jsonArrayrecipients != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("recipients").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `recipients` to be an array in the JSON string but got `%s`", jsonObj.get("recipients").toString()));
+        }
+
+        // validate the optional field `recipients` (array)
+        for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+          ListWalletTransactionsRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
+      if (jsonArraysenders != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("senders").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `senders` to be an array in the JSON string but got `%s`", jsonObj.get("senders").toString()));
+        }
+
+        // validate the optional field `senders` (array)
+        for (int i = 0; i < jsonArraysenders.size(); i++) {
+          ListWalletTransactionsRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `status` to be a primitive type in the JSON string but got `%s`", jsonObj.get("status").toString()));
+      }
+      if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
+      }
+      // validate the optional field `value`
+      if (jsonObj.getAsJsonObject("value") != null) {
+        ListWalletTransactionsRIValue.validateJsonObject(jsonObj.getAsJsonObject("value"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListWalletTransactionsRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListWalletTransactionsRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListWalletTransactionsRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListWalletTransactionsRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListWalletTransactionsRI>() {
+           @Override
+           public void write(JsonWriter out, ListWalletTransactionsRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListWalletTransactionsRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListWalletTransactionsRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListWalletTransactionsRI
+  * @throws IOException if the JSON string is invalid with respect to ListWalletTransactionsRI
+  */
+  public static ListWalletTransactionsRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListWalletTransactionsRI.class);
+  }
+
+ /**
+  * Convert an instance of ListWalletTransactionsRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

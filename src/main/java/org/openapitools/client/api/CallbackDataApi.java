@@ -31,19 +31,19 @@ import org.openapitools.client.model.GetAddressDetailsFromCallbackR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallbackR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallbackR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackR;
-import org.openapitools.client.model.InlineResponse40069;
-import org.openapitools.client.model.InlineResponse40070;
-import org.openapitools.client.model.InlineResponse40071;
-import org.openapitools.client.model.InlineResponse40072;
-import org.openapitools.client.model.InlineResponse40169;
-import org.openapitools.client.model.InlineResponse40170;
-import org.openapitools.client.model.InlineResponse40171;
-import org.openapitools.client.model.InlineResponse40172;
+import org.openapitools.client.model.InlineResponse40083;
+import org.openapitools.client.model.InlineResponse40084;
+import org.openapitools.client.model.InlineResponse40085;
+import org.openapitools.client.model.InlineResponse40086;
+import org.openapitools.client.model.InlineResponse40183;
+import org.openapitools.client.model.InlineResponse40184;
+import org.openapitools.client.model.InlineResponse40185;
+import org.openapitools.client.model.InlineResponse40186;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40369;
-import org.openapitools.client.model.InlineResponse40370;
-import org.openapitools.client.model.InlineResponse40371;
-import org.openapitools.client.model.InlineResponse40372;
+import org.openapitools.client.model.InlineResponse40383;
+import org.openapitools.client.model.InlineResponse40384;
+import org.openapitools.client.model.InlineResponse40385;
+import org.openapitools.client.model.InlineResponse40386;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse4042;
 import org.openapitools.client.model.InlineResponse4044;
@@ -58,6 +58,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class CallbackDataApi {
     private ApiClient localVarApiClient;
@@ -123,7 +124,6 @@ public class CallbackDataApi {
      */
     public okhttp3.Call getAddressDetailsFromCallbackCall(String blockchain, String network, String address, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -166,7 +166,7 @@ public class CallbackDataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -319,7 +319,6 @@ public class CallbackDataApi {
      */
     public okhttp3.Call getBlockDetailsByBlockHashFromCallbackCall(String blockchain, String network, String blockHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -362,7 +361,7 @@ public class CallbackDataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -515,7 +514,6 @@ public class CallbackDataApi {
      */
     public okhttp3.Call getBlockDetailsByBlockHeightFromCallbackCall(String blockchain, String network, String blockHeight, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -558,7 +556,7 @@ public class CallbackDataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -711,7 +709,6 @@ public class CallbackDataApi {
      */
     public okhttp3.Call getTransactionDetailsByTransactionIDFromCallbackCall(String blockchain, String network, String transactionId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -754,7 +751,7 @@ public class CallbackDataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

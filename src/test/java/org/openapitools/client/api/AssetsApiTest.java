@@ -16,24 +16,24 @@ package org.openapitools.client.api;
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.GetAssetDetailsByAssetIDR;
 import org.openapitools.client.model.GetAssetDetailsByAssetSymbolR;
-import org.openapitools.client.model.InlineResponse40089;
-import org.openapitools.client.model.InlineResponse40090;
-import org.openapitools.client.model.InlineResponse40091;
-import org.openapitools.client.model.InlineResponse40189;
-import org.openapitools.client.model.InlineResponse40190;
-import org.openapitools.client.model.InlineResponse40191;
+import org.openapitools.client.model.InlineResponse400108;
+import org.openapitools.client.model.InlineResponse400109;
+import org.openapitools.client.model.InlineResponse400110;
+import org.openapitools.client.model.InlineResponse401108;
+import org.openapitools.client.model.InlineResponse401109;
+import org.openapitools.client.model.InlineResponse401110;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40389;
-import org.openapitools.client.model.InlineResponse40390;
-import org.openapitools.client.model.InlineResponse40391;
+import org.openapitools.client.model.InlineResponse403108;
+import org.openapitools.client.model.InlineResponse403109;
+import org.openapitools.client.model.InlineResponse403110;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListAssetsDetailsR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -43,51 +43,47 @@ import java.util.Map;
 /**
  * API tests for AssetsApi
  */
-@Ignore
+@Disabled
 public class AssetsApiTest {
 
     private final AssetsApi api = new AssetsApi();
 
-    
     /**
      * Get Asset Details By Asset ID
      *
      * Through this endpoint users can obtain information on assets by &#x60;assetId&#x60;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getAssetDetailsByAssetIDTest() throws ApiException {
         String assetId = null;
         String context = null;
-                GetAssetDetailsByAssetIDR response = api.getAssetDetailsByAssetID(assetId, context);
+        GetAssetDetailsByAssetIDR response = api.getAssetDetailsByAssetID(assetId, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Asset Details By Asset Symbol
      *
      * Through this endpoint users can obtain information on assets by asset symbol.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getAssetDetailsByAssetSymbolTest() throws ApiException {
         String assetSymbol = null;
         String context = null;
-                GetAssetDetailsByAssetSymbolR response = api.getAssetDetailsByAssetSymbol(assetSymbol, context);
+        GetAssetDetailsByAssetSymbolR response = api.getAssetDetailsByAssetSymbol(assetSymbol, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Assets Details
      *
      * This endpoint will return a list of details on assets. These could be cryptocurrencies or FIAT assets that we support. Each asset has a unique identifier - &#x60;assetId&#x60; and a unique symbol in the form of a string, e.g. \&quot;BTC\&quot;.    The details returned could include information on the latest rate and rate fluctuation of different periods of time - 24 hours, a week, one hour, the encoding of the logo, and more.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listAssetsDetailsTest() throws ApiException {
@@ -97,8 +93,8 @@ public class AssetsApiTest {
         Integer limit = null;
         Integer offset = null;
         Boolean waasEnabled = null;
-                ListAssetsDetailsR response = api.listAssetsDetails(context, assetType, cryptoType, limit, offset, waasEnabled);
+        ListAssetsDetailsR response = api.listAssetsDetails(context, assetType, cryptoType, limit, offset, waasEnabled);
         // TODO: test validations
     }
-    
+
 }

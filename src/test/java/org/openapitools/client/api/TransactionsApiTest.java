@@ -23,18 +23,18 @@ import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRB;
 import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressR;
 import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRB;
 import org.openapitools.client.model.InlineResponse40013;
-import org.openapitools.client.model.InlineResponse40020;
-import org.openapitools.client.model.InlineResponse40025;
-import org.openapitools.client.model.InlineResponse40036;
+import org.openapitools.client.model.InlineResponse40021;
+import org.openapitools.client.model.InlineResponse40026;
+import org.openapitools.client.model.InlineResponse40037;
 import org.openapitools.client.model.InlineResponse40113;
-import org.openapitools.client.model.InlineResponse40120;
-import org.openapitools.client.model.InlineResponse40125;
-import org.openapitools.client.model.InlineResponse40136;
+import org.openapitools.client.model.InlineResponse40121;
+import org.openapitools.client.model.InlineResponse40126;
+import org.openapitools.client.model.InlineResponse40137;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse40313;
-import org.openapitools.client.model.InlineResponse40320;
-import org.openapitools.client.model.InlineResponse40325;
-import org.openapitools.client.model.InlineResponse40336;
+import org.openapitools.client.model.InlineResponse40321;
+import org.openapitools.client.model.InlineResponse40326;
+import org.openapitools.client.model.InlineResponse40337;
 import org.openapitools.client.model.InlineResponse4091;
 import org.openapitools.client.model.InlineResponse4092;
 import org.openapitools.client.model.InlineResponse4093;
@@ -43,8 +43,8 @@ import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -54,19 +54,17 @@ import java.util.Map;
 /**
  * API tests for TransactionsApi
  */
-@Ignore
+@Disabled
 public class TransactionsApiTest {
 
     private final TransactionsApi api = new TransactionsApi();
 
-    
     /**
      * Create Coins Transaction From Address For Whole Amount
      *
      * Through this endpoint customers can create a new transaction from address for **coins** specifically, which will transfer over the entire available amount.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createCoinsTransactionFromAddressForWholeAmountTest() throws ApiException {
@@ -76,17 +74,16 @@ public class TransactionsApiTest {
         String walletId = null;
         String context = null;
         CreateCoinsTransactionFromAddressForWholeAmountRB createCoinsTransactionFromAddressForWholeAmountRB = null;
-                CreateCoinsTransactionFromAddressForWholeAmountR response = api.createCoinsTransactionFromAddressForWholeAmount(address, blockchain, network, walletId, context, createCoinsTransactionFromAddressForWholeAmountRB);
+        CreateCoinsTransactionFromAddressForWholeAmountR response = api.createCoinsTransactionFromAddressForWholeAmount(address, blockchain, network, walletId, context, createCoinsTransactionFromAddressForWholeAmountRB);
         // TODO: test validations
     }
-    
+
     /**
      * Create Coins Transaction Request from Address
      *
      * Through this endpoint users can create a new single transaction request from one address to another.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createCoinsTransactionRequestFromAddressTest() throws ApiException {
@@ -96,17 +93,16 @@ public class TransactionsApiTest {
         String walletId = null;
         String context = null;
         CreateCoinsTransactionRequestFromAddressRB createCoinsTransactionRequestFromAddressRB = null;
-                CreateCoinsTransactionRequestFromAddressR response = api.createCoinsTransactionRequestFromAddress(address, blockchain, network, walletId, context, createCoinsTransactionRequestFromAddressRB);
+        CreateCoinsTransactionRequestFromAddressR response = api.createCoinsTransactionRequestFromAddress(address, blockchain, network, walletId, context, createCoinsTransactionRequestFromAddressRB);
         // TODO: test validations
     }
-    
+
     /**
      * Create Coins Transaction Request from Wallet
      *
      * Through this endpoint users can create a new transaction request from the entire Wallet instead from just a specific address. This endpoint can generate transactions from multiple to multiple addresses.    {warning}This is available **only** for UTXO-based protocols such as Bitcoin, Bitcoin Cash, Litecoin, etc. It **is not** available for Account-based protocols like Ethereum.{/warning}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createCoinsTransactionRequestFromWalletTest() throws ApiException {
@@ -115,17 +111,16 @@ public class TransactionsApiTest {
         String walletId = null;
         String context = null;
         CreateCoinsTransactionRequestFromWalletRB createCoinsTransactionRequestFromWalletRB = null;
-                CreateCoinsTransactionRequestFromWalletR response = api.createCoinsTransactionRequestFromWallet(blockchain, network, walletId, context, createCoinsTransactionRequestFromWalletRB);
+        CreateCoinsTransactionRequestFromWalletR response = api.createCoinsTransactionRequestFromWallet(blockchain, network, walletId, context, createCoinsTransactionRequestFromWalletRB);
         // TODO: test validations
     }
-    
+
     /**
      * Create Fungible Tokens Transaction Request from Address
      *
      * Through this endpoint users can make a single token transaction.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void createFungibleTokensTransactionRequestFromAddressTest() throws ApiException {
@@ -135,8 +130,8 @@ public class TransactionsApiTest {
         String walletId = null;
         String context = null;
         CreateFungibleTokensTransactionRequestFromAddressRB createFungibleTokensTransactionRequestFromAddressRB = null;
-                CreateFungibleTokensTransactionRequestFromAddressR response = api.createFungibleTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB);
+        CreateFungibleTokensTransactionRequestFromAddressR response = api.createFungibleTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB);
         // TODO: test validations
     }
-    
+
 }

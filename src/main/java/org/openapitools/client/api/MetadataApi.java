@@ -27,10 +27,10 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse40086;
-import org.openapitools.client.model.InlineResponse40186;
+import org.openapitools.client.model.InlineResponse400105;
+import org.openapitools.client.model.InlineResponse401105;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40386;
+import org.openapitools.client.model.InlineResponse403105;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
@@ -43,6 +43,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class MetadataApi {
     private ApiClient localVarApiClient;
@@ -107,7 +108,6 @@ public class MetadataApi {
      */
     public okhttp3.Call listSupportedAssetsCall(String context, String assetType, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -159,7 +159,7 @@ public class MetadataApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

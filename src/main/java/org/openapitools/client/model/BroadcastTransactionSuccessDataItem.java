@@ -24,11 +24,31 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class BroadcastTransactionSuccessDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -114,6 +134,7 @@ public class BroadcastTransactionSuccessDataItem {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -155,5 +176,111 @@ public class BroadcastTransactionSuccessDataItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("blockchain");
+    openapiFields.add("network");
+    openapiFields.add("transactionId");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("blockchain");
+    openapiRequiredFields.add("network");
+    openapiRequiredFields.add("transactionId");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to BroadcastTransactionSuccessDataItem
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (BroadcastTransactionSuccessDataItem.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in BroadcastTransactionSuccessDataItem is not found in the empty JSON string", BroadcastTransactionSuccessDataItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!BroadcastTransactionSuccessDataItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `BroadcastTransactionSuccessDataItem` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : BroadcastTransactionSuccessDataItem.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("blockchain") != null && !jsonObj.get("blockchain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `blockchain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blockchain").toString()));
+      }
+      if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `network` to be a primitive type in the JSON string but got `%s`", jsonObj.get("network").toString()));
+      }
+      if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!BroadcastTransactionSuccessDataItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'BroadcastTransactionSuccessDataItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<BroadcastTransactionSuccessDataItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(BroadcastTransactionSuccessDataItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<BroadcastTransactionSuccessDataItem>() {
+           @Override
+           public void write(JsonWriter out, BroadcastTransactionSuccessDataItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public BroadcastTransactionSuccessDataItem read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of BroadcastTransactionSuccessDataItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of BroadcastTransactionSuccessDataItem
+  * @throws IOException if the JSON string is invalid with respect to BroadcastTransactionSuccessDataItem
+  */
+  public static BroadcastTransactionSuccessDataItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, BroadcastTransactionSuccessDataItem.class);
+  }
+
+ /**
+  * Convert an instance of BroadcastTransactionSuccessDataItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

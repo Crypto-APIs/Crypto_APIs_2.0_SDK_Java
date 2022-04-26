@@ -24,9 +24,8 @@ import java.io.IOException;
 import org.openapitools.client.model.GetAddressDetailsFromCallbackRITotalReceived;
 import org.openapitools.client.model.GetAddressDetailsFromCallbackRITotalSpent;
 import org.openapitools.client.model.GetAddressDetailsRIConfirmedBalance;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

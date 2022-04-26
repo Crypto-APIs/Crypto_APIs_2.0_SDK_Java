@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetZilliqaBlockDetailsByBlockHeightRI**](GetZilliqaBlockDetailsByBlockHeightRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetZilliqaBlockDetailsByBlockHeightRI**](GetZilliqaBlockDetailsByBlockHeightRI.md) |  |  |
 
 
 

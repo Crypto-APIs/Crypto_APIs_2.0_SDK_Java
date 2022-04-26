@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**CreateAutomaticTokensForwardingRBDataItem**](CreateAutomaticTokensForwardingRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**CreateAutomaticTokensForwardingRBDataItem**](CreateAutomaticTokensForwardingRBDataItem.md) |  |  |
 
 
 

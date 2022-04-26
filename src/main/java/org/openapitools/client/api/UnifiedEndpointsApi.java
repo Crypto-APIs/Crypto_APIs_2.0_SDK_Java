@@ -27,49 +27,73 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.EstimateTransactionSmartFeeR;
 import org.openapitools.client.model.GetAddressDetailsR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetFeeRecommendationsR;
 import org.openapitools.client.model.GetLastMinedBlockR;
+import org.openapitools.client.model.GetNextAvailableNonceR;
+import org.openapitools.client.model.GetRawTransactionDataR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDR;
 import org.openapitools.client.model.InlineResponse400;
 import org.openapitools.client.model.InlineResponse40010;
 import org.openapitools.client.model.InlineResponse40015;
-import org.openapitools.client.model.InlineResponse40016;
 import org.openapitools.client.model.InlineResponse40017;
-import org.openapitools.client.model.InlineResponse40024;
-import org.openapitools.client.model.InlineResponse40026;
-import org.openapitools.client.model.InlineResponse40030;
-import org.openapitools.client.model.InlineResponse40037;
+import org.openapitools.client.model.InlineResponse40018;
+import org.openapitools.client.model.InlineResponse40025;
+import org.openapitools.client.model.InlineResponse40027;
+import org.openapitools.client.model.InlineResponse40031;
 import org.openapitools.client.model.InlineResponse4004;
-import org.openapitools.client.model.InlineResponse40042;
-import org.openapitools.client.model.InlineResponse40053;
+import org.openapitools.client.model.InlineResponse40040;
+import org.openapitools.client.model.InlineResponse40045;
+import org.openapitools.client.model.InlineResponse40057;
+import org.openapitools.client.model.InlineResponse40058;
+import org.openapitools.client.model.InlineResponse40059;
+import org.openapitools.client.model.InlineResponse40061;
+import org.openapitools.client.model.InlineResponse40062;
+import org.openapitools.client.model.InlineResponse40063;
+import org.openapitools.client.model.InlineResponse40065;
+import org.openapitools.client.model.InlineResponse40068;
 import org.openapitools.client.model.InlineResponse401;
 import org.openapitools.client.model.InlineResponse40110;
 import org.openapitools.client.model.InlineResponse40115;
-import org.openapitools.client.model.InlineResponse40116;
 import org.openapitools.client.model.InlineResponse40117;
-import org.openapitools.client.model.InlineResponse40124;
-import org.openapitools.client.model.InlineResponse40126;
-import org.openapitools.client.model.InlineResponse40130;
-import org.openapitools.client.model.InlineResponse40137;
+import org.openapitools.client.model.InlineResponse40118;
+import org.openapitools.client.model.InlineResponse40125;
+import org.openapitools.client.model.InlineResponse40127;
+import org.openapitools.client.model.InlineResponse40131;
 import org.openapitools.client.model.InlineResponse4014;
-import org.openapitools.client.model.InlineResponse40142;
-import org.openapitools.client.model.InlineResponse40153;
+import org.openapitools.client.model.InlineResponse40140;
+import org.openapitools.client.model.InlineResponse40145;
+import org.openapitools.client.model.InlineResponse40157;
+import org.openapitools.client.model.InlineResponse40158;
+import org.openapitools.client.model.InlineResponse40159;
+import org.openapitools.client.model.InlineResponse40161;
+import org.openapitools.client.model.InlineResponse40162;
+import org.openapitools.client.model.InlineResponse40163;
+import org.openapitools.client.model.InlineResponse40165;
+import org.openapitools.client.model.InlineResponse40168;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse403;
 import org.openapitools.client.model.InlineResponse40310;
 import org.openapitools.client.model.InlineResponse40315;
-import org.openapitools.client.model.InlineResponse40316;
 import org.openapitools.client.model.InlineResponse40317;
-import org.openapitools.client.model.InlineResponse40324;
-import org.openapitools.client.model.InlineResponse40326;
-import org.openapitools.client.model.InlineResponse40330;
-import org.openapitools.client.model.InlineResponse40337;
+import org.openapitools.client.model.InlineResponse40318;
+import org.openapitools.client.model.InlineResponse40325;
+import org.openapitools.client.model.InlineResponse40327;
+import org.openapitools.client.model.InlineResponse40331;
 import org.openapitools.client.model.InlineResponse4034;
-import org.openapitools.client.model.InlineResponse40342;
-import org.openapitools.client.model.InlineResponse40353;
+import org.openapitools.client.model.InlineResponse40340;
+import org.openapitools.client.model.InlineResponse40345;
+import org.openapitools.client.model.InlineResponse40357;
+import org.openapitools.client.model.InlineResponse40358;
+import org.openapitools.client.model.InlineResponse40359;
+import org.openapitools.client.model.InlineResponse40361;
+import org.openapitools.client.model.InlineResponse40362;
+import org.openapitools.client.model.InlineResponse40363;
+import org.openapitools.client.model.InlineResponse40365;
+import org.openapitools.client.model.InlineResponse40368;
 import org.openapitools.client.model.InlineResponse404;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse4042;
@@ -78,18 +102,24 @@ import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.InlineResponse501;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsR;
+import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressAndTimeRangeR;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeR;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressR;
+import org.openapitools.client.model.ListInternalTransactionsByAddressAndTimeRangeR;
 import org.openapitools.client.model.ListLatestMinedBlocksR;
 import org.openapitools.client.model.ListTransactionsByBlockHashR;
 import org.openapitools.client.model.ListTransactionsByBlockHeightR;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressR;
+import org.openapitools.client.model.ListUnspentTransactionOutputsByAddressR;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class UnifiedEndpointsApi {
     private ApiClient localVarApiClient;
@@ -129,6 +159,207 @@ public class UnifiedEndpointsApi {
     }
 
     /**
+     * Build call for estimateTransactionSmartFee
+     * @param blockchain  (required)
+     * @param network  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param confirmationTarget Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param estimateMode String representation of the address (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+        <tr><td> 501 </td><td> This {feature} has not been implemented yet. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call estimateTransactionSmartFeeCall(String blockchain, String network, String context, Integer confirmationTarget, String estimateMode, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/estimate-transaction-smart-fee"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (confirmationTarget != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("confirmationTarget", confirmationTarget));
+        }
+
+        if (estimateMode != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("estimateMode", estimateMode));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call estimateTransactionSmartFeeValidateBeforeCall(String blockchain, String network, String context, Integer confirmationTarget, String estimateMode, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling estimateTransactionSmartFee(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling estimateTransactionSmartFee(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = estimateTransactionSmartFeeCall(blockchain, network, context, confirmationTarget, estimateMode, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Estimate Transaction Smart Fee
+     * Through this endpoint, customers can estimate the approximate fee per kilobyte needed for a transaction to begin confirmation within the &#x60;confirmationTarget&#x60; blocks when possible. After which it will return the number of blocks for which the estimate is valid.
+     * @param blockchain  (required)
+     * @param network  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param confirmationTarget Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param estimateMode String representation of the address (optional)
+     * @return EstimateTransactionSmartFeeR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+        <tr><td> 501 </td><td> This {feature} has not been implemented yet. </td><td>  -  </td></tr>
+     </table>
+     */
+    public EstimateTransactionSmartFeeR estimateTransactionSmartFee(String blockchain, String network, String context, Integer confirmationTarget, String estimateMode) throws ApiException {
+        ApiResponse<EstimateTransactionSmartFeeR> localVarResp = estimateTransactionSmartFeeWithHttpInfo(blockchain, network, context, confirmationTarget, estimateMode);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Estimate Transaction Smart Fee
+     * Through this endpoint, customers can estimate the approximate fee per kilobyte needed for a transaction to begin confirmation within the &#x60;confirmationTarget&#x60; blocks when possible. After which it will return the number of blocks for which the estimate is valid.
+     * @param blockchain  (required)
+     * @param network  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param confirmationTarget Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param estimateMode String representation of the address (optional)
+     * @return ApiResponse&lt;EstimateTransactionSmartFeeR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+        <tr><td> 501 </td><td> This {feature} has not been implemented yet. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<EstimateTransactionSmartFeeR> estimateTransactionSmartFeeWithHttpInfo(String blockchain, String network, String context, Integer confirmationTarget, String estimateMode) throws ApiException {
+        okhttp3.Call localVarCall = estimateTransactionSmartFeeValidateBeforeCall(blockchain, network, context, confirmationTarget, estimateMode, null);
+        Type localVarReturnType = new TypeToken<EstimateTransactionSmartFeeR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Estimate Transaction Smart Fee (asynchronously)
+     * Through this endpoint, customers can estimate the approximate fee per kilobyte needed for a transaction to begin confirmation within the &#x60;confirmationTarget&#x60; blocks when possible. After which it will return the number of blocks for which the estimate is valid.
+     * @param blockchain  (required)
+     * @param network  (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param confirmationTarget Integer representation of confirmation target in blocks that estimation will be valid for (optional)
+     * @param estimateMode String representation of the address (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+        <tr><td> 501 </td><td> This {feature} has not been implemented yet. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call estimateTransactionSmartFeeAsync(String blockchain, String network, String context, Integer confirmationTarget, String estimateMode, final ApiCallback<EstimateTransactionSmartFeeR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = estimateTransactionSmartFeeValidateBeforeCall(blockchain, network, context, confirmationTarget, estimateMode, _callback);
+        Type localVarReturnType = new TypeToken<EstimateTransactionSmartFeeR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getAddressDetails
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
@@ -154,7 +385,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call getAddressDetailsCall(String blockchain, String network, String address, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -197,7 +427,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -347,7 +577,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call getBlockDetailsByBlockHashCall(String blockchain, String network, String blockHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -390,7 +619,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -543,7 +772,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call getBlockDetailsByBlockHeightCall(String blockchain, String network, Integer height, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -586,7 +814,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -738,7 +966,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call getFeeRecommendationsCall(String blockchain, String network, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -780,7 +1007,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -924,7 +1151,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call getLastMinedBlockCall(String blockchain, String network, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -966,7 +1192,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1085,6 +1311,392 @@ public class UnifiedEndpointsApi {
         return localVarCall;
     }
     /**
+     * Build call for getNextAvailableNonce
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getNextAvailableNonceCall(String blockchain, String network, String address, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/addresses/{address}/next-available-nonce"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getNextAvailableNonceValidateBeforeCall(String blockchain, String network, String address, String context, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling getNextAvailableNonce(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling getNextAvailableNonce(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling getNextAvailableNonce(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getNextAvailableNonceCall(blockchain, network, address, context, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get Next Available Nonce
+     * Through this endpoint customers can get information about the next available nonce by providing the specific blockchain, network and address.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return GetNextAvailableNonceR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public GetNextAvailableNonceR getNextAvailableNonce(String blockchain, String network, String address, String context) throws ApiException {
+        ApiResponse<GetNextAvailableNonceR> localVarResp = getNextAvailableNonceWithHttpInfo(blockchain, network, address, context);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Next Available Nonce
+     * Through this endpoint customers can get information about the next available nonce by providing the specific blockchain, network and address.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return ApiResponse&lt;GetNextAvailableNonceR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetNextAvailableNonceR> getNextAvailableNonceWithHttpInfo(String blockchain, String network, String address, String context) throws ApiException {
+        okhttp3.Call localVarCall = getNextAvailableNonceValidateBeforeCall(blockchain, network, address, context, null);
+        Type localVarReturnType = new TypeToken<GetNextAvailableNonceR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Next Available Nonce (asynchronously)
+     * Through this endpoint customers can get information about the next available nonce by providing the specific blockchain, network and address.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getNextAvailableNonceAsync(String blockchain, String network, String address, String context, final ApiCallback<GetNextAvailableNonceR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getNextAvailableNonceValidateBeforeCall(blockchain, network, address, context, _callback);
+        Type localVarReturnType = new TypeToken<GetNextAvailableNonceR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for getRawTransactionData
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param transactionId Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getRawTransactionDataCall(String blockchain, String network, String transactionId, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/transactions/{transactionId}/raw-data"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "transactionId" + "\\}", localVarApiClient.escapeString(transactionId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getRawTransactionDataValidateBeforeCall(String blockchain, String network, String transactionId, String context, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling getRawTransactionData(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling getRawTransactionData(Async)");
+        }
+        
+        // verify the required parameter 'transactionId' is set
+        if (transactionId == null) {
+            throw new ApiException("Missing the required parameter 'transactionId' when calling getRawTransactionData(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getRawTransactionDataCall(blockchain, network, transactionId, context, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get Raw Transaction Data
+     * Through this endpoint customers can get information on a transaction in its raw format by providing its &#x60;transactionId&#x60;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param transactionId Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return GetRawTransactionDataR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public GetRawTransactionDataR getRawTransactionData(String blockchain, String network, String transactionId, String context) throws ApiException {
+        ApiResponse<GetRawTransactionDataR> localVarResp = getRawTransactionDataWithHttpInfo(blockchain, network, transactionId, context);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Raw Transaction Data
+     * Through this endpoint customers can get information on a transaction in its raw format by providing its &#x60;transactionId&#x60;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param transactionId Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return ApiResponse&lt;GetRawTransactionDataR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetRawTransactionDataR> getRawTransactionDataWithHttpInfo(String blockchain, String network, String transactionId, String context) throws ApiException {
+        okhttp3.Call localVarCall = getRawTransactionDataValidateBeforeCall(blockchain, network, transactionId, context, null);
+        Type localVarReturnType = new TypeToken<GetRawTransactionDataR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Raw Transaction Data (asynchronously)
+     * Through this endpoint customers can get information on a transaction in its raw format by providing its &#x60;transactionId&#x60;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param transactionId Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified transaction has not been found on the specific blockchain. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getRawTransactionDataAsync(String blockchain, String network, String transactionId, String context, final ApiCallback<GetRawTransactionDataR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getRawTransactionDataValidateBeforeCall(blockchain, network, transactionId, context, _callback);
+        Type localVarReturnType = new TypeToken<GetRawTransactionDataR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for getTransactionDetailsByTransactionID
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
@@ -1111,7 +1723,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call getTransactionDetailsByTransactionIDCall(String blockchain, String network, String transactionId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1154,7 +1765,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1305,9 +1916,8 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAllUnconfirmedTransactionsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listAllUnconfirmedTransactionsCall(String blockchain, String network, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1357,7 +1967,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1366,7 +1976,7 @@ public class UnifiedEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listAllUnconfirmedTransactionsValidateBeforeCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listAllUnconfirmedTransactionsValidateBeforeCall(String blockchain, String network, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -1409,7 +2019,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListAllUnconfirmedTransactionsR listAllUnconfirmedTransactions(String blockchain, String network, String context, Integer limit, Integer offset) throws ApiException {
+    public ListAllUnconfirmedTransactionsR listAllUnconfirmedTransactions(String blockchain, String network, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListAllUnconfirmedTransactionsR> localVarResp = listAllUnconfirmedTransactionsWithHttpInfo(blockchain, network, context, limit, offset);
         return localVarResp.getData();
     }
@@ -1439,7 +2049,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListAllUnconfirmedTransactionsR> listAllUnconfirmedTransactionsWithHttpInfo(String blockchain, String network, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListAllUnconfirmedTransactionsR> listAllUnconfirmedTransactionsWithHttpInfo(String blockchain, String network, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listAllUnconfirmedTransactionsValidateBeforeCall(blockchain, network, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListAllUnconfirmedTransactionsR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1471,10 +2081,243 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listAllUnconfirmedTransactionsAsync(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback<ListAllUnconfirmedTransactionsR> _callback) throws ApiException {
+    public okhttp3.Call listAllUnconfirmedTransactionsAsync(String blockchain, String network, String context, Long limit, Long offset, final ApiCallback<ListAllUnconfirmedTransactionsR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listAllUnconfirmedTransactionsValidateBeforeCall(blockchain, network, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListAllUnconfirmedTransactionsR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listConfirmedTokensTransfersByAddressAndTimeRange
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listConfirmedTokensTransfersByAddressAndTimeRangeCall(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/addresses/{address}/tokens-transfers-by-time-range"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (fromTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromTimestamp", fromTimestamp));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (toTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("toTimestamp", toTimestamp));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listConfirmedTokensTransfersByAddressAndTimeRangeValidateBeforeCall(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listConfirmedTokensTransfersByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listConfirmedTokensTransfersByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling listConfirmedTokensTransfersByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'fromTimestamp' is set
+        if (fromTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'fromTimestamp' when calling listConfirmedTokensTransfersByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'toTimestamp' is set
+        if (toTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'toTimestamp' when calling listConfirmedTokensTransfersByAddressAndTimeRange(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listConfirmedTokensTransfersByAddressAndTimeRangeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List Confirmed Tokens Transfers By Address And Time Range
+     * Through this endpoint customers can obtain a list with **confirmed** token transfers by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.    {note}This refers only to transfers done for **confirmed tokens** not coins.{/note}
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListConfirmedTokensTransfersByAddressAndTimeRangeR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListConfirmedTokensTransfersByAddressAndTimeRangeR listConfirmedTokensTransfersByAddressAndTimeRange(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ListConfirmedTokensTransfersByAddressAndTimeRangeR> localVarResp = listConfirmedTokensTransfersByAddressAndTimeRangeWithHttpInfo(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Confirmed Tokens Transfers By Address And Time Range
+     * Through this endpoint customers can obtain a list with **confirmed** token transfers by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.    {note}This refers only to transfers done for **confirmed tokens** not coins.{/note}
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListConfirmedTokensTransfersByAddressAndTimeRangeR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListConfirmedTokensTransfersByAddressAndTimeRangeR> listConfirmedTokensTransfersByAddressAndTimeRangeWithHttpInfo(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listConfirmedTokensTransfersByAddressAndTimeRangeValidateBeforeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListConfirmedTokensTransfersByAddressAndTimeRangeR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Confirmed Tokens Transfers By Address And Time Range (asynchronously)
+     * Through this endpoint customers can obtain a list with **confirmed** token transfers by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.    {note}This refers only to transfers done for **confirmed tokens** not coins.{/note}
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listConfirmedTokensTransfersByAddressAndTimeRangeAsync(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset, final ApiCallback<ListConfirmedTokensTransfersByAddressAndTimeRangeR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listConfirmedTokensTransfersByAddressAndTimeRangeValidateBeforeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListConfirmedTokensTransfersByAddressAndTimeRangeR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1504,9 +2347,8 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listConfirmedTransactionsByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listConfirmedTransactionsByAddressCall(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1557,7 +2399,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1566,7 +2408,7 @@ public class UnifiedEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listConfirmedTransactionsByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listConfirmedTransactionsByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -1615,7 +2457,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListConfirmedTransactionsByAddressR listConfirmedTransactionsByAddress(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+    public ListConfirmedTransactionsByAddressR listConfirmedTransactionsByAddress(String blockchain, String network, String address, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListConfirmedTransactionsByAddressR> localVarResp = listConfirmedTransactionsByAddressWithHttpInfo(blockchain, network, address, context, limit, offset);
         return localVarResp.getData();
     }
@@ -1646,7 +2488,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListConfirmedTransactionsByAddressR> listConfirmedTransactionsByAddressWithHttpInfo(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListConfirmedTransactionsByAddressR> listConfirmedTransactionsByAddressWithHttpInfo(String blockchain, String network, String address, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listConfirmedTransactionsByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListConfirmedTransactionsByAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1679,10 +2521,476 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listConfirmedTransactionsByAddressAsync(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback<ListConfirmedTransactionsByAddressR> _callback) throws ApiException {
+    public okhttp3.Call listConfirmedTransactionsByAddressAsync(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback<ListConfirmedTransactionsByAddressR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listConfirmedTransactionsByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListConfirmedTransactionsByAddressR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listConfirmedTransactionsByAddressAndTimeRange
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listConfirmedTransactionsByAddressAndTimeRangeCall(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/addresses/{address}/transactions-by-time-range"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (fromTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromTimestamp", fromTimestamp));
+        }
+
+        if (toTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("toTimestamp", toTimestamp));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listConfirmedTransactionsByAddressAndTimeRangeValidateBeforeCall(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listConfirmedTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listConfirmedTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling listConfirmedTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'fromTimestamp' is set
+        if (fromTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'fromTimestamp' when calling listConfirmedTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'toTimestamp' is set
+        if (toTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'toTimestamp' when calling listConfirmedTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listConfirmedTransactionsByAddressAndTimeRangeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List Confirmed Transactions By Address And Time Range
+     * This endpoint will list confirmed transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListConfirmedTransactionsByAddressAndTimeRangeR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListConfirmedTransactionsByAddressAndTimeRangeR listConfirmedTransactionsByAddressAndTimeRange(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset) throws ApiException {
+        ApiResponse<ListConfirmedTransactionsByAddressAndTimeRangeR> localVarResp = listConfirmedTransactionsByAddressAndTimeRangeWithHttpInfo(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Confirmed Transactions By Address And Time Range
+     * This endpoint will list confirmed transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListConfirmedTransactionsByAddressAndTimeRangeR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListConfirmedTransactionsByAddressAndTimeRangeR> listConfirmedTransactionsByAddressAndTimeRangeWithHttpInfo(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset) throws ApiException {
+        okhttp3.Call localVarCall = listConfirmedTransactionsByAddressAndTimeRangeValidateBeforeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListConfirmedTransactionsByAddressAndTimeRangeR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Confirmed Transactions By Address And Time Range (asynchronously)
+     * This endpoint will list confirmed transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60; which gives customers the opportunity to filter the results by a specified time period.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listConfirmedTransactionsByAddressAndTimeRangeAsync(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, final ApiCallback<ListConfirmedTransactionsByAddressAndTimeRangeR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listConfirmedTransactionsByAddressAndTimeRangeValidateBeforeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListConfirmedTransactionsByAddressAndTimeRangeR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listInternalTransactionsByAddressAndTimeRange
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address String identifier of the address document represented in CryptoAPIs (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listInternalTransactionsByAddressAndTimeRangeCall(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/addresses/{address}/internal-by-time-range"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (fromTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromTimestamp", fromTimestamp));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (toTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("toTimestamp", toTimestamp));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listInternalTransactionsByAddressAndTimeRangeValidateBeforeCall(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listInternalTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listInternalTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling listInternalTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'fromTimestamp' is set
+        if (fromTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'fromTimestamp' when calling listInternalTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'toTimestamp' is set
+        if (toTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'toTimestamp' when calling listInternalTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listInternalTransactionsByAddressAndTimeRangeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List Internal Transactions By Address And Time Range
+     * Through this endpoint customers can list internal transactions by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address String identifier of the address document represented in CryptoAPIs (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListInternalTransactionsByAddressAndTimeRangeR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListInternalTransactionsByAddressAndTimeRangeR listInternalTransactionsByAddressAndTimeRange(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ListInternalTransactionsByAddressAndTimeRangeR> localVarResp = listInternalTransactionsByAddressAndTimeRangeWithHttpInfo(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Internal Transactions By Address And Time Range
+     * Through this endpoint customers can list internal transactions by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address String identifier of the address document represented in CryptoAPIs (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListInternalTransactionsByAddressAndTimeRangeR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListInternalTransactionsByAddressAndTimeRangeR> listInternalTransactionsByAddressAndTimeRangeWithHttpInfo(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listInternalTransactionsByAddressAndTimeRangeValidateBeforeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListInternalTransactionsByAddressAndTimeRangeR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Internal Transactions By Address And Time Range (asynchronously)
+     * Through this endpoint customers can list internal transactions by the &#x60;address&#x60; attribute and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address String identifier of the address document represented in CryptoAPIs (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listInternalTransactionsByAddressAndTimeRangeAsync(String blockchain, String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Integer limit, Integer offset, final ApiCallback<ListInternalTransactionsByAddressAndTimeRangeR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listInternalTransactionsByAddressAndTimeRangeValidateBeforeCall(blockchain, network, address, fromTimestamp, toTimestamp, context, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListInternalTransactionsByAddressAndTimeRangeR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1713,7 +3021,6 @@ public class UnifiedEndpointsApi {
      */
     public okhttp3.Call listLatestMinedBlocksCall(String network, String blockchain, Integer count, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1756,7 +3063,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1908,9 +3215,8 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTransactionsByBlockHashCall(String blockchain, String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTransactionsByBlockHashCall(String blockchain, String network, String blockHash, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1961,7 +3267,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1970,7 +3276,7 @@ public class UnifiedEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTransactionsByBlockHashValidateBeforeCall(String blockchain, String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTransactionsByBlockHashValidateBeforeCall(String blockchain, String network, String blockHash, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -2019,7 +3325,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListTransactionsByBlockHashR listTransactionsByBlockHash(String blockchain, String network, String blockHash, String context, Integer limit, Integer offset) throws ApiException {
+    public ListTransactionsByBlockHashR listTransactionsByBlockHash(String blockchain, String network, String blockHash, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListTransactionsByBlockHashR> localVarResp = listTransactionsByBlockHashWithHttpInfo(blockchain, network, blockHash, context, limit, offset);
         return localVarResp.getData();
     }
@@ -2050,7 +3356,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListTransactionsByBlockHashR> listTransactionsByBlockHashWithHttpInfo(String blockchain, String network, String blockHash, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListTransactionsByBlockHashR> listTransactionsByBlockHashWithHttpInfo(String blockchain, String network, String blockHash, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listTransactionsByBlockHashValidateBeforeCall(blockchain, network, blockHash, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListTransactionsByBlockHashR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2083,7 +3389,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTransactionsByBlockHashAsync(String blockchain, String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback<ListTransactionsByBlockHashR> _callback) throws ApiException {
+    public okhttp3.Call listTransactionsByBlockHashAsync(String blockchain, String network, String blockHash, String context, Long limit, Long offset, final ApiCallback<ListTransactionsByBlockHashR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTransactionsByBlockHashValidateBeforeCall(blockchain, network, blockHash, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListTransactionsByBlockHashR>(){}.getType();
@@ -2117,9 +3423,8 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTransactionsByBlockHeightCall(String blockchain, String network, Integer height, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTransactionsByBlockHeightCall(String blockchain, String network, Long height, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2170,7 +3475,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2179,7 +3484,7 @@ public class UnifiedEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTransactionsByBlockHeightValidateBeforeCall(String blockchain, String network, Integer height, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTransactionsByBlockHeightValidateBeforeCall(String blockchain, String network, Long height, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -2229,7 +3534,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListTransactionsByBlockHeightR listTransactionsByBlockHeight(String blockchain, String network, Integer height, String context, Integer limit, Integer offset) throws ApiException {
+    public ListTransactionsByBlockHeightR listTransactionsByBlockHeight(String blockchain, String network, Long height, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListTransactionsByBlockHeightR> localVarResp = listTransactionsByBlockHeightWithHttpInfo(blockchain, network, height, context, limit, offset);
         return localVarResp.getData();
     }
@@ -2261,7 +3566,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListTransactionsByBlockHeightR> listTransactionsByBlockHeightWithHttpInfo(String blockchain, String network, Integer height, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListTransactionsByBlockHeightR> listTransactionsByBlockHeightWithHttpInfo(String blockchain, String network, Long height, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listTransactionsByBlockHeightValidateBeforeCall(blockchain, network, height, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListTransactionsByBlockHeightR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2295,7 +3600,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTransactionsByBlockHeightAsync(String blockchain, String network, Integer height, String context, Integer limit, Integer offset, final ApiCallback<ListTransactionsByBlockHeightR> _callback) throws ApiException {
+    public okhttp3.Call listTransactionsByBlockHeightAsync(String blockchain, String network, Long height, String context, Long limit, Long offset, final ApiCallback<ListTransactionsByBlockHeightR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTransactionsByBlockHeightValidateBeforeCall(blockchain, network, height, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListTransactionsByBlockHeightR>(){}.getType();
@@ -2328,9 +3633,8 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUnconfirmedTransactionsByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listUnconfirmedTransactionsByAddressCall(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -2381,7 +3685,7 @@ public class UnifiedEndpointsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -2390,7 +3694,7 @@ public class UnifiedEndpointsApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listUnconfirmedTransactionsByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listUnconfirmedTransactionsByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -2439,7 +3743,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListUnconfirmedTransactionsByAddressR listUnconfirmedTransactionsByAddress(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+    public ListUnconfirmedTransactionsByAddressR listUnconfirmedTransactionsByAddress(String blockchain, String network, String address, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListUnconfirmedTransactionsByAddressR> localVarResp = listUnconfirmedTransactionsByAddressWithHttpInfo(blockchain, network, address, context, limit, offset);
         return localVarResp.getData();
     }
@@ -2470,7 +3774,7 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListUnconfirmedTransactionsByAddressR> listUnconfirmedTransactionsByAddressWithHttpInfo(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListUnconfirmedTransactionsByAddressR> listUnconfirmedTransactionsByAddressWithHttpInfo(String blockchain, String network, String address, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listUnconfirmedTransactionsByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListUnconfirmedTransactionsByAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -2503,10 +3807,217 @@ public class UnifiedEndpointsApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listUnconfirmedTransactionsByAddressAsync(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback<ListUnconfirmedTransactionsByAddressR> _callback) throws ApiException {
+    public okhttp3.Call listUnconfirmedTransactionsByAddressAsync(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback<ListUnconfirmedTransactionsByAddressR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listUnconfirmedTransactionsByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListUnconfirmedTransactionsByAddressR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listUnspentTransactionOutputsByAddress
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUnspentTransactionOutputsByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/addresses/{address}/unspent-outputs"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listUnspentTransactionOutputsByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listUnspentTransactionOutputsByAddress(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listUnspentTransactionOutputsByAddress(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling listUnspentTransactionOutputsByAddress(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listUnspentTransactionOutputsByAddressCall(blockchain, network, address, context, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List Unspent Transaction Outputs By Address
+     * Through this endpoint customers can list their transactions&#39; unspent outputs by &#x60;address&#x60;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListUnspentTransactionOutputsByAddressR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListUnspentTransactionOutputsByAddressR listUnspentTransactionOutputsByAddress(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ListUnspentTransactionOutputsByAddressR> localVarResp = listUnspentTransactionOutputsByAddressWithHttpInfo(blockchain, network, address, context, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Unspent Transaction Outputs By Address
+     * Through this endpoint customers can list their transactions&#39; unspent outputs by &#x60;address&#x60;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListUnspentTransactionOutputsByAddressR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListUnspentTransactionOutputsByAddressR> listUnspentTransactionOutputsByAddressWithHttpInfo(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listUnspentTransactionOutputsByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListUnspentTransactionOutputsByAddressR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Unspent Transaction Outputs By Address (asynchronously)
+     * Through this endpoint customers can list their transactions&#39; unspent outputs by &#x60;address&#x60;.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the address that has unspend funds per which the result is returned. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUnspentTransactionOutputsByAddressAsync(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback<ListUnspentTransactionOutputsByAddressR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listUnspentTransactionOutputsByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListUnspentTransactionOutputsByAddressR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

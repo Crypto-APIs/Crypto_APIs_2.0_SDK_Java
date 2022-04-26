@@ -23,12 +23,32 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressE403;
+import org.openapitools.client.model.GetWalletAssetDetailsE403;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
 
 /**
  * InlineResponse40336
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class InlineResponse40336 {
   public static final String SERIALIZED_NAME_API_VERSION = "apiVersion";
   @SerializedName(SERIALIZED_NAME_API_VERSION)
@@ -44,7 +64,7 @@ public class InlineResponse40336 {
 
   public static final String SERIALIZED_NAME_ERROR = "error";
   @SerializedName(SERIALIZED_NAME_ERROR)
-  private CreateFungibleTokensTransactionRequestFromAddressE403 error;
+  private GetWalletAssetDetailsE403 error;
 
   public InlineResponse40336() { 
   }
@@ -60,7 +80,7 @@ public class InlineResponse40336 {
    * @return apiVersion
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2.0", required = true, value = "Specifies the version of the API that incorporates this endpoint.")
+  @ApiModelProperty(example = "2.0.0", required = true, value = "Specifies the version of the API that incorporates this endpoint.")
 
   public String getApiVersion() {
     return apiVersion;
@@ -106,7 +126,7 @@ public class InlineResponse40336 {
    * @return context
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "You can add any text here", value = "In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.")
+  @ApiModelProperty(example = "yourExampleString", value = "In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.")
 
   public String getContext() {
     return context;
@@ -118,7 +138,7 @@ public class InlineResponse40336 {
   }
 
 
-  public InlineResponse40336 error(CreateFungibleTokensTransactionRequestFromAddressE403 error) {
+  public InlineResponse40336 error(GetWalletAssetDetailsE403 error) {
     
     this.error = error;
     return this;
@@ -131,14 +151,15 @@ public class InlineResponse40336 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public CreateFungibleTokensTransactionRequestFromAddressE403 getError() {
+  public GetWalletAssetDetailsE403 getError() {
     return error;
   }
 
 
-  public void setError(CreateFungibleTokensTransactionRequestFromAddressE403 error) {
+  public void setError(GetWalletAssetDetailsE403 error) {
     this.error = error;
   }
+
 
 
   @Override
@@ -184,5 +205,116 @@ public class InlineResponse40336 {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("apiVersion");
+    openapiFields.add("requestId");
+    openapiFields.add("context");
+    openapiFields.add("error");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("apiVersion");
+    openapiRequiredFields.add("requestId");
+    openapiRequiredFields.add("error");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to InlineResponse40336
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (InlineResponse40336.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in InlineResponse40336 is not found in the empty JSON string", InlineResponse40336.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!InlineResponse40336.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `InlineResponse40336` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : InlineResponse40336.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("apiVersion") != null && !jsonObj.get("apiVersion").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `apiVersion` to be a primitive type in the JSON string but got `%s`", jsonObj.get("apiVersion").toString()));
+      }
+      if (jsonObj.get("requestId") != null && !jsonObj.get("requestId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `requestId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("requestId").toString()));
+      }
+      if (jsonObj.get("context") != null && !jsonObj.get("context").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `context` to be a primitive type in the JSON string but got `%s`", jsonObj.get("context").toString()));
+      }
+      // validate the optional field `error`
+      if (jsonObj.getAsJsonObject("error") != null) {
+        GetWalletAssetDetailsE403.validateJsonObject(jsonObj.getAsJsonObject("error"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!InlineResponse40336.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'InlineResponse40336' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<InlineResponse40336> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(InlineResponse40336.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<InlineResponse40336>() {
+           @Override
+           public void write(JsonWriter out, InlineResponse40336 value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public InlineResponse40336 read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of InlineResponse40336 given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of InlineResponse40336
+  * @throws IOException if the JSON string is invalid with respect to InlineResponse40336
+  */
+  public static InlineResponse40336 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, InlineResponse40336.class);
+  }
+
+ /**
+  * Convert an instance of InlineResponse40336 to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

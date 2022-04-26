@@ -25,9 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRIRecipients;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRISenders;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -45,6 +44,14 @@ public class CreateCoinsTransactionRequestFromAddressRITest {
     }
 
     /**
+     * Test the property 'addressTag'
+     */
+    @Test
+    public void addressTagTest() {
+        // TODO: test addressTag
+    }
+
+    /**
      * Test the property 'callbackSecretKey'
      */
     @Test
@@ -58,6 +65,14 @@ public class CreateCoinsTransactionRequestFromAddressRITest {
     @Test
     public void callbackUrlTest() {
         // TODO: test callbackUrl
+    }
+
+    /**
+     * Test the property 'classicAddress'
+     */
+    @Test
+    public void classicAddressTest() {
+        // TODO: test classicAddress
     }
 
     /**

@@ -31,11 +31,31 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVS
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVin;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
   @SerializedName(SERIALIZED_NAME_BINDING_SIG)
@@ -55,7 +75,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
+  private Long locktime;
 
   public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
   @SerializedName(SERIALIZED_NAME_OVERWINTERED)
@@ -91,11 +111,11 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<GetWalletTransactionDetailsByTransactionIDRIBSZVin>();
+  private List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<ListTransactionsByBlockHeightRIBSZVout>();
+  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<>();
 
   public GetWalletTransactionDetailsByTransactionIDRIBSZ() { 
   }
@@ -192,7 +212,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ locktime(Integer locktime) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ locktime(Long locktime) {
     
     this.locktime = locktime;
     return this;
@@ -205,12 +225,12 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "1781965", required = true, value = "Represents the time at which a particular transaction can be added to the blockchain.")
 
-  public Integer getLocktime() {
+  public Long getLocktime() {
     return locktime;
   }
 
 
-  public void setLocktime(Integer locktime) {
+  public void setLocktime(Long locktime) {
     this.locktime = locktime;
   }
 
@@ -269,7 +289,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public GetWalletTransactionDetailsByTransactionIDRIBSZ addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplit vJoinSplitItem) {
     if (this.vJoinSplit == null) {
-      this.vJoinSplit = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit>();
+      this.vJoinSplit = new ArrayList<>();
     }
     this.vJoinSplit.add(vJoinSplitItem);
     return this;
@@ -300,7 +320,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public GetWalletTransactionDetailsByTransactionIDRIBSZ addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
     if (this.vShieldedOutput == null) {
-      this.vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
+      this.vShieldedOutput = new ArrayList<>();
     }
     this.vShieldedOutput.add(vShieldedOutputItem);
     return this;
@@ -331,7 +351,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public GetWalletTransactionDetailsByTransactionIDRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
     if (this.vShieldedSpend == null) {
-      this.vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
+      this.vShieldedSpend = new ArrayList<>();
     }
     this.vShieldedSpend.add(vShieldedSpendItem);
     return this;
@@ -479,6 +499,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -544,5 +565,198 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("bindingSig");
+    openapiFields.add("expiryHeight");
+    openapiFields.add("joinSplitPubKey");
+    openapiFields.add("joinSplitSig");
+    openapiFields.add("locktime");
+    openapiFields.add("overwintered");
+    openapiFields.add("size");
+    openapiFields.add("vJoinSplit");
+    openapiFields.add("vShieldedOutput");
+    openapiFields.add("vShieldedSpend");
+    openapiFields.add("valueBalance");
+    openapiFields.add("version");
+    openapiFields.add("versionGroupId");
+    openapiFields.add("vin");
+    openapiFields.add("vout");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("bindingSig");
+    openapiRequiredFields.add("expiryHeight");
+    openapiRequiredFields.add("joinSplitPubKey");
+    openapiRequiredFields.add("joinSplitSig");
+    openapiRequiredFields.add("locktime");
+    openapiRequiredFields.add("overwintered");
+    openapiRequiredFields.add("size");
+    openapiRequiredFields.add("valueBalance");
+    openapiRequiredFields.add("version");
+    openapiRequiredFields.add("versionGroupId");
+    openapiRequiredFields.add("vin");
+    openapiRequiredFields.add("vout");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetWalletTransactionDetailsByTransactionIDRIBSZ
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetWalletTransactionDetailsByTransactionIDRIBSZ.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetWalletTransactionDetailsByTransactionIDRIBSZ is not found in the empty JSON string", GetWalletTransactionDetailsByTransactionIDRIBSZ.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetWalletTransactionDetailsByTransactionIDRIBSZ.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetWalletTransactionDetailsByTransactionIDRIBSZ` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetWalletTransactionDetailsByTransactionIDRIBSZ.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("bindingSig") != null && !jsonObj.get("bindingSig").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `bindingSig` to be a primitive type in the JSON string but got `%s`", jsonObj.get("bindingSig").toString()));
+      }
+      if (jsonObj.get("joinSplitPubKey") != null && !jsonObj.get("joinSplitPubKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `joinSplitPubKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("joinSplitPubKey").toString()));
+      }
+      if (jsonObj.get("joinSplitSig") != null && !jsonObj.get("joinSplitSig").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `joinSplitSig` to be a primitive type in the JSON string but got `%s`", jsonObj.get("joinSplitSig").toString()));
+      }
+      JsonArray jsonArrayvJoinSplit = jsonObj.getAsJsonArray("vJoinSplit");
+      if (jsonArrayvJoinSplit != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vJoinSplit").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vJoinSplit` to be an array in the JSON string but got `%s`", jsonObj.get("vJoinSplit").toString()));
+        }
+
+        // validate the optional field `vJoinSplit` (array)
+        for (int i = 0; i < jsonArrayvJoinSplit.size(); i++) {
+          GetTransactionDetailsByTransactionIDRIBSZVJoinSplit.validateJsonObject(jsonArrayvJoinSplit.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayvShieldedOutput = jsonObj.getAsJsonArray("vShieldedOutput");
+      if (jsonArrayvShieldedOutput != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vShieldedOutput").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vShieldedOutput` to be an array in the JSON string but got `%s`", jsonObj.get("vShieldedOutput").toString()));
+        }
+
+        // validate the optional field `vShieldedOutput` (array)
+        for (int i = 0; i < jsonArrayvShieldedOutput.size(); i++) {
+          GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput.validateJsonObject(jsonArrayvShieldedOutput.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayvShieldedSpend = jsonObj.getAsJsonArray("vShieldedSpend");
+      if (jsonArrayvShieldedSpend != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vShieldedSpend").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vShieldedSpend` to be an array in the JSON string but got `%s`", jsonObj.get("vShieldedSpend").toString()));
+        }
+
+        // validate the optional field `vShieldedSpend` (array)
+        for (int i = 0; i < jsonArrayvShieldedSpend.size(); i++) {
+          GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.validateJsonObject(jsonArrayvShieldedSpend.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("valueBalance") != null && !jsonObj.get("valueBalance").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `valueBalance` to be a primitive type in the JSON string but got `%s`", jsonObj.get("valueBalance").toString()));
+      }
+      if (jsonObj.get("versionGroupId") != null && !jsonObj.get("versionGroupId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `versionGroupId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("versionGroupId").toString()));
+      }
+      JsonArray jsonArrayvin = jsonObj.getAsJsonArray("vin");
+      if (jsonArrayvin != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vin").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vin` to be an array in the JSON string but got `%s`", jsonObj.get("vin").toString()));
+        }
+
+        // validate the optional field `vin` (array)
+        for (int i = 0; i < jsonArrayvin.size(); i++) {
+          GetWalletTransactionDetailsByTransactionIDRIBSZVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
+      if (jsonArrayvout != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vout").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vout` to be an array in the JSON string but got `%s`", jsonObj.get("vout").toString()));
+        }
+
+        // validate the optional field `vout` (array)
+        for (int i = 0; i < jsonArrayvout.size(); i++) {
+          ListTransactionsByBlockHeightRIBSZVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetWalletTransactionDetailsByTransactionIDRIBSZ.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetWalletTransactionDetailsByTransactionIDRIBSZ' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSZ> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetWalletTransactionDetailsByTransactionIDRIBSZ.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetWalletTransactionDetailsByTransactionIDRIBSZ>() {
+           @Override
+           public void write(JsonWriter out, GetWalletTransactionDetailsByTransactionIDRIBSZ value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetWalletTransactionDetailsByTransactionIDRIBSZ read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetWalletTransactionDetailsByTransactionIDRIBSZ given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetWalletTransactionDetailsByTransactionIDRIBSZ
+  * @throws IOException if the JSON string is invalid with respect to GetWalletTransactionDetailsByTransactionIDRIBSZ
+  */
+  public static GetWalletTransactionDetailsByTransactionIDRIBSZ fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetWalletTransactionDetailsByTransactionIDRIBSZ.class);
+  }
+
+ /**
+  * Convert an instance of GetWalletTransactionDetailsByTransactionIDRIBSZ to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

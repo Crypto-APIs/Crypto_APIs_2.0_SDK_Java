@@ -30,9 +30,8 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSE;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSEC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSL;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightRIBSZ;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

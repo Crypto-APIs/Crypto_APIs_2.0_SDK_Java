@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetAddressDetailsRI**](GetAddressDetailsRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetAddressDetailsRI**](GetAddressDetailsRI.md) |  |  |
 
 
 

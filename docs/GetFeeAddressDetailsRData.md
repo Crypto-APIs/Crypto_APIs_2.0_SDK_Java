@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetFeeAddressDetailsRI**](GetFeeAddressDetailsRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetFeeAddressDetailsRI**](GetFeeAddressDetailsRI.md) |  |  |
 
 
 

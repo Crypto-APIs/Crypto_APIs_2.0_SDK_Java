@@ -18,19 +18,19 @@ import org.openapitools.client.model.GetAddressDetailsFromCallbackR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallbackR;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallbackR;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackR;
-import org.openapitools.client.model.InlineResponse40069;
-import org.openapitools.client.model.InlineResponse40070;
-import org.openapitools.client.model.InlineResponse40071;
-import org.openapitools.client.model.InlineResponse40072;
-import org.openapitools.client.model.InlineResponse40169;
-import org.openapitools.client.model.InlineResponse40170;
-import org.openapitools.client.model.InlineResponse40171;
-import org.openapitools.client.model.InlineResponse40172;
+import org.openapitools.client.model.InlineResponse40083;
+import org.openapitools.client.model.InlineResponse40084;
+import org.openapitools.client.model.InlineResponse40085;
+import org.openapitools.client.model.InlineResponse40086;
+import org.openapitools.client.model.InlineResponse40183;
+import org.openapitools.client.model.InlineResponse40184;
+import org.openapitools.client.model.InlineResponse40185;
+import org.openapitools.client.model.InlineResponse40186;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40369;
-import org.openapitools.client.model.InlineResponse40370;
-import org.openapitools.client.model.InlineResponse40371;
-import org.openapitools.client.model.InlineResponse40372;
+import org.openapitools.client.model.InlineResponse40383;
+import org.openapitools.client.model.InlineResponse40384;
+import org.openapitools.client.model.InlineResponse40385;
+import org.openapitools.client.model.InlineResponse40386;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse4042;
 import org.openapitools.client.model.InlineResponse4044;
@@ -39,8 +39,8 @@ import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -50,19 +50,17 @@ import java.util.Map;
 /**
  * API tests for CallbackDataApi
  */
-@Ignore
+@Disabled
 public class CallbackDataApiTest {
 
     private final CallbackDataApi api = new CallbackDataApi();
 
-    
     /**
      * Get Address Details From Callback
      *
      * This endpoint creates a shortcut to obtain information from Blockchain data by going through Blockchain Events and a specific Event Subscription. It provides data for a specific address from the Event it takes part in only if the address already exists in the blockchain events subscriptions. It applies only for Events related to that customer.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getAddressDetailsFromCallbackTest() throws ApiException {
@@ -70,17 +68,16 @@ public class CallbackDataApiTest {
         String network = null;
         String address = null;
         String context = null;
-                GetAddressDetailsFromCallbackR response = api.getAddressDetailsFromCallback(blockchain, network, address, context);
+        GetAddressDetailsFromCallbackR response = api.getAddressDetailsFromCallback(blockchain, network, address, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Block Details By Block Hash From Callback
      *
      * This endpoint creates a shortcut to obtain information from Blockchain data by going through Blockchain Events and a specific Event Subscription. It provides data for a specific block by providing the &#x60;blockHash&#x60; attribute from the Event it takes part in and after making check that the customer in question does have a subscription for this block. It applies only for Events related to that user.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getBlockDetailsByBlockHashFromCallbackTest() throws ApiException {
@@ -88,17 +85,16 @@ public class CallbackDataApiTest {
         String network = null;
         String blockHash = null;
         String context = null;
-                GetBlockDetailsByBlockHashFromCallbackR response = api.getBlockDetailsByBlockHashFromCallback(blockchain, network, blockHash, context);
+        GetBlockDetailsByBlockHashFromCallbackR response = api.getBlockDetailsByBlockHashFromCallback(blockchain, network, blockHash, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Block Details By Block Height From Callback
      *
      * This endpoint creates a shortcut to obtain information from Blockchain data by going through Blockchain Events and a specific Event Subscription. It provides data for the specific Block by providing the &#x60;blockHeight&#x60; attribute from the Event it takes part in. It applies only for Events related to that user.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getBlockDetailsByBlockHeightFromCallbackTest() throws ApiException {
@@ -106,17 +102,16 @@ public class CallbackDataApiTest {
         String network = null;
         String blockHeight = null;
         String context = null;
-                GetBlockDetailsByBlockHeightFromCallbackR response = api.getBlockDetailsByBlockHeightFromCallback(blockchain, network, blockHeight, context);
+        GetBlockDetailsByBlockHeightFromCallbackR response = api.getBlockDetailsByBlockHeightFromCallback(blockchain, network, blockHeight, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Transaction Details By Transaction ID From Callback
      *
      * This endpoint creates a shortcut to obtain information from Blockchain data by going through Blockchain Events and a specific Event Subscription. It provides data for a specific transaction from the Event it takes part in by providing the &#x60;transactionId&#x60; attribute. It applies only for Events related to that user.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getTransactionDetailsByTransactionIDFromCallbackTest() throws ApiException {
@@ -124,8 +119,8 @@ public class CallbackDataApiTest {
         String network = null;
         String transactionId = null;
         String context = null;
-                GetTransactionDetailsByTransactionIDFromCallbackR response = api.getTransactionDetailsByTransactionIDFromCallback(blockchain, network, transactionId, context);
+        GetTransactionDetailsByTransactionIDFromCallbackR response = api.getTransactionDetailsByTransactionIDFromCallback(blockchain, network, transactionId, context);
         // TODO: test validations
     }
-    
+
 }

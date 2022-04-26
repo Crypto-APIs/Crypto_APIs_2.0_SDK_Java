@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetUnconfirmedOmniTransactionByTransactionIDTxidRI**](GetUnconfirmedOmniTransactionByTransactionIDTxidRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetUnconfirmedOmniTransactionByTransactionIDTxidRI**](GetUnconfirmedOmniTransactionByTransactionIDTxidRI.md) |  |  |
 
 
 

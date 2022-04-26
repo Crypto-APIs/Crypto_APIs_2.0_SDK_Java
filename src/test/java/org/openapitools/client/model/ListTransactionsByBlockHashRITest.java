@@ -27,9 +27,8 @@ import org.openapitools.client.model.ListTransactionsByBlockHashRIBS;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIFee;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIRecipients;
 import org.openapitools.client.model.ListTransactionsByBlockHashRISenders;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

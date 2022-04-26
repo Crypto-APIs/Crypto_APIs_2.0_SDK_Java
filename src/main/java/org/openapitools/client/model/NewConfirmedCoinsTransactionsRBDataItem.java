@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * NewConfirmedCoinsTransactionsRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class NewConfirmedCoinsTransactionsRBDataItem {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -44,6 +64,10 @@ public class NewConfirmedCoinsTransactionsRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_U_R_L = "callbackURL";
   @SerializedName(SERIALIZED_NAME_CALLBACK_U_R_L)
   private String callbackURL;
+
+  public static final String SERIALIZED_NAME_RECEIVE_CALLBACK_ON = "receiveCallbackOn";
+  @SerializedName(SERIALIZED_NAME_RECEIVE_CALLBACK_ON)
+  private Integer receiveCallbackOn;
 
   public NewConfirmedCoinsTransactionsRBDataItem() { 
   }
@@ -124,11 +148,11 @@ public class NewConfirmedCoinsTransactionsRBDataItem {
   }
 
    /**
-   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. &#x60;We support ONLY httpS type of protocol&#x60;.
    * @return callbackURL
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "http://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
+  @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. `We support ONLY httpS type of protocol`.")
 
   public String getCallbackURL() {
     return callbackURL;
@@ -138,6 +162,30 @@ public class NewConfirmedCoinsTransactionsRBDataItem {
   public void setCallbackURL(String callbackURL) {
     this.callbackURL = callbackURL;
   }
+
+
+  public NewConfirmedCoinsTransactionsRBDataItem receiveCallbackOn(Integer receiveCallbackOn) {
+    
+    this.receiveCallbackOn = receiveCallbackOn;
+    return this;
+  }
+
+   /**
+   * Represents the exact confirmation, on which the user wants to receive callback.
+   * @return receiveCallbackOn
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "3", value = "Represents the exact confirmation, on which the user wants to receive callback.")
+
+  public Integer getReceiveCallbackOn() {
+    return receiveCallbackOn;
+  }
+
+
+  public void setReceiveCallbackOn(Integer receiveCallbackOn) {
+    this.receiveCallbackOn = receiveCallbackOn;
+  }
+
 
 
   @Override
@@ -152,12 +200,13 @@ public class NewConfirmedCoinsTransactionsRBDataItem {
     return Objects.equals(this.address, newConfirmedCoinsTransactionsRBDataItem.address) &&
         Objects.equals(this.allowDuplicates, newConfirmedCoinsTransactionsRBDataItem.allowDuplicates) &&
         Objects.equals(this.callbackSecretKey, newConfirmedCoinsTransactionsRBDataItem.callbackSecretKey) &&
-        Objects.equals(this.callbackURL, newConfirmedCoinsTransactionsRBDataItem.callbackURL);
+        Objects.equals(this.callbackURL, newConfirmedCoinsTransactionsRBDataItem.callbackURL) &&
+        Objects.equals(this.receiveCallbackOn, newConfirmedCoinsTransactionsRBDataItem.receiveCallbackOn);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, allowDuplicates, callbackSecretKey, callbackURL);
+    return Objects.hash(address, allowDuplicates, callbackSecretKey, callbackURL, receiveCallbackOn);
   }
 
   @Override
@@ -168,6 +217,7 @@ public class NewConfirmedCoinsTransactionsRBDataItem {
     sb.append("    allowDuplicates: ").append(toIndentedString(allowDuplicates)).append("\n");
     sb.append("    callbackSecretKey: ").append(toIndentedString(callbackSecretKey)).append("\n");
     sb.append("    callbackURL: ").append(toIndentedString(callbackURL)).append("\n");
+    sb.append("    receiveCallbackOn: ").append(toIndentedString(receiveCallbackOn)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -183,5 +233,112 @@ public class NewConfirmedCoinsTransactionsRBDataItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("address");
+    openapiFields.add("allowDuplicates");
+    openapiFields.add("callbackSecretKey");
+    openapiFields.add("callbackURL");
+    openapiFields.add("receiveCallbackOn");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("address");
+    openapiRequiredFields.add("callbackURL");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to NewConfirmedCoinsTransactionsRBDataItem
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (NewConfirmedCoinsTransactionsRBDataItem.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in NewConfirmedCoinsTransactionsRBDataItem is not found in the empty JSON string", NewConfirmedCoinsTransactionsRBDataItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!NewConfirmedCoinsTransactionsRBDataItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NewConfirmedCoinsTransactionsRBDataItem` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : NewConfirmedCoinsTransactionsRBDataItem.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if (jsonObj.get("callbackSecretKey") != null && !jsonObj.get("callbackSecretKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackSecretKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackSecretKey").toString()));
+      }
+      if (jsonObj.get("callbackURL") != null && !jsonObj.get("callbackURL").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackURL` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackURL").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!NewConfirmedCoinsTransactionsRBDataItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'NewConfirmedCoinsTransactionsRBDataItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<NewConfirmedCoinsTransactionsRBDataItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(NewConfirmedCoinsTransactionsRBDataItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<NewConfirmedCoinsTransactionsRBDataItem>() {
+           @Override
+           public void write(JsonWriter out, NewConfirmedCoinsTransactionsRBDataItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public NewConfirmedCoinsTransactionsRBDataItem read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of NewConfirmedCoinsTransactionsRBDataItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of NewConfirmedCoinsTransactionsRBDataItem
+  * @throws IOException if the JSON string is invalid with respect to NewConfirmedCoinsTransactionsRBDataItem
+  */
+  public static NewConfirmedCoinsTransactionsRBDataItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, NewConfirmedCoinsTransactionsRBDataItem.class);
+  }
+
+ /**
+  * Convert an instance of NewConfirmedCoinsTransactionsRBDataItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -128,11 +148,11 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem {
   }
 
    /**
-   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. &#x60;We support ONLY httpS type of protocol&#x60;.
    * @return callbackUrl
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "http://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
+  @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. `We support ONLY httpS type of protocol`.")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -165,6 +185,7 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem {
   public void setConfirmationsCount(Integer confirmationsCount) {
     this.confirmationsCount = confirmationsCount;
   }
+
 
 
   @Override
@@ -212,5 +233,113 @@ public class NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("address");
+    openapiFields.add("allowDuplicates");
+    openapiFields.add("callbackSecretKey");
+    openapiFields.add("callbackUrl");
+    openapiFields.add("confirmationsCount");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("address");
+    openapiRequiredFields.add("callbackUrl");
+    openapiRequiredFields.add("confirmationsCount");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem is not found in the empty JSON string", NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if (jsonObj.get("callbackSecretKey") != null && !jsonObj.get("callbackSecretKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackSecretKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackSecretKey").toString()));
+      }
+      if (jsonObj.get("callbackUrl") != null && !jsonObj.get("callbackUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackUrl").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem>() {
+           @Override
+           public void write(JsonWriter out, NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem
+  * @throws IOException if the JSON string is invalid with respect to NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem
+  */
+  public static NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem.class);
+  }
+
+ /**
+  * Convert an instance of NewConfirmedCoinsTransactionsAndEachConfirmationRBDataItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

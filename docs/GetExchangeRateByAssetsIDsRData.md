@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetExchangeRateByAssetsIDsRI**](GetExchangeRateByAssetsIDsRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetExchangeRateByAssetsIDsRI**](GetExchangeRateByAssetsIDsRI.md) |  |  |
 
 
 

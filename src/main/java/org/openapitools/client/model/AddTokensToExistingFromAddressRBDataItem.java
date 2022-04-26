@@ -25,10 +25,30 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRBTokenData;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * AddTokensToExistingFromAddressRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class AddTokensToExistingFromAddressRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -144,11 +164,11 @@ public class AddTokensToExistingFromAddressRBDataItem {
   }
 
    /**
-   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. &#x60;We support ONLY httpS type of protocol&#x60;.
    * @return callbackUrl
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
+  @ApiModelProperty(example = "https://example.com", required = true, value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. `We support ONLY httpS type of protocol`.")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -298,6 +318,7 @@ public class AddTokensToExistingFromAddressRBDataItem {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -349,5 +370,133 @@ public class AddTokensToExistingFromAddressRBDataItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("callbackSecretKey");
+    openapiFields.add("callbackUrl");
+    openapiFields.add("confirmationsCount");
+    openapiFields.add("feePriority");
+    openapiFields.add("fromAddress");
+    openapiFields.add("minimumTransferAmount");
+    openapiFields.add("toAddress");
+    openapiFields.add("tokenData");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("callbackUrl");
+    openapiRequiredFields.add("confirmationsCount");
+    openapiRequiredFields.add("feePriority");
+    openapiRequiredFields.add("fromAddress");
+    openapiRequiredFields.add("minimumTransferAmount");
+    openapiRequiredFields.add("toAddress");
+    openapiRequiredFields.add("tokenData");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to AddTokensToExistingFromAddressRBDataItem
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (AddTokensToExistingFromAddressRBDataItem.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in AddTokensToExistingFromAddressRBDataItem is not found in the empty JSON string", AddTokensToExistingFromAddressRBDataItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!AddTokensToExistingFromAddressRBDataItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `AddTokensToExistingFromAddressRBDataItem` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : AddTokensToExistingFromAddressRBDataItem.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("callbackSecretKey") != null && !jsonObj.get("callbackSecretKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackSecretKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackSecretKey").toString()));
+      }
+      if (jsonObj.get("callbackUrl") != null && !jsonObj.get("callbackUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackUrl").toString()));
+      }
+      if (jsonObj.get("feePriority") != null && !jsonObj.get("feePriority").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `feePriority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feePriority").toString()));
+      }
+      if (jsonObj.get("fromAddress") != null && !jsonObj.get("fromAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fromAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fromAddress").toString()));
+      }
+      if (jsonObj.get("minimumTransferAmount") != null && !jsonObj.get("minimumTransferAmount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `minimumTransferAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("minimumTransferAmount").toString()));
+      }
+      if (jsonObj.get("toAddress") != null && !jsonObj.get("toAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `toAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("toAddress").toString()));
+      }
+      // validate the optional field `tokenData`
+      if (jsonObj.getAsJsonObject("tokenData") != null) {
+        AddTokensToExistingFromAddressRBTokenData.validateJsonObject(jsonObj.getAsJsonObject("tokenData"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!AddTokensToExistingFromAddressRBDataItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'AddTokensToExistingFromAddressRBDataItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<AddTokensToExistingFromAddressRBDataItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(AddTokensToExistingFromAddressRBDataItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<AddTokensToExistingFromAddressRBDataItem>() {
+           @Override
+           public void write(JsonWriter out, AddTokensToExistingFromAddressRBDataItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public AddTokensToExistingFromAddressRBDataItem read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of AddTokensToExistingFromAddressRBDataItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of AddTokensToExistingFromAddressRBDataItem
+  * @throws IOException if the JSON string is invalid with respect to AddTokensToExistingFromAddressRBDataItem
+  */
+  public static AddTokensToExistingFromAddressRBDataItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AddTokensToExistingFromAddressRBDataItem.class);
+  }
+
+ /**
+  * Convert an instance of AddTokensToExistingFromAddressRBDataItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

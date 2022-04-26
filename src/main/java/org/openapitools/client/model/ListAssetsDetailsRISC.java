@@ -24,11 +24,31 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Crypto Type Data
  */
 @ApiModel(description = "Crypto Type Data")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListAssetsDetailsRISC {
   public static final String SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE = "1HourPriceChangeInPercentage";
   @SerializedName(SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE)
@@ -296,6 +316,7 @@ public class ListAssetsDetailsRISC {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -347,5 +368,136 @@ public class ListAssetsDetailsRISC {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("1HourPriceChangeInPercentage");
+    openapiFields.add("1WeekPriceChangeInPercentage");
+    openapiFields.add("24HoursPriceChangeInPercentage");
+    openapiFields.add("24HoursTradingVolume");
+    openapiFields.add("assetType");
+    openapiFields.add("circulatingSupply");
+    openapiFields.add("marketCapInUSD");
+    openapiFields.add("maxSupply");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("1HourPriceChangeInPercentage");
+    openapiRequiredFields.add("1WeekPriceChangeInPercentage");
+    openapiRequiredFields.add("24HoursPriceChangeInPercentage");
+    openapiRequiredFields.add("24HoursTradingVolume");
+    openapiRequiredFields.add("assetType");
+    openapiRequiredFields.add("circulatingSupply");
+    openapiRequiredFields.add("marketCapInUSD");
+    openapiRequiredFields.add("maxSupply");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListAssetsDetailsRISC
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListAssetsDetailsRISC.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListAssetsDetailsRISC is not found in the empty JSON string", ListAssetsDetailsRISC.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListAssetsDetailsRISC.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListAssetsDetailsRISC` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListAssetsDetailsRISC.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("1HourPriceChangeInPercentage") != null && !jsonObj.get("1HourPriceChangeInPercentage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `1HourPriceChangeInPercentage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("1HourPriceChangeInPercentage").toString()));
+      }
+      if (jsonObj.get("1WeekPriceChangeInPercentage") != null && !jsonObj.get("1WeekPriceChangeInPercentage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `1WeekPriceChangeInPercentage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("1WeekPriceChangeInPercentage").toString()));
+      }
+      if (jsonObj.get("24HoursPriceChangeInPercentage") != null && !jsonObj.get("24HoursPriceChangeInPercentage").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `24HoursPriceChangeInPercentage` to be a primitive type in the JSON string but got `%s`", jsonObj.get("24HoursPriceChangeInPercentage").toString()));
+      }
+      if (jsonObj.get("24HoursTradingVolume") != null && !jsonObj.get("24HoursTradingVolume").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `24HoursTradingVolume` to be a primitive type in the JSON string but got `%s`", jsonObj.get("24HoursTradingVolume").toString()));
+      }
+      if (jsonObj.get("assetType") != null && !jsonObj.get("assetType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `assetType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("assetType").toString()));
+      }
+      if (jsonObj.get("circulatingSupply") != null && !jsonObj.get("circulatingSupply").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `circulatingSupply` to be a primitive type in the JSON string but got `%s`", jsonObj.get("circulatingSupply").toString()));
+      }
+      if (jsonObj.get("marketCapInUSD") != null && !jsonObj.get("marketCapInUSD").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `marketCapInUSD` to be a primitive type in the JSON string but got `%s`", jsonObj.get("marketCapInUSD").toString()));
+      }
+      if (jsonObj.get("maxSupply") != null && !jsonObj.get("maxSupply").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `maxSupply` to be a primitive type in the JSON string but got `%s`", jsonObj.get("maxSupply").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListAssetsDetailsRISC.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListAssetsDetailsRISC' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListAssetsDetailsRISC> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListAssetsDetailsRISC.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListAssetsDetailsRISC>() {
+           @Override
+           public void write(JsonWriter out, ListAssetsDetailsRISC value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListAssetsDetailsRISC read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListAssetsDetailsRISC given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListAssetsDetailsRISC
+  * @throws IOException if the JSON string is invalid with respect to ListAssetsDetailsRISC
+  */
+  public static ListAssetsDetailsRISC fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListAssetsDetailsRISC.class);
+  }
+
+ /**
+  * Convert an instance of ListAssetsDetailsRISC to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

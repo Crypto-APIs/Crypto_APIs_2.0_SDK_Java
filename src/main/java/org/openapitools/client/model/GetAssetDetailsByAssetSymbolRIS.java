@@ -25,328 +25,205 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.GetAssetDetailsByAssetSymbolRISC;
 
-/**
- * Represents a specific asset&#39;s data depending on its type (whether it is \&quot;crypto\&quot; or \&quot;fiat\&quot;).
- */
-@ApiModel(description = "Represents a specific asset's data depending on its type (whether it is \"crypto\" or \"fiat\").")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class GetAssetDetailsByAssetSymbolRIS {
-  public static final String SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE = "1HourPriceChangeInPercentage";
-  @SerializedName(SERIALIZED_NAME_1HOUR_PRICE_CHANGE_IN_PERCENTAGE)
-  private String _1hourPriceChangeInPercentage;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_1WEEK_PRICE_CHANGE_IN_PERCENTAGE = "1WeekPriceChangeInPercentage";
-  @SerializedName(SERIALIZED_NAME_1WEEK_PRICE_CHANGE_IN_PERCENTAGE)
-  private String _1weekPriceChangeInPercentage;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_24HOURS_PRICE_CHANGE_IN_PERCENTAGE = "24HoursPriceChangeInPercentage";
-  @SerializedName(SERIALIZED_NAME_24HOURS_PRICE_CHANGE_IN_PERCENTAGE)
-  private String _24hoursPriceChangeInPercentage;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public static final String SERIALIZED_NAME_24HOURS_TRADING_VOLUME = "24HoursTradingVolume";
-  @SerializedName(SERIALIZED_NAME_24HOURS_TRADING_VOLUME)
-  private String _24hoursTradingVolume;
+import io.cryptoapis.sdk.JSON;
 
-  /**
-   * Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;.
-   */
-  @JsonAdapter(AssetTypeEnum.Adapter.class)
-  public enum AssetTypeEnum {
-    COIN("coin"),
-    
-    TOKEN("token");
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class GetAssetDetailsByAssetSymbolRIS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetAssetDetailsByAssetSymbolRIS.class.getName());
 
-    private String value;
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetAssetDetailsByAssetSymbolRIS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetAssetDetailsByAssetSymbolRIS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<GetAssetDetailsByAssetSymbolRISC> adapterGetAssetDetailsByAssetSymbolRISC = gson.getDelegateAdapter(this, TypeToken.get(GetAssetDetailsByAssetSymbolRISC.class));
 
-    AssetTypeEnum(String value) {
-      this.value = value;
+            return (TypeAdapter<T>) new TypeAdapter<GetAssetDetailsByAssetSymbolRIS>() {
+                @Override
+                public void write(JsonWriter out, GetAssetDetailsByAssetSymbolRIS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetAssetDetailsByAssetSymbolRISC`
+                    if (value.getActualInstance() instanceof GetAssetDetailsByAssetSymbolRISC) {
+                        JsonObject obj = adapterGetAssetDetailsByAssetSymbolRISC.toJsonTree((GetAssetDetailsByAssetSymbolRISC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: GetAssetDetailsByAssetSymbolRISC");
+                }
+
+                @Override
+                public GetAssetDetailsByAssetSymbolRIS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize GetAssetDetailsByAssetSymbolRISC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetAssetDetailsByAssetSymbolRISC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetAssetDetailsByAssetSymbolRISC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetAssetDetailsByAssetSymbolRISC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetAssetDetailsByAssetSymbolRISC'", e);
+                    }
+
+                    if (match == 1) {
+                        GetAssetDetailsByAssetSymbolRIS ret = new GetAssetDetailsByAssetSymbolRIS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetAssetDetailsByAssetSymbolRIS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
 
-    public String getValue() {
-      return value;
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public GetAssetDetailsByAssetSymbolRIS() {
+        super("oneOf", Boolean.FALSE);
+    }
+
+    public GetAssetDetailsByAssetSymbolRIS(GetAssetDetailsByAssetSymbolRISC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("GetAssetDetailsByAssetSymbolRISC", new GenericType<GetAssetDetailsByAssetSymbolRISC>() {
+        });
     }
 
     @Override
-    public String toString() {
-      return String.valueOf(value);
+    public Map<String, GenericType> getSchemas() {
+        return GetAssetDetailsByAssetSymbolRIS.schemas;
     }
 
-    public static AssetTypeEnum fromValue(String value) {
-      for (AssetTypeEnum b : AssetTypeEnum.values()) {
-        if (b.value.equals(value)) {
-          return b;
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * GetAssetDetailsByAssetSymbolRISC
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof GetAssetDetailsByAssetSymbolRISC) {
+            super.setActualInstance(instance);
+            return;
         }
-      }
-      throw new IllegalArgumentException("Unexpected value '" + value + "'");
+
+        throw new RuntimeException("Invalid instance type. Must be GetAssetDetailsByAssetSymbolRISC");
     }
 
-    public static class Adapter extends TypeAdapter<AssetTypeEnum> {
-      @Override
-      public void write(final JsonWriter jsonWriter, final AssetTypeEnum enumeration) throws IOException {
-        jsonWriter.value(enumeration.getValue());
-      }
+    /**
+     * Get the actual instance, which can be the following:
+     * GetAssetDetailsByAssetSymbolRISC
+     *
+     * @return The actual instance (GetAssetDetailsByAssetSymbolRISC)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
 
-      @Override
-      public AssetTypeEnum read(final JsonReader jsonReader) throws IOException {
-        String value =  jsonReader.nextString();
-        return AssetTypeEnum.fromValue(value);
-      }
+    /**
+     * Get the actual instance of `GetAssetDetailsByAssetSymbolRISC`. If the actual instance is not `GetAssetDetailsByAssetSymbolRISC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetAssetDetailsByAssetSymbolRISC`
+     * @throws ClassCastException if the instance is not `GetAssetDetailsByAssetSymbolRISC`
+     */
+    public GetAssetDetailsByAssetSymbolRISC getGetAssetDetailsByAssetSymbolRISC() throws ClassCastException {
+        return (GetAssetDetailsByAssetSymbolRISC)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetAssetDetailsByAssetSymbolRIS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with GetAssetDetailsByAssetSymbolRISC
+    try {
+      GetAssetDetailsByAssetSymbolRISC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for GetAssetDetailsByAssetSymbolRIS with oneOf schemas: GetAssetDetailsByAssetSymbolRISC. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
     }
   }
 
-  public static final String SERIALIZED_NAME_ASSET_TYPE = "assetType";
-  @SerializedName(SERIALIZED_NAME_ASSET_TYPE)
-  private AssetTypeEnum assetType;
-
-  public static final String SERIALIZED_NAME_CIRCULATING_SUPPLY = "circulatingSupply";
-  @SerializedName(SERIALIZED_NAME_CIRCULATING_SUPPLY)
-  private String circulatingSupply;
-
-  public static final String SERIALIZED_NAME_MARKET_CAP_IN_U_S_D = "marketCapInUSD";
-  @SerializedName(SERIALIZED_NAME_MARKET_CAP_IN_U_S_D)
-  private String marketCapInUSD;
-
-  public static final String SERIALIZED_NAME_MAX_SUPPLY = "maxSupply";
-  @SerializedName(SERIALIZED_NAME_MAX_SUPPLY)
-  private String maxSupply;
-
-  public GetAssetDetailsByAssetSymbolRIS() { 
+ /**
+  * Create an instance of GetAssetDetailsByAssetSymbolRIS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetAssetDetailsByAssetSymbolRIS
+  * @throws IOException if the JSON string is invalid with respect to GetAssetDetailsByAssetSymbolRIS
+  */
+  public static GetAssetDetailsByAssetSymbolRIS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetAssetDetailsByAssetSymbolRIS.class);
   }
 
-  public GetAssetDetailsByAssetSymbolRIS _1hourPriceChangeInPercentage(String _1hourPriceChangeInPercentage) {
-    
-    this._1hourPriceChangeInPercentage = _1hourPriceChangeInPercentage;
-    return this;
+ /**
+  * Convert an instance of GetAssetDetailsByAssetSymbolRIS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
   }
-
-   /**
-   * Represents the percentage of the asset&#39;s current price against the its price from 1 hour ago.
-   * @return _1hourPriceChangeInPercentage
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "-0.4277852328344024", required = true, value = "Represents the percentage of the asset's current price against the its price from 1 hour ago.")
-
-  public String get1hourPriceChangeInPercentage() {
-    return _1hourPriceChangeInPercentage;
-  }
-
-
-  public void set1hourPriceChangeInPercentage(String _1hourPriceChangeInPercentage) {
-    this._1hourPriceChangeInPercentage = _1hourPriceChangeInPercentage;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS _1weekPriceChangeInPercentage(String _1weekPriceChangeInPercentage) {
-    
-    this._1weekPriceChangeInPercentage = _1weekPriceChangeInPercentage;
-    return this;
-  }
-
-   /**
-   * Represents the percentage of the asset&#39;s current price against the its price from 1 week ago.
-   * @return _1weekPriceChangeInPercentage
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1.6572304104646762", required = true, value = "Represents the percentage of the asset's current price against the its price from 1 week ago.")
-
-  public String get1weekPriceChangeInPercentage() {
-    return _1weekPriceChangeInPercentage;
-  }
-
-
-  public void set1weekPriceChangeInPercentage(String _1weekPriceChangeInPercentage) {
-    this._1weekPriceChangeInPercentage = _1weekPriceChangeInPercentage;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS _24hoursPriceChangeInPercentage(String _24hoursPriceChangeInPercentage) {
-    
-    this._24hoursPriceChangeInPercentage = _24hoursPriceChangeInPercentage;
-    return this;
-  }
-
-   /**
-   * Represents the percentage of the asset&#39;s current price against the its price from 24 hours ago.
-   * @return _24hoursPriceChangeInPercentage
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "-0.059688916478600924", required = true, value = "Represents the percentage of the asset's current price against the its price from 24 hours ago.")
-
-  public String get24hoursPriceChangeInPercentage() {
-    return _24hoursPriceChangeInPercentage;
-  }
-
-
-  public void set24hoursPriceChangeInPercentage(String _24hoursPriceChangeInPercentage) {
-    this._24hoursPriceChangeInPercentage = _24hoursPriceChangeInPercentage;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS _24hoursTradingVolume(String _24hoursTradingVolume) {
-    
-    this._24hoursTradingVolume = _24hoursTradingVolume;
-    return this;
-  }
-
-   /**
-   * Represents the trading volume of the asset for the time frame of 24 hours.
-   * @return _24hoursTradingVolume
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "3116834672.508857", required = true, value = "Represents the trading volume of the asset for the time frame of 24 hours.")
-
-  public String get24hoursTradingVolume() {
-    return _24hoursTradingVolume;
-  }
-
-
-  public void set24hoursTradingVolume(String _24hoursTradingVolume) {
-    this._24hoursTradingVolume = _24hoursTradingVolume;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS assetType(AssetTypeEnum assetType) {
-    
-    this.assetType = assetType;
-    return this;
-  }
-
-   /**
-   * Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;.
-   * @return assetType
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "coin", required = true, value = "Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".")
-
-  public AssetTypeEnum getAssetType() {
-    return assetType;
-  }
-
-
-  public void setAssetType(AssetTypeEnum assetType) {
-    this.assetType = assetType;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS circulatingSupply(String circulatingSupply) {
-    
-    this.circulatingSupply = circulatingSupply;
-    return this;
-  }
-
-   /**
-   * Represents the amount of the asset that is circulating on the market and in public hands.
-   * @return circulatingSupply
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "18562881", required = true, value = "Represents the amount of the asset that is circulating on the market and in public hands.")
-
-  public String getCirculatingSupply() {
-    return circulatingSupply;
-  }
-
-
-  public void setCirculatingSupply(String circulatingSupply) {
-    this.circulatingSupply = circulatingSupply;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS marketCapInUSD(String marketCapInUSD) {
-    
-    this.marketCapInUSD = marketCapInUSD;
-    return this;
-  }
-
-   /**
-   * Defines the total market value of the asset&#39;s circulating supply in USD.
-   * @return marketCapInUSD
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1146119021006.8835", required = true, value = "Defines the total market value of the asset's circulating supply in USD.")
-
-  public String getMarketCapInUSD() {
-    return marketCapInUSD;
-  }
-
-
-  public void setMarketCapInUSD(String marketCapInUSD) {
-    this.marketCapInUSD = marketCapInUSD;
-  }
-
-
-  public GetAssetDetailsByAssetSymbolRIS maxSupply(String maxSupply) {
-    
-    this.maxSupply = maxSupply;
-    return this;
-  }
-
-   /**
-   * Represents the maximum amount of all coins of a specific asset that will ever exist in its lifetime.
-   * @return maxSupply
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000000", required = true, value = "Represents the maximum amount of all coins of a specific asset that will ever exist in its lifetime.")
-
-  public String getMaxSupply() {
-    return maxSupply;
-  }
-
-
-  public void setMaxSupply(String maxSupply) {
-    this.maxSupply = maxSupply;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
-    }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
-    }
-    GetAssetDetailsByAssetSymbolRIS getAssetDetailsByAssetSymbolRIS = (GetAssetDetailsByAssetSymbolRIS) o;
-    return Objects.equals(this._1hourPriceChangeInPercentage, getAssetDetailsByAssetSymbolRIS._1hourPriceChangeInPercentage) &&
-        Objects.equals(this._1weekPriceChangeInPercentage, getAssetDetailsByAssetSymbolRIS._1weekPriceChangeInPercentage) &&
-        Objects.equals(this._24hoursPriceChangeInPercentage, getAssetDetailsByAssetSymbolRIS._24hoursPriceChangeInPercentage) &&
-        Objects.equals(this._24hoursTradingVolume, getAssetDetailsByAssetSymbolRIS._24hoursTradingVolume) &&
-        Objects.equals(this.assetType, getAssetDetailsByAssetSymbolRIS.assetType) &&
-        Objects.equals(this.circulatingSupply, getAssetDetailsByAssetSymbolRIS.circulatingSupply) &&
-        Objects.equals(this.marketCapInUSD, getAssetDetailsByAssetSymbolRIS.marketCapInUSD) &&
-        Objects.equals(this.maxSupply, getAssetDetailsByAssetSymbolRIS.maxSupply);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(_1hourPriceChangeInPercentage, _1weekPriceChangeInPercentage, _24hoursPriceChangeInPercentage, _24hoursTradingVolume, assetType, circulatingSupply, marketCapInUSD, maxSupply);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetAssetDetailsByAssetSymbolRIS {\n");
-    sb.append("    _1hourPriceChangeInPercentage: ").append(toIndentedString(_1hourPriceChangeInPercentage)).append("\n");
-    sb.append("    _1weekPriceChangeInPercentage: ").append(toIndentedString(_1weekPriceChangeInPercentage)).append("\n");
-    sb.append("    _24hoursPriceChangeInPercentage: ").append(toIndentedString(_24hoursPriceChangeInPercentage)).append("\n");
-    sb.append("    _24hoursTradingVolume: ").append(toIndentedString(_24hoursTradingVolume)).append("\n");
-    sb.append("    assetType: ").append(toIndentedString(assetType)).append("\n");
-    sb.append("    circulatingSupply: ").append(toIndentedString(circulatingSupply)).append("\n");
-    sb.append("    marketCapInUSD: ").append(toIndentedString(marketCapInUSD)).append("\n");
-    sb.append("    maxSupply: ").append(toIndentedString(maxSupply)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
-    }
-    return o.toString().replace("\n", "\n    ");
-  }
-
 }
 

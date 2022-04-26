@@ -21,9 +21,9 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.openapitools.client.model.ListTokensTransfersByTransactionHashRITransactionFee;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -126,6 +126,14 @@ public class ListTokensTransfersByTransactionHashRITest {
     @Test
     public void transactionTimestampTest() {
         // TODO: test transactionTimestamp
+    }
+
+    /**
+     * Test the property 'transactionFee'
+     */
+    @Test
+    public void transactionFeeTest() {
+        // TODO: test transactionFee
     }
 
 }

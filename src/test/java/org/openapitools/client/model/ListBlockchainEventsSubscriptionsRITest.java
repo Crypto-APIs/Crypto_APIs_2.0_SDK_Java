@@ -21,9 +21,11 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import java.util.ArrayList;
+import java.util.List;
+import org.openapitools.client.model.ListBlockchainEventsSubscriptionsRIDeactivationReasons;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -78,6 +80,14 @@ public class ListBlockchainEventsSubscriptionsRITest {
     @Test
     public void createdTimestampTest() {
         // TODO: test createdTimestamp
+    }
+
+    /**
+     * Test the property 'deactivationReasons'
+     */
+    @Test
+    public void deactivationReasonsTest() {
+        // TODO: test deactivationReasons
     }
 
     /**

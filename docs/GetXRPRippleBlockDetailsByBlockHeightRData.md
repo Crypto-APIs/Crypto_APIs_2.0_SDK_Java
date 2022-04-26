@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetXRPRippleBlockDetailsByBlockHeightRI**](GetXRPRippleBlockDetailsByBlockHeightRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetXRPRippleBlockDetailsByBlockHeightRI**](GetXRPRippleBlockDetailsByBlockHeightRI.md) |  |  |
 
 
 

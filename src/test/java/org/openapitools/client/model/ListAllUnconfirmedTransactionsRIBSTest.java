@@ -39,9 +39,8 @@ import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSL;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSZ;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBSCGasPrice;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplit;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

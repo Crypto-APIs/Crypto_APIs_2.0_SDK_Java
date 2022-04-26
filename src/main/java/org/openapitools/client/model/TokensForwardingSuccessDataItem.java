@@ -25,11 +25,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.TokensForwardingSuccessToken;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class TokensForwardingSuccessDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)
@@ -353,6 +373,7 @@ public class TokensForwardingSuccessDataItem {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -408,5 +429,147 @@ public class TokensForwardingSuccessDataItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("blockchain");
+    openapiFields.add("network");
+    openapiFields.add("fromAddress");
+    openapiFields.add("toAddress");
+    openapiFields.add("spentFeesAmount");
+    openapiFields.add("spentFeesUnit");
+    openapiFields.add("triggerTransactionId");
+    openapiFields.add("forwardingTransactionId");
+    openapiFields.add("tokenType");
+    openapiFields.add("token");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("blockchain");
+    openapiRequiredFields.add("network");
+    openapiRequiredFields.add("fromAddress");
+    openapiRequiredFields.add("toAddress");
+    openapiRequiredFields.add("spentFeesAmount");
+    openapiRequiredFields.add("spentFeesUnit");
+    openapiRequiredFields.add("triggerTransactionId");
+    openapiRequiredFields.add("forwardingTransactionId");
+    openapiRequiredFields.add("tokenType");
+    openapiRequiredFields.add("token");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to TokensForwardingSuccessDataItem
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (TokensForwardingSuccessDataItem.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in TokensForwardingSuccessDataItem is not found in the empty JSON string", TokensForwardingSuccessDataItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!TokensForwardingSuccessDataItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `TokensForwardingSuccessDataItem` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : TokensForwardingSuccessDataItem.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("blockchain") != null && !jsonObj.get("blockchain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `blockchain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blockchain").toString()));
+      }
+      if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `network` to be a primitive type in the JSON string but got `%s`", jsonObj.get("network").toString()));
+      }
+      if (jsonObj.get("fromAddress") != null && !jsonObj.get("fromAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fromAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fromAddress").toString()));
+      }
+      if (jsonObj.get("toAddress") != null && !jsonObj.get("toAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `toAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("toAddress").toString()));
+      }
+      if (jsonObj.get("spentFeesAmount") != null && !jsonObj.get("spentFeesAmount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `spentFeesAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spentFeesAmount").toString()));
+      }
+      if (jsonObj.get("spentFeesUnit") != null && !jsonObj.get("spentFeesUnit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `spentFeesUnit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("spentFeesUnit").toString()));
+      }
+      if (jsonObj.get("triggerTransactionId") != null && !jsonObj.get("triggerTransactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `triggerTransactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("triggerTransactionId").toString()));
+      }
+      if (jsonObj.get("forwardingTransactionId") != null && !jsonObj.get("forwardingTransactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `forwardingTransactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("forwardingTransactionId").toString()));
+      }
+      if (jsonObj.get("tokenType") != null && !jsonObj.get("tokenType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `tokenType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("tokenType").toString()));
+      }
+      // validate the optional field `token`
+      if (jsonObj.getAsJsonObject("token") != null) {
+        TokensForwardingSuccessToken.validateJsonObject(jsonObj.getAsJsonObject("token"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!TokensForwardingSuccessDataItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'TokensForwardingSuccessDataItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<TokensForwardingSuccessDataItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(TokensForwardingSuccessDataItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<TokensForwardingSuccessDataItem>() {
+           @Override
+           public void write(JsonWriter out, TokensForwardingSuccessDataItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public TokensForwardingSuccessDataItem read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of TokensForwardingSuccessDataItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of TokensForwardingSuccessDataItem
+  * @throws IOException if the JSON string is invalid with respect to TokensForwardingSuccessDataItem
+  */
+  public static TokensForwardingSuccessDataItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, TokensForwardingSuccessDataItem.class);
+  }
+
+ /**
+  * Convert an instance of TokensForwardingSuccessDataItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

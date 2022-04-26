@@ -28,19 +28,22 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.GetTokenDetailsByContractAddressR;
-import org.openapitools.client.model.InlineResponse40054;
-import org.openapitools.client.model.InlineResponse40055;
-import org.openapitools.client.model.InlineResponse40056;
-import org.openapitools.client.model.InlineResponse40057;
-import org.openapitools.client.model.InlineResponse40154;
-import org.openapitools.client.model.InlineResponse40155;
-import org.openapitools.client.model.InlineResponse40156;
-import org.openapitools.client.model.InlineResponse40157;
+import org.openapitools.client.model.InlineResponse40060;
+import org.openapitools.client.model.InlineResponse40064;
+import org.openapitools.client.model.InlineResponse40066;
+import org.openapitools.client.model.InlineResponse40067;
+import org.openapitools.client.model.InlineResponse40069;
+import org.openapitools.client.model.InlineResponse40160;
+import org.openapitools.client.model.InlineResponse40164;
+import org.openapitools.client.model.InlineResponse40166;
+import org.openapitools.client.model.InlineResponse40167;
+import org.openapitools.client.model.InlineResponse40169;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40354;
-import org.openapitools.client.model.InlineResponse40355;
-import org.openapitools.client.model.InlineResponse40356;
-import org.openapitools.client.model.InlineResponse40357;
+import org.openapitools.client.model.InlineResponse40360;
+import org.openapitools.client.model.InlineResponse40364;
+import org.openapitools.client.model.InlineResponse40366;
+import org.openapitools.client.model.InlineResponse40367;
+import org.openapitools.client.model.InlineResponse40369;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
@@ -49,12 +52,14 @@ import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressR;
 import org.openapitools.client.model.ListTokensByAddressR;
 import org.openapitools.client.model.ListTokensTransfersByTransactionHashR;
+import org.openapitools.client.model.ListUnconfirmedTokensTransfersByAddressR;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class TokensApi {
     private ApiClient localVarApiClient;
@@ -119,7 +124,6 @@ public class TokensApi {
      */
     public okhttp3.Call getTokenDetailsByContractAddressCall(String blockchain, String network, String contractAddress, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -162,7 +166,7 @@ public class TokensApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -313,7 +317,6 @@ public class TokensApi {
      */
     public okhttp3.Call listConfirmedTokensTransfersByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -364,7 +367,7 @@ public class TokensApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -521,7 +524,6 @@ public class TokensApi {
      */
     public okhttp3.Call listTokensByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -572,7 +574,7 @@ public class TokensApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -729,7 +731,6 @@ public class TokensApi {
      */
     public okhttp3.Call listTokensTransfersByTransactionHashCall(String blockchain, String network, String transactionHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -780,7 +781,7 @@ public class TokensApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -906,6 +907,213 @@ public class TokensApi {
 
         okhttp3.Call localVarCall = listTokensTransfersByTransactionHashValidateBeforeCall(blockchain, network, transactionHash, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListTokensTransfersByTransactionHashR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listUnconfirmedTokensTransfersByAddress
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUnconfirmedTokensTransfersByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/{blockchain}/{network}/addresses/{address}/tokens-transfers-unconfirmed"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listUnconfirmedTokensTransfersByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling listUnconfirmedTokensTransfersByAddress(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listUnconfirmedTokensTransfersByAddress(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling listUnconfirmedTokensTransfersByAddress(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listUnconfirmedTokensTransfersByAddressCall(blockchain, network, address, context, limit, offset, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List Unconfirmed Tokens Transfers By Address
+     * Through this endpoint customers can obtain a list with **unconfirmed** token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **unconfirmed tokens** not coins.{/note}
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ListUnconfirmedTokensTransfersByAddressR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListUnconfirmedTokensTransfersByAddressR listUnconfirmedTokensTransfersByAddress(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+        ApiResponse<ListUnconfirmedTokensTransfersByAddressR> localVarResp = listUnconfirmedTokensTransfersByAddressWithHttpInfo(blockchain, network, address, context, limit, offset);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List Unconfirmed Tokens Transfers By Address
+     * Through this endpoint customers can obtain a list with **unconfirmed** token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **unconfirmed tokens** not coins.{/note}
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @return ApiResponse&lt;ListUnconfirmedTokensTransfersByAddressR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListUnconfirmedTokensTransfersByAddressR> listUnconfirmedTokensTransfersByAddressWithHttpInfo(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+        okhttp3.Call localVarCall = listUnconfirmedTokensTransfersByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, null);
+        Type localVarReturnType = new TypeToken<ListUnconfirmedTokensTransfersByAddressR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List Unconfirmed Tokens Transfers By Address (asynchronously)
+     * Through this endpoint customers can obtain a list with **unconfirmed** token transfers by the &#x60;address&#x60; attribute. Token transfers may include information such as addresses of the sender and recipient, token name, token symbol, etc.    {note}This refers only to transfers done for **unconfirmed tokens** not coins.{/note}
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listUnconfirmedTokensTransfersByAddressAsync(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback<ListUnconfirmedTokensTransfersByAddressR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listUnconfirmedTokensTransfersByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, _callback);
+        Type localVarReturnType = new TypeToken<ListUnconfirmedTokensTransfersByAddressR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

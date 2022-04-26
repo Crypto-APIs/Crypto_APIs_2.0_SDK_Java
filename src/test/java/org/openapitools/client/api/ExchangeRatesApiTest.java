@@ -16,21 +16,21 @@ package org.openapitools.client.api;
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.GetExchangeRateByAssetSymbolsR;
 import org.openapitools.client.model.GetExchangeRateByAssetsIDsR;
-import org.openapitools.client.model.InlineResponse40087;
-import org.openapitools.client.model.InlineResponse40088;
-import org.openapitools.client.model.InlineResponse40187;
-import org.openapitools.client.model.InlineResponse40188;
+import org.openapitools.client.model.InlineResponse400106;
+import org.openapitools.client.model.InlineResponse400107;
+import org.openapitools.client.model.InlineResponse401106;
+import org.openapitools.client.model.InlineResponse401107;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40387;
-import org.openapitools.client.model.InlineResponse40388;
+import org.openapitools.client.model.InlineResponse403106;
+import org.openapitools.client.model.InlineResponse403107;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse4224;
-import org.openapitools.client.model.InlineResponse4225;
+import org.openapitools.client.model.InlineResponse4226;
+import org.openapitools.client.model.InlineResponse4227;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -40,19 +40,17 @@ import java.util.Map;
 /**
  * API tests for ExchangeRatesApi
  */
-@Ignore
+@Disabled
 public class ExchangeRatesApiTest {
 
     private final ExchangeRatesApi api = new ExchangeRatesApi();
 
-    
     /**
      * Get Exchange Rate By Asset Symbols
      *
      * Through this endpoint customers can obtain exchange rates by asset symbols. The process represents the exchange rate value of a single unit of one asset versus another one. Data is provided per unique asset symbol.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getExchangeRateByAssetSymbolsTest() throws ApiException {
@@ -60,17 +58,16 @@ public class ExchangeRatesApiTest {
         String toAssetSymbol = null;
         String context = null;
         Integer calculationTimestamp = null;
-                GetExchangeRateByAssetSymbolsR response = api.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
+        GetExchangeRateByAssetSymbolsR response = api.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
         // TODO: test validations
     }
-    
+
     /**
      * Get Exchange Rate By Assets IDs
      *
      * Through this endpoint customers can obtain exchange rates by asset IDs. The process represents the exchange rate value of a single unit of one asset versus another one. Data is provided per unique asset Reference ID.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getExchangeRateByAssetsIDsTest() throws ApiException {
@@ -78,8 +75,8 @@ public class ExchangeRatesApiTest {
         String toAssetId = null;
         String context = null;
         Integer calculationTimestamp = null;
-                GetExchangeRateByAssetsIDsR response = api.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
+        GetExchangeRateByAssetsIDsR response = api.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
         // TODO: test validations
     }
-    
+
 }

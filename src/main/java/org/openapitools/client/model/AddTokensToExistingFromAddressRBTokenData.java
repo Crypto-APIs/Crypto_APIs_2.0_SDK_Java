@@ -26,106 +26,255 @@ import java.io.IOException;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRBTokenDataEthereumToken;
 
-/**
- * AddTokensToExistingFromAddressRBTokenData
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class AddTokensToExistingFromAddressRBTokenData {
-  public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
-  @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  private Integer propertyId;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
-  @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
-  private String contractAddress;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public AddTokensToExistingFromAddressRBTokenData() { 
-  }
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public AddTokensToExistingFromAddressRBTokenData propertyId(Integer propertyId) {
-    
-    this.propertyId = propertyId;
-    return this;
-  }
+import io.cryptoapis.sdk.JSON;
 
-   /**
-   * Represents the specific &#x60;propertyId&#x60; of the token data that will be forwarded.
-   * @return propertyId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2", required = true, value = "Represents the specific `propertyId` of the token data that will be forwarded.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class AddTokensToExistingFromAddressRBTokenData extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(AddTokensToExistingFromAddressRBTokenData.class.getName());
 
-  public Integer getPropertyId() {
-    return propertyId;
-  }
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!AddTokensToExistingFromAddressRBTokenData.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'AddTokensToExistingFromAddressRBTokenData' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken> adapterAddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken = gson.getDelegateAdapter(this, TypeToken.get(AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken.class));
+            final TypeAdapter<AddTokensToExistingFromAddressRBTokenDataEthereumToken> adapterAddTokensToExistingFromAddressRBTokenDataEthereumToken = gson.getDelegateAdapter(this, TypeToken.get(AddTokensToExistingFromAddressRBTokenDataEthereumToken.class));
 
+            return (TypeAdapter<T>) new TypeAdapter<AddTokensToExistingFromAddressRBTokenData>() {
+                @Override
+                public void write(JsonWriter out, AddTokensToExistingFromAddressRBTokenData value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
-  public void setPropertyId(Integer propertyId) {
-    this.propertyId = propertyId;
-  }
+                    // check if the actual instance is of the type `AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken`
+                    if (value.getActualInstance() instanceof AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken) {
+                        JsonObject obj = adapterAddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken.toJsonTree((AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `AddTokensToExistingFromAddressRBTokenDataEthereumToken`
+                    if (value.getActualInstance() instanceof AddTokensToExistingFromAddressRBTokenDataEthereumToken) {
+                        JsonObject obj = adapterAddTokensToExistingFromAddressRBTokenDataEthereumToken.toJsonTree((AddTokensToExistingFromAddressRBTokenDataEthereumToken)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public AddTokensToExistingFromAddressRBTokenData contractAddress(String contractAddress) {
-    
-    this.contractAddress = contractAddress;
-    return this;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken, AddTokensToExistingFromAddressRBTokenDataEthereumToken");
+                }
 
-   /**
-   * Represents the specific &#x60;contractAddress&#x60; of the Token that will be forwarded.
-   * @return contractAddress
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Represents the specific `contractAddress` of the Token that will be forwarded.")
+                @Override
+                public AddTokensToExistingFromAddressRBTokenData read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public String getContractAddress() {
-    return contractAddress;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken'", e);
+                    }
 
-  public void setContractAddress(String contractAddress) {
-    this.contractAddress = contractAddress;
-  }
+                    // deserialize AddTokensToExistingFromAddressRBTokenDataEthereumToken
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddTokensToExistingFromAddressRBTokenDataEthereumToken.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddTokensToExistingFromAddressRBTokenDataEthereumToken;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddTokensToExistingFromAddressRBTokenDataEthereumToken'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddTokensToExistingFromAddressRBTokenDataEthereumToken'", e);
+                    }
 
+                    if (match == 1) {
+                        AddTokensToExistingFromAddressRBTokenData ret = new AddTokensToExistingFromAddressRBTokenData();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+                    throw new IOException(String.format("Failed deserialization for AddTokensToExistingFromAddressRBTokenData: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public AddTokensToExistingFromAddressRBTokenData() {
+        super("oneOf", Boolean.FALSE);
     }
-    AddTokensToExistingFromAddressRBTokenData addTokensToExistingFromAddressRBTokenData = (AddTokensToExistingFromAddressRBTokenData) o;
-    return Objects.equals(this.propertyId, addTokensToExistingFromAddressRBTokenData.propertyId) &&
-        Objects.equals(this.contractAddress, addTokensToExistingFromAddressRBTokenData.contractAddress);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(propertyId, contractAddress);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AddTokensToExistingFromAddressRBTokenData {\n");
-    sb.append("    propertyId: ").append(toIndentedString(propertyId)).append("\n");
-    sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public AddTokensToExistingFromAddressRBTokenData(AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public AddTokensToExistingFromAddressRBTokenData(AddTokensToExistingFromAddressRBTokenDataEthereumToken o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken", new GenericType<AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken>() {
+        });
+        schemas.put("AddTokensToExistingFromAddressRBTokenDataEthereumToken", new GenericType<AddTokensToExistingFromAddressRBTokenDataEthereumToken>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return AddTokensToExistingFromAddressRBTokenData.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken, AddTokensToExistingFromAddressRBTokenDataEthereumToken
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AddTokensToExistingFromAddressRBTokenDataEthereumToken) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken, AddTokensToExistingFromAddressRBTokenDataEthereumToken");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken, AddTokensToExistingFromAddressRBTokenDataEthereumToken
+     *
+     * @return The actual instance (AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken, AddTokensToExistingFromAddressRBTokenDataEthereumToken)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken`. If the actual instance is not `AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken`
+     * @throws ClassCastException if the instance is not `AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken`
+     */
+    public AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken getAddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken() throws ClassCastException {
+        return (AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddTokensToExistingFromAddressRBTokenDataEthereumToken`. If the actual instance is not `AddTokensToExistingFromAddressRBTokenDataEthereumToken`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddTokensToExistingFromAddressRBTokenDataEthereumToken`
+     * @throws ClassCastException if the instance is not `AddTokensToExistingFromAddressRBTokenDataEthereumToken`
+     */
+    public AddTokensToExistingFromAddressRBTokenDataEthereumToken getAddTokensToExistingFromAddressRBTokenDataEthereumToken() throws ClassCastException {
+        return (AddTokensToExistingFromAddressRBTokenDataEthereumToken)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to AddTokensToExistingFromAddressRBTokenData
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken
+    try {
+      AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with AddTokensToExistingFromAddressRBTokenDataEthereumToken
+    try {
+      AddTokensToExistingFromAddressRBTokenDataEthereumToken.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for AddTokensToExistingFromAddressRBTokenData with oneOf schemas: AddTokensToExistingFromAddressRBTokenDataBitcoinOmniToken, AddTokensToExistingFromAddressRBTokenDataEthereumToken. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of AddTokensToExistingFromAddressRBTokenData given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of AddTokensToExistingFromAddressRBTokenData
+  * @throws IOException if the JSON string is invalid with respect to AddTokensToExistingFromAddressRBTokenData
+  */
+  public static AddTokensToExistingFromAddressRBTokenData fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AddTokensToExistingFromAddressRBTokenData.class);
+  }
+
+ /**
+  * Convert an instance of AddTokensToExistingFromAddressRBTokenData to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -24,11 +24,31 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Object representation of the script
  */
 @ApiModel(description = "Object representation of the script")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSZScriptSig {
   public static final String SERIALIZED_NAME_ASM = "asm";
   @SerializedName(SERIALIZED_NAME_ASM)
@@ -114,6 +134,7 @@ public class ListTransactionsByBlockHeightRIBSZScriptSig {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -155,5 +176,111 @@ public class ListTransactionsByBlockHeightRIBSZScriptSig {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("asm");
+    openapiFields.add("hex");
+    openapiFields.add("type");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("asm");
+    openapiRequiredFields.add("hex");
+    openapiRequiredFields.add("type");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListTransactionsByBlockHeightRIBSZScriptSig
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListTransactionsByBlockHeightRIBSZScriptSig.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListTransactionsByBlockHeightRIBSZScriptSig is not found in the empty JSON string", ListTransactionsByBlockHeightRIBSZScriptSig.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListTransactionsByBlockHeightRIBSZScriptSig.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListTransactionsByBlockHeightRIBSZScriptSig` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListTransactionsByBlockHeightRIBSZScriptSig.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("asm") != null && !jsonObj.get("asm").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `asm` to be a primitive type in the JSON string but got `%s`", jsonObj.get("asm").toString()));
+      }
+      if (jsonObj.get("hex") != null && !jsonObj.get("hex").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `hex` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hex").toString()));
+      }
+      if (jsonObj.get("type") != null && !jsonObj.get("type").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `type` to be a primitive type in the JSON string but got `%s`", jsonObj.get("type").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListTransactionsByBlockHeightRIBSZScriptSig.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListTransactionsByBlockHeightRIBSZScriptSig' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListTransactionsByBlockHeightRIBSZScriptSig> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSZScriptSig.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListTransactionsByBlockHeightRIBSZScriptSig>() {
+           @Override
+           public void write(JsonWriter out, ListTransactionsByBlockHeightRIBSZScriptSig value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListTransactionsByBlockHeightRIBSZScriptSig read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListTransactionsByBlockHeightRIBSZScriptSig given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListTransactionsByBlockHeightRIBSZScriptSig
+  * @throws IOException if the JSON string is invalid with respect to ListTransactionsByBlockHeightRIBSZScriptSig
+  */
+  public static ListTransactionsByBlockHeightRIBSZScriptSig fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListTransactionsByBlockHeightRIBSZScriptSig.class);
+  }
+
+ /**
+  * Convert an instance of ListTransactionsByBlockHeightRIBSZScriptSig to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

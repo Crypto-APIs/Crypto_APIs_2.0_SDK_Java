@@ -25,11 +25,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBSCGasPrice;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Binance Smart Chain
  */
 @ApiModel(description = "Binance Smart Chain")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListUnconfirmedTransactionsByAddressRIBSBSC {
   public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
   @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
@@ -169,6 +189,7 @@ public class ListUnconfirmedTransactionsByAddressRIBSBSC {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -214,5 +235,119 @@ public class ListUnconfirmedTransactionsByAddressRIBSBSC {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("gasLimit");
+    openapiFields.add("gasPrice");
+    openapiFields.add("inputData");
+    openapiFields.add("nonce");
+    openapiFields.add("transactionStatus");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("gasLimit");
+    openapiRequiredFields.add("gasPrice");
+    openapiRequiredFields.add("inputData");
+    openapiRequiredFields.add("nonce");
+    openapiRequiredFields.add("transactionStatus");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListUnconfirmedTransactionsByAddressRIBSBSC
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListUnconfirmedTransactionsByAddressRIBSBSC.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListUnconfirmedTransactionsByAddressRIBSBSC is not found in the empty JSON string", ListUnconfirmedTransactionsByAddressRIBSBSC.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListUnconfirmedTransactionsByAddressRIBSBSC.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListUnconfirmedTransactionsByAddressRIBSBSC` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListUnconfirmedTransactionsByAddressRIBSBSC.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("gasLimit") != null && !jsonObj.get("gasLimit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gasLimit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gasLimit").toString()));
+      }
+      // validate the optional field `gasPrice`
+      if (jsonObj.getAsJsonObject("gasPrice") != null) {
+        ListConfirmedTransactionsByAddressRIBSBSCGasPrice.validateJsonObject(jsonObj.getAsJsonObject("gasPrice"));
+      }
+      if (jsonObj.get("inputData") != null && !jsonObj.get("inputData").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `inputData` to be a primitive type in the JSON string but got `%s`", jsonObj.get("inputData").toString()));
+      }
+      if (jsonObj.get("transactionStatus") != null && !jsonObj.get("transactionStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionStatus").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListUnconfirmedTransactionsByAddressRIBSBSC.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListUnconfirmedTransactionsByAddressRIBSBSC' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSBSC> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListUnconfirmedTransactionsByAddressRIBSBSC.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListUnconfirmedTransactionsByAddressRIBSBSC>() {
+           @Override
+           public void write(JsonWriter out, ListUnconfirmedTransactionsByAddressRIBSBSC value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListUnconfirmedTransactionsByAddressRIBSBSC read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListUnconfirmedTransactionsByAddressRIBSBSC given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListUnconfirmedTransactionsByAddressRIBSBSC
+  * @throws IOException if the JSON string is invalid with respect to ListUnconfirmedTransactionsByAddressRIBSBSC
+  */
+  public static ListUnconfirmedTransactionsByAddressRIBSBSC fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListUnconfirmedTransactionsByAddressRIBSBSC.class);
+  }
+
+ /**
+  * Convert an instance of ListUnconfirmedTransactionsByAddressRIBSBSC to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

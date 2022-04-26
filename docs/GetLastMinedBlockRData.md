@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetLastMinedBlockRI**](GetLastMinedBlockRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetLastMinedBlockRI**](GetLastMinedBlockRI.md) |  |  |
 
 
 

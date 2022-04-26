@@ -28,15 +28,35 @@ import java.util.List;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSLVout;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSLVin;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Litecoin
  */
 @ApiModel(description = "Litecoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRIBSL {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
+  private Long locktime;
 
   public static final String SERIALIZED_NAME_SIZE = "size";
   @SerializedName(SERIALIZED_NAME_SIZE)
@@ -52,16 +72,16 @@ public class ListAllUnconfirmedTransactionsRIBSL {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListAllUnconfirmedTransactionsRIBSLVin> vin = new ArrayList<ListAllUnconfirmedTransactionsRIBSLVin>();
+  private List<ListAllUnconfirmedTransactionsRIBSLVin> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSLVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSLVout>();
+  private List<GetTransactionDetailsByTransactionIDRIBSLVout> vout = new ArrayList<>();
 
   public ListAllUnconfirmedTransactionsRIBSL() { 
   }
 
-  public ListAllUnconfirmedTransactionsRIBSL locktime(Integer locktime) {
+  public ListAllUnconfirmedTransactionsRIBSL locktime(Long locktime) {
     
     this.locktime = locktime;
     return this;
@@ -74,12 +94,12 @@ public class ListAllUnconfirmedTransactionsRIBSL {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "1", required = true, value = "Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.")
 
-  public Integer getLocktime() {
+  public Long getLocktime() {
     return locktime;
   }
 
 
-  public void setLocktime(Integer locktime) {
+  public void setLocktime(Long locktime) {
     this.locktime = locktime;
   }
 
@@ -209,6 +229,7 @@ public class ListAllUnconfirmedTransactionsRIBSL {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -256,5 +277,132 @@ public class ListAllUnconfirmedTransactionsRIBSL {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("locktime");
+    openapiFields.add("size");
+    openapiFields.add("vSize");
+    openapiFields.add("version");
+    openapiFields.add("vin");
+    openapiFields.add("vout");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("locktime");
+    openapiRequiredFields.add("size");
+    openapiRequiredFields.add("vSize");
+    openapiRequiredFields.add("version");
+    openapiRequiredFields.add("vin");
+    openapiRequiredFields.add("vout");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListAllUnconfirmedTransactionsRIBSL
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListAllUnconfirmedTransactionsRIBSL.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListAllUnconfirmedTransactionsRIBSL is not found in the empty JSON string", ListAllUnconfirmedTransactionsRIBSL.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListAllUnconfirmedTransactionsRIBSL.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListAllUnconfirmedTransactionsRIBSL` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListAllUnconfirmedTransactionsRIBSL.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      JsonArray jsonArrayvin = jsonObj.getAsJsonArray("vin");
+      if (jsonArrayvin != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vin").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vin` to be an array in the JSON string but got `%s`", jsonObj.get("vin").toString()));
+        }
+
+        // validate the optional field `vin` (array)
+        for (int i = 0; i < jsonArrayvin.size(); i++) {
+          ListAllUnconfirmedTransactionsRIBSLVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+        };
+      }
+      JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
+      if (jsonArrayvout != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("vout").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `vout` to be an array in the JSON string but got `%s`", jsonObj.get("vout").toString()));
+        }
+
+        // validate the optional field `vout` (array)
+        for (int i = 0; i < jsonArrayvout.size(); i++) {
+          GetTransactionDetailsByTransactionIDRIBSLVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+        };
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListAllUnconfirmedTransactionsRIBSL.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListAllUnconfirmedTransactionsRIBSL' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListAllUnconfirmedTransactionsRIBSL> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListAllUnconfirmedTransactionsRIBSL.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListAllUnconfirmedTransactionsRIBSL>() {
+           @Override
+           public void write(JsonWriter out, ListAllUnconfirmedTransactionsRIBSL value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListAllUnconfirmedTransactionsRIBSL read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListAllUnconfirmedTransactionsRIBSL given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListAllUnconfirmedTransactionsRIBSL
+  * @throws IOException if the JSON string is invalid with respect to ListAllUnconfirmedTransactionsRIBSL
+  */
+  public static ListAllUnconfirmedTransactionsRIBSL fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListAllUnconfirmedTransactionsRIBSL.class);
+  }
+
+ /**
+  * Convert an instance of ListAllUnconfirmedTransactionsRIBSL to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

@@ -28,16 +28,16 @@ import java.io.IOException;
 
 
 import org.openapitools.client.model.GetInternalTransactionByTransactionHashAndOperationIdR;
-import org.openapitools.client.model.InlineResponse40048;
-import org.openapitools.client.model.InlineResponse40050;
-import org.openapitools.client.model.InlineResponse40051;
-import org.openapitools.client.model.InlineResponse40148;
-import org.openapitools.client.model.InlineResponse40150;
-import org.openapitools.client.model.InlineResponse40151;
+import org.openapitools.client.model.InlineResponse40052;
+import org.openapitools.client.model.InlineResponse40054;
+import org.openapitools.client.model.InlineResponse40056;
+import org.openapitools.client.model.InlineResponse40152;
+import org.openapitools.client.model.InlineResponse40154;
+import org.openapitools.client.model.InlineResponse40156;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40348;
-import org.openapitools.client.model.InlineResponse40350;
-import org.openapitools.client.model.InlineResponse40351;
+import org.openapitools.client.model.InlineResponse40352;
+import org.openapitools.client.model.InlineResponse40354;
+import org.openapitools.client.model.InlineResponse40356;
 import org.openapitools.client.model.InlineResponse4043;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
@@ -52,6 +52,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class InternalApi {
     private ApiClient localVarApiClient;
@@ -118,7 +119,6 @@ public class InternalApi {
      */
     public okhttp3.Call getInternalTransactionByTransactionHashAndOperationIdCall(String blockchain, String network, String operationId, String transactionHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -162,7 +162,7 @@ public class InternalApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -324,7 +324,6 @@ public class InternalApi {
      */
     public okhttp3.Call listInternalTransactionDetailsByTransactionHashCall(String blockchain, String network, String transactionHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -375,7 +374,7 @@ public class InternalApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -532,7 +531,6 @@ public class InternalApi {
      */
     public okhttp3.Call listInternalTransactionsByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -583,7 +581,7 @@ public class InternalApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

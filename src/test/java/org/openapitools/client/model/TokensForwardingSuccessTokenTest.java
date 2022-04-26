@@ -24,9 +24,8 @@ import java.io.IOException;
 import org.openapitools.client.model.TokensForwardingSuccessErc20;
 import org.openapitools.client.model.TokensForwardingSuccessErc721;
 import org.openapitools.client.model.TokensForwardingSuccessOmni;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

@@ -27,309 +27,305 @@ import org.openapitools.client.model.TokensForwardingSuccessErc20;
 import org.openapitools.client.model.TokensForwardingSuccessErc721;
 import org.openapitools.client.model.TokensForwardingSuccessOmni;
 
-/**
- * TokensForwardingSuccessToken
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class TokensForwardingSuccessToken {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_SYMBOL = "symbol";
-  @SerializedName(SERIALIZED_NAME_SYMBOL)
-  private String symbol;
-
-  public static final String SERIALIZED_NAME_DECIMALS = "decimals";
-  @SerializedName(SERIALIZED_NAME_DECIMALS)
-  private String decimals;
-
-  public static final String SERIALIZED_NAME_AMOUNT = "amount";
-  @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private String amount;
-
-  public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
-  @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
-  private String contractAddress;
-
-  public static final String SERIALIZED_NAME_TOKEN_ID = "tokenId";
-  @SerializedName(SERIALIZED_NAME_TOKEN_ID)
-  private String tokenId;
-
-  public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
-  @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  private String propertyId;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_TYPE = "transactionType";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_TYPE)
-  private String transactionType;
-
-  public static final String SERIALIZED_NAME_CREATED_BY_TRANSACTION_ID = "createdByTransactionId";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY_TRANSACTION_ID)
-  private String createdByTransactionId;
-
-  public TokensForwardingSuccessToken() { 
-  }
-
-  public TokensForwardingSuccessToken name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Specifies the name of the token.
-   * @return name
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "TetherUSDT", required = true, value = "Specifies the name of the token.")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public TokensForwardingSuccessToken symbol(String symbol) {
-    
-    this.symbol = symbol;
-    return this;
-  }
-
-   /**
-   * Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.
-   * @return symbol
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "WSTK", required = true, value = "Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.")
-
-  public String getSymbol() {
-    return symbol;
-  }
-
-
-  public void setSymbol(String symbol) {
-    this.symbol = symbol;
-  }
-
-
-  public TokensForwardingSuccessToken decimals(String decimals) {
-    
-    this.decimals = decimals;
-    return this;
-  }
-
-   /**
-   * Defines how many decimals can be used to break the token.
-   * @return decimals
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "6", value = "Defines how many decimals can be used to break the token.")
-
-  public String getDecimals() {
-    return decimals;
-  }
-
-
-  public void setDecimals(String decimals) {
-    this.decimals = decimals;
-  }
-
-
-  public TokensForwardingSuccessToken amount(String amount) {
-    
-    this.amount = amount;
-    return this;
-  }
-
-   /**
-   * Defines the amount of tokens sent with the confirmed transaction.
-   * @return amount
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "110.531723", required = true, value = "Defines the amount of tokens sent with the confirmed transaction.")
-
-  public String getAmount() {
-    return amount;
-  }
-
-
-  public void setAmount(String amount) {
-    this.amount = amount;
-  }
-
-
-  public TokensForwardingSuccessToken contractAddress(String contractAddress) {
-    
-    this.contractAddress = contractAddress;
-    return this;
-  }
-
-   /**
-   * Specifies the address of the contract.
-   * @return contractAddress
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x518ba36f1ca6dfe3bb1b098b8dd0444030e79d9f", required = true, value = "Specifies the address of the contract.")
-
-  public String getContractAddress() {
-    return contractAddress;
-  }
-
-
-  public void setContractAddress(String contractAddress) {
-    this.contractAddress = contractAddress;
-  }
-
-
-  public TokensForwardingSuccessToken tokenId(String tokenId) {
-    
-    this.tokenId = tokenId;
-    return this;
-  }
-
-   /**
-   * Specifies the ID of the token.
-   * @return tokenId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5027", required = true, value = "Specifies the ID of the token.")
-
-  public String getTokenId() {
-    return tokenId;
-  }
-
-
-  public void setTokenId(String tokenId) {
-    this.tokenId = tokenId;
-  }
-
-
-  public TokensForwardingSuccessToken propertyId(String propertyId) {
-    
-    this.propertyId = propertyId;
-    return this;
-  }
-
-   /**
-   * Defines the ID of the property for Omni Layer.
-   * @return propertyId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "31", required = true, value = "Defines the ID of the property for Omni Layer.")
-
-  public String getPropertyId() {
-    return propertyId;
-  }
-
-
-  public void setPropertyId(String propertyId) {
-    this.propertyId = propertyId;
-  }
-
-
-  public TokensForwardingSuccessToken transactionType(String transactionType) {
-    
-    this.transactionType = transactionType;
-    return this;
-  }
-
-   /**
-   * Defines the type of the transaction.
-   * @return transactionType
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "Simple Send, DEx Purchase etc.", required = true, value = "Defines the type of the transaction.")
-
-  public String getTransactionType() {
-    return transactionType;
-  }
-
-
-  public void setTransactionType(String transactionType) {
-    this.transactionType = transactionType;
-  }
-
-
-  public TokensForwardingSuccessToken createdByTransactionId(String createdByTransactionId) {
-    
-    this.createdByTransactionId = createdByTransactionId;
-    return this;
-  }
-
-   /**
-   * The transaction ID used to create the token.
-   * @return createdByTransactionId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "be5be71feac9e7019fbcdea5a87098a7862a0ee8c60bd5809b4d3b0cda940ddc", required = true, value = "The transaction ID used to create the token.")
-
-  public String getCreatedByTransactionId() {
-    return createdByTransactionId;
-  }
-
-
-  public void setCreatedByTransactionId(String createdByTransactionId) {
-    this.createdByTransactionId = createdByTransactionId;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class TokensForwardingSuccessToken extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(TokensForwardingSuccessToken.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!TokensForwardingSuccessToken.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'TokensForwardingSuccessToken' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<TokensForwardingSuccessErc20> adapterTokensForwardingSuccessErc20 = gson.getDelegateAdapter(this, TypeToken.get(TokensForwardingSuccessErc20.class));
+            final TypeAdapter<TokensForwardingSuccessErc721> adapterTokensForwardingSuccessErc721 = gson.getDelegateAdapter(this, TypeToken.get(TokensForwardingSuccessErc721.class));
+            final TypeAdapter<TokensForwardingSuccessOmni> adapterTokensForwardingSuccessOmni = gson.getDelegateAdapter(this, TypeToken.get(TokensForwardingSuccessOmni.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<TokensForwardingSuccessToken>() {
+                @Override
+                public void write(JsonWriter out, TokensForwardingSuccessToken value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `TokensForwardingSuccessErc20`
+                    if (value.getActualInstance() instanceof TokensForwardingSuccessErc20) {
+                        JsonObject obj = adapterTokensForwardingSuccessErc20.toJsonTree((TokensForwardingSuccessErc20)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `TokensForwardingSuccessErc721`
+                    if (value.getActualInstance() instanceof TokensForwardingSuccessErc721) {
+                        JsonObject obj = adapterTokensForwardingSuccessErc721.toJsonTree((TokensForwardingSuccessErc721)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `TokensForwardingSuccessOmni`
+                    if (value.getActualInstance() instanceof TokensForwardingSuccessOmni) {
+                        JsonObject obj = adapterTokensForwardingSuccessOmni.toJsonTree((TokensForwardingSuccessOmni)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: TokensForwardingSuccessErc20, TokensForwardingSuccessErc721, TokensForwardingSuccessOmni");
+                }
+
+                @Override
+                public TokensForwardingSuccessToken read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize TokensForwardingSuccessErc20
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        TokensForwardingSuccessErc20.validateJsonObject(jsonObject);
+                        actualAdapter = adapterTokensForwardingSuccessErc20;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'TokensForwardingSuccessErc20'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'TokensForwardingSuccessErc20'", e);
+                    }
+
+                    // deserialize TokensForwardingSuccessErc721
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        TokensForwardingSuccessErc721.validateJsonObject(jsonObject);
+                        actualAdapter = adapterTokensForwardingSuccessErc721;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'TokensForwardingSuccessErc721'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'TokensForwardingSuccessErc721'", e);
+                    }
+
+                    // deserialize TokensForwardingSuccessOmni
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        TokensForwardingSuccessOmni.validateJsonObject(jsonObject);
+                        actualAdapter = adapterTokensForwardingSuccessOmni;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'TokensForwardingSuccessOmni'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'TokensForwardingSuccessOmni'", e);
+                    }
+
+                    if (match == 1) {
+                        TokensForwardingSuccessToken ret = new TokensForwardingSuccessToken();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for TokensForwardingSuccessToken: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public TokensForwardingSuccessToken() {
+        super("oneOf", Boolean.FALSE);
     }
-    TokensForwardingSuccessToken tokensForwardingSuccessToken = (TokensForwardingSuccessToken) o;
-    return Objects.equals(this.name, tokensForwardingSuccessToken.name) &&
-        Objects.equals(this.symbol, tokensForwardingSuccessToken.symbol) &&
-        Objects.equals(this.decimals, tokensForwardingSuccessToken.decimals) &&
-        Objects.equals(this.amount, tokensForwardingSuccessToken.amount) &&
-        Objects.equals(this.contractAddress, tokensForwardingSuccessToken.contractAddress) &&
-        Objects.equals(this.tokenId, tokensForwardingSuccessToken.tokenId) &&
-        Objects.equals(this.propertyId, tokensForwardingSuccessToken.propertyId) &&
-        Objects.equals(this.transactionType, tokensForwardingSuccessToken.transactionType) &&
-        Objects.equals(this.createdByTransactionId, tokensForwardingSuccessToken.createdByTransactionId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, symbol, decimals, amount, contractAddress, tokenId, propertyId, transactionType, createdByTransactionId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class TokensForwardingSuccessToken {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
-    sb.append("    decimals: ").append(toIndentedString(decimals)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
-    sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
-    sb.append("    propertyId: ").append(toIndentedString(propertyId)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    createdByTransactionId: ").append(toIndentedString(createdByTransactionId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public TokensForwardingSuccessToken(TokensForwardingSuccessErc20 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public TokensForwardingSuccessToken(TokensForwardingSuccessErc721 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public TokensForwardingSuccessToken(TokensForwardingSuccessOmni o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("TokensForwardingSuccessErc20", new GenericType<TokensForwardingSuccessErc20>() {
+        });
+        schemas.put("TokensForwardingSuccessErc721", new GenericType<TokensForwardingSuccessErc721>() {
+        });
+        schemas.put("TokensForwardingSuccessOmni", new GenericType<TokensForwardingSuccessOmni>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return TokensForwardingSuccessToken.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * TokensForwardingSuccessErc20, TokensForwardingSuccessErc721, TokensForwardingSuccessOmni
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof TokensForwardingSuccessErc20) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof TokensForwardingSuccessErc721) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof TokensForwardingSuccessOmni) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be TokensForwardingSuccessErc20, TokensForwardingSuccessErc721, TokensForwardingSuccessOmni");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * TokensForwardingSuccessErc20, TokensForwardingSuccessErc721, TokensForwardingSuccessOmni
+     *
+     * @return The actual instance (TokensForwardingSuccessErc20, TokensForwardingSuccessErc721, TokensForwardingSuccessOmni)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `TokensForwardingSuccessErc20`. If the actual instance is not `TokensForwardingSuccessErc20`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `TokensForwardingSuccessErc20`
+     * @throws ClassCastException if the instance is not `TokensForwardingSuccessErc20`
+     */
+    public TokensForwardingSuccessErc20 getTokensForwardingSuccessErc20() throws ClassCastException {
+        return (TokensForwardingSuccessErc20)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `TokensForwardingSuccessErc721`. If the actual instance is not `TokensForwardingSuccessErc721`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `TokensForwardingSuccessErc721`
+     * @throws ClassCastException if the instance is not `TokensForwardingSuccessErc721`
+     */
+    public TokensForwardingSuccessErc721 getTokensForwardingSuccessErc721() throws ClassCastException {
+        return (TokensForwardingSuccessErc721)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `TokensForwardingSuccessOmni`. If the actual instance is not `TokensForwardingSuccessOmni`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `TokensForwardingSuccessOmni`
+     * @throws ClassCastException if the instance is not `TokensForwardingSuccessOmni`
+     */
+    public TokensForwardingSuccessOmni getTokensForwardingSuccessOmni() throws ClassCastException {
+        return (TokensForwardingSuccessOmni)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to TokensForwardingSuccessToken
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with TokensForwardingSuccessErc20
+    try {
+      TokensForwardingSuccessErc20.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with TokensForwardingSuccessErc721
+    try {
+      TokensForwardingSuccessErc721.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with TokensForwardingSuccessOmni
+    try {
+      TokensForwardingSuccessOmni.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for TokensForwardingSuccessToken with oneOf schemas: TokensForwardingSuccessErc20, TokensForwardingSuccessErc721, TokensForwardingSuccessOmni. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of TokensForwardingSuccessToken given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of TokensForwardingSuccessToken
+  * @throws IOException if the JSON string is invalid with respect to TokensForwardingSuccessToken
+  */
+  public static TokensForwardingSuccessToken fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, TokensForwardingSuccessToken.class);
+  }
+
+ /**
+  * Convert an instance of TokensForwardingSuccessToken to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

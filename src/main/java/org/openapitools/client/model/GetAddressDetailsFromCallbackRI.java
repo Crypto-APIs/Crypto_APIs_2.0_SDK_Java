@@ -27,10 +27,30 @@ import org.openapitools.client.model.GetAddressDetailsFromCallbackRITotalReceive
 import org.openapitools.client.model.GetAddressDetailsFromCallbackRITotalSpent;
 import org.openapitools.client.model.GetAddressDetailsRIConfirmedBalance;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * GetAddressDetailsFromCallbackRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetAddressDetailsFromCallbackRI {
   public static final String SERIALIZED_NAME_INCOMING_TRANSACTIONS_COUNT = "incomingTransactionsCount";
   @SerializedName(SERIALIZED_NAME_INCOMING_TRANSACTIONS_COUNT)
@@ -58,7 +78,7 @@ public class GetAddressDetailsFromCallbackRI {
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
-  private Integer sequence;
+  private Long sequence;
 
   public GetAddressDetailsFromCallbackRI() { 
   }
@@ -201,7 +221,7 @@ public class GetAddressDetailsFromCallbackRI {
   }
 
 
-  public GetAddressDetailsFromCallbackRI sequence(Integer sequence) {
+  public GetAddressDetailsFromCallbackRI sequence(Long sequence) {
     
     this.sequence = sequence;
     return this;
@@ -214,14 +234,15 @@ public class GetAddressDetailsFromCallbackRI {
   @javax.annotation.Nullable
   @ApiModelProperty(example = "25648975", value = "Defines the transaction input's sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.")
 
-  public Integer getSequence() {
+  public Long getSequence() {
     return sequence;
   }
 
 
-  public void setSequence(Integer sequence) {
+  public void setSequence(Long sequence) {
     this.sequence = sequence;
   }
+
 
 
   @Override
@@ -273,5 +294,119 @@ public class GetAddressDetailsFromCallbackRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("incomingTransactionsCount");
+    openapiFields.add("outgoingTransactionsCount");
+    openapiFields.add("transactionsCount");
+    openapiFields.add("confirmedBalance");
+    openapiFields.add("totalReceived");
+    openapiFields.add("totalSpent");
+    openapiFields.add("sequence");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("incomingTransactionsCount");
+    openapiRequiredFields.add("outgoingTransactionsCount");
+    openapiRequiredFields.add("transactionsCount");
+    openapiRequiredFields.add("confirmedBalance");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetAddressDetailsFromCallbackRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetAddressDetailsFromCallbackRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetAddressDetailsFromCallbackRI is not found in the empty JSON string", GetAddressDetailsFromCallbackRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetAddressDetailsFromCallbackRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetAddressDetailsFromCallbackRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetAddressDetailsFromCallbackRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      // validate the optional field `confirmedBalance`
+      if (jsonObj.getAsJsonObject("confirmedBalance") != null) {
+        GetAddressDetailsRIConfirmedBalance.validateJsonObject(jsonObj.getAsJsonObject("confirmedBalance"));
+      }
+      // validate the optional field `totalReceived`
+      if (jsonObj.getAsJsonObject("totalReceived") != null) {
+        GetAddressDetailsFromCallbackRITotalReceived.validateJsonObject(jsonObj.getAsJsonObject("totalReceived"));
+      }
+      // validate the optional field `totalSpent`
+      if (jsonObj.getAsJsonObject("totalSpent") != null) {
+        GetAddressDetailsFromCallbackRITotalSpent.validateJsonObject(jsonObj.getAsJsonObject("totalSpent"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetAddressDetailsFromCallbackRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetAddressDetailsFromCallbackRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetAddressDetailsFromCallbackRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetAddressDetailsFromCallbackRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetAddressDetailsFromCallbackRI>() {
+           @Override
+           public void write(JsonWriter out, GetAddressDetailsFromCallbackRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetAddressDetailsFromCallbackRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetAddressDetailsFromCallbackRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetAddressDetailsFromCallbackRI
+  * @throws IOException if the JSON string is invalid with respect to GetAddressDetailsFromCallbackRI
+  */
+  public static GetAddressDetailsFromCallbackRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetAddressDetailsFromCallbackRI.class);
+  }
+
+ /**
+  * Convert an instance of GetAddressDetailsFromCallbackRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

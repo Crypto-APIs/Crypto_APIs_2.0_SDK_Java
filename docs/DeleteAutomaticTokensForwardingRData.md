@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**DeleteAutomaticTokensForwardingRI**](DeleteAutomaticTokensForwardingRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**DeleteAutomaticTokensForwardingRI**](DeleteAutomaticTokensForwardingRI.md) |  |  |
 
 
 

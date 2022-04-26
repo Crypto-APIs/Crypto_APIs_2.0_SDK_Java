@@ -29,143 +29,255 @@ import org.openapitools.client.model.AlreadyExists;
 import org.openapitools.client.model.BannedIpAddressDetails;
 import org.openapitools.client.model.InvalidData;
 
-/**
- * NewBlockE409
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class NewBlockE409 {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_DETAILS = "details";
-  @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<BannedIpAddressDetails> details = null;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public NewBlockE409() { 
-  }
+import io.cryptoapis.sdk.JSON;
 
-  public NewBlockE409 code(String code) {
-    
-    this.code = code;
-    return this;
-  }
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class NewBlockE409 extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(NewBlockE409.class.getName());
 
-   /**
-   * Specifies an error code, e.g. error 404.
-   * @return code
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "already_exists", required = true, value = "Specifies an error code, e.g. error 404.")
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!NewBlockE409.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'NewBlockE409' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AlreadyExists> adapterAlreadyExists = gson.getDelegateAdapter(this, TypeToken.get(AlreadyExists.class));
+            final TypeAdapter<InvalidData> adapterInvalidData = gson.getDelegateAdapter(this, TypeToken.get(InvalidData.class));
 
-  public String getCode() {
-    return code;
-  }
+            return (TypeAdapter<T>) new TypeAdapter<NewBlockE409>() {
+                @Override
+                public void write(JsonWriter out, NewBlockE409 value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `AlreadyExists`
+                    if (value.getActualInstance() instanceof AlreadyExists) {
+                        JsonObject obj = adapterAlreadyExists.toJsonTree((AlreadyExists)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+                    // check if the actual instance is of the type `InvalidData`
+                    if (value.getActualInstance() instanceof InvalidData) {
+                        JsonObject obj = adapterInvalidData.toJsonTree((InvalidData)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AlreadyExists, InvalidData");
+                }
 
-  public NewBlockE409 message(String message) {
-    
-    this.message = message;
-    return this;
-  }
+                @Override
+                public NewBlockE409 read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-   /**
-   * Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.
-   * @return message
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "The specified resource already exists.", required = true, value = "Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.")
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
-  public String getMessage() {
-    return message;
-  }
+                    // deserialize AlreadyExists
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AlreadyExists.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAlreadyExists;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AlreadyExists'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AlreadyExists'", e);
+                    }
 
+                    // deserialize InvalidData
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidData.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidData;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidData'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidData'", e);
+                    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+                    if (match == 1) {
+                        NewBlockE409 ret = new NewBlockE409();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-
-  public NewBlockE409 details(List<BannedIpAddressDetails> details) {
-    
-    this.details = details;
-    return this;
-  }
-
-  public NewBlockE409 addDetailsItem(BannedIpAddressDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<BannedIpAddressDetails>();
+                    throw new IOException(String.format("Failed deserialization for NewBlockE409: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.details.add(detailsItem);
-    return this;
-  }
 
-   /**
-   * Get details
-   * @return details
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<BannedIpAddressDetails> getDetails() {
-    return details;
-  }
-
-
-  public void setDetails(List<BannedIpAddressDetails> details) {
-    this.details = details;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public NewBlockE409() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public NewBlockE409(AlreadyExists o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    NewBlockE409 newBlockE409 = (NewBlockE409) o;
-    return Objects.equals(this.code, newBlockE409.code) &&
-        Objects.equals(this.message, newBlockE409.message) &&
-        Objects.equals(this.details, newBlockE409.details);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code, message, details);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class NewBlockE409 {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public NewBlockE409(InvalidData o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    static {
+        schemas.put("AlreadyExists", new GenericType<AlreadyExists>() {
+        });
+        schemas.put("InvalidData", new GenericType<InvalidData>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return NewBlockE409.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * AlreadyExists, InvalidData
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AlreadyExists) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof InvalidData) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be AlreadyExists, InvalidData");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * AlreadyExists, InvalidData
+     *
+     * @return The actual instance (AlreadyExists, InvalidData)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AlreadyExists`. If the actual instance is not `AlreadyExists`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AlreadyExists`
+     * @throws ClassCastException if the instance is not `AlreadyExists`
+     */
+    public AlreadyExists getAlreadyExists() throws ClassCastException {
+        return (AlreadyExists)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidData`. If the actual instance is not `InvalidData`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidData`
+     * @throws ClassCastException if the instance is not `InvalidData`
+     */
+    public InvalidData getInvalidData() throws ClassCastException {
+        return (InvalidData)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to NewBlockE409
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with AlreadyExists
+    try {
+      AlreadyExists.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with InvalidData
+    try {
+      InvalidData.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for NewBlockE409 with oneOf schemas: AlreadyExists, InvalidData. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of NewBlockE409 given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of NewBlockE409
+  * @throws IOException if the JSON string is invalid with respect to NewBlockE409
+  */
+  public static NewBlockE409 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, NewBlockE409.class);
+  }
+
+ /**
+  * Convert an instance of NewBlockE409 to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

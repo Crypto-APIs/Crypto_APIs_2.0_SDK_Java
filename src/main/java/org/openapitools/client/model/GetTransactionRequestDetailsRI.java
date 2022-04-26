@@ -27,10 +27,30 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetTransactionRequestDetailsRIRecipients;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * GetTransactionRequestDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetTransactionRequestDetailsRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DETAILS = "additionalDetails";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DETAILS)
@@ -54,6 +74,8 @@ public class GetTransactionRequestDetailsRI {
     ETHEREUM("ethereum"),
     
     ETHEREUM_CLASSIC("ethereum-classic"),
+    
+    XRP("xrp"),
     
     ZCASH("zcash");
 
@@ -209,11 +231,15 @@ public class GetTransactionRequestDetailsRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetTransactionRequestDetailsRIRecipients> recipients = new ArrayList<GetTransactionRequestDetailsRIRecipients>();
+  private List<GetTransactionRequestDetailsRIRecipients> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL_TRANSACTION_AMOUNT = "totalTransactionAmount";
   @SerializedName(SERIALIZED_NAME_TOTAL_TRANSACTION_AMOUNT)
   private String totalTransactionAmount;
+
+  public static final String SERIALIZED_NAME_TRANSACTION_ID = "transactionId";
+  @SerializedName(SERIALIZED_NAME_TRANSACTION_ID)
+  private String transactionId;
 
   /**
    * Defines the status of the transaction request, e.g. pending.
@@ -487,6 +513,29 @@ public class GetTransactionRequestDetailsRI {
   }
 
 
+  public GetTransactionRequestDetailsRI transactionId(String transactionId) {
+    
+    this.transactionId = transactionId;
+    return this;
+  }
+
+   /**
+   * Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain.
+   * @return transactionId
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "61922aa68f192800067a8404", value = "Represents the unique identifier of a transaction, i.e. it could be transactionId in UTXO-based protocols like Bitcoin, and transaction hash in Ethereum blockchain.")
+
+  public String getTransactionId() {
+    return transactionId;
+  }
+
+
+  public void setTransactionId(String transactionId) {
+    this.transactionId = transactionId;
+  }
+
+
   public GetTransactionRequestDetailsRI transactionRequestStatus(TransactionRequestStatusEnum transactionRequestStatus) {
     
     this.transactionRequestStatus = transactionRequestStatus;
@@ -579,6 +628,7 @@ public class GetTransactionRequestDetailsRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -594,6 +644,7 @@ public class GetTransactionRequestDetailsRI {
         Objects.equals(this.network, getTransactionRequestDetailsRI.network) &&
         Objects.equals(this.recipients, getTransactionRequestDetailsRI.recipients) &&
         Objects.equals(this.totalTransactionAmount, getTransactionRequestDetailsRI.totalTransactionAmount) &&
+        Objects.equals(this.transactionId, getTransactionRequestDetailsRI.transactionId) &&
         Objects.equals(this.transactionRequestStatus, getTransactionRequestDetailsRI.transactionRequestStatus) &&
         Objects.equals(this.transactionType, getTransactionRequestDetailsRI.transactionType) &&
         Objects.equals(this.unit, getTransactionRequestDetailsRI.unit) &&
@@ -602,7 +653,7 @@ public class GetTransactionRequestDetailsRI {
 
   @Override
   public int hashCode() {
-    return Objects.hash(additionalDetails, blockchain, feePriority, network, recipients, totalTransactionAmount, transactionRequestStatus, transactionType, unit, walletId);
+    return Objects.hash(additionalDetails, blockchain, feePriority, network, recipients, totalTransactionAmount, transactionId, transactionRequestStatus, transactionType, unit, walletId);
   }
 
   @Override
@@ -615,6 +666,7 @@ public class GetTransactionRequestDetailsRI {
     sb.append("    network: ").append(toIndentedString(network)).append("\n");
     sb.append("    recipients: ").append(toIndentedString(recipients)).append("\n");
     sb.append("    totalTransactionAmount: ").append(toIndentedString(totalTransactionAmount)).append("\n");
+    sb.append("    transactionId: ").append(toIndentedString(transactionId)).append("\n");
     sb.append("    transactionRequestStatus: ").append(toIndentedString(transactionRequestStatus)).append("\n");
     sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
     sb.append("    unit: ").append(toIndentedString(unit)).append("\n");
@@ -634,5 +686,159 @@ public class GetTransactionRequestDetailsRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("additionalDetails");
+    openapiFields.add("blockchain");
+    openapiFields.add("feePriority");
+    openapiFields.add("network");
+    openapiFields.add("recipients");
+    openapiFields.add("totalTransactionAmount");
+    openapiFields.add("transactionId");
+    openapiFields.add("transactionRequestStatus");
+    openapiFields.add("transactionType");
+    openapiFields.add("unit");
+    openapiFields.add("walletId");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("additionalDetails");
+    openapiRequiredFields.add("blockchain");
+    openapiRequiredFields.add("feePriority");
+    openapiRequiredFields.add("network");
+    openapiRequiredFields.add("recipients");
+    openapiRequiredFields.add("totalTransactionAmount");
+    openapiRequiredFields.add("transactionRequestStatus");
+    openapiRequiredFields.add("transactionType");
+    openapiRequiredFields.add("unit");
+    openapiRequiredFields.add("walletId");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetTransactionRequestDetailsRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetTransactionRequestDetailsRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetTransactionRequestDetailsRI is not found in the empty JSON string", GetTransactionRequestDetailsRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetTransactionRequestDetailsRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetTransactionRequestDetailsRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetTransactionRequestDetailsRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("additionalDetails") != null && !jsonObj.get("additionalDetails").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `additionalDetails` to be a primitive type in the JSON string but got `%s`", jsonObj.get("additionalDetails").toString()));
+      }
+      if (jsonObj.get("blockchain") != null && !jsonObj.get("blockchain").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `blockchain` to be a primitive type in the JSON string but got `%s`", jsonObj.get("blockchain").toString()));
+      }
+      if (jsonObj.get("feePriority") != null && !jsonObj.get("feePriority").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `feePriority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feePriority").toString()));
+      }
+      if (jsonObj.get("network") != null && !jsonObj.get("network").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `network` to be a primitive type in the JSON string but got `%s`", jsonObj.get("network").toString()));
+      }
+      JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
+      if (jsonArrayrecipients != null) {
+        // ensure the json data is an array
+        if (!jsonObj.get("recipients").isJsonArray()) {
+          throw new IllegalArgumentException(String.format("Expected the field `recipients` to be an array in the JSON string but got `%s`", jsonObj.get("recipients").toString()));
+        }
+
+        // validate the optional field `recipients` (array)
+        for (int i = 0; i < jsonArrayrecipients.size(); i++) {
+          GetTransactionRequestDetailsRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+        };
+      }
+      if (jsonObj.get("totalTransactionAmount") != null && !jsonObj.get("totalTransactionAmount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `totalTransactionAmount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("totalTransactionAmount").toString()));
+      }
+      if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionId").toString()));
+      }
+      if (jsonObj.get("transactionRequestStatus") != null && !jsonObj.get("transactionRequestStatus").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionRequestStatus` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionRequestStatus").toString()));
+      }
+      if (jsonObj.get("transactionType") != null && !jsonObj.get("transactionType").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `transactionType` to be a primitive type in the JSON string but got `%s`", jsonObj.get("transactionType").toString()));
+      }
+      if (jsonObj.get("unit") != null && !jsonObj.get("unit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `unit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("unit").toString()));
+      }
+      if (jsonObj.get("walletId") != null && !jsonObj.get("walletId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `walletId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("walletId").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetTransactionRequestDetailsRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetTransactionRequestDetailsRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetTransactionRequestDetailsRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionRequestDetailsRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetTransactionRequestDetailsRI>() {
+           @Override
+           public void write(JsonWriter out, GetTransactionRequestDetailsRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetTransactionRequestDetailsRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetTransactionRequestDetailsRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetTransactionRequestDetailsRI
+  * @throws IOException if the JSON string is invalid with respect to GetTransactionRequestDetailsRI
+  */
+  public static GetTransactionRequestDetailsRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetTransactionRequestDetailsRI.class);
+  }
+
+ /**
+  * Convert an instance of GetTransactionRequestDetailsRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

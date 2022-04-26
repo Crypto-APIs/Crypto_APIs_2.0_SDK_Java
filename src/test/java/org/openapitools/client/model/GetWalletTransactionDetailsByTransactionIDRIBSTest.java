@@ -38,9 +38,8 @@ import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDR
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZ;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVin;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

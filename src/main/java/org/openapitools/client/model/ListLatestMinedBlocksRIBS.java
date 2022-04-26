@@ -36,667 +36,655 @@ import org.openapitools.client.model.ListLatestMinedBlocksRIBSL;
 import org.openapitools.client.model.ListLatestMinedBlocksRIBSZ;
 import org.openapitools.client.model.ListLatestMinedBlocksRIBSZ2;
 
-/**
- * ListLatestMinedBlocksRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class ListLatestMinedBlocksRIBS {
-  public static final String SERIALIZED_NAME_BITS = "bits";
-  @SerializedName(SERIALIZED_NAME_BITS)
-  private String bits;
-
-  public static final String SERIALIZED_NAME_CHAINWORK = "chainwork";
-  @SerializedName(SERIALIZED_NAME_CHAINWORK)
-  private String chainwork;
-
-  public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
-  @SerializedName(SERIALIZED_NAME_DIFFICULTY)
-  private String difficulty;
-
-  public static final String SERIALIZED_NAME_MERKLE_ROOT = "merkleRoot";
-  @SerializedName(SERIALIZED_NAME_MERKLE_ROOT)
-  private String merkleRoot;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private String nonce;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_STRIPPED_SIZE = "strippedSize";
-  @SerializedName(SERIALIZED_NAME_STRIPPED_SIZE)
-  private Integer strippedSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VERSION_HEX = "versionHex";
-  @SerializedName(SERIALIZED_NAME_VERSION_HEX)
-  private String versionHex;
-
-  public static final String SERIALIZED_NAME_WEIGHT = "weight";
-  @SerializedName(SERIALIZED_NAME_WEIGHT)
-  private Integer weight;
-
-  public static final String SERIALIZED_NAME_EXTRA_DATA = "extraData";
-  @SerializedName(SERIALIZED_NAME_EXTRA_DATA)
-  private String extraData;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private Integer gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
-  @SerializedName(SERIALIZED_NAME_GAS_USED)
-  private Integer gasUsed;
-
-  public static final String SERIALIZED_NAME_MINED_IN_SECONDS = "minedInSeconds";
-  @SerializedName(SERIALIZED_NAME_MINED_IN_SECONDS)
-  private Integer minedInSeconds;
-
-  public static final String SERIALIZED_NAME_SHA3_UNCLES = "sha3Uncles";
-  @SerializedName(SERIALIZED_NAME_SHA3_UNCLES)
-  private String sha3Uncles;
-
-  public static final String SERIALIZED_NAME_TOTAL_DIFFICULTY = "totalDifficulty";
-  @SerializedName(SERIALIZED_NAME_TOTAL_DIFFICULTY)
-  private String totalDifficulty;
-
-  public static final String SERIALIZED_NAME_UNCLES = "uncles";
-  @SerializedName(SERIALIZED_NAME_UNCLES)
-  private List<String> uncles = new ArrayList<String>();
-
-  public static final String SERIALIZED_NAME_DS_BLOCK = "dsBlock";
-  @SerializedName(SERIALIZED_NAME_DS_BLOCK)
-  private Integer dsBlock;
-
-  public static final String SERIALIZED_NAME_DS_DIFFICULTY = "dsDifficulty";
-  @SerializedName(SERIALIZED_NAME_DS_DIFFICULTY)
-  private String dsDifficulty;
-
-  public static final String SERIALIZED_NAME_DS_LEADER = "dsLeader";
-  @SerializedName(SERIALIZED_NAME_DS_LEADER)
-  private String dsLeader;
-
-  public static final String SERIALIZED_NAME_MICRO_BLOCKS = "microBlocks";
-  @SerializedName(SERIALIZED_NAME_MICRO_BLOCKS)
-  private List<String> microBlocks = new ArrayList<String>();
-
-  public ListLatestMinedBlocksRIBS() { 
-  }
-
-  public ListLatestMinedBlocksRIBS bits(String bits) {
-    
-    this.bits = bits;
-    return this;
-  }
-
-   /**
-   * Represents a specific sub-unit of Zcash. Bits have two-decimal precision
-   * @return bits
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "524517883", required = true, value = "Represents a specific sub-unit of Zcash. Bits have two-decimal precision")
-
-  public String getBits() {
-    return bits;
-  }
-
-
-  public void setBits(String bits) {
-    this.bits = bits;
-  }
-
-
-  public ListLatestMinedBlocksRIBS chainwork(String chainwork) {
-    
-    this.chainwork = chainwork;
-    return this;
-  }
-
-   /**
-   * Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.
-   * @return chainwork
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "000000000000000000000000000000000000000000000000000000262b072797", required = true, value = "Represents a hexadecimal number of all the hashes necessary to produce the current chain. E.g., when converting 0000000000000000000000000000000000000000000086859f7a841475b236fd to a decimal you get 635262017308958427068157 hashes, or 635262 exahashes.")
-
-  public String getChainwork() {
-    return chainwork;
-  }
-
-
-  public void setChainwork(String chainwork) {
-    this.chainwork = chainwork;
-  }
-
-
-  public ListLatestMinedBlocksRIBS difficulty(String difficulty) {
-    
-    this.difficulty = difficulty;
-    return this;
-  }
-
-   /**
-   * Represents a mathematical value of how hard it is to find a valid hash for this block.
-   * @return difficulty
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21448277761059.71", required = true, value = "Represents a mathematical value of how hard it is to find a valid hash for this block.")
-
-  public String getDifficulty() {
-    return difficulty;
-  }
-
-
-  public void setDifficulty(String difficulty) {
-    this.difficulty = difficulty;
-  }
-
-
-  public ListLatestMinedBlocksRIBS merkleRoot(String merkleRoot) {
-    
-    this.merkleRoot = merkleRoot;
-    return this;
-  }
-
-   /**
-   * Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions&#39; hashes that are part of a blockchain block.
-   * @return merkleRoot
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "961113ae943a3abf76da307cf881c4c6b6c13efb27fb67f02c9cdb46029848e8", required = true, value = "Defines the single and final (root) node of a Merkle tree. It is the combined hash of all transactions' hashes that are part of a blockchain block.")
-
-  public String getMerkleRoot() {
-    return merkleRoot;
-  }
-
-
-  public void setMerkleRoot(String merkleRoot) {
-    this.merkleRoot = merkleRoot;
-  }
-
-
-  public ListLatestMinedBlocksRIBS nonce(String nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents a random value that can be adjusted to satisfy the proof of work
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2113101077", required = true, value = "Represents a random value that can be adjusted to satisfy the proof of work")
-
-  public String getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(String nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public ListLatestMinedBlocksRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of the block in Bytes.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1408113", required = true, value = "Represents the total size of the block in Bytes.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public ListLatestMinedBlocksRIBS strippedSize(Integer strippedSize) {
-    
-    this.strippedSize = strippedSize;
-    return this;
-  }
-
-   /**
-   * Defines the numeric representation of the block size excluding the witness data.
-   * @return strippedSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "4322", required = true, value = "Defines the numeric representation of the block size excluding the witness data.")
-
-  public Integer getStrippedSize() {
-    return strippedSize;
-  }
-
-
-  public void setStrippedSize(Integer strippedSize) {
-    this.strippedSize = strippedSize;
-  }
-
-
-  public ListLatestMinedBlocksRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version number.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "536870916", required = true, value = "Represents the transaction version number.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public ListLatestMinedBlocksRIBS versionHex(String versionHex) {
-    
-    this.versionHex = versionHex;
-    return this;
-  }
-
-   /**
-   * Is the hexadecimal string representation of the block&#39;s version.
-   * @return versionHex
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "20000010", required = true, value = "Is the hexadecimal string representation of the block's version.")
-
-  public String getVersionHex() {
-    return versionHex;
-  }
-
-
-  public void setVersionHex(String versionHex) {
-    this.versionHex = versionHex;
-  }
-
-
-  public ListLatestMinedBlocksRIBS weight(Integer weight) {
-    
-    this.weight = weight;
-    return this;
-  }
-
-   /**
-   * Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit.
-   * @return weight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "17288", required = true, value = "Represents a measurement to compare the size of different transactions to each other in proportion to the block size limit.")
-
-  public Integer getWeight() {
-    return weight;
-  }
-
-
-  public void setWeight(Integer weight) {
-    this.weight = weight;
-  }
-
-
-  public ListLatestMinedBlocksRIBS extraData(String extraData) {
-    
-    this.extraData = extraData;
-    return this;
-  }
-
-   /**
-   * Represents any data that can be included by the miner in the block.
-   * @return extraData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xd883010001846765746888676f312e31342e34856c696e757800000000000000eb8c4ee17a97af3c7d18e6cfb87d25bf9a483933d393b4fce778c9a7d64eab76471a8ab92c3a7d131c0f9cfbbd9a54b438c80b491c7a579da0e37db6ca823eda01", required = true, value = "Represents any data that can be included by the miner in the block.")
-
-  public String getExtraData() {
-    return extraData;
-  }
-
-
-  public void setExtraData(String extraData) {
-    this.extraData = extraData;
-  }
-
-
-  public ListLatestMinedBlocksRIBS gasLimit(Integer gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "550000", required = true, value = "Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.")
-
-  public Integer getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(Integer gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public ListLatestMinedBlocksRIBS gasUsed(Integer gasUsed) {
-    
-    this.gasUsed = gasUsed;
-    return this;
-  }
-
-   /**
-   * Defines how much of the gas for the block has been used.
-   * @return gasUsed
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "10028", required = true, value = "Defines how much of the gas for the block has been used.")
-
-  public Integer getGasUsed() {
-    return gasUsed;
-  }
-
-
-  public void setGasUsed(Integer gasUsed) {
-    this.gasUsed = gasUsed;
-  }
-
-
-  public ListLatestMinedBlocksRIBS minedInSeconds(Integer minedInSeconds) {
-    
-    this.minedInSeconds = minedInSeconds;
-    return this;
-  }
-
-   /**
-   * Specifies the amount of time required for the block to be mined in second
-   * @return minedInSeconds
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "3", required = true, value = "Specifies the amount of time required for the block to be mined in second")
-
-  public Integer getMinedInSeconds() {
-    return minedInSeconds;
-  }
-
-
-  public void setMinedInSeconds(Integer minedInSeconds) {
-    this.minedInSeconds = minedInSeconds;
-  }
-
-
-  public ListLatestMinedBlocksRIBS sha3Uncles(String sha3Uncles) {
-    
-    this.sha3Uncles = sha3Uncles;
-    return this;
-  }
-
-   /**
-   * Defines the combined hash of all uncles for a given parent.
-   * @return sha3Uncles
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1dcc4de8dec75d7aab85b567b6ccd41ad312451b948a7413f0a142fd40d49347", required = true, value = "Defines the combined hash of all uncles for a given parent.")
-
-  public String getSha3Uncles() {
-    return sha3Uncles;
-  }
-
-
-  public void setSha3Uncles(String sha3Uncles) {
-    this.sha3Uncles = sha3Uncles;
-  }
-
-
-  public ListLatestMinedBlocksRIBS totalDifficulty(String totalDifficulty) {
-    
-    this.totalDifficulty = totalDifficulty;
-    return this;
-  }
-
-   /**
-   * Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block
-   * @return totalDifficulty
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2437536", required = true, value = "Defines the total difficulty of the chain until this block, i.e. how difficult it is for a specific miner to mine a new block")
-
-  public String getTotalDifficulty() {
-    return totalDifficulty;
-  }
-
-
-  public void setTotalDifficulty(String totalDifficulty) {
-    this.totalDifficulty = totalDifficulty;
-  }
-
-
-  public ListLatestMinedBlocksRIBS uncles(List<String> uncles) {
-    
-    this.uncles = uncles;
-    return this;
-  }
-
-  public ListLatestMinedBlocksRIBS addUnclesItem(String unclesItem) {
-    this.uncles.add(unclesItem);
-    return this;
-  }
-
-   /**
-   * Get uncles
-   * @return uncles
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public List<String> getUncles() {
-    return uncles;
-  }
-
-
-  public void setUncles(List<String> uncles) {
-    this.uncles = uncles;
-  }
-
-
-  public ListLatestMinedBlocksRIBS dsBlock(Integer dsBlock) {
-    
-    this.dsBlock = dsBlock;
-    return this;
-  }
-
-   /**
-   * Represents the Directory Service block which contains metadata about the miners who participate in the consensus protocol.
-   * @return dsBlock
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "12443", required = true, value = "Represents the Directory Service block which contains metadata about the miners who participate in the consensus protocol.")
-
-  public Integer getDsBlock() {
-    return dsBlock;
-  }
-
-
-  public void setDsBlock(Integer dsBlock) {
-    this.dsBlock = dsBlock;
-  }
-
-
-  public ListLatestMinedBlocksRIBS dsDifficulty(String dsDifficulty) {
-    
-    this.dsDifficulty = dsDifficulty;
-    return this;
-  }
-
-   /**
-   * Defines how difficult it is to mine the dsBlocks.
-   * @return dsDifficulty
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "48.625", required = true, value = "Defines how difficult it is to mine the dsBlocks.")
-
-  public String getDsDifficulty() {
-    return dsDifficulty;
-  }
-
-
-  public void setDsDifficulty(String dsDifficulty) {
-    this.dsDifficulty = dsDifficulty;
-  }
-
-
-  public ListLatestMinedBlocksRIBS dsLeader(String dsLeader) {
-    
-    this.dsLeader = dsLeader;
-    return this;
-  }
-
-   /**
-   * Represents a part of the DS Committee which leads the consensus protocol for the epoch.
-   * @return dsLeader
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "zil1k9hne0uu86wuj2n7qdqwhrm9uma0xn7ut42tsj", required = true, value = "Represents a part of the DS Committee which leads the consensus protocol for the epoch.")
-
-  public String getDsLeader() {
-    return dsLeader;
-  }
-
-
-  public void setDsLeader(String dsLeader) {
-    this.dsLeader = dsLeader;
-  }
-
-
-  public ListLatestMinedBlocksRIBS microBlocks(List<String> microBlocks) {
-    
-    this.microBlocks = microBlocks;
-    return this;
-  }
-
-  public ListLatestMinedBlocksRIBS addMicroBlocksItem(String microBlocksItem) {
-    this.microBlocks.add(microBlocksItem);
-    return this;
-  }
-
-   /**
-   * Get microBlocks
-   * @return microBlocks
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public List<String> getMicroBlocks() {
-    return microBlocks;
-  }
-
-
-  public void setMicroBlocks(List<String> microBlocks) {
-    this.microBlocks = microBlocks;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(ListLatestMinedBlocksRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!ListLatestMinedBlocksRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'ListLatestMinedBlocksRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<ListLatestMinedBlocksRIBSB> adapterListLatestMinedBlocksRIBSB = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSB.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSBC> adapterListLatestMinedBlocksRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSBC.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSBSC> adapterListLatestMinedBlocksRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSBSC.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSD> adapterListLatestMinedBlocksRIBSD = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSD.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSD2> adapterListLatestMinedBlocksRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSD2.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSE> adapterListLatestMinedBlocksRIBSE = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSE.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSEC> adapterListLatestMinedBlocksRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSEC.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSL> adapterListLatestMinedBlocksRIBSL = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSL.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSZ> adapterListLatestMinedBlocksRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSZ.class));
+            final TypeAdapter<ListLatestMinedBlocksRIBSZ2> adapterListLatestMinedBlocksRIBSZ2 = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRIBSZ2.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<ListLatestMinedBlocksRIBS>() {
+                @Override
+                public void write(JsonWriter out, ListLatestMinedBlocksRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSB`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSB) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSB.toJsonTree((ListLatestMinedBlocksRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSBC`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSBC) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSBC.toJsonTree((ListLatestMinedBlocksRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSBSC`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSBSC) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSBSC.toJsonTree((ListLatestMinedBlocksRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSD`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSD) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSD.toJsonTree((ListLatestMinedBlocksRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSD2`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSD2) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSD2.toJsonTree((ListLatestMinedBlocksRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSE`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSE) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSE.toJsonTree((ListLatestMinedBlocksRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSEC`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSEC) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSEC.toJsonTree((ListLatestMinedBlocksRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSL`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSL) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSL.toJsonTree((ListLatestMinedBlocksRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSZ`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSZ) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSZ.toJsonTree((ListLatestMinedBlocksRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `ListLatestMinedBlocksRIBSZ2`
+                    if (value.getActualInstance() instanceof ListLatestMinedBlocksRIBSZ2) {
+                        JsonObject obj = adapterListLatestMinedBlocksRIBSZ2.toJsonTree((ListLatestMinedBlocksRIBSZ2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2");
+                }
+
+                @Override
+                public ListLatestMinedBlocksRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize ListLatestMinedBlocksRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSB'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSBC'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSBSC'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSD'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSD2'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSE'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSEC'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSL'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSZ'", e);
+                    }
+
+                    // deserialize ListLatestMinedBlocksRIBSZ2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        ListLatestMinedBlocksRIBSZ2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterListLatestMinedBlocksRIBSZ2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSZ2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSZ2'", e);
+                    }
+
+                    if (match == 1) {
+                        ListLatestMinedBlocksRIBS ret = new ListLatestMinedBlocksRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for ListLatestMinedBlocksRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public ListLatestMinedBlocksRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    ListLatestMinedBlocksRIBS listLatestMinedBlocksRIBS = (ListLatestMinedBlocksRIBS) o;
-    return Objects.equals(this.bits, listLatestMinedBlocksRIBS.bits) &&
-        Objects.equals(this.chainwork, listLatestMinedBlocksRIBS.chainwork) &&
-        Objects.equals(this.difficulty, listLatestMinedBlocksRIBS.difficulty) &&
-        Objects.equals(this.merkleRoot, listLatestMinedBlocksRIBS.merkleRoot) &&
-        Objects.equals(this.nonce, listLatestMinedBlocksRIBS.nonce) &&
-        Objects.equals(this.size, listLatestMinedBlocksRIBS.size) &&
-        Objects.equals(this.strippedSize, listLatestMinedBlocksRIBS.strippedSize) &&
-        Objects.equals(this.version, listLatestMinedBlocksRIBS.version) &&
-        Objects.equals(this.versionHex, listLatestMinedBlocksRIBS.versionHex) &&
-        Objects.equals(this.weight, listLatestMinedBlocksRIBS.weight) &&
-        Objects.equals(this.extraData, listLatestMinedBlocksRIBS.extraData) &&
-        Objects.equals(this.gasLimit, listLatestMinedBlocksRIBS.gasLimit) &&
-        Objects.equals(this.gasUsed, listLatestMinedBlocksRIBS.gasUsed) &&
-        Objects.equals(this.minedInSeconds, listLatestMinedBlocksRIBS.minedInSeconds) &&
-        Objects.equals(this.sha3Uncles, listLatestMinedBlocksRIBS.sha3Uncles) &&
-        Objects.equals(this.totalDifficulty, listLatestMinedBlocksRIBS.totalDifficulty) &&
-        Objects.equals(this.uncles, listLatestMinedBlocksRIBS.uncles) &&
-        Objects.equals(this.dsBlock, listLatestMinedBlocksRIBS.dsBlock) &&
-        Objects.equals(this.dsDifficulty, listLatestMinedBlocksRIBS.dsDifficulty) &&
-        Objects.equals(this.dsLeader, listLatestMinedBlocksRIBS.dsLeader) &&
-        Objects.equals(this.microBlocks, listLatestMinedBlocksRIBS.microBlocks);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(bits, chainwork, difficulty, merkleRoot, nonce, size, strippedSize, version, versionHex, weight, extraData, gasLimit, gasUsed, minedInSeconds, sha3Uncles, totalDifficulty, uncles, dsBlock, dsDifficulty, dsLeader, microBlocks);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class ListLatestMinedBlocksRIBS {\n");
-    sb.append("    bits: ").append(toIndentedString(bits)).append("\n");
-    sb.append("    chainwork: ").append(toIndentedString(chainwork)).append("\n");
-    sb.append("    difficulty: ").append(toIndentedString(difficulty)).append("\n");
-    sb.append("    merkleRoot: ").append(toIndentedString(merkleRoot)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    strippedSize: ").append(toIndentedString(strippedSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    versionHex: ").append(toIndentedString(versionHex)).append("\n");
-    sb.append("    weight: ").append(toIndentedString(weight)).append("\n");
-    sb.append("    extraData: ").append(toIndentedString(extraData)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
-    sb.append("    minedInSeconds: ").append(toIndentedString(minedInSeconds)).append("\n");
-    sb.append("    sha3Uncles: ").append(toIndentedString(sha3Uncles)).append("\n");
-    sb.append("    totalDifficulty: ").append(toIndentedString(totalDifficulty)).append("\n");
-    sb.append("    uncles: ").append(toIndentedString(uncles)).append("\n");
-    sb.append("    dsBlock: ").append(toIndentedString(dsBlock)).append("\n");
-    sb.append("    dsDifficulty: ").append(toIndentedString(dsDifficulty)).append("\n");
-    sb.append("    dsLeader: ").append(toIndentedString(dsLeader)).append("\n");
-    sb.append("    microBlocks: ").append(toIndentedString(microBlocks)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public ListLatestMinedBlocksRIBS(ListLatestMinedBlocksRIBSZ2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("ListLatestMinedBlocksRIBSB", new GenericType<ListLatestMinedBlocksRIBSB>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSBC", new GenericType<ListLatestMinedBlocksRIBSBC>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSBSC", new GenericType<ListLatestMinedBlocksRIBSBSC>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSD", new GenericType<ListLatestMinedBlocksRIBSD>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSD2", new GenericType<ListLatestMinedBlocksRIBSD2>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSE", new GenericType<ListLatestMinedBlocksRIBSE>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSEC", new GenericType<ListLatestMinedBlocksRIBSEC>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSL", new GenericType<ListLatestMinedBlocksRIBSL>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSZ", new GenericType<ListLatestMinedBlocksRIBSZ>() {
+        });
+        schemas.put("ListLatestMinedBlocksRIBSZ2", new GenericType<ListLatestMinedBlocksRIBSZ2>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return ListLatestMinedBlocksRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof ListLatestMinedBlocksRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof ListLatestMinedBlocksRIBSZ2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2
+     *
+     * @return The actual instance (ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSB`. If the actual instance is not `ListLatestMinedBlocksRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSB`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSB`
+     */
+    public ListLatestMinedBlocksRIBSB getListLatestMinedBlocksRIBSB() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSBC`. If the actual instance is not `ListLatestMinedBlocksRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSBC`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSBC`
+     */
+    public ListLatestMinedBlocksRIBSBC getListLatestMinedBlocksRIBSBC() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSBSC`. If the actual instance is not `ListLatestMinedBlocksRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSBSC`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSBSC`
+     */
+    public ListLatestMinedBlocksRIBSBSC getListLatestMinedBlocksRIBSBSC() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSD`. If the actual instance is not `ListLatestMinedBlocksRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSD`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSD`
+     */
+    public ListLatestMinedBlocksRIBSD getListLatestMinedBlocksRIBSD() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSD2`. If the actual instance is not `ListLatestMinedBlocksRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSD2`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSD2`
+     */
+    public ListLatestMinedBlocksRIBSD2 getListLatestMinedBlocksRIBSD2() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSE`. If the actual instance is not `ListLatestMinedBlocksRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSE`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSE`
+     */
+    public ListLatestMinedBlocksRIBSE getListLatestMinedBlocksRIBSE() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSEC`. If the actual instance is not `ListLatestMinedBlocksRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSEC`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSEC`
+     */
+    public ListLatestMinedBlocksRIBSEC getListLatestMinedBlocksRIBSEC() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSL`. If the actual instance is not `ListLatestMinedBlocksRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSL`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSL`
+     */
+    public ListLatestMinedBlocksRIBSL getListLatestMinedBlocksRIBSL() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSZ`. If the actual instance is not `ListLatestMinedBlocksRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSZ`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSZ`
+     */
+    public ListLatestMinedBlocksRIBSZ getListLatestMinedBlocksRIBSZ() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSZ)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `ListLatestMinedBlocksRIBSZ2`. If the actual instance is not `ListLatestMinedBlocksRIBSZ2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `ListLatestMinedBlocksRIBSZ2`
+     * @throws ClassCastException if the instance is not `ListLatestMinedBlocksRIBSZ2`
+     */
+    public ListLatestMinedBlocksRIBSZ2 getListLatestMinedBlocksRIBSZ2() throws ClassCastException {
+        return (ListLatestMinedBlocksRIBSZ2)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListLatestMinedBlocksRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with ListLatestMinedBlocksRIBSB
+    try {
+      ListLatestMinedBlocksRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSBC
+    try {
+      ListLatestMinedBlocksRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSBSC
+    try {
+      ListLatestMinedBlocksRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSD
+    try {
+      ListLatestMinedBlocksRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSD2
+    try {
+      ListLatestMinedBlocksRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSE
+    try {
+      ListLatestMinedBlocksRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSEC
+    try {
+      ListLatestMinedBlocksRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSL
+    try {
+      ListLatestMinedBlocksRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSZ
+    try {
+      ListLatestMinedBlocksRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with ListLatestMinedBlocksRIBSZ2
+    try {
+      ListLatestMinedBlocksRIBSZ2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for ListLatestMinedBlocksRIBS with oneOf schemas: ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of ListLatestMinedBlocksRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListLatestMinedBlocksRIBS
+  * @throws IOException if the JSON string is invalid with respect to ListLatestMinedBlocksRIBS
+  */
+  public static ListLatestMinedBlocksRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListLatestMinedBlocksRIBS.class);
+  }
+
+ /**
+  * Convert an instance of ListLatestMinedBlocksRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

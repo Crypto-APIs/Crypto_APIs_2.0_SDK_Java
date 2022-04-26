@@ -32,143 +32,405 @@ import org.openapitools.client.model.EndpointNotAllowedForApiKey;
 import org.openapitools.client.model.EndpointNotAllowedForPlan;
 import org.openapitools.client.model.FeatureMainnetsNotAllowedForPlan;
 
-/**
- * CreateAutomaticCoinsForwardingE403
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class CreateAutomaticCoinsForwardingE403 {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_DETAILS = "details";
-  @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<BannedIpAddressDetails> details = null;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public CreateAutomaticCoinsForwardingE403() { 
-  }
+import io.cryptoapis.sdk.JSON;
 
-  public CreateAutomaticCoinsForwardingE403 code(String code) {
-    
-    this.code = code;
-    return this;
-  }
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class CreateAutomaticCoinsForwardingE403 extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(CreateAutomaticCoinsForwardingE403.class.getName());
 
-   /**
-   * Specifies an error code, e.g. error 404.
-   * @return code
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "coins_forwarding_automations_limit_reached", required = true, value = "Specifies an error code, e.g. error 404.")
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!CreateAutomaticCoinsForwardingE403.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'CreateAutomaticCoinsForwardingE403' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<BannedIpAddress> adapterBannedIpAddress = gson.getDelegateAdapter(this, TypeToken.get(BannedIpAddress.class));
+            final TypeAdapter<CoinsForwardingAutomationsLimitReached> adapterCoinsForwardingAutomationsLimitReached = gson.getDelegateAdapter(this, TypeToken.get(CoinsForwardingAutomationsLimitReached.class));
+            final TypeAdapter<EndpointNotAllowedForApiKey> adapterEndpointNotAllowedForApiKey = gson.getDelegateAdapter(this, TypeToken.get(EndpointNotAllowedForApiKey.class));
+            final TypeAdapter<EndpointNotAllowedForPlan> adapterEndpointNotAllowedForPlan = gson.getDelegateAdapter(this, TypeToken.get(EndpointNotAllowedForPlan.class));
+            final TypeAdapter<FeatureMainnetsNotAllowedForPlan> adapterFeatureMainnetsNotAllowedForPlan = gson.getDelegateAdapter(this, TypeToken.get(FeatureMainnetsNotAllowedForPlan.class));
 
-  public String getCode() {
-    return code;
-  }
+            return (TypeAdapter<T>) new TypeAdapter<CreateAutomaticCoinsForwardingE403>() {
+                @Override
+                public void write(JsonWriter out, CreateAutomaticCoinsForwardingE403 value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `BannedIpAddress`
+                    if (value.getActualInstance() instanceof BannedIpAddress) {
+                        JsonObject obj = adapterBannedIpAddress.toJsonTree((BannedIpAddress)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+                    // check if the actual instance is of the type `CoinsForwardingAutomationsLimitReached`
+                    if (value.getActualInstance() instanceof CoinsForwardingAutomationsLimitReached) {
+                        JsonObject obj = adapterCoinsForwardingAutomationsLimitReached.toJsonTree((CoinsForwardingAutomationsLimitReached)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `EndpointNotAllowedForApiKey`
+                    if (value.getActualInstance() instanceof EndpointNotAllowedForApiKey) {
+                        JsonObject obj = adapterEndpointNotAllowedForApiKey.toJsonTree((EndpointNotAllowedForApiKey)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public CreateAutomaticCoinsForwardingE403 message(String message) {
-    
-    this.message = message;
-    return this;
-  }
+                    // check if the actual instance is of the type `EndpointNotAllowedForPlan`
+                    if (value.getActualInstance() instanceof EndpointNotAllowedForPlan) {
+                        JsonObject obj = adapterEndpointNotAllowedForPlan.toJsonTree((EndpointNotAllowedForPlan)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-   /**
-   * Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.
-   * @return message
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "Your current package plan coins forwarding automations limit of {automations_limit} reached. Please contact us if you need more or upgrade your plan.", required = true, value = "Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.")
+                    // check if the actual instance is of the type `FeatureMainnetsNotAllowedForPlan`
+                    if (value.getActualInstance() instanceof FeatureMainnetsNotAllowedForPlan) {
+                        JsonObject obj = adapterFeatureMainnetsNotAllowedForPlan.toJsonTree((FeatureMainnetsNotAllowedForPlan)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public String getMessage() {
-    return message;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: BannedIpAddress, CoinsForwardingAutomationsLimitReached, EndpointNotAllowedForApiKey, EndpointNotAllowedForPlan, FeatureMainnetsNotAllowedForPlan");
+                }
 
+                @Override
+                public CreateAutomaticCoinsForwardingE403 read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize BannedIpAddress
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        BannedIpAddress.validateJsonObject(jsonObject);
+                        actualAdapter = adapterBannedIpAddress;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'BannedIpAddress'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'BannedIpAddress'", e);
+                    }
 
-  public CreateAutomaticCoinsForwardingE403 details(List<BannedIpAddressDetails> details) {
-    
-    this.details = details;
-    return this;
-  }
+                    // deserialize CoinsForwardingAutomationsLimitReached
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CoinsForwardingAutomationsLimitReached.validateJsonObject(jsonObject);
+                        actualAdapter = adapterCoinsForwardingAutomationsLimitReached;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'CoinsForwardingAutomationsLimitReached'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'CoinsForwardingAutomationsLimitReached'", e);
+                    }
 
-  public CreateAutomaticCoinsForwardingE403 addDetailsItem(BannedIpAddressDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<BannedIpAddressDetails>();
+                    // deserialize EndpointNotAllowedForApiKey
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        EndpointNotAllowedForApiKey.validateJsonObject(jsonObject);
+                        actualAdapter = adapterEndpointNotAllowedForApiKey;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'EndpointNotAllowedForApiKey'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'EndpointNotAllowedForApiKey'", e);
+                    }
+
+                    // deserialize EndpointNotAllowedForPlan
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        EndpointNotAllowedForPlan.validateJsonObject(jsonObject);
+                        actualAdapter = adapterEndpointNotAllowedForPlan;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'EndpointNotAllowedForPlan'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'EndpointNotAllowedForPlan'", e);
+                    }
+
+                    // deserialize FeatureMainnetsNotAllowedForPlan
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        FeatureMainnetsNotAllowedForPlan.validateJsonObject(jsonObject);
+                        actualAdapter = adapterFeatureMainnetsNotAllowedForPlan;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'FeatureMainnetsNotAllowedForPlan'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'FeatureMainnetsNotAllowedForPlan'", e);
+                    }
+
+                    if (match == 1) {
+                        CreateAutomaticCoinsForwardingE403 ret = new CreateAutomaticCoinsForwardingE403();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for CreateAutomaticCoinsForwardingE403: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.details.add(detailsItem);
-    return this;
-  }
 
-   /**
-   * Get details
-   * @return details
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<BannedIpAddressDetails> getDetails() {
-    return details;
-  }
-
-
-  public void setDetails(List<BannedIpAddressDetails> details) {
-    this.details = details;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public CreateAutomaticCoinsForwardingE403() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public CreateAutomaticCoinsForwardingE403(BannedIpAddress o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    CreateAutomaticCoinsForwardingE403 createAutomaticCoinsForwardingE403 = (CreateAutomaticCoinsForwardingE403) o;
-    return Objects.equals(this.code, createAutomaticCoinsForwardingE403.code) &&
-        Objects.equals(this.message, createAutomaticCoinsForwardingE403.message) &&
-        Objects.equals(this.details, createAutomaticCoinsForwardingE403.details);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code, message, details);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreateAutomaticCoinsForwardingE403 {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public CreateAutomaticCoinsForwardingE403(CoinsForwardingAutomationsLimitReached o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public CreateAutomaticCoinsForwardingE403(EndpointNotAllowedForApiKey o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public CreateAutomaticCoinsForwardingE403(EndpointNotAllowedForPlan o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public CreateAutomaticCoinsForwardingE403(FeatureMainnetsNotAllowedForPlan o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("BannedIpAddress", new GenericType<BannedIpAddress>() {
+        });
+        schemas.put("CoinsForwardingAutomationsLimitReached", new GenericType<CoinsForwardingAutomationsLimitReached>() {
+        });
+        schemas.put("EndpointNotAllowedForApiKey", new GenericType<EndpointNotAllowedForApiKey>() {
+        });
+        schemas.put("EndpointNotAllowedForPlan", new GenericType<EndpointNotAllowedForPlan>() {
+        });
+        schemas.put("FeatureMainnetsNotAllowedForPlan", new GenericType<FeatureMainnetsNotAllowedForPlan>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return CreateAutomaticCoinsForwardingE403.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * BannedIpAddress, CoinsForwardingAutomationsLimitReached, EndpointNotAllowedForApiKey, EndpointNotAllowedForPlan, FeatureMainnetsNotAllowedForPlan
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof BannedIpAddress) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof CoinsForwardingAutomationsLimitReached) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof EndpointNotAllowedForApiKey) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof EndpointNotAllowedForPlan) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof FeatureMainnetsNotAllowedForPlan) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be BannedIpAddress, CoinsForwardingAutomationsLimitReached, EndpointNotAllowedForApiKey, EndpointNotAllowedForPlan, FeatureMainnetsNotAllowedForPlan");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * BannedIpAddress, CoinsForwardingAutomationsLimitReached, EndpointNotAllowedForApiKey, EndpointNotAllowedForPlan, FeatureMainnetsNotAllowedForPlan
+     *
+     * @return The actual instance (BannedIpAddress, CoinsForwardingAutomationsLimitReached, EndpointNotAllowedForApiKey, EndpointNotAllowedForPlan, FeatureMainnetsNotAllowedForPlan)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `BannedIpAddress`. If the actual instance is not `BannedIpAddress`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `BannedIpAddress`
+     * @throws ClassCastException if the instance is not `BannedIpAddress`
+     */
+    public BannedIpAddress getBannedIpAddress() throws ClassCastException {
+        return (BannedIpAddress)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CoinsForwardingAutomationsLimitReached`. If the actual instance is not `CoinsForwardingAutomationsLimitReached`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CoinsForwardingAutomationsLimitReached`
+     * @throws ClassCastException if the instance is not `CoinsForwardingAutomationsLimitReached`
+     */
+    public CoinsForwardingAutomationsLimitReached getCoinsForwardingAutomationsLimitReached() throws ClassCastException {
+        return (CoinsForwardingAutomationsLimitReached)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `EndpointNotAllowedForApiKey`. If the actual instance is not `EndpointNotAllowedForApiKey`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `EndpointNotAllowedForApiKey`
+     * @throws ClassCastException if the instance is not `EndpointNotAllowedForApiKey`
+     */
+    public EndpointNotAllowedForApiKey getEndpointNotAllowedForApiKey() throws ClassCastException {
+        return (EndpointNotAllowedForApiKey)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `EndpointNotAllowedForPlan`. If the actual instance is not `EndpointNotAllowedForPlan`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `EndpointNotAllowedForPlan`
+     * @throws ClassCastException if the instance is not `EndpointNotAllowedForPlan`
+     */
+    public EndpointNotAllowedForPlan getEndpointNotAllowedForPlan() throws ClassCastException {
+        return (EndpointNotAllowedForPlan)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `FeatureMainnetsNotAllowedForPlan`. If the actual instance is not `FeatureMainnetsNotAllowedForPlan`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `FeatureMainnetsNotAllowedForPlan`
+     * @throws ClassCastException if the instance is not `FeatureMainnetsNotAllowedForPlan`
+     */
+    public FeatureMainnetsNotAllowedForPlan getFeatureMainnetsNotAllowedForPlan() throws ClassCastException {
+        return (FeatureMainnetsNotAllowedForPlan)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateAutomaticCoinsForwardingE403
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with BannedIpAddress
+    try {
+      BannedIpAddress.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with CoinsForwardingAutomationsLimitReached
+    try {
+      CoinsForwardingAutomationsLimitReached.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with EndpointNotAllowedForApiKey
+    try {
+      EndpointNotAllowedForApiKey.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with EndpointNotAllowedForPlan
+    try {
+      EndpointNotAllowedForPlan.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with FeatureMainnetsNotAllowedForPlan
+    try {
+      FeatureMainnetsNotAllowedForPlan.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for CreateAutomaticCoinsForwardingE403 with oneOf schemas: BannedIpAddress, CoinsForwardingAutomationsLimitReached, EndpointNotAllowedForApiKey, EndpointNotAllowedForPlan, FeatureMainnetsNotAllowedForPlan. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of CreateAutomaticCoinsForwardingE403 given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateAutomaticCoinsForwardingE403
+  * @throws IOException if the JSON string is invalid with respect to CreateAutomaticCoinsForwardingE403
+  */
+  public static CreateAutomaticCoinsForwardingE403 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateAutomaticCoinsForwardingE403.class);
+  }
+
+ /**
+  * Convert an instance of CreateAutomaticCoinsForwardingE403 to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

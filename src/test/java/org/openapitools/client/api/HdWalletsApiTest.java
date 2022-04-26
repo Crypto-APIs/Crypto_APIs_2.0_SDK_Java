@@ -14,30 +14,40 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
+import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsR;
 import org.openapitools.client.model.GetHDWalletXPubYPubZPubDetailsR;
-import org.openapitools.client.model.InlineResponse40043;
-import org.openapitools.client.model.InlineResponse40047;
-import org.openapitools.client.model.InlineResponse40049;
-import org.openapitools.client.model.InlineResponse40143;
-import org.openapitools.client.model.InlineResponse40147;
-import org.openapitools.client.model.InlineResponse40149;
+import org.openapitools.client.model.InlineResponse40046;
+import org.openapitools.client.model.InlineResponse40050;
+import org.openapitools.client.model.InlineResponse40051;
+import org.openapitools.client.model.InlineResponse40053;
+import org.openapitools.client.model.InlineResponse40055;
+import org.openapitools.client.model.InlineResponse40146;
+import org.openapitools.client.model.InlineResponse40150;
+import org.openapitools.client.model.InlineResponse40151;
+import org.openapitools.client.model.InlineResponse40153;
+import org.openapitools.client.model.InlineResponse40155;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40343;
-import org.openapitools.client.model.InlineResponse40347;
-import org.openapitools.client.model.InlineResponse40349;
+import org.openapitools.client.model.InlineResponse40346;
+import org.openapitools.client.model.InlineResponse40350;
+import org.openapitools.client.model.InlineResponse40351;
+import org.openapitools.client.model.InlineResponse40353;
+import org.openapitools.client.model.InlineResponse40355;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse4095;
 import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse4221;
 import org.openapitools.client.model.InlineResponse4222;
 import org.openapitools.client.model.InlineResponse4223;
+import org.openapitools.client.model.InlineResponse4224;
+import org.openapitools.client.model.InlineResponse4225;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsR;
+import org.openapitools.client.model.ListHDWalletXPubYPubZPubUTXOsR;
 import org.openapitools.client.model.SyncHDWalletXPubYPubZPubR;
 import org.openapitools.client.model.SyncHDWalletXPubYPubZPubRB;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,19 +57,35 @@ import java.util.Map;
 /**
  * API tests for HdWalletsApi
  */
-@Ignore
+@Disabled
 public class HdWalletsApiTest {
 
     private final HdWalletsApi api = new HdWalletsApi();
 
-    
+    /**
+     * Get HD Wallet (xPub, yPub, zPub) Assets
+     *
+     * This endpoint will return details on assets we support for a specified from the customer extended public key (xPub). These could be cryptocurrencies, fungible or non-fungible (NFT) tokens. Each asset has a unique identifier - assetId, and a unique symbol in the form of a string, e.g. \&quot;USDT\&quot;.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void getHDWalletXPubYPubZPubAssetsTest() throws ApiException {
+        String blockchain = null;
+        String extendedPublicKey = null;
+        String network = null;
+        String context = null;
+        String derivation = null;
+        GetHDWalletXPubYPubZPubAssetsR response = api.getHDWalletXPubYPubZPubAssets(blockchain, extendedPublicKey, network, context, derivation);
+        // TODO: test validations
+    }
+
     /**
      * Get HD Wallet (xPub, yPub, zPub) Details
      *
      * HD wallet details is useful endpoint to get the most important data about HD wallet without the need to do a lot of calculations, once the HD Wallet is synced using Sync endpoint we keep it up to date and we calculate these details in advance.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getHDWalletXPubYPubZPubDetailsTest() throws ApiException {
@@ -68,17 +94,16 @@ public class HdWalletsApiTest {
         String network = null;
         String context = null;
         String derivation = null;
-                GetHDWalletXPubYPubZPubDetailsR response = api.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
+        GetHDWalletXPubYPubZPubDetailsR response = api.getHDWalletXPubYPubZPubDetails(blockchain, extendedPublicKey, network, context, derivation);
         // TODO: test validations
     }
-    
+
     /**
      * List HD Wallet (xPub, yPub, zPub) Transactions
      *
      * This endpoint will list HD Wallet transactions.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listHDWalletXPubYPubZPubTransactionsTest() throws ApiException {
@@ -89,17 +114,36 @@ public class HdWalletsApiTest {
         String derivation = null;
         Integer limit = null;
         Integer offset = null;
-                ListHDWalletXPubYPubZPubTransactionsR response = api.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
+        ListHDWalletXPubYPubZPubTransactionsR response = api.listHDWalletXPubYPubZPubTransactions(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
         // TODO: test validations
     }
-    
+
+    /**
+     * List HD Wallet (xPub, yPub, zPub) UTXOs
+     *
+     * Through this endpoint you can list HD wallet&#39;s UTXOs (Unspent Transaction Outputs) by providing extended public key of an already synced HD wallet.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void listHDWalletXPubYPubZPubUTXOsTest() throws ApiException {
+        String blockchain = null;
+        String extendedPublicKey = null;
+        String network = null;
+        String context = null;
+        String derivation = null;
+        Integer limit = null;
+        Integer offset = null;
+        ListHDWalletXPubYPubZPubUTXOsR response = api.listHDWalletXPubYPubZPubUTXOs(blockchain, extendedPublicKey, network, context, derivation, limit, offset);
+        // TODO: test validations
+    }
+
     /**
      * Sync HD Wallet (xPub, yPub, zPub)
      *
      * HD wallets usually have a lot of addresses and transactions, getting the data on demand is a heavy operation. That&#39;s why we have created this feature, to be able to get HD wallet details or transactions this HD wallet must be synced first. In addition to the initial sync we keep updating the synced HD wallets all the time.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void syncHDWalletXPubYPubZPubTest() throws ApiException {
@@ -107,8 +151,8 @@ public class HdWalletsApiTest {
         String network = null;
         String context = null;
         SyncHDWalletXPubYPubZPubRB syncHDWalletXPubYPubZPubRB = null;
-                SyncHDWalletXPubYPubZPubR response = api.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB);
+        SyncHDWalletXPubYPubZPubR response = api.syncHDWalletXPubYPubZPub(blockchain, network, context, syncHDWalletXPubYPubZPubRB);
         // TODO: test validations
     }
-    
+
 }

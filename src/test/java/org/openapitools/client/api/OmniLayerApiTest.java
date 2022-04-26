@@ -18,28 +18,28 @@ import org.openapitools.client.model.GetOmniTransactionDetailsByTransactionIDTxi
 import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidR;
 import org.openapitools.client.model.InlineResponse4001;
 import org.openapitools.client.model.InlineResponse40012;
-import org.openapitools.client.model.InlineResponse40019;
-import org.openapitools.client.model.InlineResponse40028;
-import org.openapitools.client.model.InlineResponse40032;
-import org.openapitools.client.model.InlineResponse40038;
-import org.openapitools.client.model.InlineResponse40044;
+import org.openapitools.client.model.InlineResponse40020;
+import org.openapitools.client.model.InlineResponse40029;
+import org.openapitools.client.model.InlineResponse40033;
+import org.openapitools.client.model.InlineResponse40041;
+import org.openapitools.client.model.InlineResponse40047;
 import org.openapitools.client.model.InlineResponse4005;
 import org.openapitools.client.model.InlineResponse4011;
 import org.openapitools.client.model.InlineResponse40112;
-import org.openapitools.client.model.InlineResponse40119;
-import org.openapitools.client.model.InlineResponse40128;
-import org.openapitools.client.model.InlineResponse40132;
-import org.openapitools.client.model.InlineResponse40138;
-import org.openapitools.client.model.InlineResponse40144;
+import org.openapitools.client.model.InlineResponse40120;
+import org.openapitools.client.model.InlineResponse40129;
+import org.openapitools.client.model.InlineResponse40133;
+import org.openapitools.client.model.InlineResponse40141;
+import org.openapitools.client.model.InlineResponse40147;
 import org.openapitools.client.model.InlineResponse4015;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse4031;
 import org.openapitools.client.model.InlineResponse40312;
-import org.openapitools.client.model.InlineResponse40319;
-import org.openapitools.client.model.InlineResponse40328;
-import org.openapitools.client.model.InlineResponse40332;
-import org.openapitools.client.model.InlineResponse40338;
-import org.openapitools.client.model.InlineResponse40344;
+import org.openapitools.client.model.InlineResponse40320;
+import org.openapitools.client.model.InlineResponse40329;
+import org.openapitools.client.model.InlineResponse40333;
+import org.openapitools.client.model.InlineResponse40341;
+import org.openapitools.client.model.InlineResponse40347;
 import org.openapitools.client.model.InlineResponse4035;
 import org.openapitools.client.model.InlineResponse404;
 import org.openapitools.client.model.InlineResponse409;
@@ -53,8 +53,8 @@ import org.openapitools.client.model.ListOmniTransactionsByBlockHashR;
 import org.openapitools.client.model.ListOmniTransactionsByBlockHeightR;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressR;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByPropertyIDR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -64,19 +64,17 @@ import java.util.Map;
 /**
  * API tests for OmniLayerApi
  */
-@Ignore
+@Disabled
 public class OmniLayerApiTest {
 
     private final OmniLayerApi api = new OmniLayerApi();
 
-    
     /**
      * Get Omni Transaction Details By Transaction ID (Txid)
      *
      * Through this endpoint customers can obtain details about an Omni transaction by the transaction&#39;s unique identifier. The transaction can return information such as hash, height, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getOmniTransactionDetailsByTransactionIDTxidTest() throws ApiException {
@@ -84,17 +82,16 @@ public class OmniLayerApiTest {
         String blockchain = null;
         String transactionId = null;
         String context = null;
-                GetOmniTransactionDetailsByTransactionIDTxidR response = api.getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context);
+        GetOmniTransactionDetailsByTransactionIDTxidR response = api.getOmniTransactionDetailsByTransactionIDTxid(network, blockchain, transactionId, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Unconfirmed Omni Transaction By Transaction ID (Txid)
      *
      * Through this endpoint customers can obtain information on unconfirmed Omni transactions by an attribute &#x60;transactionId&#x60;. The transaction can have information such as hash, height, time of creation in Unix timestamp, etc.    Unconfirmed transactions are usually put in the Mempool and await verification so that they can be added to a block.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getUnconfirmedOmniTransactionByTransactionIDTxidTest() throws ApiException {
@@ -102,17 +99,16 @@ public class OmniLayerApiTest {
         String blockchain = null;
         String transactionId = null;
         String context = null;
-                GetUnconfirmedOmniTransactionByTransactionIDTxidR response = api.getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context);
+        GetUnconfirmedOmniTransactionByTransactionIDTxidR response = api.getUnconfirmedOmniTransactionByTransactionIDTxid(network, blockchain, transactionId, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Omni Tokens By Address
      *
      * Through this endpoint the customer can receive basic information about a given Omni address based on confirmed/synced blocks only. In the case where there are any incoming or outgoing **unconfirmed** transactions for the specific address, they **will not** be counted or calculated here.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listOmniTokensByAddressTest() throws ApiException {
@@ -120,17 +116,16 @@ public class OmniLayerApiTest {
         String blockchain = null;
         String address = null;
         String context = null;
-                ListOmniTokensByAddressR response = api.listOmniTokensByAddress(network, blockchain, address, context);
+        ListOmniTokensByAddressR response = api.listOmniTokensByAddress(network, blockchain, address, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Omni Transactions By Address
      *
      * This endpoint will list Omni transactions by an attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listOmniTransactionsByAddressTest() throws ApiException {
@@ -140,17 +135,16 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListOmniTransactionsByAddressR response = api.listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
+        ListOmniTransactionsByAddressR response = api.listOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Omni Transactions By Block Hash
      *
      * This endpoint will list Omni transactions by an attribute &#x60;transactionHash&#x60;. The transactions listed will detail additional information such as addresses, height, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listOmniTransactionsByBlockHashTest() throws ApiException {
@@ -160,17 +154,16 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListOmniTransactionsByBlockHashR response = api.listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset);
+        ListOmniTransactionsByBlockHashR response = api.listOmniTransactionsByBlockHash(network, blockchain, blockHash, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Omni Transactions By Block Height
      *
      * This endpoint will list Omni transactions by an attribute &#x60;blockHeight&#x60;. The transactions listed will detail additional information such as hash, addresses, time of creation in Unix timestamp, etc.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listOmniTransactionsByBlockHeightTest() throws ApiException {
@@ -180,17 +173,16 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListOmniTransactionsByBlockHeightR response = api.listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset);
+        ListOmniTransactionsByBlockHeightR response = api.listOmniTransactionsByBlockHeight(network, blockchain, blockHeight, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Unconfirmed Omni Transactions By Address
      *
      * This endpoint will list unconfirmed Omni transactions by an attribute &#x60;address&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Unconfirmed transactions are usually put in the Mempool and await verification so that they can be added to a block.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listUnconfirmedOmniTransactionsByAddressTest() throws ApiException {
@@ -200,17 +192,16 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListUnconfirmedOmniTransactionsByAddressR response = api.listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
+        ListUnconfirmedOmniTransactionsByAddressR response = api.listUnconfirmedOmniTransactionsByAddress(network, blockchain, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Unconfirmed Omni Transactions By Property ID
      *
      * This endpoint will list unconfirmed Omni transactions by an attribute &#x60;propertyId&#x60;. The transactions listed will detail additional information such as hash, height, time of creation in Unix timestamp, etc.    Unconfirmed transactions are usually put in the Mempool and await verification so that they can be added to a block.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listUnconfirmedOmniTransactionsByPropertyIDTest() throws ApiException {
@@ -220,8 +211,8 @@ public class OmniLayerApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListUnconfirmedOmniTransactionsByPropertyIDR response = api.listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset);
+        ListUnconfirmedOmniTransactionsByPropertyIDR response = api.listUnconfirmedOmniTransactionsByPropertyID(network, blockchain, propertyId, context, limit, offset);
         // TODO: test validations
     }
-    
+
 }

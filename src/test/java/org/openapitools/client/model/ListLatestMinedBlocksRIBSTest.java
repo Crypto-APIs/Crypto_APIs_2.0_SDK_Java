@@ -33,9 +33,8 @@ import org.openapitools.client.model.ListLatestMinedBlocksRIBSEC;
 import org.openapitools.client.model.ListLatestMinedBlocksRIBSL;
 import org.openapitools.client.model.ListLatestMinedBlocksRIBSZ;
 import org.openapitools.client.model.ListLatestMinedBlocksRIBSZ2;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

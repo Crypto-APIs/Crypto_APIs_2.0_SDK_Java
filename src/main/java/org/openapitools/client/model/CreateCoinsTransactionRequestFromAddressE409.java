@@ -30,143 +30,305 @@ import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.WalletAsAServiceAddressBalanceNotEnough;
 import org.openapitools.client.model.WalletAsAServiceWalletBalanceNotEnough;
 
-/**
- * CreateCoinsTransactionRequestFromAddressE409
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class CreateCoinsTransactionRequestFromAddressE409 {
-  public static final String SERIALIZED_NAME_CODE = "code";
-  @SerializedName(SERIALIZED_NAME_CODE)
-  private String code;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_MESSAGE = "message";
-  @SerializedName(SERIALIZED_NAME_MESSAGE)
-  private String message;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public static final String SERIALIZED_NAME_DETAILS = "details";
-  @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<BannedIpAddressDetails> details = null;
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public CreateCoinsTransactionRequestFromAddressE409() { 
-  }
+import io.cryptoapis.sdk.JSON;
 
-  public CreateCoinsTransactionRequestFromAddressE409 code(String code) {
-    
-    this.code = code;
-    return this;
-  }
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class CreateCoinsTransactionRequestFromAddressE409 extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(CreateCoinsTransactionRequestFromAddressE409.class.getName());
 
-   /**
-   * Specifies an error code, e.g. error 404.
-   * @return code
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "wallet_as_a_service_address_balance_not_enough", required = true, value = "Specifies an error code, e.g. error 404.")
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!CreateCoinsTransactionRequestFromAddressE409.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'CreateCoinsTransactionRequestFromAddressE409' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<InvalidData> adapterInvalidData = gson.getDelegateAdapter(this, TypeToken.get(InvalidData.class));
+            final TypeAdapter<WalletAsAServiceAddressBalanceNotEnough> adapterWalletAsAServiceAddressBalanceNotEnough = gson.getDelegateAdapter(this, TypeToken.get(WalletAsAServiceAddressBalanceNotEnough.class));
+            final TypeAdapter<WalletAsAServiceWalletBalanceNotEnough> adapterWalletAsAServiceWalletBalanceNotEnough = gson.getDelegateAdapter(this, TypeToken.get(WalletAsAServiceWalletBalanceNotEnough.class));
 
-  public String getCode() {
-    return code;
-  }
+            return (TypeAdapter<T>) new TypeAdapter<CreateCoinsTransactionRequestFromAddressE409>() {
+                @Override
+                public void write(JsonWriter out, CreateCoinsTransactionRequestFromAddressE409 value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `InvalidData`
+                    if (value.getActualInstance() instanceof InvalidData) {
+                        JsonObject obj = adapterInvalidData.toJsonTree((InvalidData)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public void setCode(String code) {
-    this.code = code;
-  }
+                    // check if the actual instance is of the type `WalletAsAServiceAddressBalanceNotEnough`
+                    if (value.getActualInstance() instanceof WalletAsAServiceAddressBalanceNotEnough) {
+                        JsonObject obj = adapterWalletAsAServiceAddressBalanceNotEnough.toJsonTree((WalletAsAServiceAddressBalanceNotEnough)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `WalletAsAServiceWalletBalanceNotEnough`
+                    if (value.getActualInstance() instanceof WalletAsAServiceWalletBalanceNotEnough) {
+                        JsonObject obj = adapterWalletAsAServiceWalletBalanceNotEnough.toJsonTree((WalletAsAServiceWalletBalanceNotEnough)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public CreateCoinsTransactionRequestFromAddressE409 message(String message) {
-    
-    this.message = message;
-    return this;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough");
+                }
 
-   /**
-   * Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.
-   * @return message
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "Your address balance is insufficient to complete the action. Please, deposit funds to your address and try again.", required = true, value = "Specifies the message of the error, i.e. why the error was returned, e.g. error 404 stands for “not found”.")
+                @Override
+                public CreateCoinsTransactionRequestFromAddressE409 read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public String getMessage() {
-    return message;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize InvalidData
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        InvalidData.validateJsonObject(jsonObject);
+                        actualAdapter = adapterInvalidData;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'InvalidData'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'InvalidData'", e);
+                    }
 
-  public void setMessage(String message) {
-    this.message = message;
-  }
+                    // deserialize WalletAsAServiceAddressBalanceNotEnough
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        WalletAsAServiceAddressBalanceNotEnough.validateJsonObject(jsonObject);
+                        actualAdapter = adapterWalletAsAServiceAddressBalanceNotEnough;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WalletAsAServiceAddressBalanceNotEnough'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'WalletAsAServiceAddressBalanceNotEnough'", e);
+                    }
 
+                    // deserialize WalletAsAServiceWalletBalanceNotEnough
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        WalletAsAServiceWalletBalanceNotEnough.validateJsonObject(jsonObject);
+                        actualAdapter = adapterWalletAsAServiceWalletBalanceNotEnough;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'WalletAsAServiceWalletBalanceNotEnough'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'WalletAsAServiceWalletBalanceNotEnough'", e);
+                    }
 
-  public CreateCoinsTransactionRequestFromAddressE409 details(List<BannedIpAddressDetails> details) {
-    
-    this.details = details;
-    return this;
-  }
+                    if (match == 1) {
+                        CreateCoinsTransactionRequestFromAddressE409 ret = new CreateCoinsTransactionRequestFromAddressE409();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-  public CreateCoinsTransactionRequestFromAddressE409 addDetailsItem(BannedIpAddressDetails detailsItem) {
-    if (this.details == null) {
-      this.details = new ArrayList<BannedIpAddressDetails>();
+                    throw new IOException(String.format("Failed deserialization for CreateCoinsTransactionRequestFromAddressE409: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    this.details.add(detailsItem);
-    return this;
-  }
 
-   /**
-   * Get details
-   * @return details
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(value = "")
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
 
-  public List<BannedIpAddressDetails> getDetails() {
-    return details;
-  }
-
-
-  public void setDetails(List<BannedIpAddressDetails> details) {
-    this.details = details;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+    public CreateCoinsTransactionRequestFromAddressE409() {
+        super("oneOf", Boolean.FALSE);
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    public CreateCoinsTransactionRequestFromAddressE409(InvalidData o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    CreateCoinsTransactionRequestFromAddressE409 createCoinsTransactionRequestFromAddressE409 = (CreateCoinsTransactionRequestFromAddressE409) o;
-    return Objects.equals(this.code, createCoinsTransactionRequestFromAddressE409.code) &&
-        Objects.equals(this.message, createCoinsTransactionRequestFromAddressE409.message) &&
-        Objects.equals(this.details, createCoinsTransactionRequestFromAddressE409.details);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(code, message, details);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreateCoinsTransactionRequestFromAddressE409 {\n");
-    sb.append("    code: ").append(toIndentedString(code)).append("\n");
-    sb.append("    message: ").append(toIndentedString(message)).append("\n");
-    sb.append("    details: ").append(toIndentedString(details)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public CreateCoinsTransactionRequestFromAddressE409(WalletAsAServiceAddressBalanceNotEnough o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public CreateCoinsTransactionRequestFromAddressE409(WalletAsAServiceWalletBalanceNotEnough o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("InvalidData", new GenericType<InvalidData>() {
+        });
+        schemas.put("WalletAsAServiceAddressBalanceNotEnough", new GenericType<WalletAsAServiceAddressBalanceNotEnough>() {
+        });
+        schemas.put("WalletAsAServiceWalletBalanceNotEnough", new GenericType<WalletAsAServiceWalletBalanceNotEnough>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return CreateCoinsTransactionRequestFromAddressE409.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof InvalidData) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof WalletAsAServiceAddressBalanceNotEnough) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof WalletAsAServiceWalletBalanceNotEnough) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough
+     *
+     * @return The actual instance (InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `InvalidData`. If the actual instance is not `InvalidData`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `InvalidData`
+     * @throws ClassCastException if the instance is not `InvalidData`
+     */
+    public InvalidData getInvalidData() throws ClassCastException {
+        return (InvalidData)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `WalletAsAServiceAddressBalanceNotEnough`. If the actual instance is not `WalletAsAServiceAddressBalanceNotEnough`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `WalletAsAServiceAddressBalanceNotEnough`
+     * @throws ClassCastException if the instance is not `WalletAsAServiceAddressBalanceNotEnough`
+     */
+    public WalletAsAServiceAddressBalanceNotEnough getWalletAsAServiceAddressBalanceNotEnough() throws ClassCastException {
+        return (WalletAsAServiceAddressBalanceNotEnough)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `WalletAsAServiceWalletBalanceNotEnough`. If the actual instance is not `WalletAsAServiceWalletBalanceNotEnough`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `WalletAsAServiceWalletBalanceNotEnough`
+     * @throws ClassCastException if the instance is not `WalletAsAServiceWalletBalanceNotEnough`
+     */
+    public WalletAsAServiceWalletBalanceNotEnough getWalletAsAServiceWalletBalanceNotEnough() throws ClassCastException {
+        return (WalletAsAServiceWalletBalanceNotEnough)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateCoinsTransactionRequestFromAddressE409
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with InvalidData
+    try {
+      InvalidData.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with WalletAsAServiceAddressBalanceNotEnough
+    try {
+      WalletAsAServiceAddressBalanceNotEnough.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with WalletAsAServiceWalletBalanceNotEnough
+    try {
+      WalletAsAServiceWalletBalanceNotEnough.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for CreateCoinsTransactionRequestFromAddressE409 with oneOf schemas: InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of CreateCoinsTransactionRequestFromAddressE409 given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateCoinsTransactionRequestFromAddressE409
+  * @throws IOException if the JSON string is invalid with respect to CreateCoinsTransactionRequestFromAddressE409
+  */
+  public static CreateCoinsTransactionRequestFromAddressE409 fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateCoinsTransactionRequestFromAddressE409.class);
+  }
+
+ /**
+  * Convert an instance of CreateCoinsTransactionRequestFromAddressE409 to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

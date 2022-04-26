@@ -28,309 +28,355 @@ import org.openapitools.client.model.AddressTokensTransactionConfirmedErc20;
 import org.openapitools.client.model.AddressTokensTransactionConfirmedErc721;
 import org.openapitools.client.model.AddressTokensTransactionConfirmedOmni;
 
-/**
- * AddressTokensTransactionConfirmedToken
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class AddressTokensTransactionConfirmedToken {
-  public static final String SERIALIZED_NAME_NAME = "name";
-  @SerializedName(SERIALIZED_NAME_NAME)
-  private String name;
-
-  public static final String SERIALIZED_NAME_SYMBOL = "symbol";
-  @SerializedName(SERIALIZED_NAME_SYMBOL)
-  private String symbol;
-
-  public static final String SERIALIZED_NAME_DECIMALS = "decimals";
-  @SerializedName(SERIALIZED_NAME_DECIMALS)
-  private String decimals;
-
-  public static final String SERIALIZED_NAME_AMOUNT = "amount";
-  @SerializedName(SERIALIZED_NAME_AMOUNT)
-  private String amount;
-
-  public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
-  @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
-  private String contractAddress;
-
-  public static final String SERIALIZED_NAME_TOKEN_ID = "tokenId";
-  @SerializedName(SERIALIZED_NAME_TOKEN_ID)
-  private String tokenId;
-
-  public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
-  @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  private String propertyId;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_TYPE = "transactionType";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_TYPE)
-  private String transactionType;
-
-  public static final String SERIALIZED_NAME_CREATED_BY_TRANSACTION_ID = "createdByTransactionId";
-  @SerializedName(SERIALIZED_NAME_CREATED_BY_TRANSACTION_ID)
-  private String createdByTransactionId;
-
-  public AddressTokensTransactionConfirmedToken() { 
-  }
-
-  public AddressTokensTransactionConfirmedToken name(String name) {
-    
-    this.name = name;
-    return this;
-  }
-
-   /**
-   * Specifies the name of the token.
-   * @return name
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "BEP-20", required = true, value = "Specifies the name of the token.")
-
-  public String getName() {
-    return name;
-  }
-
-
-  public void setName(String name) {
-    this.name = name;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken symbol(String symbol) {
-    
-    this.symbol = symbol;
-    return this;
-  }
-
-   /**
-   * Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.
-   * @return symbol
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "BEST", required = true, value = "Specifies an identifier of the token, where up to five alphanumeric characters can be used for it.")
-
-  public String getSymbol() {
-    return symbol;
-  }
-
-
-  public void setSymbol(String symbol) {
-    this.symbol = symbol;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken decimals(String decimals) {
-    
-    this.decimals = decimals;
-    return this;
-  }
-
-   /**
-   * Defines how many decimals can be used to break the token.
-   * @return decimals
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "8", value = "Defines how many decimals can be used to break the token.")
-
-  public String getDecimals() {
-    return decimals;
-  }
-
-
-  public void setDecimals(String decimals) {
-    this.decimals = decimals;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken amount(String amount) {
-    
-    this.amount = amount;
-    return this;
-  }
-
-   /**
-   * Defines the amount of tokens sent with the confirmed transaction.
-   * @return amount
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0.00039", required = true, value = "Defines the amount of tokens sent with the confirmed transaction.")
-
-  public String getAmount() {
-    return amount;
-  }
-
-
-  public void setAmount(String amount) {
-    this.amount = amount;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken contractAddress(String contractAddress) {
-    
-    this.contractAddress = contractAddress;
-    return this;
-  }
-
-   /**
-   * Defines the address of the contract.
-   * @return contractAddress
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xc4a9f4217748390f597e79050de41a39293345d2", required = true, value = "Defines the address of the contract.")
-
-  public String getContractAddress() {
-    return contractAddress;
-  }
-
-
-  public void setContractAddress(String contractAddress) {
-    this.contractAddress = contractAddress;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken tokenId(String tokenId) {
-    
-    this.tokenId = tokenId;
-    return this;
-  }
-
-   /**
-   * Specifies the ID of the token.
-   * @return tokenId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5027", required = true, value = "Specifies the ID of the token.")
-
-  public String getTokenId() {
-    return tokenId;
-  }
-
-
-  public void setTokenId(String tokenId) {
-    this.tokenId = tokenId;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken propertyId(String propertyId) {
-    
-    this.propertyId = propertyId;
-    return this;
-  }
-
-   /**
-   * Defines the ID of the property for Omni Layer.
-   * @return propertyId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "31", required = true, value = "Defines the ID of the property for Omni Layer.")
-
-  public String getPropertyId() {
-    return propertyId;
-  }
-
-
-  public void setPropertyId(String propertyId) {
-    this.propertyId = propertyId;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken transactionType(String transactionType) {
-    
-    this.transactionType = transactionType;
-    return this;
-  }
-
-   /**
-   * Defines the type of the transaction.
-   * @return transactionType
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "Simple Send, DEx Purchase etc.", required = true, value = "Defines the type of the transaction.")
-
-  public String getTransactionType() {
-    return transactionType;
-  }
-
-
-  public void setTransactionType(String transactionType) {
-    this.transactionType = transactionType;
-  }
-
-
-  public AddressTokensTransactionConfirmedToken createdByTransactionId(String createdByTransactionId) {
-    
-    this.createdByTransactionId = createdByTransactionId;
-    return this;
-  }
-
-   /**
-   * The transaction ID used to create the token.
-   * @return createdByTransactionId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "be5be71feac9e7019fbcdea5a87098a7862a0ee8c60bd5809b4d3b0cda940ddc", required = true, value = "The transaction ID used to create the token.")
-
-  public String getCreatedByTransactionId() {
-    return createdByTransactionId;
-  }
-
-
-  public void setCreatedByTransactionId(String createdByTransactionId) {
-    this.createdByTransactionId = createdByTransactionId;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class AddressTokensTransactionConfirmedToken extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(AddressTokensTransactionConfirmedToken.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!AddressTokensTransactionConfirmedToken.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'AddressTokensTransactionConfirmedToken' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AddressTokensTransactionConfirmedBep20> adapterAddressTokensTransactionConfirmedBep20 = gson.getDelegateAdapter(this, TypeToken.get(AddressTokensTransactionConfirmedBep20.class));
+            final TypeAdapter<AddressTokensTransactionConfirmedErc20> adapterAddressTokensTransactionConfirmedErc20 = gson.getDelegateAdapter(this, TypeToken.get(AddressTokensTransactionConfirmedErc20.class));
+            final TypeAdapter<AddressTokensTransactionConfirmedErc721> adapterAddressTokensTransactionConfirmedErc721 = gson.getDelegateAdapter(this, TypeToken.get(AddressTokensTransactionConfirmedErc721.class));
+            final TypeAdapter<AddressTokensTransactionConfirmedOmni> adapterAddressTokensTransactionConfirmedOmni = gson.getDelegateAdapter(this, TypeToken.get(AddressTokensTransactionConfirmedOmni.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<AddressTokensTransactionConfirmedToken>() {
+                @Override
+                public void write(JsonWriter out, AddressTokensTransactionConfirmedToken value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AddressTokensTransactionConfirmedBep20`
+                    if (value.getActualInstance() instanceof AddressTokensTransactionConfirmedBep20) {
+                        JsonObject obj = adapterAddressTokensTransactionConfirmedBep20.toJsonTree((AddressTokensTransactionConfirmedBep20)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AddressTokensTransactionConfirmedErc20`
+                    if (value.getActualInstance() instanceof AddressTokensTransactionConfirmedErc20) {
+                        JsonObject obj = adapterAddressTokensTransactionConfirmedErc20.toJsonTree((AddressTokensTransactionConfirmedErc20)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AddressTokensTransactionConfirmedErc721`
+                    if (value.getActualInstance() instanceof AddressTokensTransactionConfirmedErc721) {
+                        JsonObject obj = adapterAddressTokensTransactionConfirmedErc721.toJsonTree((AddressTokensTransactionConfirmedErc721)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `AddressTokensTransactionConfirmedOmni`
+                    if (value.getActualInstance() instanceof AddressTokensTransactionConfirmedOmni) {
+                        JsonObject obj = adapterAddressTokensTransactionConfirmedOmni.toJsonTree((AddressTokensTransactionConfirmedOmni)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddressTokensTransactionConfirmedBep20, AddressTokensTransactionConfirmedErc20, AddressTokensTransactionConfirmedErc721, AddressTokensTransactionConfirmedOmni");
+                }
+
+                @Override
+                public AddressTokensTransactionConfirmedToken read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize AddressTokensTransactionConfirmedBep20
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddressTokensTransactionConfirmedBep20.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddressTokensTransactionConfirmedBep20;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddressTokensTransactionConfirmedBep20'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddressTokensTransactionConfirmedBep20'", e);
+                    }
+
+                    // deserialize AddressTokensTransactionConfirmedErc20
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddressTokensTransactionConfirmedErc20.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddressTokensTransactionConfirmedErc20;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddressTokensTransactionConfirmedErc20'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddressTokensTransactionConfirmedErc20'", e);
+                    }
+
+                    // deserialize AddressTokensTransactionConfirmedErc721
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddressTokensTransactionConfirmedErc721.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddressTokensTransactionConfirmedErc721;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddressTokensTransactionConfirmedErc721'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddressTokensTransactionConfirmedErc721'", e);
+                    }
+
+                    // deserialize AddressTokensTransactionConfirmedOmni
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddressTokensTransactionConfirmedOmni.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddressTokensTransactionConfirmedOmni;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddressTokensTransactionConfirmedOmni'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddressTokensTransactionConfirmedOmni'", e);
+                    }
+
+                    if (match == 1) {
+                        AddressTokensTransactionConfirmedToken ret = new AddressTokensTransactionConfirmedToken();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for AddressTokensTransactionConfirmedToken: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public AddressTokensTransactionConfirmedToken() {
+        super("oneOf", Boolean.FALSE);
     }
-    AddressTokensTransactionConfirmedToken addressTokensTransactionConfirmedToken = (AddressTokensTransactionConfirmedToken) o;
-    return Objects.equals(this.name, addressTokensTransactionConfirmedToken.name) &&
-        Objects.equals(this.symbol, addressTokensTransactionConfirmedToken.symbol) &&
-        Objects.equals(this.decimals, addressTokensTransactionConfirmedToken.decimals) &&
-        Objects.equals(this.amount, addressTokensTransactionConfirmedToken.amount) &&
-        Objects.equals(this.contractAddress, addressTokensTransactionConfirmedToken.contractAddress) &&
-        Objects.equals(this.tokenId, addressTokensTransactionConfirmedToken.tokenId) &&
-        Objects.equals(this.propertyId, addressTokensTransactionConfirmedToken.propertyId) &&
-        Objects.equals(this.transactionType, addressTokensTransactionConfirmedToken.transactionType) &&
-        Objects.equals(this.createdByTransactionId, addressTokensTransactionConfirmedToken.createdByTransactionId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(name, symbol, decimals, amount, contractAddress, tokenId, propertyId, transactionType, createdByTransactionId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AddressTokensTransactionConfirmedToken {\n");
-    sb.append("    name: ").append(toIndentedString(name)).append("\n");
-    sb.append("    symbol: ").append(toIndentedString(symbol)).append("\n");
-    sb.append("    decimals: ").append(toIndentedString(decimals)).append("\n");
-    sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
-    sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
-    sb.append("    tokenId: ").append(toIndentedString(tokenId)).append("\n");
-    sb.append("    propertyId: ").append(toIndentedString(propertyId)).append("\n");
-    sb.append("    transactionType: ").append(toIndentedString(transactionType)).append("\n");
-    sb.append("    createdByTransactionId: ").append(toIndentedString(createdByTransactionId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public AddressTokensTransactionConfirmedToken(AddressTokensTransactionConfirmedBep20 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public AddressTokensTransactionConfirmedToken(AddressTokensTransactionConfirmedErc20 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public AddressTokensTransactionConfirmedToken(AddressTokensTransactionConfirmedErc721 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public AddressTokensTransactionConfirmedToken(AddressTokensTransactionConfirmedOmni o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("AddressTokensTransactionConfirmedBep20", new GenericType<AddressTokensTransactionConfirmedBep20>() {
+        });
+        schemas.put("AddressTokensTransactionConfirmedErc20", new GenericType<AddressTokensTransactionConfirmedErc20>() {
+        });
+        schemas.put("AddressTokensTransactionConfirmedErc721", new GenericType<AddressTokensTransactionConfirmedErc721>() {
+        });
+        schemas.put("AddressTokensTransactionConfirmedOmni", new GenericType<AddressTokensTransactionConfirmedOmni>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return AddressTokensTransactionConfirmedToken.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * AddressTokensTransactionConfirmedBep20, AddressTokensTransactionConfirmedErc20, AddressTokensTransactionConfirmedErc721, AddressTokensTransactionConfirmedOmni
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AddressTokensTransactionConfirmedBep20) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AddressTokensTransactionConfirmedErc20) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AddressTokensTransactionConfirmedErc721) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AddressTokensTransactionConfirmedOmni) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be AddressTokensTransactionConfirmedBep20, AddressTokensTransactionConfirmedErc20, AddressTokensTransactionConfirmedErc721, AddressTokensTransactionConfirmedOmni");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * AddressTokensTransactionConfirmedBep20, AddressTokensTransactionConfirmedErc20, AddressTokensTransactionConfirmedErc721, AddressTokensTransactionConfirmedOmni
+     *
+     * @return The actual instance (AddressTokensTransactionConfirmedBep20, AddressTokensTransactionConfirmedErc20, AddressTokensTransactionConfirmedErc721, AddressTokensTransactionConfirmedOmni)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddressTokensTransactionConfirmedBep20`. If the actual instance is not `AddressTokensTransactionConfirmedBep20`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddressTokensTransactionConfirmedBep20`
+     * @throws ClassCastException if the instance is not `AddressTokensTransactionConfirmedBep20`
+     */
+    public AddressTokensTransactionConfirmedBep20 getAddressTokensTransactionConfirmedBep20() throws ClassCastException {
+        return (AddressTokensTransactionConfirmedBep20)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddressTokensTransactionConfirmedErc20`. If the actual instance is not `AddressTokensTransactionConfirmedErc20`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddressTokensTransactionConfirmedErc20`
+     * @throws ClassCastException if the instance is not `AddressTokensTransactionConfirmedErc20`
+     */
+    public AddressTokensTransactionConfirmedErc20 getAddressTokensTransactionConfirmedErc20() throws ClassCastException {
+        return (AddressTokensTransactionConfirmedErc20)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddressTokensTransactionConfirmedErc721`. If the actual instance is not `AddressTokensTransactionConfirmedErc721`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddressTokensTransactionConfirmedErc721`
+     * @throws ClassCastException if the instance is not `AddressTokensTransactionConfirmedErc721`
+     */
+    public AddressTokensTransactionConfirmedErc721 getAddressTokensTransactionConfirmedErc721() throws ClassCastException {
+        return (AddressTokensTransactionConfirmedErc721)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddressTokensTransactionConfirmedOmni`. If the actual instance is not `AddressTokensTransactionConfirmedOmni`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddressTokensTransactionConfirmedOmni`
+     * @throws ClassCastException if the instance is not `AddressTokensTransactionConfirmedOmni`
+     */
+    public AddressTokensTransactionConfirmedOmni getAddressTokensTransactionConfirmedOmni() throws ClassCastException {
+        return (AddressTokensTransactionConfirmedOmni)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to AddressTokensTransactionConfirmedToken
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with AddressTokensTransactionConfirmedBep20
+    try {
+      AddressTokensTransactionConfirmedBep20.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with AddressTokensTransactionConfirmedErc20
+    try {
+      AddressTokensTransactionConfirmedErc20.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with AddressTokensTransactionConfirmedErc721
+    try {
+      AddressTokensTransactionConfirmedErc721.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with AddressTokensTransactionConfirmedOmni
+    try {
+      AddressTokensTransactionConfirmedOmni.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for AddressTokensTransactionConfirmedToken with oneOf schemas: AddressTokensTransactionConfirmedBep20, AddressTokensTransactionConfirmedErc20, AddressTokensTransactionConfirmedErc721, AddressTokensTransactionConfirmedOmni. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of AddressTokensTransactionConfirmedToken given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of AddressTokensTransactionConfirmedToken
+  * @throws IOException if the JSON string is invalid with respect to AddressTokensTransactionConfirmedToken
+  */
+  public static AddressTokensTransactionConfirmedToken fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AddressTokensTransactionConfirmedToken.class);
+  }
+
+ /**
+  * Convert an instance of AddressTokensTransactionConfirmedToken to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

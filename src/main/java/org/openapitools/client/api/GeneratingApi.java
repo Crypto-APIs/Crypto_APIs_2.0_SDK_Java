@@ -45,6 +45,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class GeneratingApi {
     private ApiClient localVarApiClient;
@@ -111,7 +112,6 @@ public class GeneratingApi {
      */
     public okhttp3.Call generateDepositAddressCall(String blockchain, String network, String walletId, String context, GenerateDepositAddressRB generateDepositAddressRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -154,7 +154,7 @@ public class GeneratingApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

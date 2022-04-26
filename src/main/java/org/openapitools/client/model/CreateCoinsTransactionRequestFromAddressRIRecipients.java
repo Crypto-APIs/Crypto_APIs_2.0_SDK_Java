@@ -24,18 +24,46 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * CreateCoinsTransactionRequestFromAddressRIRecipients
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRIRecipients {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
   private String address;
 
+  public static final String SERIALIZED_NAME_ADDRESS_TAG = "addressTag";
+  @SerializedName(SERIALIZED_NAME_ADDRESS_TAG)
+  private Integer addressTag;
+
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
   private String amount;
+
+  public static final String SERIALIZED_NAME_CLASSIC_ADDRESS = "classicAddress";
+  @SerializedName(SERIALIZED_NAME_CLASSIC_ADDRESS)
+  private String classicAddress;
 
   public CreateCoinsTransactionRequestFromAddressRIRecipients() { 
   }
@@ -63,6 +91,29 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
   }
 
 
+  public CreateCoinsTransactionRequestFromAddressRIRecipients addressTag(Integer addressTag) {
+    
+    this.addressTag = addressTag;
+    return this;
+  }
+
+   /**
+   * Defines a specific Tag that is an additional XRP address feature. It helps identify a transaction recipient beyond a wallet address. The tag that was encoded into the x-Address along with the Source Classic Address.
+   * @return addressTag
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "3999472835", value = "Defines a specific Tag that is an additional XRP address feature. It helps identify a transaction recipient beyond a wallet address. The tag that was encoded into the x-Address along with the Source Classic Address.")
+
+  public Integer getAddressTag() {
+    return addressTag;
+  }
+
+
+  public void setAddressTag(Integer addressTag) {
+    this.addressTag = addressTag;
+  }
+
+
   public CreateCoinsTransactionRequestFromAddressRIRecipients amount(String amount) {
     
     this.amount = amount;
@@ -86,6 +137,30 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
   }
 
 
+  public CreateCoinsTransactionRequestFromAddressRIRecipients classicAddress(String classicAddress) {
+    
+    this.classicAddress = classicAddress;
+    return this;
+  }
+
+   /**
+   * Represents the public address, which is a compressed and shortened form of a public key. The classic address is shown when the source address is an x-Address.
+   * @return classicAddress
+  **/
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "rA9bXGJcXvZKaWofrRphdJsBWzhyCfH3z", value = "Represents the public address, which is a compressed and shortened form of a public key. The classic address is shown when the source address is an x-Address.")
+
+  public String getClassicAddress() {
+    return classicAddress;
+  }
+
+
+  public void setClassicAddress(String classicAddress) {
+    this.classicAddress = classicAddress;
+  }
+
+
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -96,12 +171,14 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
     }
     CreateCoinsTransactionRequestFromAddressRIRecipients createCoinsTransactionRequestFromAddressRIRecipients = (CreateCoinsTransactionRequestFromAddressRIRecipients) o;
     return Objects.equals(this.address, createCoinsTransactionRequestFromAddressRIRecipients.address) &&
-        Objects.equals(this.amount, createCoinsTransactionRequestFromAddressRIRecipients.amount);
+        Objects.equals(this.addressTag, createCoinsTransactionRequestFromAddressRIRecipients.addressTag) &&
+        Objects.equals(this.amount, createCoinsTransactionRequestFromAddressRIRecipients.amount) &&
+        Objects.equals(this.classicAddress, createCoinsTransactionRequestFromAddressRIRecipients.classicAddress);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(address, amount);
+    return Objects.hash(address, addressTag, amount, classicAddress);
   }
 
   @Override
@@ -109,7 +186,9 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
     StringBuilder sb = new StringBuilder();
     sb.append("class CreateCoinsTransactionRequestFromAddressRIRecipients {\n");
     sb.append("    address: ").append(toIndentedString(address)).append("\n");
+    sb.append("    addressTag: ").append(toIndentedString(addressTag)).append("\n");
     sb.append("    amount: ").append(toIndentedString(amount)).append("\n");
+    sb.append("    classicAddress: ").append(toIndentedString(classicAddress)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -125,5 +204,111 @@ public class CreateCoinsTransactionRequestFromAddressRIRecipients {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("address");
+    openapiFields.add("addressTag");
+    openapiFields.add("amount");
+    openapiFields.add("classicAddress");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("address");
+    openapiRequiredFields.add("amount");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateCoinsTransactionRequestFromAddressRIRecipients
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (CreateCoinsTransactionRequestFromAddressRIRecipients.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateCoinsTransactionRequestFromAddressRIRecipients is not found in the empty JSON string", CreateCoinsTransactionRequestFromAddressRIRecipients.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!CreateCoinsTransactionRequestFromAddressRIRecipients.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateCoinsTransactionRequestFromAddressRIRecipients` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CreateCoinsTransactionRequestFromAddressRIRecipients.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("address") != null && !jsonObj.get("address").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `address` to be a primitive type in the JSON string but got `%s`", jsonObj.get("address").toString()));
+      }
+      if (jsonObj.get("amount") != null && !jsonObj.get("amount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `amount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("amount").toString()));
+      }
+      if (jsonObj.get("classicAddress") != null && !jsonObj.get("classicAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `classicAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("classicAddress").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CreateCoinsTransactionRequestFromAddressRIRecipients.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateCoinsTransactionRequestFromAddressRIRecipients' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CreateCoinsTransactionRequestFromAddressRIRecipients> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateCoinsTransactionRequestFromAddressRIRecipients.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CreateCoinsTransactionRequestFromAddressRIRecipients>() {
+           @Override
+           public void write(JsonWriter out, CreateCoinsTransactionRequestFromAddressRIRecipients value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CreateCoinsTransactionRequestFromAddressRIRecipients read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of CreateCoinsTransactionRequestFromAddressRIRecipients given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateCoinsTransactionRequestFromAddressRIRecipients
+  * @throws IOException if the JSON string is invalid with respect to CreateCoinsTransactionRequestFromAddressRIRecipients
+  */
+  public static CreateCoinsTransactionRequestFromAddressRIRecipients fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateCoinsTransactionRequestFromAddressRIRecipients.class);
+  }
+
+ /**
+  * Convert an instance of CreateCoinsTransactionRequestFromAddressRIRecipients to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

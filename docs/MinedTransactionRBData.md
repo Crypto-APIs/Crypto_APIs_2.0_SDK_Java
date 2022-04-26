@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**MinedTransactionRBDataItem**](MinedTransactionRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**MinedTransactionRBDataItem**](MinedTransactionRBDataItem.md) |  |  |
 
 
 

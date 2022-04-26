@@ -27,9 +27,8 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCal
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIFee;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIRecipients;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRISenders;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

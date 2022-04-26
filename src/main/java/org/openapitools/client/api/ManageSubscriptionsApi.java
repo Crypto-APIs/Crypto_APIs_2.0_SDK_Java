@@ -30,16 +30,20 @@ import java.io.IOException;
 import org.openapitools.client.model.ActivateBlockchainEventSubscriptionR;
 import org.openapitools.client.model.ActivateBlockchainEventSubscriptionRB;
 import org.openapitools.client.model.DeleteBlockchainEventSubscriptionR;
-import org.openapitools.client.model.InlineResponse40066;
-import org.openapitools.client.model.InlineResponse40067;
-import org.openapitools.client.model.InlineResponse40068;
-import org.openapitools.client.model.InlineResponse40166;
-import org.openapitools.client.model.InlineResponse40167;
-import org.openapitools.client.model.InlineResponse40168;
+import org.openapitools.client.model.GetBlockchainEventSubscriptionDetailsByReferenceIDR;
+import org.openapitools.client.model.InlineResponse40079;
+import org.openapitools.client.model.InlineResponse40080;
+import org.openapitools.client.model.InlineResponse40081;
+import org.openapitools.client.model.InlineResponse40082;
+import org.openapitools.client.model.InlineResponse40179;
+import org.openapitools.client.model.InlineResponse40180;
+import org.openapitools.client.model.InlineResponse40181;
+import org.openapitools.client.model.InlineResponse40182;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40366;
-import org.openapitools.client.model.InlineResponse40367;
-import org.openapitools.client.model.InlineResponse40368;
+import org.openapitools.client.model.InlineResponse40379;
+import org.openapitools.client.model.InlineResponse40380;
+import org.openapitools.client.model.InlineResponse40381;
+import org.openapitools.client.model.InlineResponse40382;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse415;
@@ -53,6 +57,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class ManageSubscriptionsApi {
     private ApiClient localVarApiClient;
@@ -117,7 +122,6 @@ public class ManageSubscriptionsApi {
      */
     public okhttp3.Call activateBlockchainEventSubscriptionCall(String referenceId, String context, ActivateBlockchainEventSubscriptionRB activateBlockchainEventSubscriptionRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -158,7 +162,7 @@ public class ManageSubscriptionsApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -298,7 +302,6 @@ public class ManageSubscriptionsApi {
      */
     public okhttp3.Call deleteBlockchainEventSubscriptionCall(String blockchain, String network, String referenceId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -341,7 +344,7 @@ public class ManageSubscriptionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -468,6 +471,181 @@ public class ManageSubscriptionsApi {
         return localVarCall;
     }
     /**
+     * Build call for getBlockchainEventSubscriptionDetailsByReferenceID
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getBlockchainEventSubscriptionDetailsByReferenceIDCall(String referenceId, String context, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-events/subscriptions/{referenceId}"
+            .replaceAll("\\{" + "referenceId" + "\\}", localVarApiClient.escapeString(referenceId.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call getBlockchainEventSubscriptionDetailsByReferenceIDValidateBeforeCall(String referenceId, String context, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'referenceId' is set
+        if (referenceId == null) {
+            throw new ApiException("Missing the required parameter 'referenceId' when calling getBlockchainEventSubscriptionDetailsByReferenceID(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = getBlockchainEventSubscriptionDetailsByReferenceIDCall(referenceId, context, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * Get Blockchain Event Subscription Details By Reference ID
+     * Through this endpoint the customer can get detailed information for a callback subscription by providing its reference ID.    Currently Crypto APIs 2.0 offers certain Blockchain event endpoints which allow the user to subscribe for one/a few/all and receive callback notifications when the specific event occurs.
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return GetBlockchainEventSubscriptionDetailsByReferenceIDR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public GetBlockchainEventSubscriptionDetailsByReferenceIDR getBlockchainEventSubscriptionDetailsByReferenceID(String referenceId, String context) throws ApiException {
+        ApiResponse<GetBlockchainEventSubscriptionDetailsByReferenceIDR> localVarResp = getBlockchainEventSubscriptionDetailsByReferenceIDWithHttpInfo(referenceId, context);
+        return localVarResp.getData();
+    }
+
+    /**
+     * Get Blockchain Event Subscription Details By Reference ID
+     * Through this endpoint the customer can get detailed information for a callback subscription by providing its reference ID.    Currently Crypto APIs 2.0 offers certain Blockchain event endpoints which allow the user to subscribe for one/a few/all and receive callback notifications when the specific event occurs.
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @return ApiResponse&lt;GetBlockchainEventSubscriptionDetailsByReferenceIDR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<GetBlockchainEventSubscriptionDetailsByReferenceIDR> getBlockchainEventSubscriptionDetailsByReferenceIDWithHttpInfo(String referenceId, String context) throws ApiException {
+        okhttp3.Call localVarCall = getBlockchainEventSubscriptionDetailsByReferenceIDValidateBeforeCall(referenceId, context, null);
+        Type localVarReturnType = new TypeToken<GetBlockchainEventSubscriptionDetailsByReferenceIDR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * Get Blockchain Event Subscription Details By Reference ID (asynchronously)
+     * Through this endpoint the customer can get detailed information for a callback subscription by providing its reference ID.    Currently Crypto APIs 2.0 offers certain Blockchain event endpoints which allow the user to subscribe for one/a few/all and receive callback notifications when the specific event occurs.
+     * @param referenceId Represents a unique ID used to reference the specific callback subscription. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call getBlockchainEventSubscriptionDetailsByReferenceIDAsync(String referenceId, String context, final ApiCallback<GetBlockchainEventSubscriptionDetailsByReferenceIDR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = getBlockchainEventSubscriptionDetailsByReferenceIDValidateBeforeCall(referenceId, context, _callback);
+        Type localVarReturnType = new TypeToken<GetBlockchainEventSubscriptionDetailsByReferenceIDR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for listBlockchainEventsSubscriptions
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
@@ -494,7 +672,6 @@ public class ManageSubscriptionsApi {
      */
     public okhttp3.Call listBlockchainEventsSubscriptionsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -544,7 +721,7 @@ public class ManageSubscriptionsApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

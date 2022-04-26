@@ -16,17 +16,44 @@ package org.openapitools.client.api;
 import io.cryptoapis.sdk.ApiException;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionR;
 import org.openapitools.client.model.BroadcastLocallySignedTransactionRB;
+import org.openapitools.client.model.DecodeRawTransactionHexR;
+import org.openapitools.client.model.DecodeRawTransactionHexRB;
+import org.openapitools.client.model.DecodeXAddressR;
+import org.openapitools.client.model.DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR;
+import org.openapitools.client.model.EncodeXAddressR;
+import org.openapitools.client.model.EstimateGasLimitR;
+import org.openapitools.client.model.EstimateGasLimitRB;
+import org.openapitools.client.model.EstimateTokenGasLimitR;
+import org.openapitools.client.model.EstimateTokenGasLimitRB;
 import org.openapitools.client.model.GetEIP1559FeeRecommendationsR;
-import org.openapitools.client.model.InlineResponse40083;
-import org.openapitools.client.model.InlineResponse40084;
-import org.openapitools.client.model.InlineResponse40085;
-import org.openapitools.client.model.InlineResponse40183;
-import org.openapitools.client.model.InlineResponse40184;
-import org.openapitools.client.model.InlineResponse40185;
+import org.openapitools.client.model.InlineResponse400100;
+import org.openapitools.client.model.InlineResponse400101;
+import org.openapitools.client.model.InlineResponse400102;
+import org.openapitools.client.model.InlineResponse400103;
+import org.openapitools.client.model.InlineResponse400104;
+import org.openapitools.client.model.InlineResponse40070;
+import org.openapitools.client.model.InlineResponse40097;
+import org.openapitools.client.model.InlineResponse40098;
+import org.openapitools.client.model.InlineResponse40099;
+import org.openapitools.client.model.InlineResponse401100;
+import org.openapitools.client.model.InlineResponse401101;
+import org.openapitools.client.model.InlineResponse401102;
+import org.openapitools.client.model.InlineResponse401103;
+import org.openapitools.client.model.InlineResponse401104;
+import org.openapitools.client.model.InlineResponse40170;
+import org.openapitools.client.model.InlineResponse40197;
+import org.openapitools.client.model.InlineResponse40198;
+import org.openapitools.client.model.InlineResponse40199;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40383;
-import org.openapitools.client.model.InlineResponse40384;
-import org.openapitools.client.model.InlineResponse40385;
+import org.openapitools.client.model.InlineResponse403100;
+import org.openapitools.client.model.InlineResponse403101;
+import org.openapitools.client.model.InlineResponse403102;
+import org.openapitools.client.model.InlineResponse403103;
+import org.openapitools.client.model.InlineResponse403104;
+import org.openapitools.client.model.InlineResponse40370;
+import org.openapitools.client.model.InlineResponse40397;
+import org.openapitools.client.model.InlineResponse40398;
+import org.openapitools.client.model.InlineResponse40399;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse40917;
@@ -36,8 +63,8 @@ import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ValidateAddressR;
 import org.openapitools.client.model.ValidateAddressRB;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -47,19 +74,17 @@ import java.util.Map;
 /**
  * API tests for FeaturesApi
  */
-@Ignore
+@Disabled
 public class FeaturesApiTest {
 
     private final FeaturesApi api = new FeaturesApi();
 
-    
     /**
      * Broadcast Locally Signed Transaction
      *
      * Through this endpoint customers can broadcast transactions that have been already signed locally. Instead of using a node for broadcasting a signed transaction users can use this endpoint. We then keep the user posted about the status by sending you a callback with a success or failure status.    {warning}This can be prepared and signed **only** locally, not through the API. We can provide support only for the process of broadcasting.{/warning}
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void broadcastLocallySignedTransactionTest() throws ApiException {
@@ -67,34 +92,139 @@ public class FeaturesApiTest {
         String network = null;
         String context = null;
         BroadcastLocallySignedTransactionRB broadcastLocallySignedTransactionRB = null;
-                BroadcastLocallySignedTransactionR response = api.broadcastLocallySignedTransaction(blockchain, network, context, broadcastLocallySignedTransactionRB);
+        BroadcastLocallySignedTransactionR response = api.broadcastLocallySignedTransaction(blockchain, network, context, broadcastLocallySignedTransactionRB);
         // TODO: test validations
     }
-    
+
+    /**
+     * Decode Raw Transaction Hex
+     *
+     * Through this endpoint customers can decode a raw transaction hex and see the decoded transactions&#39; details.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void decodeRawTransactionHexTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        DecodeRawTransactionHexRB decodeRawTransactionHexRB = null;
+        DecodeRawTransactionHexR response = api.decodeRawTransactionHex(blockchain, network, context, decodeRawTransactionHexRB);
+        // TODO: test validations
+    }
+
+    /**
+     * Decode X-Address
+     *
+     * Through this endpoint, customers can decode an encoded XRP address with tag, by providing the specific x-address. The response includes the decoded classic address and the tag.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void decodeXAddressTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String xAddress = null;
+        String context = null;
+        DecodeXAddressR response = api.decodeXAddress(blockchain, network, xAddress, context);
+        // TODO: test validations
+    }
+
+    /**
+     * Derive HD Wallet (xPub, yPub, zPub) Change Or Receiving Addresses
+     *
+     * Through this endpoint, customers can derive up to 10 addresses - both change and receive, from a certain HD Wallet (xPub, yPub, zPub), by providing an extended public key. By default the system creates a receiving/deposit address, unless the isChange attribute is set to &#39;true&#39;. In that case the system derives a &#39;change&#39; address. The change address can be derived only for UTXO based blockchains, for all the rest, this endpoint always creates a deposit/receiving address.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void deriveHDWalletXPubYPubZPubChangeOrReceivingAddressesTest() throws ApiException {
+        String blockchain = null;
+        String extendedPublicKey = null;
+        String network = null;
+        String context = null;
+        String addressFormat = null;
+        Integer addressesCount = null;
+        Boolean isChange = null;
+        Integer startIndex = null;
+        DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesR response = api.deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses(blockchain, extendedPublicKey, network, context, addressFormat, addressesCount, isChange, startIndex);
+        // TODO: test validations
+    }
+
+    /**
+     * Encode X-Address
+     *
+     * Through this endpoint, customers can encode an encoded XRP address with tag, by providing the specific x-address. The response includes the encoded classic address and the tag.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void encodeXAddressTest() throws ApiException {
+        Integer addressTag = null;
+        String blockchain = null;
+        String classicAddress = null;
+        String network = null;
+        String context = null;
+        EncodeXAddressR response = api.encodeXAddress(addressTag, blockchain, classicAddress, network, context);
+        // TODO: test validations
+    }
+
+    /**
+     * Estimate Gas Limit
+     *
+     * This endpoint helps customer in estimating the gas limit needed for a transaction. It gives information for gas expenses when sending ether to contracts or making a transaction with additional data in it.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void estimateGasLimitTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        EstimateGasLimitRB estimateGasLimitRB = null;
+        EstimateGasLimitR response = api.estimateGasLimit(blockchain, network, context, estimateGasLimitRB);
+        // TODO: test validations
+    }
+
+    /**
+     * Estimate Token Gas Limit
+     *
+     * This endpoint helps customer in estimating the Contract Gas Limit needed for a transaction. It gives information for gas expenses for a specific contract when sending ethers or making a transaction with additional data in it.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void estimateTokenGasLimitTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        EstimateTokenGasLimitRB estimateTokenGasLimitRB = null;
+        EstimateTokenGasLimitR response = api.estimateTokenGasLimit(blockchain, network, context, estimateTokenGasLimitRB);
+        // TODO: test validations
+    }
+
     /**
      * Get EIP 1559 Fee Recommendations
      *
      * Through this endpoint customers can obtain fee recommendations specifically for EIP 1559.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getEIP1559FeeRecommendationsTest() throws ApiException {
         String network = null;
         String blockchain = null;
         String context = null;
-                GetEIP1559FeeRecommendationsR response = api.getEIP1559FeeRecommendations(network, blockchain, context);
+        GetEIP1559FeeRecommendationsR response = api.getEIP1559FeeRecommendations(network, blockchain, context);
         // TODO: test validations
     }
-    
+
     /**
      * Validate Address
      *
      * This endpoint checks user public addresses whether they are valid or not.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void validateAddressTest() throws ApiException {
@@ -102,8 +232,8 @@ public class FeaturesApiTest {
         String network = null;
         String context = null;
         ValidateAddressRB validateAddressRB = null;
-                ValidateAddressR response = api.validateAddress(blockchain, network, context, validateAddressRB);
+        ValidateAddressR response = api.validateAddress(blockchain, network, context, validateAddressRB);
         // TODO: test validations
     }
-    
+
 }

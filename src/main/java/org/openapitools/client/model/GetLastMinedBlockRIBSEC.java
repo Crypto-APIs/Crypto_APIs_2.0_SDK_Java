@@ -26,11 +26,31 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetLastMinedBlockRIBSEC {
   public static final String SERIALIZED_NAME_DIFFICULTY = "difficulty";
   @SerializedName(SERIALIZED_NAME_DIFFICULTY)
@@ -70,7 +90,7 @@ public class GetLastMinedBlockRIBSEC {
 
   public static final String SERIALIZED_NAME_UNCLES = "uncles";
   @SerializedName(SERIALIZED_NAME_UNCLES)
-  private List<String> uncles = new ArrayList<String>();
+  private List<String> uncles = new ArrayList<>();
 
   public GetLastMinedBlockRIBSEC() { 
   }
@@ -310,6 +330,7 @@ public class GetLastMinedBlockRIBSEC {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -365,5 +386,141 @@ public class GetLastMinedBlockRIBSEC {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("difficulty");
+    openapiFields.add("nonce");
+    openapiFields.add("size");
+    openapiFields.add("extraData");
+    openapiFields.add("gasLimit");
+    openapiFields.add("gasUsed");
+    openapiFields.add("minedInSeconds");
+    openapiFields.add("sha3Uncles");
+    openapiFields.add("totalDifficulty");
+    openapiFields.add("uncles");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("difficulty");
+    openapiRequiredFields.add("nonce");
+    openapiRequiredFields.add("size");
+    openapiRequiredFields.add("extraData");
+    openapiRequiredFields.add("gasLimit");
+    openapiRequiredFields.add("gasUsed");
+    openapiRequiredFields.add("minedInSeconds");
+    openapiRequiredFields.add("sha3Uncles");
+    openapiRequiredFields.add("totalDifficulty");
+    openapiRequiredFields.add("uncles");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetLastMinedBlockRIBSEC
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetLastMinedBlockRIBSEC.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetLastMinedBlockRIBSEC is not found in the empty JSON string", GetLastMinedBlockRIBSEC.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetLastMinedBlockRIBSEC.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetLastMinedBlockRIBSEC` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetLastMinedBlockRIBSEC.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("difficulty") != null && !jsonObj.get("difficulty").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `difficulty` to be a primitive type in the JSON string but got `%s`", jsonObj.get("difficulty").toString()));
+      }
+      if (jsonObj.get("nonce") != null && !jsonObj.get("nonce").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nonce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nonce").toString()));
+      }
+      if (jsonObj.get("extraData") != null && !jsonObj.get("extraData").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `extraData` to be a primitive type in the JSON string but got `%s`", jsonObj.get("extraData").toString()));
+      }
+      if (jsonObj.get("gasLimit") != null && !jsonObj.get("gasLimit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gasLimit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gasLimit").toString()));
+      }
+      if (jsonObj.get("gasUsed") != null && !jsonObj.get("gasUsed").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gasUsed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gasUsed").toString()));
+      }
+      if (jsonObj.get("sha3Uncles") != null && !jsonObj.get("sha3Uncles").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `sha3Uncles` to be a primitive type in the JSON string but got `%s`", jsonObj.get("sha3Uncles").toString()));
+      }
+      if (jsonObj.get("totalDifficulty") != null && !jsonObj.get("totalDifficulty").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `totalDifficulty` to be a primitive type in the JSON string but got `%s`", jsonObj.get("totalDifficulty").toString()));
+      }
+      // ensure the json data is an array
+      if (jsonObj.get("uncles") != null && !jsonObj.get("uncles").isJsonArray()) {
+        throw new IllegalArgumentException(String.format("Expected the field `uncles` to be an array in the JSON string but got `%s`", jsonObj.get("uncles").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetLastMinedBlockRIBSEC.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetLastMinedBlockRIBSEC' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetLastMinedBlockRIBSEC> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetLastMinedBlockRIBSEC.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetLastMinedBlockRIBSEC>() {
+           @Override
+           public void write(JsonWriter out, GetLastMinedBlockRIBSEC value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetLastMinedBlockRIBSEC read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetLastMinedBlockRIBSEC given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetLastMinedBlockRIBSEC
+  * @throws IOException if the JSON string is invalid with respect to GetLastMinedBlockRIBSEC
+  */
+  public static GetLastMinedBlockRIBSEC fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetLastMinedBlockRIBSEC.class);
+  }
+
+ /**
+  * Convert an instance of GetLastMinedBlockRIBSEC to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

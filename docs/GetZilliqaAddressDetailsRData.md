@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetZilliqaAddressDetailsRI**](GetZilliqaAddressDetailsRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetZilliqaAddressDetailsRI**](GetZilliqaAddressDetailsRI.md) |  |  |
 
 
 

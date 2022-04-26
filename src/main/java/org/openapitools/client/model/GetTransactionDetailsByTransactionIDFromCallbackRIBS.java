@@ -46,972 +46,705 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVo
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIOffer;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIReceive;
 
-/**
- * GetTransactionDetailsByTransactionIDFromCallbackRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class GetTransactionDetailsByTransactionIDFromCallbackRIBS {
-  public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
-  @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
-  @SerializedName(SERIALIZED_NAME_V_SIZE)
-  private Integer vSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VIN = "vin";
-  @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVin>();
-
-  public static final String SERIALIZED_NAME_VOUT = "vout";
-  @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVout>();
-
-  public static final String SERIALIZED_NAME_CONTRACT = "contract";
-  @SerializedName(SERIALIZED_NAME_CONTRACT)
-  private String contract;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private Integer gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
-  @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice gasPrice;
-
-  public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
-  @SerializedName(SERIALIZED_NAME_GAS_USED)
-  private Integer gasUsed;
-
-  public static final String SERIALIZED_NAME_INPUT_DATA = "inputData";
-  @SerializedName(SERIALIZED_NAME_INPUT_DATA)
-  private String inputData;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
-  private String transactionStatus;
-
-  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
-  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
-  private String bindingSig;
-
-  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
-  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
-  private Integer expiryHeight;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
-  private String joinSplitPubKey;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
-  private String joinSplitSig;
-
-  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
-  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
-  private Boolean overwintered;
-
-  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
-  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
-
-  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
-  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
-  private String valueBalance;
-
-  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
-  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
-  private String versionGroupId;
-
-  public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
-  @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)
-  private String additionalData;
-
-  public static final String SERIALIZED_NAME_DESTINATION_TAG = "destinationTag";
-  @SerializedName(SERIALIZED_NAME_DESTINATION_TAG)
-  private Integer destinationTag;
-
-  public static final String SERIALIZED_NAME_OFFER = "offer";
-  @SerializedName(SERIALIZED_NAME_OFFER)
-  private GetXRPRippleTransactionDetailsByTransactionIDRIOffer offer;
-
-  public static final String SERIALIZED_NAME_RECEIVE = "receive";
-  @SerializedName(SERIALIZED_NAME_RECEIVE)
-  private GetXRPRippleTransactionDetailsByTransactionIDRIReceive receive;
-
-  public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
-  @SerializedName(SERIALIZED_NAME_SEQUENCE)
-  private Integer sequence;
-
-  public static final String SERIALIZED_NAME_STATUS = "status";
-  @SerializedName(SERIALIZED_NAME_STATUS)
-  private String status;
-
-  public static final String SERIALIZED_NAME_TYPE = "type";
-  @SerializedName(SERIALIZED_NAME_TYPE)
-  private String type;
-
-  public static final String SERIALIZED_NAME_VALUE = "value";
-  @SerializedName(SERIALIZED_NAME_VALUE)
-  private GetTransactionDetailsByTransactionIDFromCallbackRIBSXValue value;
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS() { 
-  }
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS locktime(Integer locktime) {
-    
-    this.locktime = locktime;
-    return this;
-  }
-
-   /**
-   * Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.
-   * @return locktime
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1781965", required = true, value = "Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.")
-
-  public Integer getLocktime() {
-    return locktime;
-  }
-
-
-  public void setLocktime(Integer locktime) {
-    this.locktime = locktime;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of this transaction.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS vSize(Integer vSize) {
-    
-    this.vSize = vSize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getvSize() {
-    return vSize;
-  }
-
-
-  public void setvSize(Integer vSize) {
-    this.vSize = vSize;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Defines the version of the transaction.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Defines the version of the transaction.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS vin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    
-    this.vin = vin;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS addVinItem(GetTransactionDetailsByTransactionIDRIBSZVin vinItem) {
-    this.vin.add(vinItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction inputs
-   * @return vin
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVin> getVin() {
-    return vin;
-  }
-
-
-  public void setVin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    this.vin = vin;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS vout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
-    
-    this.vout = vout;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS addVoutItem(GetTransactionDetailsByTransactionIDRIBSZVout voutItem) {
-    this.vout.add(voutItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction outputs
-   * @return vout
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVout> getVout() {
-    return vout;
-  }
-
-
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
-    this.vout = vout;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS contract(String contract) {
-    
-    this.contract = contract;
-    return this;
-  }
-
-   /**
-   * Represents the specific transaction contract
-   * @return contract
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x0000000000000000000000000000000000001000", required = true, value = "Represents the specific transaction contract")
-
-  public String getContract() {
-    return contract;
-  }
-
-
-  public void setContract(String contract) {
-    this.contract = contract;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS gasLimit(Integer gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "552020", required = true, value = "Represents the maximum amount of gas allowed in the block in order to determine how many transactions it can fit.")
-
-  public Integer getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(Integer gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS gasPrice(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice gasPrice) {
-    
-    this.gasPrice = gasPrice;
-    return this;
-  }
-
-   /**
-   * Get gasPrice
-   * @return gasPrice
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice getGasPrice() {
-    return gasPrice;
-  }
-
-
-  public void setGasPrice(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice gasPrice) {
-    this.gasPrice = gasPrice;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS gasUsed(Integer gasUsed) {
-    
-    this.gasUsed = gasUsed;
-    return this;
-  }
-
-   /**
-   * Defines how much of the gas for the block has been used.
-   * @return gasUsed
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "24673", required = true, value = "Defines how much of the gas for the block has been used.")
-
-  public Integer getGasUsed() {
-    return gasUsed;
-  }
-
-
-  public void setGasUsed(Integer gasUsed) {
-    this.gasUsed = gasUsed;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS inputData(String inputData) {
-    
-    this.inputData = inputData;
-    return this;
-  }
-
-   /**
-   * Represents additional information that is required for the transaction.
-   * @return inputData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x", required = true, value = "Represents additional information that is required for the transaction.")
-
-  public String getInputData() {
-    return inputData;
-  }
-
-
-  public void setInputData(String inputData) {
-    this.inputData = inputData;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS nonce(Integer nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "16", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
-
-  public Integer getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(Integer nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS transactionStatus(String transactionStatus) {
-    
-    this.transactionStatus = transactionStatus;
-    return this;
-  }
-
-   /**
-   * Represents the status of this transaction.
-   * @return transactionStatus
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1", required = true, value = "Represents the status of this transaction.")
-
-  public String getTransactionStatus() {
-    return transactionStatus;
-  }
-
-
-  public void setTransactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS bindingSig(String bindingSig) {
-    
-    this.bindingSig = bindingSig;
-    return this;
-  }
-
-   /**
-   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
-   * @return bindingSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
-
-  public String getBindingSig() {
-    return bindingSig;
-  }
-
-
-  public void setBindingSig(String bindingSig) {
-    this.bindingSig = bindingSig;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS expiryHeight(Integer expiryHeight) {
-    
-    this.expiryHeight = expiryHeight;
-    return this;
-  }
-
-   /**
-   * Represents a block height after which the transaction will expire.
-   * @return expiryHeight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
-
-  public Integer getExpiryHeight() {
-    return expiryHeight;
-  }
-
-
-  public void setExpiryHeight(Integer expiryHeight) {
-    this.expiryHeight = expiryHeight;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS joinSplitPubKey(String joinSplitPubKey) {
-    
-    this.joinSplitPubKey = joinSplitPubKey;
-    return this;
-  }
-
-   /**
-   * Represents an encoding of a JoinSplitSig public validating key.
-   * @return joinSplitPubKey
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
-
-  public String getJoinSplitPubKey() {
-    return joinSplitPubKey;
-  }
-
-
-  public void setJoinSplitPubKey(String joinSplitPubKey) {
-    this.joinSplitPubKey = joinSplitPubKey;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS joinSplitSig(String joinSplitSig) {
-    
-    this.joinSplitSig = joinSplitSig;
-    return this;
-  }
-
-   /**
-   * Is used to sign transactions that contain at least one JoinSplit description.
-   * @return joinSplitSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
-
-  public String getJoinSplitSig() {
-    return joinSplitSig;
-  }
-
-
-  public void setJoinSplitSig(String joinSplitSig) {
-    this.joinSplitSig = joinSplitSig;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS overwintered(Boolean overwintered) {
-    
-    this.overwintered = overwintered;
-    return this;
-  }
-
-   /**
-   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
-   * @return overwintered
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
-
-  public Boolean getOverwintered() {
-    return overwintered;
-  }
-
-
-  public void setOverwintered(Boolean overwintered) {
-    this.overwintered = overwintered;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS vJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
-    
-    this.vJoinSplit = vJoinSplit;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplit vJoinSplitItem) {
-    this.vJoinSplit.add(vJoinSplitItem);
-    return this;
-  }
-
-   /**
-   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
-   * @return vJoinSplit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> getvJoinSplit() {
-    return vJoinSplit;
-  }
-
-
-  public void setvJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
-    this.vJoinSplit = vJoinSplit;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    
-    this.vShieldedOutput = vShieldedOutput;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
-    this.vShieldedOutput.add(vShieldedOutputItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction output descriptions
-   * @return vShieldedOutput
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
-    return vShieldedOutput;
-  }
-
-
-  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    this.vShieldedOutput = vShieldedOutput;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    
-    this.vShieldedSpend = vShieldedSpend;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
-    this.vShieldedSpend.add(vShieldedSpendItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction spend descriptions
-   * @return vShieldedSpend
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
-    return vShieldedSpend;
-  }
-
-
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    this.vShieldedSpend = vShieldedSpend;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS valueBalance(String valueBalance) {
-    
-    this.valueBalance = valueBalance;
-    return this;
-  }
-
-   /**
-   * String representation of the transaction value balance
-   * @return valueBalance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "String representation of the transaction value balance")
-
-  public String getValueBalance() {
-    return valueBalance;
-  }
-
-
-  public void setValueBalance(String valueBalance) {
-    this.valueBalance = valueBalance;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS versionGroupId(String versionGroupId) {
-    
-    this.versionGroupId = versionGroupId;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version group ID
-   * @return versionGroupId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID")
-
-  public String getVersionGroupId() {
-    return versionGroupId;
-  }
-
-
-  public void setVersionGroupId(String versionGroupId) {
-    this.versionGroupId = versionGroupId;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS additionalData(String additionalData) {
-    
-    this.additionalData = additionalData;
-    return this;
-  }
-
-   /**
-   * Represents additional data that may be needed.
-   * @return additionalData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "rPmPErQe4g9725pcNxJpuvKkdqTESTQ6Tu", required = true, value = "Represents additional data that may be needed.")
-
-  public String getAdditionalData() {
-    return additionalData;
-  }
-
-
-  public void setAdditionalData(String additionalData) {
-    this.additionalData = additionalData;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS destinationTag(Integer destinationTag) {
-    
-    this.destinationTag = destinationTag;
-    return this;
-  }
-
-   /**
-   * Defines the destination tag value.
-   * @return destinationTag
-  **/
-  @javax.annotation.Nullable
-  @ApiModelProperty(example = "3999472835", value = "Defines the destination tag value.")
-
-  public Integer getDestinationTag() {
-    return destinationTag;
-  }
-
-
-  public void setDestinationTag(Integer destinationTag) {
-    this.destinationTag = destinationTag;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS offer(GetXRPRippleTransactionDetailsByTransactionIDRIOffer offer) {
-    
-    this.offer = offer;
-    return this;
-  }
-
-   /**
-   * Get offer
-   * @return offer
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetXRPRippleTransactionDetailsByTransactionIDRIOffer getOffer() {
-    return offer;
-  }
-
-
-  public void setOffer(GetXRPRippleTransactionDetailsByTransactionIDRIOffer offer) {
-    this.offer = offer;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS receive(GetXRPRippleTransactionDetailsByTransactionIDRIReceive receive) {
-    
-    this.receive = receive;
-    return this;
-  }
-
-   /**
-   * Get receive
-   * @return receive
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetXRPRippleTransactionDetailsByTransactionIDRIReceive getReceive() {
-    return receive;
-  }
-
-
-  public void setReceive(GetXRPRippleTransactionDetailsByTransactionIDRIReceive receive) {
-    this.receive = receive;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS sequence(Integer sequence) {
-    
-    this.sequence = sequence;
-    return this;
-  }
-
-   /**
-   * Defines the transaction input&#39;s sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.
-   * @return sequence
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "4294967295", required = true, value = "Defines the transaction input's sequence as an integer, which is is used when transactions are replaced with newer versions before LockTime.")
-
-  public Integer getSequence() {
-    return sequence;
-  }
-
-
-  public void setSequence(Integer sequence) {
-    this.sequence = sequence;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS status(String status) {
-    
-    this.status = status;
-    return this;
-  }
-
-   /**
-   * Defines the status of the transaction.
-   * @return status
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "tesSUCCESS", required = true, value = "Defines the status of the transaction.")
-
-  public String getStatus() {
-    return status;
-  }
-
-
-  public void setStatus(String status) {
-    this.status = status;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS type(String type) {
-    
-    this.type = type;
-    return this;
-  }
-
-   /**
-   * Defines the type of the transaction.
-   * @return type
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "Payment", required = true, value = "Defines the type of the transaction.")
-
-  public String getType() {
-    return type;
-  }
-
-
-  public void setType(String type) {
-    this.type = type;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBS value(GetTransactionDetailsByTransactionIDFromCallbackRIBSXValue value) {
-    
-    this.value = value;
-    return this;
-  }
-
-   /**
-   * Get value
-   * @return value
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSXValue getValue() {
-    return value;
-  }
-
-
-  public void setValue(GetTransactionDetailsByTransactionIDFromCallbackRIBSXValue value) {
-    this.value = value;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class GetTransactionDetailsByTransactionIDFromCallbackRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetTransactionDetailsByTransactionIDFromCallbackRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetTransactionDetailsByTransactionIDFromCallbackRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetTransactionDetailsByTransactionIDFromCallbackRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSB> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSB = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSB.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSBC> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSBC.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSD> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSD = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSD.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSD2> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSD2.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSE> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSE = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSE.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSEC> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSEC.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSL> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSL = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSL.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSX> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSX = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSX.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSZ> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2> adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSZ2 = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<GetTransactionDetailsByTransactionIDFromCallbackRIBS>() {
+                @Override
+                public void write(JsonWriter out, GetTransactionDetailsByTransactionIDFromCallbackRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSB`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSB) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSB.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSBC`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSBC) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSBC.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSBSC.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSD`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSD) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSD.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSD2`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSD2) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSD2.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSE`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSE) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSE.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSEC`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSEC) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSEC.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSL`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSL) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSL.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSX`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSX) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSX.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSX)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSZ) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSZ.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSZ2.toJsonTree((GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: GetTransactionDetailsByTransactionIDFromCallbackRIBSB, GetTransactionDetailsByTransactionIDFromCallbackRIBSBC, GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC, GetTransactionDetailsByTransactionIDFromCallbackRIBSD, GetTransactionDetailsByTransactionIDFromCallbackRIBSD2, GetTransactionDetailsByTransactionIDFromCallbackRIBSE, GetTransactionDetailsByTransactionIDFromCallbackRIBSEC, GetTransactionDetailsByTransactionIDFromCallbackRIBSL, GetTransactionDetailsByTransactionIDFromCallbackRIBSX, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2");
+                }
+
+                @Override
+                public GetTransactionDetailsByTransactionIDFromCallbackRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSB'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSBC'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSD'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSD2'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSE'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSEC'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSL'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSX
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSX.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSX;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSX'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSX'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSZ'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDFromCallbackRIBSZ2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2'", e);
+                    }
+
+                    if (match == 1) {
+                        GetTransactionDetailsByTransactionIDFromCallbackRIBS ret = new GetTransactionDetailsByTransactionIDFromCallbackRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetTransactionDetailsByTransactionIDFromCallbackRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    GetTransactionDetailsByTransactionIDFromCallbackRIBS getTransactionDetailsByTransactionIDFromCallbackRIBS = (GetTransactionDetailsByTransactionIDFromCallbackRIBS) o;
-    return Objects.equals(this.locktime, getTransactionDetailsByTransactionIDFromCallbackRIBS.locktime) &&
-        Objects.equals(this.size, getTransactionDetailsByTransactionIDFromCallbackRIBS.size) &&
-        Objects.equals(this.vSize, getTransactionDetailsByTransactionIDFromCallbackRIBS.vSize) &&
-        Objects.equals(this.version, getTransactionDetailsByTransactionIDFromCallbackRIBS.version) &&
-        Objects.equals(this.vin, getTransactionDetailsByTransactionIDFromCallbackRIBS.vin) &&
-        Objects.equals(this.vout, getTransactionDetailsByTransactionIDFromCallbackRIBS.vout) &&
-        Objects.equals(this.contract, getTransactionDetailsByTransactionIDFromCallbackRIBS.contract) &&
-        Objects.equals(this.gasLimit, getTransactionDetailsByTransactionIDFromCallbackRIBS.gasLimit) &&
-        Objects.equals(this.gasPrice, getTransactionDetailsByTransactionIDFromCallbackRIBS.gasPrice) &&
-        Objects.equals(this.gasUsed, getTransactionDetailsByTransactionIDFromCallbackRIBS.gasUsed) &&
-        Objects.equals(this.inputData, getTransactionDetailsByTransactionIDFromCallbackRIBS.inputData) &&
-        Objects.equals(this.nonce, getTransactionDetailsByTransactionIDFromCallbackRIBS.nonce) &&
-        Objects.equals(this.transactionStatus, getTransactionDetailsByTransactionIDFromCallbackRIBS.transactionStatus) &&
-        Objects.equals(this.bindingSig, getTransactionDetailsByTransactionIDFromCallbackRIBS.bindingSig) &&
-        Objects.equals(this.expiryHeight, getTransactionDetailsByTransactionIDFromCallbackRIBS.expiryHeight) &&
-        Objects.equals(this.joinSplitPubKey, getTransactionDetailsByTransactionIDFromCallbackRIBS.joinSplitPubKey) &&
-        Objects.equals(this.joinSplitSig, getTransactionDetailsByTransactionIDFromCallbackRIBS.joinSplitSig) &&
-        Objects.equals(this.overwintered, getTransactionDetailsByTransactionIDFromCallbackRIBS.overwintered) &&
-        Objects.equals(this.vJoinSplit, getTransactionDetailsByTransactionIDFromCallbackRIBS.vJoinSplit) &&
-        Objects.equals(this.vShieldedOutput, getTransactionDetailsByTransactionIDFromCallbackRIBS.vShieldedOutput) &&
-        Objects.equals(this.vShieldedSpend, getTransactionDetailsByTransactionIDFromCallbackRIBS.vShieldedSpend) &&
-        Objects.equals(this.valueBalance, getTransactionDetailsByTransactionIDFromCallbackRIBS.valueBalance) &&
-        Objects.equals(this.versionGroupId, getTransactionDetailsByTransactionIDFromCallbackRIBS.versionGroupId) &&
-        Objects.equals(this.additionalData, getTransactionDetailsByTransactionIDFromCallbackRIBS.additionalData) &&
-        Objects.equals(this.destinationTag, getTransactionDetailsByTransactionIDFromCallbackRIBS.destinationTag) &&
-        Objects.equals(this.offer, getTransactionDetailsByTransactionIDFromCallbackRIBS.offer) &&
-        Objects.equals(this.receive, getTransactionDetailsByTransactionIDFromCallbackRIBS.receive) &&
-        Objects.equals(this.sequence, getTransactionDetailsByTransactionIDFromCallbackRIBS.sequence) &&
-        Objects.equals(this.status, getTransactionDetailsByTransactionIDFromCallbackRIBS.status) &&
-        Objects.equals(this.type, getTransactionDetailsByTransactionIDFromCallbackRIBS.type) &&
-        Objects.equals(this.value, getTransactionDetailsByTransactionIDFromCallbackRIBS.value);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId, additionalData, destinationTag, offer, receive, sequence, status, type, value);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetTransactionDetailsByTransactionIDFromCallbackRIBS {\n");
-    sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
-    sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasPrice: ").append(toIndentedString(gasPrice)).append("\n");
-    sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
-    sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
-    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
-    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
-    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
-    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
-    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
-    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
-    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
-    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
-    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
-    sb.append("    additionalData: ").append(toIndentedString(additionalData)).append("\n");
-    sb.append("    destinationTag: ").append(toIndentedString(destinationTag)).append("\n");
-    sb.append("    offer: ").append(toIndentedString(offer)).append("\n");
-    sb.append("    receive: ").append(toIndentedString(receive)).append("\n");
-    sb.append("    sequence: ").append(toIndentedString(sequence)).append("\n");
-    sb.append("    status: ").append(toIndentedString(status)).append("\n");
-    sb.append("    type: ").append(toIndentedString(type)).append("\n");
-    sb.append("    value: ").append(toIndentedString(value)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSX o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBS(GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSB", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSB>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSBC", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSBC>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSD", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSD>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSD2", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSD2>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSE", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSE>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSEC", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSEC>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSL", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSL>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSX", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSX>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSZ", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSZ>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2", new GenericType<GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return GetTransactionDetailsByTransactionIDFromCallbackRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * GetTransactionDetailsByTransactionIDFromCallbackRIBSB, GetTransactionDetailsByTransactionIDFromCallbackRIBSBC, GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC, GetTransactionDetailsByTransactionIDFromCallbackRIBSD, GetTransactionDetailsByTransactionIDFromCallbackRIBSD2, GetTransactionDetailsByTransactionIDFromCallbackRIBSE, GetTransactionDetailsByTransactionIDFromCallbackRIBSEC, GetTransactionDetailsByTransactionIDFromCallbackRIBSL, GetTransactionDetailsByTransactionIDFromCallbackRIBSX, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSX) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be GetTransactionDetailsByTransactionIDFromCallbackRIBSB, GetTransactionDetailsByTransactionIDFromCallbackRIBSBC, GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC, GetTransactionDetailsByTransactionIDFromCallbackRIBSD, GetTransactionDetailsByTransactionIDFromCallbackRIBSD2, GetTransactionDetailsByTransactionIDFromCallbackRIBSE, GetTransactionDetailsByTransactionIDFromCallbackRIBSEC, GetTransactionDetailsByTransactionIDFromCallbackRIBSL, GetTransactionDetailsByTransactionIDFromCallbackRIBSX, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * GetTransactionDetailsByTransactionIDFromCallbackRIBSB, GetTransactionDetailsByTransactionIDFromCallbackRIBSBC, GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC, GetTransactionDetailsByTransactionIDFromCallbackRIBSD, GetTransactionDetailsByTransactionIDFromCallbackRIBSD2, GetTransactionDetailsByTransactionIDFromCallbackRIBSE, GetTransactionDetailsByTransactionIDFromCallbackRIBSEC, GetTransactionDetailsByTransactionIDFromCallbackRIBSL, GetTransactionDetailsByTransactionIDFromCallbackRIBSX, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2
+     *
+     * @return The actual instance (GetTransactionDetailsByTransactionIDFromCallbackRIBSB, GetTransactionDetailsByTransactionIDFromCallbackRIBSBC, GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC, GetTransactionDetailsByTransactionIDFromCallbackRIBSD, GetTransactionDetailsByTransactionIDFromCallbackRIBSD2, GetTransactionDetailsByTransactionIDFromCallbackRIBSE, GetTransactionDetailsByTransactionIDFromCallbackRIBSEC, GetTransactionDetailsByTransactionIDFromCallbackRIBSL, GetTransactionDetailsByTransactionIDFromCallbackRIBSX, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSB`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSB`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSB`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSB getGetTransactionDetailsByTransactionIDFromCallbackRIBSB() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSBC`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSBC`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSBC`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSBC getGetTransactionDetailsByTransactionIDFromCallbackRIBSBC() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC getGetTransactionDetailsByTransactionIDFromCallbackRIBSBSC() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSD`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSD`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSD`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSD getGetTransactionDetailsByTransactionIDFromCallbackRIBSD() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSD2`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSD2`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSD2`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSD2 getGetTransactionDetailsByTransactionIDFromCallbackRIBSD2() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSE`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSE`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSE`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSE getGetTransactionDetailsByTransactionIDFromCallbackRIBSE() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSEC`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSEC`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSEC`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSEC getGetTransactionDetailsByTransactionIDFromCallbackRIBSEC() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSL`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSL`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSL`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSL getGetTransactionDetailsByTransactionIDFromCallbackRIBSL() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSX`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSX`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSX`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSX`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSX getGetTransactionDetailsByTransactionIDFromCallbackRIBSX() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSX)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ getGetTransactionDetailsByTransactionIDFromCallbackRIBSZ() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSZ)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2`. If the actual instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2`
+     */
+    public GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2 getGetTransactionDetailsByTransactionIDFromCallbackRIBSZ2() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetTransactionDetailsByTransactionIDFromCallbackRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSB
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSBC
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSD
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSD2
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSE
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSEC
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSL
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSX
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSX.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSZ
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2
+    try {
+      GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for GetTransactionDetailsByTransactionIDFromCallbackRIBS with oneOf schemas: GetTransactionDetailsByTransactionIDFromCallbackRIBSB, GetTransactionDetailsByTransactionIDFromCallbackRIBSBC, GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC, GetTransactionDetailsByTransactionIDFromCallbackRIBSD, GetTransactionDetailsByTransactionIDFromCallbackRIBSD2, GetTransactionDetailsByTransactionIDFromCallbackRIBSE, GetTransactionDetailsByTransactionIDFromCallbackRIBSEC, GetTransactionDetailsByTransactionIDFromCallbackRIBSL, GetTransactionDetailsByTransactionIDFromCallbackRIBSX, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ, GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of GetTransactionDetailsByTransactionIDFromCallbackRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetTransactionDetailsByTransactionIDFromCallbackRIBS
+  * @throws IOException if the JSON string is invalid with respect to GetTransactionDetailsByTransactionIDFromCallbackRIBS
+  */
+  public static GetTransactionDetailsByTransactionIDFromCallbackRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetTransactionDetailsByTransactionIDFromCallbackRIBS.class);
+  }
+
+ /**
+  * Convert an instance of GetTransactionDetailsByTransactionIDFromCallbackRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

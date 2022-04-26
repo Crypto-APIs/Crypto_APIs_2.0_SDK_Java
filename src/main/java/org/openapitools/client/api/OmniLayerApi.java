@@ -31,28 +31,28 @@ import org.openapitools.client.model.GetOmniTransactionDetailsByTransactionIDTxi
 import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidR;
 import org.openapitools.client.model.InlineResponse4001;
 import org.openapitools.client.model.InlineResponse40012;
-import org.openapitools.client.model.InlineResponse40019;
-import org.openapitools.client.model.InlineResponse40028;
-import org.openapitools.client.model.InlineResponse40032;
-import org.openapitools.client.model.InlineResponse40038;
-import org.openapitools.client.model.InlineResponse40044;
+import org.openapitools.client.model.InlineResponse40020;
+import org.openapitools.client.model.InlineResponse40029;
+import org.openapitools.client.model.InlineResponse40033;
+import org.openapitools.client.model.InlineResponse40041;
+import org.openapitools.client.model.InlineResponse40047;
 import org.openapitools.client.model.InlineResponse4005;
 import org.openapitools.client.model.InlineResponse4011;
 import org.openapitools.client.model.InlineResponse40112;
-import org.openapitools.client.model.InlineResponse40119;
-import org.openapitools.client.model.InlineResponse40128;
-import org.openapitools.client.model.InlineResponse40132;
-import org.openapitools.client.model.InlineResponse40138;
-import org.openapitools.client.model.InlineResponse40144;
+import org.openapitools.client.model.InlineResponse40120;
+import org.openapitools.client.model.InlineResponse40129;
+import org.openapitools.client.model.InlineResponse40133;
+import org.openapitools.client.model.InlineResponse40141;
+import org.openapitools.client.model.InlineResponse40147;
 import org.openapitools.client.model.InlineResponse4015;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse4031;
 import org.openapitools.client.model.InlineResponse40312;
-import org.openapitools.client.model.InlineResponse40319;
-import org.openapitools.client.model.InlineResponse40328;
-import org.openapitools.client.model.InlineResponse40332;
-import org.openapitools.client.model.InlineResponse40338;
-import org.openapitools.client.model.InlineResponse40344;
+import org.openapitools.client.model.InlineResponse40320;
+import org.openapitools.client.model.InlineResponse40329;
+import org.openapitools.client.model.InlineResponse40333;
+import org.openapitools.client.model.InlineResponse40341;
+import org.openapitools.client.model.InlineResponse40347;
 import org.openapitools.client.model.InlineResponse4035;
 import org.openapitools.client.model.InlineResponse404;
 import org.openapitools.client.model.InlineResponse409;
@@ -72,6 +72,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class OmniLayerApi {
     private ApiClient localVarApiClient;
@@ -137,7 +138,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call getOmniTransactionDetailsByTransactionIDTxidCall(String network, String blockchain, String transactionId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -180,7 +180,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -333,7 +333,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call getUnconfirmedOmniTransactionByTransactionIDTxidCall(String network, String blockchain, String transactionId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -376,7 +375,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -528,7 +527,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call listOmniTokensByAddressCall(String network, String blockchain, String address, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -571,7 +569,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -722,7 +720,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call listOmniTransactionsByAddressCall(String network, String blockchain, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -773,7 +770,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -930,7 +927,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call listOmniTransactionsByBlockHashCall(String network, String blockchain, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -981,7 +977,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1138,7 +1134,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call listOmniTransactionsByBlockHeightCall(String network, String blockchain, String blockHeight, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1189,7 +1184,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1346,7 +1341,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call listUnconfirmedOmniTransactionsByAddressCall(String network, String blockchain, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1397,7 +1391,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1554,7 +1548,6 @@ public class OmniLayerApi {
      */
     public okhttp3.Call listUnconfirmedOmniTransactionsByPropertyIDCall(String network, String blockchain, String propertyId, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1605,7 +1598,7 @@ public class OmniLayerApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**AddTokensToExistingFromAddressRBDataItem**](AddTokensToExistingFromAddressRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**AddTokensToExistingFromAddressRBDataItem**](AddTokensToExistingFromAddressRBDataItem.md) |  |  |
 
 
 

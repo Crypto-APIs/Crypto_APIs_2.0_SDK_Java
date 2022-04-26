@@ -31,9 +31,8 @@ import org.openapitools.client.model.InvalidXpub;
 import org.openapitools.client.model.LimitGreaterThanAllowed;
 import org.openapitools.client.model.UriNotFound;
 import org.openapitools.client.model.XpubNotSynced;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * CreateCoinsTransactionRequestFromAddressRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -158,11 +178,11 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   }
 
    /**
-   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.
+   * Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. &#x60;We support ONLY httpS type of protocol&#x60;.
    * @return callbackUrl
   **/
   @javax.annotation.Nullable
-  @ApiModelProperty(example = "https://example.com", value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs.")
+  @ApiModelProperty(example = "https://example.com", value = "Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. `We support ONLY httpS type of protocol`.")
 
   public String getCallbackUrl() {
     return callbackUrl;
@@ -227,11 +247,11 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   }
 
    /**
-   * Defines the specific recipient address for the transaction.
+   * Defines the specific recipient address for the transaction. For XRP we also support the X-address format.
    * @return recipientAddress
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xc065b539490f81b6c297c37b1925c3be2f190732", required = true, value = "Defines the specific recipient address for the transaction.")
+  @ApiModelProperty(example = "0xc065b539490f81b6c297c37b1925c3be2f190732", required = true, value = "Defines the specific recipient address for the transaction. For XRP we also support the X-address format.")
 
   public String getRecipientAddress() {
     return recipientAddress;
@@ -241,6 +261,7 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
   public void setRecipientAddress(String recipientAddress) {
     this.recipientAddress = recipientAddress;
   }
+
 
 
   @Override
@@ -290,5 +311,123 @@ public class CreateCoinsTransactionRequestFromAddressRBDataItem {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("amount");
+    openapiFields.add("callbackSecretKey");
+    openapiFields.add("callbackUrl");
+    openapiFields.add("feePriority");
+    openapiFields.add("note");
+    openapiFields.add("recipientAddress");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("amount");
+    openapiRequiredFields.add("feePriority");
+    openapiRequiredFields.add("recipientAddress");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateCoinsTransactionRequestFromAddressRBDataItem
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (CreateCoinsTransactionRequestFromAddressRBDataItem.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in CreateCoinsTransactionRequestFromAddressRBDataItem is not found in the empty JSON string", CreateCoinsTransactionRequestFromAddressRBDataItem.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!CreateCoinsTransactionRequestFromAddressRBDataItem.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `CreateCoinsTransactionRequestFromAddressRBDataItem` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : CreateCoinsTransactionRequestFromAddressRBDataItem.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("amount") != null && !jsonObj.get("amount").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `amount` to be a primitive type in the JSON string but got `%s`", jsonObj.get("amount").toString()));
+      }
+      if (jsonObj.get("callbackSecretKey") != null && !jsonObj.get("callbackSecretKey").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackSecretKey` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackSecretKey").toString()));
+      }
+      if (jsonObj.get("callbackUrl") != null && !jsonObj.get("callbackUrl").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `callbackUrl` to be a primitive type in the JSON string but got `%s`", jsonObj.get("callbackUrl").toString()));
+      }
+      if (jsonObj.get("feePriority") != null && !jsonObj.get("feePriority").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `feePriority` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feePriority").toString()));
+      }
+      if (jsonObj.get("note") != null && !jsonObj.get("note").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `note` to be a primitive type in the JSON string but got `%s`", jsonObj.get("note").toString()));
+      }
+      if (jsonObj.get("recipientAddress") != null && !jsonObj.get("recipientAddress").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `recipientAddress` to be a primitive type in the JSON string but got `%s`", jsonObj.get("recipientAddress").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!CreateCoinsTransactionRequestFromAddressRBDataItem.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'CreateCoinsTransactionRequestFromAddressRBDataItem' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<CreateCoinsTransactionRequestFromAddressRBDataItem> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(CreateCoinsTransactionRequestFromAddressRBDataItem.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<CreateCoinsTransactionRequestFromAddressRBDataItem>() {
+           @Override
+           public void write(JsonWriter out, CreateCoinsTransactionRequestFromAddressRBDataItem value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public CreateCoinsTransactionRequestFromAddressRBDataItem read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of CreateCoinsTransactionRequestFromAddressRBDataItem given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateCoinsTransactionRequestFromAddressRBDataItem
+  * @throws IOException if the JSON string is invalid with respect to CreateCoinsTransactionRequestFromAddressRBDataItem
+  */
+  public static CreateCoinsTransactionRequestFromAddressRBDataItem fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateCoinsTransactionRequestFromAddressRBDataItem.class);
+  }
+
+ /**
+  * Convert an instance of CreateCoinsTransactionRequestFromAddressRBDataItem to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

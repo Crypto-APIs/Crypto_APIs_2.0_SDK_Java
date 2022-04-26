@@ -30,16 +30,16 @@ import java.io.IOException;
 import org.openapitools.client.model.CreateAutomaticCoinsForwardingR;
 import org.openapitools.client.model.CreateAutomaticCoinsForwardingRB;
 import org.openapitools.client.model.DeleteAutomaticCoinsForwardingR;
-import org.openapitools.client.model.InlineResponse40075;
-import org.openapitools.client.model.InlineResponse40076;
-import org.openapitools.client.model.InlineResponse40077;
-import org.openapitools.client.model.InlineResponse40175;
-import org.openapitools.client.model.InlineResponse40176;
-import org.openapitools.client.model.InlineResponse40177;
+import org.openapitools.client.model.InlineResponse40089;
+import org.openapitools.client.model.InlineResponse40090;
+import org.openapitools.client.model.InlineResponse40091;
+import org.openapitools.client.model.InlineResponse40189;
+import org.openapitools.client.model.InlineResponse40190;
+import org.openapitools.client.model.InlineResponse40191;
 import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40375;
-import org.openapitools.client.model.InlineResponse40376;
-import org.openapitools.client.model.InlineResponse40377;
+import org.openapitools.client.model.InlineResponse40389;
+import org.openapitools.client.model.InlineResponse40390;
+import org.openapitools.client.model.InlineResponse40391;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
 import org.openapitools.client.model.InlineResponse40916;
@@ -54,6 +54,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class AutomaticCoinsForwardingApi {
     private ApiClient localVarApiClient;
@@ -119,7 +120,6 @@ public class AutomaticCoinsForwardingApi {
      */
     public okhttp3.Call createAutomaticCoinsForwardingCall(String blockchain, String network, String context, CreateAutomaticCoinsForwardingRB createAutomaticCoinsForwardingRB, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -161,7 +161,7 @@ public class AutomaticCoinsForwardingApi {
             "application/json"
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -309,7 +309,6 @@ public class AutomaticCoinsForwardingApi {
      */
     public okhttp3.Call deleteAutomaticCoinsForwardingCall(String blockchain, String network, String referenceId, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -352,7 +351,7 @@ public class AutomaticCoinsForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -506,7 +505,6 @@ public class AutomaticCoinsForwardingApi {
      */
     public okhttp3.Call listCoinsForwardingAutomationsCall(String blockchain, String network, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -556,7 +554,7 @@ public class AutomaticCoinsForwardingApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 

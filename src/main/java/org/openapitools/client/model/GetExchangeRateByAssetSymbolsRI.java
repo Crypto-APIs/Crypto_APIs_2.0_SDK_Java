@@ -24,10 +24,30 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * GetExchangeRateByAssetSymbolsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class GetExchangeRateByAssetSymbolsRI {
   public static final String SERIALIZED_NAME_CALCULATION_TIMESTAMP = "calculationTimestamp";
   @SerializedName(SERIALIZED_NAME_CALCULATION_TIMESTAMP)
@@ -194,6 +214,7 @@ public class GetExchangeRateByAssetSymbolsRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -241,5 +262,123 @@ public class GetExchangeRateByAssetSymbolsRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("calculationTimestamp");
+    openapiFields.add("fromAssetId");
+    openapiFields.add("fromAssetSymbol");
+    openapiFields.add("rate");
+    openapiFields.add("toAssetId");
+    openapiFields.add("toAssetSymbol");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("calculationTimestamp");
+    openapiRequiredFields.add("fromAssetId");
+    openapiRequiredFields.add("fromAssetSymbol");
+    openapiRequiredFields.add("rate");
+    openapiRequiredFields.add("toAssetId");
+    openapiRequiredFields.add("toAssetSymbol");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetExchangeRateByAssetSymbolsRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (GetExchangeRateByAssetSymbolsRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in GetExchangeRateByAssetSymbolsRI is not found in the empty JSON string", GetExchangeRateByAssetSymbolsRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!GetExchangeRateByAssetSymbolsRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `GetExchangeRateByAssetSymbolsRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : GetExchangeRateByAssetSymbolsRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("fromAssetId") != null && !jsonObj.get("fromAssetId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fromAssetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fromAssetId").toString()));
+      }
+      if (jsonObj.get("fromAssetSymbol") != null && !jsonObj.get("fromAssetSymbol").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `fromAssetSymbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("fromAssetSymbol").toString()));
+      }
+      if (jsonObj.get("rate") != null && !jsonObj.get("rate").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `rate` to be a primitive type in the JSON string but got `%s`", jsonObj.get("rate").toString()));
+      }
+      if (jsonObj.get("toAssetId") != null && !jsonObj.get("toAssetId").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `toAssetId` to be a primitive type in the JSON string but got `%s`", jsonObj.get("toAssetId").toString()));
+      }
+      if (jsonObj.get("toAssetSymbol") != null && !jsonObj.get("toAssetSymbol").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `toAssetSymbol` to be a primitive type in the JSON string but got `%s`", jsonObj.get("toAssetSymbol").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!GetExchangeRateByAssetSymbolsRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'GetExchangeRateByAssetSymbolsRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<GetExchangeRateByAssetSymbolsRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(GetExchangeRateByAssetSymbolsRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<GetExchangeRateByAssetSymbolsRI>() {
+           @Override
+           public void write(JsonWriter out, GetExchangeRateByAssetSymbolsRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public GetExchangeRateByAssetSymbolsRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of GetExchangeRateByAssetSymbolsRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetExchangeRateByAssetSymbolsRI
+  * @throws IOException if the JSON string is invalid with respect to GetExchangeRateByAssetSymbolsRI
+  */
+  public static GetExchangeRateByAssetSymbolsRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetExchangeRateByAssetSymbolsRI.class);
+  }
+
+ /**
+  * Convert an instance of GetExchangeRateByAssetSymbolsRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

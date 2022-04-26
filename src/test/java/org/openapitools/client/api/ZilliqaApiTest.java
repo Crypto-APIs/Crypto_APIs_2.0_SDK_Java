@@ -20,29 +20,29 @@ import org.openapitools.client.model.GetZilliqaBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetZilliqaBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDR;
 import org.openapitools.client.model.InlineResponse40014;
-import org.openapitools.client.model.InlineResponse40021;
 import org.openapitools.client.model.InlineResponse40022;
-import org.openapitools.client.model.InlineResponse40029;
+import org.openapitools.client.model.InlineResponse40023;
 import org.openapitools.client.model.InlineResponse4003;
-import org.openapitools.client.model.InlineResponse40033;
-import org.openapitools.client.model.InlineResponse40040;
+import org.openapitools.client.model.InlineResponse40030;
+import org.openapitools.client.model.InlineResponse40034;
+import org.openapitools.client.model.InlineResponse40043;
 import org.openapitools.client.model.InlineResponse4009;
 import org.openapitools.client.model.InlineResponse40114;
-import org.openapitools.client.model.InlineResponse40121;
 import org.openapitools.client.model.InlineResponse40122;
-import org.openapitools.client.model.InlineResponse40129;
+import org.openapitools.client.model.InlineResponse40123;
 import org.openapitools.client.model.InlineResponse4013;
-import org.openapitools.client.model.InlineResponse40133;
-import org.openapitools.client.model.InlineResponse40140;
+import org.openapitools.client.model.InlineResponse40130;
+import org.openapitools.client.model.InlineResponse40134;
+import org.openapitools.client.model.InlineResponse40143;
 import org.openapitools.client.model.InlineResponse4019;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse40314;
-import org.openapitools.client.model.InlineResponse40321;
 import org.openapitools.client.model.InlineResponse40322;
-import org.openapitools.client.model.InlineResponse40329;
+import org.openapitools.client.model.InlineResponse40323;
 import org.openapitools.client.model.InlineResponse4033;
-import org.openapitools.client.model.InlineResponse40333;
-import org.openapitools.client.model.InlineResponse40340;
+import org.openapitools.client.model.InlineResponse40330;
+import org.openapitools.client.model.InlineResponse40334;
+import org.openapitools.client.model.InlineResponse40343;
 import org.openapitools.client.model.InlineResponse4039;
 import org.openapitools.client.model.InlineResponse404;
 import org.openapitools.client.model.InlineResponse4042;
@@ -54,8 +54,8 @@ import org.openapitools.client.model.InlineResponse500;
 import org.openapitools.client.model.ListZilliqaTransactionsByAddressR;
 import org.openapitools.client.model.ListZilliqaTransactionsByBlockHashR;
 import org.openapitools.client.model.ListZilliqaTransactionsByBlockHeightR;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -65,103 +65,96 @@ import java.util.Map;
 /**
  * API tests for ZilliqaApi
  */
-@Ignore
+@Disabled
 public class ZilliqaApiTest {
 
     private final ZilliqaApi api = new ZilliqaApi();
 
-    
     /**
      * Get Latest Mined Zilliqa Block
      *
      * Through this endpoint users can obtain information on the latest block that has been mined on the Zilliqa blockchain. Data could include the current and previous block hashes, transaction count, and more.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getLatestMinedZilliqaBlockTest() throws ApiException {
         String network = null;
         String context = null;
-                GetLatestMinedZilliqaBlockR response = api.getLatestMinedZilliqaBlock(network, context);
+        GetLatestMinedZilliqaBlockR response = api.getLatestMinedZilliqaBlock(network, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Zilliqa Address Details
      *
      * Through this endpoint customers can obtain information address details from the Zilliqa blockchain.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getZilliqaAddressDetailsTest() throws ApiException {
         String network = null;
         String address = null;
         String context = null;
-                GetZilliqaAddressDetailsR response = api.getZilliqaAddressDetails(network, address, context);
+        GetZilliqaAddressDetailsR response = api.getZilliqaAddressDetails(network, address, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Zilliqa Block Details By Block Hash
      *
      * Through this endpoint customers can obtain block details from the Zilliqa blockchain by providing the block Hash parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getZilliqaBlockDetailsByBlockHashTest() throws ApiException {
         String network = null;
         String blockHash = null;
         String context = null;
-                GetZilliqaBlockDetailsByBlockHashR response = api.getZilliqaBlockDetailsByBlockHash(network, blockHash, context);
+        GetZilliqaBlockDetailsByBlockHashR response = api.getZilliqaBlockDetailsByBlockHash(network, blockHash, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Zilliqa Block Details By Block Height
      *
      * Through this endpoint customers can obtain block details from the Zilliqa blockchain by providing the block Height parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getZilliqaBlockDetailsByBlockHeightTest() throws ApiException {
         String network = null;
         Integer blockHeight = null;
         String context = null;
-                GetZilliqaBlockDetailsByBlockHeightR response = api.getZilliqaBlockDetailsByBlockHeight(network, blockHeight, context);
+        GetZilliqaBlockDetailsByBlockHeightR response = api.getZilliqaBlockDetailsByBlockHeight(network, blockHeight, context);
         // TODO: test validations
     }
-    
+
     /**
      * Get Zilliqa Transaction Details by Transaction ID
      *
      * Through this endpoint customers can obtain transaction details on the Zilliqa blockchain by providing a Transaction ID parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void getZilliqaTransactionDetailsByTransactionIDTest() throws ApiException {
         String network = null;
         String transactionHash = null;
         String context = null;
-                GetZilliqaTransactionDetailsByTransactionIDR response = api.getZilliqaTransactionDetailsByTransactionID(network, transactionHash, context);
+        GetZilliqaTransactionDetailsByTransactionIDR response = api.getZilliqaTransactionDetailsByTransactionID(network, transactionHash, context);
         // TODO: test validations
     }
-    
+
     /**
      * List Zilliqa Transactions by Address
      *
      * Through this endpoint customers can list transactions on the Zilliqa blockchain by the address parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listZilliqaTransactionsByAddressTest() throws ApiException {
@@ -170,17 +163,16 @@ public class ZilliqaApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListZilliqaTransactionsByAddressR response = api.listZilliqaTransactionsByAddress(network, address, context, limit, offset);
+        ListZilliqaTransactionsByAddressR response = api.listZilliqaTransactionsByAddress(network, address, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Zilliqa Transactions By Block Hash
      *
      * Through this endpoint customers can list transactions on the Zilliqa blockchain by the block hash parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listZilliqaTransactionsByBlockHashTest() throws ApiException {
@@ -189,17 +181,16 @@ public class ZilliqaApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListZilliqaTransactionsByBlockHashR response = api.listZilliqaTransactionsByBlockHash(network, blockHash, context, limit, offset);
+        ListZilliqaTransactionsByBlockHashR response = api.listZilliqaTransactionsByBlockHash(network, blockHash, context, limit, offset);
         // TODO: test validations
     }
-    
+
     /**
      * List Zilliqa Transactions By Block Height
      *
      * Through this endpoint customers can list transactions on the Zilliqa blockchain by the block height parameter.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void listZilliqaTransactionsByBlockHeightTest() throws ApiException {
@@ -208,8 +199,8 @@ public class ZilliqaApiTest {
         String context = null;
         Integer limit = null;
         Integer offset = null;
-                ListZilliqaTransactionsByBlockHeightR response = api.listZilliqaTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
+        ListZilliqaTransactionsByBlockHeightR response = api.listZilliqaTransactionsByBlockHeight(network, blockHeight, context, limit, offset);
         // TODO: test validations
     }
-    
+
 }

@@ -32,9 +32,8 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSE;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSEC;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSL;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashRIBSZ;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

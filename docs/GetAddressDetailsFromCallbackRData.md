@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GetAddressDetailsFromCallbackRI**](GetAddressDetailsFromCallbackRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GetAddressDetailsFromCallbackRI**](GetAddressDetailsFromCallbackRI.md) |  |  |
 
 
 

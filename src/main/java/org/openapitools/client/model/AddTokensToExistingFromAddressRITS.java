@@ -26,106 +26,255 @@ import java.io.IOException;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRITSBOT;
 import org.openapitools.client.model.AddTokensToExistingFromAddressRITSET;
 
-/**
- * AddTokensToExistingFromAddressRITS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class AddTokensToExistingFromAddressRITS {
-  public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
-  @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  private Integer propertyId;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
-  @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
-  private String contractAddress;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public AddTokensToExistingFromAddressRITS() { 
-  }
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public AddTokensToExistingFromAddressRITS propertyId(Integer propertyId) {
-    
-    this.propertyId = propertyId;
-    return this;
-  }
+import io.cryptoapis.sdk.JSON;
 
-   /**
-   * Defines the &#x60;propertyId&#x60; of the Omni Layer token.
-   * @return propertyId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "2", required = true, value = "Defines the `propertyId` of the Omni Layer token.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class AddTokensToExistingFromAddressRITS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(AddTokensToExistingFromAddressRITS.class.getName());
 
-  public Integer getPropertyId() {
-    return propertyId;
-  }
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!AddTokensToExistingFromAddressRITS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'AddTokensToExistingFromAddressRITS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<AddTokensToExistingFromAddressRITSBOT> adapterAddTokensToExistingFromAddressRITSBOT = gson.getDelegateAdapter(this, TypeToken.get(AddTokensToExistingFromAddressRITSBOT.class));
+            final TypeAdapter<AddTokensToExistingFromAddressRITSET> adapterAddTokensToExistingFromAddressRITSET = gson.getDelegateAdapter(this, TypeToken.get(AddTokensToExistingFromAddressRITSET.class));
 
+            return (TypeAdapter<T>) new TypeAdapter<AddTokensToExistingFromAddressRITS>() {
+                @Override
+                public void write(JsonWriter out, AddTokensToExistingFromAddressRITS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
-  public void setPropertyId(Integer propertyId) {
-    this.propertyId = propertyId;
-  }
+                    // check if the actual instance is of the type `AddTokensToExistingFromAddressRITSBOT`
+                    if (value.getActualInstance() instanceof AddTokensToExistingFromAddressRITSBOT) {
+                        JsonObject obj = adapterAddTokensToExistingFromAddressRITSBOT.toJsonTree((AddTokensToExistingFromAddressRITSBOT)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `AddTokensToExistingFromAddressRITSET`
+                    if (value.getActualInstance() instanceof AddTokensToExistingFromAddressRITSET) {
+                        JsonObject obj = adapterAddTokensToExistingFromAddressRITSET.toJsonTree((AddTokensToExistingFromAddressRITSET)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public AddTokensToExistingFromAddressRITS contractAddress(String contractAddress) {
-    
-    this.contractAddress = contractAddress;
-    return this;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: AddTokensToExistingFromAddressRITSBOT, AddTokensToExistingFromAddressRITSET");
+                }
 
-   /**
-   * Token contract address to be transferred
-   * @return contractAddress
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Token contract address to be transferred")
+                @Override
+                public AddTokensToExistingFromAddressRITS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public String getContractAddress() {
-    return contractAddress;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize AddTokensToExistingFromAddressRITSBOT
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddTokensToExistingFromAddressRITSBOT.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddTokensToExistingFromAddressRITSBOT;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddTokensToExistingFromAddressRITSBOT'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddTokensToExistingFromAddressRITSBOT'", e);
+                    }
 
-  public void setContractAddress(String contractAddress) {
-    this.contractAddress = contractAddress;
-  }
+                    // deserialize AddTokensToExistingFromAddressRITSET
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        AddTokensToExistingFromAddressRITSET.validateJsonObject(jsonObject);
+                        actualAdapter = adapterAddTokensToExistingFromAddressRITSET;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'AddTokensToExistingFromAddressRITSET'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'AddTokensToExistingFromAddressRITSET'", e);
+                    }
 
+                    if (match == 1) {
+                        AddTokensToExistingFromAddressRITS ret = new AddTokensToExistingFromAddressRITS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+                    throw new IOException(String.format("Failed deserialization for AddTokensToExistingFromAddressRITS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public AddTokensToExistingFromAddressRITS() {
+        super("oneOf", Boolean.FALSE);
     }
-    AddTokensToExistingFromAddressRITS addTokensToExistingFromAddressRITS = (AddTokensToExistingFromAddressRITS) o;
-    return Objects.equals(this.propertyId, addTokensToExistingFromAddressRITS.propertyId) &&
-        Objects.equals(this.contractAddress, addTokensToExistingFromAddressRITS.contractAddress);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(propertyId, contractAddress);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class AddTokensToExistingFromAddressRITS {\n");
-    sb.append("    propertyId: ").append(toIndentedString(propertyId)).append("\n");
-    sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public AddTokensToExistingFromAddressRITS(AddTokensToExistingFromAddressRITSBOT o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public AddTokensToExistingFromAddressRITS(AddTokensToExistingFromAddressRITSET o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("AddTokensToExistingFromAddressRITSBOT", new GenericType<AddTokensToExistingFromAddressRITSBOT>() {
+        });
+        schemas.put("AddTokensToExistingFromAddressRITSET", new GenericType<AddTokensToExistingFromAddressRITSET>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return AddTokensToExistingFromAddressRITS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * AddTokensToExistingFromAddressRITSBOT, AddTokensToExistingFromAddressRITSET
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof AddTokensToExistingFromAddressRITSBOT) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof AddTokensToExistingFromAddressRITSET) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be AddTokensToExistingFromAddressRITSBOT, AddTokensToExistingFromAddressRITSET");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * AddTokensToExistingFromAddressRITSBOT, AddTokensToExistingFromAddressRITSET
+     *
+     * @return The actual instance (AddTokensToExistingFromAddressRITSBOT, AddTokensToExistingFromAddressRITSET)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddTokensToExistingFromAddressRITSBOT`. If the actual instance is not `AddTokensToExistingFromAddressRITSBOT`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddTokensToExistingFromAddressRITSBOT`
+     * @throws ClassCastException if the instance is not `AddTokensToExistingFromAddressRITSBOT`
+     */
+    public AddTokensToExistingFromAddressRITSBOT getAddTokensToExistingFromAddressRITSBOT() throws ClassCastException {
+        return (AddTokensToExistingFromAddressRITSBOT)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `AddTokensToExistingFromAddressRITSET`. If the actual instance is not `AddTokensToExistingFromAddressRITSET`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `AddTokensToExistingFromAddressRITSET`
+     * @throws ClassCastException if the instance is not `AddTokensToExistingFromAddressRITSET`
+     */
+    public AddTokensToExistingFromAddressRITSET getAddTokensToExistingFromAddressRITSET() throws ClassCastException {
+        return (AddTokensToExistingFromAddressRITSET)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to AddTokensToExistingFromAddressRITS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with AddTokensToExistingFromAddressRITSBOT
+    try {
+      AddTokensToExistingFromAddressRITSBOT.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with AddTokensToExistingFromAddressRITSET
+    try {
+      AddTokensToExistingFromAddressRITSET.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for AddTokensToExistingFromAddressRITS with oneOf schemas: AddTokensToExistingFromAddressRITSBOT, AddTokensToExistingFromAddressRITSET. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of AddTokensToExistingFromAddressRITS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of AddTokensToExistingFromAddressRITS
+  * @throws IOException if the JSON string is invalid with respect to AddTokensToExistingFromAddressRITS
+  */
+  public static AddTokensToExistingFromAddressRITS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, AddTokensToExistingFromAddressRITS.class);
+  }
+
+ /**
+  * Convert an instance of AddTokensToExistingFromAddressRITS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

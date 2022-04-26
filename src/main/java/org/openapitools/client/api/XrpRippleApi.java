@@ -33,29 +33,32 @@ import org.openapitools.client.model.GetXRPRippleBlockDetailsByBlockHashR;
 import org.openapitools.client.model.GetXRPRippleBlockDetailsByBlockHeightR;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDR;
 import org.openapitools.client.model.InlineResponse40011;
-import org.openapitools.client.model.InlineResponse40018;
+import org.openapitools.client.model.InlineResponse40016;
+import org.openapitools.client.model.InlineResponse40019;
 import org.openapitools.client.model.InlineResponse4002;
-import org.openapitools.client.model.InlineResponse40023;
-import org.openapitools.client.model.InlineResponse40027;
-import org.openapitools.client.model.InlineResponse40031;
-import org.openapitools.client.model.InlineResponse40039;
+import org.openapitools.client.model.InlineResponse40024;
+import org.openapitools.client.model.InlineResponse40028;
+import org.openapitools.client.model.InlineResponse40032;
+import org.openapitools.client.model.InlineResponse40042;
 import org.openapitools.client.model.InlineResponse4006;
 import org.openapitools.client.model.InlineResponse40111;
-import org.openapitools.client.model.InlineResponse40118;
+import org.openapitools.client.model.InlineResponse40116;
+import org.openapitools.client.model.InlineResponse40119;
 import org.openapitools.client.model.InlineResponse4012;
-import org.openapitools.client.model.InlineResponse40123;
-import org.openapitools.client.model.InlineResponse40127;
-import org.openapitools.client.model.InlineResponse40131;
-import org.openapitools.client.model.InlineResponse40139;
+import org.openapitools.client.model.InlineResponse40124;
+import org.openapitools.client.model.InlineResponse40128;
+import org.openapitools.client.model.InlineResponse40132;
+import org.openapitools.client.model.InlineResponse40142;
 import org.openapitools.client.model.InlineResponse4016;
 import org.openapitools.client.model.InlineResponse402;
 import org.openapitools.client.model.InlineResponse40311;
-import org.openapitools.client.model.InlineResponse40318;
+import org.openapitools.client.model.InlineResponse40316;
+import org.openapitools.client.model.InlineResponse40319;
 import org.openapitools.client.model.InlineResponse4032;
-import org.openapitools.client.model.InlineResponse40323;
-import org.openapitools.client.model.InlineResponse40327;
-import org.openapitools.client.model.InlineResponse40331;
-import org.openapitools.client.model.InlineResponse40339;
+import org.openapitools.client.model.InlineResponse40324;
+import org.openapitools.client.model.InlineResponse40328;
+import org.openapitools.client.model.InlineResponse40332;
+import org.openapitools.client.model.InlineResponse40342;
 import org.openapitools.client.model.InlineResponse4036;
 import org.openapitools.client.model.InlineResponse4041;
 import org.openapitools.client.model.InlineResponse409;
@@ -63,6 +66,7 @@ import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.ListXRPRippleTransactionsByAddressAndTimeRangeR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashR;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightR;
@@ -72,6 +76,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import javax.ws.rs.core.GenericType;
 
 public class XrpRippleApi {
     private ApiClient localVarApiClient;
@@ -135,7 +140,6 @@ public class XrpRippleApi {
      */
     public okhttp3.Call getLatestMinedXRPRippleBlockCall(String network, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -176,7 +180,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -311,7 +315,6 @@ public class XrpRippleApi {
      */
     public okhttp3.Call getXRPRippleAddressDetailsCall(String network, String address, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -353,7 +356,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -494,7 +497,6 @@ public class XrpRippleApi {
      */
     public okhttp3.Call getXRPRippleBlockDetailsByBlockHashCall(String network, String blockHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -536,7 +538,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -680,7 +682,6 @@ public class XrpRippleApi {
      */
     public okhttp3.Call getXRPRippleBlockDetailsByBlockHeightCall(String network, String blockHeight, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -722,7 +723,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -866,7 +867,6 @@ public class XrpRippleApi {
      */
     public okhttp3.Call getXRPRippleTransactionDetailsByTransactionIDCall(String network, String transactionHash, String context, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -908,7 +908,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1052,9 +1052,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByAddressCall(String network, String address, String context, Integer limit, Integer offset, String transactionType, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByAddressCall(String network, String address, String context, Long limit, Long offset, String transactionType, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1108,7 +1107,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1117,7 +1116,7 @@ public class XrpRippleApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listXRPRippleTransactionsByAddressValidateBeforeCall(String network, String address, String context, Integer limit, Integer offset, String transactionType, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listXRPRippleTransactionsByAddressValidateBeforeCall(String network, String address, String context, Long limit, Long offset, String transactionType, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'network' is set
         if (network == null) {
@@ -1161,7 +1160,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(String network, String address, String context, Integer limit, Integer offset, String transactionType) throws ApiException {
+    public ListXRPRippleTransactionsByAddressR listXRPRippleTransactionsByAddress(String network, String address, String context, Long limit, Long offset, String transactionType) throws ApiException {
         ApiResponse<ListXRPRippleTransactionsByAddressR> localVarResp = listXRPRippleTransactionsByAddressWithHttpInfo(network, address, context, limit, offset, transactionType);
         return localVarResp.getData();
     }
@@ -1192,7 +1191,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListXRPRippleTransactionsByAddressR> listXRPRippleTransactionsByAddressWithHttpInfo(String network, String address, String context, Integer limit, Integer offset, String transactionType) throws ApiException {
+    public ApiResponse<ListXRPRippleTransactionsByAddressR> listXRPRippleTransactionsByAddressWithHttpInfo(String network, String address, String context, Long limit, Long offset, String transactionType) throws ApiException {
         okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressValidateBeforeCall(network, address, context, limit, offset, transactionType, null);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1225,10 +1224,241 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByAddressAsync(String network, String address, String context, Integer limit, Integer offset, String transactionType, final ApiCallback<ListXRPRippleTransactionsByAddressR> _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByAddressAsync(String network, String address, String context, Long limit, Long offset, String transactionType, final ApiCallback<ListXRPRippleTransactionsByAddressR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressValidateBeforeCall(network, address, context, limit, offset, transactionType, _callback);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByAddressR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for listXRPRippleTransactionsByAddressAndTimeRange
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType Defines the transaction type. (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listXRPRippleTransactionsByAddressAndTimeRangeCall(String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, String transactionType, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-data/xrp-specific/{network}/addresses/{address}/transactions-by-time-range"
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
+            .replaceAll("\\{" + "address" + "\\}", localVarApiClient.escapeString(address.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        if (fromTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("fromTimestamp", fromTimestamp));
+        }
+
+        if (limit != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("limit", limit));
+        }
+
+        if (offset != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("offset", offset));
+        }
+
+        if (toTimestamp != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("toTimestamp", toTimestamp));
+        }
+
+        if (transactionType != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("transactionType", transactionType));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "GET", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call listXRPRippleTransactionsByAddressAndTimeRangeValidateBeforeCall(String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, String transactionType, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling listXRPRippleTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'address' is set
+        if (address == null) {
+            throw new ApiException("Missing the required parameter 'address' when calling listXRPRippleTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'fromTimestamp' is set
+        if (fromTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'fromTimestamp' when calling listXRPRippleTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+        // verify the required parameter 'toTimestamp' is set
+        if (toTimestamp == null) {
+            throw new ApiException("Missing the required parameter 'toTimestamp' when calling listXRPRippleTransactionsByAddressAndTimeRange(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressAndTimeRangeCall(network, address, fromTimestamp, toTimestamp, context, limit, offset, transactionType, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * List XRP (Ripple) Transactions By Address And Time Range
+     * Тhis endpoint lists XRP transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType Defines the transaction type. (optional)
+     * @return ListXRPRippleTransactionsByAddressAndTimeRangeR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ListXRPRippleTransactionsByAddressAndTimeRangeR listXRPRippleTransactionsByAddressAndTimeRange(String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, String transactionType) throws ApiException {
+        ApiResponse<ListXRPRippleTransactionsByAddressAndTimeRangeR> localVarResp = listXRPRippleTransactionsByAddressAndTimeRangeWithHttpInfo(network, address, fromTimestamp, toTimestamp, context, limit, offset, transactionType);
+        return localVarResp.getData();
+    }
+
+    /**
+     * List XRP (Ripple) Transactions By Address And Time Range
+     * Тhis endpoint lists XRP transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType Defines the transaction type. (optional)
+     * @return ApiResponse&lt;ListXRPRippleTransactionsByAddressAndTimeRangeR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<ListXRPRippleTransactionsByAddressAndTimeRangeR> listXRPRippleTransactionsByAddressAndTimeRangeWithHttpInfo(String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, String transactionType) throws ApiException {
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressAndTimeRangeValidateBeforeCall(network, address, fromTimestamp, toTimestamp, context, limit, offset, transactionType, null);
+        Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByAddressAndTimeRangeR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * List XRP (Ripple) Transactions By Address And Time Range (asynchronously)
+     * Тhis endpoint lists XRP transactions by the attribute &#x60;address&#x60; and the query parameters &#x60;fromTimestamp&#x60; and &#x60;toTimestamp&#x60;  which gives customers the opportunity to filter the results by a specified time period.
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param address Represents the public address, which is a compressed and shortened form of a public key. (required)
+     * @param fromTimestamp Defines the specific time/date from which the results will start being listed. (required)
+     * @param toTimestamp Defines the specific time/date to which the results will be listed. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param limit Defines how many items should be returned in the response per page basis. (optional, default to 50)
+     * @param offset The starting index of the response items, i.e. where the response should start listing the returned items. (optional, default to 0)
+     * @param transactionType Defines the transaction type. (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 200 </td><td> The request has been successful. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> The data provided seems to be invalid. </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call listXRPRippleTransactionsByAddressAndTimeRangeAsync(String network, String address, Integer fromTimestamp, Integer toTimestamp, String context, Long limit, Long offset, String transactionType, final ApiCallback<ListXRPRippleTransactionsByAddressAndTimeRangeR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = listXRPRippleTransactionsByAddressAndTimeRangeValidateBeforeCall(network, address, fromTimestamp, toTimestamp, context, limit, offset, transactionType, _callback);
+        Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByAddressAndTimeRangeR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }
@@ -1257,9 +1487,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByBlockHashCall(String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByBlockHashCall(String network, String blockHash, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1309,7 +1538,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1318,7 +1547,7 @@ public class XrpRippleApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listXRPRippleTransactionsByBlockHashValidateBeforeCall(String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listXRPRippleTransactionsByBlockHashValidateBeforeCall(String network, String blockHash, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'network' is set
         if (network == null) {
@@ -1361,7 +1590,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListXRPRippleTransactionsByBlockHashR listXRPRippleTransactionsByBlockHash(String network, String blockHash, String context, Integer limit, Integer offset) throws ApiException {
+    public ListXRPRippleTransactionsByBlockHashR listXRPRippleTransactionsByBlockHash(String network, String blockHash, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListXRPRippleTransactionsByBlockHashR> localVarResp = listXRPRippleTransactionsByBlockHashWithHttpInfo(network, blockHash, context, limit, offset);
         return localVarResp.getData();
     }
@@ -1391,7 +1620,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListXRPRippleTransactionsByBlockHashR> listXRPRippleTransactionsByBlockHashWithHttpInfo(String network, String blockHash, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListXRPRippleTransactionsByBlockHashR> listXRPRippleTransactionsByBlockHashWithHttpInfo(String network, String blockHash, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHashValidateBeforeCall(network, blockHash, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHashR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1423,7 +1652,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByBlockHashAsync(String network, String blockHash, String context, Integer limit, Integer offset, final ApiCallback<ListXRPRippleTransactionsByBlockHashR> _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByBlockHashAsync(String network, String blockHash, String context, Long limit, Long offset, final ApiCallback<ListXRPRippleTransactionsByBlockHashR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHashValidateBeforeCall(network, blockHash, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHashR>(){}.getType();
@@ -1455,9 +1684,8 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByBlockHeightCall(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByBlockHeightCall(String network, Long blockHeight, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
-
         // Operation Servers
         String[] localBasePaths = new String[] {  };
 
@@ -1507,7 +1735,7 @@ public class XrpRippleApi {
             
         };
         final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
-        if (localVarHeaderParams != null) {
+        if (localVarContentType != null) {
             localVarHeaderParams.put("Content-Type", localVarContentType);
         }
 
@@ -1516,7 +1744,7 @@ public class XrpRippleApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listXRPRippleTransactionsByBlockHeightValidateBeforeCall(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listXRPRippleTransactionsByBlockHeightValidateBeforeCall(String network, Long blockHeight, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'network' is set
         if (network == null) {
@@ -1559,7 +1787,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListXRPRippleTransactionsByBlockHeightR listXRPRippleTransactionsByBlockHeight(String network, Integer blockHeight, String context, Integer limit, Integer offset) throws ApiException {
+    public ListXRPRippleTransactionsByBlockHeightR listXRPRippleTransactionsByBlockHeight(String network, Long blockHeight, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListXRPRippleTransactionsByBlockHeightR> localVarResp = listXRPRippleTransactionsByBlockHeightWithHttpInfo(network, blockHeight, context, limit, offset);
         return localVarResp.getData();
     }
@@ -1589,7 +1817,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListXRPRippleTransactionsByBlockHeightR> listXRPRippleTransactionsByBlockHeightWithHttpInfo(String network, Integer blockHeight, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListXRPRippleTransactionsByBlockHeightR> listXRPRippleTransactionsByBlockHeightWithHttpInfo(String network, Long blockHeight, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHeightValidateBeforeCall(network, blockHeight, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHeightR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -1621,7 +1849,7 @@ public class XrpRippleApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listXRPRippleTransactionsByBlockHeightAsync(String network, Integer blockHeight, String context, Integer limit, Integer offset, final ApiCallback<ListXRPRippleTransactionsByBlockHeightR> _callback) throws ApiException {
+    public okhttp3.Call listXRPRippleTransactionsByBlockHeightAsync(String network, Long blockHeight, String context, Long limit, Long offset, final ApiCallback<ListXRPRippleTransactionsByBlockHeightR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listXRPRippleTransactionsByBlockHeightValidateBeforeCall(network, blockHeight, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListXRPRippleTransactionsByBlockHeightR>(){}.getType();

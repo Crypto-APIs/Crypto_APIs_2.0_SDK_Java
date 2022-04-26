@@ -41,740 +41,605 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVS
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVin;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
 
-/**
- * GetTransactionDetailsByTransactionIDRIBS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class GetTransactionDetailsByTransactionIDRIBS {
-  public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
-  @SerializedName(SERIALIZED_NAME_LOCKTIME)
-  private Integer locktime;
-
-  public static final String SERIALIZED_NAME_SIZE = "size";
-  @SerializedName(SERIALIZED_NAME_SIZE)
-  private Integer size;
-
-  public static final String SERIALIZED_NAME_V_SIZE = "vSize";
-  @SerializedName(SERIALIZED_NAME_V_SIZE)
-  private Integer vSize;
-
-  public static final String SERIALIZED_NAME_VERSION = "version";
-  @SerializedName(SERIALIZED_NAME_VERSION)
-  private Integer version;
-
-  public static final String SERIALIZED_NAME_VIN = "vin";
-  @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVin>();
-
-  public static final String SERIALIZED_NAME_VOUT = "vout";
-  @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVout> vout = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVout>();
-
-  public static final String SERIALIZED_NAME_CONTRACT = "contract";
-  @SerializedName(SERIALIZED_NAME_CONTRACT)
-  private String contract;
-
-  public static final String SERIALIZED_NAME_GAS_LIMIT = "gasLimit";
-  @SerializedName(SERIALIZED_NAME_GAS_LIMIT)
-  private String gasLimit;
-
-  public static final String SERIALIZED_NAME_GAS_PRICE = "gasPrice";
-  @SerializedName(SERIALIZED_NAME_GAS_PRICE)
-  private GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice;
-
-  public static final String SERIALIZED_NAME_GAS_USED = "gasUsed";
-  @SerializedName(SERIALIZED_NAME_GAS_USED)
-  private String gasUsed;
-
-  public static final String SERIALIZED_NAME_INPUT_DATA = "inputData";
-  @SerializedName(SERIALIZED_NAME_INPUT_DATA)
-  private String inputData;
-
-  public static final String SERIALIZED_NAME_NONCE = "nonce";
-  @SerializedName(SERIALIZED_NAME_NONCE)
-  private Integer nonce;
-
-  public static final String SERIALIZED_NAME_TRANSACTION_STATUS = "transactionStatus";
-  @SerializedName(SERIALIZED_NAME_TRANSACTION_STATUS)
-  private String transactionStatus;
-
-  public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
-  @SerializedName(SERIALIZED_NAME_BINDING_SIG)
-  private String bindingSig;
-
-  public static final String SERIALIZED_NAME_EXPIRY_HEIGHT = "expiryHeight";
-  @SerializedName(SERIALIZED_NAME_EXPIRY_HEIGHT)
-  private Integer expiryHeight;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY = "joinSplitPubKey";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_PUB_KEY)
-  private String joinSplitPubKey;
-
-  public static final String SERIALIZED_NAME_JOIN_SPLIT_SIG = "joinSplitSig";
-  @SerializedName(SERIALIZED_NAME_JOIN_SPLIT_SIG)
-  private String joinSplitSig;
-
-  public static final String SERIALIZED_NAME_OVERWINTERED = "overwintered";
-  @SerializedName(SERIALIZED_NAME_OVERWINTERED)
-  private Boolean overwintered;
-
-  public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
-  @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput>();
-
-  public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
-  @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend>();
-
-  public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
-  @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
-  private String valueBalance;
-
-  public static final String SERIALIZED_NAME_VERSION_GROUP_ID = "versionGroupId";
-  @SerializedName(SERIALIZED_NAME_VERSION_GROUP_ID)
-  private String versionGroupId;
-
-  public GetTransactionDetailsByTransactionIDRIBS() { 
-  }
-
-  public GetTransactionDetailsByTransactionIDRIBS locktime(Integer locktime) {
-    
-    this.locktime = locktime;
-    return this;
-  }
-
-   /**
-   * Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.
-   * @return locktime
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1781965", required = true, value = "Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid.")
-
-  public Integer getLocktime() {
-    return locktime;
-  }
-
-
-  public void setLocktime(Integer locktime) {
-    this.locktime = locktime;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS size(Integer size) {
-    
-    this.size = size;
-    return this;
-  }
-
-   /**
-   * Represents the total size of this transaction.
-   * @return size
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "234", required = true, value = "Represents the total size of this transaction.")
-
-  public Integer getSize() {
-    return size;
-  }
-
-
-  public void setSize(Integer size) {
-    this.size = size;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS vSize(Integer vSize) {
-    
-    this.vSize = vSize;
-    return this;
-  }
-
-   /**
-   * Represents the virtual size of this transaction.
-   * @return vSize
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "141", required = true, value = "Represents the virtual size of this transaction.")
-
-  public Integer getvSize() {
-    return vSize;
-  }
-
-
-  public void setvSize(Integer vSize) {
-    this.vSize = vSize;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS version(Integer version) {
-    
-    this.version = version;
-    return this;
-  }
-
-   /**
-   * Defines the version of the transaction.
-   * @return version
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1", required = true, value = "Defines the version of the transaction.")
-
-  public Integer getVersion() {
-    return version;
-  }
-
-
-  public void setVersion(Integer version) {
-    this.version = version;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS vin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    
-    this.vin = vin;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDRIBS addVinItem(GetTransactionDetailsByTransactionIDRIBSZVin vinItem) {
-    this.vin.add(vinItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction inputs
-   * @return vin
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVin> getVin() {
-    return vin;
-  }
-
-
-  public void setVin(List<GetTransactionDetailsByTransactionIDRIBSZVin> vin) {
-    this.vin = vin;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS vout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
-    
-    this.vout = vout;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDRIBS addVoutItem(GetTransactionDetailsByTransactionIDRIBSZVout voutItem) {
-    this.vout.add(voutItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction outputs
-   * @return vout
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVout> getVout() {
-    return vout;
-  }
-
-
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSZVout> vout) {
-    this.vout = vout;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS contract(String contract) {
-    
-    this.contract = contract;
-    return this;
-  }
-
-   /**
-   * Represents the specific transaction contract
-   * @return contract
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x0000000000000000000000000000000000001000", required = true, value = "Represents the specific transaction contract")
-
-  public String getContract() {
-    return contract;
-  }
-
-
-  public void setContract(String contract) {
-    this.contract = contract;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS gasLimit(String gasLimit) {
-    
-    this.gasLimit = gasLimit;
-    return this;
-  }
-
-   /**
-   * Represents the amount of gas used by this specific transaction alone.
-   * @return gasLimit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Represents the amount of gas used by this specific transaction alone.")
-
-  public String getGasLimit() {
-    return gasLimit;
-  }
-
-
-  public void setGasLimit(String gasLimit) {
-    this.gasLimit = gasLimit;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS gasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
-    
-    this.gasPrice = gasPrice;
-    return this;
-  }
-
-   /**
-   * Get gasPrice
-   * @return gasPrice
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "")
-
-  public GetTransactionDetailsByTransactionIDRIBSBSCGasPrice getGasPrice() {
-    return gasPrice;
-  }
-
-
-  public void setGasPrice(GetTransactionDetailsByTransactionIDRIBSBSCGasPrice gasPrice) {
-    this.gasPrice = gasPrice;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS gasUsed(String gasUsed) {
-    
-    this.gasUsed = gasUsed;
-    return this;
-  }
-
-   /**
-   * Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.
-   * @return gasUsed
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "21000", required = true, value = "Defines the unit of the gas price amount, e.g. BTC, ETH, XRP.")
-
-  public String getGasUsed() {
-    return gasUsed;
-  }
-
-
-  public void setGasUsed(String gasUsed) {
-    this.gasUsed = gasUsed;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS inputData(String inputData) {
-    
-    this.inputData = inputData;
-    return this;
-  }
-
-   /**
-   * Represents additional information that is required for the transaction.
-   * @return inputData
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x", required = true, value = "Represents additional information that is required for the transaction.")
-
-  public String getInputData() {
-    return inputData;
-  }
-
-
-  public void setInputData(String inputData) {
-    this.inputData = inputData;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS nonce(Integer nonce) {
-    
-    this.nonce = nonce;
-    return this;
-  }
-
-   /**
-   * Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender&#39;s address.
-   * @return nonce
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "25341", required = true, value = "Represents the sequential running number for an address, starting from 0 for the first transaction. E.g., if the nonce of a transaction is 10, it would be the 11th transaction sent from the sender's address.")
-
-  public Integer getNonce() {
-    return nonce;
-  }
-
-
-  public void setNonce(Integer nonce) {
-    this.nonce = nonce;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS transactionStatus(String transactionStatus) {
-    
-    this.transactionStatus = transactionStatus;
-    return this;
-  }
-
-   /**
-   * Represents the status of this transaction.
-   * @return transactionStatus
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x1", required = true, value = "Represents the status of this transaction.")
-
-  public String getTransactionStatus() {
-    return transactionStatus;
-  }
-
-
-  public void setTransactionStatus(String transactionStatus) {
-    this.transactionStatus = transactionStatus;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS bindingSig(String bindingSig) {
-    
-    this.bindingSig = bindingSig;
-    return this;
-  }
-
-   /**
-   * It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.
-   * @return bindingSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "603624b3e78e0de0415dea320797a107076a9f7aabd39f44bc4957803330e9891cb33744ac2ec749c2d2d341f29467c49c0ae35bf34765e2fb7c4cda68584804", required = true, value = "It is used to enforce balance of Spend and Output transfers, in order to prevent their replay across transactions.")
-
-  public String getBindingSig() {
-    return bindingSig;
-  }
-
-
-  public void setBindingSig(String bindingSig) {
-    this.bindingSig = bindingSig;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS expiryHeight(Integer expiryHeight) {
-    
-    this.expiryHeight = expiryHeight;
-    return this;
-  }
-
-   /**
-   * Represents a block height after which the transaction will expire.
-   * @return expiryHeight
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "Represents a block height after which the transaction will expire.")
-
-  public Integer getExpiryHeight() {
-    return expiryHeight;
-  }
-
-
-  public void setExpiryHeight(Integer expiryHeight) {
-    this.expiryHeight = expiryHeight;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS joinSplitPubKey(String joinSplitPubKey) {
-    
-    this.joinSplitPubKey = joinSplitPubKey;
-    return this;
-  }
-
-   /**
-   * Represents an encoding of a JoinSplitSig public validating key.
-   * @return joinSplitPubKey
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "5d2673b4c727241410e42f214a39218e4f13354d77db8ec31243a7be7ed8e2b7", required = true, value = "Represents an encoding of a JoinSplitSig public validating key.")
-
-  public String getJoinSplitPubKey() {
-    return joinSplitPubKey;
-  }
-
-
-  public void setJoinSplitPubKey(String joinSplitPubKey) {
-    this.joinSplitPubKey = joinSplitPubKey;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS joinSplitSig(String joinSplitSig) {
-    
-    this.joinSplitSig = joinSplitSig;
-    return this;
-  }
-
-   /**
-   * Is used to sign transactions that contain at least one JoinSplit description.
-   * @return joinSplitSig
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "8b06b926d619ead780b0769e5997ded93f9851fd0efd4b667afc5bcc2792b26cd4a565b4efa7733535fdc09fa566ca59042785d7fd8043d37fdf9e144465080a", required = true, value = "Is used to sign transactions that contain at least one JoinSplit description.")
-
-  public String getJoinSplitSig() {
-    return joinSplitSig;
-  }
-
-
-  public void setJoinSplitSig(String joinSplitSig) {
-    this.joinSplitSig = joinSplitSig;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS overwintered(Boolean overwintered) {
-    
-    this.overwintered = overwintered;
-    return this;
-  }
-
-   /**
-   * \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain.
-   * @return overwintered
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "true", required = true, value = "\"Overwinter\" is the network upgrade for the Zcash blockchain.")
-
-  public Boolean getOverwintered() {
-    return overwintered;
-  }
-
-
-  public void setOverwintered(Boolean overwintered) {
-    this.overwintered = overwintered;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS vJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
-    
-    this.vJoinSplit = vJoinSplit;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDRIBS addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplit vJoinSplitItem) {
-    this.vJoinSplit.add(vJoinSplitItem);
-    return this;
-  }
-
-   /**
-   * Represents a sequence of JoinSplit descriptions using BCTV14 proofs.
-   * @return vJoinSplit
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> getvJoinSplit() {
-    return vJoinSplit;
-  }
-
-
-  public void setvJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
-    this.vJoinSplit = vJoinSplit;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    
-    this.vShieldedOutput = vShieldedOutput;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDRIBS addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
-    this.vShieldedOutput.add(vShieldedOutputItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction output descriptions
-   * @return vShieldedOutput
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
-    return vShieldedOutput;
-  }
-
-
-  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
-    this.vShieldedOutput = vShieldedOutput;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    
-    this.vShieldedSpend = vShieldedSpend;
-    return this;
-  }
-
-  public GetTransactionDetailsByTransactionIDRIBS addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
-    this.vShieldedSpend.add(vShieldedSpendItem);
-    return this;
-  }
-
-   /**
-   * Object Array representation of transaction spend descriptions
-   * @return vShieldedSpend
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
-
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
-    return vShieldedSpend;
-  }
-
-
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
-    this.vShieldedSpend = vShieldedSpend;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS valueBalance(String valueBalance) {
-    
-    this.valueBalance = valueBalance;
-    return this;
-  }
-
-   /**
-   * String representation of the transaction value balance
-   * @return valueBalance
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0", required = true, value = "String representation of the transaction value balance")
-
-  public String getValueBalance() {
-    return valueBalance;
-  }
-
-
-  public void setValueBalance(String valueBalance) {
-    this.valueBalance = valueBalance;
-  }
-
-
-  public GetTransactionDetailsByTransactionIDRIBS versionGroupId(String versionGroupId) {
-    
-    this.versionGroupId = versionGroupId;
-    return this;
-  }
-
-   /**
-   * Represents the transaction version group ID.
-   * @return versionGroupId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0x892f2085", required = true, value = "Represents the transaction version group ID.")
-
-  public String getVersionGroupId() {
-    return versionGroupId;
-  }
-
-
-  public void setVersionGroupId(String versionGroupId) {
-    this.versionGroupId = versionGroupId;
-  }
-
-
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+import javax.ws.rs.core.GenericType;
+
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+
+import io.cryptoapis.sdk.JSON;
+
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class GetTransactionDetailsByTransactionIDRIBS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(GetTransactionDetailsByTransactionIDRIBS.class.getName());
+
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!GetTransactionDetailsByTransactionIDRIBS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'GetTransactionDetailsByTransactionIDRIBS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSB> adapterGetTransactionDetailsByTransactionIDRIBSB = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSB.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSBC> adapterGetTransactionDetailsByTransactionIDRIBSBC = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSBC.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSBSC> adapterGetTransactionDetailsByTransactionIDRIBSBSC = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSBSC.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSD> adapterGetTransactionDetailsByTransactionIDRIBSD = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSD.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSD2> adapterGetTransactionDetailsByTransactionIDRIBSD2 = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSD2.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSE> adapterGetTransactionDetailsByTransactionIDRIBSE = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSE.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSEC> adapterGetTransactionDetailsByTransactionIDRIBSEC = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSEC.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSL> adapterGetTransactionDetailsByTransactionIDRIBSL = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSL.class));
+            final TypeAdapter<GetTransactionDetailsByTransactionIDRIBSZ> adapterGetTransactionDetailsByTransactionIDRIBSZ = gson.getDelegateAdapter(this, TypeToken.get(GetTransactionDetailsByTransactionIDRIBSZ.class));
+
+            return (TypeAdapter<T>) new TypeAdapter<GetTransactionDetailsByTransactionIDRIBS>() {
+                @Override
+                public void write(JsonWriter out, GetTransactionDetailsByTransactionIDRIBS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSB`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSB) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSB.toJsonTree((GetTransactionDetailsByTransactionIDRIBSB)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSBC`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSBC) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSBC.toJsonTree((GetTransactionDetailsByTransactionIDRIBSBC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSBSC`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSBSC) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSBSC.toJsonTree((GetTransactionDetailsByTransactionIDRIBSBSC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSD`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSD) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSD.toJsonTree((GetTransactionDetailsByTransactionIDRIBSD)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSD2`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSD2) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSD2.toJsonTree((GetTransactionDetailsByTransactionIDRIBSD2)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSE`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSE) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSE.toJsonTree((GetTransactionDetailsByTransactionIDRIBSE)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSEC`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSEC) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSEC.toJsonTree((GetTransactionDetailsByTransactionIDRIBSEC)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSL`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSL) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSL.toJsonTree((GetTransactionDetailsByTransactionIDRIBSL)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    // check if the actual instance is of the type `GetTransactionDetailsByTransactionIDRIBSZ`
+                    if (value.getActualInstance() instanceof GetTransactionDetailsByTransactionIDRIBSZ) {
+                        JsonObject obj = adapterGetTransactionDetailsByTransactionIDRIBSZ.toJsonTree((GetTransactionDetailsByTransactionIDRIBSZ)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
+
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: GetTransactionDetailsByTransactionIDRIBSB, GetTransactionDetailsByTransactionIDRIBSBC, GetTransactionDetailsByTransactionIDRIBSBSC, GetTransactionDetailsByTransactionIDRIBSD, GetTransactionDetailsByTransactionIDRIBSD2, GetTransactionDetailsByTransactionIDRIBSE, GetTransactionDetailsByTransactionIDRIBSEC, GetTransactionDetailsByTransactionIDRIBSL, GetTransactionDetailsByTransactionIDRIBSZ");
+                }
+
+                @Override
+                public GetTransactionDetailsByTransactionIDRIBS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
+
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSB
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSB.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSB;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSB'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSB'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSBC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSBC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSBC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSBC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSBC'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSBSC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSBSC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSBSC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSBSC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSBSC'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSD
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSD.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSD;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSD'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSD'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSD2
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSD2.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSD2;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSD2'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSD2'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSE
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSE.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSE;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSE'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSE'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSEC
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSEC.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSEC;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSEC'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSEC'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSL
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSL.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSL;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSL'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSL'", e);
+                    }
+
+                    // deserialize GetTransactionDetailsByTransactionIDRIBSZ
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        GetTransactionDetailsByTransactionIDRIBSZ.validateJsonObject(jsonObject);
+                        actualAdapter = adapterGetTransactionDetailsByTransactionIDRIBSZ;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'GetTransactionDetailsByTransactionIDRIBSZ'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'GetTransactionDetailsByTransactionIDRIBSZ'", e);
+                    }
+
+                    if (match == 1) {
+                        GetTransactionDetailsByTransactionIDRIBS ret = new GetTransactionDetailsByTransactionIDRIBS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
+
+                    throw new IOException(String.format("Failed deserialization for GetTransactionDetailsByTransactionIDRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public GetTransactionDetailsByTransactionIDRIBS() {
+        super("oneOf", Boolean.FALSE);
     }
-    GetTransactionDetailsByTransactionIDRIBS getTransactionDetailsByTransactionIDRIBS = (GetTransactionDetailsByTransactionIDRIBS) o;
-    return Objects.equals(this.locktime, getTransactionDetailsByTransactionIDRIBS.locktime) &&
-        Objects.equals(this.size, getTransactionDetailsByTransactionIDRIBS.size) &&
-        Objects.equals(this.vSize, getTransactionDetailsByTransactionIDRIBS.vSize) &&
-        Objects.equals(this.version, getTransactionDetailsByTransactionIDRIBS.version) &&
-        Objects.equals(this.vin, getTransactionDetailsByTransactionIDRIBS.vin) &&
-        Objects.equals(this.vout, getTransactionDetailsByTransactionIDRIBS.vout) &&
-        Objects.equals(this.contract, getTransactionDetailsByTransactionIDRIBS.contract) &&
-        Objects.equals(this.gasLimit, getTransactionDetailsByTransactionIDRIBS.gasLimit) &&
-        Objects.equals(this.gasPrice, getTransactionDetailsByTransactionIDRIBS.gasPrice) &&
-        Objects.equals(this.gasUsed, getTransactionDetailsByTransactionIDRIBS.gasUsed) &&
-        Objects.equals(this.inputData, getTransactionDetailsByTransactionIDRIBS.inputData) &&
-        Objects.equals(this.nonce, getTransactionDetailsByTransactionIDRIBS.nonce) &&
-        Objects.equals(this.transactionStatus, getTransactionDetailsByTransactionIDRIBS.transactionStatus) &&
-        Objects.equals(this.bindingSig, getTransactionDetailsByTransactionIDRIBS.bindingSig) &&
-        Objects.equals(this.expiryHeight, getTransactionDetailsByTransactionIDRIBS.expiryHeight) &&
-        Objects.equals(this.joinSplitPubKey, getTransactionDetailsByTransactionIDRIBS.joinSplitPubKey) &&
-        Objects.equals(this.joinSplitSig, getTransactionDetailsByTransactionIDRIBS.joinSplitSig) &&
-        Objects.equals(this.overwintered, getTransactionDetailsByTransactionIDRIBS.overwintered) &&
-        Objects.equals(this.vJoinSplit, getTransactionDetailsByTransactionIDRIBS.vJoinSplit) &&
-        Objects.equals(this.vShieldedOutput, getTransactionDetailsByTransactionIDRIBS.vShieldedOutput) &&
-        Objects.equals(this.vShieldedSpend, getTransactionDetailsByTransactionIDRIBS.vShieldedSpend) &&
-        Objects.equals(this.valueBalance, getTransactionDetailsByTransactionIDRIBS.valueBalance) &&
-        Objects.equals(this.versionGroupId, getTransactionDetailsByTransactionIDRIBS.versionGroupId);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(locktime, size, vSize, version, vin, vout, contract, gasLimit, gasPrice, gasUsed, inputData, nonce, transactionStatus, bindingSig, expiryHeight, joinSplitPubKey, joinSplitSig, overwintered, vJoinSplit, vShieldedOutput, vShieldedSpend, valueBalance, versionGroupId);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class GetTransactionDetailsByTransactionIDRIBS {\n");
-    sb.append("    locktime: ").append(toIndentedString(locktime)).append("\n");
-    sb.append("    size: ").append(toIndentedString(size)).append("\n");
-    sb.append("    vSize: ").append(toIndentedString(vSize)).append("\n");
-    sb.append("    version: ").append(toIndentedString(version)).append("\n");
-    sb.append("    vin: ").append(toIndentedString(vin)).append("\n");
-    sb.append("    vout: ").append(toIndentedString(vout)).append("\n");
-    sb.append("    contract: ").append(toIndentedString(contract)).append("\n");
-    sb.append("    gasLimit: ").append(toIndentedString(gasLimit)).append("\n");
-    sb.append("    gasPrice: ").append(toIndentedString(gasPrice)).append("\n");
-    sb.append("    gasUsed: ").append(toIndentedString(gasUsed)).append("\n");
-    sb.append("    inputData: ").append(toIndentedString(inputData)).append("\n");
-    sb.append("    nonce: ").append(toIndentedString(nonce)).append("\n");
-    sb.append("    transactionStatus: ").append(toIndentedString(transactionStatus)).append("\n");
-    sb.append("    bindingSig: ").append(toIndentedString(bindingSig)).append("\n");
-    sb.append("    expiryHeight: ").append(toIndentedString(expiryHeight)).append("\n");
-    sb.append("    joinSplitPubKey: ").append(toIndentedString(joinSplitPubKey)).append("\n");
-    sb.append("    joinSplitSig: ").append(toIndentedString(joinSplitSig)).append("\n");
-    sb.append("    overwintered: ").append(toIndentedString(overwintered)).append("\n");
-    sb.append("    vJoinSplit: ").append(toIndentedString(vJoinSplit)).append("\n");
-    sb.append("    vShieldedOutput: ").append(toIndentedString(vShieldedOutput)).append("\n");
-    sb.append("    vShieldedSpend: ").append(toIndentedString(vShieldedSpend)).append("\n");
-    sb.append("    valueBalance: ").append(toIndentedString(valueBalance)).append("\n");
-    sb.append("    versionGroupId: ").append(toIndentedString(versionGroupId)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSB o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSBC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSBSC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSD o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSD2 o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSE o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSEC o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSL o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    public GetTransactionDetailsByTransactionIDRIBS(GetTransactionDetailsByTransactionIDRIBSZ o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSB", new GenericType<GetTransactionDetailsByTransactionIDRIBSB>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSBC", new GenericType<GetTransactionDetailsByTransactionIDRIBSBC>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSBSC", new GenericType<GetTransactionDetailsByTransactionIDRIBSBSC>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSD", new GenericType<GetTransactionDetailsByTransactionIDRIBSD>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSD2", new GenericType<GetTransactionDetailsByTransactionIDRIBSD2>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSE", new GenericType<GetTransactionDetailsByTransactionIDRIBSE>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSEC", new GenericType<GetTransactionDetailsByTransactionIDRIBSEC>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSL", new GenericType<GetTransactionDetailsByTransactionIDRIBSL>() {
+        });
+        schemas.put("GetTransactionDetailsByTransactionIDRIBSZ", new GenericType<GetTransactionDetailsByTransactionIDRIBSZ>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return GetTransactionDetailsByTransactionIDRIBS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * GetTransactionDetailsByTransactionIDRIBSB, GetTransactionDetailsByTransactionIDRIBSBC, GetTransactionDetailsByTransactionIDRIBSBSC, GetTransactionDetailsByTransactionIDRIBSD, GetTransactionDetailsByTransactionIDRIBSD2, GetTransactionDetailsByTransactionIDRIBSE, GetTransactionDetailsByTransactionIDRIBSEC, GetTransactionDetailsByTransactionIDRIBSL, GetTransactionDetailsByTransactionIDRIBSZ
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSB) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSBC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSBSC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSD) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSD2) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSE) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSEC) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSL) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof GetTransactionDetailsByTransactionIDRIBSZ) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be GetTransactionDetailsByTransactionIDRIBSB, GetTransactionDetailsByTransactionIDRIBSBC, GetTransactionDetailsByTransactionIDRIBSBSC, GetTransactionDetailsByTransactionIDRIBSD, GetTransactionDetailsByTransactionIDRIBSD2, GetTransactionDetailsByTransactionIDRIBSE, GetTransactionDetailsByTransactionIDRIBSEC, GetTransactionDetailsByTransactionIDRIBSL, GetTransactionDetailsByTransactionIDRIBSZ");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * GetTransactionDetailsByTransactionIDRIBSB, GetTransactionDetailsByTransactionIDRIBSBC, GetTransactionDetailsByTransactionIDRIBSBSC, GetTransactionDetailsByTransactionIDRIBSD, GetTransactionDetailsByTransactionIDRIBSD2, GetTransactionDetailsByTransactionIDRIBSE, GetTransactionDetailsByTransactionIDRIBSEC, GetTransactionDetailsByTransactionIDRIBSL, GetTransactionDetailsByTransactionIDRIBSZ
+     *
+     * @return The actual instance (GetTransactionDetailsByTransactionIDRIBSB, GetTransactionDetailsByTransactionIDRIBSBC, GetTransactionDetailsByTransactionIDRIBSBSC, GetTransactionDetailsByTransactionIDRIBSD, GetTransactionDetailsByTransactionIDRIBSD2, GetTransactionDetailsByTransactionIDRIBSE, GetTransactionDetailsByTransactionIDRIBSEC, GetTransactionDetailsByTransactionIDRIBSL, GetTransactionDetailsByTransactionIDRIBSZ)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSB`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSB`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSB`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSB`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSB getGetTransactionDetailsByTransactionIDRIBSB() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSB)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSBC`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSBC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSBC`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSBC`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSBC getGetTransactionDetailsByTransactionIDRIBSBC() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSBC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSBSC`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSBSC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSBSC`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSBSC`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSBSC getGetTransactionDetailsByTransactionIDRIBSBSC() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSBSC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSD`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSD`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSD`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSD`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSD getGetTransactionDetailsByTransactionIDRIBSD() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSD)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSD2`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSD2`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSD2`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSD2`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSD2 getGetTransactionDetailsByTransactionIDRIBSD2() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSD2)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSE`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSE`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSE`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSE`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSE getGetTransactionDetailsByTransactionIDRIBSE() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSE)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSEC`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSEC`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSEC`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSEC`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSEC getGetTransactionDetailsByTransactionIDRIBSEC() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSEC)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSL`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSL`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSL`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSL`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSL getGetTransactionDetailsByTransactionIDRIBSL() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSL)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `GetTransactionDetailsByTransactionIDRIBSZ`. If the actual instance is not `GetTransactionDetailsByTransactionIDRIBSZ`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `GetTransactionDetailsByTransactionIDRIBSZ`
+     * @throws ClassCastException if the instance is not `GetTransactionDetailsByTransactionIDRIBSZ`
+     */
+    public GetTransactionDetailsByTransactionIDRIBSZ getGetTransactionDetailsByTransactionIDRIBSZ() throws ClassCastException {
+        return (GetTransactionDetailsByTransactionIDRIBSZ)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to GetTransactionDetailsByTransactionIDRIBS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSB
+    try {
+      GetTransactionDetailsByTransactionIDRIBSB.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSBC
+    try {
+      GetTransactionDetailsByTransactionIDRIBSBC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSBSC
+    try {
+      GetTransactionDetailsByTransactionIDRIBSBSC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSD
+    try {
+      GetTransactionDetailsByTransactionIDRIBSD.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSD2
+    try {
+      GetTransactionDetailsByTransactionIDRIBSD2.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSE
+    try {
+      GetTransactionDetailsByTransactionIDRIBSE.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSEC
+    try {
+      GetTransactionDetailsByTransactionIDRIBSEC.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSL
+    try {
+      GetTransactionDetailsByTransactionIDRIBSL.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with GetTransactionDetailsByTransactionIDRIBSZ
+    try {
+      GetTransactionDetailsByTransactionIDRIBSZ.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for GetTransactionDetailsByTransactionIDRIBS with oneOf schemas: GetTransactionDetailsByTransactionIDRIBSB, GetTransactionDetailsByTransactionIDRIBSBC, GetTransactionDetailsByTransactionIDRIBSBSC, GetTransactionDetailsByTransactionIDRIBSD, GetTransactionDetailsByTransactionIDRIBSD2, GetTransactionDetailsByTransactionIDRIBSE, GetTransactionDetailsByTransactionIDRIBSEC, GetTransactionDetailsByTransactionIDRIBSL, GetTransactionDetailsByTransactionIDRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of GetTransactionDetailsByTransactionIDRIBS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of GetTransactionDetailsByTransactionIDRIBS
+  * @throws IOException if the JSON string is invalid with respect to GetTransactionDetailsByTransactionIDRIBS
+  */
+  public static GetTransactionDetailsByTransactionIDRIBS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, GetTransactionDetailsByTransactionIDRIBS.class);
+  }
+
+ /**
+  * Convert an instance of GetTransactionDetailsByTransactionIDRIBS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

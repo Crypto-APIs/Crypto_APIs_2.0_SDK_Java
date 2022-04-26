@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**ActivateBlockchainEventSubscriptionRI**](ActivateBlockchainEventSubscriptionRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**ActivateBlockchainEventSubscriptionRI**](ActivateBlockchainEventSubscriptionRI.md) |  |  |
 
 
 

@@ -21,9 +21,8 @@ import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**
@@ -41,14 +40,6 @@ public class MinedTransactionRITest {
     }
 
     /**
-     * Test the property 'address'
-     */
-    @Test
-    public void addressTest() {
-        // TODO: test address
-    }
-
-    /**
      * Test the property 'callbackSecretKey'
      */
     @Test
@@ -62,14 +53,6 @@ public class MinedTransactionRITest {
     @Test
     public void callbackUrlTest() {
         // TODO: test callbackUrl
-    }
-
-    /**
-     * Test the property 'confirmationsCount'
-     */
-    @Test
-    public void confirmationsCountTest() {
-        // TODO: test confirmationsCount
     }
 
     /**

@@ -27,9 +27,8 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIRecip
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRISenders;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBS;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIFee;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

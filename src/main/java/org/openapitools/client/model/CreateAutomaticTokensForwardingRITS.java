@@ -26,106 +26,255 @@ import java.io.IOException;
 import org.openapitools.client.model.CreateAutomaticTokensForwardingRITSBOT;
 import org.openapitools.client.model.CreateAutomaticTokensForwardingRITSET;
 
-/**
- * CreateAutomaticTokensForwardingRITS
- */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
-public class CreateAutomaticTokensForwardingRITS {
-  public static final String SERIALIZED_NAME_PROPERTY_ID = "propertyId";
-  @SerializedName(SERIALIZED_NAME_PROPERTY_ID)
-  private Integer propertyId;
+import javax.ws.rs.core.GenericType;
 
-  public static final String SERIALIZED_NAME_CONTRACT_ADDRESS = "contractAddress";
-  @SerializedName(SERIALIZED_NAME_CONTRACT_ADDRESS)
-  private String contractAddress;
+import java.io.IOException;
+import java.lang.reflect.Type;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashSet;
+import java.util.HashMap;
+import java.util.Map;
 
-  public CreateAutomaticTokensForwardingRITS() { 
-  }
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapter;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+import com.google.gson.JsonPrimitive;
+import com.google.gson.annotations.JsonAdapter;
+import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializationContext;
+import com.google.gson.JsonSerializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
 
-  public CreateAutomaticTokensForwardingRITS propertyId(Integer propertyId) {
-    
-    this.propertyId = propertyId;
-    return this;
-  }
+import io.cryptoapis.sdk.JSON;
 
-   /**
-   * Defines the &#x60;propertyId&#x60; of the Omni Layer token.
-   * @return propertyId
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "31", required = true, value = "Defines the `propertyId` of the Omni Layer token.")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+public class CreateAutomaticTokensForwardingRITS extends AbstractOpenApiSchema {
+    private static final Logger log = Logger.getLogger(CreateAutomaticTokensForwardingRITS.class.getName());
 
-  public Integer getPropertyId() {
-    return propertyId;
-  }
+    public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+        @SuppressWarnings("unchecked")
+        @Override
+        public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+            if (!CreateAutomaticTokensForwardingRITS.class.isAssignableFrom(type.getRawType())) {
+                return null; // this class only serializes 'CreateAutomaticTokensForwardingRITS' and its subtypes
+            }
+            final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+            final TypeAdapter<CreateAutomaticTokensForwardingRITSBOT> adapterCreateAutomaticTokensForwardingRITSBOT = gson.getDelegateAdapter(this, TypeToken.get(CreateAutomaticTokensForwardingRITSBOT.class));
+            final TypeAdapter<CreateAutomaticTokensForwardingRITSET> adapterCreateAutomaticTokensForwardingRITSET = gson.getDelegateAdapter(this, TypeToken.get(CreateAutomaticTokensForwardingRITSET.class));
 
+            return (TypeAdapter<T>) new TypeAdapter<CreateAutomaticTokensForwardingRITS>() {
+                @Override
+                public void write(JsonWriter out, CreateAutomaticTokensForwardingRITS value) throws IOException {
+                    if (value == null || value.getActualInstance() == null) {
+                        elementAdapter.write(out, null);
+                        return;
+                    }
 
-  public void setPropertyId(Integer propertyId) {
-    this.propertyId = propertyId;
-  }
+                    // check if the actual instance is of the type `CreateAutomaticTokensForwardingRITSBOT`
+                    if (value.getActualInstance() instanceof CreateAutomaticTokensForwardingRITSBOT) {
+                        JsonObject obj = adapterCreateAutomaticTokensForwardingRITSBOT.toJsonTree((CreateAutomaticTokensForwardingRITSBOT)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
+                    // check if the actual instance is of the type `CreateAutomaticTokensForwardingRITSET`
+                    if (value.getActualInstance() instanceof CreateAutomaticTokensForwardingRITSET) {
+                        JsonObject obj = adapterCreateAutomaticTokensForwardingRITSET.toJsonTree((CreateAutomaticTokensForwardingRITSET)value.getActualInstance()).getAsJsonObject();
+                        elementAdapter.write(out, obj);
+                        return;
+                    }
 
-  public CreateAutomaticTokensForwardingRITS contractAddress(String contractAddress) {
-    
-    this.contractAddress = contractAddress;
-    return this;
-  }
+                    throw new IOException("Failed to serialize as the type doesn't match oneOf schemas: CreateAutomaticTokensForwardingRITSBOT, CreateAutomaticTokensForwardingRITSET");
+                }
 
-   /**
-   * Represents the specific &#x60;contractAddress&#x60; of the Token that will be forwarded.
-   * @return contractAddress
-  **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "0xdac17f958d2ee523a2206206994597c13d831ec7", required = true, value = "Represents the specific `contractAddress` of the Token that will be forwarded.")
+                @Override
+                public CreateAutomaticTokensForwardingRITS read(JsonReader in) throws IOException {
+                    Object deserialized = null;
+                    JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
-  public String getContractAddress() {
-    return contractAddress;
-  }
+                    int match = 0;
+                    TypeAdapter actualAdapter = elementAdapter;
 
+                    // deserialize CreateAutomaticTokensForwardingRITSBOT
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateAutomaticTokensForwardingRITSBOT.validateJsonObject(jsonObject);
+                        actualAdapter = adapterCreateAutomaticTokensForwardingRITSBOT;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'CreateAutomaticTokensForwardingRITSBOT'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'CreateAutomaticTokensForwardingRITSBOT'", e);
+                    }
 
-  public void setContractAddress(String contractAddress) {
-    this.contractAddress = contractAddress;
-  }
+                    // deserialize CreateAutomaticTokensForwardingRITSET
+                    try {
+                        // validate the JSON object to see if any exception is thrown
+                        CreateAutomaticTokensForwardingRITSET.validateJsonObject(jsonObject);
+                        actualAdapter = adapterCreateAutomaticTokensForwardingRITSET;
+                        match++;
+                        log.log(Level.FINER, "Input data matches schema 'CreateAutomaticTokensForwardingRITSET'");
+                    } catch (Exception e) {
+                        // deserialization failed, continue
+                        log.log(Level.FINER, "Input data does not match schema 'CreateAutomaticTokensForwardingRITSET'", e);
+                    }
 
+                    if (match == 1) {
+                        CreateAutomaticTokensForwardingRITS ret = new CreateAutomaticTokensForwardingRITS();
+                        ret.setActualInstance(actualAdapter.fromJsonTree(jsonObject));
+                        return ret;
+                    }
 
-  @Override
-  public boolean equals(Object o) {
-    if (this == o) {
-      return true;
+                    throw new IOException(String.format("Failed deserialization for CreateAutomaticTokensForwardingRITS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                }
+            }.nullSafe();
+        }
     }
-    if (o == null || getClass() != o.getClass()) {
-      return false;
+
+    // store a list of schema names defined in oneOf
+    public static final Map<String, GenericType> schemas = new HashMap<String, GenericType>();
+
+    public CreateAutomaticTokensForwardingRITS() {
+        super("oneOf", Boolean.FALSE);
     }
-    CreateAutomaticTokensForwardingRITS createAutomaticTokensForwardingRITS = (CreateAutomaticTokensForwardingRITS) o;
-    return Objects.equals(this.propertyId, createAutomaticTokensForwardingRITS.propertyId) &&
-        Objects.equals(this.contractAddress, createAutomaticTokensForwardingRITS.contractAddress);
-  }
 
-  @Override
-  public int hashCode() {
-    return Objects.hash(propertyId, contractAddress);
-  }
-
-  @Override
-  public String toString() {
-    StringBuilder sb = new StringBuilder();
-    sb.append("class CreateAutomaticTokensForwardingRITS {\n");
-    sb.append("    propertyId: ").append(toIndentedString(propertyId)).append("\n");
-    sb.append("    contractAddress: ").append(toIndentedString(contractAddress)).append("\n");
-    sb.append("}");
-    return sb.toString();
-  }
-
-  /**
-   * Convert the given object to string with each line indented by 4 spaces
-   * (except the first line).
-   */
-  private String toIndentedString(Object o) {
-    if (o == null) {
-      return "null";
+    public CreateAutomaticTokensForwardingRITS(CreateAutomaticTokensForwardingRITSBOT o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
     }
-    return o.toString().replace("\n", "\n    ");
+
+    public CreateAutomaticTokensForwardingRITS(CreateAutomaticTokensForwardingRITSET o) {
+        super("oneOf", Boolean.FALSE);
+        setActualInstance(o);
+    }
+
+    static {
+        schemas.put("CreateAutomaticTokensForwardingRITSBOT", new GenericType<CreateAutomaticTokensForwardingRITSBOT>() {
+        });
+        schemas.put("CreateAutomaticTokensForwardingRITSET", new GenericType<CreateAutomaticTokensForwardingRITSET>() {
+        });
+    }
+
+    @Override
+    public Map<String, GenericType> getSchemas() {
+        return CreateAutomaticTokensForwardingRITS.schemas;
+    }
+
+    /**
+     * Set the instance that matches the oneOf child schema, check
+     * the instance parameter is valid against the oneOf child schemas:
+     * CreateAutomaticTokensForwardingRITSBOT, CreateAutomaticTokensForwardingRITSET
+     *
+     * It could be an instance of the 'oneOf' schemas.
+     * The oneOf child schemas may themselves be a composed schema (allOf, anyOf, oneOf).
+     */
+    @Override
+    public void setActualInstance(Object instance) {
+        if (instance instanceof CreateAutomaticTokensForwardingRITSBOT) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        if (instance instanceof CreateAutomaticTokensForwardingRITSET) {
+            super.setActualInstance(instance);
+            return;
+        }
+
+        throw new RuntimeException("Invalid instance type. Must be CreateAutomaticTokensForwardingRITSBOT, CreateAutomaticTokensForwardingRITSET");
+    }
+
+    /**
+     * Get the actual instance, which can be the following:
+     * CreateAutomaticTokensForwardingRITSBOT, CreateAutomaticTokensForwardingRITSET
+     *
+     * @return The actual instance (CreateAutomaticTokensForwardingRITSBOT, CreateAutomaticTokensForwardingRITSET)
+     */
+    @Override
+    public Object getActualInstance() {
+        return super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CreateAutomaticTokensForwardingRITSBOT`. If the actual instance is not `CreateAutomaticTokensForwardingRITSBOT`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateAutomaticTokensForwardingRITSBOT`
+     * @throws ClassCastException if the instance is not `CreateAutomaticTokensForwardingRITSBOT`
+     */
+    public CreateAutomaticTokensForwardingRITSBOT getCreateAutomaticTokensForwardingRITSBOT() throws ClassCastException {
+        return (CreateAutomaticTokensForwardingRITSBOT)super.getActualInstance();
+    }
+
+    /**
+     * Get the actual instance of `CreateAutomaticTokensForwardingRITSET`. If the actual instance is not `CreateAutomaticTokensForwardingRITSET`,
+     * the ClassCastException will be thrown.
+     *
+     * @return The actual instance of `CreateAutomaticTokensForwardingRITSET`
+     * @throws ClassCastException if the instance is not `CreateAutomaticTokensForwardingRITSET`
+     */
+    public CreateAutomaticTokensForwardingRITSET getCreateAutomaticTokensForwardingRITSET() throws ClassCastException {
+        return (CreateAutomaticTokensForwardingRITSET)super.getActualInstance();
+    }
+
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to CreateAutomaticTokensForwardingRITS
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+    // validate oneOf schemas one by one
+    int validCount = 0;
+    // validate the json string with CreateAutomaticTokensForwardingRITSBOT
+    try {
+      CreateAutomaticTokensForwardingRITSBOT.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    // validate the json string with CreateAutomaticTokensForwardingRITSET
+    try {
+      CreateAutomaticTokensForwardingRITSET.validateJsonObject(jsonObj);
+      validCount++;
+    } catch (Exception e) {
+      // continue to the next one
+    }
+    if (validCount != 1) {
+      throw new IOException(String.format("The JSON string is invalid for CreateAutomaticTokensForwardingRITS with oneOf schemas: CreateAutomaticTokensForwardingRITSBOT, CreateAutomaticTokensForwardingRITSET. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+    }
   }
 
+ /**
+  * Create an instance of CreateAutomaticTokensForwardingRITS given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of CreateAutomaticTokensForwardingRITS
+  * @throws IOException if the JSON string is invalid with respect to CreateAutomaticTokensForwardingRITS
+  */
+  public static CreateAutomaticTokensForwardingRITS fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, CreateAutomaticTokensForwardingRITS.class);
+  }
+
+ /**
+  * Convert an instance of CreateAutomaticTokensForwardingRITS to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

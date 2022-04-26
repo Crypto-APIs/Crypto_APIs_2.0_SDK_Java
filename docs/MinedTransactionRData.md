@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**MinedTransactionRI**](MinedTransactionRI.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**MinedTransactionRI**](MinedTransactionRI.md) |  |  |
 
 
 

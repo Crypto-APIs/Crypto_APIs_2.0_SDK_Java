@@ -5,9 +5,9 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**item** | [**GenerateDepositAddressRBDataItem**](GenerateDepositAddressRBDataItem.md) |  | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**item** | [**GenerateDepositAddressRBDataItem**](GenerateDepositAddressRBDataItem.md) |  |  |
 
 
 

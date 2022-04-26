@@ -27,9 +27,8 @@ import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDR
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIFee;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIRecipients;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRISenders;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

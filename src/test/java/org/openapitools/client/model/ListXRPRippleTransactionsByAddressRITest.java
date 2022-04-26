@@ -29,9 +29,8 @@ import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIFee;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIOffer;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIReceive;
 import org.openapitools.client.model.ListXRPRippleTransactionsByAddressRIValue;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

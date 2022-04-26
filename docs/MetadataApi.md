@@ -2,9 +2,9 @@
 
 All URIs are relative to *https://rest.cryptoapis.io/v2*
 
-Method | HTTP request | Description
-------------- | ------------- | -------------
-[**listSupportedAssets**](MetadataApi.md#listSupportedAssets) | **GET** /market-data/assets/supported | List Supported Assets
+| Method | HTTP request | Description |
+|------------- | ------------- | -------------|
+| [**listSupportedAssets**](MetadataApi.md#listSupportedAssets) | **GET** /market-data/assets/supported | List Supported Assets |
 
 
 <a name="listSupportedAssets"></a>
@@ -37,7 +37,7 @@ public class Example {
     //ApiKey.setApiKeyPrefix("Token");
 
     MetadataApi apiInstance = new MetadataApi(defaultClient);
-    String context = "context_example"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
+    String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
     String assetType = "fiat"; // String | Defines the type of the supported asset. This could be either \"crypto\" or \"fiat\".
     Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
     Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
@@ -57,12 +57,12 @@ public class Example {
 
 ### Parameters
 
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional]
- **assetType** | **String**| Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. | [optional] [enum: fiat, crypto]
- **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50]
- **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0]
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
+| **assetType** | **String**| Defines the type of the supported asset. This could be either \&quot;crypto\&quot; or \&quot;fiat\&quot;. | [optional] [enum: fiat, crypto] |
+| **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
+| **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
 
 ### Return type
 
@@ -80,14 +80,14 @@ Name | Type | Description  | Notes
 ### HTTP response details
 | Status code | Description | Response headers |
 |-------------|-------------|------------------|
-**200** | The request has been successful. |  -  |
-**400** | 400 |  -  |
-**401** | 401 |  -  |
-**402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
-**403** | 403 |  -  |
-**409** | The data provided seems to be invalid. |  -  |
-**415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
-**422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
-**429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
-**500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
+| **200** | The request has been successful. |  -  |
+| **400** | 400 |  -  |
+| **401** | 401 |  -  |
+| **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
+| **403** | 403 |  -  |
+| **409** | The data provided seems to be invalid. |  -  |
+| **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
+| **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
+| **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
+| **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
 

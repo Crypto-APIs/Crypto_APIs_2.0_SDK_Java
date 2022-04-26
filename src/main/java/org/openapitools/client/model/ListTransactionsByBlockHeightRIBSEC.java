@@ -25,11 +25,31 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSECGasPrice;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * Ethereum Classic
  */
 @ApiModel(description = "Ethereum Classic")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSEC {
   public static final String SERIALIZED_NAME_CONTRACT = "contract";
   @SerializedName(SERIALIZED_NAME_CONTRACT)
@@ -196,6 +216,7 @@ public class ListTransactionsByBlockHeightRIBSEC {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -243,5 +264,127 @@ public class ListTransactionsByBlockHeightRIBSEC {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("contract");
+    openapiFields.add("gasLimit");
+    openapiFields.add("gasPrice");
+    openapiFields.add("gasUsed");
+    openapiFields.add("inputData");
+    openapiFields.add("nonce");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("contract");
+    openapiRequiredFields.add("gasLimit");
+    openapiRequiredFields.add("gasPrice");
+    openapiRequiredFields.add("gasUsed");
+    openapiRequiredFields.add("inputData");
+    openapiRequiredFields.add("nonce");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListTransactionsByBlockHeightRIBSEC
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListTransactionsByBlockHeightRIBSEC.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListTransactionsByBlockHeightRIBSEC is not found in the empty JSON string", ListTransactionsByBlockHeightRIBSEC.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListTransactionsByBlockHeightRIBSEC.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListTransactionsByBlockHeightRIBSEC` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListTransactionsByBlockHeightRIBSEC.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("contract") != null && !jsonObj.get("contract").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `contract` to be a primitive type in the JSON string but got `%s`", jsonObj.get("contract").toString()));
+      }
+      if (jsonObj.get("gasLimit") != null && !jsonObj.get("gasLimit").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gasLimit` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gasLimit").toString()));
+      }
+      // validate the optional field `gasPrice`
+      if (jsonObj.getAsJsonObject("gasPrice") != null) {
+        ListTransactionsByBlockHeightRIBSECGasPrice.validateJsonObject(jsonObj.getAsJsonObject("gasPrice"));
+      }
+      if (jsonObj.get("gasUsed") != null && !jsonObj.get("gasUsed").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `gasUsed` to be a primitive type in the JSON string but got `%s`", jsonObj.get("gasUsed").toString()));
+      }
+      if (jsonObj.get("inputData") != null && !jsonObj.get("inputData").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `inputData` to be a primitive type in the JSON string but got `%s`", jsonObj.get("inputData").toString()));
+      }
+      if (jsonObj.get("nonce") != null && !jsonObj.get("nonce").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `nonce` to be a primitive type in the JSON string but got `%s`", jsonObj.get("nonce").toString()));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListTransactionsByBlockHeightRIBSEC.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListTransactionsByBlockHeightRIBSEC' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListTransactionsByBlockHeightRIBSEC> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListTransactionsByBlockHeightRIBSEC.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListTransactionsByBlockHeightRIBSEC>() {
+           @Override
+           public void write(JsonWriter out, ListTransactionsByBlockHeightRIBSEC value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListTransactionsByBlockHeightRIBSEC read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListTransactionsByBlockHeightRIBSEC given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListTransactionsByBlockHeightRIBSEC
+  * @throws IOException if the JSON string is invalid with respect to ListTransactionsByBlockHeightRIBSEC
+  */
+  public static ListTransactionsByBlockHeightRIBSEC fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListTransactionsByBlockHeightRIBSEC.class);
+  }
+
+ /**
+  * Convert an instance of ListTransactionsByBlockHeightRIBSEC to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 

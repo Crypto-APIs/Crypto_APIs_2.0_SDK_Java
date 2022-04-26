@@ -26,8 +26,8 @@ import org.openapitools.client.model.InlineResponse415;
 import org.openapitools.client.model.InlineResponse422;
 import org.openapitools.client.model.InlineResponse429;
 import org.openapitools.client.model.InlineResponse500;
-import org.junit.Test;
-import org.junit.Ignore;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -37,19 +37,17 @@ import java.util.Map;
 /**
  * API tests for GeneratingApi
  */
-@Ignore
+@Disabled
 public class GeneratingApiTest {
 
     private final GeneratingApi api = new GeneratingApi();
 
-    
     /**
      * Generate Deposit Address
      *
      * Through this endpoint customers can generate a new Receiving/Deposit Addresses into their Wallet.
      *
-     * @throws ApiException
-     *          if the Api call fails
+     * @throws ApiException if the Api call fails
      */
     @Test
     public void generateDepositAddressTest() throws ApiException {
@@ -58,8 +56,8 @@ public class GeneratingApiTest {
         String walletId = null;
         String context = null;
         GenerateDepositAddressRB generateDepositAddressRB = null;
-                GenerateDepositAddressR response = api.generateDepositAddress(blockchain, network, walletId, context, generateDepositAddressRB);
+        GenerateDepositAddressR response = api.generateDepositAddress(blockchain, network, walletId, context, generateDepositAddressRB);
         // TODO: test validations
     }
-    
+
 }

@@ -5,16 +5,16 @@
 
 ## Properties
 
-Name | Type | Description | Notes
------------- | ------------- | ------------- | -------------
-**amount** | **String** | Defines the specific amount of the transaction. | 
-**blockHash** | **String** | Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. | 
-**blockHeight** | **Integer** | Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. | 
-**operationType** | **String** | Defines the specific type of the operation. | 
-**parentHash** | **String** | Defines the specific hash of the parent transaction. | 
-**recipient** | **String** | Represents the recipient address with the respective amount. | 
-**sender** | **String** | Represents the sender address with the respective amount. | 
-**timestamp** | **Integer** | Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed. | 
+| Name | Type | Description | Notes |
+|------------ | ------------- | ------------- | -------------|
+|**amount** | **String** | Defines the specific amount of the transaction. |  |
+|**blockHash** | **String** | Represents the hash of the block, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. |  |
+|**blockHeight** | **Integer** | Represents the number of blocks in the blockchain preceding this specific block. Block numbers have no gaps. A blockchain usually starts with block 0 called the \&quot;Genesis block\&quot;. |  |
+|**operationType** | **String** | Defines the specific type of the operation. |  |
+|**parentHash** | **String** | Defines the specific hash of the parent transaction. |  |
+|**recipient** | **String** | Represents the recipient address with the respective amount. |  |
+|**sender** | **String** | Represents the sender address with the respective amount. |  |
+|**timestamp** | **Integer** | Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed. |  |
 
 
 

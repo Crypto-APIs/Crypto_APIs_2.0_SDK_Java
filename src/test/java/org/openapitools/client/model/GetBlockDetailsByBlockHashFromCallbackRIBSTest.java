@@ -36,9 +36,8 @@ import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallbackRIBSZ
 import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallbackRIBSZ2;
 import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalCoins;
 import org.openapitools.client.model.GetLatestMinedXRPRippleBlockRITotalFees;
-import org.junit.Assert;
-import org.junit.Ignore;
-import org.junit.Test;
+import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 
 /**

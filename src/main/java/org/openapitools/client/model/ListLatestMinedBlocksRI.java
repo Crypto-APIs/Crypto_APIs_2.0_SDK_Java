@@ -27,10 +27,30 @@ import org.openapitools.client.model.ListLatestMinedBlocksRIBS;
 import org.openapitools.client.model.ListLatestMinedBlocksRITotalCoins;
 import org.openapitools.client.model.ListLatestMinedBlocksRITotalFees;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonDeserializationContext;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonElement;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParseException;
+import com.google.gson.TypeAdapterFactory;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import io.cryptoapis.sdk.JSON;
+
 /**
  * ListLatestMinedBlocksRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2021-12-22T11:18:03.645227Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
 public class ListLatestMinedBlocksRI {
   public static final String SERIALIZED_NAME_HASH = "hash";
   @SerializedName(SERIALIZED_NAME_HASH)
@@ -251,6 +271,7 @@ public class ListLatestMinedBlocksRI {
   }
 
 
+
   @Override
   public boolean equals(Object o) {
     if (this == o) {
@@ -302,5 +323,130 @@ public class ListLatestMinedBlocksRI {
     return o.toString().replace("\n", "\n    ");
   }
 
+
+  public static HashSet<String> openapiFields;
+  public static HashSet<String> openapiRequiredFields;
+
+  static {
+    // a set of all properties/fields (JSON key names)
+    openapiFields = new HashSet<String>();
+    openapiFields.add("hash");
+    openapiFields.add("height");
+    openapiFields.add("previousBlockHash");
+    openapiFields.add("timestamp");
+    openapiFields.add("transactionsCount");
+    openapiFields.add("totalCoins");
+    openapiFields.add("totalFees");
+    openapiFields.add("blockchainSpecific");
+
+    // a set of required properties/fields (JSON key names)
+    openapiRequiredFields = new HashSet<String>();
+    openapiRequiredFields.add("hash");
+    openapiRequiredFields.add("height");
+    openapiRequiredFields.add("previousBlockHash");
+    openapiRequiredFields.add("timestamp");
+    openapiRequiredFields.add("transactionsCount");
+    openapiRequiredFields.add("totalCoins");
+    openapiRequiredFields.add("totalFees");
+    openapiRequiredFields.add("blockchainSpecific");
+  }
+
+ /**
+  * Validates the JSON Object and throws an exception if issues found
+  *
+  * @param jsonObj JSON Object
+  * @throws IOException if the JSON Object is invalid with respect to ListLatestMinedBlocksRI
+  */
+  public static void validateJsonObject(JsonObject jsonObj) throws IOException {
+      if (jsonObj == null) {
+        if (ListLatestMinedBlocksRI.openapiRequiredFields.isEmpty()) {
+          return;
+        } else { // has required fields
+          throw new IllegalArgumentException(String.format("The required field(s) %s in ListLatestMinedBlocksRI is not found in the empty JSON string", ListLatestMinedBlocksRI.openapiRequiredFields.toString()));
+        }
+      }
+
+      Set<Entry<String, JsonElement>> entries = jsonObj.entrySet();
+      // check to see if the JSON string contains additional fields
+      for (Entry<String, JsonElement> entry : entries) {
+        if (!ListLatestMinedBlocksRI.openapiFields.contains(entry.getKey())) {
+          throw new IllegalArgumentException(String.format("The field `%s` in the JSON string is not defined in the `ListLatestMinedBlocksRI` properties. JSON: %s", entry.getKey(), jsonObj.toString()));
+        }
+      }
+
+      // check to make sure all required properties/fields are present in the JSON string
+      for (String requiredField : ListLatestMinedBlocksRI.openapiRequiredFields) {
+        if (jsonObj.get(requiredField) == null) {
+          throw new IllegalArgumentException(String.format("The required field `%s` is not found in the JSON string: %s", requiredField, jsonObj.toString()));
+        }
+      }
+      if (jsonObj.get("hash") != null && !jsonObj.get("hash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `hash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("hash").toString()));
+      }
+      if (jsonObj.get("previousBlockHash") != null && !jsonObj.get("previousBlockHash").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `previousBlockHash` to be a primitive type in the JSON string but got `%s`", jsonObj.get("previousBlockHash").toString()));
+      }
+      // validate the optional field `totalCoins`
+      if (jsonObj.getAsJsonObject("totalCoins") != null) {
+        ListLatestMinedBlocksRITotalCoins.validateJsonObject(jsonObj.getAsJsonObject("totalCoins"));
+      }
+      // validate the optional field `totalFees`
+      if (jsonObj.getAsJsonObject("totalFees") != null) {
+        ListLatestMinedBlocksRITotalFees.validateJsonObject(jsonObj.getAsJsonObject("totalFees"));
+      }
+      // validate the optional field `blockchainSpecific`
+      if (jsonObj.getAsJsonObject("blockchainSpecific") != null) {
+        ListLatestMinedBlocksRIBS.validateJsonObject(jsonObj.getAsJsonObject("blockchainSpecific"));
+      }
+  }
+
+  public static class CustomTypeAdapterFactory implements TypeAdapterFactory {
+    @SuppressWarnings("unchecked")
+    @Override
+    public <T> TypeAdapter<T> create(Gson gson, TypeToken<T> type) {
+       if (!ListLatestMinedBlocksRI.class.isAssignableFrom(type.getRawType())) {
+         return null; // this class only serializes 'ListLatestMinedBlocksRI' and its subtypes
+       }
+       final TypeAdapter<JsonElement> elementAdapter = gson.getAdapter(JsonElement.class);
+       final TypeAdapter<ListLatestMinedBlocksRI> thisAdapter
+                        = gson.getDelegateAdapter(this, TypeToken.get(ListLatestMinedBlocksRI.class));
+
+       return (TypeAdapter<T>) new TypeAdapter<ListLatestMinedBlocksRI>() {
+           @Override
+           public void write(JsonWriter out, ListLatestMinedBlocksRI value) throws IOException {
+             JsonObject obj = thisAdapter.toJsonTree(value).getAsJsonObject();
+             elementAdapter.write(out, obj);
+           }
+
+           @Override
+           public ListLatestMinedBlocksRI read(JsonReader in) throws IOException {
+             JsonObject jsonObj = elementAdapter.read(in).getAsJsonObject();
+             validateJsonObject(jsonObj);
+             return thisAdapter.fromJsonTree(jsonObj);
+           }
+
+       }.nullSafe();
+    }
+  }
+
+ /**
+  * Create an instance of ListLatestMinedBlocksRI given an JSON string
+  *
+  * @param jsonString JSON string
+  * @return An instance of ListLatestMinedBlocksRI
+  * @throws IOException if the JSON string is invalid with respect to ListLatestMinedBlocksRI
+  */
+  public static ListLatestMinedBlocksRI fromJson(String jsonString) throws IOException {
+    return JSON.getGson().fromJson(jsonString, ListLatestMinedBlocksRI.class);
+  }
+
+ /**
+  * Convert an instance of ListLatestMinedBlocksRI to an JSON string
+  *
+  * @return JSON string
+  */
+  public String toJson() {
+    return JSON.getGson().toJson(this);
+  }
 }
 
