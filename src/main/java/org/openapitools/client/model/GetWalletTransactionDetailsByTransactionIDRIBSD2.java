@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2Vout;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSD2Vin;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSD2VoutInner;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Dash
  */
 @ApiModel(description = "Dash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -68,11 +68,11 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetWalletTransactionDetailsByTransactionIDRIBSD2Vin> vin = new ArrayList<>();
+  private List<GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout = new ArrayList<>();
+  private List<GetTransactionDetailsByTransactionIDRIBSD2VoutInner> vout = new ArrayList<>();
 
   public GetWalletTransactionDetailsByTransactionIDRIBSD2() { 
   }
@@ -146,13 +146,13 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSD2 vin(List<GetWalletTransactionDetailsByTransactionIDRIBSD2Vin> vin) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSD2 vin(List<GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSD2 addVinItem(GetWalletTransactionDetailsByTransactionIDRIBSD2Vin vinItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSD2 addVinItem(GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -164,23 +164,23 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
 
-  public List<GetWalletTransactionDetailsByTransactionIDRIBSD2Vin> getVin() {
+  public List<GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<GetWalletTransactionDetailsByTransactionIDRIBSD2Vin> vin) {
+  public void setVin(List<GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner> vin) {
     this.vin = vin;
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSD2 vout(List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSD2 vout(List<GetTransactionDetailsByTransactionIDRIBSD2VoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSD2 addVoutItem(GetTransactionDetailsByTransactionIDRIBSD2Vout voutItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSD2 addVoutItem(GetTransactionDetailsByTransactionIDRIBSD2VoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -192,12 +192,12 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSD2Vout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSD2VoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSD2Vout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSD2VoutInner> vout) {
     this.vout = vout;
   }
 
@@ -308,7 +308,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          GetWalletTransactionDetailsByTransactionIDRIBSD2Vin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          GetWalletTransactionDetailsByTransactionIDRIBSD2VinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -320,7 +320,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSD2 {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSD2Vout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSD2VoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

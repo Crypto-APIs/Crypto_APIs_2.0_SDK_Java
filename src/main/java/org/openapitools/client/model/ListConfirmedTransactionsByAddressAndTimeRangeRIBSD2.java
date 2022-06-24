@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSD2Vin;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSD2Vout;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSD2VinInner;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSD2VoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Dash
  */
 @ApiModel(description = "Dash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -68,11 +68,11 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListConfirmedTransactionsByAddressRIBSD2Vin> vin = new ArrayList<>();
+  private List<ListConfirmedTransactionsByAddressRIBSD2VinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListConfirmedTransactionsByAddressRIBSD2Vout> vout = new ArrayList<>();
+  private List<ListConfirmedTransactionsByAddressRIBSD2VoutInner> vout = new ArrayList<>();
 
   public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2() { 
   }
@@ -146,13 +146,13 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
   }
 
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 vin(List<ListConfirmedTransactionsByAddressRIBSD2Vin> vin) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 vin(List<ListConfirmedTransactionsByAddressRIBSD2VinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 addVinItem(ListConfirmedTransactionsByAddressRIBSD2Vin vinItem) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 addVinItem(ListConfirmedTransactionsByAddressRIBSD2VinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -164,23 +164,23 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
-  public List<ListConfirmedTransactionsByAddressRIBSD2Vin> getVin() {
+  public List<ListConfirmedTransactionsByAddressRIBSD2VinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<ListConfirmedTransactionsByAddressRIBSD2Vin> vin) {
+  public void setVin(List<ListConfirmedTransactionsByAddressRIBSD2VinInner> vin) {
     this.vin = vin;
   }
 
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 vout(List<ListConfirmedTransactionsByAddressRIBSD2Vout> vout) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 vout(List<ListConfirmedTransactionsByAddressRIBSD2VoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 addVoutItem(ListConfirmedTransactionsByAddressRIBSD2Vout voutItem) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 addVoutItem(ListConfirmedTransactionsByAddressRIBSD2VoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -192,12 +192,12 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
-  public List<ListConfirmedTransactionsByAddressRIBSD2Vout> getVout() {
+  public List<ListConfirmedTransactionsByAddressRIBSD2VoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListConfirmedTransactionsByAddressRIBSD2Vout> vout) {
+  public void setVout(List<ListConfirmedTransactionsByAddressRIBSD2VoutInner> vout) {
     this.vout = vout;
   }
 
@@ -308,7 +308,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          ListConfirmedTransactionsByAddressRIBSD2Vin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          ListConfirmedTransactionsByAddressRIBSD2VinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -320,7 +320,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          ListConfirmedTransactionsByAddressRIBSD2Vout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          ListConfirmedTransactionsByAddressRIBSD2VoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

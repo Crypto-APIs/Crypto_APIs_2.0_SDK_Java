@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBS;
-import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIRecipients;
-import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRISenders;
+import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIRecipientsInner;
+import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

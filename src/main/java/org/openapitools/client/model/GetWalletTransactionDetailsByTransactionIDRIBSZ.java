@@ -25,11 +25,11 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplit;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVin;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +55,7 @@ import io.cryptoapis.sdk.JSON;
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
   @SerializedName(SERIALIZED_NAME_BINDING_SIG)
@@ -87,15 +87,15 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
   @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit = null;
+  private List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner> vJoinSplit = null;
 
   public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput = null;
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner> vShieldedOutput = null;
 
   public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = null;
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> vShieldedSpend = null;
 
   public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
   @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
@@ -111,11 +111,11 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin = new ArrayList<>();
+  private List<GetWalletTransactionDetailsByTransactionIDRIBSZVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSZVoutInner> vout = new ArrayList<>();
 
   public GetWalletTransactionDetailsByTransactionIDRIBSZ() { 
   }
@@ -281,13 +281,13 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ vJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ vJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner> vJoinSplit) {
     
     this.vJoinSplit = vJoinSplit;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplit vJoinSplitItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVJoinSplitItem(GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner vJoinSplitItem) {
     if (this.vJoinSplit == null) {
       this.vJoinSplit = new ArrayList<>();
     }
@@ -302,23 +302,23 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> getvJoinSplit() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner> getvJoinSplit() {
     return vJoinSplit;
   }
 
 
-  public void setvJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplit> vJoinSplit) {
+  public void setvJoinSplit(List<GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner> vJoinSplit) {
     this.vJoinSplit = vJoinSplit;
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ vShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner> vShieldedOutput) {
     
     this.vShieldedOutput = vShieldedOutput;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput vShieldedOutputItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVShieldedOutputItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner vShieldedOutputItem) {
     if (this.vShieldedOutput == null) {
       this.vShieldedOutput = new ArrayList<>();
     }
@@ -333,23 +333,23 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Object Array representation of transaction output descriptions")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> getvShieldedOutput() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner> getvShieldedOutput() {
     return vShieldedOutput;
   }
 
 
-  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput> vShieldedOutput) {
+  public void setvShieldedOutput(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner> vShieldedOutput) {
     this.vShieldedOutput = vShieldedOutput;
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> vShieldedSpend) {
     
     this.vShieldedSpend = vShieldedSpend;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner vShieldedSpendItem) {
     if (this.vShieldedSpend == null) {
       this.vShieldedSpend = new ArrayList<>();
     }
@@ -364,12 +364,12 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Object Array representation of transaction spend descriptions")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> getvShieldedSpend() {
     return vShieldedSpend;
   }
 
 
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
+  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> vShieldedSpend) {
     this.vShieldedSpend = vShieldedSpend;
   }
 
@@ -443,13 +443,13 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ vin(List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ vin(List<GetWalletTransactionDetailsByTransactionIDRIBSZVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVinItem(GetWalletTransactionDetailsByTransactionIDRIBSZVin vinItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVinItem(GetWalletTransactionDetailsByTransactionIDRIBSZVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -461,23 +461,23 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
 
-  public List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> getVin() {
+  public List<GetWalletTransactionDetailsByTransactionIDRIBSZVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<GetWalletTransactionDetailsByTransactionIDRIBSZVin> vin) {
+  public void setVin(List<GetWalletTransactionDetailsByTransactionIDRIBSZVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ vout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ vout(List<ListTransactionsByBlockHeightRIBSZVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVoutItem(ListTransactionsByBlockHeightRIBSZVout voutItem) {
+  public GetWalletTransactionDetailsByTransactionIDRIBSZ addVoutItem(ListTransactionsByBlockHeightRIBSZVoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -489,12 +489,12 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<ListTransactionsByBlockHeightRIBSZVout> getVout() {
+  public List<ListTransactionsByBlockHeightRIBSZVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
+  public void setVout(List<ListTransactionsByBlockHeightRIBSZVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -651,7 +651,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
         // validate the optional field `vJoinSplit` (array)
         for (int i = 0; i < jsonArrayvJoinSplit.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSZVJoinSplit.validateJsonObject(jsonArrayvJoinSplit.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner.validateJsonObject(jsonArrayvJoinSplit.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvShieldedOutput = jsonObj.getAsJsonArray("vShieldedOutput");
@@ -663,7 +663,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
         // validate the optional field `vShieldedOutput` (array)
         for (int i = 0; i < jsonArrayvShieldedOutput.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput.validateJsonObject(jsonArrayvShieldedOutput.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner.validateJsonObject(jsonArrayvShieldedOutput.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvShieldedSpend = jsonObj.getAsJsonArray("vShieldedSpend");
@@ -675,7 +675,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
         // validate the optional field `vShieldedSpend` (array)
         for (int i = 0; i < jsonArrayvShieldedSpend.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.validateJsonObject(jsonArrayvShieldedSpend.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner.validateJsonObject(jsonArrayvShieldedSpend.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("valueBalance") != null && !jsonObj.get("valueBalance").isJsonPrimitive()) {
@@ -693,7 +693,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          GetWalletTransactionDetailsByTransactionIDRIBSZVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          GetWalletTransactionDetailsByTransactionIDRIBSZVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -705,7 +705,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBSZ {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          ListTransactionsByBlockHeightRIBSZVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSZVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

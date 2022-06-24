@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRIRecipients;
+import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRIRecipientsInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +50,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * CreateCoinsTransactionRequestFromWalletRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRI {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -119,7 +119,7 @@ public class CreateCoinsTransactionRequestFromWalletRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<CreateCoinsTransactionRequestFromWalletRIRecipients> recipients = new ArrayList<>();
+  private List<CreateCoinsTransactionRequestFromWalletRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL_TRANSACTION_AMOUNT = "totalTransactionAmount";
   @SerializedName(SERIALIZED_NAME_TOTAL_TRANSACTION_AMOUNT)
@@ -291,13 +291,13 @@ public class CreateCoinsTransactionRequestFromWalletRI {
   }
 
 
-  public CreateCoinsTransactionRequestFromWalletRI recipients(List<CreateCoinsTransactionRequestFromWalletRIRecipients> recipients) {
+  public CreateCoinsTransactionRequestFromWalletRI recipients(List<CreateCoinsTransactionRequestFromWalletRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public CreateCoinsTransactionRequestFromWalletRI addRecipientsItem(CreateCoinsTransactionRequestFromWalletRIRecipients recipientsItem) {
+  public CreateCoinsTransactionRequestFromWalletRI addRecipientsItem(CreateCoinsTransactionRequestFromWalletRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -309,12 +309,12 @@ public class CreateCoinsTransactionRequestFromWalletRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines the destination of the transaction, whether it is incoming or outgoing.")
 
-  public List<CreateCoinsTransactionRequestFromWalletRIRecipients> getRecipients() {
+  public List<CreateCoinsTransactionRequestFromWalletRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<CreateCoinsTransactionRequestFromWalletRIRecipients> recipients) {
+  public void setRecipients(List<CreateCoinsTransactionRequestFromWalletRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
@@ -515,7 +515,7 @@ public class CreateCoinsTransactionRequestFromWalletRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          CreateCoinsTransactionRequestFromWalletRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          CreateCoinsTransactionRequestFromWalletRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("totalTransactionAmount") != null && !jsonObj.get("totalTransactionAmount").isJsonPrimitive()) {

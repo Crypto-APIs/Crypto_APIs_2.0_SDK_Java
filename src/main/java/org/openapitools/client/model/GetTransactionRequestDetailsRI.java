@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionRequestDetailsRIRecipients;
+import org.openapitools.client.model.GetTransactionRequestDetailsRIRecipientsInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +50,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetTransactionRequestDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetTransactionRequestDetailsRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DETAILS = "additionalDetails";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DETAILS)
@@ -231,7 +231,7 @@ public class GetTransactionRequestDetailsRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetTransactionRequestDetailsRIRecipients> recipients = new ArrayList<>();
+  private List<GetTransactionRequestDetailsRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TOTAL_TRANSACTION_AMOUNT = "totalTransactionAmount";
   @SerializedName(SERIALIZED_NAME_TOTAL_TRANSACTION_AMOUNT)
@@ -462,13 +462,13 @@ public class GetTransactionRequestDetailsRI {
   }
 
 
-  public GetTransactionRequestDetailsRI recipients(List<GetTransactionRequestDetailsRIRecipients> recipients) {
+  public GetTransactionRequestDetailsRI recipients(List<GetTransactionRequestDetailsRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public GetTransactionRequestDetailsRI addRecipientsItem(GetTransactionRequestDetailsRIRecipients recipientsItem) {
+  public GetTransactionRequestDetailsRI addRecipientsItem(GetTransactionRequestDetailsRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -480,12 +480,12 @@ public class GetTransactionRequestDetailsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<GetTransactionRequestDetailsRIRecipients> getRecipients() {
+  public List<GetTransactionRequestDetailsRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<GetTransactionRequestDetailsRIRecipients> recipients) {
+  public void setRecipients(List<GetTransactionRequestDetailsRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
@@ -769,7 +769,7 @@ public class GetTransactionRequestDetailsRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          GetTransactionRequestDetailsRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          GetTransactionRequestDetailsRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("totalTransactionAmount") != null && !jsonObj.get("totalTransactionAmount").isJsonPrimitive()) {

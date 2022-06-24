@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRIFee;
-import org.openapitools.client.model.ListZilliqaTransactionsByAddressRIRecipients;
-import org.openapitools.client.model.ListZilliqaTransactionsByAddressRISenders;
+import org.openapitools.client.model.ListZilliqaTransactionsByAddressRIRecipientsInner;
+import org.openapitools.client.model.ListZilliqaTransactionsByAddressRISendersInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListZilliqaTransactionsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListZilliqaTransactionsByBlockHashRI {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
@@ -80,11 +80,11 @@ public class ListZilliqaTransactionsByBlockHashRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListZilliqaTransactionsByAddressRIRecipients> recipients = new ArrayList<>();
+  private List<ListZilliqaTransactionsByAddressRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListZilliqaTransactionsByAddressRISenders> senders = new ArrayList<>();
+  private List<ListZilliqaTransactionsByAddressRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -243,13 +243,13 @@ public class ListZilliqaTransactionsByBlockHashRI {
   }
 
 
-  public ListZilliqaTransactionsByBlockHashRI recipients(List<ListZilliqaTransactionsByAddressRIRecipients> recipients) {
+  public ListZilliqaTransactionsByBlockHashRI recipients(List<ListZilliqaTransactionsByAddressRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListZilliqaTransactionsByBlockHashRI addRecipientsItem(ListZilliqaTransactionsByAddressRIRecipients recipientsItem) {
+  public ListZilliqaTransactionsByBlockHashRI addRecipientsItem(ListZilliqaTransactionsByAddressRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -261,23 +261,23 @@ public class ListZilliqaTransactionsByBlockHashRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines an object array of the transaction recipients.")
 
-  public List<ListZilliqaTransactionsByAddressRIRecipients> getRecipients() {
+  public List<ListZilliqaTransactionsByAddressRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListZilliqaTransactionsByAddressRIRecipients> recipients) {
+  public void setRecipients(List<ListZilliqaTransactionsByAddressRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListZilliqaTransactionsByBlockHashRI senders(List<ListZilliqaTransactionsByAddressRISenders> senders) {
+  public ListZilliqaTransactionsByBlockHashRI senders(List<ListZilliqaTransactionsByAddressRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListZilliqaTransactionsByBlockHashRI addSendersItem(ListZilliqaTransactionsByAddressRISenders sendersItem) {
+  public ListZilliqaTransactionsByBlockHashRI addSendersItem(ListZilliqaTransactionsByAddressRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -289,12 +289,12 @@ public class ListZilliqaTransactionsByBlockHashRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
-  public List<ListZilliqaTransactionsByAddressRISenders> getSenders() {
+  public List<ListZilliqaTransactionsByAddressRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListZilliqaTransactionsByAddressRISenders> senders) {
+  public void setSenders(List<ListZilliqaTransactionsByAddressRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -529,7 +529,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListZilliqaTransactionsByAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListZilliqaTransactionsByAddressRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -541,7 +541,7 @@ public class ListZilliqaTransactionsByBlockHashRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListZilliqaTransactionsByAddressRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListZilliqaTransactionsByAddressRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {

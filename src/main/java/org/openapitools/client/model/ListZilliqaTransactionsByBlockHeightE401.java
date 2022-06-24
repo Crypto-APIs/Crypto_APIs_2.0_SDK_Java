@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.BannedIpAddressDetails;
+import org.openapitools.client.model.BannedIpAddressDetailsInner;
 import org.openapitools.client.model.InvalidApiKey;
 import org.openapitools.client.model.MissingApiKey;
 
@@ -62,7 +62,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ListZilliqaTransactionsByBlockHeightE401.class.getName());
 
@@ -108,6 +108,7 @@ public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSch
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize InvalidApiKey
@@ -119,6 +120,7 @@ public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'InvalidApiKey'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for InvalidApiKey failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'InvalidApiKey'", e);
                     }
 
@@ -131,6 +133,7 @@ public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'MissingApiKey'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for MissingApiKey failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'MissingApiKey'", e);
                     }
 
@@ -140,7 +143,7 @@ public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSch
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ListZilliqaTransactionsByBlockHeightE401: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ListZilliqaTransactionsByBlockHeightE401: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -241,11 +244,13 @@ public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSch
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with InvalidApiKey
     try {
       InvalidApiKey.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for InvalidApiKey failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with MissingApiKey
@@ -253,10 +258,11 @@ public class ListZilliqaTransactionsByBlockHeightE401 extends AbstractOpenApiSch
       MissingApiKey.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for MissingApiKey failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ListZilliqaTransactionsByBlockHeightE401 with oneOf schemas: InvalidApiKey, MissingApiKey. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for ListZilliqaTransactionsByBlockHeightE401 with oneOf schemas: InvalidApiKey, MissingApiKey. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

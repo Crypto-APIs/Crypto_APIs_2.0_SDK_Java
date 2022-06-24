@@ -26,9 +26,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplit;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSB;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBC;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBSC;
@@ -38,8 +38,8 @@ import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDR
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSEC;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSL;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZ;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVin;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVoutInner;
 
 import javax.ws.rs.core.GenericType;
 
@@ -74,7 +74,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(GetWalletTransactionDetailsByTransactionIDRIBS.class.getName());
 
@@ -176,6 +176,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize GetWalletTransactionDetailsByTransactionIDRIBSB
@@ -187,6 +188,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSB'", e);
                     }
 
@@ -199,6 +201,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSBC'", e);
                     }
 
@@ -211,6 +214,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSBSC'", e);
                     }
 
@@ -223,6 +227,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSD'", e);
                     }
 
@@ -235,6 +240,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSD2'", e);
                     }
 
@@ -247,6 +253,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSE'", e);
                     }
 
@@ -259,6 +266,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSEC'", e);
                     }
 
@@ -271,6 +279,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSL'", e);
                     }
 
@@ -283,6 +292,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         log.log(Level.FINER, "Input data matches schema 'GetWalletTransactionDetailsByTransactionIDRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetWalletTransactionDetailsByTransactionIDRIBSZ'", e);
                     }
 
@@ -292,7 +302,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for GetWalletTransactionDetailsByTransactionIDRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for GetWalletTransactionDetailsByTransactionIDRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -554,11 +564,13 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSB
     try {
       GetWalletTransactionDetailsByTransactionIDRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSBC
@@ -566,6 +578,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSBSC
@@ -573,6 +586,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSD
@@ -580,6 +594,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSD2
@@ -587,6 +602,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSE
@@ -594,6 +610,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSEC
@@ -601,6 +618,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSL
@@ -608,6 +626,7 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetWalletTransactionDetailsByTransactionIDRIBSZ
@@ -615,10 +634,11 @@ public class GetWalletTransactionDetailsByTransactionIDRIBS extends AbstractOpen
       GetWalletTransactionDetailsByTransactionIDRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetWalletTransactionDetailsByTransactionIDRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for GetWalletTransactionDetailsByTransactionIDRIBS with oneOf schemas: GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for GetWalletTransactionDetailsByTransactionIDRIBS with oneOf schemas: GetWalletTransactionDetailsByTransactionIDRIBSB, GetWalletTransactionDetailsByTransactionIDRIBSBC, GetWalletTransactionDetailsByTransactionIDRIBSBSC, GetWalletTransactionDetailsByTransactionIDRIBSD, GetWalletTransactionDetailsByTransactionIDRIBSD2, GetWalletTransactionDetailsByTransactionIDRIBSE, GetWalletTransactionDetailsByTransactionIDRIBSEC, GetWalletTransactionDetailsByTransactionIDRIBSL, GetWalletTransactionDetailsByTransactionIDRIBSZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

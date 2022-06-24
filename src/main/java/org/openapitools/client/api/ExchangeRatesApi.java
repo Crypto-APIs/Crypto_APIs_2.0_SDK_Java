@@ -27,21 +27,21 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails409Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.GetExchangeRateByAssetSymbols400Response;
+import org.openapitools.client.model.GetExchangeRateByAssetSymbols401Response;
+import org.openapitools.client.model.GetExchangeRateByAssetSymbols403Response;
+import org.openapitools.client.model.GetExchangeRateByAssetSymbols422Response;
 import org.openapitools.client.model.GetExchangeRateByAssetSymbolsR;
+import org.openapitools.client.model.GetExchangeRateByAssetsIDs400Response;
+import org.openapitools.client.model.GetExchangeRateByAssetsIDs401Response;
+import org.openapitools.client.model.GetExchangeRateByAssetsIDs403Response;
+import org.openapitools.client.model.GetExchangeRateByAssetsIDs422Response;
 import org.openapitools.client.model.GetExchangeRateByAssetsIDsR;
-import org.openapitools.client.model.InlineResponse400106;
-import org.openapitools.client.model.InlineResponse400107;
-import org.openapitools.client.model.InlineResponse401106;
-import org.openapitools.client.model.InlineResponse401107;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse403106;
-import org.openapitools.client.model.InlineResponse403107;
-import org.openapitools.client.model.InlineResponse409;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse4226;
-import org.openapitools.client.model.InlineResponse4227;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

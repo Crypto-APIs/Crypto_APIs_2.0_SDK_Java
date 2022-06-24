@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBS;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIFee;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIRecipients;
-import org.openapitools.client.model.ListTransactionsByBlockHashRISenders;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIRecipientsInner;
+import org.openapitools.client.model.ListTransactionsByBlockHashRISendersInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +53,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListTransactionsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListTransactionsByBlockHashRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -69,11 +69,11 @@ public class ListTransactionsByBlockHashRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListTransactionsByBlockHashRIRecipients> recipients = new ArrayList<>();
+  private List<ListTransactionsByBlockHashRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListTransactionsByBlockHashRISenders> senders = new ArrayList<>();
+  private List<ListTransactionsByBlockHashRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -167,13 +167,13 @@ public class ListTransactionsByBlockHashRI {
   }
 
 
-  public ListTransactionsByBlockHashRI recipients(List<ListTransactionsByBlockHashRIRecipients> recipients) {
+  public ListTransactionsByBlockHashRI recipients(List<ListTransactionsByBlockHashRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListTransactionsByBlockHashRI addRecipientsItem(ListTransactionsByBlockHashRIRecipients recipientsItem) {
+  public ListTransactionsByBlockHashRI addRecipientsItem(ListTransactionsByBlockHashRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -185,23 +185,23 @@ public class ListTransactionsByBlockHashRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListTransactionsByBlockHashRIRecipients> getRecipients() {
+  public List<ListTransactionsByBlockHashRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListTransactionsByBlockHashRIRecipients> recipients) {
+  public void setRecipients(List<ListTransactionsByBlockHashRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListTransactionsByBlockHashRI senders(List<ListTransactionsByBlockHashRISenders> senders) {
+  public ListTransactionsByBlockHashRI senders(List<ListTransactionsByBlockHashRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListTransactionsByBlockHashRI addSendersItem(ListTransactionsByBlockHashRISenders sendersItem) {
+  public ListTransactionsByBlockHashRI addSendersItem(ListTransactionsByBlockHashRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -213,12 +213,12 @@ public class ListTransactionsByBlockHashRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListTransactionsByBlockHashRISenders> getSenders() {
+  public List<ListTransactionsByBlockHashRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListTransactionsByBlockHashRISenders> senders) {
+  public void setSenders(List<ListTransactionsByBlockHashRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -467,7 +467,7 @@ public class ListTransactionsByBlockHashRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListTransactionsByBlockHashRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListTransactionsByBlockHashRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -479,7 +479,7 @@ public class ListTransactionsByBlockHashRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListTransactionsByBlockHashRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListTransactionsByBlockHashRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {

@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListOmniTransactionsByBlockHeightRIFee;
-import org.openapitools.client.model.ListOmniTransactionsByBlockHeightRIRecipients;
-import org.openapitools.client.model.ListOmniTransactionsByBlockHeightRISenders;
+import org.openapitools.client.model.ListOmniTransactionsByBlockHeightRIRecipientsInner;
+import org.openapitools.client.model.ListOmniTransactionsByBlockHeightRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

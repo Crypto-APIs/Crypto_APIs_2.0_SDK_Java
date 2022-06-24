@@ -15,14 +15,14 @@ Zcash
 |**locktime** | **Long** | Represents the time at which a particular transaction can be added to the blockchain. |  |
 |**overwintered** | **Boolean** | \&quot;Overwinter\&quot; is the network upgrade for the Zcash blockchain. |  |
 |**size** | **Integer** | Represents the total size of this transaction. |  |
-|**vJoinSplit** | [**List&lt;ListTransactionsByBlockHeightRIBSZVJoinSplit&gt;**](ListTransactionsByBlockHeightRIBSZVJoinSplit.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. |  |
-|**vShieldedOutput** | [**List&lt;ListTransactionsByBlockHeightRIBSZVShieldedOutput&gt;**](ListTransactionsByBlockHeightRIBSZVShieldedOutput.md) | Object Array representation of transaction output descriptions |  |
-|**vShieldedSpend** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend&gt;**](GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.md) | Object Array representation of transaction spend descriptions |  |
+|**vJoinSplit** | [**List&lt;ListTransactionsByBlockHeightRIBSZVJoinSplitInner&gt;**](ListTransactionsByBlockHeightRIBSZVJoinSplitInner.md) | Represents a sequence of JoinSplit descriptions using BCTV14 proofs. |  |
+|**vShieldedOutput** | [**List&lt;ListTransactionsByBlockHeightRIBSZVShieldedOutputInner&gt;**](ListTransactionsByBlockHeightRIBSZVShieldedOutputInner.md) | Object Array representation of transaction output descriptions |  |
+|**vShieldedSpend** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner&gt;**](GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner.md) | Object Array representation of transaction spend descriptions |  |
 |**valueBalance** | **String** | Defines the transaction value balance. |  |
 |**version** | **Integer** | Represents the transaction version number. |  |
 |**versionGroupId** | **String** | Represents the transaction version group ID. |  |
-|**vin** | [**List&lt;ListTransactionsByBlockHeightRIBSZVin&gt;**](ListTransactionsByBlockHeightRIBSZVin.md) | Object Array representation of transaction inputs |  |
-|**vout** | [**List&lt;ListTransactionsByBlockHeightRIBSZVout&gt;**](ListTransactionsByBlockHeightRIBSZVout.md) | Object Array representation of transaction outputs |  |
+|**vin** | [**List&lt;ListTransactionsByBlockHeightRIBSZVinInner&gt;**](ListTransactionsByBlockHeightRIBSZVinInner.md) | Object Array representation of transaction inputs |  |
+|**vout** | [**List&lt;ListTransactionsByBlockHeightRIBSZVoutInner&gt;**](ListTransactionsByBlockHeightRIBSZVoutInner.md) | Object Array representation of transaction outputs |  |
 
 
 

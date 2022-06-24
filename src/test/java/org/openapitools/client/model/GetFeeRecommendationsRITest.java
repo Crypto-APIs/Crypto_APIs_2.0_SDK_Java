@@ -72,11 +72,11 @@ public class GetFeeRecommendationsRITest {
     }
 
     /**
-     * Test the property 'feeCushionMultiplier'
+     * Test the property 'feeMultiplier'
      */
     @Test
-    public void feeCushionMultiplierTest() {
-        // TODO: test feeCushionMultiplier
+    public void feeMultiplierTest() {
+        // TODO: test feeMultiplier
     }
 
 }

@@ -11,7 +11,7 @@
 |**callbackUrl** | **String** | Represents the URL that is set by the customer where the callback will be received at. The callback notification will be received only if and when the event occurs. &#x60;We support ONLY httpS type of protocol&#x60;. |  |
 |**feePriority** | [**FeePriorityEnum**](#FeePriorityEnum) | Represents the fee priority of the automation, whether it is \&quot;slow\&quot;, \&quot;standard\&quot; or \&quot;fast\&quot;. |  |
 |**note** | **String** | Represents an optional note to add a free text in, explaining or providing additional detail on the transaction request. |  [optional] |
-|**recipients** | [**List&lt;CreateFungibleTokensTransactionRequestFromAddressRIRecipients&gt;**](CreateFungibleTokensTransactionRequestFromAddressRIRecipients.md) | Defines the destination for the transaction, i.e. the recipient(s). |  |
+|**recipients** | [**List&lt;CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner&gt;**](CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner.md) | Defines the destination for the transaction, i.e. the recipient(s). |  |
 |**senders** | [**CreateFungibleTokensTransactionRequestFromAddressRISenders**](CreateFungibleTokensTransactionRequestFromAddressRISenders.md) |  |  |
 |**tokenTypeSpecificData** | [**CreateFungibleTokensTransactionRequestFromAddressRIS**](CreateFungibleTokensTransactionRequestFromAddressRIS.md) |  |  |
 |**transactionRequestId** | **String** | Represents a unique identifier of the transaction request (the request sent to make a transaction), which helps in identifying which callback and which &#x60;referenceId&#x60; concern that specific transaction request. |  |

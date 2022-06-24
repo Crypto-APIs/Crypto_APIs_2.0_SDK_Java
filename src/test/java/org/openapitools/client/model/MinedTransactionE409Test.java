@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.AlreadyExists;
-import org.openapitools.client.model.BannedIpAddressDetails;
+import org.openapitools.client.model.BannedIpAddressDetailsInner;
 import org.openapitools.client.model.InvalidData;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

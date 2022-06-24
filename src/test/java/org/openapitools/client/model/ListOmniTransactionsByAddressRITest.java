@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListOmniTransactionsByAddressRIFee;
-import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipients;
-import org.openapitools.client.model.ListOmniTransactionsByAddressRISenders;
+import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipientsInner;
+import org.openapitools.client.model.ListOmniTransactionsByAddressRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

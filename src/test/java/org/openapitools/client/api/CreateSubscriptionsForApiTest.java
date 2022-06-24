@@ -14,69 +14,88 @@
 package org.openapitools.client.api;
 
 import io.cryptoapis.sdk.ApiException;
-import org.openapitools.client.model.InlineResponse40071;
-import org.openapitools.client.model.InlineResponse40072;
-import org.openapitools.client.model.InlineResponse40073;
-import org.openapitools.client.model.InlineResponse40074;
-import org.openapitools.client.model.InlineResponse40075;
-import org.openapitools.client.model.InlineResponse40076;
-import org.openapitools.client.model.InlineResponse40077;
-import org.openapitools.client.model.InlineResponse40078;
-import org.openapitools.client.model.InlineResponse40087;
-import org.openapitools.client.model.InlineResponse40088;
-import org.openapitools.client.model.InlineResponse40171;
-import org.openapitools.client.model.InlineResponse40172;
-import org.openapitools.client.model.InlineResponse40173;
-import org.openapitools.client.model.InlineResponse40174;
-import org.openapitools.client.model.InlineResponse40175;
-import org.openapitools.client.model.InlineResponse40176;
-import org.openapitools.client.model.InlineResponse40177;
-import org.openapitools.client.model.InlineResponse40178;
-import org.openapitools.client.model.InlineResponse40187;
-import org.openapitools.client.model.InlineResponse40188;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40371;
-import org.openapitools.client.model.InlineResponse40372;
-import org.openapitools.client.model.InlineResponse40373;
-import org.openapitools.client.model.InlineResponse40374;
-import org.openapitools.client.model.InlineResponse40375;
-import org.openapitools.client.model.InlineResponse40376;
-import org.openapitools.client.model.InlineResponse40377;
-import org.openapitools.client.model.InlineResponse40378;
-import org.openapitools.client.model.InlineResponse40387;
-import org.openapitools.client.model.InlineResponse40388;
-import org.openapitools.client.model.InlineResponse40910;
-import org.openapitools.client.model.InlineResponse40911;
-import org.openapitools.client.model.InlineResponse40912;
-import org.openapitools.client.model.InlineResponse40913;
-import org.openapitools.client.model.InlineResponse40914;
-import org.openapitools.client.model.InlineResponse40915;
-import org.openapitools.client.model.InlineResponse4096;
-import org.openapitools.client.model.InlineResponse4097;
-import org.openapitools.client.model.InlineResponse4098;
-import org.openapitools.client.model.InlineResponse4099;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse422;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails422Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionID404Response;
+import org.openapitools.client.model.MinedTransaction400Response;
+import org.openapitools.client.model.MinedTransaction401Response;
+import org.openapitools.client.model.MinedTransaction403Response;
+import org.openapitools.client.model.MinedTransaction409Response;
 import org.openapitools.client.model.MinedTransactionR;
 import org.openapitools.client.model.MinedTransactionRB;
+import org.openapitools.client.model.NewBlock400Response;
+import org.openapitools.client.model.NewBlock401Response;
+import org.openapitools.client.model.NewBlock403Response;
+import org.openapitools.client.model.NewBlock409Response;
 import org.openapitools.client.model.NewBlockR;
 import org.openapitools.client.model.NewBlockRB;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions400Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions401Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions403Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions409Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation400Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation401Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation403Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation409Response;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmationR;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmationRB;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount400Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount401Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount403Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount409Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmountR;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmountRB;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsR;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsRB;
+import org.openapitools.client.model.NewConfirmedInternalTransactions400Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactions401Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactions403Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactions409Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation400Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation401Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation403Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation409Response;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmationR;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmationRB;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount400Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount401Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount403Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount409Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmountR;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmountRB;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsR;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsRB;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount400Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount401Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount403Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount409Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmountR;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmountRB;
+import org.openapitools.client.model.NewConfirmedTokensTransactions400Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactions401Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactions403Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactions409Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation400Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation401Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation403Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation409Response;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmationR;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmationRB;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsR;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsRB;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions400Response;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions401Response;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions403Response;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions409Response;
 import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsRB;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions400Response;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions401Response;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions403Response;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions409Response;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsRB;
 import org.junit.jupiter.api.Disabled;
@@ -164,6 +183,23 @@ public class CreateSubscriptionsForApiTest {
     }
 
     /**
+     * New Confirmed Coins Transactions For Specific Amount
+     *
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed coins transactions for the specified blockchain and the amount is equal or higher than the value specified.  By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs  filtered for the specified amount. The information is returned per specified address.    Being confirmed means that the transactions are verified by miners and added to the next block.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void newConfirmedCoinsTransactionsForSpecificAmountTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        NewConfirmedCoinsTransactionsForSpecificAmountRB newConfirmedCoinsTransactionsForSpecificAmountRB = null;
+        NewConfirmedCoinsTransactionsForSpecificAmountR response = api.newConfirmedCoinsTransactionsForSpecificAmount(blockchain, network, context, newConfirmedCoinsTransactionsForSpecificAmountRB);
+        // TODO: test validations
+    }
+
+    /**
      * New confirmed internal transactions
      *
      * Through this endpoint customers can create callback subscriptions for a specific event. In this case the event is when there are new confirmed internal transactions. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs.    Being confirmed means that the transactions are verified by miners and added to the next block.    {note}To have an operational callback subscription, you need to first verify a domain for the Callback URL. Please see more information on Callbacks [here](https://developers.cryptoapis.io/technical-documentation/general-information/callbacks#callback-url).{/note}    {warning}Crypto APIs will notify the user **only when** the event occurs. There are cases when the specific event doesn&#39;t happen at all, or takes a long time to do so. A callback notification **will not** be sent if the event does not or cannot occur, or will take long time to occur.{/warning}
@@ -194,6 +230,40 @@ public class CreateSubscriptionsForApiTest {
         String context = null;
         NewConfirmedInternalTransactionsAndEachConfirmationRB newConfirmedInternalTransactionsAndEachConfirmationRB = null;
         NewConfirmedInternalTransactionsAndEachConfirmationR response = api.newConfirmedInternalTransactionsAndEachConfirmation(blockchain, network, context, newConfirmedInternalTransactionsAndEachConfirmationRB);
+        // TODO: test validations
+    }
+
+    /**
+     * New Confirmed Internal Transactions For Specific Amount
+     *
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new confirmed internal transactions and the amount is equal or higher than a value, specified by the customer. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void newConfirmedInternalTransactionsForSpecificAmountTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        NewConfirmedInternalTransactionsForSpecificAmountRB newConfirmedInternalTransactionsForSpecificAmountRB = null;
+        NewConfirmedInternalTransactionsForSpecificAmountR response = api.newConfirmedInternalTransactionsForSpecificAmount(blockchain, network, context, newConfirmedInternalTransactionsForSpecificAmountRB);
+        // TODO: test validations
+    }
+
+    /**
+     * New Confirmed Token Transactions For Specific Amount
+     *
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed token transactions for the specified blockchain and the amount is equal or higher than the value specified. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block. This endpoint refers to tokens transactions only, not coins.
+     *
+     * @throws ApiException if the Api call fails
+     */
+    @Test
+    public void newConfirmedTokenTransactionsForSpecificAmountTest() throws ApiException {
+        String blockchain = null;
+        String network = null;
+        String context = null;
+        NewConfirmedTokenTransactionsForSpecificAmountRB newConfirmedTokenTransactionsForSpecificAmountRB = null;
+        NewConfirmedTokenTransactionsForSpecificAmountR response = api.newConfirmedTokenTransactionsForSpecificAmount(blockchain, network, context, newConfirmedTokenTransactionsForSpecificAmountRB);
         // TODO: test validations
     }
 

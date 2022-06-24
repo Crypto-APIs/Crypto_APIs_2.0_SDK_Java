@@ -16,8 +16,8 @@ Zcash
 |**valueBalance** | **String** | Defines the transaction value balance. |  |
 |**version** | **Integer** | Represents the transaction version number. |  |
 |**versionGroupId** | **String** | Represents the transaction version group ID |  |
-|**vin** | [**List&lt;DecodeRawTransactionHexRISZVin&gt;**](DecodeRawTransactionHexRISZVin.md) | Represents the Inputs of the transaction |  |
-|**vout** | [**List&lt;DecodeRawTransactionHexRISZVout&gt;**](DecodeRawTransactionHexRISZVout.md) | Represents the Inputs of the transaction |  |
+|**vin** | [**List&lt;DecodeRawTransactionHexRISZVinInner&gt;**](DecodeRawTransactionHexRISZVinInner.md) | Represents the Inputs of the transaction |  |
+|**vout** | [**List&lt;DecodeRawTransactionHexRISZVoutInner&gt;**](DecodeRawTransactionHexRISZVoutInner.md) | Represents the Inputs of the transaction |  |
 
 
 

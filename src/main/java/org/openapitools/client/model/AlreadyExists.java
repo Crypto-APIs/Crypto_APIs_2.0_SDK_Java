@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.BannedIpAddressDetails;
+import org.openapitools.client.model.BannedIpAddressDetailsInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -51,7 +51,7 @@ import io.cryptoapis.sdk.JSON;
  * already_exists
  */
 @ApiModel(description = "already_exists")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class AlreadyExists {
   public static final String SERIALIZED_NAME_CODE = "code";
   @SerializedName(SERIALIZED_NAME_CODE)
@@ -63,7 +63,7 @@ public class AlreadyExists {
 
   public static final String SERIALIZED_NAME_DETAILS = "details";
   @SerializedName(SERIALIZED_NAME_DETAILS)
-  private List<BannedIpAddressDetails> details = null;
+  private List<BannedIpAddressDetailsInner> details = null;
 
   public AlreadyExists() { 
   }
@@ -114,13 +114,13 @@ public class AlreadyExists {
   }
 
 
-  public AlreadyExists details(List<BannedIpAddressDetails> details) {
+  public AlreadyExists details(List<BannedIpAddressDetailsInner> details) {
     
     this.details = details;
     return this;
   }
 
-  public AlreadyExists addDetailsItem(BannedIpAddressDetails detailsItem) {
+  public AlreadyExists addDetailsItem(BannedIpAddressDetailsInner detailsItem) {
     if (this.details == null) {
       this.details = new ArrayList<>();
     }
@@ -135,12 +135,12 @@ public class AlreadyExists {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<BannedIpAddressDetails> getDetails() {
+  public List<BannedIpAddressDetailsInner> getDetails() {
     return details;
   }
 
 
-  public void setDetails(List<BannedIpAddressDetails> details) {
+  public void setDetails(List<BannedIpAddressDetailsInner> details) {
     this.details = details;
   }
 
@@ -248,7 +248,7 @@ public class AlreadyExists {
 
         // validate the optional field `details` (array)
         for (int i = 0; i < jsonArraydetails.size(); i++) {
-          BannedIpAddressDetails.validateJsonObject(jsonArraydetails.get(i).getAsJsonObject());
+          BannedIpAddressDetailsInner.validateJsonObject(jsonArraydetails.get(i).getAsJsonObject());
         };
       }
   }

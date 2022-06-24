@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSBCVin;
-import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSBCVout;
+import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSBCVinInner;
+import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBSBCVoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Bitcoin Cash
  */
 @ApiModel(description = "Bitcoin Cash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRIBSBC {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -68,11 +68,11 @@ public class ListAllUnconfirmedTransactionsRIBSBC {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListAllUnconfirmedTransactionsRIBSBCVin> vin = new ArrayList<>();
+  private List<ListAllUnconfirmedTransactionsRIBSBCVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListAllUnconfirmedTransactionsRIBSBCVout> vout = new ArrayList<>();
+  private List<ListAllUnconfirmedTransactionsRIBSBCVoutInner> vout = new ArrayList<>();
 
   public ListAllUnconfirmedTransactionsRIBSBC() { 
   }
@@ -146,13 +146,13 @@ public class ListAllUnconfirmedTransactionsRIBSBC {
   }
 
 
-  public ListAllUnconfirmedTransactionsRIBSBC vin(List<ListAllUnconfirmedTransactionsRIBSBCVin> vin) {
+  public ListAllUnconfirmedTransactionsRIBSBC vin(List<ListAllUnconfirmedTransactionsRIBSBCVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public ListAllUnconfirmedTransactionsRIBSBC addVinItem(ListAllUnconfirmedTransactionsRIBSBCVin vinItem) {
+  public ListAllUnconfirmedTransactionsRIBSBC addVinItem(ListAllUnconfirmedTransactionsRIBSBCVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -164,23 +164,23 @@ public class ListAllUnconfirmedTransactionsRIBSBC {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
-  public List<ListAllUnconfirmedTransactionsRIBSBCVin> getVin() {
+  public List<ListAllUnconfirmedTransactionsRIBSBCVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<ListAllUnconfirmedTransactionsRIBSBCVin> vin) {
+  public void setVin(List<ListAllUnconfirmedTransactionsRIBSBCVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public ListAllUnconfirmedTransactionsRIBSBC vout(List<ListAllUnconfirmedTransactionsRIBSBCVout> vout) {
+  public ListAllUnconfirmedTransactionsRIBSBC vout(List<ListAllUnconfirmedTransactionsRIBSBCVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListAllUnconfirmedTransactionsRIBSBC addVoutItem(ListAllUnconfirmedTransactionsRIBSBCVout voutItem) {
+  public ListAllUnconfirmedTransactionsRIBSBC addVoutItem(ListAllUnconfirmedTransactionsRIBSBCVoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -192,12 +192,12 @@ public class ListAllUnconfirmedTransactionsRIBSBC {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<ListAllUnconfirmedTransactionsRIBSBCVout> getVout() {
+  public List<ListAllUnconfirmedTransactionsRIBSBCVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListAllUnconfirmedTransactionsRIBSBCVout> vout) {
+  public void setVout(List<ListAllUnconfirmedTransactionsRIBSBCVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -308,7 +308,7 @@ public class ListAllUnconfirmedTransactionsRIBSBC {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          ListAllUnconfirmedTransactionsRIBSBCVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          ListAllUnconfirmedTransactionsRIBSBCVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -320,7 +320,7 @@ public class ListAllUnconfirmedTransactionsRIBSBC {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          ListAllUnconfirmedTransactionsRIBSBCVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          ListAllUnconfirmedTransactionsRIBSBCVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

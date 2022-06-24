@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListAllAssetsFromAllWalletsRICoins;
-import org.openapitools.client.model.ListAllAssetsFromAllWalletsRIFungibleTokens;
-import org.openapitools.client.model.ListAllAssetsFromAllWalletsRINonFungibleTokens;
+import org.openapitools.client.model.ListAllAssetsFromAllWalletsRICoinsInner;
+import org.openapitools.client.model.ListAllAssetsFromAllWalletsRIFungibleTokensInner;
+import org.openapitools.client.model.ListAllAssetsFromAllWalletsRINonFungibleTokensInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,19 +52,19 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListAllAssetsByWalletIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListAllAssetsByWalletIDRI {
   public static final String SERIALIZED_NAME_COINS = "coins";
   @SerializedName(SERIALIZED_NAME_COINS)
-  private List<ListAllAssetsFromAllWalletsRICoins> coins = new ArrayList<>();
+  private List<ListAllAssetsFromAllWalletsRICoinsInner> coins = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
   @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
-  private List<ListAllAssetsFromAllWalletsRIFungibleTokens> fungibleTokens = new ArrayList<>();
+  private List<ListAllAssetsFromAllWalletsRIFungibleTokensInner> fungibleTokens = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
   @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
-  private List<ListAllAssetsFromAllWalletsRINonFungibleTokens> nonFungibleTokens = new ArrayList<>();
+  private List<ListAllAssetsFromAllWalletsRINonFungibleTokensInner> nonFungibleTokens = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_WALLET_ID = "walletId";
   @SerializedName(SERIALIZED_NAME_WALLET_ID)
@@ -77,13 +77,13 @@ public class ListAllAssetsByWalletIDRI {
   public ListAllAssetsByWalletIDRI() { 
   }
 
-  public ListAllAssetsByWalletIDRI coins(List<ListAllAssetsFromAllWalletsRICoins> coins) {
+  public ListAllAssetsByWalletIDRI coins(List<ListAllAssetsFromAllWalletsRICoinsInner> coins) {
     
     this.coins = coins;
     return this;
   }
 
-  public ListAllAssetsByWalletIDRI addCoinsItem(ListAllAssetsFromAllWalletsRICoins coinsItem) {
+  public ListAllAssetsByWalletIDRI addCoinsItem(ListAllAssetsFromAllWalletsRICoinsInner coinsItem) {
     this.coins.add(coinsItem);
     return this;
   }
@@ -95,23 +95,23 @@ public class ListAllAssetsByWalletIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "")
 
-  public List<ListAllAssetsFromAllWalletsRICoins> getCoins() {
+  public List<ListAllAssetsFromAllWalletsRICoinsInner> getCoins() {
     return coins;
   }
 
 
-  public void setCoins(List<ListAllAssetsFromAllWalletsRICoins> coins) {
+  public void setCoins(List<ListAllAssetsFromAllWalletsRICoinsInner> coins) {
     this.coins = coins;
   }
 
 
-  public ListAllAssetsByWalletIDRI fungibleTokens(List<ListAllAssetsFromAllWalletsRIFungibleTokens> fungibleTokens) {
+  public ListAllAssetsByWalletIDRI fungibleTokens(List<ListAllAssetsFromAllWalletsRIFungibleTokensInner> fungibleTokens) {
     
     this.fungibleTokens = fungibleTokens;
     return this;
   }
 
-  public ListAllAssetsByWalletIDRI addFungibleTokensItem(ListAllAssetsFromAllWalletsRIFungibleTokens fungibleTokensItem) {
+  public ListAllAssetsByWalletIDRI addFungibleTokensItem(ListAllAssetsFromAllWalletsRIFungibleTokensInner fungibleTokensItem) {
     this.fungibleTokens.add(fungibleTokensItem);
     return this;
   }
@@ -123,23 +123,23 @@ public class ListAllAssetsByWalletIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents fungible tokens'es detailed information")
 
-  public List<ListAllAssetsFromAllWalletsRIFungibleTokens> getFungibleTokens() {
+  public List<ListAllAssetsFromAllWalletsRIFungibleTokensInner> getFungibleTokens() {
     return fungibleTokens;
   }
 
 
-  public void setFungibleTokens(List<ListAllAssetsFromAllWalletsRIFungibleTokens> fungibleTokens) {
+  public void setFungibleTokens(List<ListAllAssetsFromAllWalletsRIFungibleTokensInner> fungibleTokens) {
     this.fungibleTokens = fungibleTokens;
   }
 
 
-  public ListAllAssetsByWalletIDRI nonFungibleTokens(List<ListAllAssetsFromAllWalletsRINonFungibleTokens> nonFungibleTokens) {
+  public ListAllAssetsByWalletIDRI nonFungibleTokens(List<ListAllAssetsFromAllWalletsRINonFungibleTokensInner> nonFungibleTokens) {
     
     this.nonFungibleTokens = nonFungibleTokens;
     return this;
   }
 
-  public ListAllAssetsByWalletIDRI addNonFungibleTokensItem(ListAllAssetsFromAllWalletsRINonFungibleTokens nonFungibleTokensItem) {
+  public ListAllAssetsByWalletIDRI addNonFungibleTokensItem(ListAllAssetsFromAllWalletsRINonFungibleTokensInner nonFungibleTokensItem) {
     this.nonFungibleTokens.add(nonFungibleTokensItem);
     return this;
   }
@@ -151,12 +151,12 @@ public class ListAllAssetsByWalletIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents non-fungible tokens'es detailed information.")
 
-  public List<ListAllAssetsFromAllWalletsRINonFungibleTokens> getNonFungibleTokens() {
+  public List<ListAllAssetsFromAllWalletsRINonFungibleTokensInner> getNonFungibleTokens() {
     return nonFungibleTokens;
   }
 
 
-  public void setNonFungibleTokens(List<ListAllAssetsFromAllWalletsRINonFungibleTokens> nonFungibleTokens) {
+  public void setNonFungibleTokens(List<ListAllAssetsFromAllWalletsRINonFungibleTokensInner> nonFungibleTokens) {
     this.nonFungibleTokens = nonFungibleTokens;
   }
 
@@ -313,7 +313,7 @@ public class ListAllAssetsByWalletIDRI {
 
         // validate the optional field `coins` (array)
         for (int i = 0; i < jsonArraycoins.size(); i++) {
-          ListAllAssetsFromAllWalletsRICoins.validateJsonObject(jsonArraycoins.get(i).getAsJsonObject());
+          ListAllAssetsFromAllWalletsRICoinsInner.validateJsonObject(jsonArraycoins.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayfungibleTokens = jsonObj.getAsJsonArray("fungibleTokens");
@@ -325,7 +325,7 @@ public class ListAllAssetsByWalletIDRI {
 
         // validate the optional field `fungibleTokens` (array)
         for (int i = 0; i < jsonArrayfungibleTokens.size(); i++) {
-          ListAllAssetsFromAllWalletsRIFungibleTokens.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
+          ListAllAssetsFromAllWalletsRIFungibleTokensInner.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraynonFungibleTokens = jsonObj.getAsJsonArray("nonFungibleTokens");
@@ -337,7 +337,7 @@ public class ListAllAssetsByWalletIDRI {
 
         // validate the optional field `nonFungibleTokens` (array)
         for (int i = 0; i < jsonArraynonFungibleTokens.size(); i++) {
-          ListAllAssetsFromAllWalletsRINonFungibleTokens.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
+          ListAllAssetsFromAllWalletsRINonFungibleTokensInner.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("walletId") != null && !jsonObj.get("walletId").isJsonPrimitive()) {

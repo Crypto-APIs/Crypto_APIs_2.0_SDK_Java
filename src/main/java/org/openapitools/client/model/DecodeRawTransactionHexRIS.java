@@ -34,8 +34,8 @@ import org.openapitools.client.model.DecodeRawTransactionHexRISE;
 import org.openapitools.client.model.DecodeRawTransactionHexRISE2;
 import org.openapitools.client.model.DecodeRawTransactionHexRISL;
 import org.openapitools.client.model.DecodeRawTransactionHexRISZ;
-import org.openapitools.client.model.DecodeRawTransactionHexRISZVin;
-import org.openapitools.client.model.DecodeRawTransactionHexRISZVout;
+import org.openapitools.client.model.DecodeRawTransactionHexRISZVinInner;
+import org.openapitools.client.model.DecodeRawTransactionHexRISZVoutInner;
 
 import javax.ws.rs.core.GenericType;
 
@@ -70,7 +70,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(DecodeRawTransactionHexRIS.class.getName());
 
@@ -172,6 +172,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize DecodeRawTransactionHexRISB
@@ -183,6 +184,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISB'", e);
                     }
 
@@ -195,6 +197,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISB2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISB2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISB2'", e);
                     }
 
@@ -207,6 +210,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISB22'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISB22 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISB22'", e);
                     }
 
@@ -219,6 +223,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISD'", e);
                     }
 
@@ -231,6 +236,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISD2'", e);
                     }
 
@@ -243,6 +249,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISE'", e);
                     }
 
@@ -255,6 +262,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISE2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISE2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISE2'", e);
                     }
 
@@ -267,6 +275,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISL'", e);
                     }
 
@@ -279,6 +288,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'DecodeRawTransactionHexRISZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'DecodeRawTransactionHexRISZ'", e);
                     }
 
@@ -288,7 +298,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for DecodeRawTransactionHexRIS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for DecodeRawTransactionHexRIS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -550,11 +560,13 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with DecodeRawTransactionHexRISB
     try {
       DecodeRawTransactionHexRISB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISB2
@@ -562,6 +574,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISB2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISB2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISB22
@@ -569,6 +582,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISB22.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISB22 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISD
@@ -576,6 +590,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISD2
@@ -583,6 +598,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISE
@@ -590,6 +606,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISE2
@@ -597,6 +614,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISE2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISE2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISL
@@ -604,6 +622,7 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with DecodeRawTransactionHexRISZ
@@ -611,10 +630,11 @@ public class DecodeRawTransactionHexRIS extends AbstractOpenApiSchema {
       DecodeRawTransactionHexRISZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for DecodeRawTransactionHexRISZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for DecodeRawTransactionHexRIS with oneOf schemas: DecodeRawTransactionHexRISB, DecodeRawTransactionHexRISB2, DecodeRawTransactionHexRISB22, DecodeRawTransactionHexRISD, DecodeRawTransactionHexRISD2, DecodeRawTransactionHexRISE, DecodeRawTransactionHexRISE2, DecodeRawTransactionHexRISL, DecodeRawTransactionHexRISZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for DecodeRawTransactionHexRIS with oneOf schemas: DecodeRawTransactionHexRISB, DecodeRawTransactionHexRISB2, DecodeRawTransactionHexRISB22, DecodeRawTransactionHexRISD, DecodeRawTransactionHexRISD2, DecodeRawTransactionHexRISE, DecodeRawTransactionHexRISE2, DecodeRawTransactionHexRISL, DecodeRawTransactionHexRISZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

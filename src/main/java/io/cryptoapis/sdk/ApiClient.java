@@ -131,7 +131,7 @@ public class ApiClient {
         json = new JSON();
 
         // Set default User-Agent.
-        setUserAgent("OpenAPI-Generator/1.5.0/java");
+        setUserAgent("OpenAPI-Generator/1.6.0/java");
 
         authentications = new HashMap<String, Authentication>();
     }
@@ -1130,7 +1130,7 @@ public class ApiClient {
                 reqBody = null;
             } else {
                 // use an empty request body (for POST, PUT and PATCH)
-                reqBody = RequestBody.create("", MediaType.parse(contentType));
+                reqBody = RequestBody.create("", contentType == null ? null : MediaType.parse(contentType));
             }
         } else {
             reqBody = serialize(body, contentType);

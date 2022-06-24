@@ -48,7 +48,7 @@ import io.cryptoapis.sdk.JSON;
  * Details about the sender
  */
 @ApiModel(description = "Details about the sender")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateCoinsTransactionFromAddressForWholeAmountRISenders {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)

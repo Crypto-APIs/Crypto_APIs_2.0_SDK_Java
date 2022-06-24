@@ -24,9 +24,9 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBSCGasPrice;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplit;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSB;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBC;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBSC;
@@ -36,8 +36,8 @@ import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDR
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSEC;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSL;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZ;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVin;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSZVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

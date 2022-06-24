@@ -23,8 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSLVin;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIBSLVout;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSLVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIBSLVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

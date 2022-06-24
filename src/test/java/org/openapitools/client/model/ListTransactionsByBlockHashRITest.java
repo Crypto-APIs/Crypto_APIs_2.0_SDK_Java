@@ -25,8 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIBS;
 import org.openapitools.client.model.ListTransactionsByBlockHashRIFee;
-import org.openapitools.client.model.ListTransactionsByBlockHashRIRecipients;
-import org.openapitools.client.model.ListTransactionsByBlockHashRISenders;
+import org.openapitools.client.model.ListTransactionsByBlockHashRIRecipientsInner;
+import org.openapitools.client.model.ListTransactionsByBlockHashRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

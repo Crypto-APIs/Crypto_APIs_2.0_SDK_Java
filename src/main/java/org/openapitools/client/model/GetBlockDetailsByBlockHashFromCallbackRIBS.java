@@ -72,7 +72,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(GetBlockDetailsByBlockHashFromCallbackRIBS.class.getName());
 
@@ -190,6 +190,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize GetBlockDetailsByBlockHashFromCallbackRIBSB
@@ -201,6 +202,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSB'", e);
                     }
 
@@ -213,6 +215,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSBC'", e);
                     }
 
@@ -225,6 +228,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSBSC'", e);
                     }
 
@@ -237,6 +241,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSD'", e);
                     }
 
@@ -249,6 +254,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSD2'", e);
                     }
 
@@ -261,6 +267,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSE'", e);
                     }
 
@@ -273,6 +280,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSEC'", e);
                     }
 
@@ -285,6 +293,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSL'", e);
                     }
 
@@ -297,6 +306,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSX'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSX failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSX'", e);
                     }
 
@@ -309,6 +319,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSZ'", e);
                     }
 
@@ -321,6 +332,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashFromCallbackRIBSZ2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSZ2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashFromCallbackRIBSZ2'", e);
                     }
 
@@ -330,7 +342,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHashFromCallbackRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHashFromCallbackRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -638,11 +650,13 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSB
     try {
       GetBlockDetailsByBlockHashFromCallbackRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSBC
@@ -650,6 +664,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSBSC
@@ -657,6 +672,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSD
@@ -664,6 +680,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSD2
@@ -671,6 +688,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSE
@@ -678,6 +696,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSEC
@@ -685,6 +704,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSL
@@ -692,6 +712,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSX
@@ -699,6 +720,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSX.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSX failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSZ
@@ -706,6 +728,7 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashFromCallbackRIBSZ2
@@ -713,10 +736,11 @@ public class GetBlockDetailsByBlockHashFromCallbackRIBS extends AbstractOpenApiS
       GetBlockDetailsByBlockHashFromCallbackRIBSZ2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashFromCallbackRIBSZ2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHashFromCallbackRIBS with oneOf schemas: GetBlockDetailsByBlockHashFromCallbackRIBSB, GetBlockDetailsByBlockHashFromCallbackRIBSBC, GetBlockDetailsByBlockHashFromCallbackRIBSBSC, GetBlockDetailsByBlockHashFromCallbackRIBSD, GetBlockDetailsByBlockHashFromCallbackRIBSD2, GetBlockDetailsByBlockHashFromCallbackRIBSE, GetBlockDetailsByBlockHashFromCallbackRIBSEC, GetBlockDetailsByBlockHashFromCallbackRIBSL, GetBlockDetailsByBlockHashFromCallbackRIBSX, GetBlockDetailsByBlockHashFromCallbackRIBSZ, GetBlockDetailsByBlockHashFromCallbackRIBSZ2. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHashFromCallbackRIBS with oneOf schemas: GetBlockDetailsByBlockHashFromCallbackRIBSB, GetBlockDetailsByBlockHashFromCallbackRIBSBC, GetBlockDetailsByBlockHashFromCallbackRIBSBSC, GetBlockDetailsByBlockHashFromCallbackRIBSD, GetBlockDetailsByBlockHashFromCallbackRIBSD2, GetBlockDetailsByBlockHashFromCallbackRIBSE, GetBlockDetailsByBlockHashFromCallbackRIBSEC, GetBlockDetailsByBlockHashFromCallbackRIBSL, GetBlockDetailsByBlockHashFromCallbackRIBSX, GetBlockDetailsByBlockHashFromCallbackRIBSZ, GetBlockDetailsByBlockHashFromCallbackRIBSZ2. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

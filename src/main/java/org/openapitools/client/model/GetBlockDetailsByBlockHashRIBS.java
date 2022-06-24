@@ -68,7 +68,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(GetBlockDetailsByBlockHashRIBS.class.getName());
 
@@ -170,6 +170,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize GetBlockDetailsByBlockHashRIBSB
@@ -181,6 +182,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSB'", e);
                     }
 
@@ -193,6 +195,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSBC'", e);
                     }
 
@@ -205,6 +208,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSBSC'", e);
                     }
 
@@ -217,6 +221,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSD'", e);
                     }
 
@@ -229,6 +234,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSD2'", e);
                     }
 
@@ -241,6 +247,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSE'", e);
                     }
 
@@ -253,6 +260,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSEC'", e);
                     }
 
@@ -265,6 +273,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSL'", e);
                     }
 
@@ -277,6 +286,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHashRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHashRIBSZ'", e);
                     }
 
@@ -286,7 +296,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHashRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHashRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -548,11 +558,13 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with GetBlockDetailsByBlockHashRIBSB
     try {
       GetBlockDetailsByBlockHashRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSBC
@@ -560,6 +572,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSBSC
@@ -567,6 +580,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSD
@@ -574,6 +588,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSD2
@@ -581,6 +596,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSE
@@ -588,6 +604,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSEC
@@ -595,6 +612,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSL
@@ -602,6 +620,7 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHashRIBSZ
@@ -609,10 +628,11 @@ public class GetBlockDetailsByBlockHashRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHashRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHashRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHashRIBS with oneOf schemas: GetBlockDetailsByBlockHashRIBSB, GetBlockDetailsByBlockHashRIBSBC, GetBlockDetailsByBlockHashRIBSBSC, GetBlockDetailsByBlockHashRIBSD, GetBlockDetailsByBlockHashRIBSD2, GetBlockDetailsByBlockHashRIBSE, GetBlockDetailsByBlockHashRIBSEC, GetBlockDetailsByBlockHashRIBSL, GetBlockDetailsByBlockHashRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHashRIBS with oneOf schemas: GetBlockDetailsByBlockHashRIBSB, GetBlockDetailsByBlockHashRIBSBC, GetBlockDetailsByBlockHashRIBSBSC, GetBlockDetailsByBlockHashRIBSD, GetBlockDetailsByBlockHashRIBSD2, GetBlockDetailsByBlockHashRIBSE, GetBlockDetailsByBlockHashRIBSEC, GetBlockDetailsByBlockHashRIBSL, GetBlockDetailsByBlockHashRIBSZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

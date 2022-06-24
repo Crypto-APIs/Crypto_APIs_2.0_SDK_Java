@@ -27,18 +27,18 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.GenerateDepositAddress400Response;
+import org.openapitools.client.model.GenerateDepositAddress401Response;
+import org.openapitools.client.model.GenerateDepositAddress403Response;
 import org.openapitools.client.model.GenerateDepositAddressR;
 import org.openapitools.client.model.GenerateDepositAddressRB;
-import org.openapitools.client.model.InlineResponse4008;
-import org.openapitools.client.model.InlineResponse4018;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse4038;
-import org.openapitools.client.model.InlineResponse4041;
-import org.openapitools.client.model.InlineResponse409;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse422;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails409Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails422Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionID404Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;

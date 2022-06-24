@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRIRecipients;
+import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRIRecipientsInner;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRISenders;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;

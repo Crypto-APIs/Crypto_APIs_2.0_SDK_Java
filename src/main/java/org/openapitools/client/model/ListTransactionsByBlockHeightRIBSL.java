@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSLVin;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSLVout;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSLVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSLVoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Litecoin
  */
 @ApiModel(description = "Litecoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSL {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -72,11 +72,11 @@ public class ListTransactionsByBlockHeightRIBSL {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListTransactionsByBlockHeightRIBSLVin> vin = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSLVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHeightRIBSLVout> vout = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSLVoutInner> vout = new ArrayList<>();
 
   public ListTransactionsByBlockHeightRIBSL() { 
   }
@@ -173,13 +173,13 @@ public class ListTransactionsByBlockHeightRIBSL {
   }
 
 
-  public ListTransactionsByBlockHeightRIBSL vin(List<ListTransactionsByBlockHeightRIBSLVin> vin) {
+  public ListTransactionsByBlockHeightRIBSL vin(List<ListTransactionsByBlockHeightRIBSLVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSL addVinItem(ListTransactionsByBlockHeightRIBSLVin vinItem) {
+  public ListTransactionsByBlockHeightRIBSL addVinItem(ListTransactionsByBlockHeightRIBSLVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -191,23 +191,23 @@ public class ListTransactionsByBlockHeightRIBSL {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
-  public List<ListTransactionsByBlockHeightRIBSLVin> getVin() {
+  public List<ListTransactionsByBlockHeightRIBSLVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<ListTransactionsByBlockHeightRIBSLVin> vin) {
+  public void setVin(List<ListTransactionsByBlockHeightRIBSLVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public ListTransactionsByBlockHeightRIBSL vout(List<ListTransactionsByBlockHeightRIBSLVout> vout) {
+  public ListTransactionsByBlockHeightRIBSL vout(List<ListTransactionsByBlockHeightRIBSLVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSL addVoutItem(ListTransactionsByBlockHeightRIBSLVout voutItem) {
+  public ListTransactionsByBlockHeightRIBSL addVoutItem(ListTransactionsByBlockHeightRIBSLVoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -219,12 +219,12 @@ public class ListTransactionsByBlockHeightRIBSL {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
-  public List<ListTransactionsByBlockHeightRIBSLVout> getVout() {
+  public List<ListTransactionsByBlockHeightRIBSLVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListTransactionsByBlockHeightRIBSLVout> vout) {
+  public void setVout(List<ListTransactionsByBlockHeightRIBSLVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -339,7 +339,7 @@ public class ListTransactionsByBlockHeightRIBSL {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          ListTransactionsByBlockHeightRIBSLVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSLVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -351,7 +351,7 @@ public class ListTransactionsByBlockHeightRIBSL {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          ListTransactionsByBlockHeightRIBSLVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSLVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

@@ -51,7 +51,7 @@ import io.cryptoapis.sdk.JSON;
  * XRP
  */
 @ApiModel(description = "XRP")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDFromCallbackRIBSX {
   public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)

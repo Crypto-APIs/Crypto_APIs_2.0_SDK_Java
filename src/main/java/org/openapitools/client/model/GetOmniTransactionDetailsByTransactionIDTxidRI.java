@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetOmniTransactionDetailsByTransactionIDTxidRISenders;
-import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipients;
+import org.openapitools.client.model.GetOmniTransactionDetailsByTransactionIDTxidRISendersInner;
+import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipientsInner;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRIFee;
 
 import com.google.gson.Gson;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetOmniTransactionDetailsByTransactionIDTxidRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetOmniTransactionDetailsByTransactionIDTxidRI {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -76,11 +76,11 @@ public class GetOmniTransactionDetailsByTransactionIDTxidRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListOmniTransactionsByAddressRIRecipients> recipients = new ArrayList<>();
+  private List<ListOmniTransactionsByAddressRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetOmniTransactionDetailsByTransactionIDTxidRISenders> senders = new ArrayList<>();
+  private List<GetOmniTransactionDetailsByTransactionIDTxidRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -228,13 +228,13 @@ public class GetOmniTransactionDetailsByTransactionIDTxidRI {
   }
 
 
-  public GetOmniTransactionDetailsByTransactionIDTxidRI recipients(List<ListOmniTransactionsByAddressRIRecipients> recipients) {
+  public GetOmniTransactionDetailsByTransactionIDTxidRI recipients(List<ListOmniTransactionsByAddressRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public GetOmniTransactionDetailsByTransactionIDTxidRI addRecipientsItem(ListOmniTransactionsByAddressRIRecipients recipientsItem) {
+  public GetOmniTransactionDetailsByTransactionIDTxidRI addRecipientsItem(ListOmniTransactionsByAddressRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -246,23 +246,23 @@ public class GetOmniTransactionDetailsByTransactionIDTxidRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
-  public List<ListOmniTransactionsByAddressRIRecipients> getRecipients() {
+  public List<ListOmniTransactionsByAddressRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListOmniTransactionsByAddressRIRecipients> recipients) {
+  public void setRecipients(List<ListOmniTransactionsByAddressRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public GetOmniTransactionDetailsByTransactionIDTxidRI senders(List<GetOmniTransactionDetailsByTransactionIDTxidRISenders> senders) {
+  public GetOmniTransactionDetailsByTransactionIDTxidRI senders(List<GetOmniTransactionDetailsByTransactionIDTxidRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public GetOmniTransactionDetailsByTransactionIDTxidRI addSendersItem(GetOmniTransactionDetailsByTransactionIDTxidRISenders sendersItem) {
+  public GetOmniTransactionDetailsByTransactionIDTxidRI addSendersItem(GetOmniTransactionDetailsByTransactionIDTxidRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -274,12 +274,12 @@ public class GetOmniTransactionDetailsByTransactionIDTxidRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
-  public List<GetOmniTransactionDetailsByTransactionIDTxidRISenders> getSenders() {
+  public List<GetOmniTransactionDetailsByTransactionIDTxidRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<GetOmniTransactionDetailsByTransactionIDTxidRISenders> senders) {
+  public void setSenders(List<GetOmniTransactionDetailsByTransactionIDTxidRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -593,7 +593,7 @@ public class GetOmniTransactionDetailsByTransactionIDTxidRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListOmniTransactionsByAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListOmniTransactionsByAddressRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -605,7 +605,7 @@ public class GetOmniTransactionDetailsByTransactionIDTxidRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          GetOmniTransactionDetailsByTransactionIDTxidRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          GetOmniTransactionDetailsByTransactionIDTxidRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {

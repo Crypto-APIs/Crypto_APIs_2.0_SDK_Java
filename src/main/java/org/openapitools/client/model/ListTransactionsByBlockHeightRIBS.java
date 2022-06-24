@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSB;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBC;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSBSC;
@@ -36,10 +36,10 @@ import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSE;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSEC;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSL;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZ;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplit;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutput;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVin;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplitInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVoutInner;
 
 import javax.ws.rs.core.GenericType;
 
@@ -74,7 +74,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ListTransactionsByBlockHeightRIBS.class.getName());
 
@@ -176,6 +176,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize ListTransactionsByBlockHeightRIBSB
@@ -187,6 +188,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSB'", e);
                     }
 
@@ -199,6 +201,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSBC'", e);
                     }
 
@@ -211,6 +214,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSBSC'", e);
                     }
 
@@ -223,6 +227,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSD'", e);
                     }
 
@@ -235,6 +240,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSD2'", e);
                     }
 
@@ -247,6 +253,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSE'", e);
                     }
 
@@ -259,6 +266,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSEC'", e);
                     }
 
@@ -271,6 +279,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSL'", e);
                     }
 
@@ -283,6 +292,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTransactionsByBlockHeightRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTransactionsByBlockHeightRIBSZ'", e);
                     }
 
@@ -292,7 +302,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ListTransactionsByBlockHeightRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ListTransactionsByBlockHeightRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -554,11 +564,13 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with ListTransactionsByBlockHeightRIBSB
     try {
       ListTransactionsByBlockHeightRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSBC
@@ -566,6 +578,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSBSC
@@ -573,6 +586,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSD
@@ -580,6 +594,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSD2
@@ -587,6 +602,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSE
@@ -594,6 +610,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSEC
@@ -601,6 +618,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSL
@@ -608,6 +626,7 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTransactionsByBlockHeightRIBSZ
@@ -615,10 +634,11 @@ public class ListTransactionsByBlockHeightRIBS extends AbstractOpenApiSchema {
       ListTransactionsByBlockHeightRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTransactionsByBlockHeightRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ListTransactionsByBlockHeightRIBS with oneOf schemas: ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for ListTransactionsByBlockHeightRIBS with oneOf schemas: ListTransactionsByBlockHeightRIBSB, ListTransactionsByBlockHeightRIBSBC, ListTransactionsByBlockHeightRIBSBSC, ListTransactionsByBlockHeightRIBSD, ListTransactionsByBlockHeightRIBSD2, ListTransactionsByBlockHeightRIBSE, ListTransactionsByBlockHeightRIBSEC, ListTransactionsByBlockHeightRIBSL, ListTransactionsByBlockHeightRIBSZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

@@ -24,7 +24,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.BannedIpAddress;
-import org.openapitools.client.model.BannedIpAddressDetails;
+import org.openapitools.client.model.BannedIpAddressDetailsInner;
 import org.openapitools.client.model.CoinsForwardingAutomationsLimitReached;
 import org.openapitools.client.model.EndpointNotAllowedForApiKey;
 import org.openapitools.client.model.EndpointNotAllowedForPlan;

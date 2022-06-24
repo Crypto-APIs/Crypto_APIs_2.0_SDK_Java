@@ -25,11 +25,11 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplit;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutput;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVin;
-import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVJoinSplitInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVinInner;
+import org.openapitools.client.model.ListTransactionsByBlockHeightRIBSZVoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -55,7 +55,7 @@ import io.cryptoapis.sdk.JSON;
  * Zcash
  */
 @ApiModel(description = "Zcash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRIBSZ {
   public static final String SERIALIZED_NAME_BINDING_SIG = "bindingSig";
   @SerializedName(SERIALIZED_NAME_BINDING_SIG)
@@ -87,15 +87,15 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
   public static final String SERIALIZED_NAME_V_JOIN_SPLIT = "vJoinSplit";
   @SerializedName(SERIALIZED_NAME_V_JOIN_SPLIT)
-  private List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSZVJoinSplitInner> vJoinSplit = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_V_SHIELDED_OUTPUT = "vShieldedOutput";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_OUTPUT)
-  private List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSZVShieldedOutputInner> vShieldedOutput = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_V_SHIELDED_SPEND = "vShieldedSpend";
   @SerializedName(SERIALIZED_NAME_V_SHIELDED_SPEND)
-  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend = new ArrayList<>();
+  private List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> vShieldedSpend = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VALUE_BALANCE = "valueBalance";
   @SerializedName(SERIALIZED_NAME_VALUE_BALANCE)
@@ -111,11 +111,11 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListTransactionsByBlockHeightRIBSZVin> vin = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSZVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<ListTransactionsByBlockHeightRIBSZVout> vout = new ArrayList<>();
+  private List<ListTransactionsByBlockHeightRIBSZVoutInner> vout = new ArrayList<>();
 
   public ListTransactionsByBlockHeightRIBSZ() { 
   }
@@ -281,13 +281,13 @@ public class ListTransactionsByBlockHeightRIBSZ {
   }
 
 
-  public ListTransactionsByBlockHeightRIBSZ vJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit) {
+  public ListTransactionsByBlockHeightRIBSZ vJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplitInner> vJoinSplit) {
     
     this.vJoinSplit = vJoinSplit;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSZ addVJoinSplitItem(ListTransactionsByBlockHeightRIBSZVJoinSplit vJoinSplitItem) {
+  public ListTransactionsByBlockHeightRIBSZ addVJoinSplitItem(ListTransactionsByBlockHeightRIBSZVJoinSplitInner vJoinSplitItem) {
     this.vJoinSplit.add(vJoinSplitItem);
     return this;
   }
@@ -299,23 +299,23 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a sequence of JoinSplit descriptions using BCTV14 proofs.")
 
-  public List<ListTransactionsByBlockHeightRIBSZVJoinSplit> getvJoinSplit() {
+  public List<ListTransactionsByBlockHeightRIBSZVJoinSplitInner> getvJoinSplit() {
     return vJoinSplit;
   }
 
 
-  public void setvJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplit> vJoinSplit) {
+  public void setvJoinSplit(List<ListTransactionsByBlockHeightRIBSZVJoinSplitInner> vJoinSplit) {
     this.vJoinSplit = vJoinSplit;
   }
 
 
-  public ListTransactionsByBlockHeightRIBSZ vShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput) {
+  public ListTransactionsByBlockHeightRIBSZ vShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutputInner> vShieldedOutput) {
     
     this.vShieldedOutput = vShieldedOutput;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSZ addVShieldedOutputItem(ListTransactionsByBlockHeightRIBSZVShieldedOutput vShieldedOutputItem) {
+  public ListTransactionsByBlockHeightRIBSZ addVShieldedOutputItem(ListTransactionsByBlockHeightRIBSZVShieldedOutputInner vShieldedOutputItem) {
     this.vShieldedOutput.add(vShieldedOutputItem);
     return this;
   }
@@ -327,23 +327,23 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction output descriptions")
 
-  public List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> getvShieldedOutput() {
+  public List<ListTransactionsByBlockHeightRIBSZVShieldedOutputInner> getvShieldedOutput() {
     return vShieldedOutput;
   }
 
 
-  public void setvShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutput> vShieldedOutput) {
+  public void setvShieldedOutput(List<ListTransactionsByBlockHeightRIBSZVShieldedOutputInner> vShieldedOutput) {
     this.vShieldedOutput = vShieldedOutput;
   }
 
 
-  public ListTransactionsByBlockHeightRIBSZ vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
+  public ListTransactionsByBlockHeightRIBSZ vShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> vShieldedSpend) {
     
     this.vShieldedSpend = vShieldedSpend;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend vShieldedSpendItem) {
+  public ListTransactionsByBlockHeightRIBSZ addVShieldedSpendItem(GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner vShieldedSpendItem) {
     this.vShieldedSpend.add(vShieldedSpendItem);
     return this;
   }
@@ -355,12 +355,12 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction spend descriptions")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> getvShieldedSpend() {
+  public List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> getvShieldedSpend() {
     return vShieldedSpend;
   }
 
 
-  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend> vShieldedSpend) {
+  public void setvShieldedSpend(List<GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner> vShieldedSpend) {
     this.vShieldedSpend = vShieldedSpend;
   }
 
@@ -434,13 +434,13 @@ public class ListTransactionsByBlockHeightRIBSZ {
   }
 
 
-  public ListTransactionsByBlockHeightRIBSZ vin(List<ListTransactionsByBlockHeightRIBSZVin> vin) {
+  public ListTransactionsByBlockHeightRIBSZ vin(List<ListTransactionsByBlockHeightRIBSZVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSZ addVinItem(ListTransactionsByBlockHeightRIBSZVin vinItem) {
+  public ListTransactionsByBlockHeightRIBSZ addVinItem(ListTransactionsByBlockHeightRIBSZVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -452,23 +452,23 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction inputs")
 
-  public List<ListTransactionsByBlockHeightRIBSZVin> getVin() {
+  public List<ListTransactionsByBlockHeightRIBSZVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<ListTransactionsByBlockHeightRIBSZVin> vin) {
+  public void setVin(List<ListTransactionsByBlockHeightRIBSZVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public ListTransactionsByBlockHeightRIBSZ vout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
+  public ListTransactionsByBlockHeightRIBSZ vout(List<ListTransactionsByBlockHeightRIBSZVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRIBSZ addVoutItem(ListTransactionsByBlockHeightRIBSZVout voutItem) {
+  public ListTransactionsByBlockHeightRIBSZ addVoutItem(ListTransactionsByBlockHeightRIBSZVoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -480,12 +480,12 @@ public class ListTransactionsByBlockHeightRIBSZ {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction outputs")
 
-  public List<ListTransactionsByBlockHeightRIBSZVout> getVout() {
+  public List<ListTransactionsByBlockHeightRIBSZVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<ListTransactionsByBlockHeightRIBSZVout> vout) {
+  public void setVout(List<ListTransactionsByBlockHeightRIBSZVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -645,7 +645,7 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
         // validate the optional field `vJoinSplit` (array)
         for (int i = 0; i < jsonArrayvJoinSplit.size(); i++) {
-          ListTransactionsByBlockHeightRIBSZVJoinSplit.validateJsonObject(jsonArrayvJoinSplit.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSZVJoinSplitInner.validateJsonObject(jsonArrayvJoinSplit.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvShieldedOutput = jsonObj.getAsJsonArray("vShieldedOutput");
@@ -657,7 +657,7 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
         // validate the optional field `vShieldedOutput` (array)
         for (int i = 0; i < jsonArrayvShieldedOutput.size(); i++) {
-          ListTransactionsByBlockHeightRIBSZVShieldedOutput.validateJsonObject(jsonArrayvShieldedOutput.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSZVShieldedOutputInner.validateJsonObject(jsonArrayvShieldedOutput.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvShieldedSpend = jsonObj.getAsJsonArray("vShieldedSpend");
@@ -669,7 +669,7 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
         // validate the optional field `vShieldedSpend` (array)
         for (int i = 0; i < jsonArrayvShieldedSpend.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend.validateJsonObject(jsonArrayvShieldedSpend.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner.validateJsonObject(jsonArrayvShieldedSpend.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("valueBalance") != null && !jsonObj.get("valueBalance").isJsonPrimitive()) {
@@ -687,7 +687,7 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          ListTransactionsByBlockHeightRIBSZVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSZVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -699,7 +699,7 @@ public class ListTransactionsByBlockHeightRIBSZ {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          ListTransactionsByBlockHeightRIBSZVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          ListTransactionsByBlockHeightRIBSZVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

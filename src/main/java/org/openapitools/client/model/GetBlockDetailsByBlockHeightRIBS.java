@@ -66,7 +66,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(GetBlockDetailsByBlockHeightRIBS.class.getName());
 
@@ -168,6 +168,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize GetBlockDetailsByBlockHeightRIBSB
@@ -179,6 +180,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSB'", e);
                     }
 
@@ -191,6 +193,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSBC'", e);
                     }
 
@@ -203,6 +206,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSBSC'", e);
                     }
 
@@ -215,6 +219,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSD'", e);
                     }
 
@@ -227,6 +232,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSD2'", e);
                     }
 
@@ -239,6 +245,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSE'", e);
                     }
 
@@ -251,6 +258,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSEC'", e);
                     }
 
@@ -263,6 +271,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSL'", e);
                     }
 
@@ -275,6 +284,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'GetBlockDetailsByBlockHeightRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'GetBlockDetailsByBlockHeightRIBSZ'", e);
                     }
 
@@ -284,7 +294,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHeightRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for GetBlockDetailsByBlockHeightRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -546,11 +556,13 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with GetBlockDetailsByBlockHeightRIBSB
     try {
       GetBlockDetailsByBlockHeightRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSBC
@@ -558,6 +570,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSBSC
@@ -565,6 +578,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSD
@@ -572,6 +586,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSD2
@@ -579,6 +594,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSE
@@ -586,6 +602,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSEC
@@ -593,6 +610,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSL
@@ -600,6 +618,7 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with GetBlockDetailsByBlockHeightRIBSZ
@@ -607,10 +626,11 @@ public class GetBlockDetailsByBlockHeightRIBS extends AbstractOpenApiSchema {
       GetBlockDetailsByBlockHeightRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for GetBlockDetailsByBlockHeightRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHeightRIBS with oneOf schemas: GetBlockDetailsByBlockHeightRIBSB, GetBlockDetailsByBlockHeightRIBSBC, GetBlockDetailsByBlockHeightRIBSBSC, GetBlockDetailsByBlockHeightRIBSD, GetBlockDetailsByBlockHeightRIBSD2, GetBlockDetailsByBlockHeightRIBSE, GetBlockDetailsByBlockHeightRIBSEC, GetBlockDetailsByBlockHeightRIBSL, GetBlockDetailsByBlockHeightRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for GetBlockDetailsByBlockHeightRIBS with oneOf schemas: GetBlockDetailsByBlockHeightRIBSB, GetBlockDetailsByBlockHeightRIBSBC, GetBlockDetailsByBlockHeightRIBSBSC, GetBlockDetailsByBlockHeightRIBSD, GetBlockDetailsByBlockHeightRIBSD2, GetBlockDetailsByBlockHeightRIBSE, GetBlockDetailsByBlockHeightRIBSEC, GetBlockDetailsByBlockHeightRIBSL, GetBlockDetailsByBlockHeightRIBSZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

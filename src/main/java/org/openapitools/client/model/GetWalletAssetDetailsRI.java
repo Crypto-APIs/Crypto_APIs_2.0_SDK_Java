@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetWalletAssetDetailsRIConfirmedBalance;
-import org.openapitools.client.model.GetWalletAssetDetailsRIFungibleTokens;
-import org.openapitools.client.model.GetWalletAssetDetailsRINonFungibleTokens;
+import org.openapitools.client.model.GetWalletAssetDetailsRIFungibleTokensInner;
+import org.openapitools.client.model.GetWalletAssetDetailsRINonFungibleTokensInner;
 import org.openapitools.client.model.GetWalletAssetDetailsRIRecievedConfirmedAmount;
 import org.openapitools.client.model.GetWalletAssetDetailsRISentConfirmedAmount;
 
@@ -54,7 +54,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetWalletAssetDetailsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetWalletAssetDetailsRI {
   public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
   @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
@@ -66,7 +66,7 @@ public class GetWalletAssetDetailsRI {
 
   public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
   @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
-  private List<GetWalletAssetDetailsRIFungibleTokens> fungibleTokens = new ArrayList<>();
+  private List<GetWalletAssetDetailsRIFungibleTokensInner> fungibleTokens = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_NAME = "name";
   @SerializedName(SERIALIZED_NAME_NAME)
@@ -74,7 +74,7 @@ public class GetWalletAssetDetailsRI {
 
   public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
   @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
-  private List<GetWalletAssetDetailsRINonFungibleTokens> nonFungibleTokens = new ArrayList<>();
+  private List<GetWalletAssetDetailsRINonFungibleTokensInner> nonFungibleTokens = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_RECIEVED_CONFIRMED_AMOUNT = "recievedConfirmedAmount";
   @SerializedName(SERIALIZED_NAME_RECIEVED_CONFIRMED_AMOUNT)
@@ -133,13 +133,13 @@ public class GetWalletAssetDetailsRI {
   }
 
 
-  public GetWalletAssetDetailsRI fungibleTokens(List<GetWalletAssetDetailsRIFungibleTokens> fungibleTokens) {
+  public GetWalletAssetDetailsRI fungibleTokens(List<GetWalletAssetDetailsRIFungibleTokensInner> fungibleTokens) {
     
     this.fungibleTokens = fungibleTokens;
     return this;
   }
 
-  public GetWalletAssetDetailsRI addFungibleTokensItem(GetWalletAssetDetailsRIFungibleTokens fungibleTokensItem) {
+  public GetWalletAssetDetailsRI addFungibleTokensItem(GetWalletAssetDetailsRIFungibleTokensInner fungibleTokensItem) {
     this.fungibleTokens.add(fungibleTokensItem);
     return this;
   }
@@ -151,12 +151,12 @@ public class GetWalletAssetDetailsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents fungible tokens'es detailed information")
 
-  public List<GetWalletAssetDetailsRIFungibleTokens> getFungibleTokens() {
+  public List<GetWalletAssetDetailsRIFungibleTokensInner> getFungibleTokens() {
     return fungibleTokens;
   }
 
 
-  public void setFungibleTokens(List<GetWalletAssetDetailsRIFungibleTokens> fungibleTokens) {
+  public void setFungibleTokens(List<GetWalletAssetDetailsRIFungibleTokensInner> fungibleTokens) {
     this.fungibleTokens = fungibleTokens;
   }
 
@@ -184,13 +184,13 @@ public class GetWalletAssetDetailsRI {
   }
 
 
-  public GetWalletAssetDetailsRI nonFungibleTokens(List<GetWalletAssetDetailsRINonFungibleTokens> nonFungibleTokens) {
+  public GetWalletAssetDetailsRI nonFungibleTokens(List<GetWalletAssetDetailsRINonFungibleTokensInner> nonFungibleTokens) {
     
     this.nonFungibleTokens = nonFungibleTokens;
     return this;
   }
 
-  public GetWalletAssetDetailsRI addNonFungibleTokensItem(GetWalletAssetDetailsRINonFungibleTokens nonFungibleTokensItem) {
+  public GetWalletAssetDetailsRI addNonFungibleTokensItem(GetWalletAssetDetailsRINonFungibleTokensInner nonFungibleTokensItem) {
     this.nonFungibleTokens.add(nonFungibleTokensItem);
     return this;
   }
@@ -202,12 +202,12 @@ public class GetWalletAssetDetailsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents non-fungible tokens'es detailed information.")
 
-  public List<GetWalletAssetDetailsRINonFungibleTokens> getNonFungibleTokens() {
+  public List<GetWalletAssetDetailsRINonFungibleTokensInner> getNonFungibleTokens() {
     return nonFungibleTokens;
   }
 
 
-  public void setNonFungibleTokens(List<GetWalletAssetDetailsRINonFungibleTokens> nonFungibleTokens) {
+  public void setNonFungibleTokens(List<GetWalletAssetDetailsRINonFungibleTokensInner> nonFungibleTokens) {
     this.nonFungibleTokens = nonFungibleTokens;
   }
 
@@ -376,7 +376,7 @@ public class GetWalletAssetDetailsRI {
 
         // validate the optional field `fungibleTokens` (array)
         for (int i = 0; i < jsonArrayfungibleTokens.size(); i++) {
-          GetWalletAssetDetailsRIFungibleTokens.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
+          GetWalletAssetDetailsRIFungibleTokensInner.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("name") != null && !jsonObj.get("name").isJsonPrimitive()) {
@@ -391,7 +391,7 @@ public class GetWalletAssetDetailsRI {
 
         // validate the optional field `nonFungibleTokens` (array)
         for (int i = 0; i < jsonArraynonFungibleTokens.size(); i++) {
-          GetWalletAssetDetailsRINonFungibleTokens.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
+          GetWalletAssetDetailsRINonFungibleTokensInner.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
         };
       }
       // validate the optional field `recievedConfirmedAmount`

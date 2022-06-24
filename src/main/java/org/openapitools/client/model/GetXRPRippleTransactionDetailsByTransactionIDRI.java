@@ -28,8 +28,8 @@ import java.util.List;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIFee;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIOffer;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIReceive;
-import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRISenders;
+import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner;
+import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRISendersInner;
 import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionIDRIValue;
 
 import com.google.gson.Gson;
@@ -55,7 +55,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetXRPRippleTransactionDetailsByTransactionIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetXRPRippleTransactionDetailsByTransactionIDRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)
@@ -87,11 +87,11 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<>();
+  private List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<>();
+  private List<GetXRPRippleTransactionDetailsByTransactionIDRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
@@ -285,13 +285,13 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRI {
   }
 
 
-  public GetXRPRippleTransactionDetailsByTransactionIDRI recipients(List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public GetXRPRippleTransactionDetailsByTransactionIDRI recipients(List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public GetXRPRippleTransactionDetailsByTransactionIDRI addRecipientsItem(GetXRPRippleTransactionDetailsByTransactionIDRIRecipients recipientsItem) {
+  public GetXRPRippleTransactionDetailsByTransactionIDRI addRecipientsItem(GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -303,23 +303,23 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
-  public List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
+  public List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public void setRecipients(List<GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public GetXRPRippleTransactionDetailsByTransactionIDRI senders(List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> senders) {
+  public GetXRPRippleTransactionDetailsByTransactionIDRI senders(List<GetXRPRippleTransactionDetailsByTransactionIDRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public GetXRPRippleTransactionDetailsByTransactionIDRI addSendersItem(GetXRPRippleTransactionDetailsByTransactionIDRISenders sendersItem) {
+  public GetXRPRippleTransactionDetailsByTransactionIDRI addSendersItem(GetXRPRippleTransactionDetailsByTransactionIDRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -331,12 +331,12 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
-  public List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> getSenders() {
+  public List<GetXRPRippleTransactionDetailsByTransactionIDRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<GetXRPRippleTransactionDetailsByTransactionIDRISenders> senders) {
+  public void setSenders(List<GetXRPRippleTransactionDetailsByTransactionIDRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -670,7 +670,7 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          GetXRPRippleTransactionDetailsByTransactionIDRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          GetXRPRippleTransactionDetailsByTransactionIDRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -682,7 +682,7 @@ public class GetXRPRippleTransactionDetailsByTransactionIDRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          GetXRPRippleTransactionDetailsByTransactionIDRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          GetXRPRippleTransactionDetailsByTransactionIDRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {

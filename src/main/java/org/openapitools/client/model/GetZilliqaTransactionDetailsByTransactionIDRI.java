@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRIFee;
-import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRISenders;
+import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner;
+import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRISendersInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetZilliqaTransactionDetailsByTransactionIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetZilliqaTransactionDetailsByTransactionIDRI {
   public static final String SERIALIZED_NAME_FEE = "fee";
   @SerializedName(SERIALIZED_NAME_FEE)
@@ -84,11 +84,11 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetZilliqaTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<>();
+  private List<GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetZilliqaTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<>();
+  private List<GetZilliqaTransactionDetailsByTransactionIDRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -266,13 +266,13 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
   }
 
 
-  public GetZilliqaTransactionDetailsByTransactionIDRI recipients(List<GetZilliqaTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public GetZilliqaTransactionDetailsByTransactionIDRI recipients(List<GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public GetZilliqaTransactionDetailsByTransactionIDRI addRecipientsItem(GetZilliqaTransactionDetailsByTransactionIDRIRecipients recipientsItem) {
+  public GetZilliqaTransactionDetailsByTransactionIDRI addRecipientsItem(GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -284,23 +284,23 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
-  public List<GetZilliqaTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
+  public List<GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<GetZilliqaTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public void setRecipients(List<GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public GetZilliqaTransactionDetailsByTransactionIDRI senders(List<GetZilliqaTransactionDetailsByTransactionIDRISenders> senders) {
+  public GetZilliqaTransactionDetailsByTransactionIDRI senders(List<GetZilliqaTransactionDetailsByTransactionIDRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public GetZilliqaTransactionDetailsByTransactionIDRI addSendersItem(GetZilliqaTransactionDetailsByTransactionIDRISenders sendersItem) {
+  public GetZilliqaTransactionDetailsByTransactionIDRI addSendersItem(GetZilliqaTransactionDetailsByTransactionIDRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -312,12 +312,12 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
-  public List<GetZilliqaTransactionDetailsByTransactionIDRISenders> getSenders() {
+  public List<GetZilliqaTransactionDetailsByTransactionIDRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<GetZilliqaTransactionDetailsByTransactionIDRISenders> senders) {
+  public void setSenders(List<GetZilliqaTransactionDetailsByTransactionIDRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -532,7 +532,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          GetZilliqaTransactionDetailsByTransactionIDRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          GetZilliqaTransactionDetailsByTransactionIDRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -544,7 +544,7 @@ public class GetZilliqaTransactionDetailsByTransactionIDRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          GetZilliqaTransactionDetailsByTransactionIDRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          GetZilliqaTransactionDetailsByTransactionIDRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionStatus") != null && !jsonObj.get("transactionStatus").isJsonPrimitive()) {

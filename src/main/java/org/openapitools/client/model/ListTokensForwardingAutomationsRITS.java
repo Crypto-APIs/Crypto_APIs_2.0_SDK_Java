@@ -59,7 +59,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ListTokensForwardingAutomationsRITS.class.getName());
 
@@ -105,6 +105,7 @@ public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize ListTokensForwardingAutomationsRITSBOT
@@ -116,6 +117,7 @@ public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTokensForwardingAutomationsRITSBOT'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTokensForwardingAutomationsRITSBOT failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTokensForwardingAutomationsRITSBOT'", e);
                     }
 
@@ -128,6 +130,7 @@ public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListTokensForwardingAutomationsRITSET'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListTokensForwardingAutomationsRITSET failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListTokensForwardingAutomationsRITSET'", e);
                     }
 
@@ -137,7 +140,7 @@ public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ListTokensForwardingAutomationsRITS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ListTokensForwardingAutomationsRITS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -238,11 +241,13 @@ public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with ListTokensForwardingAutomationsRITSBOT
     try {
       ListTokensForwardingAutomationsRITSBOT.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTokensForwardingAutomationsRITSBOT failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListTokensForwardingAutomationsRITSET
@@ -250,10 +255,11 @@ public class ListTokensForwardingAutomationsRITS extends AbstractOpenApiSchema {
       ListTokensForwardingAutomationsRITSET.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListTokensForwardingAutomationsRITSET failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ListTokensForwardingAutomationsRITS with oneOf schemas: ListTokensForwardingAutomationsRITSBOT, ListTokensForwardingAutomationsRITSET. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for ListTokensForwardingAutomationsRITS with oneOf schemas: ListTokensForwardingAutomationsRITSBOT, ListTokensForwardingAutomationsRITSET. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

@@ -25,8 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIBS;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIFee;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIRecipients;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRISenders;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIRecipientsInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

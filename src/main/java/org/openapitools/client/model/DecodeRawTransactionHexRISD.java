@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.DecodeRawTransactionHexRISDVin;
-import org.openapitools.client.model.DecodeRawTransactionHexRISDVout;
+import org.openapitools.client.model.DecodeRawTransactionHexRISDVinInner;
+import org.openapitools.client.model.DecodeRawTransactionHexRISDVoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Dash
  */
 @ApiModel(description = "Dash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class DecodeRawTransactionHexRISD {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -72,11 +72,11 @@ public class DecodeRawTransactionHexRISD {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<DecodeRawTransactionHexRISDVin> vin = new ArrayList<>();
+  private List<DecodeRawTransactionHexRISDVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<DecodeRawTransactionHexRISDVout> vout = new ArrayList<>();
+  private List<DecodeRawTransactionHexRISDVoutInner> vout = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_WEIGHT = "weight";
   @SerializedName(SERIALIZED_NAME_WEIGHT)
@@ -177,13 +177,13 @@ public class DecodeRawTransactionHexRISD {
   }
 
 
-  public DecodeRawTransactionHexRISD vin(List<DecodeRawTransactionHexRISDVin> vin) {
+  public DecodeRawTransactionHexRISD vin(List<DecodeRawTransactionHexRISDVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public DecodeRawTransactionHexRISD addVinItem(DecodeRawTransactionHexRISDVin vinItem) {
+  public DecodeRawTransactionHexRISD addVinItem(DecodeRawTransactionHexRISDVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -195,23 +195,23 @@ public class DecodeRawTransactionHexRISD {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
-  public List<DecodeRawTransactionHexRISDVin> getVin() {
+  public List<DecodeRawTransactionHexRISDVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<DecodeRawTransactionHexRISDVin> vin) {
+  public void setVin(List<DecodeRawTransactionHexRISDVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public DecodeRawTransactionHexRISD vout(List<DecodeRawTransactionHexRISDVout> vout) {
+  public DecodeRawTransactionHexRISD vout(List<DecodeRawTransactionHexRISDVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public DecodeRawTransactionHexRISD addVoutItem(DecodeRawTransactionHexRISDVout voutItem) {
+  public DecodeRawTransactionHexRISD addVoutItem(DecodeRawTransactionHexRISDVoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -223,12 +223,12 @@ public class DecodeRawTransactionHexRISD {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
-  public List<DecodeRawTransactionHexRISDVout> getVout() {
+  public List<DecodeRawTransactionHexRISDVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<DecodeRawTransactionHexRISDVout> vout) {
+  public void setVout(List<DecodeRawTransactionHexRISDVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -372,7 +372,7 @@ public class DecodeRawTransactionHexRISD {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          DecodeRawTransactionHexRISDVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          DecodeRawTransactionHexRISDVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -384,7 +384,7 @@ public class DecodeRawTransactionHexRISD {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          DecodeRawTransactionHexRISDVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          DecodeRawTransactionHexRISDVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

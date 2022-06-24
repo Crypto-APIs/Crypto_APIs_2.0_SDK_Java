@@ -47,7 +47,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetFeeRecommendationsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetFeeRecommendationsRI {
   public static final String SERIALIZED_NAME_UNIT = "unit";
   @SerializedName(SERIALIZED_NAME_UNIT)
@@ -65,9 +65,9 @@ public class GetFeeRecommendationsRI {
   @SerializedName(SERIALIZED_NAME_STANDARD)
   private String standard;
 
-  public static final String SERIALIZED_NAME_FEE_CUSHION_MULTIPLIER = "feeCushionMultiplier";
-  @SerializedName(SERIALIZED_NAME_FEE_CUSHION_MULTIPLIER)
-  private String feeCushionMultiplier;
+  public static final String SERIALIZED_NAME_FEE_MULTIPLIER = "feeMultiplier";
+  @SerializedName(SERIALIZED_NAME_FEE_MULTIPLIER)
+  private String feeMultiplier;
 
   public GetFeeRecommendationsRI() { 
   }
@@ -152,7 +152,7 @@ public class GetFeeRecommendationsRI {
    * @return standard
   **/
   @javax.annotation.Nonnull
-  @ApiModelProperty(example = "\"0.000015", required = true, value = "Standard fee per byte calculated from unconfirmed transactions")
+  @ApiModelProperty(example = "0.000015", required = true, value = "Standard fee per byte calculated from unconfirmed transactions")
 
   public String getStandard() {
     return standard;
@@ -164,26 +164,26 @@ public class GetFeeRecommendationsRI {
   }
 
 
-  public GetFeeRecommendationsRI feeCushionMultiplier(String feeCushionMultiplier) {
+  public GetFeeRecommendationsRI feeMultiplier(String feeMultiplier) {
     
-    this.feeCushionMultiplier = feeCushionMultiplier;
+    this.feeMultiplier = feeMultiplier;
     return this;
   }
 
    /**
    * Represents the fee cushion multiplier used to multiply the base fee.
-   * @return feeCushionMultiplier
+   * @return feeMultiplier
   **/
-  @javax.annotation.Nonnull
-  @ApiModelProperty(example = "1.2", required = true, value = "Represents the fee cushion multiplier used to multiply the base fee.")
+  @javax.annotation.Nullable
+  @ApiModelProperty(example = "1.2", value = "Represents the fee cushion multiplier used to multiply the base fee.")
 
-  public String getFeeCushionMultiplier() {
-    return feeCushionMultiplier;
+  public String getFeeMultiplier() {
+    return feeMultiplier;
   }
 
 
-  public void setFeeCushionMultiplier(String feeCushionMultiplier) {
-    this.feeCushionMultiplier = feeCushionMultiplier;
+  public void setFeeMultiplier(String feeMultiplier) {
+    this.feeMultiplier = feeMultiplier;
   }
 
 
@@ -201,12 +201,12 @@ public class GetFeeRecommendationsRI {
         Objects.equals(this.fast, getFeeRecommendationsRI.fast) &&
         Objects.equals(this.slow, getFeeRecommendationsRI.slow) &&
         Objects.equals(this.standard, getFeeRecommendationsRI.standard) &&
-        Objects.equals(this.feeCushionMultiplier, getFeeRecommendationsRI.feeCushionMultiplier);
+        Objects.equals(this.feeMultiplier, getFeeRecommendationsRI.feeMultiplier);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(unit, fast, slow, standard, feeCushionMultiplier);
+    return Objects.hash(unit, fast, slow, standard, feeMultiplier);
   }
 
   @Override
@@ -217,7 +217,7 @@ public class GetFeeRecommendationsRI {
     sb.append("    fast: ").append(toIndentedString(fast)).append("\n");
     sb.append("    slow: ").append(toIndentedString(slow)).append("\n");
     sb.append("    standard: ").append(toIndentedString(standard)).append("\n");
-    sb.append("    feeCushionMultiplier: ").append(toIndentedString(feeCushionMultiplier)).append("\n");
+    sb.append("    feeMultiplier: ").append(toIndentedString(feeMultiplier)).append("\n");
     sb.append("}");
     return sb.toString();
   }
@@ -244,7 +244,7 @@ public class GetFeeRecommendationsRI {
     openapiFields.add("fast");
     openapiFields.add("slow");
     openapiFields.add("standard");
-    openapiFields.add("feeCushionMultiplier");
+    openapiFields.add("feeMultiplier");
 
     // a set of required properties/fields (JSON key names)
     openapiRequiredFields = new HashSet<String>();
@@ -252,7 +252,6 @@ public class GetFeeRecommendationsRI {
     openapiRequiredFields.add("fast");
     openapiRequiredFields.add("slow");
     openapiRequiredFields.add("standard");
-    openapiRequiredFields.add("feeCushionMultiplier");
   }
 
  /**
@@ -296,8 +295,8 @@ public class GetFeeRecommendationsRI {
       if (jsonObj.get("standard") != null && !jsonObj.get("standard").isJsonPrimitive()) {
         throw new IllegalArgumentException(String.format("Expected the field `standard` to be a primitive type in the JSON string but got `%s`", jsonObj.get("standard").toString()));
       }
-      if (jsonObj.get("feeCushionMultiplier") != null && !jsonObj.get("feeCushionMultiplier").isJsonPrimitive()) {
-        throw new IllegalArgumentException(String.format("Expected the field `feeCushionMultiplier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feeCushionMultiplier").toString()));
+      if (jsonObj.get("feeMultiplier") != null && !jsonObj.get("feeMultiplier").isJsonPrimitive()) {
+        throw new IllegalArgumentException(String.format("Expected the field `feeMultiplier` to be a primitive type in the JSON string but got `%s`", jsonObj.get("feeMultiplier").toString()));
       }
   }
 

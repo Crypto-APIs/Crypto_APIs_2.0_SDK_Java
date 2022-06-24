@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetZilliqaTransactionDetailsByTransactionIDRIFee;
-import org.openapitools.client.model.ListZilliqaTransactionsByAddressRIRecipients;
-import org.openapitools.client.model.ListZilliqaTransactionsByAddressRISenders;
+import org.openapitools.client.model.ListZilliqaTransactionsByAddressRIRecipientsInner;
+import org.openapitools.client.model.ListZilliqaTransactionsByAddressRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

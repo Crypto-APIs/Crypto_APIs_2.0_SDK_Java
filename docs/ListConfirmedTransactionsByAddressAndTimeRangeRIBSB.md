@@ -12,8 +12,8 @@ Bitcoin
 |**size** | **Integer** | Represents the total size of this transaction. |  |
 |**vSize** | **Integer** | Defines the transaction&#39;s virtual size. |  |
 |**version** | **Integer** | Defines the version of the transaction. |  |
-|**vin** | [**List&lt;ListConfirmedTransactionsByAddressRIBSBVin&gt;**](ListConfirmedTransactionsByAddressRIBSBVin.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;ListConfirmedTransactionsByAddressRIBSBVout&gt;**](ListConfirmedTransactionsByAddressRIBSBVout.md) | Represents the transaction outputs. |  |
+|**vin** | [**List&lt;ListConfirmedTransactionsByAddressRIBSBVinInner&gt;**](ListConfirmedTransactionsByAddressRIBSBVinInner.md) | Represents the transaction inputs. |  |
+|**vout** | [**List&lt;ListConfirmedTransactionsByAddressRIBSBVoutInner&gt;**](ListConfirmedTransactionsByAddressRIBSBVoutInner.md) | Represents the transaction outputs. |  |
 
 
 

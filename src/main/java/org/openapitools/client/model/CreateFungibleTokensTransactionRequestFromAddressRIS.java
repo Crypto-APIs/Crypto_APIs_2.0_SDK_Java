@@ -58,7 +58,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateFungibleTokensTransactionRequestFromAddressRIS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CreateFungibleTokensTransactionRequestFromAddressRIS.class.getName());
 
@@ -96,6 +96,7 @@ public class CreateFungibleTokensTransactionRequestFromAddressRIS extends Abstra
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize CreateFungibleTokensTransactionRequestFromAddressRISE
@@ -107,6 +108,7 @@ public class CreateFungibleTokensTransactionRequestFromAddressRIS extends Abstra
                         log.log(Level.FINER, "Input data matches schema 'CreateFungibleTokensTransactionRequestFromAddressRISE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for CreateFungibleTokensTransactionRequestFromAddressRISE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'CreateFungibleTokensTransactionRequestFromAddressRISE'", e);
                     }
 
@@ -116,7 +118,7 @@ public class CreateFungibleTokensTransactionRequestFromAddressRIS extends Abstra
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for CreateFungibleTokensTransactionRequestFromAddressRIS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for CreateFungibleTokensTransactionRequestFromAddressRIS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -194,15 +196,17 @@ public class CreateFungibleTokensTransactionRequestFromAddressRIS extends Abstra
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with CreateFungibleTokensTransactionRequestFromAddressRISE
     try {
       CreateFungibleTokensTransactionRequestFromAddressRISE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for CreateFungibleTokensTransactionRequestFromAddressRISE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for CreateFungibleTokensTransactionRequestFromAddressRIS with oneOf schemas: CreateFungibleTokensTransactionRequestFromAddressRISE. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for CreateFungibleTokensTransactionRequestFromAddressRIS with oneOf schemas: CreateFungibleTokensTransactionRequestFromAddressRISE. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

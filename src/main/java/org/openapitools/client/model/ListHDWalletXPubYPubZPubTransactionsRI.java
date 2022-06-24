@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRIFee;
-import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRIRecipients;
-import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRISenders;
+import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner;
+import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRISendersInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListHDWalletXPubYPubZPubTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListHDWalletXPubYPubZPubTransactionsRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -68,11 +68,11 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListHDWalletXPubYPubZPubTransactionsRIRecipients> recipients = new ArrayList<>();
+  private List<ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListHDWalletXPubYPubZPubTransactionsRISenders> senders = new ArrayList<>();
+  private List<ListHDWalletXPubYPubZPubTransactionsRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -162,13 +162,13 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
   }
 
 
-  public ListHDWalletXPubYPubZPubTransactionsRI recipients(List<ListHDWalletXPubYPubZPubTransactionsRIRecipients> recipients) {
+  public ListHDWalletXPubYPubZPubTransactionsRI recipients(List<ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListHDWalletXPubYPubZPubTransactionsRI addRecipientsItem(ListHDWalletXPubYPubZPubTransactionsRIRecipients recipientsItem) {
+  public ListHDWalletXPubYPubZPubTransactionsRI addRecipientsItem(ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -180,23 +180,23 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListHDWalletXPubYPubZPubTransactionsRIRecipients> getRecipients() {
+  public List<ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListHDWalletXPubYPubZPubTransactionsRIRecipients> recipients) {
+  public void setRecipients(List<ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListHDWalletXPubYPubZPubTransactionsRI senders(List<ListHDWalletXPubYPubZPubTransactionsRISenders> senders) {
+  public ListHDWalletXPubYPubZPubTransactionsRI senders(List<ListHDWalletXPubYPubZPubTransactionsRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListHDWalletXPubYPubZPubTransactionsRI addSendersItem(ListHDWalletXPubYPubZPubTransactionsRISenders sendersItem) {
+  public ListHDWalletXPubYPubZPubTransactionsRI addSendersItem(ListHDWalletXPubYPubZPubTransactionsRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -208,12 +208,12 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListHDWalletXPubYPubZPubTransactionsRISenders> getSenders() {
+  public List<ListHDWalletXPubYPubZPubTransactionsRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListHDWalletXPubYPubZPubTransactionsRISenders> senders) {
+  public void setSenders(List<ListHDWalletXPubYPubZPubTransactionsRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -435,7 +435,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListHDWalletXPubYPubZPubTransactionsRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -447,7 +447,7 @@ public class ListHDWalletXPubYPubZPubTransactionsRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListHDWalletXPubYPubZPubTransactionsRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListHDWalletXPubYPubZPubTransactionsRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {

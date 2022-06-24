@@ -25,12 +25,12 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVin;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVinInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVoutInner;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBSCGasPrice;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplit;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplitInner;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSB;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSBC;
 import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIBSBSC;
@@ -75,7 +75,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ListUnconfirmedTransactionsByAddressRIBS.class.getName());
 
@@ -177,6 +177,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize ListUnconfirmedTransactionsByAddressRIBSB
@@ -188,6 +189,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSB'", e);
                     }
 
@@ -200,6 +202,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSBC'", e);
                     }
 
@@ -212,6 +215,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSBSC'", e);
                     }
 
@@ -224,6 +228,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSD'", e);
                     }
 
@@ -236,6 +241,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSD2'", e);
                     }
 
@@ -248,6 +254,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSE'", e);
                     }
 
@@ -260,6 +267,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSEC'", e);
                     }
 
@@ -272,6 +280,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSL'", e);
                     }
 
@@ -284,6 +293,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         log.log(Level.FINER, "Input data matches schema 'ListUnconfirmedTransactionsByAddressRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListUnconfirmedTransactionsByAddressRIBSZ'", e);
                     }
 
@@ -293,7 +303,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ListUnconfirmedTransactionsByAddressRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ListUnconfirmedTransactionsByAddressRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -555,11 +565,13 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSB
     try {
       ListUnconfirmedTransactionsByAddressRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSBC
@@ -567,6 +579,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSBSC
@@ -574,6 +587,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSD
@@ -581,6 +595,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSD2
@@ -588,6 +603,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSE
@@ -595,6 +611,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSEC
@@ -602,6 +619,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSL
@@ -609,6 +627,7 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListUnconfirmedTransactionsByAddressRIBSZ
@@ -616,10 +635,11 @@ public class ListUnconfirmedTransactionsByAddressRIBS extends AbstractOpenApiSch
       ListUnconfirmedTransactionsByAddressRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListUnconfirmedTransactionsByAddressRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ListUnconfirmedTransactionsByAddressRIBS with oneOf schemas: ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for ListUnconfirmedTransactionsByAddressRIBS with oneOf schemas: ListUnconfirmedTransactionsByAddressRIBSB, ListUnconfirmedTransactionsByAddressRIBSBC, ListUnconfirmedTransactionsByAddressRIBSBSC, ListUnconfirmedTransactionsByAddressRIBSD, ListUnconfirmedTransactionsByAddressRIBSD2, ListUnconfirmedTransactionsByAddressRIBSE, ListUnconfirmedTransactionsByAddressRIBSEC, ListUnconfirmedTransactionsByAddressRIBSL, ListUnconfirmedTransactionsByAddressRIBSZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

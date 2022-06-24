@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients;
-import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders;
+import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner;
+import org.openapitools.client.model.GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRIFee;
 
 import com.google.gson.Gson;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetUnconfirmedOmniTransactionByTransactionIDTxidRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
   public static final String SERIALIZED_NAME_AMOUNT = "amount";
   @SerializedName(SERIALIZED_NAME_AMOUNT)
@@ -72,11 +72,11 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients> recipients = new ArrayList<>();
+  private List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> senders = new ArrayList<>();
+  private List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENT = "sent";
   @SerializedName(SERIALIZED_NAME_SENT)
@@ -201,13 +201,13 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
   }
 
 
-  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI recipients(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients> recipients) {
+  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI recipients(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI addRecipientsItem(GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients recipientsItem) {
+  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI addRecipientsItem(GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -219,23 +219,23 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
-  public List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients> getRecipients() {
+  public List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients> recipients) {
+  public void setRecipients(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI senders(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> senders) {
+  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI senders(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI addSendersItem(GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders sendersItem) {
+  public GetUnconfirmedOmniTransactionByTransactionIDTxidRI addSendersItem(GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -247,12 +247,12 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
-  public List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> getSenders() {
+  public List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders> senders) {
+  public void setSenders(List<GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -559,7 +559,7 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -571,7 +571,7 @@ public class GetUnconfirmedOmniTransactionByTransactionIDTxidRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          GetUnconfirmedOmniTransactionByTransactionIDTxidRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionId") != null && !jsonObj.get("transactionId").isJsonPrimitive()) {

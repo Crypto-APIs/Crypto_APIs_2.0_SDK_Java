@@ -49,7 +49,7 @@ import io.cryptoapis.sdk.JSON;
  * Defines an &#x60;item&#x60; as one result.
  */
 @ApiModel(description = "Defines an `item` as one result.")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class TransactionMinedDataItem {
   public static final String SERIALIZED_NAME_BLOCKCHAIN = "blockchain";
   @SerializedName(SERIALIZED_NAME_BLOCKCHAIN)

@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRIFee;
-import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRIRecipients;
-import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRISenders;
+import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner;
+import org.openapitools.client.model.ListHDWalletXPubYPubZPubTransactionsRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

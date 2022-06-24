@@ -11,8 +11,8 @@ Bitcoin Cash
 |**locktime** | **Long** | Represents the time at which a particular transaction can be added to the blockchain. |  |
 |**size** | **Integer** | Represents the total size of this transaction. |  |
 |**version** | **Integer** | Represents the transaction version number. |  |
-|**vin** | [**List&lt;GetWalletTransactionDetailsByTransactionIDRIBSBCVin&gt;**](GetWalletTransactionDetailsByTransactionIDRIBSBCVin.md) | Object Array representation of transaction inputs |  |
-|**vout** | [**List&lt;GetWalletTransactionDetailsByTransactionIDRIBSBCVout&gt;**](GetWalletTransactionDetailsByTransactionIDRIBSBCVout.md) | Object Array representation of transaction outputs |  |
+|**vin** | [**List&lt;GetWalletTransactionDetailsByTransactionIDRIBSBCVinInner&gt;**](GetWalletTransactionDetailsByTransactionIDRIBSBCVinInner.md) | Object Array representation of transaction inputs |  |
+|**vout** | [**List&lt;GetWalletTransactionDetailsByTransactionIDRIBSBCVoutInner&gt;**](GetWalletTransactionDetailsByTransactionIDRIBSBCVoutInner.md) | Object Array representation of transaction outputs |  |
 
 
 

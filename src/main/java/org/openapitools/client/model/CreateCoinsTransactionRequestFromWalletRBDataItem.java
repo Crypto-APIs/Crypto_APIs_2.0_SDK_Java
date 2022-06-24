@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDataItemRecipients;
+import org.openapitools.client.model.CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +50,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * CreateCoinsTransactionRequestFromWalletRBDataItem
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -170,7 +170,7 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients = new ArrayList<>();
+  private List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner> recipients = new ArrayList<>();
 
   public CreateCoinsTransactionRequestFromWalletRBDataItem() { 
   }
@@ -290,13 +290,13 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   }
 
 
-  public CreateCoinsTransactionRequestFromWalletRBDataItem recipients(List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients) {
+  public CreateCoinsTransactionRequestFromWalletRBDataItem recipients(List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public CreateCoinsTransactionRequestFromWalletRBDataItem addRecipientsItem(CreateCoinsTransactionRequestFromWalletRBDataItemRecipients recipientsItem) {
+  public CreateCoinsTransactionRequestFromWalletRBDataItem addRecipientsItem(CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -308,12 +308,12 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines the destination of the transaction, whether it is incoming or outgoing.")
 
-  public List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> getRecipients() {
+  public List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipients> recipients) {
+  public void setRecipients(List<CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
@@ -439,7 +439,7 @@ public class CreateCoinsTransactionRequestFromWalletRBDataItem {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          CreateCoinsTransactionRequestFromWalletRBDataItemRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          CreateCoinsTransactionRequestFromWalletRBDataItemRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
   }

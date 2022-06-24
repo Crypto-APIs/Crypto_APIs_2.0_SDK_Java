@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRISenders;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIRecipientsInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRISendersInner;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIBS;
 import org.openapitools.client.model.ListTransactionsByBlockHeightRIFee;
 
@@ -53,7 +53,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListTransactionsByBlockHeightRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListTransactionsByBlockHeightRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -69,11 +69,11 @@ public class ListTransactionsByBlockHeightRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<>();
+  private List<GetTransactionDetailsByTransactionIDRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<>();
+  private List<GetTransactionDetailsByTransactionIDRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -167,13 +167,13 @@ public class ListTransactionsByBlockHeightRI {
   }
 
 
-  public ListTransactionsByBlockHeightRI recipients(List<GetTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public ListTransactionsByBlockHeightRI recipients(List<GetTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRI addRecipientsItem(GetTransactionDetailsByTransactionIDRIRecipients recipientsItem) {
+  public ListTransactionsByBlockHeightRI addRecipientsItem(GetTransactionDetailsByTransactionIDRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -185,23 +185,23 @@ public class ListTransactionsByBlockHeightRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<GetTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
+  public List<GetTransactionDetailsByTransactionIDRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<GetTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public void setRecipients(List<GetTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListTransactionsByBlockHeightRI senders(List<GetTransactionDetailsByTransactionIDRISenders> senders) {
+  public ListTransactionsByBlockHeightRI senders(List<GetTransactionDetailsByTransactionIDRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListTransactionsByBlockHeightRI addSendersItem(GetTransactionDetailsByTransactionIDRISenders sendersItem) {
+  public ListTransactionsByBlockHeightRI addSendersItem(GetTransactionDetailsByTransactionIDRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -213,12 +213,12 @@ public class ListTransactionsByBlockHeightRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<GetTransactionDetailsByTransactionIDRISenders> getSenders() {
+  public List<GetTransactionDetailsByTransactionIDRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<GetTransactionDetailsByTransactionIDRISenders> senders) {
+  public void setSenders(List<GetTransactionDetailsByTransactionIDRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -467,7 +467,7 @@ public class ListTransactionsByBlockHeightRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -479,7 +479,7 @@ public class ListTransactionsByBlockHeightRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          GetTransactionDetailsByTransactionIDRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {

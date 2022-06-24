@@ -12,8 +12,8 @@ Litecoin
 |**size** | **Integer** | Represents the total size of this transaction. |  |
 |**vSize** | **Integer** | Represents the virtual size of this transaction. |  |
 |**version** | **Integer** | Represents transaction version number. |  |
-|**vin** | [**List&lt;ListTransactionsByBlockHeightRIBSLVin&gt;**](ListTransactionsByBlockHeightRIBSLVin.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;ListTransactionsByBlockHeightRIBSLVout&gt;**](ListTransactionsByBlockHeightRIBSLVout.md) | Represents the transaction outputs. |  |
+|**vin** | [**List&lt;ListTransactionsByBlockHeightRIBSLVinInner&gt;**](ListTransactionsByBlockHeightRIBSLVinInner.md) | Represents the transaction inputs. |  |
+|**vout** | [**List&lt;ListTransactionsByBlockHeightRIBSLVoutInner&gt;**](ListTransactionsByBlockHeightRIBSLVoutInner.md) | Represents the transaction outputs. |  |
 
 
 

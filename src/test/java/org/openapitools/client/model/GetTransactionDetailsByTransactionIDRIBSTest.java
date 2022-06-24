@@ -33,11 +33,11 @@ import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSE;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSEC;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSL;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZ;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplit;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVin;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVJoinSplitInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVinInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

@@ -23,11 +23,11 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVin;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplit;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVinInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVoutInner;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplitInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

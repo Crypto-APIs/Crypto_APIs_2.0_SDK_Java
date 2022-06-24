@@ -23,8 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBVin;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBVout;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBVinInner;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBSBVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

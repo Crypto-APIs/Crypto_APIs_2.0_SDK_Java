@@ -27,31 +27,31 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails409Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails422Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.GetAddressDetailsFromCallback400Response;
+import org.openapitools.client.model.GetAddressDetailsFromCallback401Response;
+import org.openapitools.client.model.GetAddressDetailsFromCallback403Response;
+import org.openapitools.client.model.GetAddressDetailsFromCallback404Response;
 import org.openapitools.client.model.GetAddressDetailsFromCallbackR;
+import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallback400Response;
+import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallback401Response;
+import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallback403Response;
 import org.openapitools.client.model.GetBlockDetailsByBlockHashFromCallbackR;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallback400Response;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallback401Response;
+import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallback403Response;
 import org.openapitools.client.model.GetBlockDetailsByBlockHeightFromCallbackR;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallback400Response;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallback401Response;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallback403Response;
 import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackR;
-import org.openapitools.client.model.InlineResponse40083;
-import org.openapitools.client.model.InlineResponse40084;
-import org.openapitools.client.model.InlineResponse40085;
-import org.openapitools.client.model.InlineResponse40086;
-import org.openapitools.client.model.InlineResponse40183;
-import org.openapitools.client.model.InlineResponse40184;
-import org.openapitools.client.model.InlineResponse40185;
-import org.openapitools.client.model.InlineResponse40186;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40383;
-import org.openapitools.client.model.InlineResponse40384;
-import org.openapitools.client.model.InlineResponse40385;
-import org.openapitools.client.model.InlineResponse40386;
-import org.openapitools.client.model.InlineResponse4041;
-import org.openapitools.client.model.InlineResponse4042;
-import org.openapitools.client.model.InlineResponse4044;
-import org.openapitools.client.model.InlineResponse409;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse422;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionID404Response;
+import org.openapitools.client.model.ListTransactionsByBlockHeight404Response;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
@@ -334,7 +334,7 @@ public class CallbackDataApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockcain-events/{blockchain}/{network}/blocks/hash/{blockHash}"
+        String localVarPath = "/blockchain-events/{blockchain}/{network}/blocks/hash/{blockHash}"
             .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "blockHash" + "\\}", localVarApiClient.escapeString(blockHash.toString()));
@@ -529,7 +529,7 @@ public class CallbackDataApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/blockcain-events/{blockchain}/{network}/blocks/height/{blockHeight}"
+        String localVarPath = "/blockchain-events/{blockchain}/{network}/blocks/height/{blockHeight}"
             .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
             .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()))
             .replaceAll("\\{" + "blockHeight" + "\\}", localVarApiClient.escapeString(blockHeight.toString()));

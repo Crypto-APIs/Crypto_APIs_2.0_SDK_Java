@@ -23,8 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBVin;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBVout;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBVinInner;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

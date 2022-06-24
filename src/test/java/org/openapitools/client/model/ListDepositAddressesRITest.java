@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListDepositAddressesRIConfirmedBalance;
-import org.openapitools.client.model.ListDepositAddressesRIFungibleTokens;
-import org.openapitools.client.model.ListDepositAddressesRINonFungibleTokens;
+import org.openapitools.client.model.ListDepositAddressesRIFungibleTokensInner;
+import org.openapitools.client.model.ListDepositAddressesRINonFungibleTokensInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

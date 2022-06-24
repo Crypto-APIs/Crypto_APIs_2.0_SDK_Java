@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionFromAddressForWholeAmountRIRecipients;
+import org.openapitools.client.model.CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner;
 import org.openapitools.client.model.CreateCoinsTransactionFromAddressForWholeAmountRISenders;
 
 import com.google.gson.Gson;
@@ -51,7 +51,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * CreateCoinsTransactionFromAddressForWholeAmountRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateCoinsTransactionFromAddressForWholeAmountRI {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -120,7 +120,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipients> recipients = new ArrayList<>();
+  private List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
@@ -292,13 +292,13 @@ public class CreateCoinsTransactionFromAddressForWholeAmountRI {
   }
 
 
-  public CreateCoinsTransactionFromAddressForWholeAmountRI recipients(List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipients> recipients) {
+  public CreateCoinsTransactionFromAddressForWholeAmountRI recipients(List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public CreateCoinsTransactionFromAddressForWholeAmountRI addRecipientsItem(CreateCoinsTransactionFromAddressForWholeAmountRIRecipients recipientsItem) {
+  public CreateCoinsTransactionFromAddressForWholeAmountRI addRecipientsItem(CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -310,12 +310,12 @@ public class CreateCoinsTransactionFromAddressForWholeAmountRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines the destination for the transaction, i.e. the recipient(s).")
 
-  public List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipients> getRecipients() {
+  public List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipients> recipients) {
+  public void setRecipients(List<CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
@@ -516,7 +516,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          CreateCoinsTransactionFromAddressForWholeAmountRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          CreateCoinsTransactionFromAddressForWholeAmountRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       // validate the optional field `senders`

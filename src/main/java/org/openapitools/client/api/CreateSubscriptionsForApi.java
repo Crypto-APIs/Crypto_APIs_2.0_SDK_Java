@@ -27,69 +27,88 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse40071;
-import org.openapitools.client.model.InlineResponse40072;
-import org.openapitools.client.model.InlineResponse40073;
-import org.openapitools.client.model.InlineResponse40074;
-import org.openapitools.client.model.InlineResponse40075;
-import org.openapitools.client.model.InlineResponse40076;
-import org.openapitools.client.model.InlineResponse40077;
-import org.openapitools.client.model.InlineResponse40078;
-import org.openapitools.client.model.InlineResponse40087;
-import org.openapitools.client.model.InlineResponse40088;
-import org.openapitools.client.model.InlineResponse40171;
-import org.openapitools.client.model.InlineResponse40172;
-import org.openapitools.client.model.InlineResponse40173;
-import org.openapitools.client.model.InlineResponse40174;
-import org.openapitools.client.model.InlineResponse40175;
-import org.openapitools.client.model.InlineResponse40176;
-import org.openapitools.client.model.InlineResponse40177;
-import org.openapitools.client.model.InlineResponse40178;
-import org.openapitools.client.model.InlineResponse40187;
-import org.openapitools.client.model.InlineResponse40188;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40371;
-import org.openapitools.client.model.InlineResponse40372;
-import org.openapitools.client.model.InlineResponse40373;
-import org.openapitools.client.model.InlineResponse40374;
-import org.openapitools.client.model.InlineResponse40375;
-import org.openapitools.client.model.InlineResponse40376;
-import org.openapitools.client.model.InlineResponse40377;
-import org.openapitools.client.model.InlineResponse40378;
-import org.openapitools.client.model.InlineResponse40387;
-import org.openapitools.client.model.InlineResponse40388;
-import org.openapitools.client.model.InlineResponse40910;
-import org.openapitools.client.model.InlineResponse40911;
-import org.openapitools.client.model.InlineResponse40912;
-import org.openapitools.client.model.InlineResponse40913;
-import org.openapitools.client.model.InlineResponse40914;
-import org.openapitools.client.model.InlineResponse40915;
-import org.openapitools.client.model.InlineResponse4096;
-import org.openapitools.client.model.InlineResponse4097;
-import org.openapitools.client.model.InlineResponse4098;
-import org.openapitools.client.model.InlineResponse4099;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse422;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails422Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.GetXRPRippleTransactionDetailsByTransactionID404Response;
+import org.openapitools.client.model.MinedTransaction400Response;
+import org.openapitools.client.model.MinedTransaction401Response;
+import org.openapitools.client.model.MinedTransaction403Response;
+import org.openapitools.client.model.MinedTransaction409Response;
 import org.openapitools.client.model.MinedTransactionR;
 import org.openapitools.client.model.MinedTransactionRB;
+import org.openapitools.client.model.NewBlock400Response;
+import org.openapitools.client.model.NewBlock401Response;
+import org.openapitools.client.model.NewBlock403Response;
+import org.openapitools.client.model.NewBlock409Response;
 import org.openapitools.client.model.NewBlockR;
 import org.openapitools.client.model.NewBlockRB;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions400Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions401Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions403Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactions409Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation400Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation401Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation403Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmation409Response;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmationR;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsAndEachConfirmationRB;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount400Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount401Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount403Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmount409Response;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmountR;
+import org.openapitools.client.model.NewConfirmedCoinsTransactionsForSpecificAmountRB;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsR;
 import org.openapitools.client.model.NewConfirmedCoinsTransactionsRB;
+import org.openapitools.client.model.NewConfirmedInternalTransactions400Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactions401Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactions403Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactions409Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation400Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation401Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation403Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmation409Response;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmationR;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsAndEachConfirmationRB;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount400Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount401Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount403Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmount409Response;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmountR;
+import org.openapitools.client.model.NewConfirmedInternalTransactionsForSpecificAmountRB;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsR;
 import org.openapitools.client.model.NewConfirmedInternalTransactionsRB;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount400Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount401Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount403Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmount409Response;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmountR;
+import org.openapitools.client.model.NewConfirmedTokenTransactionsForSpecificAmountRB;
+import org.openapitools.client.model.NewConfirmedTokensTransactions400Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactions401Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactions403Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactions409Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation400Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation401Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation403Response;
+import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmation409Response;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmationR;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsAndEachConfirmationRB;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsR;
 import org.openapitools.client.model.NewConfirmedTokensTransactionsRB;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions400Response;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions401Response;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions403Response;
+import org.openapitools.client.model.NewUnconfirmedCoinsTransactions409Response;
 import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedCoinsTransactionsRB;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions400Response;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions401Response;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions403Response;
+import org.openapitools.client.model.NewUnconfirmedTokensTransactions409Response;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsR;
 import org.openapitools.client.model.NewUnconfirmedTokensTransactionsRB;
 
@@ -878,6 +897,191 @@ public class CreateSubscriptionsForApi {
         return localVarCall;
     }
     /**
+     * Build call for newConfirmedCoinsTransactionsForSpecificAmount
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedCoinsTransactionsForSpecificAmountRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call newConfirmedCoinsTransactionsForSpecificAmountCall(String blockchain, String network, String context, NewConfirmedCoinsTransactionsForSpecificAmountRB newConfirmedCoinsTransactionsForSpecificAmountRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = newConfirmedCoinsTransactionsForSpecificAmountRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-events/{blockchain}/{network}/subscriptions/coins-transactions-for-specific-amount"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call newConfirmedCoinsTransactionsForSpecificAmountValidateBeforeCall(String blockchain, String network, String context, NewConfirmedCoinsTransactionsForSpecificAmountRB newConfirmedCoinsTransactionsForSpecificAmountRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling newConfirmedCoinsTransactionsForSpecificAmount(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling newConfirmedCoinsTransactionsForSpecificAmount(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = newConfirmedCoinsTransactionsForSpecificAmountCall(blockchain, network, context, newConfirmedCoinsTransactionsForSpecificAmountRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * New Confirmed Coins Transactions For Specific Amount
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed coins transactions for the specified blockchain and the amount is equal or higher than the value specified.  By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs  filtered for the specified amount. The information is returned per specified address.    Being confirmed means that the transactions are verified by miners and added to the next block.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedCoinsTransactionsForSpecificAmountRB  (optional)
+     * @return NewConfirmedCoinsTransactionsForSpecificAmountR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public NewConfirmedCoinsTransactionsForSpecificAmountR newConfirmedCoinsTransactionsForSpecificAmount(String blockchain, String network, String context, NewConfirmedCoinsTransactionsForSpecificAmountRB newConfirmedCoinsTransactionsForSpecificAmountRB) throws ApiException {
+        ApiResponse<NewConfirmedCoinsTransactionsForSpecificAmountR> localVarResp = newConfirmedCoinsTransactionsForSpecificAmountWithHttpInfo(blockchain, network, context, newConfirmedCoinsTransactionsForSpecificAmountRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * New Confirmed Coins Transactions For Specific Amount
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed coins transactions for the specified blockchain and the amount is equal or higher than the value specified.  By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs  filtered for the specified amount. The information is returned per specified address.    Being confirmed means that the transactions are verified by miners and added to the next block.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedCoinsTransactionsForSpecificAmountRB  (optional)
+     * @return ApiResponse&lt;NewConfirmedCoinsTransactionsForSpecificAmountR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<NewConfirmedCoinsTransactionsForSpecificAmountR> newConfirmedCoinsTransactionsForSpecificAmountWithHttpInfo(String blockchain, String network, String context, NewConfirmedCoinsTransactionsForSpecificAmountRB newConfirmedCoinsTransactionsForSpecificAmountRB) throws ApiException {
+        okhttp3.Call localVarCall = newConfirmedCoinsTransactionsForSpecificAmountValidateBeforeCall(blockchain, network, context, newConfirmedCoinsTransactionsForSpecificAmountRB, null);
+        Type localVarReturnType = new TypeToken<NewConfirmedCoinsTransactionsForSpecificAmountR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * New Confirmed Coins Transactions For Specific Amount (asynchronously)
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed coins transactions for the specified blockchain and the amount is equal or higher than the value specified.  By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs  filtered for the specified amount. The information is returned per specified address.    Being confirmed means that the transactions are verified by miners and added to the next block.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedCoinsTransactionsForSpecificAmountRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call newConfirmedCoinsTransactionsForSpecificAmountAsync(String blockchain, String network, String context, NewConfirmedCoinsTransactionsForSpecificAmountRB newConfirmedCoinsTransactionsForSpecificAmountRB, final ApiCallback<NewConfirmedCoinsTransactionsForSpecificAmountR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = newConfirmedCoinsTransactionsForSpecificAmountValidateBeforeCall(blockchain, network, context, newConfirmedCoinsTransactionsForSpecificAmountRB, _callback);
+        Type localVarReturnType = new TypeToken<NewConfirmedCoinsTransactionsForSpecificAmountR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
      * Build call for newConfirmedInternalTransactions
      * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
      * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
@@ -1244,6 +1448,380 @@ public class CreateSubscriptionsForApi {
 
         okhttp3.Call localVarCall = newConfirmedInternalTransactionsAndEachConfirmationValidateBeforeCall(blockchain, network, context, newConfirmedInternalTransactionsAndEachConfirmationRB, _callback);
         Type localVarReturnType = new TypeToken<NewConfirmedInternalTransactionsAndEachConfirmationR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for newConfirmedInternalTransactionsForSpecificAmount
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedInternalTransactionsForSpecificAmountRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call newConfirmedInternalTransactionsForSpecificAmountCall(String blockchain, String network, String context, NewConfirmedInternalTransactionsForSpecificAmountRB newConfirmedInternalTransactionsForSpecificAmountRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = newConfirmedInternalTransactionsForSpecificAmountRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-events/{blockchain}/{network}/subscriptions/internal-transactions-for-specific-amount"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call newConfirmedInternalTransactionsForSpecificAmountValidateBeforeCall(String blockchain, String network, String context, NewConfirmedInternalTransactionsForSpecificAmountRB newConfirmedInternalTransactionsForSpecificAmountRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling newConfirmedInternalTransactionsForSpecificAmount(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling newConfirmedInternalTransactionsForSpecificAmount(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = newConfirmedInternalTransactionsForSpecificAmountCall(blockchain, network, context, newConfirmedInternalTransactionsForSpecificAmountRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * New Confirmed Internal Transactions For Specific Amount
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new confirmed internal transactions and the amount is equal or higher than a value, specified by the customer. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedInternalTransactionsForSpecificAmountRB  (optional)
+     * @return NewConfirmedInternalTransactionsForSpecificAmountR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public NewConfirmedInternalTransactionsForSpecificAmountR newConfirmedInternalTransactionsForSpecificAmount(String blockchain, String network, String context, NewConfirmedInternalTransactionsForSpecificAmountRB newConfirmedInternalTransactionsForSpecificAmountRB) throws ApiException {
+        ApiResponse<NewConfirmedInternalTransactionsForSpecificAmountR> localVarResp = newConfirmedInternalTransactionsForSpecificAmountWithHttpInfo(blockchain, network, context, newConfirmedInternalTransactionsForSpecificAmountRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * New Confirmed Internal Transactions For Specific Amount
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new confirmed internal transactions and the amount is equal or higher than a value, specified by the customer. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedInternalTransactionsForSpecificAmountRB  (optional)
+     * @return ApiResponse&lt;NewConfirmedInternalTransactionsForSpecificAmountR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<NewConfirmedInternalTransactionsForSpecificAmountR> newConfirmedInternalTransactionsForSpecificAmountWithHttpInfo(String blockchain, String network, String context, NewConfirmedInternalTransactionsForSpecificAmountRB newConfirmedInternalTransactionsForSpecificAmountRB) throws ApiException {
+        okhttp3.Call localVarCall = newConfirmedInternalTransactionsForSpecificAmountValidateBeforeCall(blockchain, network, context, newConfirmedInternalTransactionsForSpecificAmountRB, null);
+        Type localVarReturnType = new TypeToken<NewConfirmedInternalTransactionsForSpecificAmountR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * New Confirmed Internal Transactions For Specific Amount (asynchronously)
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new confirmed internal transactions and the amount is equal or higher than a value, specified by the customer. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedInternalTransactionsForSpecificAmountRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call newConfirmedInternalTransactionsForSpecificAmountAsync(String blockchain, String network, String context, NewConfirmedInternalTransactionsForSpecificAmountRB newConfirmedInternalTransactionsForSpecificAmountRB, final ApiCallback<NewConfirmedInternalTransactionsForSpecificAmountR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = newConfirmedInternalTransactionsForSpecificAmountValidateBeforeCall(blockchain, network, context, newConfirmedInternalTransactionsForSpecificAmountRB, _callback);
+        Type localVarReturnType = new TypeToken<NewConfirmedInternalTransactionsForSpecificAmountR>(){}.getType();
+        localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
+        return localVarCall;
+    }
+    /**
+     * Build call for newConfirmedTokenTransactionsForSpecificAmount
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedTokenTransactionsForSpecificAmountRB  (optional)
+     * @param _callback Callback for upload/download progress
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call newConfirmedTokenTransactionsForSpecificAmountCall(String blockchain, String network, String context, NewConfirmedTokenTransactionsForSpecificAmountRB newConfirmedTokenTransactionsForSpecificAmountRB, final ApiCallback _callback) throws ApiException {
+        String basePath = null;
+        // Operation Servers
+        String[] localBasePaths = new String[] {  };
+
+        // Determine Base Path to Use
+        if (localCustomBaseUrl != null){
+            basePath = localCustomBaseUrl;
+        } else if ( localBasePaths.length > 0 ) {
+            basePath = localBasePaths[localHostIndex];
+        } else {
+            basePath = null;
+        }
+
+        Object localVarPostBody = newConfirmedTokenTransactionsForSpecificAmountRB;
+
+        // create path and map variables
+        String localVarPath = "/blockchain-events/{blockchain}/{network}/subscriptions/tokens-transfers-for-specific-amount"
+            .replaceAll("\\{" + "blockchain" + "\\}", localVarApiClient.escapeString(blockchain.toString()))
+            .replaceAll("\\{" + "network" + "\\}", localVarApiClient.escapeString(network.toString()));
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+        Map<String, String> localVarCookieParams = new HashMap<String, String>();
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        if (context != null) {
+            localVarQueryParams.addAll(localVarApiClient.parameterToPair("context", context));
+        }
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = localVarApiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) {
+            localVarHeaderParams.put("Accept", localVarAccept);
+        }
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = localVarApiClient.selectHeaderContentType(localVarContentTypes);
+        if (localVarContentType != null) {
+            localVarHeaderParams.put("Content-Type", localVarContentType);
+        }
+
+        String[] localVarAuthNames = new String[] { "ApiKey" };
+        return localVarApiClient.buildCall(basePath, localVarPath, "POST", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarCookieParams, localVarFormParams, localVarAuthNames, _callback);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private okhttp3.Call newConfirmedTokenTransactionsForSpecificAmountValidateBeforeCall(String blockchain, String network, String context, NewConfirmedTokenTransactionsForSpecificAmountRB newConfirmedTokenTransactionsForSpecificAmountRB, final ApiCallback _callback) throws ApiException {
+        
+        // verify the required parameter 'blockchain' is set
+        if (blockchain == null) {
+            throw new ApiException("Missing the required parameter 'blockchain' when calling newConfirmedTokenTransactionsForSpecificAmount(Async)");
+        }
+        
+        // verify the required parameter 'network' is set
+        if (network == null) {
+            throw new ApiException("Missing the required parameter 'network' when calling newConfirmedTokenTransactionsForSpecificAmount(Async)");
+        }
+        
+
+        okhttp3.Call localVarCall = newConfirmedTokenTransactionsForSpecificAmountCall(blockchain, network, context, newConfirmedTokenTransactionsForSpecificAmountRB, _callback);
+        return localVarCall;
+
+    }
+
+    /**
+     * New Confirmed Token Transactions For Specific Amount
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed token transactions for the specified blockchain and the amount is equal or higher than the value specified. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block. This endpoint refers to tokens transactions only, not coins.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedTokenTransactionsForSpecificAmountRB  (optional)
+     * @return NewConfirmedTokenTransactionsForSpecificAmountR
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public NewConfirmedTokenTransactionsForSpecificAmountR newConfirmedTokenTransactionsForSpecificAmount(String blockchain, String network, String context, NewConfirmedTokenTransactionsForSpecificAmountRB newConfirmedTokenTransactionsForSpecificAmountRB) throws ApiException {
+        ApiResponse<NewConfirmedTokenTransactionsForSpecificAmountR> localVarResp = newConfirmedTokenTransactionsForSpecificAmountWithHttpInfo(blockchain, network, context, newConfirmedTokenTransactionsForSpecificAmountRB);
+        return localVarResp.getData();
+    }
+
+    /**
+     * New Confirmed Token Transactions For Specific Amount
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed token transactions for the specified blockchain and the amount is equal or higher than the value specified. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block. This endpoint refers to tokens transactions only, not coins.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedTokenTransactionsForSpecificAmountRB  (optional)
+     * @return ApiResponse&lt;NewConfirmedTokenTransactionsForSpecificAmountR&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public ApiResponse<NewConfirmedTokenTransactionsForSpecificAmountR> newConfirmedTokenTransactionsForSpecificAmountWithHttpInfo(String blockchain, String network, String context, NewConfirmedTokenTransactionsForSpecificAmountRB newConfirmedTokenTransactionsForSpecificAmountRB) throws ApiException {
+        okhttp3.Call localVarCall = newConfirmedTokenTransactionsForSpecificAmountValidateBeforeCall(blockchain, network, context, newConfirmedTokenTransactionsForSpecificAmountRB, null);
+        Type localVarReturnType = new TypeToken<NewConfirmedTokenTransactionsForSpecificAmountR>(){}.getType();
+        return localVarApiClient.execute(localVarCall, localVarReturnType);
+    }
+
+    /**
+     * New Confirmed Token Transactions For Specific Amount (asynchronously)
+     * Through this endpoint customers can create callback subscriptions for a specific event and \&quot;amountHigherThan\&quot; value. In this case the event is when there are new incoming or outgoing confirmed token transactions for the specified blockchain and the amount is equal or higher than the value specified. By creating this subscription the user will be notified by Crypto APIs 2.0 when that event occurs, filtered for the specified amount.  Being confirmed means that the transactions are verified by miners and added to the next block. This endpoint refers to tokens transactions only, not coins.
+     * @param blockchain Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. (required)
+     * @param network Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. (required)
+     * @param context In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. (optional)
+     * @param newConfirmedTokenTransactionsForSpecificAmountRB  (optional)
+     * @param _callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     * @http.response.details
+     <table summary="Response Details" border="1">
+        <tr><td> Status Code </td><td> Description </td><td> Response Headers </td></tr>
+        <tr><td> 201 </td><td> The resource has been successfully created. </td><td>  -  </td></tr>
+        <tr><td> 400 </td><td> 400 </td><td>  -  </td></tr>
+        <tr><td> 401 </td><td> 401 </td><td>  -  </td></tr>
+        <tr><td> 402 </td><td> You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. </td><td>  -  </td></tr>
+        <tr><td> 403 </td><td> 403 </td><td>  -  </td></tr>
+        <tr><td> 404 </td><td> The specified resource has not been found. </td><td>  -  </td></tr>
+        <tr><td> 409 </td><td> 409 </td><td>  -  </td></tr>
+        <tr><td> 415 </td><td> The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. </td><td>  -  </td></tr>
+        <tr><td> 422 </td><td> Your request body for POST requests must have a structure of { data: { item: [...properties] } } </td><td>  -  </td></tr>
+        <tr><td> 429 </td><td> The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. </td><td>  -  </td></tr>
+        <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
+     </table>
+     */
+    public okhttp3.Call newConfirmedTokenTransactionsForSpecificAmountAsync(String blockchain, String network, String context, NewConfirmedTokenTransactionsForSpecificAmountRB newConfirmedTokenTransactionsForSpecificAmountRB, final ApiCallback<NewConfirmedTokenTransactionsForSpecificAmountR> _callback) throws ApiException {
+
+        okhttp3.Call localVarCall = newConfirmedTokenTransactionsForSpecificAmountValidateBeforeCall(blockchain, network, context, newConfirmedTokenTransactionsForSpecificAmountRB, _callback);
+        Type localVarReturnType = new TypeToken<NewConfirmedTokenTransactionsForSpecificAmountR>(){}.getType();
         localVarApiClient.executeAsync(localVarCall, localVarReturnType, _callback);
         return localVarCall;
     }

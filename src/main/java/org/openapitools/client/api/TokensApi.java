@@ -27,31 +27,31 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails409Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails422Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.GetTokenDetailsByContractAddress400Response;
+import org.openapitools.client.model.GetTokenDetailsByContractAddress401Response;
+import org.openapitools.client.model.GetTokenDetailsByContractAddress403Response;
 import org.openapitools.client.model.GetTokenDetailsByContractAddressR;
-import org.openapitools.client.model.InlineResponse40060;
-import org.openapitools.client.model.InlineResponse40064;
-import org.openapitools.client.model.InlineResponse40066;
-import org.openapitools.client.model.InlineResponse40067;
-import org.openapitools.client.model.InlineResponse40069;
-import org.openapitools.client.model.InlineResponse40160;
-import org.openapitools.client.model.InlineResponse40164;
-import org.openapitools.client.model.InlineResponse40166;
-import org.openapitools.client.model.InlineResponse40167;
-import org.openapitools.client.model.InlineResponse40169;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse40360;
-import org.openapitools.client.model.InlineResponse40364;
-import org.openapitools.client.model.InlineResponse40366;
-import org.openapitools.client.model.InlineResponse40367;
-import org.openapitools.client.model.InlineResponse40369;
-import org.openapitools.client.model.InlineResponse409;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse422;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.ListConfirmedTokensTransfersByAddress400Response;
+import org.openapitools.client.model.ListConfirmedTokensTransfersByAddress401Response;
+import org.openapitools.client.model.ListConfirmedTokensTransfersByAddress403Response;
 import org.openapitools.client.model.ListConfirmedTokensTransfersByAddressR;
+import org.openapitools.client.model.ListTokensByAddress400Response;
+import org.openapitools.client.model.ListTokensByAddress401Response;
+import org.openapitools.client.model.ListTokensByAddress403Response;
 import org.openapitools.client.model.ListTokensByAddressR;
+import org.openapitools.client.model.ListTokensTransfersByTransactionHash400Response;
+import org.openapitools.client.model.ListTokensTransfersByTransactionHash401Response;
+import org.openapitools.client.model.ListTokensTransfersByTransactionHash403Response;
 import org.openapitools.client.model.ListTokensTransfersByTransactionHashR;
+import org.openapitools.client.model.ListUnconfirmedTokensTransfersByAddress400Response;
+import org.openapitools.client.model.ListUnconfirmedTokensTransfersByAddress401Response;
+import org.openapitools.client.model.ListUnconfirmedTokensTransfersByAddress403Response;
 import org.openapitools.client.model.ListUnconfirmedTokensTransfersByAddressR;
 
 import java.lang.reflect.Type;
@@ -522,7 +522,7 @@ public class TokensApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTokensByAddressCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    public okhttp3.Call listTokensByAddressCall(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         String basePath = null;
         // Operation Servers
         String[] localBasePaths = new String[] {  };
@@ -583,7 +583,7 @@ public class TokensApi {
     }
 
     @SuppressWarnings("rawtypes")
-    private okhttp3.Call listTokensByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback _callback) throws ApiException {
+    private okhttp3.Call listTokensByAddressValidateBeforeCall(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback _callback) throws ApiException {
         
         // verify the required parameter 'blockchain' is set
         if (blockchain == null) {
@@ -632,7 +632,7 @@ public class TokensApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ListTokensByAddressR listTokensByAddress(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+    public ListTokensByAddressR listTokensByAddress(String blockchain, String network, String address, String context, Long limit, Long offset) throws ApiException {
         ApiResponse<ListTokensByAddressR> localVarResp = listTokensByAddressWithHttpInfo(blockchain, network, address, context, limit, offset);
         return localVarResp.getData();
     }
@@ -663,7 +663,7 @@ public class TokensApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public ApiResponse<ListTokensByAddressR> listTokensByAddressWithHttpInfo(String blockchain, String network, String address, String context, Integer limit, Integer offset) throws ApiException {
+    public ApiResponse<ListTokensByAddressR> listTokensByAddressWithHttpInfo(String blockchain, String network, String address, String context, Long limit, Long offset) throws ApiException {
         okhttp3.Call localVarCall = listTokensByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, null);
         Type localVarReturnType = new TypeToken<ListTokensByAddressR>(){}.getType();
         return localVarApiClient.execute(localVarCall, localVarReturnType);
@@ -696,7 +696,7 @@ public class TokensApi {
         <tr><td> 500 </td><td> An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. </td><td>  -  </td></tr>
      </table>
      */
-    public okhttp3.Call listTokensByAddressAsync(String blockchain, String network, String address, String context, Integer limit, Integer offset, final ApiCallback<ListTokensByAddressR> _callback) throws ApiException {
+    public okhttp3.Call listTokensByAddressAsync(String blockchain, String network, String address, String context, Long limit, Long offset, final ApiCallback<ListTokensByAddressR> _callback) throws ApiException {
 
         okhttp3.Call localVarCall = listTokensByAddressValidateBeforeCall(blockchain, network, address, context, limit, offset, _callback);
         Type localVarReturnType = new TypeToken<ListTokensByAddressR>(){}.getType();

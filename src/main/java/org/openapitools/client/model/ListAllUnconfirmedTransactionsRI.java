@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListAllUnconfirmedTransactionsRIBS;
-import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIRecipients;
-import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRISenders;
+import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRIRecipientsInner;
+import org.openapitools.client.model.ListUnconfirmedTransactionsByAddressRISendersInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,15 +52,15 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListAllUnconfirmedTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListAllUnconfirmedTransactionsRI {
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListUnconfirmedTransactionsByAddressRIRecipients> recipients = new ArrayList<>();
+  private List<ListUnconfirmedTransactionsByAddressRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListUnconfirmedTransactionsByAddressRISenders> senders = new ArrayList<>();
+  private List<ListUnconfirmedTransactionsByAddressRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -81,13 +81,13 @@ public class ListAllUnconfirmedTransactionsRI {
   public ListAllUnconfirmedTransactionsRI() { 
   }
 
-  public ListAllUnconfirmedTransactionsRI recipients(List<ListUnconfirmedTransactionsByAddressRIRecipients> recipients) {
+  public ListAllUnconfirmedTransactionsRI recipients(List<ListUnconfirmedTransactionsByAddressRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListAllUnconfirmedTransactionsRI addRecipientsItem(ListUnconfirmedTransactionsByAddressRIRecipients recipientsItem) {
+  public ListAllUnconfirmedTransactionsRI addRecipientsItem(ListUnconfirmedTransactionsByAddressRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -99,23 +99,23 @@ public class ListAllUnconfirmedTransactionsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListUnconfirmedTransactionsByAddressRIRecipients> getRecipients() {
+  public List<ListUnconfirmedTransactionsByAddressRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListUnconfirmedTransactionsByAddressRIRecipients> recipients) {
+  public void setRecipients(List<ListUnconfirmedTransactionsByAddressRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListAllUnconfirmedTransactionsRI senders(List<ListUnconfirmedTransactionsByAddressRISenders> senders) {
+  public ListAllUnconfirmedTransactionsRI senders(List<ListUnconfirmedTransactionsByAddressRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListAllUnconfirmedTransactionsRI addSendersItem(ListUnconfirmedTransactionsByAddressRISenders sendersItem) {
+  public ListAllUnconfirmedTransactionsRI addSendersItem(ListUnconfirmedTransactionsByAddressRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -127,12 +127,12 @@ public class ListAllUnconfirmedTransactionsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListUnconfirmedTransactionsByAddressRISenders> getSenders() {
+  public List<ListUnconfirmedTransactionsByAddressRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListUnconfirmedTransactionsByAddressRISenders> senders) {
+  public void setSenders(List<ListUnconfirmedTransactionsByAddressRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -339,7 +339,7 @@ public class ListAllUnconfirmedTransactionsRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListUnconfirmedTransactionsByAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListUnconfirmedTransactionsByAddressRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -351,7 +351,7 @@ public class ListAllUnconfirmedTransactionsRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListUnconfirmedTransactionsByAddressRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListUnconfirmedTransactionsByAddressRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {

@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRIConfirmedBalance;
-import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRIFungibleTokens;
-import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens;
+import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner;
+import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,15 +52,15 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetHDWalletXPubYPubZPubAssetsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetHDWalletXPubYPubZPubAssetsRI {
   public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
   @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
-  private List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokens> fungibleTokens = null;
+  private List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner> fungibleTokens = null;
 
   public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
   @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
-  private List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens> nonFungibleTokens = null;
+  private List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner> nonFungibleTokens = null;
 
   public static final String SERIALIZED_NAME_CONFIRMED_BALANCE = "confirmedBalance";
   @SerializedName(SERIALIZED_NAME_CONFIRMED_BALANCE)
@@ -69,13 +69,13 @@ public class GetHDWalletXPubYPubZPubAssetsRI {
   public GetHDWalletXPubYPubZPubAssetsRI() { 
   }
 
-  public GetHDWalletXPubYPubZPubAssetsRI fungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokens> fungibleTokens) {
+  public GetHDWalletXPubYPubZPubAssetsRI fungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner> fungibleTokens) {
     
     this.fungibleTokens = fungibleTokens;
     return this;
   }
 
-  public GetHDWalletXPubYPubZPubAssetsRI addFungibleTokensItem(GetHDWalletXPubYPubZPubAssetsRIFungibleTokens fungibleTokensItem) {
+  public GetHDWalletXPubYPubZPubAssetsRI addFungibleTokensItem(GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner fungibleTokensItem) {
     if (this.fungibleTokens == null) {
       this.fungibleTokens = new ArrayList<>();
     }
@@ -90,23 +90,23 @@ public class GetHDWalletXPubYPubZPubAssetsRI {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents fungible tokens'es detailed information")
 
-  public List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokens> getFungibleTokens() {
+  public List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner> getFungibleTokens() {
     return fungibleTokens;
   }
 
 
-  public void setFungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokens> fungibleTokens) {
+  public void setFungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner> fungibleTokens) {
     this.fungibleTokens = fungibleTokens;
   }
 
 
-  public GetHDWalletXPubYPubZPubAssetsRI nonFungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens> nonFungibleTokens) {
+  public GetHDWalletXPubYPubZPubAssetsRI nonFungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner> nonFungibleTokens) {
     
     this.nonFungibleTokens = nonFungibleTokens;
     return this;
   }
 
-  public GetHDWalletXPubYPubZPubAssetsRI addNonFungibleTokensItem(GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens nonFungibleTokensItem) {
+  public GetHDWalletXPubYPubZPubAssetsRI addNonFungibleTokensItem(GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner nonFungibleTokensItem) {
     if (this.nonFungibleTokens == null) {
       this.nonFungibleTokens = new ArrayList<>();
     }
@@ -121,12 +121,12 @@ public class GetHDWalletXPubYPubZPubAssetsRI {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents non-fungible tokens'es detailed information.")
 
-  public List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens> getNonFungibleTokens() {
+  public List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner> getNonFungibleTokens() {
     return nonFungibleTokens;
   }
 
 
-  public void setNonFungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens> nonFungibleTokens) {
+  public void setNonFungibleTokens(List<GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner> nonFungibleTokens) {
     this.nonFungibleTokens = nonFungibleTokens;
   }
 
@@ -250,7 +250,7 @@ public class GetHDWalletXPubYPubZPubAssetsRI {
 
         // validate the optional field `fungibleTokens` (array)
         for (int i = 0; i < jsonArrayfungibleTokens.size(); i++) {
-          GetHDWalletXPubYPubZPubAssetsRIFungibleTokens.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
+          GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraynonFungibleTokens = jsonObj.getAsJsonArray("nonFungibleTokens");
@@ -262,7 +262,7 @@ public class GetHDWalletXPubYPubZPubAssetsRI {
 
         // validate the optional field `nonFungibleTokens` (array)
         for (int i = 0; i < jsonArraynonFungibleTokens.size(); i++) {
-          GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
+          GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
         };
       }
       // validate the optional field `confirmedBalance`

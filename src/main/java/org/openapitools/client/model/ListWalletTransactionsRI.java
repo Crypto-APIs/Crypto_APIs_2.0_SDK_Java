@@ -26,11 +26,11 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListWalletTransactionsRIFee;
-import org.openapitools.client.model.ListWalletTransactionsRIFungibleTokens;
-import org.openapitools.client.model.ListWalletTransactionsRIInternalTransactions;
-import org.openapitools.client.model.ListWalletTransactionsRINonFungibleTokens;
-import org.openapitools.client.model.ListWalletTransactionsRIRecipients;
-import org.openapitools.client.model.ListWalletTransactionsRISenders;
+import org.openapitools.client.model.ListWalletTransactionsRIFungibleTokensInner;
+import org.openapitools.client.model.ListWalletTransactionsRIInternalTransactionsInner;
+import org.openapitools.client.model.ListWalletTransactionsRINonFungibleTokensInner;
+import org.openapitools.client.model.ListWalletTransactionsRIRecipientsInner;
+import org.openapitools.client.model.ListWalletTransactionsRISendersInner;
 import org.openapitools.client.model.ListWalletTransactionsRIValue;
 
 import com.google.gson.Gson;
@@ -56,7 +56,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListWalletTransactionsRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListWalletTransactionsRI {
   public static final String SERIALIZED_NAME_DIRECTION = "direction";
   @SerializedName(SERIALIZED_NAME_DIRECTION)
@@ -68,23 +68,23 @@ public class ListWalletTransactionsRI {
 
   public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
   @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
-  private List<ListWalletTransactionsRIFungibleTokens> fungibleTokens = null;
+  private List<ListWalletTransactionsRIFungibleTokensInner> fungibleTokens = null;
 
   public static final String SERIALIZED_NAME_INTERNAL_TRANSACTIONS = "internalTransactions";
   @SerializedName(SERIALIZED_NAME_INTERNAL_TRANSACTIONS)
-  private List<ListWalletTransactionsRIInternalTransactions> internalTransactions = null;
+  private List<ListWalletTransactionsRIInternalTransactionsInner> internalTransactions = null;
 
   public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
   @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
-  private List<ListWalletTransactionsRINonFungibleTokens> nonFungibleTokens = null;
+  private List<ListWalletTransactionsRINonFungibleTokensInner> nonFungibleTokens = null;
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListWalletTransactionsRIRecipients> recipients = new ArrayList<>();
+  private List<ListWalletTransactionsRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListWalletTransactionsRISenders> senders = new ArrayList<>();
+  private List<ListWalletTransactionsRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_STATUS = "status";
   @SerializedName(SERIALIZED_NAME_STATUS)
@@ -151,13 +151,13 @@ public class ListWalletTransactionsRI {
   }
 
 
-  public ListWalletTransactionsRI fungibleTokens(List<ListWalletTransactionsRIFungibleTokens> fungibleTokens) {
+  public ListWalletTransactionsRI fungibleTokens(List<ListWalletTransactionsRIFungibleTokensInner> fungibleTokens) {
     
     this.fungibleTokens = fungibleTokens;
     return this;
   }
 
-  public ListWalletTransactionsRI addFungibleTokensItem(ListWalletTransactionsRIFungibleTokens fungibleTokensItem) {
+  public ListWalletTransactionsRI addFungibleTokensItem(ListWalletTransactionsRIFungibleTokensInner fungibleTokensItem) {
     if (this.fungibleTokens == null) {
       this.fungibleTokens = new ArrayList<>();
     }
@@ -172,23 +172,23 @@ public class ListWalletTransactionsRI {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents fungible tokens'es detailed information")
 
-  public List<ListWalletTransactionsRIFungibleTokens> getFungibleTokens() {
+  public List<ListWalletTransactionsRIFungibleTokensInner> getFungibleTokens() {
     return fungibleTokens;
   }
 
 
-  public void setFungibleTokens(List<ListWalletTransactionsRIFungibleTokens> fungibleTokens) {
+  public void setFungibleTokens(List<ListWalletTransactionsRIFungibleTokensInner> fungibleTokens) {
     this.fungibleTokens = fungibleTokens;
   }
 
 
-  public ListWalletTransactionsRI internalTransactions(List<ListWalletTransactionsRIInternalTransactions> internalTransactions) {
+  public ListWalletTransactionsRI internalTransactions(List<ListWalletTransactionsRIInternalTransactionsInner> internalTransactions) {
     
     this.internalTransactions = internalTransactions;
     return this;
   }
 
-  public ListWalletTransactionsRI addInternalTransactionsItem(ListWalletTransactionsRIInternalTransactions internalTransactionsItem) {
+  public ListWalletTransactionsRI addInternalTransactionsItem(ListWalletTransactionsRIInternalTransactionsInner internalTransactionsItem) {
     if (this.internalTransactions == null) {
       this.internalTransactions = new ArrayList<>();
     }
@@ -203,23 +203,23 @@ public class ListWalletTransactionsRI {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "")
 
-  public List<ListWalletTransactionsRIInternalTransactions> getInternalTransactions() {
+  public List<ListWalletTransactionsRIInternalTransactionsInner> getInternalTransactions() {
     return internalTransactions;
   }
 
 
-  public void setInternalTransactions(List<ListWalletTransactionsRIInternalTransactions> internalTransactions) {
+  public void setInternalTransactions(List<ListWalletTransactionsRIInternalTransactionsInner> internalTransactions) {
     this.internalTransactions = internalTransactions;
   }
 
 
-  public ListWalletTransactionsRI nonFungibleTokens(List<ListWalletTransactionsRINonFungibleTokens> nonFungibleTokens) {
+  public ListWalletTransactionsRI nonFungibleTokens(List<ListWalletTransactionsRINonFungibleTokensInner> nonFungibleTokens) {
     
     this.nonFungibleTokens = nonFungibleTokens;
     return this;
   }
 
-  public ListWalletTransactionsRI addNonFungibleTokensItem(ListWalletTransactionsRINonFungibleTokens nonFungibleTokensItem) {
+  public ListWalletTransactionsRI addNonFungibleTokensItem(ListWalletTransactionsRINonFungibleTokensInner nonFungibleTokensItem) {
     if (this.nonFungibleTokens == null) {
       this.nonFungibleTokens = new ArrayList<>();
     }
@@ -234,23 +234,23 @@ public class ListWalletTransactionsRI {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents non-fungible tokens'es detailed information.")
 
-  public List<ListWalletTransactionsRINonFungibleTokens> getNonFungibleTokens() {
+  public List<ListWalletTransactionsRINonFungibleTokensInner> getNonFungibleTokens() {
     return nonFungibleTokens;
   }
 
 
-  public void setNonFungibleTokens(List<ListWalletTransactionsRINonFungibleTokens> nonFungibleTokens) {
+  public void setNonFungibleTokens(List<ListWalletTransactionsRINonFungibleTokensInner> nonFungibleTokens) {
     this.nonFungibleTokens = nonFungibleTokens;
   }
 
 
-  public ListWalletTransactionsRI recipients(List<ListWalletTransactionsRIRecipients> recipients) {
+  public ListWalletTransactionsRI recipients(List<ListWalletTransactionsRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListWalletTransactionsRI addRecipientsItem(ListWalletTransactionsRIRecipients recipientsItem) {
+  public ListWalletTransactionsRI addRecipientsItem(ListWalletTransactionsRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -262,23 +262,23 @@ public class ListWalletTransactionsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListWalletTransactionsRIRecipients> getRecipients() {
+  public List<ListWalletTransactionsRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListWalletTransactionsRIRecipients> recipients) {
+  public void setRecipients(List<ListWalletTransactionsRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListWalletTransactionsRI senders(List<ListWalletTransactionsRISenders> senders) {
+  public ListWalletTransactionsRI senders(List<ListWalletTransactionsRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListWalletTransactionsRI addSendersItem(ListWalletTransactionsRISenders sendersItem) {
+  public ListWalletTransactionsRI addSendersItem(ListWalletTransactionsRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -290,12 +290,12 @@ public class ListWalletTransactionsRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list.")
 
-  public List<ListWalletTransactionsRISenders> getSenders() {
+  public List<ListWalletTransactionsRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListWalletTransactionsRISenders> senders) {
+  public void setSenders(List<ListWalletTransactionsRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -526,7 +526,7 @@ public class ListWalletTransactionsRI {
 
         // validate the optional field `fungibleTokens` (array)
         for (int i = 0; i < jsonArrayfungibleTokens.size(); i++) {
-          ListWalletTransactionsRIFungibleTokens.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
+          ListWalletTransactionsRIFungibleTokensInner.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayinternalTransactions = jsonObj.getAsJsonArray("internalTransactions");
@@ -538,7 +538,7 @@ public class ListWalletTransactionsRI {
 
         // validate the optional field `internalTransactions` (array)
         for (int i = 0; i < jsonArrayinternalTransactions.size(); i++) {
-          ListWalletTransactionsRIInternalTransactions.validateJsonObject(jsonArrayinternalTransactions.get(i).getAsJsonObject());
+          ListWalletTransactionsRIInternalTransactionsInner.validateJsonObject(jsonArrayinternalTransactions.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraynonFungibleTokens = jsonObj.getAsJsonArray("nonFungibleTokens");
@@ -550,7 +550,7 @@ public class ListWalletTransactionsRI {
 
         // validate the optional field `nonFungibleTokens` (array)
         for (int i = 0; i < jsonArraynonFungibleTokens.size(); i++) {
-          ListWalletTransactionsRINonFungibleTokens.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
+          ListWalletTransactionsRINonFungibleTokensInner.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayrecipients = jsonObj.getAsJsonArray("recipients");
@@ -562,7 +562,7 @@ public class ListWalletTransactionsRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListWalletTransactionsRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListWalletTransactionsRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -574,7 +574,7 @@ public class ListWalletTransactionsRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListWalletTransactionsRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListWalletTransactionsRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {

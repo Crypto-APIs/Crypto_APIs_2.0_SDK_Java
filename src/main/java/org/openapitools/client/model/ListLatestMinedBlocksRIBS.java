@@ -69,7 +69,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ListLatestMinedBlocksRIBS.class.getName());
 
@@ -179,6 +179,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize ListLatestMinedBlocksRIBSB
@@ -190,6 +191,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSB'", e);
                     }
 
@@ -202,6 +204,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSBC'", e);
                     }
 
@@ -214,6 +217,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSBSC'", e);
                     }
 
@@ -226,6 +230,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSD'", e);
                     }
 
@@ -238,6 +243,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSD2'", e);
                     }
 
@@ -250,6 +256,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSE'", e);
                     }
 
@@ -262,6 +269,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSEC'", e);
                     }
 
@@ -274,6 +282,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSL'", e);
                     }
 
@@ -286,6 +295,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSZ'", e);
                     }
 
@@ -298,6 +308,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         log.log(Level.FINER, "Input data matches schema 'ListLatestMinedBlocksRIBSZ2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSZ2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListLatestMinedBlocksRIBSZ2'", e);
                     }
 
@@ -307,7 +318,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ListLatestMinedBlocksRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ListLatestMinedBlocksRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -592,11 +603,13 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with ListLatestMinedBlocksRIBSB
     try {
       ListLatestMinedBlocksRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSBC
@@ -604,6 +617,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSBSC
@@ -611,6 +625,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSD
@@ -618,6 +633,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSD2
@@ -625,6 +641,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSE
@@ -632,6 +649,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSEC
@@ -639,6 +657,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSL
@@ -646,6 +665,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSZ
@@ -653,6 +673,7 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListLatestMinedBlocksRIBSZ2
@@ -660,10 +681,11 @@ public class ListLatestMinedBlocksRIBS extends AbstractOpenApiSchema {
       ListLatestMinedBlocksRIBSZ2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListLatestMinedBlocksRIBSZ2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ListLatestMinedBlocksRIBS with oneOf schemas: ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for ListLatestMinedBlocksRIBS with oneOf schemas: ListLatestMinedBlocksRIBSB, ListLatestMinedBlocksRIBSBC, ListLatestMinedBlocksRIBSBSC, ListLatestMinedBlocksRIBSD, ListLatestMinedBlocksRIBSD2, ListLatestMinedBlocksRIBSE, ListLatestMinedBlocksRIBSEC, ListLatestMinedBlocksRIBSL, ListLatestMinedBlocksRIBSZ, ListLatestMinedBlocksRIBSZ2. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

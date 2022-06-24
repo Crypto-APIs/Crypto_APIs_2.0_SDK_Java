@@ -23,9 +23,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListAllAssetsFromAllWalletsRICoins;
-import org.openapitools.client.model.ListAllAssetsFromAllWalletsRIFungibleTokens;
-import org.openapitools.client.model.ListAllAssetsFromAllWalletsRINonFungibleTokens;
+import org.openapitools.client.model.ListAllAssetsFromAllWalletsRICoinsInner;
+import org.openapitools.client.model.ListAllAssetsFromAllWalletsRIFungibleTokensInner;
+import org.openapitools.client.model.ListAllAssetsFromAllWalletsRINonFungibleTokensInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

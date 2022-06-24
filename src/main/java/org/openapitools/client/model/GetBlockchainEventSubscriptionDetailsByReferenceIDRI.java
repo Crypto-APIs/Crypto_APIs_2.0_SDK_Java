@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListBlockchainEventsSubscriptionsRIDeactivationReasons;
+import org.openapitools.client.model.ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,7 +50,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetBlockchainEventSubscriptionDetailsByReferenceIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetBlockchainEventSubscriptionDetailsByReferenceIDRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -78,7 +78,7 @@ public class GetBlockchainEventSubscriptionDetailsByReferenceIDRI {
 
   public static final String SERIALIZED_NAME_DEACTIVATION_REASONS = "deactivationReasons";
   @SerializedName(SERIALIZED_NAME_DEACTIVATION_REASONS)
-  private List<ListBlockchainEventsSubscriptionsRIDeactivationReasons> deactivationReasons = null;
+  private List<ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner> deactivationReasons = null;
 
   public static final String SERIALIZED_NAME_EVENT_TYPE = "eventType";
   @SerializedName(SERIALIZED_NAME_EVENT_TYPE)
@@ -241,13 +241,13 @@ public class GetBlockchainEventSubscriptionDetailsByReferenceIDRI {
   }
 
 
-  public GetBlockchainEventSubscriptionDetailsByReferenceIDRI deactivationReasons(List<ListBlockchainEventsSubscriptionsRIDeactivationReasons> deactivationReasons) {
+  public GetBlockchainEventSubscriptionDetailsByReferenceIDRI deactivationReasons(List<ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner> deactivationReasons) {
     
     this.deactivationReasons = deactivationReasons;
     return this;
   }
 
-  public GetBlockchainEventSubscriptionDetailsByReferenceIDRI addDeactivationReasonsItem(ListBlockchainEventsSubscriptionsRIDeactivationReasons deactivationReasonsItem) {
+  public GetBlockchainEventSubscriptionDetailsByReferenceIDRI addDeactivationReasonsItem(ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner deactivationReasonsItem) {
     if (this.deactivationReasons == null) {
       this.deactivationReasons = new ArrayList<>();
     }
@@ -262,12 +262,12 @@ public class GetBlockchainEventSubscriptionDetailsByReferenceIDRI {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents the deactivation reason details, available when a blockchain event subscription has status isActive - false.")
 
-  public List<ListBlockchainEventsSubscriptionsRIDeactivationReasons> getDeactivationReasons() {
+  public List<ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner> getDeactivationReasons() {
     return deactivationReasons;
   }
 
 
-  public void setDeactivationReasons(List<ListBlockchainEventsSubscriptionsRIDeactivationReasons> deactivationReasons) {
+  public void setDeactivationReasons(List<ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner> deactivationReasons) {
     this.deactivationReasons = deactivationReasons;
   }
 
@@ -528,7 +528,7 @@ public class GetBlockchainEventSubscriptionDetailsByReferenceIDRI {
 
         // validate the optional field `deactivationReasons` (array)
         for (int i = 0; i < jsonArraydeactivationReasons.size(); i++) {
-          ListBlockchainEventsSubscriptionsRIDeactivationReasons.validateJsonObject(jsonArraydeactivationReasons.get(i).getAsJsonObject());
+          ListBlockchainEventsSubscriptionsRIDeactivationReasonsInner.validateJsonObject(jsonArraydeactivationReasons.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("eventType") != null && !jsonObj.get("eventType").isJsonPrimitive()) {

@@ -28,8 +28,8 @@ import java.util.List;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRIFee;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRIOffer;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRIReceive;
-import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRIRecipients;
-import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRISenders;
+import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRIRecipientsInner;
+import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRISendersInner;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHeightRIValue;
 
 import com.google.gson.Gson;
@@ -55,7 +55,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListXRPRippleTransactionsByBlockHeightRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByBlockHeightRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)
@@ -75,11 +75,11 @@ public class ListXRPRippleTransactionsByBlockHeightRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListXRPRippleTransactionsByBlockHeightRIRecipients> recipients = new ArrayList<>();
+  private List<ListXRPRippleTransactionsByBlockHeightRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListXRPRippleTransactionsByBlockHeightRISenders> senders = new ArrayList<>();
+  private List<ListXRPRippleTransactionsByBlockHeightRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
@@ -212,13 +212,13 @@ public class ListXRPRippleTransactionsByBlockHeightRI {
   }
 
 
-  public ListXRPRippleTransactionsByBlockHeightRI recipients(List<ListXRPRippleTransactionsByBlockHeightRIRecipients> recipients) {
+  public ListXRPRippleTransactionsByBlockHeightRI recipients(List<ListXRPRippleTransactionsByBlockHeightRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListXRPRippleTransactionsByBlockHeightRI addRecipientsItem(ListXRPRippleTransactionsByBlockHeightRIRecipients recipientsItem) {
+  public ListXRPRippleTransactionsByBlockHeightRI addRecipientsItem(ListXRPRippleTransactionsByBlockHeightRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -230,23 +230,23 @@ public class ListXRPRippleTransactionsByBlockHeightRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction receivers")
 
-  public List<ListXRPRippleTransactionsByBlockHeightRIRecipients> getRecipients() {
+  public List<ListXRPRippleTransactionsByBlockHeightRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListXRPRippleTransactionsByBlockHeightRIRecipients> recipients) {
+  public void setRecipients(List<ListXRPRippleTransactionsByBlockHeightRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListXRPRippleTransactionsByBlockHeightRI senders(List<ListXRPRippleTransactionsByBlockHeightRISenders> senders) {
+  public ListXRPRippleTransactionsByBlockHeightRI senders(List<ListXRPRippleTransactionsByBlockHeightRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListXRPRippleTransactionsByBlockHeightRI addSendersItem(ListXRPRippleTransactionsByBlockHeightRISenders sendersItem) {
+  public ListXRPRippleTransactionsByBlockHeightRI addSendersItem(ListXRPRippleTransactionsByBlockHeightRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -258,12 +258,12 @@ public class ListXRPRippleTransactionsByBlockHeightRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction senders")
 
-  public List<ListXRPRippleTransactionsByBlockHeightRISenders> getSenders() {
+  public List<ListXRPRippleTransactionsByBlockHeightRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListXRPRippleTransactionsByBlockHeightRISenders> senders) {
+  public void setSenders(List<ListXRPRippleTransactionsByBlockHeightRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -625,7 +625,7 @@ public class ListXRPRippleTransactionsByBlockHeightRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListXRPRippleTransactionsByBlockHeightRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListXRPRippleTransactionsByBlockHeightRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -637,7 +637,7 @@ public class ListXRPRippleTransactionsByBlockHeightRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListXRPRippleTransactionsByBlockHeightRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListXRPRippleTransactionsByBlockHeightRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {

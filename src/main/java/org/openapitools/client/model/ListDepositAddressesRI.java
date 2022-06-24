@@ -26,8 +26,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.ListDepositAddressesRIConfirmedBalance;
-import org.openapitools.client.model.ListDepositAddressesRIFungibleTokens;
-import org.openapitools.client.model.ListDepositAddressesRINonFungibleTokens;
+import org.openapitools.client.model.ListDepositAddressesRIFungibleTokensInner;
+import org.openapitools.client.model.ListDepositAddressesRINonFungibleTokensInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListDepositAddressesRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListDepositAddressesRI {
   public static final String SERIALIZED_NAME_ADDRESS = "address";
   @SerializedName(SERIALIZED_NAME_ADDRESS)
@@ -68,7 +68,7 @@ public class ListDepositAddressesRI {
 
   public static final String SERIALIZED_NAME_FUNGIBLE_TOKENS = "fungibleTokens";
   @SerializedName(SERIALIZED_NAME_FUNGIBLE_TOKENS)
-  private List<ListDepositAddressesRIFungibleTokens> fungibleTokens = new ArrayList<>();
+  private List<ListDepositAddressesRIFungibleTokensInner> fungibleTokens = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -80,7 +80,7 @@ public class ListDepositAddressesRI {
 
   public static final String SERIALIZED_NAME_NON_FUNGIBLE_TOKENS = "nonFungibleTokens";
   @SerializedName(SERIALIZED_NAME_NON_FUNGIBLE_TOKENS)
-  private List<ListDepositAddressesRINonFungibleTokens> nonFungibleTokens = new ArrayList<>();
+  private List<ListDepositAddressesRINonFungibleTokensInner> nonFungibleTokens = new ArrayList<>();
 
   public ListDepositAddressesRI() { 
   }
@@ -154,13 +154,13 @@ public class ListDepositAddressesRI {
   }
 
 
-  public ListDepositAddressesRI fungibleTokens(List<ListDepositAddressesRIFungibleTokens> fungibleTokens) {
+  public ListDepositAddressesRI fungibleTokens(List<ListDepositAddressesRIFungibleTokensInner> fungibleTokens) {
     
     this.fungibleTokens = fungibleTokens;
     return this;
   }
 
-  public ListDepositAddressesRI addFungibleTokensItem(ListDepositAddressesRIFungibleTokens fungibleTokensItem) {
+  public ListDepositAddressesRI addFungibleTokensItem(ListDepositAddressesRIFungibleTokensInner fungibleTokensItem) {
     this.fungibleTokens.add(fungibleTokensItem);
     return this;
   }
@@ -172,12 +172,12 @@ public class ListDepositAddressesRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents fungible tokens'es detailed information")
 
-  public List<ListDepositAddressesRIFungibleTokens> getFungibleTokens() {
+  public List<ListDepositAddressesRIFungibleTokensInner> getFungibleTokens() {
     return fungibleTokens;
   }
 
 
-  public void setFungibleTokens(List<ListDepositAddressesRIFungibleTokens> fungibleTokens) {
+  public void setFungibleTokens(List<ListDepositAddressesRIFungibleTokensInner> fungibleTokens) {
     this.fungibleTokens = fungibleTokens;
   }
 
@@ -228,13 +228,13 @@ public class ListDepositAddressesRI {
   }
 
 
-  public ListDepositAddressesRI nonFungibleTokens(List<ListDepositAddressesRINonFungibleTokens> nonFungibleTokens) {
+  public ListDepositAddressesRI nonFungibleTokens(List<ListDepositAddressesRINonFungibleTokensInner> nonFungibleTokens) {
     
     this.nonFungibleTokens = nonFungibleTokens;
     return this;
   }
 
-  public ListDepositAddressesRI addNonFungibleTokensItem(ListDepositAddressesRINonFungibleTokens nonFungibleTokensItem) {
+  public ListDepositAddressesRI addNonFungibleTokensItem(ListDepositAddressesRINonFungibleTokensInner nonFungibleTokensItem) {
     this.nonFungibleTokens.add(nonFungibleTokensItem);
     return this;
   }
@@ -246,12 +246,12 @@ public class ListDepositAddressesRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents non-fungible tokens'es detailed information.")
 
-  public List<ListDepositAddressesRINonFungibleTokens> getNonFungibleTokens() {
+  public List<ListDepositAddressesRINonFungibleTokensInner> getNonFungibleTokens() {
     return nonFungibleTokens;
   }
 
 
-  public void setNonFungibleTokens(List<ListDepositAddressesRINonFungibleTokens> nonFungibleTokens) {
+  public void setNonFungibleTokens(List<ListDepositAddressesRINonFungibleTokensInner> nonFungibleTokens) {
     this.nonFungibleTokens = nonFungibleTokens;
   }
 
@@ -377,7 +377,7 @@ public class ListDepositAddressesRI {
 
         // validate the optional field `fungibleTokens` (array)
         for (int i = 0; i < jsonArrayfungibleTokens.size(); i++) {
-          ListDepositAddressesRIFungibleTokens.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
+          ListDepositAddressesRIFungibleTokensInner.validateJsonObject(jsonArrayfungibleTokens.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("index") != null && !jsonObj.get("index").isJsonPrimitive()) {
@@ -395,7 +395,7 @@ public class ListDepositAddressesRI {
 
         // validate the optional field `nonFungibleTokens` (array)
         for (int i = 0; i < jsonArraynonFungibleTokens.size(); i++) {
-          ListDepositAddressesRINonFungibleTokens.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
+          ListDepositAddressesRINonFungibleTokensInner.validateJsonObject(jsonArraynonFungibleTokens.get(i).getAsJsonObject());
         };
       }
   }

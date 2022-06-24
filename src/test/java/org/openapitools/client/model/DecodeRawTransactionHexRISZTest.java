@@ -23,8 +23,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.DecodeRawTransactionHexRISZVin;
-import org.openapitools.client.model.DecodeRawTransactionHexRISZVout;
+import org.openapitools.client.model.DecodeRawTransactionHexRISZVinInner;
+import org.openapitools.client.model.DecodeRawTransactionHexRISZVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

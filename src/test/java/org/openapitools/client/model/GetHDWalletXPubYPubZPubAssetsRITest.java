@@ -24,8 +24,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRIConfirmedBalance;
-import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRIFungibleTokens;
-import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRINonFungibleTokens;
+import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRIFungibleTokensInner;
+import org.openapitools.client.model.GetHDWalletXPubYPubZPubAssetsRINonFungibleTokensInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

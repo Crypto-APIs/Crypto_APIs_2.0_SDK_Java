@@ -23,7 +23,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.BannedIpAddressDetails;
+import org.openapitools.client.model.BannedIpAddressDetailsInner;
 import org.openapitools.client.model.InvalidPagination;
 import org.openapitools.client.model.InvalidXpub;
 import org.openapitools.client.model.LimitGreaterThanAllowed;

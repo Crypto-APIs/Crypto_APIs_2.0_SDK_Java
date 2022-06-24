@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRIRecipients;
+import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRIRecipientsInner;
 import org.openapitools.client.model.CreateCoinsTransactionRequestFromAddressRISenders;
 
 import com.google.gson.Gson;
@@ -51,7 +51,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * CreateCoinsTransactionRequestFromAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateCoinsTransactionRequestFromAddressRI {
   public static final String SERIALIZED_NAME_ADDRESS_TAG = "addressTag";
   @SerializedName(SERIALIZED_NAME_ADDRESS_TAG)
@@ -128,7 +128,7 @@ public class CreateCoinsTransactionRequestFromAddressRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<CreateCoinsTransactionRequestFromAddressRIRecipients> recipients = new ArrayList<>();
+  private List<CreateCoinsTransactionRequestFromAddressRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
@@ -346,13 +346,13 @@ public class CreateCoinsTransactionRequestFromAddressRI {
   }
 
 
-  public CreateCoinsTransactionRequestFromAddressRI recipients(List<CreateCoinsTransactionRequestFromAddressRIRecipients> recipients) {
+  public CreateCoinsTransactionRequestFromAddressRI recipients(List<CreateCoinsTransactionRequestFromAddressRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public CreateCoinsTransactionRequestFromAddressRI addRecipientsItem(CreateCoinsTransactionRequestFromAddressRIRecipients recipientsItem) {
+  public CreateCoinsTransactionRequestFromAddressRI addRecipientsItem(CreateCoinsTransactionRequestFromAddressRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -364,12 +364,12 @@ public class CreateCoinsTransactionRequestFromAddressRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Defines the destination for the transaction, i.e. the recipient(s).")
 
-  public List<CreateCoinsTransactionRequestFromAddressRIRecipients> getRecipients() {
+  public List<CreateCoinsTransactionRequestFromAddressRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<CreateCoinsTransactionRequestFromAddressRIRecipients> recipients) {
+  public void setRecipients(List<CreateCoinsTransactionRequestFromAddressRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
@@ -579,7 +579,7 @@ public class CreateCoinsTransactionRequestFromAddressRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          CreateCoinsTransactionRequestFromAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          CreateCoinsTransactionRequestFromAddressRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       // validate the optional field `senders`

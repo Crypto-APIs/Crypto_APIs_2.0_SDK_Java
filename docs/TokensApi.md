@@ -217,8 +217,8 @@ public class Example {
     String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
     String address = "0x033ef6db9fbd0ee60e2931906b987fe0280471a0"; // String | Represents the public address, which is a compressed and shortened form of a public key.
     String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
-    Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    Long limit = 50L; // Long | Defines how many items should be returned in the response per page basis.
+    Long offset = 0L; // Long | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
       ListTokensByAddressR result = apiInstance.listTokensByAddress(blockchain, network, address, context, limit, offset);
       System.out.println(result);
@@ -241,8 +241,8 @@ public class Example {
 | **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
 | **address** | **String**| Represents the public address, which is a compressed and shortened form of a public key. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
-| **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
-| **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
+| **limit** | **Long**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
+| **offset** | **Long**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
 
 ### Return type
 

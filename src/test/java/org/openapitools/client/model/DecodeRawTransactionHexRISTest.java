@@ -32,8 +32,8 @@ import org.openapitools.client.model.DecodeRawTransactionHexRISE;
 import org.openapitools.client.model.DecodeRawTransactionHexRISE2;
 import org.openapitools.client.model.DecodeRawTransactionHexRISL;
 import org.openapitools.client.model.DecodeRawTransactionHexRISZ;
-import org.openapitools.client.model.DecodeRawTransactionHexRISZVin;
-import org.openapitools.client.model.DecodeRawTransactionHexRISZVout;
+import org.openapitools.client.model.DecodeRawTransactionHexRISZVinInner;
+import org.openapitools.client.model.DecodeRawTransactionHexRISZVoutInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

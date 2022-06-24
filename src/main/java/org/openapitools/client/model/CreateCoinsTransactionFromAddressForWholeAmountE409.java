@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.BannedIpAddressDetails;
+import org.openapitools.client.model.BannedIpAddressDetailsInner;
 import org.openapitools.client.model.InvalidData;
 import org.openapitools.client.model.WalletAsAServiceAddressBalanceNotEnough;
 import org.openapitools.client.model.WalletAsAServiceWalletBalanceNotEnough;
@@ -63,7 +63,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(CreateCoinsTransactionFromAddressForWholeAmountE409.class.getName());
 
@@ -117,6 +117,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize InvalidData
@@ -128,6 +129,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
                         log.log(Level.FINER, "Input data matches schema 'InvalidData'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for InvalidData failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'InvalidData'", e);
                     }
 
@@ -140,6 +142,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
                         log.log(Level.FINER, "Input data matches schema 'WalletAsAServiceAddressBalanceNotEnough'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WalletAsAServiceAddressBalanceNotEnough failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WalletAsAServiceAddressBalanceNotEnough'", e);
                     }
 
@@ -152,6 +155,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
                         log.log(Level.FINER, "Input data matches schema 'WalletAsAServiceWalletBalanceNotEnough'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for WalletAsAServiceWalletBalanceNotEnough failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'WalletAsAServiceWalletBalanceNotEnough'", e);
                     }
 
@@ -161,7 +165,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for CreateCoinsTransactionFromAddressForWholeAmountE409: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for CreateCoinsTransactionFromAddressForWholeAmountE409: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -285,11 +289,13 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with InvalidData
     try {
       InvalidData.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for InvalidData failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with WalletAsAServiceAddressBalanceNotEnough
@@ -297,6 +303,7 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
       WalletAsAServiceAddressBalanceNotEnough.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for WalletAsAServiceAddressBalanceNotEnough failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with WalletAsAServiceWalletBalanceNotEnough
@@ -304,10 +311,11 @@ public class CreateCoinsTransactionFromAddressForWholeAmountE409 extends Abstrac
       WalletAsAServiceWalletBalanceNotEnough.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for WalletAsAServiceWalletBalanceNotEnough failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for CreateCoinsTransactionFromAddressForWholeAmountE409 with oneOf schemas: InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for CreateCoinsTransactionFromAddressForWholeAmountE409 with oneOf schemas: InvalidData, WalletAsAServiceAddressBalanceNotEnough, WalletAsAServiceWalletBalanceNotEnough. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

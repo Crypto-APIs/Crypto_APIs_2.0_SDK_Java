@@ -25,8 +25,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBS;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIFee;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRISenders;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIRecipientsInner;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

@@ -23,9 +23,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipients;
+import org.openapitools.client.model.ListOmniTransactionsByAddressRIRecipientsInner;
 import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRIFee;
-import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRISenders;
+import org.openapitools.client.model.ListUnconfirmedOmniTransactionsByAddressRISendersInner;
 import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 

@@ -11,8 +11,8 @@ Bitcoin Cash
 |**locktime** | **Long** | Represents the locktime on the transaction on the specific blockchain, i.e. the blockheight at which the transaction is valid. |  |
 |**size** | **Integer** | Represents the total size of this transaction. |  |
 |**version** | **Integer** | Represents the transaction&#39;s version number. |  |
-|**vin** | [**List&lt;ListConfirmedTransactionsByAddressRIBSBCVin&gt;**](ListConfirmedTransactionsByAddressRIBSBCVin.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSBCVout&gt;**](GetTransactionDetailsByTransactionIDRIBSBCVout.md) | Represents the transaction outputs. |  [optional] |
+|**vin** | [**List&lt;ListConfirmedTransactionsByAddressRIBSBCVinInner&gt;**](ListConfirmedTransactionsByAddressRIBSBCVinInner.md) | Represents the transaction inputs. |  |
+|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSBCVoutInner&gt;**](GetTransactionDetailsByTransactionIDRIBSBCVoutInner.md) | Represents the transaction outputs. |  [optional] |
 
 
 

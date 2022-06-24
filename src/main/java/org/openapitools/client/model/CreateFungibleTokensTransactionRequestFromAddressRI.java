@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRIRecipients;
+import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner;
 import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRIS;
 import org.openapitools.client.model.CreateFungibleTokensTransactionRequestFromAddressRISenders;
 
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * CreateFungibleTokensTransactionRequestFromAddressRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class CreateFungibleTokensTransactionRequestFromAddressRI {
   public static final String SERIALIZED_NAME_CALLBACK_SECRET_KEY = "callbackSecretKey";
   @SerializedName(SERIALIZED_NAME_CALLBACK_SECRET_KEY)
@@ -121,7 +121,7 @@ public class CreateFungibleTokensTransactionRequestFromAddressRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<CreateFungibleTokensTransactionRequestFromAddressRIRecipients> recipients = new ArrayList<>();
+  private List<CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
@@ -230,13 +230,13 @@ public class CreateFungibleTokensTransactionRequestFromAddressRI {
   }
 
 
-  public CreateFungibleTokensTransactionRequestFromAddressRI recipients(List<CreateFungibleTokensTransactionRequestFromAddressRIRecipients> recipients) {
+  public CreateFungibleTokensTransactionRequestFromAddressRI recipients(List<CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public CreateFungibleTokensTransactionRequestFromAddressRI addRecipientsItem(CreateFungibleTokensTransactionRequestFromAddressRIRecipients recipientsItem) {
+  public CreateFungibleTokensTransactionRequestFromAddressRI addRecipientsItem(CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -248,12 +248,12 @@ public class CreateFungibleTokensTransactionRequestFromAddressRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(example = "0x1316bea88fb7cd4ccc4a57e2f9f4f43d1a86ee59", required = true, value = "Defines the destination for the transaction, i.e. the recipient(s).")
 
-  public List<CreateFungibleTokensTransactionRequestFromAddressRIRecipients> getRecipients() {
+  public List<CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<CreateFungibleTokensTransactionRequestFromAddressRIRecipients> recipients) {
+  public void setRecipients(List<CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
@@ -456,7 +456,7 @@ public class CreateFungibleTokensTransactionRequestFromAddressRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          CreateFungibleTokensTransactionRequestFromAddressRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          CreateFungibleTokensTransactionRequestFromAddressRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       // validate the optional field `senders`

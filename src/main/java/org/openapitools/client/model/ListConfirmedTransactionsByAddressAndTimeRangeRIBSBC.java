@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBCVout;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBCVin;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBCVoutInner;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBCVinInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Bitcoin Cash
  */
 @ApiModel(description = "Bitcoin Cash")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -68,11 +68,11 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<ListConfirmedTransactionsByAddressRIBSBCVin> vin = new ArrayList<>();
+  private List<ListConfirmedTransactionsByAddressRIBSBCVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSBCVout> vout = null;
+  private List<GetTransactionDetailsByTransactionIDRIBSBCVoutInner> vout = null;
 
   public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC() { 
   }
@@ -146,13 +146,13 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
   }
 
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC vin(List<ListConfirmedTransactionsByAddressRIBSBCVin> vin) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC vin(List<ListConfirmedTransactionsByAddressRIBSBCVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC addVinItem(ListConfirmedTransactionsByAddressRIBSBCVin vinItem) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC addVinItem(ListConfirmedTransactionsByAddressRIBSBCVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -164,23 +164,23 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
-  public List<ListConfirmedTransactionsByAddressRIBSBCVin> getVin() {
+  public List<ListConfirmedTransactionsByAddressRIBSBCVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<ListConfirmedTransactionsByAddressRIBSBCVin> vin) {
+  public void setVin(List<ListConfirmedTransactionsByAddressRIBSBCVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC vout(List<GetTransactionDetailsByTransactionIDRIBSBCVout> vout) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC vout(List<GetTransactionDetailsByTransactionIDRIBSBCVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC addVoutItem(GetTransactionDetailsByTransactionIDRIBSBCVout voutItem) {
+  public ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC addVoutItem(GetTransactionDetailsByTransactionIDRIBSBCVoutInner voutItem) {
     if (this.vout == null) {
       this.vout = new ArrayList<>();
     }
@@ -195,12 +195,12 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
   @javax.annotation.Nullable
   @ApiModelProperty(value = "Represents the transaction outputs.")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSBCVout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSBCVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSBCVout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSBCVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -310,7 +310,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          ListConfirmedTransactionsByAddressRIBSBCVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          ListConfirmedTransactionsByAddressRIBSBCVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -322,7 +322,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSBCVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSBCVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

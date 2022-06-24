@@ -25,9 +25,9 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutput;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpend;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedOutputInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVShieldedSpendInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSZVoutInner;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeRIBSB;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC;
@@ -38,8 +38,8 @@ import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRa
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeRIBSL;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ;
 import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSBSCGasPrice;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplit;
-import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVin;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVJoinSplitInner;
+import org.openapitools.client.model.ListConfirmedTransactionsByAddressRIBSZVinInner;
 
 import javax.ws.rs.core.GenericType;
 
@@ -74,7 +74,7 @@ import com.google.gson.JsonParseException;
 
 import io.cryptoapis.sdk.JSON;
 
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends AbstractOpenApiSchema {
     private static final Logger log = Logger.getLogger(ListConfirmedTransactionsByAddressAndTimeRangeRIBS.class.getName());
 
@@ -176,6 +176,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                     JsonObject jsonObject = elementAdapter.read(in).getAsJsonObject();
 
                     int match = 0;
+                    ArrayList<String> errorMessages = new ArrayList<>();
                     TypeAdapter actualAdapter = elementAdapter;
 
                     // deserialize ListConfirmedTransactionsByAddressAndTimeRangeRIBSB
@@ -187,6 +188,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSB'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSB failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSB'", e);
                     }
 
@@ -199,6 +201,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC'", e);
                     }
 
@@ -211,6 +214,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC'", e);
                     }
 
@@ -223,6 +227,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSD'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSD failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSD'", e);
                     }
 
@@ -235,6 +240,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2'", e);
                     }
 
@@ -247,6 +253,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSE'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSE failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSE'", e);
                     }
 
@@ -259,6 +266,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC'", e);
                     }
 
@@ -271,6 +279,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSL'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSL failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSL'", e);
                     }
 
@@ -283,6 +292,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         log.log(Level.FINER, "Input data matches schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ'");
                     } catch (Exception e) {
                         // deserialization failed, continue
+                        errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ failed with `%s`.", e.getMessage()));
                         log.log(Level.FINER, "Input data does not match schema 'ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ'", e);
                     }
 
@@ -292,7 +302,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
                         return ret;
                     }
 
-                    throw new IOException(String.format("Failed deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBS: %d classes match result, expected 1. JSON: %s", match, jsonObject.toString()));
+                    throw new IOException(String.format("Failed deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBS: %d classes match result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", match, errorMessages, jsonObject.toString()));
                 }
             }.nullSafe();
         }
@@ -554,11 +564,13 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
   public static void validateJsonObject(JsonObject jsonObj) throws IOException {
     // validate oneOf schemas one by one
     int validCount = 0;
+    ArrayList<String> errorMessages = new ArrayList<>();
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSB
     try {
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSB.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSB failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC
@@ -566,6 +578,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC
@@ -573,6 +586,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSD
@@ -580,6 +594,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSD.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSD failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2
@@ -587,6 +602,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2 failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSE
@@ -594,6 +610,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSE.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSE failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC
@@ -601,6 +618,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSL
@@ -608,6 +626,7 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSL.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSL failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     // validate the json string with ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ
@@ -615,10 +634,11 @@ public class ListConfirmedTransactionsByAddressAndTimeRangeRIBS extends Abstract
       ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ.validateJsonObject(jsonObj);
       validCount++;
     } catch (Exception e) {
+      errorMessages.add(String.format("Deserialization for ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ failed with `%s`.", e.getMessage()));
       // continue to the next one
     }
     if (validCount != 1) {
-      throw new IOException(String.format("The JSON string is invalid for ListConfirmedTransactionsByAddressAndTimeRangeRIBS with oneOf schemas: ListConfirmedTransactionsByAddressAndTimeRangeRIBSB, ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC, ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC, ListConfirmedTransactionsByAddressAndTimeRangeRIBSD, ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2, ListConfirmedTransactionsByAddressAndTimeRangeRIBSE, ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC, ListConfirmedTransactionsByAddressAndTimeRangeRIBSL, ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ. %d class(es) match the result, expected 1. JSON: %s", validCount, jsonObj.toString()));
+      throw new IOException(String.format("The JSON string is invalid for ListConfirmedTransactionsByAddressAndTimeRangeRIBS with oneOf schemas: ListConfirmedTransactionsByAddressAndTimeRangeRIBSB, ListConfirmedTransactionsByAddressAndTimeRangeRIBSBC, ListConfirmedTransactionsByAddressAndTimeRangeRIBSBSC, ListConfirmedTransactionsByAddressAndTimeRangeRIBSD, ListConfirmedTransactionsByAddressAndTimeRangeRIBSD2, ListConfirmedTransactionsByAddressAndTimeRangeRIBSE, ListConfirmedTransactionsByAddressAndTimeRangeRIBSEC, ListConfirmedTransactionsByAddressAndTimeRangeRIBSL, ListConfirmedTransactionsByAddressAndTimeRangeRIBSZ. %d class(es) match the result, expected 1. Detailed failure message for oneOf schemas: %s. JSON: %s", validCount, errorMessages, jsonObj.toString()));
     }
   }
 

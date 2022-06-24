@@ -25,8 +25,8 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin;
-import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBVout;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner;
+import org.openapitools.client.model.GetTransactionDetailsByTransactionIDRIBSBVoutInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -52,7 +52,7 @@ import io.cryptoapis.sdk.JSON;
  * Bitcoin
  */
 @ApiModel(description = "Bitcoin")
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
   public static final String SERIALIZED_NAME_LOCKTIME = "locktime";
   @SerializedName(SERIALIZED_NAME_LOCKTIME)
@@ -72,11 +72,11 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
 
   public static final String SERIALIZED_NAME_VIN = "vin";
   @SerializedName(SERIALIZED_NAME_VIN)
-  private List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin> vin = new ArrayList<>();
+  private List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner> vin = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_VOUT = "vout";
   @SerializedName(SERIALIZED_NAME_VOUT)
-  private List<GetTransactionDetailsByTransactionIDRIBSBVout> vout = new ArrayList<>();
+  private List<GetTransactionDetailsByTransactionIDRIBSBVoutInner> vout = new ArrayList<>();
 
   public GetTransactionDetailsByTransactionIDFromCallbackRIBSB() { 
   }
@@ -173,13 +173,13 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
   }
 
 
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB vin(List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin> vin) {
+  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB vin(List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner> vin) {
     
     this.vin = vin;
     return this;
   }
 
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB addVinItem(GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin vinItem) {
+  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB addVinItem(GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner vinItem) {
     this.vin.add(vinItem);
     return this;
   }
@@ -191,23 +191,23 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction inputs.")
 
-  public List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin> getVin() {
+  public List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner> getVin() {
     return vin;
   }
 
 
-  public void setVin(List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin> vin) {
+  public void setVin(List<GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner> vin) {
     this.vin = vin;
   }
 
 
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB vout(List<GetTransactionDetailsByTransactionIDRIBSBVout> vout) {
+  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB vout(List<GetTransactionDetailsByTransactionIDRIBSBVoutInner> vout) {
     
     this.vout = vout;
     return this;
   }
 
-  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB addVoutItem(GetTransactionDetailsByTransactionIDRIBSBVout voutItem) {
+  public GetTransactionDetailsByTransactionIDFromCallbackRIBSB addVoutItem(GetTransactionDetailsByTransactionIDRIBSBVoutInner voutItem) {
     this.vout.add(voutItem);
     return this;
   }
@@ -219,12 +219,12 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the transaction outputs.")
 
-  public List<GetTransactionDetailsByTransactionIDRIBSBVout> getVout() {
+  public List<GetTransactionDetailsByTransactionIDRIBSBVoutInner> getVout() {
     return vout;
   }
 
 
-  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSBVout> vout) {
+  public void setVout(List<GetTransactionDetailsByTransactionIDRIBSBVoutInner> vout) {
     this.vout = vout;
   }
 
@@ -339,7 +339,7 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
 
         // validate the optional field `vin` (array)
         for (int i = 0; i < jsonArrayvin.size(); i++) {
-          GetTransactionDetailsByTransactionIDFromCallbackRIBSBVin.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner.validateJsonObject(jsonArrayvin.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArrayvout = jsonObj.getAsJsonArray("vout");
@@ -351,7 +351,7 @@ public class GetTransactionDetailsByTransactionIDFromCallbackRIBSB {
 
         // validate the optional field `vout` (array)
         for (int i = 0; i < jsonArrayvout.size(); i++) {
-          GetTransactionDetailsByTransactionIDRIBSBVout.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
+          GetTransactionDetailsByTransactionIDRIBSBVoutInner.validateJsonObject(jsonArrayvout.get(i).getAsJsonObject());
         };
       }
   }

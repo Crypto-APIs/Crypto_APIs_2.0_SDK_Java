@@ -25,7 +25,7 @@ import io.swagger.annotations.ApiModelProperty;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import org.openapitools.client.model.DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses;
+import org.openapitools.client.model.DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -50,22 +50,22 @@ import io.cryptoapis.sdk.JSON;
 /**
  * DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI {
   public static final String SERIALIZED_NAME_ADDRESSES = "addresses";
   @SerializedName(SERIALIZED_NAME_ADDRESSES)
-  private List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses> addresses = new ArrayList<>();
+  private List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner> addresses = new ArrayList<>();
 
   public DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI() { 
   }
 
-  public DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI addresses(List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses> addresses) {
+  public DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI addresses(List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner> addresses) {
     
     this.addresses = addresses;
     return this;
   }
 
-  public DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI addAddressesItem(DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses addressesItem) {
+  public DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI addAddressesItem(DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner addressesItem) {
     this.addresses.add(addressesItem);
     return this;
   }
@@ -77,12 +77,12 @@ public class DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents the address details.")
 
-  public List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses> getAddresses() {
+  public List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner> getAddresses() {
     return addresses;
   }
 
 
-  public void setAddresses(List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses> addresses) {
+  public void setAddresses(List<DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner> addresses) {
     this.addresses = addresses;
   }
 
@@ -177,7 +177,7 @@ public class DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRI {
 
         // validate the optional field `addresses` (array)
         for (int i = 0; i < jsonArrayaddresses.size(); i++) {
-          DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses.validateJsonObject(jsonArrayaddresses.get(i).getAsJsonObject());
+          DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner.validateJsonObject(jsonArrayaddresses.get(i).getAsJsonObject());
         };
       }
   }

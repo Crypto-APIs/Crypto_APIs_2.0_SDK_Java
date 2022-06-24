@@ -7,7 +7,7 @@
 
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
-|**addresses** | [**List&lt;DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses&gt;**](DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddresses.md) | Represents the address details. |  |
+|**addresses** | [**List&lt;DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner&gt;**](DeriveHDWalletXPubYPubZPubChangeOrReceivingAddressesRIAddressesInner.md) | Represents the address details. |  |
 
 
 

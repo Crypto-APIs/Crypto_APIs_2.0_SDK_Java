@@ -27,8 +27,8 @@ import java.util.ArrayList;
 import java.util.List;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIBS;
 import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIFee;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIRecipients;
-import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRISenders;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRIRecipientsInner;
+import org.openapitools.client.model.GetWalletTransactionDetailsByTransactionIDRISendersInner;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
@@ -53,7 +53,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * GetWalletTransactionDetailsByTransactionIDRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class GetWalletTransactionDetailsByTransactionIDRI {
   public static final String SERIALIZED_NAME_INDEX = "index";
   @SerializedName(SERIALIZED_NAME_INDEX)
@@ -73,11 +73,11 @@ public class GetWalletTransactionDetailsByTransactionIDRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<GetWalletTransactionDetailsByTransactionIDRIRecipients> recipients = new ArrayList<>();
+  private List<GetWalletTransactionDetailsByTransactionIDRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<GetWalletTransactionDetailsByTransactionIDRISenders> senders = new ArrayList<>();
+  private List<GetWalletTransactionDetailsByTransactionIDRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_TIMESTAMP = "timestamp";
   @SerializedName(SERIALIZED_NAME_TIMESTAMP)
@@ -194,13 +194,13 @@ public class GetWalletTransactionDetailsByTransactionIDRI {
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRI recipients(List<GetWalletTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public GetWalletTransactionDetailsByTransactionIDRI recipients(List<GetWalletTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRI addRecipientsItem(GetWalletTransactionDetailsByTransactionIDRIRecipients recipientsItem) {
+  public GetWalletTransactionDetailsByTransactionIDRI addRecipientsItem(GetWalletTransactionDetailsByTransactionIDRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -212,23 +212,23 @@ public class GetWalletTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction receivers")
 
-  public List<GetWalletTransactionDetailsByTransactionIDRIRecipients> getRecipients() {
+  public List<GetWalletTransactionDetailsByTransactionIDRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<GetWalletTransactionDetailsByTransactionIDRIRecipients> recipients) {
+  public void setRecipients(List<GetWalletTransactionDetailsByTransactionIDRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public GetWalletTransactionDetailsByTransactionIDRI senders(List<GetWalletTransactionDetailsByTransactionIDRISenders> senders) {
+  public GetWalletTransactionDetailsByTransactionIDRI senders(List<GetWalletTransactionDetailsByTransactionIDRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public GetWalletTransactionDetailsByTransactionIDRI addSendersItem(GetWalletTransactionDetailsByTransactionIDRISenders sendersItem) {
+  public GetWalletTransactionDetailsByTransactionIDRI addSendersItem(GetWalletTransactionDetailsByTransactionIDRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -240,12 +240,12 @@ public class GetWalletTransactionDetailsByTransactionIDRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Object Array representation of transaction senders")
 
-  public List<GetWalletTransactionDetailsByTransactionIDRISenders> getSenders() {
+  public List<GetWalletTransactionDetailsByTransactionIDRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<GetWalletTransactionDetailsByTransactionIDRISenders> senders) {
+  public void setSenders(List<GetWalletTransactionDetailsByTransactionIDRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -496,7 +496,7 @@ public class GetWalletTransactionDetailsByTransactionIDRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          GetWalletTransactionDetailsByTransactionIDRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          GetWalletTransactionDetailsByTransactionIDRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -508,7 +508,7 @@ public class GetWalletTransactionDetailsByTransactionIDRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          GetWalletTransactionDetailsByTransactionIDRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          GetWalletTransactionDetailsByTransactionIDRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("transactionHash") != null && !jsonObj.get("transactionHash").isJsonPrimitive()) {

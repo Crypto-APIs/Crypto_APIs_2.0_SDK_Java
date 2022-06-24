@@ -28,8 +28,8 @@ import java.util.List;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIFee;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIOffer;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIReceive;
-import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIRecipients;
-import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRISenders;
+import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIRecipientsInner;
+import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRISendersInner;
 import org.openapitools.client.model.ListXRPRippleTransactionsByBlockHashRIValue;
 
 import com.google.gson.Gson;
@@ -55,7 +55,7 @@ import io.cryptoapis.sdk.JSON;
 /**
  * ListXRPRippleTransactionsByBlockHashRI
  */
-@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-04-26T12:50:48.005281Z[Etc/UTC]")
+@javax.annotation.Generated(value = "org.openapitools.codegen.languages.JavaClientCodegen", date = "2022-06-24T14:43:47.118671Z[Etc/UTC]")
 public class ListXRPRippleTransactionsByBlockHashRI {
   public static final String SERIALIZED_NAME_ADDITIONAL_DATA = "additionalData";
   @SerializedName(SERIALIZED_NAME_ADDITIONAL_DATA)
@@ -75,11 +75,11 @@ public class ListXRPRippleTransactionsByBlockHashRI {
 
   public static final String SERIALIZED_NAME_RECIPIENTS = "recipients";
   @SerializedName(SERIALIZED_NAME_RECIPIENTS)
-  private List<ListXRPRippleTransactionsByBlockHashRIRecipients> recipients = new ArrayList<>();
+  private List<ListXRPRippleTransactionsByBlockHashRIRecipientsInner> recipients = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SENDERS = "senders";
   @SerializedName(SERIALIZED_NAME_SENDERS)
-  private List<ListXRPRippleTransactionsByBlockHashRISenders> senders = new ArrayList<>();
+  private List<ListXRPRippleTransactionsByBlockHashRISendersInner> senders = new ArrayList<>();
 
   public static final String SERIALIZED_NAME_SEQUENCE = "sequence";
   @SerializedName(SERIALIZED_NAME_SEQUENCE)
@@ -212,13 +212,13 @@ public class ListXRPRippleTransactionsByBlockHashRI {
   }
 
 
-  public ListXRPRippleTransactionsByBlockHashRI recipients(List<ListXRPRippleTransactionsByBlockHashRIRecipients> recipients) {
+  public ListXRPRippleTransactionsByBlockHashRI recipients(List<ListXRPRippleTransactionsByBlockHashRIRecipientsInner> recipients) {
     
     this.recipients = recipients;
     return this;
   }
 
-  public ListXRPRippleTransactionsByBlockHashRI addRecipientsItem(ListXRPRippleTransactionsByBlockHashRIRecipients recipientsItem) {
+  public ListXRPRippleTransactionsByBlockHashRI addRecipientsItem(ListXRPRippleTransactionsByBlockHashRIRecipientsInner recipientsItem) {
     this.recipients.add(recipientsItem);
     return this;
   }
@@ -230,23 +230,23 @@ public class ListXRPRippleTransactionsByBlockHashRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that receive the transactions.")
 
-  public List<ListXRPRippleTransactionsByBlockHashRIRecipients> getRecipients() {
+  public List<ListXRPRippleTransactionsByBlockHashRIRecipientsInner> getRecipients() {
     return recipients;
   }
 
 
-  public void setRecipients(List<ListXRPRippleTransactionsByBlockHashRIRecipients> recipients) {
+  public void setRecipients(List<ListXRPRippleTransactionsByBlockHashRIRecipientsInner> recipients) {
     this.recipients = recipients;
   }
 
 
-  public ListXRPRippleTransactionsByBlockHashRI senders(List<ListXRPRippleTransactionsByBlockHashRISenders> senders) {
+  public ListXRPRippleTransactionsByBlockHashRI senders(List<ListXRPRippleTransactionsByBlockHashRISendersInner> senders) {
     
     this.senders = senders;
     return this;
   }
 
-  public ListXRPRippleTransactionsByBlockHashRI addSendersItem(ListXRPRippleTransactionsByBlockHashRISenders sendersItem) {
+  public ListXRPRippleTransactionsByBlockHashRI addSendersItem(ListXRPRippleTransactionsByBlockHashRISendersInner sendersItem) {
     this.senders.add(sendersItem);
     return this;
   }
@@ -258,12 +258,12 @@ public class ListXRPRippleTransactionsByBlockHashRI {
   @javax.annotation.Nonnull
   @ApiModelProperty(required = true, value = "Represents an object of addresses that provide the funds.")
 
-  public List<ListXRPRippleTransactionsByBlockHashRISenders> getSenders() {
+  public List<ListXRPRippleTransactionsByBlockHashRISendersInner> getSenders() {
     return senders;
   }
 
 
-  public void setSenders(List<ListXRPRippleTransactionsByBlockHashRISenders> senders) {
+  public void setSenders(List<ListXRPRippleTransactionsByBlockHashRISendersInner> senders) {
     this.senders = senders;
   }
 
@@ -622,7 +622,7 @@ public class ListXRPRippleTransactionsByBlockHashRI {
 
         // validate the optional field `recipients` (array)
         for (int i = 0; i < jsonArrayrecipients.size(); i++) {
-          ListXRPRippleTransactionsByBlockHashRIRecipients.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
+          ListXRPRippleTransactionsByBlockHashRIRecipientsInner.validateJsonObject(jsonArrayrecipients.get(i).getAsJsonObject());
         };
       }
       JsonArray jsonArraysenders = jsonObj.getAsJsonArray("senders");
@@ -634,7 +634,7 @@ public class ListXRPRippleTransactionsByBlockHashRI {
 
         // validate the optional field `senders` (array)
         for (int i = 0; i < jsonArraysenders.size(); i++) {
-          ListXRPRippleTransactionsByBlockHashRISenders.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
+          ListXRPRippleTransactionsByBlockHashRISendersInner.validateJsonObject(jsonArraysenders.get(i).getAsJsonObject());
         };
       }
       if (jsonObj.get("status") != null && !jsonObj.get("status").isJsonPrimitive()) {

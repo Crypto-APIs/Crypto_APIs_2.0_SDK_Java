@@ -27,15 +27,15 @@ import com.google.gson.reflect.TypeToken;
 import java.io.IOException;
 
 
-import org.openapitools.client.model.InlineResponse400105;
-import org.openapitools.client.model.InlineResponse401105;
-import org.openapitools.client.model.InlineResponse402;
-import org.openapitools.client.model.InlineResponse403105;
-import org.openapitools.client.model.InlineResponse409;
-import org.openapitools.client.model.InlineResponse415;
-import org.openapitools.client.model.InlineResponse422;
-import org.openapitools.client.model.InlineResponse429;
-import org.openapitools.client.model.InlineResponse500;
+import org.openapitools.client.model.GetAddressDetails402Response;
+import org.openapitools.client.model.GetAddressDetails409Response;
+import org.openapitools.client.model.GetAddressDetails415Response;
+import org.openapitools.client.model.GetAddressDetails422Response;
+import org.openapitools.client.model.GetAddressDetails429Response;
+import org.openapitools.client.model.GetAddressDetails500Response;
+import org.openapitools.client.model.ListSupportedAssets400Response;
+import org.openapitools.client.model.ListSupportedAssets401Response;
+import org.openapitools.client.model.ListSupportedAssets403Response;
 import org.openapitools.client.model.ListSupportedAssetsR;
 
 import java.lang.reflect.Type;
