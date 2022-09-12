@@ -28,6 +28,8 @@
 |**dsDifficulty** | **String** | Defines how difficult it is to mine the dsBlocks. |  |
 |**dsLeader** | **String** | Represents a part of the DS Committee which leads the consensus protocol for the epoch. |  |
 |**microBlocks** | **List&lt;String&gt;** |  |  |
+|**totalCoins** | [**ListLatestMinedBlocksRIBSXTotalCoins**](ListLatestMinedBlocksRIBSXTotalCoins.md) |  |  [optional] |
+|**totalFees** | [**ListLatestMinedBlocksRIBSXTotalFees**](ListLatestMinedBlocksRIBSXTotalFees.md) |  |  |
 
 
 

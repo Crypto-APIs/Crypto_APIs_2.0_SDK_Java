@@ -1,10 +1,10 @@
 # cryptoapis-sdk
 
 CryptoAPIs
-- API version: 2.0.0
-  - Build date: 2022-06-24T14:43:47.118671Z[Etc/UTC]
+- API version: 2021-03-20
+  - Build date: 2022-09-12T15:09:18.638874Z[Etc/UTC]
 
-Crypto APIs 2.0 is a complex and innovative infrastructure layer that radically simplifies the development of any Blockchain and Crypto related applications. Organized around REST, Crypto APIs 2.0 can assist both novice Bitcoin/Ethereum enthusiasts and crypto experts with the development of their blockchain applications. Crypto APIs 2.0 provides unified endpoints and data, raw data, automatic tokens and coins forwardings, callback functionalities, and much more.
+Crypto APIs is a complex and innovative infrastructure layer that radically simplifies the development of any Blockchain and Crypto related applications. Organized around REST, Crypto APIs can assist both novice Bitcoin/Ethereum enthusiasts and crypto experts with the development of their blockchain applications. Crypto APIs provides unified endpoints and data, raw data, automatic tokens and coins forwardings, callback functionalities, and much more.
 
   For more information, please visit [https://cryptoapis.io](https://cryptoapis.io)
 
@@ -41,7 +41,7 @@ Add this dependency to your project's POM:
 <dependency>
   <groupId>io.cryptoapis</groupId>
   <artifactId>cryptoapis-sdk</artifactId>
-  <version>1.6.0</version>
+  <version>1.7.0</version>
   <scope>compile</scope>
 </dependency>
 ```
@@ -57,7 +57,7 @@ Add this dependency to your project's build file:
   }
 
   dependencies {
-     implementation "io.cryptoapis:cryptoapis-sdk:1.6.0"
+     implementation "io.cryptoapis:cryptoapis-sdk:1.7.0"
   }
 ```
 
@@ -71,7 +71,7 @@ mvn clean package
 
 Then manually install the following JARs:
 
-* `target/cryptoapis-sdk-1.6.0.jar`
+* `target/cryptoapis-sdk-1.7.0.jar`
 * `target/lib/*.jar`
 
 ## Getting Started
@@ -91,7 +91,7 @@ import org.openapitools.client.api.AssetsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -119,13 +119,12 @@ public class Example {
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *https://rest.cryptoapis.io/v2*
+All URIs are relative to *https://rest.cryptoapis.io*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *AssetsApi* | [**getAssetDetailsByAssetID**](docs/AssetsApi.md#getAssetDetailsByAssetID) | **GET** /market-data/assets/assetId/{assetId} | Get Asset Details By Asset ID
 *AssetsApi* | [**getAssetDetailsByAssetSymbol**](docs/AssetsApi.md#getAssetDetailsByAssetSymbol) | **GET** /market-data/assets/{assetSymbol} | Get Asset Details By Asset Symbol
-*AssetsApi* | [**listAssetsDetails**](docs/AssetsApi.md#listAssetsDetails) | **GET** /market-data/assets/details | List Assets Details
 *AutomaticCoinsForwardingApi* | [**createAutomaticCoinsForwarding**](docs/AutomaticCoinsForwardingApi.md#createAutomaticCoinsForwarding) | **POST** /blockchain-automations/{blockchain}/{network}/coins-forwarding/automations | Create Automatic Coins Forwarding
 *AutomaticCoinsForwardingApi* | [**deleteAutomaticCoinsForwarding**](docs/AutomaticCoinsForwardingApi.md#deleteAutomaticCoinsForwarding) | **DELETE** /blockchain-automations/{blockchain}/{network}/coins-forwarding/automations/{referenceId} | Delete Automatic Coins Forwarding
 *AutomaticCoinsForwardingApi* | [**listCoinsForwardingAutomations**](docs/AutomaticCoinsForwardingApi.md#listCoinsForwardingAutomations) | **GET** /blockchain-automations/{blockchain}/{network}/coins-forwarding/automations | List Coins Forwarding Automations
@@ -138,6 +137,7 @@ Class | Method | HTTP request | Description
 *CallbackDataApi* | [**getBlockDetailsByBlockHashFromCallback**](docs/CallbackDataApi.md#getBlockDetailsByBlockHashFromCallback) | **GET** /blockchain-events/{blockchain}/{network}/blocks/hash/{blockHash} | Get Block Details By Block Hash From Callback
 *CallbackDataApi* | [**getBlockDetailsByBlockHeightFromCallback**](docs/CallbackDataApi.md#getBlockDetailsByBlockHeightFromCallback) | **GET** /blockchain-events/{blockchain}/{network}/blocks/height/{blockHeight} | Get Block Details By Block Height From Callback
 *CallbackDataApi* | [**getTransactionDetailsByTransactionIDFromCallback**](docs/CallbackDataApi.md#getTransactionDetailsByTransactionIDFromCallback) | **GET** /blockchain-events/{blockchain}/{network}/transactions/{transactionId} | Get Transaction Details By Transaction ID From Callback
+*CreateSubscriptionsForApi* | [**blockHeightReached**](docs/CreateSubscriptionsForApi.md#blockHeightReached) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/block-height-reached | Block Height Reached
 *CreateSubscriptionsForApi* | [**minedTransaction**](docs/CreateSubscriptionsForApi.md#minedTransaction) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/transaction-mined | Mined transaction
 *CreateSubscriptionsForApi* | [**newBlock**](docs/CreateSubscriptionsForApi.md#newBlock) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/block-mined | New Block
 *CreateSubscriptionsForApi* | [**newConfirmedCoinsTransactions**](docs/CreateSubscriptionsForApi.md#newConfirmedCoinsTransactions) | **POST** /blockchain-events/{blockchain}/{network}/subscriptions/address-coins-transactions-confirmed | New confirmed coins transactions
@@ -154,6 +154,7 @@ Class | Method | HTTP request | Description
 *ExchangeRatesApi* | [**getExchangeRateByAssetSymbols**](docs/ExchangeRatesApi.md#getExchangeRateByAssetSymbols) | **GET** /market-data/exchange-rates/by-symbols/{fromAssetSymbol}/{toAssetSymbol} | Get Exchange Rate By Asset Symbols
 *ExchangeRatesApi* | [**getExchangeRateByAssetsIDs**](docs/ExchangeRatesApi.md#getExchangeRateByAssetsIDs) | **GET** /market-data/exchange-rates/by-asset-ids/{fromAssetId}/{toAssetId} | Get Exchange Rate By Assets IDs
 *FeaturesApi* | [**broadcastLocallySignedTransaction**](docs/FeaturesApi.md#broadcastLocallySignedTransaction) | **POST** /blockchain-tools/{blockchain}/{network}/transactions/broadcast | Broadcast Locally Signed Transaction
+*FeaturesApi* | [**convertBitcoinCashAddress**](docs/FeaturesApi.md#convertBitcoinCashAddress) | **POST** /blockchain-tools/{blockchain}/{network}/address/convert | Convert Bitcoin Cash Address
 *FeaturesApi* | [**decodeRawTransactionHex**](docs/FeaturesApi.md#decodeRawTransactionHex) | **POST** /blockchain-tools/{blockchain}/{network}/decode-raw-transaction | Decode Raw Transaction Hex
 *FeaturesApi* | [**decodeXAddress**](docs/FeaturesApi.md#decodeXAddress) | **GET** /blockchain-tools/{blockchain}/{network}/decode-x-address/{xAddress} | Decode X-Address
 *FeaturesApi* | [**deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses**](docs/FeaturesApi.md#deriveHDWalletXPubYPubZPubChangeOrReceivingAddresses) | **GET** /blockchain-tools/{blockchain}/{network}/hd/{extendedPublicKey}/addresses/derive-address | Derive HD Wallet (xPub, yPub, zPub) Change Or Receiving Addresses
@@ -163,11 +164,17 @@ Class | Method | HTTP request | Description
 *FeaturesApi* | [**getEIP1559FeeRecommendations**](docs/FeaturesApi.md#getEIP1559FeeRecommendations) | **GET** /blockchain-tools/{blockchain}/{network}/fees/eip1559 | Get EIP 1559 Fee Recommendations
 *FeaturesApi* | [**validateAddress**](docs/FeaturesApi.md#validateAddress) | **POST** /blockchain-tools/{blockchain}/{network}/addresses/validate | Validate Address
 *GeneratingApi* | [**generateDepositAddress**](docs/GeneratingApi.md#generateDepositAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses | Generate Deposit Address
+*HdWalletsApi* | [**deriveAndSyncNewChangeAddresses**](docs/HdWalletsApi.md#deriveAndSyncNewChangeAddresses) | **POST** /blockchain-data/{blockchain}/{network}/hd/derive-sync-change | Derive And Sync New Change Addresses
+*HdWalletsApi* | [**deriveAndSyncNewReceivingAddresses**](docs/HdWalletsApi.md#deriveAndSyncNewReceivingAddresses) | **POST** /blockchain-data/{blockchain}/{network}/hd/derive-and-sync | Derive And Sync New Receiving Addresses
 *HdWalletsApi* | [**getHDWalletXPubYPubZPubAssets**](docs/HdWalletsApi.md#getHDWalletXPubYPubZPubAssets) | **GET** /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/assets | Get HD Wallet (xPub, yPub, zPub) Assets
 *HdWalletsApi* | [**getHDWalletXPubYPubZPubDetails**](docs/HdWalletsApi.md#getHDWalletXPubYPubZPubDetails) | **GET** /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/details | Get HD Wallet (xPub, yPub, zPub) Details
 *HdWalletsApi* | [**listHDWalletXPubYPubZPubTransactions**](docs/HdWalletsApi.md#listHDWalletXPubYPubZPubTransactions) | **GET** /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/transactions | List HD Wallet (xPub, yPub, zPub) Transactions
 *HdWalletsApi* | [**listHDWalletXPubYPubZPubUTXOs**](docs/HdWalletsApi.md#listHDWalletXPubYPubZPubUTXOs) | **GET** /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/utxos | List HD Wallet (xPub, yPub, zPub) UTXOs
+*HdWalletsApi* | [**listSyncedAddresses**](docs/HdWalletsApi.md#listSyncedAddresses) | **GET** /blockchain-data/{blockchain}/{network}/hd/{extendedPublicKey}/synced-addresses | List Synced Addresses
+*HdWalletsApi* | [**prepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub**](docs/HdWalletsApi.md#prepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub) | **POST** /blockchain-data/{blockchain}/{network}/transactions/prepare-utxo-transaction | Prepare A UTXO-Based Transaction From HD Wallet (xPub, yPub, zPub)
+*HdWalletsApi* | [**prepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub**](docs/HdWalletsApi.md#prepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub) | **POST** /blockchain-data/{blockchain}/{network}/transactions/prepare-account-based-transaction | Prepare An Account-Based Transaction From HD Wallet (xPub, yPub, zPub)
 *HdWalletsApi* | [**syncHDWalletXPubYPubZPub**](docs/HdWalletsApi.md#syncHDWalletXPubYPubZPub) | **POST** /blockchain-data/{blockchain}/{network}/hd/sync | Sync HD Wallet (xPub, yPub, zPub)
+*HdWalletsApi* | [**syncNewHDWalletXPubYPubZPub**](docs/HdWalletsApi.md#syncNewHDWalletXPubYPubZPub) | **POST** /blockchain-data/{blockchain}/{network}/hd/sync-new | Sync New HD Wallet (xPub, yPub, zPub)
 *InformativeApi* | [**getTransactionRequestDetails**](docs/InformativeApi.md#getTransactionRequestDetails) | **GET** /wallet-as-a-service/transactionRequests/{transactionRequestId} | Get Transaction Request Details
 *InformativeApi* | [**getWalletAssetDetails**](docs/InformativeApi.md#getWalletAssetDetails) | **GET** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network} | Get Wallet Asset Details
 *InformativeApi* | [**getWalletTransactionDetailsByTransactionID**](docs/InformativeApi.md#getWalletTransactionDetailsByTransactionID) | **GET** /wallet-as-a-service/wallets/{blockchain}/{network}/transactions/{transactionId} | Get Wallet Transaction Details By Transaction ID
@@ -184,14 +191,6 @@ Class | Method | HTTP request | Description
 *ManageSubscriptionsApi* | [**getBlockchainEventSubscriptionDetailsByReferenceID**](docs/ManageSubscriptionsApi.md#getBlockchainEventSubscriptionDetailsByReferenceID) | **GET** /blockchain-events/subscriptions/{referenceId} | Get Blockchain Event Subscription Details By Reference ID
 *ManageSubscriptionsApi* | [**listBlockchainEventsSubscriptions**](docs/ManageSubscriptionsApi.md#listBlockchainEventsSubscriptions) | **GET** /blockchain-events/{blockchain}/{network}/subscriptions | List Blockchain Events Subscriptions
 *MetadataApi* | [**listSupportedAssets**](docs/MetadataApi.md#listSupportedAssets) | **GET** /market-data/assets/supported | List Supported Assets
-*OmniLayerApi* | [**getOmniTransactionDetailsByTransactionIDTxid**](docs/OmniLayerApi.md#getOmniTransactionDetailsByTransactionIDTxid) | **GET** /blockchain-data/{blockchain}/{network}/omni/transactions/{transactionId} | Get Omni Transaction Details By Transaction ID (Txid)
-*OmniLayerApi* | [**getUnconfirmedOmniTransactionByTransactionIDTxid**](docs/OmniLayerApi.md#getUnconfirmedOmniTransactionByTransactionIDTxid) | **GET** /blockchain-data/{blockchain}/{network}/omni/transactions-unconfirmed/{transactionId} | Get Unconfirmed Omni Transaction By Transaction ID (Txid)
-*OmniLayerApi* | [**listOmniTokensByAddress**](docs/OmniLayerApi.md#listOmniTokensByAddress) | **GET** /blockchain-data/{blockchain}/{network}/omni/addresses/{address} | List Omni Tokens By Address
-*OmniLayerApi* | [**listOmniTransactionsByAddress**](docs/OmniLayerApi.md#listOmniTransactionsByAddress) | **GET** /blockchain-data/{blockchain}/{network}/omni/addresses/{address}/transactions | List Omni Transactions By Address
-*OmniLayerApi* | [**listOmniTransactionsByBlockHash**](docs/OmniLayerApi.md#listOmniTransactionsByBlockHash) | **GET** /blockchain-data/{blockchain}/{network}/omni/blocks/hash/{blockHash}/transactions | List Omni Transactions By Block Hash
-*OmniLayerApi* | [**listOmniTransactionsByBlockHeight**](docs/OmniLayerApi.md#listOmniTransactionsByBlockHeight) | **GET** /blockchain-data/{blockchain}/{network}/omni/blocks/height/{blockHeight}/transactions | List Omni Transactions By Block Height
-*OmniLayerApi* | [**listUnconfirmedOmniTransactionsByAddress**](docs/OmniLayerApi.md#listUnconfirmedOmniTransactionsByAddress) | **GET** /blockchain-data/{blockchain}/{network}/omni/address-transactions-unconfirmed/{address} | List Unconfirmed Omni Transactions By Address
-*OmniLayerApi* | [**listUnconfirmedOmniTransactionsByPropertyID**](docs/OmniLayerApi.md#listUnconfirmedOmniTransactionsByPropertyID) | **GET** /blockchain-data/{blockchain}/{network}/omni/properties/{propertyId}/transactions | List Unconfirmed Omni Transactions By Property ID
 *TokensApi* | [**getTokenDetailsByContractAddress**](docs/TokensApi.md#getTokenDetailsByContractAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{contractAddress}/contract | Get Token Details by Contract Address
 *TokensApi* | [**listConfirmedTokensTransfersByAddress**](docs/TokensApi.md#listConfirmedTokensTransfersByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/tokens-transfers | List Confirmed Tokens Transfers By Address
 *TokensApi* | [**listTokensByAddress**](docs/TokensApi.md#listTokensByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/tokens | List Tokens By Address
@@ -200,8 +199,11 @@ Class | Method | HTTP request | Description
 *TransactionsApi* | [**createCoinsTransactionFromAddressForWholeAmount**](docs/TransactionsApi.md#createCoinsTransactionFromAddressForWholeAmount) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/all-transaction-requests | Create Coins Transaction From Address For Whole Amount
 *TransactionsApi* | [**createCoinsTransactionRequestFromAddress**](docs/TransactionsApi.md#createCoinsTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/transaction-requests | Create Coins Transaction Request from Address
 *TransactionsApi* | [**createCoinsTransactionRequestFromWallet**](docs/TransactionsApi.md#createCoinsTransactionRequestFromWallet) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/transaction-requests | Create Coins Transaction Request from Wallet
+*TransactionsApi* | [**createFungibleTokenTransactionRequestFromAddressWithoutFeePriority**](docs/TransactionsApi.md#createFungibleTokenTransactionRequestFromAddressWithoutFeePriority) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/feeless-token-transaction-requests | Create Fungible Token Transaction Request From Address Without Fee Priority
 *TransactionsApi* | [**createFungibleTokensTransactionRequestFromAddress**](docs/TransactionsApi.md#createFungibleTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/token-transaction-requests | Create Fungible Tokens Transaction Request from Address
+*TransactionsApi* | [**createSingleTransactionRequestFromAddressWithoutFeePriority**](docs/TransactionsApi.md#createSingleTransactionRequestFromAddressWithoutFeePriority) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/feeless-transaction-requests | Create Single Transaction Request From Address Without Fee Priority
 *UnifiedEndpointsApi* | [**estimateTransactionSmartFee**](docs/UnifiedEndpointsApi.md#estimateTransactionSmartFee) | **GET** /blockchain-data/{blockchain}/{network}/estimate-transaction-smart-fee | Estimate Transaction Smart Fee
+*UnifiedEndpointsApi* | [**getAddressBalance**](docs/UnifiedEndpointsApi.md#getAddressBalance) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/balance | Get Address Balance
 *UnifiedEndpointsApi* | [**getAddressDetails**](docs/UnifiedEndpointsApi.md#getAddressDetails) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address} | Get Address Details
 *UnifiedEndpointsApi* | [**getBlockDetailsByBlockHash**](docs/UnifiedEndpointsApi.md#getBlockDetailsByBlockHash) | **GET** /blockchain-data/{blockchain}/{network}/blocks/hash/{blockHash} | Get Block Details By Block Hash
 *UnifiedEndpointsApi* | [**getBlockDetailsByBlockHeight**](docs/UnifiedEndpointsApi.md#getBlockDetailsByBlockHeight) | **GET** /blockchain-data/{blockchain}/{network}/blocks/height/{height} | Get Block Details By Block Height
@@ -210,7 +212,6 @@ Class | Method | HTTP request | Description
 *UnifiedEndpointsApi* | [**getNextAvailableNonce**](docs/UnifiedEndpointsApi.md#getNextAvailableNonce) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/next-available-nonce | Get Next Available Nonce
 *UnifiedEndpointsApi* | [**getRawTransactionData**](docs/UnifiedEndpointsApi.md#getRawTransactionData) | **GET** /blockchain-data/{blockchain}/{network}/transactions/{transactionId}/raw-data | Get Raw Transaction Data
 *UnifiedEndpointsApi* | [**getTransactionDetailsByTransactionID**](docs/UnifiedEndpointsApi.md#getTransactionDetailsByTransactionID) | **GET** /blockchain-data/{blockchain}/{network}/transactions/{transactionId} | Get Transaction Details By Transaction ID
-*UnifiedEndpointsApi* | [**listAllUnconfirmedTransactions**](docs/UnifiedEndpointsApi.md#listAllUnconfirmedTransactions) | **GET** /blockchain-data/{blockchain}/{network}/address-transactions-unconfirmed | List All Unconfirmed Transactions
 *UnifiedEndpointsApi* | [**listConfirmedTokensTransfersByAddressAndTimeRange**](docs/UnifiedEndpointsApi.md#listConfirmedTokensTransfersByAddressAndTimeRange) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/tokens-transfers-by-time-range | List Confirmed Tokens Transfers By Address And Time Range
 *UnifiedEndpointsApi* | [**listConfirmedTransactionsByAddress**](docs/UnifiedEndpointsApi.md#listConfirmedTransactionsByAddress) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/transactions | List Confirmed Transactions By Address
 *UnifiedEndpointsApi* | [**listConfirmedTransactionsByAddressAndTimeRange**](docs/UnifiedEndpointsApi.md#listConfirmedTransactionsByAddressAndTimeRange) | **GET** /blockchain-data/{blockchain}/{network}/addresses/{address}/transactions-by-time-range | List Confirmed Transactions By Address And Time Range
@@ -316,6 +317,23 @@ Class | Method | HTTP request | Description
  - [AlreadyExists](docs/AlreadyExists.md)
  - [BannedIpAddress](docs/BannedIpAddress.md)
  - [BannedIpAddressDetailsInner](docs/BannedIpAddressDetailsInner.md)
+ - [BlockHeightReached](docs/BlockHeightReached.md)
+ - [BlockHeightReached400Response](docs/BlockHeightReached400Response.md)
+ - [BlockHeightReached401Response](docs/BlockHeightReached401Response.md)
+ - [BlockHeightReached403Response](docs/BlockHeightReached403Response.md)
+ - [BlockHeightReached409Response](docs/BlockHeightReached409Response.md)
+ - [BlockHeightReachedData](docs/BlockHeightReachedData.md)
+ - [BlockHeightReachedDataItem](docs/BlockHeightReachedDataItem.md)
+ - [BlockHeightReachedE400](docs/BlockHeightReachedE400.md)
+ - [BlockHeightReachedE401](docs/BlockHeightReachedE401.md)
+ - [BlockHeightReachedE403](docs/BlockHeightReachedE403.md)
+ - [BlockHeightReachedE409](docs/BlockHeightReachedE409.md)
+ - [BlockHeightReachedR](docs/BlockHeightReachedR.md)
+ - [BlockHeightReachedRB](docs/BlockHeightReachedRB.md)
+ - [BlockHeightReachedRBData](docs/BlockHeightReachedRBData.md)
+ - [BlockHeightReachedRBDataItem](docs/BlockHeightReachedRBDataItem.md)
+ - [BlockHeightReachedRData](docs/BlockHeightReachedRData.md)
+ - [BlockHeightReachedRI](docs/BlockHeightReachedRI.md)
  - [BlockMined](docs/BlockMined.md)
  - [BlockMinedData](docs/BlockMinedData.md)
  - [BlockMinedDataItem](docs/BlockMinedDataItem.md)
@@ -364,6 +382,24 @@ Class | Method | HTTP request | Description
  - [ConfirmedTokensTransactionForCertainAmountOrHigherErc20](docs/ConfirmedTokensTransactionForCertainAmountOrHigherErc20.md)
  - [ConfirmedTokensTransactionForCertainAmountOrHigherErc721](docs/ConfirmedTokensTransactionForCertainAmountOrHigherErc721.md)
  - [ConfirmedTokensTransactionForCertainAmountOrHigherToken](docs/ConfirmedTokensTransactionForCertainAmountOrHigherToken.md)
+ - [ConvertBitcoinCashAddress400Response](docs/ConvertBitcoinCashAddress400Response.md)
+ - [ConvertBitcoinCashAddress401Response](docs/ConvertBitcoinCashAddress401Response.md)
+ - [ConvertBitcoinCashAddress402Response](docs/ConvertBitcoinCashAddress402Response.md)
+ - [ConvertBitcoinCashAddress403Response](docs/ConvertBitcoinCashAddress403Response.md)
+ - [ConvertBitcoinCashAddress409Response](docs/ConvertBitcoinCashAddress409Response.md)
+ - [ConvertBitcoinCashAddress415Response](docs/ConvertBitcoinCashAddress415Response.md)
+ - [ConvertBitcoinCashAddress422Response](docs/ConvertBitcoinCashAddress422Response.md)
+ - [ConvertBitcoinCashAddress429Response](docs/ConvertBitcoinCashAddress429Response.md)
+ - [ConvertBitcoinCashAddress500Response](docs/ConvertBitcoinCashAddress500Response.md)
+ - [ConvertBitcoinCashAddressE400](docs/ConvertBitcoinCashAddressE400.md)
+ - [ConvertBitcoinCashAddressE401](docs/ConvertBitcoinCashAddressE401.md)
+ - [ConvertBitcoinCashAddressE403](docs/ConvertBitcoinCashAddressE403.md)
+ - [ConvertBitcoinCashAddressR](docs/ConvertBitcoinCashAddressR.md)
+ - [ConvertBitcoinCashAddressRB](docs/ConvertBitcoinCashAddressRB.md)
+ - [ConvertBitcoinCashAddressRBData](docs/ConvertBitcoinCashAddressRBData.md)
+ - [ConvertBitcoinCashAddressRBDataItem](docs/ConvertBitcoinCashAddressRBDataItem.md)
+ - [ConvertBitcoinCashAddressRData](docs/ConvertBitcoinCashAddressRData.md)
+ - [ConvertBitcoinCashAddressRI](docs/ConvertBitcoinCashAddressRI.md)
  - [CouldNotCalculateRateForPair](docs/CouldNotCalculateRateForPair.md)
  - [CreateAutomaticCoinsForwarding400Response](docs/CreateAutomaticCoinsForwarding400Response.md)
  - [CreateAutomaticCoinsForwarding401Response](docs/CreateAutomaticCoinsForwarding401Response.md)
@@ -445,6 +481,23 @@ Class | Method | HTTP request | Description
  - [CreateCoinsTransactionRequestFromWalletRData](docs/CreateCoinsTransactionRequestFromWalletRData.md)
  - [CreateCoinsTransactionRequestFromWalletRI](docs/CreateCoinsTransactionRequestFromWalletRI.md)
  - [CreateCoinsTransactionRequestFromWalletRIRecipientsInner](docs/CreateCoinsTransactionRequestFromWalletRIRecipientsInner.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority400Response](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority400Response.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority401Response](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority401Response.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority403Response](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority403Response.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority409Response](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriority409Response.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE400](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE400.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE401](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE401.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE403](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE403.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE409](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityE409.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityR](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityR.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRBData](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRBData.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRBDataItem](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRBDataItem.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRData](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRData.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRI](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRI.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRIRecipientInner](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRIRecipientInner.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRIS](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRIS.md)
+ - [CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRIST](docs/CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRIST.md)
  - [CreateFungibleTokensTransactionRequestFromAddress400Response](docs/CreateFungibleTokensTransactionRequestFromAddress400Response.md)
  - [CreateFungibleTokensTransactionRequestFromAddress401Response](docs/CreateFungibleTokensTransactionRequestFromAddress401Response.md)
  - [CreateFungibleTokensTransactionRequestFromAddress403Response](docs/CreateFungibleTokensTransactionRequestFromAddress403Response.md)
@@ -463,6 +516,23 @@ Class | Method | HTTP request | Description
  - [CreateFungibleTokensTransactionRequestFromAddressRIS](docs/CreateFungibleTokensTransactionRequestFromAddressRIS.md)
  - [CreateFungibleTokensTransactionRequestFromAddressRISE](docs/CreateFungibleTokensTransactionRequestFromAddressRISE.md)
  - [CreateFungibleTokensTransactionRequestFromAddressRISenders](docs/CreateFungibleTokensTransactionRequestFromAddressRISenders.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriority400Response](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriority400Response.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriority401Response](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriority401Response.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriority403Response](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriority403Response.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriority409Response](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriority409Response.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityE400](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityE400.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityE401](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityE401.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityE403](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityE403.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityE409](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityE409.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityR](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityR.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRBData](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRBData.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRBDataItem](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRBDataItem.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRData](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRData.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRI](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRI.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRIRecipientInner](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRIRecipientInner.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRISender](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRISender.md)
+ - [CreateSingleTransactionRequestFromAddressWithoutFeePriorityRITotalAmount](docs/CreateSingleTransactionRequestFromAddressWithoutFeePriorityRITotalAmount.md)
  - [DecodeRawTransactionHex400Response](docs/DecodeRawTransactionHex400Response.md)
  - [DecodeRawTransactionHex401Response](docs/DecodeRawTransactionHex401Response.md)
  - [DecodeRawTransactionHex403Response](docs/DecodeRawTransactionHex403Response.md)
@@ -547,6 +617,30 @@ Class | Method | HTTP request | Description
  - [DeleteBlockchainEventSubscriptionR](docs/DeleteBlockchainEventSubscriptionR.md)
  - [DeleteBlockchainEventSubscriptionRData](docs/DeleteBlockchainEventSubscriptionRData.md)
  - [DeleteBlockchainEventSubscriptionRI](docs/DeleteBlockchainEventSubscriptionRI.md)
+ - [DeriveAndSyncNewChangeAddresses400Response](docs/DeriveAndSyncNewChangeAddresses400Response.md)
+ - [DeriveAndSyncNewChangeAddresses401Response](docs/DeriveAndSyncNewChangeAddresses401Response.md)
+ - [DeriveAndSyncNewChangeAddresses403Response](docs/DeriveAndSyncNewChangeAddresses403Response.md)
+ - [DeriveAndSyncNewChangeAddressesE400](docs/DeriveAndSyncNewChangeAddressesE400.md)
+ - [DeriveAndSyncNewChangeAddressesE401](docs/DeriveAndSyncNewChangeAddressesE401.md)
+ - [DeriveAndSyncNewChangeAddressesE403](docs/DeriveAndSyncNewChangeAddressesE403.md)
+ - [DeriveAndSyncNewChangeAddressesR](docs/DeriveAndSyncNewChangeAddressesR.md)
+ - [DeriveAndSyncNewChangeAddressesRB](docs/DeriveAndSyncNewChangeAddressesRB.md)
+ - [DeriveAndSyncNewChangeAddressesRBData](docs/DeriveAndSyncNewChangeAddressesRBData.md)
+ - [DeriveAndSyncNewChangeAddressesRBDataItem](docs/DeriveAndSyncNewChangeAddressesRBDataItem.md)
+ - [DeriveAndSyncNewChangeAddressesRData](docs/DeriveAndSyncNewChangeAddressesRData.md)
+ - [DeriveAndSyncNewChangeAddressesRI](docs/DeriveAndSyncNewChangeAddressesRI.md)
+ - [DeriveAndSyncNewReceivingAddresses400Response](docs/DeriveAndSyncNewReceivingAddresses400Response.md)
+ - [DeriveAndSyncNewReceivingAddresses401Response](docs/DeriveAndSyncNewReceivingAddresses401Response.md)
+ - [DeriveAndSyncNewReceivingAddresses403Response](docs/DeriveAndSyncNewReceivingAddresses403Response.md)
+ - [DeriveAndSyncNewReceivingAddressesE400](docs/DeriveAndSyncNewReceivingAddressesE400.md)
+ - [DeriveAndSyncNewReceivingAddressesE401](docs/DeriveAndSyncNewReceivingAddressesE401.md)
+ - [DeriveAndSyncNewReceivingAddressesE403](docs/DeriveAndSyncNewReceivingAddressesE403.md)
+ - [DeriveAndSyncNewReceivingAddressesR](docs/DeriveAndSyncNewReceivingAddressesR.md)
+ - [DeriveAndSyncNewReceivingAddressesRB](docs/DeriveAndSyncNewReceivingAddressesRB.md)
+ - [DeriveAndSyncNewReceivingAddressesRBData](docs/DeriveAndSyncNewReceivingAddressesRBData.md)
+ - [DeriveAndSyncNewReceivingAddressesRBDataItem](docs/DeriveAndSyncNewReceivingAddressesRBDataItem.md)
+ - [DeriveAndSyncNewReceivingAddressesRData](docs/DeriveAndSyncNewReceivingAddressesRData.md)
+ - [DeriveAndSyncNewReceivingAddressesRI](docs/DeriveAndSyncNewReceivingAddressesRI.md)
  - [DeriveHDWalletXPubYPubZPubChangeOrReceivingAddresses400Response](docs/DeriveHDWalletXPubYPubZPubChangeOrReceivingAddresses400Response.md)
  - [DeriveHDWalletXPubYPubZPubChangeOrReceivingAddresses401Response](docs/DeriveHDWalletXPubYPubZPubChangeOrReceivingAddresses401Response.md)
  - [DeriveHDWalletXPubYPubZPubChangeOrReceivingAddresses403Response](docs/DeriveHDWalletXPubYPubZPubChangeOrReceivingAddresses403Response.md)
@@ -615,15 +709,19 @@ Class | Method | HTTP request | Description
  - [GenerateDepositAddressRBDataItem](docs/GenerateDepositAddressRBDataItem.md)
  - [GenerateDepositAddressRData](docs/GenerateDepositAddressRData.md)
  - [GenerateDepositAddressRI](docs/GenerateDepositAddressRI.md)
+ - [GetAddressBalance400Response](docs/GetAddressBalance400Response.md)
+ - [GetAddressBalance401Response](docs/GetAddressBalance401Response.md)
+ - [GetAddressBalance403Response](docs/GetAddressBalance403Response.md)
+ - [GetAddressBalanceE400](docs/GetAddressBalanceE400.md)
+ - [GetAddressBalanceE401](docs/GetAddressBalanceE401.md)
+ - [GetAddressBalanceE403](docs/GetAddressBalanceE403.md)
+ - [GetAddressBalanceR](docs/GetAddressBalanceR.md)
+ - [GetAddressBalanceRData](docs/GetAddressBalanceRData.md)
+ - [GetAddressBalanceRI](docs/GetAddressBalanceRI.md)
+ - [GetAddressBalanceRIConfirmedBalance](docs/GetAddressBalanceRIConfirmedBalance.md)
  - [GetAddressDetails400Response](docs/GetAddressDetails400Response.md)
  - [GetAddressDetails401Response](docs/GetAddressDetails401Response.md)
- - [GetAddressDetails402Response](docs/GetAddressDetails402Response.md)
  - [GetAddressDetails403Response](docs/GetAddressDetails403Response.md)
- - [GetAddressDetails409Response](docs/GetAddressDetails409Response.md)
- - [GetAddressDetails415Response](docs/GetAddressDetails415Response.md)
- - [GetAddressDetails422Response](docs/GetAddressDetails422Response.md)
- - [GetAddressDetails429Response](docs/GetAddressDetails429Response.md)
- - [GetAddressDetails500Response](docs/GetAddressDetails500Response.md)
  - [GetAddressDetailsE400](docs/GetAddressDetailsE400.md)
  - [GetAddressDetailsE401](docs/GetAddressDetailsE401.md)
  - [GetAddressDetailsE403](docs/GetAddressDetailsE403.md)
@@ -637,6 +735,7 @@ Class | Method | HTTP request | Description
  - [GetAddressDetailsFromCallbackR](docs/GetAddressDetailsFromCallbackR.md)
  - [GetAddressDetailsFromCallbackRData](docs/GetAddressDetailsFromCallbackRData.md)
  - [GetAddressDetailsFromCallbackRI](docs/GetAddressDetailsFromCallbackRI.md)
+ - [GetAddressDetailsFromCallbackRIConfirmedBalance](docs/GetAddressDetailsFromCallbackRIConfirmedBalance.md)
  - [GetAddressDetailsFromCallbackRITotalReceived](docs/GetAddressDetailsFromCallbackRITotalReceived.md)
  - [GetAddressDetailsFromCallbackRITotalSpent](docs/GetAddressDetailsFromCallbackRITotalSpent.md)
  - [GetAddressDetailsR](docs/GetAddressDetailsR.md)
@@ -693,6 +792,7 @@ Class | Method | HTTP request | Description
  - [GetBlockDetailsByBlockHashFromCallbackRIBSE](docs/GetBlockDetailsByBlockHashFromCallbackRIBSE.md)
  - [GetBlockDetailsByBlockHashFromCallbackRIBSEC](docs/GetBlockDetailsByBlockHashFromCallbackRIBSEC.md)
  - [GetBlockDetailsByBlockHashFromCallbackRIBSL](docs/GetBlockDetailsByBlockHashFromCallbackRIBSL.md)
+ - [GetBlockDetailsByBlockHashFromCallbackRIBST](docs/GetBlockDetailsByBlockHashFromCallbackRIBST.md)
  - [GetBlockDetailsByBlockHashFromCallbackRIBSX](docs/GetBlockDetailsByBlockHashFromCallbackRIBSX.md)
  - [GetBlockDetailsByBlockHashFromCallbackRIBSZ](docs/GetBlockDetailsByBlockHashFromCallbackRIBSZ.md)
  - [GetBlockDetailsByBlockHashFromCallbackRIBSZ2](docs/GetBlockDetailsByBlockHashFromCallbackRIBSZ2.md)
@@ -709,6 +809,7 @@ Class | Method | HTTP request | Description
  - [GetBlockDetailsByBlockHashRIBSEC](docs/GetBlockDetailsByBlockHashRIBSEC.md)
  - [GetBlockDetailsByBlockHashRIBSL](docs/GetBlockDetailsByBlockHashRIBSL.md)
  - [GetBlockDetailsByBlockHashRIBSZ](docs/GetBlockDetailsByBlockHashRIBSZ.md)
+ - [GetBlockDetailsByBlockHashRIBSZ2](docs/GetBlockDetailsByBlockHashRIBSZ2.md)
  - [GetBlockDetailsByBlockHeight400Response](docs/GetBlockDetailsByBlockHeight400Response.md)
  - [GetBlockDetailsByBlockHeight401Response](docs/GetBlockDetailsByBlockHeight401Response.md)
  - [GetBlockDetailsByBlockHeight403Response](docs/GetBlockDetailsByBlockHeight403Response.md)
@@ -733,6 +834,8 @@ Class | Method | HTTP request | Description
  - [GetBlockDetailsByBlockHeightFromCallbackRIBSE](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSE.md)
  - [GetBlockDetailsByBlockHeightFromCallbackRIBSEC](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSEC.md)
  - [GetBlockDetailsByBlockHeightFromCallbackRIBSL](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSL.md)
+ - [GetBlockDetailsByBlockHeightFromCallbackRIBSP](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSP.md)
+ - [GetBlockDetailsByBlockHeightFromCallbackRIBST](docs/GetBlockDetailsByBlockHeightFromCallbackRIBST.md)
  - [GetBlockDetailsByBlockHeightFromCallbackRIBSX](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSX.md)
  - [GetBlockDetailsByBlockHeightFromCallbackRIBSZ](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSZ.md)
  - [GetBlockDetailsByBlockHeightFromCallbackRIBSZ2](docs/GetBlockDetailsByBlockHeightFromCallbackRIBSZ2.md)
@@ -749,6 +852,7 @@ Class | Method | HTTP request | Description
  - [GetBlockDetailsByBlockHeightRIBSEC](docs/GetBlockDetailsByBlockHeightRIBSEC.md)
  - [GetBlockDetailsByBlockHeightRIBSL](docs/GetBlockDetailsByBlockHeightRIBSL.md)
  - [GetBlockDetailsByBlockHeightRIBSZ](docs/GetBlockDetailsByBlockHeightRIBSZ.md)
+ - [GetBlockDetailsByBlockHeightRIBSZ2](docs/GetBlockDetailsByBlockHeightRIBSZ2.md)
  - [GetBlockchainEventSubscriptionDetailsByReferenceID400Response](docs/GetBlockchainEventSubscriptionDetailsByReferenceID400Response.md)
  - [GetBlockchainEventSubscriptionDetailsByReferenceID401Response](docs/GetBlockchainEventSubscriptionDetailsByReferenceID401Response.md)
  - [GetBlockchainEventSubscriptionDetailsByReferenceID403Response](docs/GetBlockchainEventSubscriptionDetailsByReferenceID403Response.md)
@@ -865,6 +969,7 @@ Class | Method | HTTP request | Description
  - [GetLastMinedBlockRIBSEC](docs/GetLastMinedBlockRIBSEC.md)
  - [GetLastMinedBlockRIBSL](docs/GetLastMinedBlockRIBSL.md)
  - [GetLastMinedBlockRIBSZ](docs/GetLastMinedBlockRIBSZ.md)
+ - [GetLastMinedBlockRIBSZ2](docs/GetLastMinedBlockRIBSZ2.md)
  - [GetLatestMinedXRPRippleBlock400Response](docs/GetLatestMinedXRPRippleBlock400Response.md)
  - [GetLatestMinedXRPRippleBlock401Response](docs/GetLatestMinedXRPRippleBlock401Response.md)
  - [GetLatestMinedXRPRippleBlock403Response](docs/GetLatestMinedXRPRippleBlock403Response.md)
@@ -894,16 +999,6 @@ Class | Method | HTTP request | Description
  - [GetNextAvailableNonceR](docs/GetNextAvailableNonceR.md)
  - [GetNextAvailableNonceRData](docs/GetNextAvailableNonceRData.md)
  - [GetNextAvailableNonceRI](docs/GetNextAvailableNonceRI.md)
- - [GetOmniTransactionDetailsByTransactionIDTxid400Response](docs/GetOmniTransactionDetailsByTransactionIDTxid400Response.md)
- - [GetOmniTransactionDetailsByTransactionIDTxid401Response](docs/GetOmniTransactionDetailsByTransactionIDTxid401Response.md)
- - [GetOmniTransactionDetailsByTransactionIDTxid403Response](docs/GetOmniTransactionDetailsByTransactionIDTxid403Response.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidE400](docs/GetOmniTransactionDetailsByTransactionIDTxidE400.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidE401](docs/GetOmniTransactionDetailsByTransactionIDTxidE401.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidE403](docs/GetOmniTransactionDetailsByTransactionIDTxidE403.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidR](docs/GetOmniTransactionDetailsByTransactionIDTxidR.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidRData](docs/GetOmniTransactionDetailsByTransactionIDTxidRData.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidRI](docs/GetOmniTransactionDetailsByTransactionIDTxidRI.md)
- - [GetOmniTransactionDetailsByTransactionIDTxidRISendersInner](docs/GetOmniTransactionDetailsByTransactionIDTxidRISendersInner.md)
  - [GetRawTransactionData400Response](docs/GetRawTransactionData400Response.md)
  - [GetRawTransactionData401Response](docs/GetRawTransactionData401Response.md)
  - [GetRawTransactionData403Response](docs/GetRawTransactionData403Response.md)
@@ -941,22 +1036,37 @@ Class | Method | HTTP request | Description
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBS](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBS.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSB](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSB.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBC](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBC.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBCVoutInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBCVoutInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBCVoutInnerScriptPubKey](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBCVoutInnerScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBSC.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInnerScriptSig](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInnerScriptSig.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBVoutInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBVoutInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSBVoutInnerScriptPubKey](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSBVoutInnerScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSD](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSD.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSD2](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSD2.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSD2VinInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSD2VinInner.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSD2VoutInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSD2VoutInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSD2VoutInnerScriptPubKey](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSD2VoutInnerScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSDVinInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSDVinInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInnerScriptPubKey](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInnerScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSE](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSE.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSEC](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSEC.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSL](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSL.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSLVoutInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSLVoutInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSLVoutInnerScriptPubKey](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSLVoutInnerScriptPubKey.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSP](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSP.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBST](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBST.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSTBandwidthUsed](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSTBandwidthUsed.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSTEnergyUsed](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSTEnergyUsed.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSX](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSX.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSXValue](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSXValue.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSZ](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSZ.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSZ2GasPrice.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSZVoutInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSZVoutInner.md)
+ - [GetTransactionDetailsByTransactionIDFromCallbackRIBSZVoutInnerScriptPubKey](docs/GetTransactionDetailsByTransactionIDFromCallbackRIBSZVoutInnerScriptPubKey.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIFee](docs/GetTransactionDetailsByTransactionIDFromCallbackRIFee.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRIRecipientsInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRIRecipientsInner.md)
  - [GetTransactionDetailsByTransactionIDFromCallbackRISendersInner](docs/GetTransactionDetailsByTransactionIDFromCallbackRISendersInner.md)
@@ -1015,17 +1125,6 @@ Class | Method | HTTP request | Description
  - [GetTransactionRequestDetailsRData](docs/GetTransactionRequestDetailsRData.md)
  - [GetTransactionRequestDetailsRI](docs/GetTransactionRequestDetailsRI.md)
  - [GetTransactionRequestDetailsRIRecipientsInner](docs/GetTransactionRequestDetailsRIRecipientsInner.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxid400Response](docs/GetUnconfirmedOmniTransactionByTransactionIDTxid400Response.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxid401Response](docs/GetUnconfirmedOmniTransactionByTransactionIDTxid401Response.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxid403Response](docs/GetUnconfirmedOmniTransactionByTransactionIDTxid403Response.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidE400](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidE400.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidE401](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidE401.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidE403](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidE403.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidR](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidR.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidRData](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRData.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidRI](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRI.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRIRecipientsInner.md)
- - [GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner](docs/GetUnconfirmedOmniTransactionByTransactionIDTxidRISendersInner.md)
  - [GetWalletAssetDetails400Response](docs/GetWalletAssetDetails400Response.md)
  - [GetWalletAssetDetails401Response](docs/GetWalletAssetDetails401Response.md)
  - [GetWalletAssetDetails403Response](docs/GetWalletAssetDetails403Response.md)
@@ -1072,11 +1171,12 @@ Class | Method | HTTP request | Description
  - [GetWalletTransactionDetailsByTransactionIDRIBSL](docs/GetWalletTransactionDetailsByTransactionIDRIBSL.md)
  - [GetWalletTransactionDetailsByTransactionIDRIBSLVinInner](docs/GetWalletTransactionDetailsByTransactionIDRIBSLVinInner.md)
  - [GetWalletTransactionDetailsByTransactionIDRIBSLVinInnerScriptSig](docs/GetWalletTransactionDetailsByTransactionIDRIBSLVinInnerScriptSig.md)
+ - [GetWalletTransactionDetailsByTransactionIDRIBSP](docs/GetWalletTransactionDetailsByTransactionIDRIBSP.md)
+ - [GetWalletTransactionDetailsByTransactionIDRIBSPGasPrice](docs/GetWalletTransactionDetailsByTransactionIDRIBSPGasPrice.md)
+ - [GetWalletTransactionDetailsByTransactionIDRIBST](docs/GetWalletTransactionDetailsByTransactionIDRIBST.md)
  - [GetWalletTransactionDetailsByTransactionIDRIBSZ](docs/GetWalletTransactionDetailsByTransactionIDRIBSZ.md)
  - [GetWalletTransactionDetailsByTransactionIDRIBSZVinInner](docs/GetWalletTransactionDetailsByTransactionIDRIBSZVinInner.md)
  - [GetWalletTransactionDetailsByTransactionIDRIFee](docs/GetWalletTransactionDetailsByTransactionIDRIFee.md)
- - [GetWalletTransactionDetailsByTransactionIDRIRecipientsInner](docs/GetWalletTransactionDetailsByTransactionIDRIRecipientsInner.md)
- - [GetWalletTransactionDetailsByTransactionIDRISendersInner](docs/GetWalletTransactionDetailsByTransactionIDRISendersInner.md)
  - [GetXRPRippleAddressDetails400Response](docs/GetXRPRippleAddressDetails400Response.md)
  - [GetXRPRippleAddressDetails401Response](docs/GetXRPRippleAddressDetails401Response.md)
  - [GetXRPRippleAddressDetails403Response](docs/GetXRPRippleAddressDetails403Response.md)
@@ -1195,49 +1295,6 @@ Class | Method | HTTP request | Description
  - [ListAllAssetsFromAllWalletsRICoinsInner](docs/ListAllAssetsFromAllWalletsRICoinsInner.md)
  - [ListAllAssetsFromAllWalletsRIFungibleTokensInner](docs/ListAllAssetsFromAllWalletsRIFungibleTokensInner.md)
  - [ListAllAssetsFromAllWalletsRINonFungibleTokensInner](docs/ListAllAssetsFromAllWalletsRINonFungibleTokensInner.md)
- - [ListAllUnconfirmedTransactions400Response](docs/ListAllUnconfirmedTransactions400Response.md)
- - [ListAllUnconfirmedTransactions401Response](docs/ListAllUnconfirmedTransactions401Response.md)
- - [ListAllUnconfirmedTransactions403Response](docs/ListAllUnconfirmedTransactions403Response.md)
- - [ListAllUnconfirmedTransactionsE400](docs/ListAllUnconfirmedTransactionsE400.md)
- - [ListAllUnconfirmedTransactionsE401](docs/ListAllUnconfirmedTransactionsE401.md)
- - [ListAllUnconfirmedTransactionsE403](docs/ListAllUnconfirmedTransactionsE403.md)
- - [ListAllUnconfirmedTransactionsR](docs/ListAllUnconfirmedTransactionsR.md)
- - [ListAllUnconfirmedTransactionsRData](docs/ListAllUnconfirmedTransactionsRData.md)
- - [ListAllUnconfirmedTransactionsRI](docs/ListAllUnconfirmedTransactionsRI.md)
- - [ListAllUnconfirmedTransactionsRIBS](docs/ListAllUnconfirmedTransactionsRIBS.md)
- - [ListAllUnconfirmedTransactionsRIBSB](docs/ListAllUnconfirmedTransactionsRIBSB.md)
- - [ListAllUnconfirmedTransactionsRIBSBC](docs/ListAllUnconfirmedTransactionsRIBSBC.md)
- - [ListAllUnconfirmedTransactionsRIBSBCVinInner](docs/ListAllUnconfirmedTransactionsRIBSBCVinInner.md)
- - [ListAllUnconfirmedTransactionsRIBSBCVoutInner](docs/ListAllUnconfirmedTransactionsRIBSBCVoutInner.md)
- - [ListAllUnconfirmedTransactionsRIBSBSC](docs/ListAllUnconfirmedTransactionsRIBSBSC.md)
- - [ListAllUnconfirmedTransactionsRIBSBVinInner](docs/ListAllUnconfirmedTransactionsRIBSBVinInner.md)
- - [ListAllUnconfirmedTransactionsRIBSBVinInnerScriptSig](docs/ListAllUnconfirmedTransactionsRIBSBVinInnerScriptSig.md)
- - [ListAllUnconfirmedTransactionsRIBSD](docs/ListAllUnconfirmedTransactionsRIBSD.md)
- - [ListAllUnconfirmedTransactionsRIBSD2](docs/ListAllUnconfirmedTransactionsRIBSD2.md)
- - [ListAllUnconfirmedTransactionsRIBSD2VinInner](docs/ListAllUnconfirmedTransactionsRIBSD2VinInner.md)
- - [ListAllUnconfirmedTransactionsRIBSDVinInner](docs/ListAllUnconfirmedTransactionsRIBSDVinInner.md)
- - [ListAllUnconfirmedTransactionsRIBSE](docs/ListAllUnconfirmedTransactionsRIBSE.md)
- - [ListAllUnconfirmedTransactionsRIBSEC](docs/ListAllUnconfirmedTransactionsRIBSEC.md)
- - [ListAllUnconfirmedTransactionsRIBSECFee](docs/ListAllUnconfirmedTransactionsRIBSECFee.md)
- - [ListAllUnconfirmedTransactionsRIBSECGasPrice](docs/ListAllUnconfirmedTransactionsRIBSECGasPrice.md)
- - [ListAllUnconfirmedTransactionsRIBSEFee](docs/ListAllUnconfirmedTransactionsRIBSEFee.md)
- - [ListAllUnconfirmedTransactionsRIBSEGasPrice](docs/ListAllUnconfirmedTransactionsRIBSEGasPrice.md)
- - [ListAllUnconfirmedTransactionsRIBSL](docs/ListAllUnconfirmedTransactionsRIBSL.md)
- - [ListAllUnconfirmedTransactionsRIBSLVinInner](docs/ListAllUnconfirmedTransactionsRIBSLVinInner.md)
- - [ListAllUnconfirmedTransactionsRIBSZ](docs/ListAllUnconfirmedTransactionsRIBSZ.md)
- - [ListAssetsDetails400Response](docs/ListAssetsDetails400Response.md)
- - [ListAssetsDetails401Response](docs/ListAssetsDetails401Response.md)
- - [ListAssetsDetails403Response](docs/ListAssetsDetails403Response.md)
- - [ListAssetsDetailsE400](docs/ListAssetsDetailsE400.md)
- - [ListAssetsDetailsE401](docs/ListAssetsDetailsE401.md)
- - [ListAssetsDetailsE403](docs/ListAssetsDetailsE403.md)
- - [ListAssetsDetailsR](docs/ListAssetsDetailsR.md)
- - [ListAssetsDetailsRData](docs/ListAssetsDetailsRData.md)
- - [ListAssetsDetailsRI](docs/ListAssetsDetailsRI.md)
- - [ListAssetsDetailsRIAssetLogo](docs/ListAssetsDetailsRIAssetLogo.md)
- - [ListAssetsDetailsRILatestRate](docs/ListAssetsDetailsRILatestRate.md)
- - [ListAssetsDetailsRIS](docs/ListAssetsDetailsRIS.md)
- - [ListAssetsDetailsRISC](docs/ListAssetsDetailsRISC.md)
  - [ListBlockchainEventsSubscriptions400Response](docs/ListBlockchainEventsSubscriptions400Response.md)
  - [ListBlockchainEventsSubscriptions401Response](docs/ListBlockchainEventsSubscriptions401Response.md)
  - [ListBlockchainEventsSubscriptions403Response](docs/ListBlockchainEventsSubscriptions403Response.md)
@@ -1410,56 +1467,13 @@ Class | Method | HTTP request | Description
  - [ListLatestMinedBlocksRIBSBSC](docs/ListLatestMinedBlocksRIBSBSC.md)
  - [ListLatestMinedBlocksRIBSD](docs/ListLatestMinedBlocksRIBSD.md)
  - [ListLatestMinedBlocksRIBSD2](docs/ListLatestMinedBlocksRIBSD2.md)
- - [ListLatestMinedBlocksRIBSE](docs/ListLatestMinedBlocksRIBSE.md)
  - [ListLatestMinedBlocksRIBSEC](docs/ListLatestMinedBlocksRIBSEC.md)
  - [ListLatestMinedBlocksRIBSL](docs/ListLatestMinedBlocksRIBSL.md)
+ - [ListLatestMinedBlocksRIBSX](docs/ListLatestMinedBlocksRIBSX.md)
+ - [ListLatestMinedBlocksRIBSXTotalCoins](docs/ListLatestMinedBlocksRIBSXTotalCoins.md)
+ - [ListLatestMinedBlocksRIBSXTotalFees](docs/ListLatestMinedBlocksRIBSXTotalFees.md)
  - [ListLatestMinedBlocksRIBSZ](docs/ListLatestMinedBlocksRIBSZ.md)
  - [ListLatestMinedBlocksRIBSZ2](docs/ListLatestMinedBlocksRIBSZ2.md)
- - [ListLatestMinedBlocksRITotalCoins](docs/ListLatestMinedBlocksRITotalCoins.md)
- - [ListLatestMinedBlocksRITotalFees](docs/ListLatestMinedBlocksRITotalFees.md)
- - [ListOmniTokensByAddress400Response](docs/ListOmniTokensByAddress400Response.md)
- - [ListOmniTokensByAddress401Response](docs/ListOmniTokensByAddress401Response.md)
- - [ListOmniTokensByAddress403Response](docs/ListOmniTokensByAddress403Response.md)
- - [ListOmniTokensByAddressE400](docs/ListOmniTokensByAddressE400.md)
- - [ListOmniTokensByAddressE401](docs/ListOmniTokensByAddressE401.md)
- - [ListOmniTokensByAddressE403](docs/ListOmniTokensByAddressE403.md)
- - [ListOmniTokensByAddressR](docs/ListOmniTokensByAddressR.md)
- - [ListOmniTokensByAddressRData](docs/ListOmniTokensByAddressRData.md)
- - [ListOmniTokensByAddressRI](docs/ListOmniTokensByAddressRI.md)
- - [ListOmniTransactionsByAddress400Response](docs/ListOmniTransactionsByAddress400Response.md)
- - [ListOmniTransactionsByAddress401Response](docs/ListOmniTransactionsByAddress401Response.md)
- - [ListOmniTransactionsByAddress403Response](docs/ListOmniTransactionsByAddress403Response.md)
- - [ListOmniTransactionsByAddressE400](docs/ListOmniTransactionsByAddressE400.md)
- - [ListOmniTransactionsByAddressE401](docs/ListOmniTransactionsByAddressE401.md)
- - [ListOmniTransactionsByAddressE403](docs/ListOmniTransactionsByAddressE403.md)
- - [ListOmniTransactionsByAddressR](docs/ListOmniTransactionsByAddressR.md)
- - [ListOmniTransactionsByAddressRData](docs/ListOmniTransactionsByAddressRData.md)
- - [ListOmniTransactionsByAddressRI](docs/ListOmniTransactionsByAddressRI.md)
- - [ListOmniTransactionsByAddressRIFee](docs/ListOmniTransactionsByAddressRIFee.md)
- - [ListOmniTransactionsByAddressRIRecipientsInner](docs/ListOmniTransactionsByAddressRIRecipientsInner.md)
- - [ListOmniTransactionsByAddressRISendersInner](docs/ListOmniTransactionsByAddressRISendersInner.md)
- - [ListOmniTransactionsByBlockHash400Response](docs/ListOmniTransactionsByBlockHash400Response.md)
- - [ListOmniTransactionsByBlockHash401Response](docs/ListOmniTransactionsByBlockHash401Response.md)
- - [ListOmniTransactionsByBlockHash403Response](docs/ListOmniTransactionsByBlockHash403Response.md)
- - [ListOmniTransactionsByBlockHashE400](docs/ListOmniTransactionsByBlockHashE400.md)
- - [ListOmniTransactionsByBlockHashE401](docs/ListOmniTransactionsByBlockHashE401.md)
- - [ListOmniTransactionsByBlockHashE403](docs/ListOmniTransactionsByBlockHashE403.md)
- - [ListOmniTransactionsByBlockHashR](docs/ListOmniTransactionsByBlockHashR.md)
- - [ListOmniTransactionsByBlockHashRData](docs/ListOmniTransactionsByBlockHashRData.md)
- - [ListOmniTransactionsByBlockHashRI](docs/ListOmniTransactionsByBlockHashRI.md)
- - [ListOmniTransactionsByBlockHashRIFee](docs/ListOmniTransactionsByBlockHashRIFee.md)
- - [ListOmniTransactionsByBlockHeight400Response](docs/ListOmniTransactionsByBlockHeight400Response.md)
- - [ListOmniTransactionsByBlockHeight401Response](docs/ListOmniTransactionsByBlockHeight401Response.md)
- - [ListOmniTransactionsByBlockHeight403Response](docs/ListOmniTransactionsByBlockHeight403Response.md)
- - [ListOmniTransactionsByBlockHeightE400](docs/ListOmniTransactionsByBlockHeightE400.md)
- - [ListOmniTransactionsByBlockHeightE401](docs/ListOmniTransactionsByBlockHeightE401.md)
- - [ListOmniTransactionsByBlockHeightE403](docs/ListOmniTransactionsByBlockHeightE403.md)
- - [ListOmniTransactionsByBlockHeightR](docs/ListOmniTransactionsByBlockHeightR.md)
- - [ListOmniTransactionsByBlockHeightRData](docs/ListOmniTransactionsByBlockHeightRData.md)
- - [ListOmniTransactionsByBlockHeightRI](docs/ListOmniTransactionsByBlockHeightRI.md)
- - [ListOmniTransactionsByBlockHeightRIFee](docs/ListOmniTransactionsByBlockHeightRIFee.md)
- - [ListOmniTransactionsByBlockHeightRIRecipientsInner](docs/ListOmniTransactionsByBlockHeightRIRecipientsInner.md)
- - [ListOmniTransactionsByBlockHeightRISendersInner](docs/ListOmniTransactionsByBlockHeightRISendersInner.md)
  - [ListSupportedAssets400Response](docs/ListSupportedAssets400Response.md)
  - [ListSupportedAssets401Response](docs/ListSupportedAssets401Response.md)
  - [ListSupportedAssets403Response](docs/ListSupportedAssets403Response.md)
@@ -1478,6 +1492,15 @@ Class | Method | HTTP request | Description
  - [ListSupportedTokensR](docs/ListSupportedTokensR.md)
  - [ListSupportedTokensRData](docs/ListSupportedTokensRData.md)
  - [ListSupportedTokensRI](docs/ListSupportedTokensRI.md)
+ - [ListSyncedAddresses400Response](docs/ListSyncedAddresses400Response.md)
+ - [ListSyncedAddresses401Response](docs/ListSyncedAddresses401Response.md)
+ - [ListSyncedAddresses403Response](docs/ListSyncedAddresses403Response.md)
+ - [ListSyncedAddressesE400](docs/ListSyncedAddressesE400.md)
+ - [ListSyncedAddressesE401](docs/ListSyncedAddressesE401.md)
+ - [ListSyncedAddressesE403](docs/ListSyncedAddressesE403.md)
+ - [ListSyncedAddressesR](docs/ListSyncedAddressesR.md)
+ - [ListSyncedAddressesRData](docs/ListSyncedAddressesRData.md)
+ - [ListSyncedAddressesRI](docs/ListSyncedAddressesRI.md)
  - [ListTokensByAddress400Response](docs/ListTokensByAddress400Response.md)
  - [ListTokensByAddress401Response](docs/ListTokensByAddress401Response.md)
  - [ListTokensByAddress403Response](docs/ListTokensByAddress403Response.md)
@@ -1593,26 +1616,6 @@ Class | Method | HTTP request | Description
  - [ListTransactionsByBlockHeightRIBSZVoutInner](docs/ListTransactionsByBlockHeightRIBSZVoutInner.md)
  - [ListTransactionsByBlockHeightRIBSZVoutInnerScriptPubKey](docs/ListTransactionsByBlockHeightRIBSZVoutInnerScriptPubKey.md)
  - [ListTransactionsByBlockHeightRIFee](docs/ListTransactionsByBlockHeightRIFee.md)
- - [ListUnconfirmedOmniTransactionsByAddress400Response](docs/ListUnconfirmedOmniTransactionsByAddress400Response.md)
- - [ListUnconfirmedOmniTransactionsByAddress401Response](docs/ListUnconfirmedOmniTransactionsByAddress401Response.md)
- - [ListUnconfirmedOmniTransactionsByAddress403Response](docs/ListUnconfirmedOmniTransactionsByAddress403Response.md)
- - [ListUnconfirmedOmniTransactionsByAddressE400](docs/ListUnconfirmedOmniTransactionsByAddressE400.md)
- - [ListUnconfirmedOmniTransactionsByAddressE401](docs/ListUnconfirmedOmniTransactionsByAddressE401.md)
- - [ListUnconfirmedOmniTransactionsByAddressE403](docs/ListUnconfirmedOmniTransactionsByAddressE403.md)
- - [ListUnconfirmedOmniTransactionsByAddressR](docs/ListUnconfirmedOmniTransactionsByAddressR.md)
- - [ListUnconfirmedOmniTransactionsByAddressRData](docs/ListUnconfirmedOmniTransactionsByAddressRData.md)
- - [ListUnconfirmedOmniTransactionsByAddressRI](docs/ListUnconfirmedOmniTransactionsByAddressRI.md)
- - [ListUnconfirmedOmniTransactionsByAddressRIFee](docs/ListUnconfirmedOmniTransactionsByAddressRIFee.md)
- - [ListUnconfirmedOmniTransactionsByAddressRISendersInner](docs/ListUnconfirmedOmniTransactionsByAddressRISendersInner.md)
- - [ListUnconfirmedOmniTransactionsByPropertyID400Response](docs/ListUnconfirmedOmniTransactionsByPropertyID400Response.md)
- - [ListUnconfirmedOmniTransactionsByPropertyID401Response](docs/ListUnconfirmedOmniTransactionsByPropertyID401Response.md)
- - [ListUnconfirmedOmniTransactionsByPropertyID403Response](docs/ListUnconfirmedOmniTransactionsByPropertyID403Response.md)
- - [ListUnconfirmedOmniTransactionsByPropertyIDE400](docs/ListUnconfirmedOmniTransactionsByPropertyIDE400.md)
- - [ListUnconfirmedOmniTransactionsByPropertyIDE401](docs/ListUnconfirmedOmniTransactionsByPropertyIDE401.md)
- - [ListUnconfirmedOmniTransactionsByPropertyIDE403](docs/ListUnconfirmedOmniTransactionsByPropertyIDE403.md)
- - [ListUnconfirmedOmniTransactionsByPropertyIDR](docs/ListUnconfirmedOmniTransactionsByPropertyIDR.md)
- - [ListUnconfirmedOmniTransactionsByPropertyIDRData](docs/ListUnconfirmedOmniTransactionsByPropertyIDRData.md)
- - [ListUnconfirmedOmniTransactionsByPropertyIDRI](docs/ListUnconfirmedOmniTransactionsByPropertyIDRI.md)
  - [ListUnconfirmedTokensTransfersByAddress400Response](docs/ListUnconfirmedTokensTransfersByAddress400Response.md)
  - [ListUnconfirmedTokensTransfersByAddress401Response](docs/ListUnconfirmedTokensTransfersByAddress401Response.md)
  - [ListUnconfirmedTokensTransfersByAddress403Response](docs/ListUnconfirmedTokensTransfersByAddress403Response.md)
@@ -1948,6 +1951,36 @@ Class | Method | HTTP request | Description
  - [NewUnconfirmedTokensTransactionsRBDataItem](docs/NewUnconfirmedTokensTransactionsRBDataItem.md)
  - [NewUnconfirmedTokensTransactionsRData](docs/NewUnconfirmedTokensTransactionsRData.md)
  - [NewUnconfirmedTokensTransactionsRI](docs/NewUnconfirmedTokensTransactionsRI.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub400Response](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub400Response.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub401Response](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub401Response.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub403Response](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPub403Response.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubE400](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubE400.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubE401](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubE401.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubE403](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubE403.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubR](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubR.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRB](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRB.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBData](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBData.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBDataItem](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBDataItem.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBDataItemFee](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBDataItemFee.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBDataItemRecipientsInner](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRBDataItemRecipientsInner.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRData](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRData.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRI](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRI.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRIVinInner](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRIVinInner.md)
+ - [PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRIVoutInner](docs/PrepareAUTXOBasedTransactionFromHDWalletXPubYPubZPubRIVoutInner.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub400Response](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub400Response.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub401Response](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub401Response.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub403Response](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPub403Response.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubE400](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubE400.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubE401](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubE401.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubE403](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubE403.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubR](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubR.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRB](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRB.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRBData](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRBData.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRBDataItem](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRBDataItem.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRBDataItemFee](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRBDataItemFee.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRData](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRData.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRI](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRI.md)
+ - [PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRIFee](docs/PrepareAnAccountBasedTransactionFromHDWalletXPubYPubZPubRIFee.md)
  - [RequestLimitReached](docs/RequestLimitReached.md)
  - [ResourceNotFound](docs/ResourceNotFound.md)
  - [SyncHDWalletXPubYPubZPub400Response](docs/SyncHDWalletXPubYPubZPub400Response.md)
@@ -1966,6 +1999,20 @@ Class | Method | HTTP request | Description
  - [SyncHDWalletXPubYPubZPubRBDataItem](docs/SyncHDWalletXPubYPubZPubRBDataItem.md)
  - [SyncHDWalletXPubYPubZPubRData](docs/SyncHDWalletXPubYPubZPubRData.md)
  - [SyncHDWalletXPubYPubZPubRI](docs/SyncHDWalletXPubYPubZPubRI.md)
+ - [SyncNewHDWalletXPubYPubZPub400Response](docs/SyncNewHDWalletXPubYPubZPub400Response.md)
+ - [SyncNewHDWalletXPubYPubZPub401Response](docs/SyncNewHDWalletXPubYPubZPub401Response.md)
+ - [SyncNewHDWalletXPubYPubZPub403Response](docs/SyncNewHDWalletXPubYPubZPub403Response.md)
+ - [SyncNewHDWalletXPubYPubZPub409Response](docs/SyncNewHDWalletXPubYPubZPub409Response.md)
+ - [SyncNewHDWalletXPubYPubZPub422Response](docs/SyncNewHDWalletXPubYPubZPub422Response.md)
+ - [SyncNewHDWalletXPubYPubZPubE400](docs/SyncNewHDWalletXPubYPubZPubE400.md)
+ - [SyncNewHDWalletXPubYPubZPubE401](docs/SyncNewHDWalletXPubYPubZPubE401.md)
+ - [SyncNewHDWalletXPubYPubZPubE403](docs/SyncNewHDWalletXPubYPubZPubE403.md)
+ - [SyncNewHDWalletXPubYPubZPubE409](docs/SyncNewHDWalletXPubYPubZPubE409.md)
+ - [SyncNewHDWalletXPubYPubZPubE422](docs/SyncNewHDWalletXPubYPubZPubE422.md)
+ - [SyncNewHDWalletXPubYPubZPubR](docs/SyncNewHDWalletXPubYPubZPubR.md)
+ - [SyncNewHDWalletXPubYPubZPubRB](docs/SyncNewHDWalletXPubYPubZPubRB.md)
+ - [SyncNewHDWalletXPubYPubZPubRData](docs/SyncNewHDWalletXPubYPubZPubRData.md)
+ - [SyncNewHDWalletXPubYPubZPubRI](docs/SyncNewHDWalletXPubYPubZPubRI.md)
  - [TokensForwardingAutomationsLimitReached](docs/TokensForwardingAutomationsLimitReached.md)
  - [TokensForwardingFail](docs/TokensForwardingFail.md)
  - [TokensForwardingFailData](docs/TokensForwardingFailData.md)
@@ -2014,6 +2061,7 @@ Class | Method | HTTP request | Description
  - [WalletAsAServiceAddressBalanceNotEnough](docs/WalletAsAServiceAddressBalanceNotEnough.md)
  - [WalletAsAServiceDepositAddressesLimitReached](docs/WalletAsAServiceDepositAddressesLimitReached.md)
  - [WalletAsAServiceNoDepositAddressesFound](docs/WalletAsAServiceNoDepositAddressesFound.md)
+ - [WalletAsAServiceProvidedNetworkIsNotSuitableForThisWalletType](docs/WalletAsAServiceProvidedNetworkIsNotSuitableForThisWalletType.md)
  - [WalletAsAServiceTokenNotSupported](docs/WalletAsAServiceTokenNotSupported.md)
  - [WalletAsAServiceWalletBalanceNotEnough](docs/WalletAsAServiceWalletBalanceNotEnough.md)
  - [XpubNotSynced](docs/XpubNotSynced.md)

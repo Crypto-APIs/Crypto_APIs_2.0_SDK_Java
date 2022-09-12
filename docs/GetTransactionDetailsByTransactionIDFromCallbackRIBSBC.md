@@ -12,7 +12,7 @@ Bitcoin Cash
 |**size** | **Integer** | Represents the total size of this transaction. |  |
 |**version** | **Integer** | Represents transaction version number. |  |
 |**vin** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSBCVinInner&gt;**](GetTransactionDetailsByTransactionIDRIBSBCVinInner.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSBCVoutInner&gt;**](GetTransactionDetailsByTransactionIDRIBSBCVoutInner.md) | Represents the transaction outputs. |  |
+|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDFromCallbackRIBSBCVoutInner&gt;**](GetTransactionDetailsByTransactionIDFromCallbackRIBSBCVoutInner.md) | Represents the transaction outputs. |  |
 
 
 

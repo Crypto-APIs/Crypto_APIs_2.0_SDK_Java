@@ -1,6 +1,6 @@
 # TokensApi
 
-All URIs are relative to *https://rest.cryptoapis.io/v2*
+All URIs are relative to *https://rest.cryptoapis.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -32,7 +32,7 @@ import org.openapitools.client.api.TokensApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -64,7 +64,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [default to ethereum] [enum: ethereum, ethereum-classic, binance-smart-chain] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, testnet, goerli] |
 | **contractAddress** | **String**| Defines the specific address of the contract. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
 
@@ -116,7 +116,7 @@ import org.openapitools.client.api.TokensApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -129,8 +129,8 @@ public class Example {
     String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
     String address = "0x033ef6db9fbd0ee60e2931906b987fe0280471a0"; // String | Represents the public address, which is a compressed and shortened form of a public key.
     String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
-    Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    Long limit = 50L; // Long | Defines how many items should be returned in the response per page basis.
+    Long offset = 0L; // Long | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
       ListConfirmedTokensTransfersByAddressR result = apiInstance.listConfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
       System.out.println(result);
@@ -150,11 +150,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, testnet, goerli] |
 | **address** | **String**| Represents the public address, which is a compressed and shortened form of a public key. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
-| **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
-| **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
+| **limit** | **Long**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
+| **offset** | **Long**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
 
 ### Return type
 
@@ -204,7 +204,7 @@ import org.openapitools.client.api.TokensApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -238,7 +238,7 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, testnet, goerli] |
 | **address** | **String**| Represents the public address, which is a compressed and shortened form of a public key. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
 | **limit** | **Long**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
@@ -292,7 +292,7 @@ import org.openapitools.client.api.TokensApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -305,8 +305,8 @@ public class Example {
     String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
     String transactionHash = "0xbe38781783b1b9d480219255ff98e20335a39e13979a66112efa33f05fde0a33"; // String | Represents the hash of the transaction, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm.
     String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
-    Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    Long limit = 50L; // Long | Defines how many items should be returned in the response per page basis.
+    Long offset = 0L; // Long | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
       ListTokensTransfersByTransactionHashR result = apiInstance.listTokensTransfersByTransactionHash(blockchain, network, transactionHash, context, limit, offset);
       System.out.println(result);
@@ -326,11 +326,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, testnet, goerli] |
 | **transactionHash** | **String**| Represents the hash of the transaction, which is its unique identifier. It represents a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
-| **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
-| **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
+| **limit** | **Long**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
+| **offset** | **Long**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
 
 ### Return type
 
@@ -380,7 +380,7 @@ import org.openapitools.client.api.TokensApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -390,11 +390,11 @@ public class Example {
 
     TokensApi apiInstance = new TokensApi(defaultClient);
     String blockchain = "ethereum"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc.
-    String network = "ropsten"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
+    String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
     String address = "0x033ef6db9fbd0ee60e2931906b987fe0280471a0"; // String | Represents the public address, which is a compressed and shortened form of a public key.
     String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    Integer limit = 50; // Integer | Defines how many items should be returned in the response per page basis.
-    Integer offset = 0; // Integer | The starting index of the response items, i.e. where the response should start listing the returned items.
+    Long limit = 50L; // Long | Defines how many items should be returned in the response per page basis.
+    Long offset = 0L; // Long | The starting index of the response items, i.e. where the response should start listing the returned items.
     try {
       ListUnconfirmedTokensTransfersByAddressR result = apiInstance.listUnconfirmedTokensTransfersByAddress(blockchain, network, address, context, limit, offset);
       System.out.println(result);
@@ -414,11 +414,11 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Ethereum Classic, etc. | [enum: ethereum, ethereum-classic] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: ropsten, mainnet, mordor] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, goerli] |
 | **address** | **String**| Represents the public address, which is a compressed and shortened form of a public key. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
-| **limit** | **Integer**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
-| **offset** | **Integer**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
+| **limit** | **Long**| Defines how many items should be returned in the response per page basis. | [optional] [default to 50] |
+| **offset** | **Long**| The starting index of the response items, i.e. where the response should start listing the returned items. | [optional] [default to 0] |
 
 ### Return type
 

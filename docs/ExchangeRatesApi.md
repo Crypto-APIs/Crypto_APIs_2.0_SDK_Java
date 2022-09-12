@@ -1,6 +1,6 @@
 # ExchangeRatesApi
 
-All URIs are relative to *https://rest.cryptoapis.io/v2*
+All URIs are relative to *https://rest.cryptoapis.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
@@ -29,7 +29,7 @@ import org.openapitools.client.api.ExchangeRatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -41,7 +41,7 @@ public class Example {
     String fromAssetSymbol = "btc"; // String | Defines the base asset symbol to get a rate for.
     String toAssetSymbol = "usd"; // String | Defines the relation asset symbol in which the base asset rate will be displayed.
     String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    Integer calculationTimestamp = 1635514425; // Integer | Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp.
+    Integer calculationTimestamp = 1635514425; // Integer | Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. Oldest possible timestamp is 30 days.
     try {
       GetExchangeRateByAssetSymbolsR result = apiInstance.getExchangeRateByAssetSymbols(fromAssetSymbol, toAssetSymbol, context, calculationTimestamp);
       System.out.println(result);
@@ -63,7 +63,7 @@ public class Example {
 | **fromAssetSymbol** | **String**| Defines the base asset symbol to get a rate for. | |
 | **toAssetSymbol** | **String**| Defines the relation asset symbol in which the base asset rate will be displayed. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
-| **calculationTimestamp** | **Integer**| Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. | [optional] |
+| **calculationTimestamp** | **Integer**| Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. Oldest possible timestamp is 30 days. | [optional] |
 
 ### Return type
 
@@ -113,7 +113,7 @@ import org.openapitools.client.api.ExchangeRatesApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -125,7 +125,7 @@ public class Example {
     String fromAssetId = "5b1ea92e584bf50020130612"; // String | Defines the base asset Reference ID to get a rate for.
     String toAssetId = "5b1ea92e584bf50020130615"; // String | Defines the relation asset Reference ID in which the base asset rate will be displayed.
     String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
-    Integer calculationTimestamp = 1618577849; // Integer | Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp.
+    Integer calculationTimestamp = 1618577849; // Integer | Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. Oldest possible timestamp is 30 days.
     try {
       GetExchangeRateByAssetsIDsR result = apiInstance.getExchangeRateByAssetsIDs(fromAssetId, toAssetId, context, calculationTimestamp);
       System.out.println(result);
@@ -147,7 +147,7 @@ public class Example {
 | **fromAssetId** | **String**| Defines the base asset Reference ID to get a rate for. | |
 | **toAssetId** | **String**| Defines the relation asset Reference ID in which the base asset rate will be displayed. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
-| **calculationTimestamp** | **Integer**| Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. | [optional] |
+| **calculationTimestamp** | **Integer**| Defines the time of the market data used to calculate the exchange rate in UNIX Timestamp. Oldest possible timestamp is 30 days. | [optional] |
 
 ### Return type
 

@@ -1,13 +1,15 @@
 # TransactionsApi
 
-All URIs are relative to *https://rest.cryptoapis.io/v2*
+All URIs are relative to *https://rest.cryptoapis.io*
 
 | Method | HTTP request | Description |
 |------------- | ------------- | -------------|
 | [**createCoinsTransactionFromAddressForWholeAmount**](TransactionsApi.md#createCoinsTransactionFromAddressForWholeAmount) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/all-transaction-requests | Create Coins Transaction From Address For Whole Amount |
 | [**createCoinsTransactionRequestFromAddress**](TransactionsApi.md#createCoinsTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/transaction-requests | Create Coins Transaction Request from Address |
 | [**createCoinsTransactionRequestFromWallet**](TransactionsApi.md#createCoinsTransactionRequestFromWallet) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/transaction-requests | Create Coins Transaction Request from Wallet |
+| [**createFungibleTokenTransactionRequestFromAddressWithoutFeePriority**](TransactionsApi.md#createFungibleTokenTransactionRequestFromAddressWithoutFeePriority) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/feeless-token-transaction-requests | Create Fungible Token Transaction Request From Address Without Fee Priority |
 | [**createFungibleTokensTransactionRequestFromAddress**](TransactionsApi.md#createFungibleTokensTransactionRequestFromAddress) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{senderAddress}/token-transaction-requests | Create Fungible Tokens Transaction Request from Address |
+| [**createSingleTransactionRequestFromAddressWithoutFeePriority**](TransactionsApi.md#createSingleTransactionRequestFromAddressWithoutFeePriority) | **POST** /wallet-as-a-service/wallets/{walletId}/{blockchain}/{network}/addresses/{address}/feeless-transaction-requests | Create Single Transaction Request From Address Without Fee Priority |
 
 
 <a name="createCoinsTransactionFromAddressForWholeAmount"></a>
@@ -31,7 +33,7 @@ import org.openapitools.client.api.TransactionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -65,8 +67,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **address** | **String**| Defines the source address. | |
-| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
+| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain, polygon] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, testnet, goerli, mumbai] |
 | **walletId** | **String**| Represents the sender&#39;s specific and unique Wallet ID of the sender. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
 | **createCoinsTransactionFromAddressForWholeAmountRB** | [**CreateCoinsTransactionFromAddressForWholeAmountRB**](CreateCoinsTransactionFromAddressForWholeAmountRB.md)|  | [optional] |
@@ -119,7 +121,7 @@ import org.openapitools.client.api.TransactionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -153,8 +155,8 @@ public class Example {
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
 | **address** | **String**| Defines the specific source address for the transaction. For XRP we also support the X-address format. | |
-| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain, xrp] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, ropsten, mordor, testnet] |
+| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: ethereum, ethereum-classic, binance-smart-chain, xrp, polygon] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, mordor, testnet, goerli, mumbai] |
 | **walletId** | **String**| Represents the sender&#39;s specific and unique Wallet ID of the sender. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
 | **createCoinsTransactionRequestFromAddressRB** | [**CreateCoinsTransactionRequestFromAddressRB**](CreateCoinsTransactionRequestFromAddressRB.md)|  | [optional] |
@@ -207,7 +209,7 @@ import org.openapitools.client.api.TransactionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -272,6 +274,94 @@ public class Example {
 | **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
 | **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
 
+<a name="createFungibleTokenTransactionRequestFromAddressWithoutFeePriority"></a>
+# **createFungibleTokenTransactionRequestFromAddressWithoutFeePriority**
+> CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityR createFungibleTokenTransactionRequestFromAddressWithoutFeePriority(blockchain, network, senderAddress, walletId, context, createFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB)
+
+Create Fungible Token Transaction Request From Address Without Fee Priority
+
+Through this endpoint customers can make a single feeless token transaction on the Tron blockchain protocol. TRX transactions burn certain resources called Bandwidth and Energy. Each account has 1500 bandwidth free for use every 24 hours and more can be obtained by staking TRX. The unit price of Energy is 280 SUN and of bandwidth - 1000 SUN. If the resources are insufficient, TRX will be burned to pay for them.
+
+### Example
+```java
+// Import classes:
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
+import org.openapitools.client.api.TransactionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    TransactionsApi apiInstance = new TransactionsApi(defaultClient);
+    String blockchain = "tron"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
+    String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
+    String senderAddress = "TX8VXpdEoNNrKeEuNTfbEXfa9eZivcyUwD"; // String | Defines the specific source address for the transaction.
+    String walletId = "62b9b5c3b97f4b0008092714"; // String | Defines the unique ID of the Wallet.
+    String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
+    CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB createFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB = new CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB(); // CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB | 
+    try {
+      CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityR result = apiInstance.createFungibleTokenTransactionRequestFromAddressWithoutFeePriority(blockchain, network, senderAddress, walletId, context, createFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionsApi#createFungibleTokenTransactionRequestFromAddressWithoutFeePriority");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: tron] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, nile] |
+| **senderAddress** | **String**| Defines the specific source address for the transaction. | |
+| **walletId** | **String**| Defines the unique ID of the Wallet. | |
+| **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
+| **createFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB** | [**CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB**](CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityRB.md)|  | [optional] |
+
+### Return type
+
+[**CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityR**](CreateFungibleTokenTransactionRequestFromAddressWithoutFeePriorityR.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The resource has been successfully created. |  -  |
+| **400** | 400 |  -  |
+| **401** | 401 |  -  |
+| **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
+| **403** | 403 |  -  |
+| **409** | 409 |  -  |
+| **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
+| **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
+| **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
+| **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
+
 <a name="createFungibleTokensTransactionRequestFromAddress"></a>
 # **createFungibleTokensTransactionRequestFromAddress**
 > CreateFungibleTokensTransactionRequestFromAddressR createFungibleTokensTransactionRequestFromAddress(blockchain, network, senderAddress, walletId, context, createFungibleTokensTransactionRequestFromAddressRB)
@@ -293,7 +383,7 @@ import org.openapitools.client.api.TransactionsApi;
 public class Example {
   public static void main(String[] args) {
     ApiClient defaultClient = Configuration.getDefaultApiClient();
-    defaultClient.setBasePath("https://rest.cryptoapis.io/v2");
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
     
     // Configure API key authorization: ApiKey
     ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
@@ -326,8 +416,8 @@ public class Example {
 
 | Name | Type | Description  | Notes |
 |------------- | ------------- | ------------- | -------------|
-| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [default to ethereum] [enum: ethereum, ethereum-classic, binance-smart-chain] |
-| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [default to mainnet] [enum: mainnet, ropsten, mordor, testnet] |
+| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [default to ethereum] [enum: ethereum, ethereum-classic, binance-smart-chain, polygon] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [default to mainnet] [enum: mainnet, mordor, testnet, goerli, mumbai] |
 | **senderAddress** | **String**| Defines the specific source address for the transaction. | |
 | **walletId** | **String**| Defines the unique ID of the Wallet. | |
 | **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
@@ -336,6 +426,94 @@ public class Example {
 ### Return type
 
 [**CreateFungibleTokensTransactionRequestFromAddressR**](CreateFungibleTokensTransactionRequestFromAddressR.md)
+
+### Authorization
+
+[ApiKey](../README.md#ApiKey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **201** | The resource has been successfully created. |  -  |
+| **400** | 400 |  -  |
+| **401** | 401 |  -  |
+| **402** | You have insufficient credits. Please upgrade your plan from your Dashboard or contact our team via email. |  -  |
+| **403** | 403 |  -  |
+| **409** | 409 |  -  |
+| **415** | The selected Media Type is unavailable. The Content-Type header should be &#39;application/json&#39;. |  -  |
+| **422** | Your request body for POST requests must have a structure of { data: { item: [...properties] } } |  -  |
+| **429** | The request limit has been reached. There can be maximum {requests} requests per {seconds} second(s) made. Please contact our team via email if you need more or upgrade your plan. |  -  |
+| **500** | An unexpected server error has occurred, we are working to fix this. Please try again later and in case it occurs again please report it to our team via email. |  -  |
+
+<a name="createSingleTransactionRequestFromAddressWithoutFeePriority"></a>
+# **createSingleTransactionRequestFromAddressWithoutFeePriority**
+> CreateSingleTransactionRequestFromAddressWithoutFeePriorityR createSingleTransactionRequestFromAddressWithoutFeePriority(address, blockchain, network, walletId, context, createSingleTransactionRequestFromAddressWithoutFeePriorityRB)
+
+Create Single Transaction Request From Address Without Fee Priority
+
+Through this endpoint users can create a new single transaction request from one address to another. The difference between this endpoint and \&quot;Create Coins Transaction Request from Address\&quot;  is that for Tron blockchain there is no Fee Priority that defines how fast a transaction can be mined.
+
+### Example
+```java
+// Import classes:
+import io.cryptoapis.sdk.ApiClient;
+import io.cryptoapis.sdk.ApiException;
+import io.cryptoapis.sdk.Configuration;
+import io.cryptoapis.sdk.auth.*;
+import io.cryptoapis.sdk.models.*;
+import org.openapitools.client.api.TransactionsApi;
+
+public class Example {
+  public static void main(String[] args) {
+    ApiClient defaultClient = Configuration.getDefaultApiClient();
+    defaultClient.setBasePath("https://rest.cryptoapis.io");
+    
+    // Configure API key authorization: ApiKey
+    ApiKeyAuth ApiKey = (ApiKeyAuth) defaultClient.getAuthentication("ApiKey");
+    ApiKey.setApiKey("YOUR API KEY");
+    // Uncomment the following line to set a prefix for the API key, e.g. "Token" (defaults to null)
+    //ApiKey.setApiKeyPrefix("Token");
+
+    TransactionsApi apiInstance = new TransactionsApi(defaultClient);
+    String address = "TX8VXpdEoNNrKeEuNTfbEXfa9eZivcyUwD"; // String | Defines the specific source address for the transaction.
+    String blockchain = "tron"; // String | Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc.
+    String network = "mainnet"; // String | Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \"mainnet\" is the live network with actual data while networks like \"testnet\", \"ropsten\" are test networks.
+    String walletId = "62b9b5c3b97f4b0008092714"; // String | Represents the sender's specific and unique Wallet ID of the sender.
+    String context = "yourExampleString"; // String | In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. `context` is specified by the user.
+    CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB createSingleTransactionRequestFromAddressWithoutFeePriorityRB = new CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB(); // CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB | 
+    try {
+      CreateSingleTransactionRequestFromAddressWithoutFeePriorityR result = apiInstance.createSingleTransactionRequestFromAddressWithoutFeePriority(address, blockchain, network, walletId, context, createSingleTransactionRequestFromAddressWithoutFeePriorityRB);
+      System.out.println(result);
+    } catch (ApiException e) {
+      System.err.println("Exception when calling TransactionsApi#createSingleTransactionRequestFromAddressWithoutFeePriority");
+      System.err.println("Status code: " + e.getCode());
+      System.err.println("Reason: " + e.getResponseBody());
+      System.err.println("Response headers: " + e.getResponseHeaders());
+      e.printStackTrace();
+    }
+  }
+}
+```
+
+### Parameters
+
+| Name | Type | Description  | Notes |
+|------------- | ------------- | ------------- | -------------|
+| **address** | **String**| Defines the specific source address for the transaction. | |
+| **blockchain** | **String**| Represents the specific blockchain protocol name, e.g. Ethereum, Bitcoin, etc. | [enum: tron] |
+| **network** | **String**| Represents the name of the blockchain network used; blockchain networks are usually identical as technology and software, but they differ in data, e.g. - \&quot;mainnet\&quot; is the live network with actual data while networks like \&quot;testnet\&quot;, \&quot;ropsten\&quot; are test networks. | [enum: mainnet, nile] |
+| **walletId** | **String**| Represents the sender&#39;s specific and unique Wallet ID of the sender. | |
+| **context** | **String**| In batch situations the user can use the context to correlate responses with requests. This property is present regardless of whether the response was successful or returned as an error. &#x60;context&#x60; is specified by the user. | [optional] |
+| **createSingleTransactionRequestFromAddressWithoutFeePriorityRB** | [**CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB**](CreateSingleTransactionRequestFromAddressWithoutFeePriorityRB.md)|  | [optional] |
+
+### Return type
+
+[**CreateSingleTransactionRequestFromAddressWithoutFeePriorityR**](CreateSingleTransactionRequestFromAddressWithoutFeePriorityR.md)
 
 ### Authorization
 

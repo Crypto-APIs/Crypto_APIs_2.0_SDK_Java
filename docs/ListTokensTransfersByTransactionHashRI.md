@@ -8,7 +8,7 @@
 | Name | Type | Description | Notes |
 |------------ | ------------- | ------------- | -------------|
 |**contractAddress** | **String** | Represents the contract address of the token, which controls its logic. It is not the address that holds the tokens. |  |
-|**minedInBlockHeight** | **Integer** | Defines the block height in which this transaction was confirmed/mined. |  |
+|**minedInBlockHeight** | **Long** | Defines the block height in which this transaction was confirmed/mined. |  |
 |**recipientAddress** | **String** | Defines the address to which the recipient receives the transferred tokens. |  |
 |**senderAddress** | **String** | Defines the address from which the sender transfers tokens. |  |
 |**tokenDecimals** | **Integer** | Defines the decimals of the token, i.e. the number of digits that come after the decimal coma of the token. |  |

@@ -9,7 +9,7 @@
 |------------ | ------------- | ------------- | -------------|
 |**index** | **Integer** | Represents the index position of the transaction in the block. |  |
 |**minedInBlockHash** | **String** | Represents the hash of the block where this transaction was mined/confirmed for first time. The hash is defined as a cryptographic digital fingerprint made by hashing the block header twice through the SHA256 algorithm. |  |
-|**minedInBlockHeight** | **Integer** | Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block. |  |
+|**minedInBlockHeight** | **Long** | Represents the hight of the block where this transaction was mined/confirmed for first time. The height is defined as the number of blocks in the blockchain preceding this specific block. |  |
 |**recipients** | [**List&lt;ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner&gt;**](ListHDWalletXPubYPubZPubTransactionsRIRecipientsInner.md) | Represents a list of recipient addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list. |  |
 |**senders** | [**List&lt;ListHDWalletXPubYPubZPubTransactionsRISendersInner&gt;**](ListHDWalletXPubYPubZPubTransactionsRISendersInner.md) | Represents a list of sender addresses with the respective amounts. In account-based protocols like Ethereum there is only one address in this list. |  |
 |**timestamp** | **Integer** | Defines the exact date/time in Unix Timestamp when this transaction was mined, confirmed or first seen in Mempool, if it is unconfirmed. |  |

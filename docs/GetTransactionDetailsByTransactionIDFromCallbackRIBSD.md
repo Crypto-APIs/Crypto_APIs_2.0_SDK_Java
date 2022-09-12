@@ -12,7 +12,7 @@ Dash
 |**size** | **Integer** | Represents the total size of this transaction. |  |
 |**version** | **Integer** | Represents transaction version number. |  |
 |**vin** | [**List&lt;GetTransactionDetailsByTransactionIDFromCallbackRIBSDVinInner&gt;**](GetTransactionDetailsByTransactionIDFromCallbackRIBSDVinInner.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSD2VoutInner&gt;**](GetTransactionDetailsByTransactionIDRIBSD2VoutInner.md) | Represents the transaction outputs. |  |
+|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInner&gt;**](GetTransactionDetailsByTransactionIDFromCallbackRIBSDVoutInner.md) | Represents the transaction outputs. |  |
 
 
 

@@ -13,7 +13,7 @@ Litecoin
 |**vSize** | **Integer** | Represents the virtual size of this transaction. |  |
 |**version** | **Integer** | Represents transaction version number. |  |
 |**vin** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSLVinInner&gt;**](GetTransactionDetailsByTransactionIDRIBSLVinInner.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSLVoutInner&gt;**](GetTransactionDetailsByTransactionIDRIBSLVoutInner.md) | Represents the transaction outputs. |  |
+|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDFromCallbackRIBSLVoutInner&gt;**](GetTransactionDetailsByTransactionIDFromCallbackRIBSLVoutInner.md) | Represents the transaction outputs. |  |
 
 
 

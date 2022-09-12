@@ -13,7 +13,7 @@ Bitcoin
 |**vSize** | **Integer** | Represents the virtual size of this transaction. |  |
 |**version** | **Integer** | Represents the transaction version number. |  |
 |**vin** | [**List&lt;GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner&gt;**](GetTransactionDetailsByTransactionIDFromCallbackRIBSBVinInner.md) | Represents the transaction inputs. |  |
-|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDRIBSBVoutInner&gt;**](GetTransactionDetailsByTransactionIDRIBSBVoutInner.md) | Represents the transaction outputs. |  |
+|**vout** | [**List&lt;GetTransactionDetailsByTransactionIDFromCallbackRIBSBVoutInner&gt;**](GetTransactionDetailsByTransactionIDFromCallbackRIBSBVoutInner.md) | Represents the transaction outputs. |  |
 
 
 

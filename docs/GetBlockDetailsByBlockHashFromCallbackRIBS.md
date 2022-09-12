@@ -31,6 +31,9 @@
 |**microBlocks** | **List&lt;String&gt;** |  |  |
 |**totalCoins** | [**GetLatestMinedXRPRippleBlockRITotalCoins**](GetLatestMinedXRPRippleBlockRITotalCoins.md) |  |  |
 |**totalFees** | [**GetLatestMinedXRPRippleBlockRITotalFees**](GetLatestMinedXRPRippleBlockRITotalFees.md) |  |  |
+|**bandwidthUsed** | **String** | Represents the bandwidth used for the transaction. |  |
+|**burnedTrx** | **String** | Represents the block burned TRX. |  |
+|**energyUsed** | **String** | Representats the used energy for the transaction. |  |
 
 
 
